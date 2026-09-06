@@ -38,6 +38,8 @@ export type PlanParameter = {
   anzahl?: number
 }
 
+type FetchOptionen = RequestInit & { next?: { revalidate: number } }
+
 export async function planen(p: PlanParameter, fetchImpl: typeof fetch = fetch): Promise<Itinerary[]> {
   const q = new URLSearchParams({
     fromPlace: p.von,
@@ -50,11 +52,12 @@ export async function planen(p: PlanParameter, fetchImpl: typeof fetch = fetch):
   const url = `${BASIS}/api/v1/plan?${q.toString()}`
   let antwort: Response
   try {
-    antwort = await fetchImpl(url, {
+    const optionen: FetchOptionen = {
       headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' },
       signal: AbortSignal.timeout(TIMEOUT_MS),
       next: { revalidate: CACHE_SEKUNDEN },
-    } as RequestInit)
+    }
+    antwort = await fetchImpl(url, optionen)
   } catch (e) {
     throw new TransitousFehler(`Transitous nicht erreichbar: ${(e as Error).message}`)
   }

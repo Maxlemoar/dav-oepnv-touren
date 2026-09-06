@@ -1,4 +1,6 @@
-export type Co2Faktoren = { pkwGrammProFahrzeugKm: number; personenProPkw: number; bahnGrammProPersonenKm: number }
+import type { Emissionen } from '@/lib/content/schema'
+
+export type Co2Faktoren = Pick<Emissionen, 'pkwGrammProFahrzeugKm' | 'personenProPkw' | 'bahnGrammProPersonenKm'>
 
 /** Ersparnis Bahn gegenüber Auto, Hin- und Rückfahrt, pro Person, in kg, auf 5 kg gerundet. */
 export function co2ErsparnisKg(d: { strassenKm?: number; bahnKm?: number }, f: Co2Faktoren): number | undefined {

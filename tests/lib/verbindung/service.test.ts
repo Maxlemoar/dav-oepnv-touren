@@ -29,9 +29,16 @@ describe('verbindungErmitteln', () => {
     expect(a.tourenfensterMin).toBe(454) // 10:40 bis 18:14
     expect(a.tagesziel).toBe(false) // Ankunft 10:40 ist nach 10:00
     expect(a.ticket).toEqual({ ticket: 'halbtax', hinweis: 'CH' })
-    // Hinfahrt: Abfahrt ab 03:00Z; Rückfahrt: Ankunft bis 23:00 lokal = 21:00Z
-    expect(planen.mock.calls[0][0]).toMatchObject({ von: 'de:og', nach: 'ch:ka', zeit: '2026-09-12T03:00:00Z', ankunftBis: false })
+    // Hinfahrt: Abfahrt ab 05:00 lokal = 03:00Z im Sommer; Rückfahrt: Ankunft bis 23:00 lokal = 21:00Z
+    expect(planen.mock.calls[0][0]).toMatchObject({ von: 'de:og', nach: 'ch:ka', zeit: '2026-09-12T03:00:00Z', ankunftBis: false, anzahl: 12 })
     expect(planen.mock.calls[1][0]).toMatchObject({ von: 'ch:ka', nach: 'de:og', zeit: '2026-09-12T21:00:00Z', ankunftBis: true })
+  })
+
+  it('fragt die Hinfahrt im Winter ab 04:00Z ab (05:00 CET)', async () => {
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin))
+    await verbindungErmitteln({ startort, haltestelle, datum: '2026-01-10', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    expect(planen.mock.calls[0][0]).toMatchObject({ zeit: '2026-01-10T04:00:00Z', ankunftBis: false })
+    expect(planen.mock.calls[1][0]).toMatchObject({ zeit: '2026-01-10T22:00:00Z', ankunftBis: true })
   })
 
   it('fragt Rückfahrt am Folgetag ab und setzt kein Tagesziel-Urteil', async () => {
@@ -50,6 +57,48 @@ describe('verbindungErmitteln', () => {
     expect(a.richtwert?.fahrzeitMin).toBe(250)
     expect(a.hinfahrt).toBeUndefined()
     expect(a.ticket.ticket).toBe('halbtax')
+  })
+
+  it('nimmt im Fallback das Ticket aus dem Richtwert', async () => {
+    const de: Haltestelle = { ...haltestelle, land: 'DE', richtwerte: { offenburg: { ...haltestelle.richtwerte.offenburg, ticket: 'keins' } } }
+    const planen = vi.fn(async () => { throw new TransitousFehler('503', 503) })
+    const a = await verbindungErmitteln({ startort, haltestelle: de, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    expect(a.quelle).toBe('richtwert')
+    expect(a.ticket).toEqual({ ticket: 'keins', hinweis: 'Fern' })
+  })
+
+  it('nutzt im Fallback ohne Richtwert die Tabelle', async () => {
+    const ohne: Haltestelle = { ...haltestelle, richtwerte: {} }
+    const planen = vi.fn(async () => { throw new TransitousFehler('503', 503) })
+    const a = await verbindungErmitteln({ startort, haltestelle: ohne, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    expect(a.richtwert).toBeUndefined()
+    expect(a.ticket).toEqual({ ticket: 'halbtax', hinweis: 'CH' })
+  })
+
+  it('liefert die Hinfahrt live, wenn nur die Rückfahrt-Abfrage fehlschlägt', async () => {
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => {
+      if (p.ankunftBis) throw new TransitousFehler('Transitous HTTP 503', 503)
+      return hin
+    })
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    expect(a.quelle).toBe('live')
+    expect(a.hinfahrt?.ab).toBe('2026-09-12T04:30:00Z')
+    expect(a.rueckfahrt).toBeUndefined()
+    expect(a.tagesziel).toBeUndefined()
+    expect(a.tourenfensterMin).toBeUndefined()
+    expect(a.fehler).toMatch(/503/)
+  })
+
+  it('liefert die Rückfahrt live, wenn nur die Hinfahrt-Abfrage fehlschlägt', async () => {
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => {
+      if (!p.ankunftBis) throw new TransitousFehler('Transitous HTTP 503', 503)
+      return rueck
+    })
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    expect(a.quelle).toBe('live')
+    expect(a.hinfahrt).toBeUndefined()
+    expect(a.rueckfahrt?.ab).toBe('2026-09-12T16:14:00Z')
+    expect(a.fehler).toMatch(/503/)
   })
 
   it('Fernverkehr in DE ergibt Ticket keins', async () => {

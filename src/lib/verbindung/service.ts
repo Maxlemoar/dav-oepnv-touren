@@ -1,7 +1,7 @@
 import type { Startort, Haltestelle, TicketTabelle, Richtwert } from '@/lib/content/schema'
 import { folgetag, lokaleMinuten, zuUtcIso } from '@/lib/datum'
 import { planen as planenStandard, type Itinerary, type PlanParameter } from './transitous'
-import { waehleHinfahrt, waehleRueckfahrt, kurzfassung, RUECKFAHRT_ANKUNFT_BIS, type VerbindungKurz } from './auswerten'
+import { waehleHinfahrt, waehleRueckfahrt, kurzfassung, hatFernverkehr, HINFAHRT_FENSTER, RUECKFAHRT_ANKUNFT_BIS, type VerbindungKurz } from './auswerten'
 import { istTagesziel, ticketFuer, tourenfensterMin, type TicketHinweis } from './regeln'
 
 export type Rueckfahrtart = 'gleicher-tag' | 'folgetag'
@@ -31,7 +31,9 @@ export type VerbindungAnfrage = {
 
 type Abhaengigkeiten = { planen: (p: PlanParameter) => Promise<Itinerary[]> }
 
-const HINFAHRT_START_UTC = '03:00' // 05:00 CEST bzw. 04:00 CET, Fenster wird lokal gefiltert
+function fehlermeldung(r: PromiseSettledResult<unknown>): string | undefined {
+  return r.status === 'rejected' ? (r.reason as Error).message : undefined
+}
 
 export async function verbindungErmitteln(
   a: VerbindungAnfrage,
@@ -39,33 +41,33 @@ export async function verbindungErmitteln(
 ): Promise<VerbindungAntwort> {
   const rueckfahrtDatum = a.rueckfahrt === 'folgetag' ? folgetag(a.datum) : a.datum
   const richtwert = a.haltestelle.richtwerte[a.startort.id]
+  const land = a.haltestelle.land
   const basis = { datum: a.datum, rueckfahrtDatum, richtwert }
 
-  let hinIts: Itinerary[]
-  let rueckIts: Itinerary[]
-  try {
-    ;[hinIts, rueckIts] = await Promise.all([
-      deps.planen({ von: a.startort.haltestelleId, nach: a.haltestelle.haltestelleId, zeit: `${a.datum}T${HINFAHRT_START_UTC}:00Z`, ankunftBis: false, anzahl: 10 }),
-      deps.planen({ von: a.haltestelle.haltestelleId, nach: a.startort.haltestelleId, zeit: zuUtcIso(rueckfahrtDatum, RUECKFAHRT_ANKUNFT_BIS), ankunftBis: true, anzahl: 6 }),
-    ])
-  } catch (e) {
-    return {
-      ...basis,
-      quelle: 'richtwert',
-      ticket: ticketFuer(a.haltestelle.land, false, a.tickets),
-      fehler: (e as Error).message,
-    }
+  const [hinErgebnis, rueckErgebnis] = await Promise.allSettled([
+    deps.planen({ von: a.startort.haltestelleId, nach: a.haltestelle.haltestelleId, zeit: zuUtcIso(a.datum, HINFAHRT_FENSTER.fruehVon), ankunftBis: false, anzahl: 12 }),
+    deps.planen({ von: a.haltestelle.haltestelleId, nach: a.startort.haltestelleId, zeit: zuUtcIso(rueckfahrtDatum, RUECKFAHRT_ANKUNFT_BIS), ankunftBis: true, anzahl: 6 }),
+  ])
+  const fehler = [fehlermeldung(hinErgebnis), fehlermeldung(rueckErgebnis)].filter(Boolean).join('; ') || undefined
+
+  if (hinErgebnis.status === 'rejected' && rueckErgebnis.status === 'rejected') {
+    // Ticket aus dem Richtwert, Hinweistext aus der Tabelle; ohne Richtwert nur die Tabelle.
+    const ticket = richtwert
+      ? { ticket: richtwert.ticket, hinweis: ticketFuer(land, richtwert.ticket === 'keins' && land === 'DE', a.tickets).hinweis }
+      : ticketFuer(land, false, a.tickets)
+    return { ...basis, quelle: 'richtwert', ticket, fehler }
   }
 
-  const { hinfahrt, hinfahrtSpaeter } = waehleHinfahrt(hinIts)
-  const rueckfahrt = waehleRueckfahrt(rueckIts, rueckfahrtDatum)
+  const { hinfahrt, hinfahrtSpaeter } = waehleHinfahrt(hinErgebnis.status === 'fulfilled' ? hinErgebnis.value : [])
+  const rueckfahrt = rueckErgebnis.status === 'fulfilled' ? waehleRueckfahrt(rueckErgebnis.value, rueckfahrtDatum) : undefined
   const antwort: VerbindungAntwort = {
     ...basis,
     quelle: 'live',
     hinfahrt: hinfahrt && kurzfassung(hinfahrt),
     hinfahrtSpaeter: hinfahrtSpaeter && kurzfassung(hinfahrtSpaeter),
     rueckfahrt: rueckfahrt && kurzfassung(rueckfahrt),
-    ticket: ticketFuer(a.haltestelle.land, hinfahrt ? antwortFernverkehr(hinfahrt) : false, a.tickets),
+    ticket: ticketFuer(land, hinfahrt ? hatFernverkehr(hinfahrt) : false, a.tickets),
+    fehler,
   }
 
   if (a.rueckfahrt === 'gleicher-tag' && hinfahrt && rueckfahrt) {
@@ -77,8 +79,4 @@ export async function verbindungErmitteln(
     )
   }
   return antwort
-}
-
-function antwortFernverkehr(it: Itinerary): boolean {
-  return kurzfassung(it).fernverkehr
 }

@@ -3,6 +3,8 @@ import { inhalt, findeStartort, findeHaltestelle } from '@/lib/content/laden'
 import { parseVerbindungParameter } from '@/lib/verbindung/parameter'
 import { verbindungErmitteln } from '@/lib/verbindung/service'
 
+const CACHE_CONTROL = 'public, s-maxage=86400, stale-while-revalidate=3600'
+
 export async function GET(req: Request) {
   const p = parseVerbindungParameter(new URL(req.url).searchParams)
   if (!p.ok) return NextResponse.json({ fehler: p.fehler }, { status: 400 })
@@ -14,5 +16,5 @@ export async function GET(req: Request) {
     startort, haltestelle, datum: p.wert.datum, rueckfahrt: p.wert.rueckfahrt,
     mindestFensterMin: p.wert.fenster, tickets: i.tickets,
   })
-  return NextResponse.json(antwort, { headers: { 'Cache-Control': 'public, max-age=3600' } })
+  return NextResponse.json(antwort, { headers: { 'Cache-Control': CACHE_CONTROL } })
 }
