@@ -1,0 +1,6 @@
+regeln:
+  - { land: DE, ticket: deutschlandticket, hinweis: "Nahverkehr" }
+  - { land: CH, ticket: halbtax, hinweis: "Ab Basel" }
+  - { land: FR, ticket: europass, hinweis: "Ab Kehl" }
+  - { land: AT, ticket: keins, hinweis: "Sparpreis" }
+fernverkehrHinweis: "Fernverkehr, Deutschlandticket gilt nicht."

@@ -1,0 +1,8 @@
+id: schwarzwaldhochstrasse
+name: Schwarzwaldhochstraße
+beschreibung: Hornisgrinde, Mummelsee und das Sandkästle der Sektion. Bus ab Bühl bis Sand.
+haltestellen: [sand-kapelle]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+lat: 48.63
+lon: 8.21

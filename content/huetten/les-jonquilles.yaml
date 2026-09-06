@@ -1,0 +1,15 @@
+id: les-jonquilles
+name: Les Jonquilles
+betreiber: { typ: naturfreunde, sektion: Amis de la Nature Metzeral }
+hoehe: 900
+lat: 48.005
+lon: 7.060
+gebietId: munstertal
+saison: ganzjaehrig
+webUrl: https://amis-nature.org/article236.html
+zustiege:
+  - haltestelleId: metzeral
+    gehzeitMin: 60
+    hoehenmeter: 300
+quelle: https://amis-nature.org/article236.html
+geschaetzt: true

@@ -1,0 +1,16 @@
+id: kandersteg
+name: Kandersteg
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:7475
+lat: 46.495
+lon: 7.671
+land: CH
+region: Berner Oberland
+richtwerte:
+  offenburg:
+    fahrzeitMin: 250
+    umstiege: 2
+    takt: stuendlich
+    ticket: halbtax
+    strassenKm: 280
+    bahnKm: 300
+    berechnetAm: "2026-09-06"

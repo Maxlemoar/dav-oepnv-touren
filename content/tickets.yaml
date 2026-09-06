@@ -1,0 +1,14 @@
+regeln:
+  - land: DE
+    ticket: deutschlandticket
+    hinweis: Deutschlandticket gilt in allen Nahverkehrszügen und Bussen dieser Verbindung.
+  - land: CH
+    ticket: halbtax
+    hinweis: Bis Basel Bad Bf gilt das Deutschlandticket, ab dort SBB-Tarif. Halbtax lohnt sich ab der zweiten Fahrt, Schnupper-Halbtax für einen Monat.
+  - land: FR
+    ticket: europass
+    hinweis: Europass 24 h ab Kehl gilt für Bahn und Bus im Elsass. Bis Kehl Deutschlandticket.
+  - land: AT
+    ticket: keins
+    hinweis: Sparpreis Europa der DB oder Sparschiene der ÖBB, früh buchen.
+fernverkehrHinweis: Diese Verbindung nutzt Fernverkehr (ICE/EC). Dort gilt das Deutschlandticket nicht, Alternative über den Nahverkehr dauert länger.

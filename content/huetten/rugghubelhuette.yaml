@@ -1,0 +1,20 @@
+id: rugghubelhuette
+name: Rugghubelhütte
+betreiber: { typ: sac, sektion: Titlis }
+hoehe: 2294
+lat: 46.842
+lon: 8.445
+gebietId: engelberg
+saison: sommer
+webUrl: https://www.rugghubel.ch
+zustiege:
+  - haltestelleId: engelberg
+    gehzeitMin: 135
+    hoehenmeter: 700
+    bergbahn: true
+    hinweis: Brunni-Bahn bis Ristis, ab dort 2 bis 2:30 h.
+  - haltestelleId: engelberg
+    gehzeitMin: 240
+    hoehenmeter: 1290
+    hinweis: Ganz zu Fuß ab Bahnhof.
+quelle: https://www.rugghubel.ch/zugang

@@ -1,0 +1,10 @@
+id: feldberg
+name: Feldberg
+beschreibung: Höchster Schwarzwaldgipfel, ab Bahnhof Bärental über den Seebuck. Im Winter Skitouren und Schneeschuh.
+haltestellen: [feldberg-baerental]
+sportarten: [wandern, skitour, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Feldberg, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Feldberg" }
+lat: 47.874
+lon: 8.004

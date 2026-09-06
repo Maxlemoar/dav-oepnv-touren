@@ -1,0 +1,15 @@
+id: sandkaestle
+name: Sandkästle
+betreiber: { typ: dav, sektion: Offenburg }
+hoehe: 830
+lat: 48.657
+lon: 8.236
+gebietId: schwarzwaldhochstrasse
+saison: ganzjaehrig
+webUrl: https://www.dav-offenburg.de/Sektion/H%C3%BCtten/Sandk%C3%A4stle
+zustiege:
+  - haltestelleId: sand-kapelle
+    gehzeitMin: 5
+    hoehenmeter: 0
+quelle: https://www.dav-offenburg.de/Sektion/H%C3%BCtten/Sandk%C3%A4stle
+geschaetzt: true

@@ -1,0 +1,16 @@
+id: naturfreundehaus-feldberg
+name: Naturfreundehaus Feldberg
+betreiber: { typ: naturfreunde }
+hoehe: 1350
+lat: 47.862
+lon: 8.030
+gebietId: feldberg
+saison: ganzjaehrig
+webUrl: https://www.naturfreunde.de/haus/naturfreundehaus-feldberg
+zustiege:
+  - haltestelleId: feldberg-baerental
+    gehzeitMin: 15
+    hoehenmeter: 50
+    hinweis: Bus 7300 bis Feldberger Hof, dann 15 Minuten.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-feldberg
+geschaetzt: true

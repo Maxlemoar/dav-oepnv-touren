@@ -1,0 +1,13 @@
+id: doldenhornhuette
+name: Doldenhornhütte
+betreiber: { typ: sac, sektion: Emmental }
+hoehe: 1915
+lat: 46.473
+lon: 7.690
+gebietId: kandersteg
+saison: sommer
+zustiege:
+  - haltestelleId: kandersteg
+    gehzeitMin: 150
+    hoehenmeter: 750
+quelle: https://de.wikipedia.org/wiki/Doldenhornh%C3%BCtte

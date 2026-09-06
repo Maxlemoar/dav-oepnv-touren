@@ -1,0 +1,17 @@
+id: raemsenberg
+name: Gruppenhaus Rämsenberg
+betreiber: { typ: dav, sektion: Offenburg }
+hoehe: 1634
+lat: 46.868
+lon: 8.712
+gebietId: schaechental
+saison: ganzjaehrig
+webUrl: https://www.dav-offenburg.de/Sektion/H%C3%BCtten/R%C3%A4msenberg
+zustiege:
+  - haltestelleId: bruegg-buerglen
+    gehzeitMin: 30
+    hoehenmeter: 100
+    bergbahn: true
+    hinweis: Luftseilbahn Biel-Kinzig bis Bergstation Biel, dann Fußweg.
+quelle: https://www.dav-offenburg.de/Sektion/H%C3%BCtten/R%C3%A4msenberg
+geschaetzt: true
