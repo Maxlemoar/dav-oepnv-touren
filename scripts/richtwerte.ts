@@ -8,7 +8,7 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import { parse, stringify } from 'yaml'
+import { parseDocument } from 'yaml'
 import { ladeInhalt } from '../src/lib/content/laden'
 import { naechsterSamstag, lokalesDatum, zuUtcIso } from '../src/lib/datum'
 import { planen } from '../src/lib/verbindung/transitous'
@@ -37,7 +37,7 @@ async function strassenKm(a: { lat: number; lon: number }, b: { lat: number; lon
     if (!r.ok) return undefined
     const d = (await r.json()) as { routes?: { distance: number }[] }
     const m = d.routes?.[0]?.distance
-    return m ? Math.round(m / 1000) : undefined
+    return m !== undefined ? Math.round(m / 1000) : undefined
   } catch {
     return undefined
   }
@@ -51,24 +51,24 @@ async function main() {
 
   for (const h of haltestellen) {
     const datei = path.join(wurzel, 'haltestellen', `${h.id}.yaml`)
-    const dok = parse(fs.readFileSync(datei, 'utf8')) as Record<string, unknown> & { richtwerte?: Record<string, unknown> }
-    dok.richtwerte = dok.richtwerte ?? {}
+    // Als Dokument bearbeiten, damit Kommentare und Reihenfolge in der Datei erhalten bleiben.
+    const dok = parseDocument(fs.readFileSync(datei, 'utf8'))
 
-    for (const s of i.startorte) {
+    for (const [n, s] of i.startorte.entries()) {
+      if (n > 0) await schlaf(1000)
       try {
         const its = await planen({ von: s.haltestelleId, nach: h.haltestelleId, zeit: zuUtcIso(datum, HINFAHRT_FENSTER.fruehVon), ankunftBis: false, anzahl: 15 })
         const r = richtwertAus(its, h.land, i.tickets, heute)
         if (!r) { console.warn(`  ${s.id} → ${h.id}: keine Hinfahrt im Fenster (${its.length} Itineraries)`); continue }
         const strasse = await strassenKm(s, h)
         const bahn = Math.round(haversineKm(s.lat, s.lon, h.lat, h.lon) * BAHN_FAKTOR)
-        dok.richtwerte[s.id] = { ...r, ...(strasse ? { strassenKm: strasse } : {}), bahnKm: bahn }
+        dok.setIn(['richtwerte', s.id], { ...r, ...(strasse !== undefined ? { strassenKm: strasse } : {}), bahnKm: bahn })
         console.log(`  ${s.id} → ${h.id}: ${r.fahrzeitMin} min, ${r.umstiege} Umstiege, ${r.takt}, ${r.ticket}, Straße ${strasse ?? '?'} km`)
       } catch (e) {
         console.warn(`  ${s.id} → ${h.id}: FEHLER ${(e as Error).message}`)
       }
-      await schlaf(500)
     }
-    fs.writeFileSync(datei, stringify(dok, { lineWidth: 0 }))
+    fs.writeFileSync(datei, dok.toString({ lineWidth: 0 }))
   }
 }
 

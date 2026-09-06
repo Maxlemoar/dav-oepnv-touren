@@ -15,7 +15,7 @@ richtwerte:
     strassenKm: 102
     bahnKm: 104
   lahr:
-    fahrzeitMin: 239
+    fahrzeitMin: 185
     umstiege: 3
     takt: stuendlich
     ticket: europass

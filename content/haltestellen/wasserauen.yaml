@@ -8,14 +8,14 @@ region: Alpstein
 richtwerte:
   kehl:
     fahrzeitMin: 330
-    umstiege: 5
+    umstiege: 4
     takt: stuendlich
     ticket: halbtax
     berechnetAm: 2026-09-06
     strassenKm: 316
     bahnKm: 235
   lahr:
-    fahrzeitMin: 334
+    fahrzeitMin: 310
     umstiege: 3
     takt: stuendlich
     ticket: halbtax

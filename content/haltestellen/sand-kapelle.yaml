@@ -7,7 +7,7 @@ land: DE
 region: Nordschwarzwald
 richtwerte:
   kehl:
-    fahrzeitMin: 107
+    fahrzeitMin: 100
     umstiege: 2
     takt: stuendlich
     ticket: deutschlandticket
@@ -15,7 +15,7 @@ richtwerte:
     strassenKm: 54
     bahnKm: 41
   lahr:
-    fahrzeitMin: 184
+    fahrzeitMin: 107
     umstiege: 2
     takt: stuendlich
     ticket: deutschlandticket

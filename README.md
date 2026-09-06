@@ -27,6 +27,7 @@ Stop-IDs kommen von Transitous: `https://api.transitous.org/api/v1/geocode?text=
 
 ```bash
 npm run richtwerte                 # Fahrzeit, Umstiege, Takt, Ticket, Distanzen je Startort×Haltestelle
+                                   # Takt = Verbindungen ab Startort 6–12 Uhr am Referenz-Samstag, nicht Bedienung am Ziel
 npm run richtwerte -- --nur kandersteg
 npm run richtwerte -- --datum 2026-09-19
 npm run karte                      # public/karte.json neu erzeugen
@@ -52,4 +53,4 @@ Details: `docs/superpowers/specs/2026-09-06-oepnv-tourenplaner-design.md`, Desig
 
 ## Lizenz
 
-Code MIT (siehe `LICENSE`), Inhalte CC BY 4.0.
+Code MIT (siehe `LICENSE`), Inhalte unter `content/` CC BY 4.0 (siehe `LICENSE-CONTENT.md`).

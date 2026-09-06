@@ -15,15 +15,15 @@ richtwerte:
     strassenKm: 266
     bahnKm: 251
   lahr:
-    fahrzeitMin: 350
+    fahrzeitMin: 236
     umstiege: 4
-    takt: zweistuendlich
+    takt: stuendlich
     ticket: halbtax
     berechnetAm: 2026-09-06
     strassenKm: 238
     bahnKm: 218
   offenburg:
-    fahrzeitMin: 257
+    fahrzeitMin: 209
     umstiege: 3
     takt: stuendlich
     ticket: halbtax

@@ -23,7 +23,9 @@ for (const h of i.huetten) {
     zeilen.push(`| ${h.name} (${h.hoehe} m) | ${betreiber} | ${hs?.name ?? z.haltestelleId} | ${zustieg} | ${z.hinweis ?? ''} | [Quelle](${h.quelle}) | ${h.geschaetzt ? '**ja**' : 'nein'} |`)
   }
 }
-zeilen.push('', '## Haltestellen und Richtwerte ab Offenburg', '', '| Haltestelle | Region | Fahrzeit | Umstiege | Takt | Ticket | Berechnet am |', '|---|---|---|---|---|---|---|')
+zeilen.push('', '## Haltestellen und Richtwerte ab Offenburg', '',
+  'Takt = Verbindungen ab Startort zwischen 6 und 12 Uhr am Referenz-Samstag (stündlich: mindestens 5 Abfahrten, zweistündlich: mindestens 3), nicht die Bedienung am Ziel.', '',
+  '| Haltestelle | Region | Fahrzeit | Umstiege | Takt | Ticket | Berechnet am |', '|---|---|---|---|---|---|---|')
 for (const h of i.haltestellen) {
   const r = h.richtwerte.offenburg
   zeilen.push(`| ${h.name} | ${h.region} | ${r ? minutenAlsDauer(r.fahrzeitMin) : 'offen'} | ${r?.umstiege ?? ''} | ${r?.takt ?? ''} | ${r?.ticket ?? ''} | ${r?.berechnetAm ?? ''} |`)

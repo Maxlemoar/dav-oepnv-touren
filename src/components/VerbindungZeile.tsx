@@ -53,7 +53,7 @@ export function VerbindungZeile({ von, nach, rueckfahrt, zustiegMin }: Props) {
     return (
       <div className="space-y-1">
         <div>
-          {r ? <><span className="zahl text-lg">ca. {minutenAlsDauer(r.fahrzeitMin)}</span> <span className="text-tinte-2">· {r.umstiege} Umstiege · {taktText(r.takt)}</span></>
+          {r ? <><span className="zahl text-lg">ca. {minutenAlsDauer(r.fahrzeitMin)}</span> <span className="text-tinte-2">· {r.umstiege} Umstiege · {taktText(r.takt)} ab {von.name}</span></>
              : <span className="text-tinte-2">Keine Verbindung im Zeitfenster gefunden.</span>}
         </div>
         <div className="text-sm text-tinte-3">
@@ -106,6 +106,7 @@ export function VerbindungZeile({ von, nach, rueckfahrt, zustiegMin }: Props) {
   )
 }
 
+/** Der Takt zählt Abfahrten am Startort zwischen 6 und 12 Uhr, nicht die Bedienung am Ziel. */
 function taktText(t: string) {
   return t === 'stuendlich' ? 'stündlich' : t === 'zweistuendlich' ? 'zweistündlich' : 'unregelmäßig'
 }

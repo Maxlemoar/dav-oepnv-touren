@@ -1,6 +1,7 @@
 id: lahr
 name: Lahr (Schwarzwald)
-haltestelleId: de-amarillo-bw_de:08317:12103
+# Bahnhof Lahr (Schwarzw) im DELFI-Datensatz (RE7 und Stadtbusse); die amarillo-ID war nur die Bushaltestelle.
+haltestelleId: de-DELFI_de:08317:12103
 lat: 48.34057
 lon: 7.83571
 sichtbar: false

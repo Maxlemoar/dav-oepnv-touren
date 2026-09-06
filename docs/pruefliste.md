@@ -18,12 +18,14 @@ Stand: 2026-09-06. Bitte pro Zeile: stimmt / stimmt nicht, weil … Korrekturen 
 
 ## Haltestellen und Richtwerte ab Offenburg
 
+Takt = Verbindungen ab Startort zwischen 6 und 12 Uhr am Referenz-Samstag (stündlich: mindestens 5 Abfahrten, zweistündlich: mindestens 3), nicht die Bedienung am Ziel.
+
 | Haltestelle | Region | Fahrzeit | Umstiege | Takt | Ticket | Berechnet am |
 |---|---|---|---|---|---|---|
-| Brügg (Bürglen UR), Seilbahn Biel-Kinzig | Uri | 4:39 h | 3 | stuendlich | halbtax | 2026-09-06 |
-| Engelberg | Zentralschweiz | 4:17 h | 3 | stuendlich | halbtax | 2026-09-06 |
-| Feldberg-Bärental Bahnhof | Südschwarzwald | 3:04 h | 3 | stuendlich | deutschlandticket | 2026-09-06 |
-| Kandersteg | Berner Oberland | 3:58 h | 2 | stuendlich | halbtax | 2026-09-06 |
+| Brügg (Bürglen UR), Seilbahn Biel-Kinzig | Uri | 4:10 h | 2 | stuendlich | halbtax | 2026-09-06 |
+| Engelberg | Zentralschweiz | 3:29 h | 3 | stuendlich | halbtax | 2026-09-06 |
+| Feldberg-Bärental Bahnhof | Südschwarzwald | 2:08 h | 2 | stuendlich | keins | 2026-09-06 |
+| Kandersteg | Berner Oberland | 4:10 h | 1 | stuendlich | halbtax | 2026-09-06 |
 | Metzeral | Vogesen | 2:33 h | 2 | zweistuendlich | europass | 2026-09-06 |
 | Sand Kapelle (Schwarzwaldhochstraße) | Nordschwarzwald | 1:32 h | 1 | stuendlich | deutschlandticket | 2026-09-06 |
 | Wasserauen | Alpstein | 4:47 h | 2 | stuendlich | halbtax | 2026-09-06 |
