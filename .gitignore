@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/karte.json
+
+# von next dev erzeugt
+/AGENTS.md
+/CLAUDE.md
