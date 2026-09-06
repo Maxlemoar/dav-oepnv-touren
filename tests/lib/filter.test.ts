@@ -14,6 +14,10 @@ describe('leseFilter', () => {
     expect(leseFilter(new URLSearchParams('sport=wandern,skitour&art=tag&max=3&q=feld')))
       .toEqual({ sport: ['wandern', 'skitour'], art: 'tag', maxStd: 3, suche: 'feld' })
   })
+  it('verwirft unbekannte Sportarten und ungültige Werte', () => {
+    expect(leseFilter(new URLSearchParams('sport=wandern,rodeln,&art=x&max=7')))
+      .toEqual({ sport: ['wandern'], art: 'alle', maxStd: 5, suche: '' })
+  })
 })
 
 describe('schreibeFilter', () => {

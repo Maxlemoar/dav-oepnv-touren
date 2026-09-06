@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import { inhalt, findeHuette, findeGebiet, findeHaltestelle, sichtbareStartorte } from '@/lib/content/laden'
+import { SAISON_LABEL } from '@/lib/content/schema'
 import { co2ErsparnisKg } from '@/lib/co2'
 import { minutenAlsDauer } from '@/lib/datum'
 import { BetreiberBadge } from '@/components/Badges'
@@ -19,7 +20,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return { title: h?.name ?? 'Hütte' }
 }
 
-const SAISON = { sommer: 'Sommer', winter: 'Winter', ganzjaehrig: 'ganzjährig' } as const
 
 export default async function HuetteSeite({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -37,7 +37,7 @@ export default async function HuetteSeite({ params }: { params: Promise<{ id: st
         <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-tinte-2">
           <BetreiberBadge typ={huette.betreiber.typ} sektion={huette.betreiber.sektion} />
           <span className="zahl">{huette.hoehe} m</span>
-          <span>{SAISON[huette.saison]}</span>
+          <span>{SAISON_LABEL[huette.saison]}</span>
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
           {huette.buchungUrl && <a href={huette.buchungUrl} target="_blank" rel="noreferrer" className="knopf">Buchen</a>}

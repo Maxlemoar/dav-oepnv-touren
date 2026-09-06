@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
 import type { Land } from '@/lib/content/schema'
-import { datumLesbar, lokaleUhrzeit, minutenAlsDauer, naechsterSamstag, wochentagKurz } from '@/lib/datum'
+import { datumLesbar, lokaleUhrzeit, minutenAlsDauer, wochentagKurz } from '@/lib/datum'
+import { verbindungParameter } from '@/lib/verbindung/parameter'
 import { fahrplanLink } from '@/lib/links'
 import { TageszielBadge, TicketBadge } from './Badges'
 import { VerbindungDetail } from './VerbindungDetail'
@@ -14,13 +15,6 @@ type Props = {
   rueckfahrt: 'gleicher-tag' | 'folgetag'
   /** Gehzeit bis zur Hütte, für "an der Hütte gegen …" */
   zustiegMin?: number
-}
-
-export function verbindungParameter(sp: URLSearchParams) {
-  return {
-    datum: sp.get('datum') ?? naechsterSamstag(),
-    fenster: Number(sp.get('fenster') ?? 360),
-  }
 }
 
 export function VerbindungZeile({ von, nach, rueckfahrt, zustiegMin }: Props) {
@@ -34,12 +28,14 @@ export function VerbindungZeile({ von, nach, rueckfahrt, zustiegMin }: Props) {
 
   useEffect(() => {
     let aktiv = true
+    // Das Datum steckt in der Anfrage; für den Fallback dort wieder herauslesen.
+    const datumAnfrage = new URLSearchParams(anfrage).get('datum')!
     fetch(`/api/verbindung?${anfrage}`)
       .then((r) => r.json())
       .then((a: VerbindungAntwort) => { if (aktiv) setGeladen({ anfrage, antwort: a }) })
-      .catch(() => { if (aktiv) setGeladen({ anfrage, antwort: { quelle: 'richtwert', datum, rueckfahrtDatum: datum, ticket: { ticket: 'keins', hinweis: '' } } }) })
+      .catch(() => { if (aktiv) setGeladen({ anfrage, antwort: { quelle: 'richtwert', datum: datumAnfrage, rueckfahrtDatum: datumAnfrage, ticket: { ticket: 'keins', hinweis: '' } } }) })
     return () => { aktiv = false }
-  }, [anfrage, datum])
+  }, [anfrage])
 
   const link = fahrplanLink(nach.land, von.name, nach.name, datum)
 

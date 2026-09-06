@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { naechsterSamstag } from '@/lib/datum'
 
 const Id = z.string().regex(/^[a-z0-9-]+$/)
 const Datum = z.iso.date()
@@ -40,4 +41,12 @@ export function parseVerbindungParameter(q: URLSearchParams): Ergebnis<Verbindun
 
 export function parseUebersichtParameter(q: URLSearchParams): Ergebnis<UebersichtParameter> {
   return parseParameter(q, UebersichtSchema, ['von', 'datum', 'fenster'])
+}
+
+/** Datum und Tourenfenster aus der Seiten-URL, mit Standardwerten für Seiten ohne Parameter. */
+export function verbindungParameter(sp: URLSearchParams) {
+  return {
+    datum: sp.get('datum') ?? naechsterSamstag(),
+    fenster: Number(sp.get('fenster') ?? 360),
+  }
 }

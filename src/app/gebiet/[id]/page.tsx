@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import { inhalt, findeGebiet, findeHaltestelle, huettenImGebiet, sichtbareStartorte } from '@/lib/content/laden'
-import { SPORTART_LABEL } from '@/lib/content/schema'
+import { SAISON_LABEL, SPORTART_LABEL } from '@/lib/content/schema'
 import { co2ErsparnisKg } from '@/lib/co2'
 import { Co2Zeile } from '@/components/Co2Zeile'
 import { FehlerMelden } from '@/components/FehlerMelden'
@@ -18,7 +18,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return { title: findeGebiet(inhalt(), id)?.name ?? 'Gebiet' }
 }
 
-const SAISON = { sommer: 'Sommer', winter: 'Winter', ganzjaehrig: 'ganzjährig' } as const
 
 export default async function GebietSeite({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -36,7 +35,7 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
         <p className="mt-2 text-tinte-2">{gebiet.beschreibung}</p>
         <div className="mt-2 flex flex-wrap gap-2 text-sm text-tinte-2">
           {gebiet.sportarten.map((s) => <span key={s} className="badge bg-nebel">{SPORTART_LABEL[s]}</span>)}
-          <span className="badge bg-nebel">{SAISON[gebiet.saison]}</span>
+          <span className="badge bg-nebel">{SAISON_LABEL[gebiet.saison]}</span>
         </div>
       </header>
 

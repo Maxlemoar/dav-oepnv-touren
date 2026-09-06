@@ -110,6 +110,9 @@ export const SPORTART_LABEL: Record<Sportart, string> = {
   wandern: 'Wandern', hochtour: 'Hochtour', skitour: 'Skitour',
   klettern: 'Klettern', klettersteig: 'Klettersteig', schneeschuh: 'Schneeschuh',
 }
+export const SAISON_LABEL: Record<Saison, string> = {
+  sommer: 'Sommer', winter: 'Winter', ganzjaehrig: 'ganzjährig',
+}
 export const BETREIBER_LABEL: Record<BetreiberTyp, string> = {
   dav: 'DAV', sac: 'SAC', oeav: 'ÖAV', naturfreunde: 'Naturfreunde', privat: 'privat',
 }

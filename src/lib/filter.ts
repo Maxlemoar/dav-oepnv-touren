@@ -1,4 +1,4 @@
-import type { Sportart, Saison, Takt, Ticket } from '@/lib/content/schema'
+import { SportartSchema, type Sportart, type Saison, type Takt, type Ticket } from '@/lib/content/schema'
 
 export type GebietEintrag = {
   id: string
@@ -22,7 +22,7 @@ export type FilterZustand = { sport: Sportart[]; art: Art; maxStd: number; suche
 export const STANDARD_FILTER: FilterZustand = { sport: [], art: 'alle', maxStd: 5, suche: '' }
 
 export function leseFilter(sp: URLSearchParams): FilterZustand {
-  const sport = (sp.get('sport') ?? '').split(',').filter(Boolean) as Sportart[]
+  const sport = (sp.get('sport') ?? '').split(',').filter((s): s is Sportart => (SportartSchema.options as string[]).includes(s))
   const art = (sp.get('art') ?? 'alle') as Art
   const maxStd = Number(sp.get('max') ?? 5)
   return { sport, art: ['alle', 'tag', 'nacht'].includes(art) ? art : 'alle', maxStd: [2, 3, 4, 5].includes(maxStd) ? maxStd : 5, suche: sp.get('q') ?? '' }
