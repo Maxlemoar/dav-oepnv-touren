@@ -58,7 +58,8 @@ export async function verbindungErmitteln(
     return { ...basis, quelle: 'richtwert', ticket, fehler }
   }
 
-  const { hinfahrt, hinfahrtSpaeter } = waehleHinfahrt(hinErgebnis.status === 'fulfilled' ? hinErgebnis.value : [])
+  // In Deutschland zählt das Deutschlandticket: Nahverkehr vorziehen, wenn er nicht viel später ankommt.
+  const { hinfahrt, hinfahrtSpaeter } = waehleHinfahrt(hinErgebnis.status === 'fulfilled' ? hinErgebnis.value : [], { nahverkehrBevorzugen: land === 'DE' })
   const rueckfahrt = rueckErgebnis.status === 'fulfilled' ? waehleRueckfahrt(rueckErgebnis.value, rueckfahrtDatum) : undefined
   const antwort: VerbindungAntwort = {
     ...basis,

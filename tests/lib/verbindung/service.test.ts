@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 import fixture from '../../fixtures/itineraries-kandersteg.json'
 import { verbindungErmitteln } from '@/lib/verbindung/service'
 import { TransitousFehler, type Itinerary } from '@/lib/verbindung/transitous'
+import { hatFernverkehr } from '@/lib/verbindung/auswerten'
 import type { Startort, Haltestelle, TicketTabelle } from '@/lib/content/schema'
 
 const startort: Startort = { id: 'offenburg', name: 'Offenburg', haltestelleId: 'de:og', lat: 48.4, lon: 7.9, sichtbar: true }
@@ -101,10 +102,26 @@ describe('verbindungErmitteln', () => {
     expect(a.fehler).toMatch(/503/)
   })
 
-  it('Fernverkehr in DE ergibt Ticket keins', async () => {
+  it('Fernverkehr in DE ergibt Ticket keins, wenn es keine Nahverkehrsalternative gibt', async () => {
+    const de: Haltestelle = { ...haltestelle, land: 'DE' }
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin.filter(hatFernverkehr)))
+    const a = await verbindungErmitteln({ startort, haltestelle: de, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    expect(a.hinfahrt?.ab).toBe('2026-09-12T04:30:00Z')
+    expect(a.ticket).toEqual({ ticket: 'keins', hinweis: 'Fern' })
+  })
+
+  it('in DE wird die Nahverkehrsverbindung bevorzugt und das Deutschlandticket empfohlen', async () => {
     const de: Haltestelle = { ...haltestelle, land: 'DE' }
     const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin))
     const a = await verbindungErmitteln({ startort, haltestelle: de, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
-    expect(a.ticket).toEqual({ ticket: 'keins', hinweis: 'Fern' })
+    expect(a.hinfahrt?.ab).toBe('2026-09-12T04:12:00Z')
+    expect(a.hinfahrt?.fernverkehr).toBe(false)
+    expect(a.ticket).toEqual({ ticket: 'deutschlandticket', hinweis: 'DE' })
+  })
+
+  it('in CH bleibt die schnellste Verbindung trotz Nahverkehrsalternative', async () => {
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin))
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    expect(a.hinfahrt?.ab).toBe('2026-09-12T04:30:00Z')
   })
 })

@@ -23,6 +23,22 @@ describe('waehleHinfahrt', () => {
   it('liefert undefined, wenn nichts im Fenster liegt', () => {
     expect(waehleHinfahrt([its[0]]).hinfahrt).toBeUndefined()
   })
+  it('ohne Option die schnellste Verbindung, auch mit Fernverkehr', () => {
+    expect(waehleHinfahrt(its).hinfahrt?.startTime).toBe('2026-09-12T04:30:00Z') // ICE 06:30, an 10:40
+  })
+  it('mit nahverkehrBevorzugen die Nahverkehrsverbindung, wenn sie höchstens 30 Minuten später ankommt', () => {
+    const w = waehleHinfahrt(its, { nahverkehrBevorzugen: true })
+    expect(w.hinfahrt?.startTime).toBe('2026-09-12T04:12:00Z') // Regio 06:12, an 10:55
+    expect(w.hinfahrt?.endTime).toBe('2026-09-12T08:55:00Z')
+    expect(w.hinfahrtSpaeter?.startTime).toBe('2026-09-12T06:30:00Z') // keine Alternative im Spätfenster
+  })
+  it('mit kleiner Toleranz wieder den Fernverkehr', () => {
+    expect(waehleHinfahrt(its, { nahverkehrBevorzugen: true, toleranzMin: 10 }).hinfahrt?.startTime).toBe('2026-09-12T04:30:00Z')
+  })
+  it('bevorzugt Nahverkehr auch im Spätfenster', () => {
+    const spaetNah: Itinerary = { ...its[5], startTime: '2026-09-12T06:12:00Z', endTime: '2026-09-12T10:00:00Z', legs: [] }
+    expect(waehleHinfahrt([...its, spaetNah], { nahverkehrBevorzugen: true }).hinfahrtSpaeter).toBe(spaetNah)
+  })
 })
 
 describe('waehleRueckfahrt', () => {

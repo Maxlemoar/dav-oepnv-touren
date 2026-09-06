@@ -18,7 +18,7 @@ export function taktAus(its: Itinerary[]): Takt {
 
 /** Richtwert aus der Hinfahrt, die auch die Seite wählen würde; undefined ohne Hinfahrt im Frühfenster. */
 export function richtwertAus(its: Itinerary[], land: Land, tickets: TicketTabelle, heute: string): Richtwert | undefined {
-  const { hinfahrt } = waehleHinfahrt(its)
+  const { hinfahrt } = waehleHinfahrt(its, { nahverkehrBevorzugen: land === 'DE' })
   if (!hinfahrt) return undefined
   const k = kurzfassung(hinfahrt)
   return {

@@ -6,6 +6,8 @@ export const RUECKFAHRT_ANKUNFT_BIS = 23 * 60
 
 const FERNVERKEHR = new Set(['HIGHSPEED_RAIL', 'LONG_DISTANCE'])
 const MIN_FUSSWEG_SEKUNDEN = 300
+/** So viel später darf eine reine Nahverkehrsverbindung ankommen, um dem Fernverkehr vorgezogen zu werden. */
+export const NAHVERKEHR_TOLERANZ_MIN = 30
 
 export type Modus = 'zug' | 'bus' | 'seilbahn' | 'schiff' | 'fuss' | 'sonstig'
 
@@ -26,11 +28,27 @@ function fruehesteAnkunft(kandidaten: Itinerary[]): Itinerary | undefined {
   )[0]
 }
 
-export function waehleHinfahrt(its: Itinerary[]): { hinfahrt?: Itinerary; hinfahrtSpaeter?: Itinerary } {
+export type HinfahrtOptionen = {
+  /** Reine Nahverkehrsverbindung vorziehen (Deutschlandticket), wenn sie nicht zu viel später ankommt. */
+  nahverkehrBevorzugen?: boolean
+  /** Zulässiger Ankunftsabstand zur schnellsten Verbindung in Minuten, Standard NAHVERKEHR_TOLERANZ_MIN. */
+  toleranzMin?: number
+}
+
+function besteVerbindung(kandidaten: Itinerary[], opts: HinfahrtOptionen): Itinerary | undefined {
+  const schnellste = fruehesteAnkunft(kandidaten)
+  if (!schnellste || !opts.nahverkehrBevorzugen || !hatFernverkehr(schnellste)) return schnellste
+  const nahverkehr = fruehesteAnkunft(kandidaten.filter((i) => !hatFernverkehr(i)))
+  if (!nahverkehr) return schnellste
+  const abstandMin = (Date.parse(nahverkehr.endTime) - Date.parse(schnellste.endTime)) / 60_000
+  return abstandMin <= (opts.toleranzMin ?? NAHVERKEHR_TOLERANZ_MIN) ? nahverkehr : schnellste
+}
+
+export function waehleHinfahrt(its: Itinerary[], opts: HinfahrtOptionen = {}): { hinfahrt?: Itinerary; hinfahrtSpaeter?: Itinerary } {
   const { fruehVon, fruehBis, spaetBis } = HINFAHRT_FENSTER
   const frueh = its.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehVon && m < fruehBis })
   const spaet = its.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehBis && m < spaetBis })
-  return { hinfahrt: fruehesteAnkunft(frueh), hinfahrtSpaeter: fruehesteAnkunft(spaet) }
+  return { hinfahrt: besteVerbindung(frueh, opts), hinfahrtSpaeter: besteVerbindung(spaet, opts) }
 }
 
 /** Späteste Abfahrt, deren Ankunft am gegebenen lokalen Tag vor 23:00 liegt. */

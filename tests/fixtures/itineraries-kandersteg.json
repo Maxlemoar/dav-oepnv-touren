@@ -26,5 +26,11 @@
     "legs": [
       { "mode": "HIGHSPEED_RAIL", "from": { "name": "Offenburg" }, "to": { "name": "Bern" }, "startTime": "2026-09-12T07:30:00Z", "endTime": "2026-09-12T09:56:00Z", "routeShortName": "ICE 275" },
       { "mode": "REGIONAL_RAIL", "from": { "name": "Bern" }, "to": { "name": "Kandersteg" }, "startTime": "2026-09-12T10:39:00Z", "endTime": "2026-09-12T11:40:00Z", "routeShortName": "RE1" }
+    ] },
+  { "startTime": "2026-09-12T04:12:00Z", "endTime": "2026-09-12T08:55:00Z", "duration": 16980, "transfers": 2,
+    "legs": [
+      { "mode": "REGIONAL_RAIL", "from": { "name": "Offenburg" }, "to": { "name": "Basel Bad Bf" }, "startTime": "2026-09-12T04:12:00Z", "endTime": "2026-09-12T05:35:00Z", "routeShortName": "RE7" },
+      { "mode": "REGIONAL_RAIL", "from": { "name": "Basel SBB" }, "to": { "name": "Bern" }, "startTime": "2026-09-12T05:50:00Z", "endTime": "2026-09-12T06:50:00Z", "routeShortName": "IC61" },
+      { "mode": "REGIONAL_RAIL", "from": { "name": "Bern" }, "to": { "name": "Kandersteg" }, "startTime": "2026-09-12T07:54:00Z", "endTime": "2026-09-12T08:55:00Z", "routeShortName": "RE1" }
     ] }
 ]
