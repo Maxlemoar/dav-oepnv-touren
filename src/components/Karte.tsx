@@ -1,10 +1,10 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Map as MlMap, NavigationControl, Popup, type MapLayerMouseEvent } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { STUFE_FARBE } from '@/lib/stufe'
-import type { KarteGeoJson } from '@/lib/karte'
-import { minutenAlsDauer } from '@/lib/datum'
+import { popupHtml, type KarteGeoJson } from '@/lib/karte'
 
 const STIL = 'https://tiles.openfreemap.org/styles/liberty'
 const OFFENBURG: [number, number] = [7.946, 48.476]
@@ -16,6 +16,11 @@ type Props = { gebietIds: string[]; uebersicht: Record<string, boolean | undefin
 export function Karte({ gebietIds, uebersicht }: Props) {
   const container = useRef<HTMLDivElement>(null)
   const karte = useRef<MlMap | null>(null)
+  const router = useRouter()
+  // Der Klick-Handler wird einmal registriert; Übersicht und Router deshalb über Refs lesen, nicht aus der Closure.
+  const uebersichtRef = useRef(uebersicht)
+  const routerRef = useRef(router)
+  useEffect(() => { uebersichtRef.current = uebersicht; routerRef.current = router }, [uebersicht, router])
   // Wird nach dem Laden der Ebenen gesetzt, damit der Filter-Effekt mit den aktuellen Props läuft.
   const [bereit, setBereit] = useState(false)
 
@@ -72,13 +77,17 @@ export function Karte({ gebietIds, uebersicht }: Props) {
           if (!f || f.geometry.type !== 'Point') return
           const p = f.properties as Record<string, string | number | null>
           const pfad = p.typ === 'gebiet' ? `/gebiet/${p.id}` : `/huette/${p.id}`
-          const meta = p.typ === 'gebiet'
-            ? (p.fahrzeitMin ? `ca. ${minutenAlsDauer(Number(p.fahrzeitMin))}` : '')
-            : `${p.hoehe} m`
-          new Popup({ offset: 12, closeButton: false })
+          const popup = new Popup({ offset: 12, closeButton: false })
             .setLngLat(f.geometry.coordinates as [number, number])
-            .setHTML(`<a href="${pfad}" class="font-semibold text-tanne underline">${escapeHtml(String(p.name))}</a><div class="text-xs text-tinte-2">${meta}</div>`)
+            .setHTML(popupHtml(pfad, p, uebersichtRef.current[String(p.id)]))
             .addTo(m)
+          // Link im Popup per Router öffnen statt mit vollem Seitenneuladen.
+          popup.getElement().addEventListener('click', (ev) => {
+            const a = (ev.target as HTMLElement).closest('a')
+            if (!a || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button !== 0) return
+            ev.preventDefault()
+            routerRef.current.push(a.getAttribute('href') ?? pfad)
+          })
         })
         m.on('mouseenter', ebene, () => { m.getCanvas().style.cursor = 'pointer' })
         m.on('mouseleave', ebene, () => { m.getCanvas().style.cursor = '' })
@@ -93,14 +102,13 @@ export function Karte({ gebietIds, uebersicht }: Props) {
       beobachter.disconnect()
       m.remove()
       karte.current = null
-      setBereit(false)
     }
   }, [])
 
   useEffect(() => {
     const m = karte.current
     if (bereit && m && m.getLayer('gebiete')) wendeFilterAn(m, gebietIds)
-  }, [bereit, gebietIds, uebersicht])
+  }, [bereit, gebietIds])
 
   return <div ref={container} className="h-full w-full" role="region" aria-label="Karte der Ziele" />
 }
@@ -110,8 +118,4 @@ function wendeFilterAn(m: MlMap, gebietIds: string[]) {
   m.setFilter('gebiete', ['all', ['==', ['get', 'typ'], 'gebiet'], ['in', ['get', 'id'], ['literal', ids]]])
   m.setFilter('gebiete-label', ['all', ['==', ['get', 'typ'], 'gebiet'], ['in', ['get', 'id'], ['literal', ids]]])
   m.setFilter('huetten', ['all', ['==', ['get', 'typ'], 'huette'], ['in', ['get', 'gebietId'], ['literal', ids]]])
-}
-
-function escapeHtml(s: string): string {
-  return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] ?? c)
 }
