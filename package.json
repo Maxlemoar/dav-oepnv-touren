@@ -12,6 +12,7 @@
     "richtwerte": "tsx scripts/richtwerte.ts",
     "karte": "tsx scripts/karte.ts",
     "rauchtest": "tsx scripts/rauchtest.ts",
+    "pruefliste": "tsx scripts/pruefliste.ts",
     "prebuild": "tsx scripts/karte.ts"
   },
   "dependencies": {

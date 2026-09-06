@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ohne Auto in die Berge, ab Offenburg
 
-## Getting Started
+Hütten und Tourengebiete, die von Offenburg aus mit Bahn und Bus erreichbar sind, mit Live-Verbindung fürs gewählte Datum.
+Ein Projekt des Arbeitskreises Klimaschutz der DAV Sektion Offenburg.
 
-First, run the development server:
+## Entwickeln
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3000
+npm test             # Vitest
+npm run lint         # ESLint
+npm run build        # erzeugt public/karte.json (prebuild) und baut die Seite
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Inhalte pflegen
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Alle Inhalte liegen als YAML unter `content/`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `startorte/` Bahnhöfe, von denen aus gerechnet wird (nur `sichtbar: true` erscheint)
+- `haltestellen/` Zielbahnhöfe und Bushaltestellen mit Richtwerten (werden per Skript berechnet)
+- `gebiete/` Tourengebiete mit Haltestellen, Sportarten, Links
+- `huetten/` Hütten mit Zustiegen ab Haltestelle
+- `tickets.yaml`, `emissionen.yaml` Regeln und Faktoren mit Quelle
 
-## Learn More
+Stop-IDs kommen von Transitous: `https://api.transitous.org/api/v1/geocode?text=<Name>&type=STOP&language=de`.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run richtwerte                 # Fahrzeit, Umstiege, Takt, Ticket, Distanzen je Startort×Haltestelle
+npm run richtwerte -- --nur kandersteg
+npm run richtwerte -- --datum 2026-09-19
+npm run karte                      # public/karte.json neu erzeugen
+npm run pruefliste                 # docs/pruefliste.md für den Arbeitskreis
+npm run rauchtest                  # 5 Live-Abfragen, warnt nur
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ungültige Inhalte brechen den Build mit Dateiname und Feld.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Wie es funktioniert
 
-## Deploy on Vercel
+- Seiten sind statisch (Next.js App Router). Live-Verbindungen holt `/api/verbindung` von [Transitous](https://transitous.org) mit 24-h-Cache; fällt die API aus, zeigt die Seite den Richtwert.
+- Tagesziel: Ankunft bis 10:00, Rückfahrt ab 16:30, mindestens 6 h dazwischen (einstellbar).
+- Karte: MapLibre mit OpenFreeMap-Kacheln, Punkte aus `public/karte.json`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Details: `docs/superpowers/specs/2026-09-06-oepnv-tourenplaner-design.md`, Design: `docs/design-system.md`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Umgebungsvariablen (optional)
+
+- `NEXT_PUBLIC_FEHLER_MAIL` Adresse für "Fehler melden" (sonst GitHub-Issue)
+- `TRANSITOUS_USER_AGENT` eigener User-Agent für Transitous
+- `TRANSITOUS_BASIS` andere MOTIS-Instanz (Standard `https://api.transitous.org`)
+
+## Lizenz
+
+Code MIT (siehe `LICENSE`), Inhalte CC BY 4.0.
