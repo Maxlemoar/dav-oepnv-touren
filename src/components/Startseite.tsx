@@ -124,7 +124,7 @@ function StartseiteInhalt({ gebiete, suchEintraege, empfehlungen, filter, datum,
         </section>
       </div>
 
-      <button type="button" onClick={() => setKarteOffen((o) => !o)}
+      <button type="button" onClick={() => setKarteOffen((o) => !o)} aria-pressed={karteOffen}
         className="knopf fixed bottom-4 left-1/2 z-30 -translate-x-1/2 shadow-lg lg:hidden">
         {karteOffen ? 'Liste' : 'Karte'}
       </button>

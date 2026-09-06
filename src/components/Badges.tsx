@@ -8,12 +8,15 @@ export function reisezeitStufe(fahrzeitMin: number): 2 | 3 | 4 | 5 {
   return 5
 }
 
-const STUFE_KLASSE = { 2: 'bg-stufe-2', 3: 'bg-stufe-3', 4: 'bg-stufe-4', 5: 'bg-stufe-5' } as const
+// Helle Stufen tragen dunklen Text, damit der Kontrast über 4.5:1 bleibt.
+const STUFE_KLASSE = {
+  2: 'bg-stufe-2 text-white', 3: 'bg-stufe-3 text-tinte', 4: 'bg-stufe-4 text-tinte', 5: 'bg-stufe-5 text-white',
+} as const
 
 export function ReisezeitBadge({ fahrzeitMin, ca }: { fahrzeitMin: number; ca?: boolean }) {
   const s = reisezeitStufe(fahrzeitMin)
   return (
-    <span className={`badge text-white ${STUFE_KLASSE[s]}`}>
+    <span className={`badge ${STUFE_KLASSE[s]}`}>
       {ca ? 'ca. ' : ''}{minutenAlsDauer(fahrzeitMin)}
     </span>
   )

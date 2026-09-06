@@ -24,13 +24,13 @@ Eine Farbe trägt Bedeutung, sonst Grau- und Papiertöne.
 | linie | #d5d2c8 | Rahmen, Trennlinien |
 | tinte | #1b1f1c | Text |
 | tinte-2 | #4a5049 | Sekundärtext |
-| tinte-3 | #7a8078 | Hinweise, Meta |
+| tinte-3 | #666b64 | Hinweise, Meta |
 | tanne | #1f4d3a | Primärfarbe, Buttons, Links |
 | tanne-hell | #2f6b52 | Hover, aktive Chips |
 | tanne-tint | #e3efe8 | Hintergrund aktiver Chips, Erfolg |
-| signal | #d9531e | Tagesziel-Badge, wichtiger Hinweis |
+| signal | #c4471a | Tagesziel-Badge, wichtiger Hinweis |
 | signal-tint | #fbe9e0 | Hintergrund Warnhinweis |
-| stufe-2 … stufe-5 | #2f6b52, #7fa85a, #d9a441, #c86b2f | Reisezeit bis 2/3/4/5 h, Karte und Badge |
+| stufe-2 … stufe-5 | #2f6b52, #7fa85a, #d9a441, #b85a22 | Reisezeit bis 2/3/4/5 h, Karte und Badge. Text auf stufe-3 und stufe-4 in tinte, sonst weiß |
 | dav / sac | #2f6b52 / #c8102e | Betreiber-Symbol |
 
 ## Typografie
