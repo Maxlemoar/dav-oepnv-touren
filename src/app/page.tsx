@@ -45,7 +45,8 @@ export default function Start() {
         gebiete={gebiete}
         suchEintraege={suchEintraege}
         empfehlungen={empfehlungen.length > 0 && (
-          <section className="rounded-[var(--radius-karte)] bg-tanne-tint p-4">
+          // key: als Prop übergebene Elemente landen im Client in einer Kinderliste; ohne key warnt React.
+          <section key="empfehlungen" className="rounded-[var(--radius-karte)] bg-tanne-tint p-4">
             <h2 className="text-sm font-semibold text-tanne">Häuser der Sektion Offenburg</h2>
             <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">
               {empfehlungen.map((e) => (

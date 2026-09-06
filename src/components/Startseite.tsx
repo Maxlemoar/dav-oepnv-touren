@@ -1,7 +1,6 @@
 'use client'
-import { useEffect, useMemo, useState, Suspense, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from 'react'
 import dynamic from 'next/dynamic'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { filtereGebiete, leseFilter, schreibeFilter, STANDARD_FILTER, type FilterZustand, type GebietEintrag } from '@/lib/filter'
 import { naechsterSamstag } from '@/lib/datum'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
@@ -11,7 +10,8 @@ import { Filter } from './Filter'
 import { Suche, type SuchEintrag } from './Suche'
 import { GebietKarte } from './GebietKarte'
 
-const Karte = dynamic(() => import('./Karte').then((m) => m.Karte), { ssr: false, loading: () => <div className="skeleton h-full w-full" /> })
+const KARTE_SKELETON = <div className="skeleton h-full w-full" />
+const Karte = dynamic(() => import('./Karte').then((m) => m.Karte), { ssr: false, loading: () => KARTE_SKELETON })
 
 type Props = {
   startort: { id: string; name: string }
@@ -22,33 +22,43 @@ type Props = {
   empfehlungen: ReactNode
 }
 
+type Auswahl = { filter: FilterZustand; datum: string; fenster: number }
+
 /**
- * Nur der URL-gebundene Teil liest useSearchParams und braucht deshalb eine Suspense-Grenze.
- * Der Fallback ist die ungefilterte Liste, damit die Seite auch ohne JavaScript vollständig ist.
+ * Die Seiten-URL als externer Store: window.location.search, Server-Wert leer. So braucht die Seite
+ * kein useSearchParams und keine Suspense-Grenze; das Server-HTML zeigt die ungefilterte Liste mit dem
+ * kommenden Samstag, nach der Hydration liest React die echte URL. Änderungen gehen per
+ * history.replaceState (in den Next-Router integriert) und benachrichtigen die Abonnenten.
  */
-export function Startseite(props: Props) {
-  return (
-    <Suspense fallback={<StartseiteStatisch {...props} />}>
-      <StartseiteMitUrl {...props} />
-    </Suspense>
-  )
+const hoerer = new Set<() => void>()
+function abonniereUrl(cb: () => void) {
+  hoerer.add(cb)
+  window.addEventListener('popstate', cb)
+  return () => { hoerer.delete(cb); window.removeEventListener('popstate', cb) }
+}
+const leseUrl = () => window.location.search
+const leseUrlServer = () => ''
+function schreibeUrl(sp: URLSearchParams) {
+  const q = sp.toString()
+  window.history.replaceState(null, '', q ? `?${q}` : window.location.pathname)
+  hoerer.forEach((cb) => cb())
 }
 
-function StartseiteStatisch(props: Props) {
-  return (
-    <StartseiteInhalt {...props} filter={STANDARD_FILTER} datum={naechsterSamstag()} fenster={STANDARD_FENSTER}
-      uebersicht={{}} laedt onFilter={() => {}} onDatum={() => {}} onFenster={() => {}} />
-  )
-}
+const abonniereNichts = () => () => {}
 
-function StartseiteMitUrl(props: Props) {
-  const sp = useSearchParams()
-  const router = useRouter()
-  const pfad = usePathname()
-  const filter = useMemo(() => leseFilter(sp), [sp])
-  const { datum, fenster } = verbindungParameter(sp)
+export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: Props) {
+  const suche = useSyncExternalStore(abonniereUrl, leseUrl, leseUrlServer)
+  const { filter, datum, fenster } = useMemo<Auswahl>(() => {
+    if (!suche) return { filter: STANDARD_FILTER, datum: naechsterSamstag(), fenster: STANDARD_FENSTER }
+    const sp = new URLSearchParams(suche)
+    return { filter: leseFilter(sp), ...verbindungParameter(sp) }
+  }, [suche])
+  const [karteOffen, setKarteOffen] = useState(false)
+  // Die Karte (ssr: false) erst nach der Hydration rendern, damit im Server-HTML nur das Skeleton steht.
+  const montiert = useSyncExternalStore(abonniereNichts, () => true, () => false)
+
   // Übersicht wird mit ihrer Anfrage gespeichert; passt sie nicht mehr, gilt sie als ladend.
-  const anfrage = `von=${props.startort.id}&datum=${datum}&fenster=${fenster}`
+  const anfrage = `von=${startort.id}&datum=${datum}&fenster=${fenster}`
   const [geladen, setGeladen] = useState<{ anfrage: string; uebersicht: Record<string, boolean | undefined> } | null>(null)
   const laedt = geladen?.anfrage !== anfrage
   const uebersicht = useMemo(() => (laedt ? {} : geladen!.uebersicht), [laedt, geladen])
@@ -67,37 +77,14 @@ function StartseiteMitUrl(props: Props) {
     return () => { aktiv = false }
   }, [anfrage])
 
-  function setzeFilter(f: FilterZustand) {
-    router.replace(`${pfad}?${schreibeFilter(sp, f).toString()}`, { scroll: false })
+  function aendere(neu: Auswahl) {
+    const sp = schreibeFilter(new URLSearchParams(window.location.search), neu.filter)
+    if (neu.datum === naechsterSamstag()) sp.delete('datum'); else sp.set('datum', neu.datum)
+    if (neu.fenster === STANDARD_FENSTER) sp.delete('fenster'); else sp.set('fenster', String(neu.fenster))
+    schreibeUrl(sp)
   }
+  const onFilter = (f: FilterZustand) => aendere({ filter: f, datum, fenster })
 
-  function setzeParameter(k: 'datum' | 'fenster', v: string, standard: string) {
-    const neu = new URLSearchParams(sp)
-    if (v === standard) neu.delete(k); else neu.set(k, v)
-    router.replace(`${pfad}?${neu.toString()}`, { scroll: false })
-  }
-
-  return (
-    <StartseiteInhalt {...props} filter={filter} datum={datum} fenster={fenster} uebersicht={uebersicht} laedt={laedt}
-      onFilter={setzeFilter}
-      onDatum={(d) => setzeParameter('datum', d, naechsterSamstag())}
-      onFenster={(f) => setzeParameter('fenster', String(f), String(STANDARD_FENSTER))} />
-  )
-}
-
-type InhaltProps = Props & {
-  filter: FilterZustand
-  datum: string
-  fenster: number
-  uebersicht: Record<string, boolean | undefined>
-  laedt: boolean
-  onFilter: (f: FilterZustand) => void
-  onDatum: (d: string) => void
-  onFenster: (f: number) => void
-}
-
-function StartseiteInhalt({ gebiete, suchEintraege, empfehlungen, filter, datum, fenster, uebersicht, laedt, onFilter, onDatum, onFenster }: InhaltProps) {
-  const [karteOffen, setKarteOffen] = useState(false)
   const sichtbar = filtereGebiete(gebiete, filter, uebersicht)
 
   return (
@@ -107,7 +94,9 @@ function StartseiteInhalt({ gebiete, suchEintraege, empfehlungen, filter, datum,
       </section>
 
       <section className="space-y-3">
-        <DatumWahl datum={datum} fenster={fenster} onDatum={onDatum} onFenster={onFenster} />
+        <DatumWahl datum={datum} fenster={fenster}
+          onDatum={(d) => aendere({ filter, datum: d, fenster })}
+          onFenster={(f) => aendere({ filter, datum, fenster: f })} />
         <Filter wert={filter} onChange={onFilter} />
       </section>
 
@@ -120,7 +109,7 @@ function StartseiteInhalt({ gebiete, suchEintraege, empfehlungen, filter, datum,
           {sichtbar.length === 0 && <p className="text-tinte-2">Nichts gefunden. Filter lockern oder Fahrzeit erhöhen.</p>}
         </section>
         <section className={`${karteOffen ? 'block' : 'hidden'} h-[70dvh] overflow-hidden rounded-[var(--radius-karte)] border border-linie lg:sticky lg:top-20 lg:block lg:h-[calc(100dvh-6rem)]`}>
-          <Karte gebietIds={sichtbar.map((g) => g.id)} uebersicht={uebersicht} />
+          {montiert ? <Karte gebietIds={sichtbar.map((g) => g.id)} uebersicht={uebersicht} /> : KARTE_SKELETON}
         </section>
       </div>
 
