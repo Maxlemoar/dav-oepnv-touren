@@ -1,12 +1,8 @@
 import { BETREIBER_LABEL, TICKET_LABEL, type BetreiberTyp, type Ticket } from '@/lib/content/schema'
 import { minutenAlsDauer } from '@/lib/datum'
+import { reisezeitStufe } from '@/lib/stufe'
 
-export function reisezeitStufe(fahrzeitMin: number): 2 | 3 | 4 | 5 {
-  if (fahrzeitMin <= 120) return 2
-  if (fahrzeitMin <= 180) return 3
-  if (fahrzeitMin <= 240) return 4
-  return 5
-}
+export { reisezeitStufe }
 
 // Helle Stufen tragen dunklen Text, damit der Kontrast über 4.5:1 bleibt.
 const STUFE_KLASSE = {
