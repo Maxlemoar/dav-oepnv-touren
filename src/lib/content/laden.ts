@@ -20,10 +20,15 @@ export type Inhalt = {
 const STANDARD_VERZEICHNIS = path.join(process.cwd(), 'content')
 
 function leseDatei<T>(datei: string, schema: ZodType<T>, wurzel: string): T {
-  const roh = parse(fs.readFileSync(datei, 'utf8'))
+  const rel = path.relative(wurzel, datei)
+  let roh: unknown
+  try {
+    roh = parse(fs.readFileSync(datei, 'utf8'))
+  } catch (e) {
+    throw new Error(`Ungültige YAML in ${rel}: ${(e as Error).message}`)
+  }
   const ergebnis = schema.safeParse(roh)
   if (!ergebnis.success) {
-    const rel = path.relative(wurzel, datei)
     const gruende = ergebnis.error.issues.map((i) => `${i.path.join('.') || '(root)'}: ${i.message}`).join('; ')
     throw new Error(`Ungültiger Inhalt in ${rel}: ${gruende}`)
   }
@@ -31,15 +36,18 @@ function leseDatei<T>(datei: string, schema: ZodType<T>, wurzel: string): T {
 }
 
 function leseSammlung<T extends { id: string }>(verzeichnis: string, schema: ZodType<T>, wurzel: string): T[] {
-  if (!fs.existsSync(verzeichnis)) return []
+  if (!fs.existsSync(verzeichnis)) throw new Error(`Verzeichnis ${path.relative(wurzel, verzeichnis)} fehlt`)
   const dateien = fs.readdirSync(verzeichnis).filter((f) => f.endsWith('.yaml')).sort()
-  const eintraege = dateien.map((f) => leseDatei(path.join(verzeichnis, f), schema, wurzel))
   const ids = new Set<string>()
-  for (const e of eintraege) {
+  return dateien.map((f) => {
+    const datei = path.join(verzeichnis, f)
+    const e = leseDatei(datei, schema, wurzel)
+    const erwartet = path.basename(f, '.yaml')
+    if (e.id !== erwartet) throw new Error(`Dateiname ${path.relative(wurzel, datei)} passt nicht zu id "${e.id}"`)
     if (ids.has(e.id)) throw new Error(`Doppelte id "${e.id}" in ${path.relative(wurzel, verzeichnis)}`)
     ids.add(e.id)
-  }
-  return eintraege
+    return e
+  })
 }
 
 export function ladeInhalt(wurzel: string = STANDARD_VERZEICHNIS): Inhalt {
@@ -55,6 +63,7 @@ export function ladeInhalt(wurzel: string = STANDARD_VERZEICHNIS): Inhalt {
 
 export function pruefeQuerverweise(inhalt: Inhalt): string[] {
   const fehler: string[] = []
+  const startortIds = new Set(inhalt.startorte.map((s) => s.id))
   const haltestellenIds = new Set(inhalt.haltestellen.map((h) => h.id))
   const gebietIds = new Set(inhalt.gebiete.map((g) => g.id))
   const benutzteHaltestellen = new Set<string>()
@@ -73,6 +82,9 @@ export function pruefeQuerverweise(inhalt: Inhalt): string[] {
   }
   for (const h of inhalt.haltestellen) {
     if (!benutzteHaltestellen.has(h.id)) fehler.push(`haltestelle ${h.id}: gehört zu keinem Gebiet`)
+    for (const s of Object.keys(h.richtwerte)) {
+      if (!startortIds.has(s)) fehler.push(`haltestelle ${h.id}: richtwert für unbekannten startort "${s}"`)
+    }
   }
   return fehler
 }
