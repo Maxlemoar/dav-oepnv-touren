@@ -5,3 +5,28 @@ lat: 46.495396
 lon: 7.671415
 land: CH
 region: Berner Oberland
+richtwerte:
+  kehl:
+    fahrzeitMin: 267
+    umstiege: 3
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 291
+    bahnKm: 290
+  lahr:
+    fahrzeitMin: 331
+    umstiege: 3
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 263
+    bahnKm: 257
+  offenburg:
+    fahrzeitMin: 238
+    umstiege: 2
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 277
+    bahnKm: 277

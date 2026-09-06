@@ -5,3 +5,28 @@ lat: 48.65713
 lon: 8.23728
 land: DE
 region: Nordschwarzwald
+richtwerte:
+  kehl:
+    fahrzeitMin: 107
+    umstiege: 2
+    takt: stuendlich
+    ticket: deutschlandticket
+    berechnetAm: 2026-09-06
+    strassenKm: 54
+    bahnKm: 41
+  lahr:
+    fahrzeitMin: 184
+    umstiege: 2
+    takt: stuendlich
+    ticket: deutschlandticket
+    berechnetAm: 2026-09-06
+    strassenKm: 71
+    bahnKm: 57
+  offenburg:
+    fahrzeitMin: 92
+    umstiege: 1
+    takt: stuendlich
+    ticket: deutschlandticket
+    berechnetAm: 2026-09-06
+    strassenKm: 54
+    bahnKm: 37

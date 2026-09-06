@@ -5,3 +5,28 @@ lat: 48.01333
 lon: 7.07334
 land: FR
 region: Vogesen
+richtwerte:
+  kehl:
+    fahrzeitMin: 168
+    umstiege: 1
+    takt: stuendlich
+    ticket: europass
+    berechnetAm: 2026-09-06
+    strassenKm: 102
+    bahnKm: 104
+  lahr:
+    fahrzeitMin: 239
+    umstiege: 3
+    takt: stuendlich
+    ticket: europass
+    berechnetAm: 2026-09-06
+    strassenKm: 94
+    bahnKm: 84
+  offenburg:
+    fahrzeitMin: 153
+    umstiege: 2
+    takt: zweistuendlich
+    ticket: europass
+    berechnetAm: 2026-09-06
+    strassenKm: 104
+    bahnKm: 103

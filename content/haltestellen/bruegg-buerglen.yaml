@@ -5,3 +5,28 @@ lat: 46.87721
 lon: 8.68206
 land: CH
 region: Uri
+richtwerte:
+  kehl:
+    fahrzeitMin: 297
+    umstiege: 5
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 278
+    bahnKm: 250
+  lahr:
+    fahrzeitMin: 361
+    umstiege: 4
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 250
+    bahnKm: 218
+  offenburg:
+    fahrzeitMin: 279
+    umstiege: 3
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 264
+    bahnKm: 233

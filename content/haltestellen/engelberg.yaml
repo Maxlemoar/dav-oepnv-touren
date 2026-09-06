@@ -5,3 +5,28 @@ lat: 46.81952
 lon: 8.40251
 land: CH
 region: Zentralschweiz
+richtwerte:
+  kehl:
+    fahrzeitMin: 286
+    umstiege: 4
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 266
+    bahnKm: 251
+  lahr:
+    fahrzeitMin: 350
+    umstiege: 4
+    takt: zweistuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 238
+    bahnKm: 218
+  offenburg:
+    fahrzeitMin: 257
+    umstiege: 3
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 252
+    bahnKm: 234

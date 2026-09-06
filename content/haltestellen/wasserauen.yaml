@@ -5,3 +5,28 @@ lat: 47.28556
 lon: 9.42862
 land: CH
 region: Alpstein
+richtwerte:
+  kehl:
+    fahrzeitMin: 330
+    umstiege: 5
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 316
+    bahnKm: 235
+  lahr:
+    fahrzeitMin: 334
+    umstiege: 3
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 288
+    bahnKm: 209
+  offenburg:
+    fahrzeitMin: 287
+    umstiege: 2
+    takt: stuendlich
+    ticket: halbtax
+    berechnetAm: 2026-09-06
+    strassenKm: 222
+    bahnKm: 216

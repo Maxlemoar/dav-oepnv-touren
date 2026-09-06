@@ -5,3 +5,28 @@ lat: 47.87144
 lon: 8.09829
 land: DE
 region: Südschwarzwald
+richtwerte:
+  kehl:
+    fahrzeitMin: 270
+    umstiege: 3
+    takt: stuendlich
+    ticket: deutschlandticket
+    berechnetAm: 2026-09-06
+    strassenKm: 119
+    bahnKm: 102
+  lahr:
+    fahrzeitMin: 147
+    umstiege: 3
+    takt: stuendlich
+    ticket: deutschlandticket
+    berechnetAm: 2026-09-06
+    strassenKm: 91
+    bahnKm: 70
+  offenburg:
+    fahrzeitMin: 184
+    umstiege: 3
+    takt: stuendlich
+    ticket: deutschlandticket
+    berechnetAm: 2026-09-06
+    strassenKm: 105
+    bahnKm: 85
