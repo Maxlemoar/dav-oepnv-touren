@@ -56,6 +56,13 @@ describe('abschnitte', () => {
   })
 })
 
+describe('abschnitte Modus', () => {
+  it('ordnet LONG_DISTANCE (IC/EC bei Transitous) dem Zug zu', () => {
+    const it2 = { ...its[1], legs: [{ ...its[1].legs[0], mode: 'LONG_DISTANCE', routeShortName: 'IC61' }] }
+    expect(abschnitte(it2)[0]).toMatchObject({ modus: 'zug', linie: 'IC61' })
+  })
+})
+
 describe('kurzfassung', () => {
   it('fasst Zeiten, Dauer, Umstiege und Abschnitte zusammen', () => {
     const k = kurzfassung(its[1])

@@ -50,7 +50,7 @@ function modusFuer(mode: string): Modus {
   if (mode === 'BUS' || mode === 'COACH') return 'bus'
   if (mode === 'FERRY') return 'schiff'
   if (mode === 'GONDOLA' || mode === 'FUNICULAR' || mode === 'AERIAL_LIFT' || mode === 'CABLE_CAR') return 'seilbahn'
-  if (mode.includes('RAIL') || mode === 'TRAM' || mode === 'SUBWAY' || mode === 'METRO') return 'zug'
+  if (mode.includes('RAIL') || mode === 'LONG_DISTANCE' || mode === 'TRAM' || mode === 'SUBWAY' || mode === 'METRO') return 'zug'
   return 'sonstig'
 }
 
