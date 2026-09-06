@@ -1,4 +1,3 @@
-'use client'
 import { fehlerMeldenLink } from '@/lib/links'
 
 export function FehlerMelden({ titel }: { titel: string }) {

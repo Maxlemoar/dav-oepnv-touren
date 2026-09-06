@@ -1,11 +1,12 @@
 'use client'
-import { useEffect, useMemo, useState, Suspense } from 'react'
+import { useEffect, useMemo, useState, Suspense, type ReactNode } from 'react'
 import dynamic from 'next/dynamic'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { filtereGebiete, leseFilter, schreibeFilter, type GebietEintrag } from '@/lib/filter'
+import { filtereGebiete, leseFilter, schreibeFilter, STANDARD_FILTER, type FilterZustand, type GebietEintrag } from '@/lib/filter'
+import { naechsterSamstag } from '@/lib/datum'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
 import { verbindungParameter } from './VerbindungZeile'
-import { DatumWahl } from './DatumWahl'
+import { DatumWahl, STANDARD_FENSTER } from './DatumWahl'
 import { Filter } from './Filter'
 import { Suche, type SuchEintrag } from './Suche'
 import { GebietKarte } from './GebietKarte'
@@ -14,25 +15,41 @@ const Karte = dynamic(() => import('./Karte').then((m) => m.Karte), { ssr: false
 
 type Props = {
   startort: { id: string; name: string }
+  /** Nach Richtwert-Fahrzeit sortiert. */
   gebiete: GebietEintrag[]
   suchEintraege: SuchEintrag[]
-  empfehlungen: { id: string; name: string; meta: string }[]
+  /** Serverseitig gerenderter Empfehlungskasten, wird bei aktiver Suche ausgeblendet. */
+  empfehlungen: ReactNode
 }
 
+/**
+ * Nur der URL-gebundene Teil liest useSearchParams und braucht deshalb eine Suspense-Grenze.
+ * Der Fallback ist die ungefilterte Liste, damit die Seite auch ohne JavaScript vollständig ist.
+ */
 export function Startseite(props: Props) {
-  return <Suspense fallback={<div className="skeleton h-40 w-full" />}><StartseiteInnen {...props} /></Suspense>
+  return (
+    <Suspense fallback={<StartseiteStatisch {...props} />}>
+      <StartseiteMitUrl {...props} />
+    </Suspense>
+  )
 }
 
-function StartseiteInnen({ startort, gebiete, suchEintraege, empfehlungen }: Props) {
+function StartseiteStatisch(props: Props) {
+  return (
+    <StartseiteInhalt {...props} filter={STANDARD_FILTER} datum={naechsterSamstag()} fenster={STANDARD_FENSTER}
+      uebersicht={{}} laedt onFilter={() => {}} onDatum={() => {}} onFenster={() => {}} />
+  )
+}
+
+function StartseiteMitUrl(props: Props) {
   const sp = useSearchParams()
   const router = useRouter()
   const pfad = usePathname()
   const filter = useMemo(() => leseFilter(sp), [sp])
   const { datum, fenster } = verbindungParameter(sp)
   // Übersicht wird mit ihrer Anfrage gespeichert; passt sie nicht mehr, gilt sie als ladend.
-  const anfrage = `von=${startort.id}&datum=${datum}&fenster=${fenster}`
+  const anfrage = `von=${props.startort.id}&datum=${datum}&fenster=${fenster}`
   const [geladen, setGeladen] = useState<{ anfrage: string; uebersicht: Record<string, boolean | undefined> } | null>(null)
-  const [karteOffen, setKarteOffen] = useState(false)
   const laedt = geladen?.anfrage !== anfrage
   const uebersicht = useMemo(() => (laedt ? {} : geladen!.uebersicht), [laedt, geladen])
 
@@ -50,33 +67,51 @@ function StartseiteInnen({ startort, gebiete, suchEintraege, empfehlungen }: Pro
     return () => { aktiv = false }
   }, [anfrage])
 
-  function setzeFilter(f: typeof filter) {
+  function setzeFilter(f: FilterZustand) {
     router.replace(`${pfad}?${schreibeFilter(sp, f).toString()}`, { scroll: false })
   }
 
+  function setzeParameter(k: 'datum' | 'fenster', v: string, standard: string) {
+    const neu = new URLSearchParams(sp)
+    if (v === standard) neu.delete(k); else neu.set(k, v)
+    router.replace(`${pfad}?${neu.toString()}`, { scroll: false })
+  }
+
+  return (
+    <StartseiteInhalt {...props} filter={filter} datum={datum} fenster={fenster} uebersicht={uebersicht} laedt={laedt}
+      onFilter={setzeFilter}
+      onDatum={(d) => setzeParameter('datum', d, naechsterSamstag())}
+      onFenster={(f) => setzeParameter('fenster', String(f), String(STANDARD_FENSTER))} />
+  )
+}
+
+type InhaltProps = Props & {
+  filter: FilterZustand
+  datum: string
+  fenster: number
+  uebersicht: Record<string, boolean | undefined>
+  laedt: boolean
+  onFilter: (f: FilterZustand) => void
+  onDatum: (d: string) => void
+  onFenster: (f: number) => void
+}
+
+function StartseiteInhalt({ gebiete, suchEintraege, empfehlungen, filter, datum, fenster, uebersicht, laedt, onFilter, onDatum, onFenster }: InhaltProps) {
+  const [karteOffen, setKarteOffen] = useState(false)
   const sichtbar = filtereGebiete(gebiete, filter, uebersicht)
 
   return (
     <div className="space-y-5">
-      <section className="space-y-3">
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">In die Berge, ohne Auto.</h1>
-        <p className="text-tinte-2">Hütten und Tourengebiete, die du von {startort.name} aus mit Bahn und Bus erreichst. Mit echter Verbindung für dein Datum.</p>
-        <Suche eintraege={suchEintraege} wert={filter.suche} onChange={(suche) => setzeFilter({ ...filter, suche })} />
+      <section>
+        <Suche eintraege={suchEintraege} wert={filter.suche} onChange={(suche) => onFilter({ ...filter, suche })} />
       </section>
 
       <section className="space-y-3">
-        <DatumWahl />
-        <Filter wert={filter} onChange={setzeFilter} />
+        <DatumWahl datum={datum} fenster={fenster} onDatum={onDatum} onFenster={onFenster} />
+        <Filter wert={filter} onChange={onFilter} />
       </section>
 
-      {empfehlungen.length > 0 && !filter.suche && (
-        <section className="rounded-[var(--radius-karte)] bg-tanne-tint p-4">
-          <h2 className="text-sm font-semibold text-tanne">Häuser der Sektion Offenburg</h2>
-          <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            {empfehlungen.map((e) => <li key={e.id}><a href={`/huette/${e.id}`} className="text-tanne underline">{e.name}</a> <span className="text-tinte-2">{e.meta}</span></li>)}
-          </ul>
-        </section>
-      )}
+      {!filter.suche && empfehlungen}
 
       <div className="lg:grid lg:grid-cols-[1fr_1fr] lg:gap-6">
         <section className={`space-y-3 ${karteOffen ? 'hidden lg:block' : ''}`}>
