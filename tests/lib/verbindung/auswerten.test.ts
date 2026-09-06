@@ -1,0 +1,65 @@
+import { describe, it, expect } from 'vitest'
+import fixture from '../../fixtures/itineraries-kandersteg.json'
+import { waehleHinfahrt, waehleRueckfahrt, hatFernverkehr, abschnitte, kurzfassung } from '@/lib/verbindung/auswerten'
+import type { Itinerary } from '@/lib/verbindung/transitous'
+
+const its = fixture as Itinerary[]
+
+describe('waehleHinfahrt', () => {
+  it('früheste Ankunft mit Abfahrt zwischen 5:00 und 8:00, plus spätere Alternative 8:00 bis 9:00', () => {
+    const w = waehleHinfahrt(its)
+    expect(w.hinfahrt?.startTime).toBe('2026-09-12T04:30:00Z') // 06:30 lokal
+    expect(w.hinfahrtSpaeter?.startTime).toBe('2026-09-12T06:30:00Z') // 08:30 lokal
+  })
+  it('ignoriert Abfahrten vor 5:00', () => {
+    const w = waehleHinfahrt(its)
+    expect(w.hinfahrt?.startTime).not.toBe('2026-09-12T02:40:00Z')
+  })
+  it('bevorzugt bei gleicher Ankunft weniger Umstiege', () => {
+    const a = { ...its[1], transfers: 3 }
+    const b = { ...its[1], transfers: 0 }
+    expect(waehleHinfahrt([a, b]).hinfahrt).toBe(b)
+  })
+  it('liefert undefined, wenn nichts im Fenster liegt', () => {
+    expect(waehleHinfahrt([its[0]]).hinfahrt).toBeUndefined()
+  })
+})
+
+describe('waehleRueckfahrt', () => {
+  const rueck: Itinerary[] = [
+    { startTime: '2026-09-13T14:14:00Z', endTime: '2026-09-13T17:56:00Z', duration: 1, transfers: 2, legs: [] },
+    { startTime: '2026-09-13T16:14:00Z', endTime: '2026-09-13T20:38:00Z', duration: 1, transfers: 2, legs: [] },
+    { startTime: '2026-09-13T17:14:00Z', endTime: '2026-09-13T22:10:00Z', duration: 1, transfers: 2, legs: [] }, // 00:10 Folgetag lokal
+  ]
+  it('späteste Abfahrt mit Ankunft am selben lokalen Tag bis 23:00', () => {
+    expect(waehleRueckfahrt(rueck, '2026-09-13')?.startTime).toBe('2026-09-13T16:14:00Z')
+  })
+  it('undefined ohne passende', () => {
+    expect(waehleRueckfahrt([rueck[2]], '2026-09-13')).toBeUndefined()
+  })
+})
+
+describe('hatFernverkehr', () => {
+  it('erkennt HIGHSPEED_RAIL', () => {
+    expect(hatFernverkehr(its[1])).toBe(true)
+    expect(hatFernverkehr(its[0])).toBe(false)
+  })
+})
+
+describe('abschnitte', () => {
+  it('lässt kurze Fußwege weg und formatiert lokal', () => {
+    const a = abschnitte(its[1])
+    expect(a).toEqual([
+      { modus: 'zug', linie: 'ICE 271', von: 'Offenburg', nach: 'Bern', ab: '06:30', an: '08:56' },
+      { modus: 'zug', linie: 'RE1', von: 'Bern', nach: 'Kandersteg', ab: '09:39', an: '10:40' },
+    ])
+  })
+})
+
+describe('kurzfassung', () => {
+  it('fasst Zeiten, Dauer, Umstiege und Abschnitte zusammen', () => {
+    const k = kurzfassung(its[1])
+    expect(k).toMatchObject({ ab: '2026-09-12T04:30:00Z', an: '2026-09-12T08:40:00Z', dauerMin: 250, umstiege: 1 })
+    expect(k.abschnitte).toHaveLength(2)
+  })
+})
