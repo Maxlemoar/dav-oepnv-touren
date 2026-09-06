@@ -16,7 +16,7 @@ export async function GET(req: Request) {
 
   const ergebnis: Record<string, VerbindungAntwort> = {}
   const warteschlange = [...i.gebiete]
-  async function arbeiter() {
+  const arbeiter = async () => {
     for (let g = warteschlange.shift(); g; g = warteschlange.shift()) {
       const haltestelle = findeHaltestelle(i, g.haltestellen[0])
       if (!haltestelle) continue
