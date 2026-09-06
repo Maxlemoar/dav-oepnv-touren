@@ -50,9 +50,15 @@ export function naechsterSamstag(heute: Date = new Date()): string {
 
 /** Lokale Uhrzeit (Minuten seit Mitternacht) an einem Datum als UTC-ISO. */
 export function zuUtcIso(datum: string, minuten: number): string {
-  const mittagUtc = Date.parse(`${datum}T12:00:00Z`)
-  const versatz = lokaleMinuten(new Date(mittagUtc).toISOString()) - 12 * 60 // 60 oder 120
-  const ms = Date.parse(`${datum}T00:00:00Z`) + (minuten - versatz) * 60_000
+  const mitternachtUtc = Date.parse(`${datum}T00:00:00Z`)
+  // Erste Schätzung mit dem Versatz am Mittag (60 oder 120); an Umstellungstagen kann er
+  // zum Zielzeitpunkt anders sein, deshalb das Ergebnis lokal nachprüfen und korrigieren.
+  const versatzMittag = lokaleMinuten(new Date(mitternachtUtc + 12 * 3_600_000).toISOString()) - 12 * 60
+  let ms = mitternachtUtc + (minuten - versatzMittag) * 60_000
+  const erreicht = new Date(ms)
+  const tageAbweichung = (Date.parse(`${lokalesDatum(erreicht)}T00:00:00Z`) - mitternachtUtc) / 86_400_000
+  const erreichtMinuten = tageAbweichung * 24 * 60 + lokaleMinuten(erreicht.toISOString())
+  ms += (minuten - erreichtMinuten) * 60_000
   return new Date(ms).toISOString().replace('.000Z', 'Z')
 }
 
@@ -62,9 +68,10 @@ export function wochentagKurz(datum: string): string {
 }
 
 export function minutenAlsDauer(min: number): string {
-  const h = Math.floor(min / 60)
-  const m = min % 60
-  return `${h}:${String(m).padStart(2, '0')} h`
+  const betrag = Math.abs(min)
+  const h = Math.floor(betrag / 60)
+  const m = betrag % 60
+  return `${min < 0 ? '-' : ''}${h}:${String(m).padStart(2, '0')} h`
 }
 
 export function datumLesbar(datum: string): string {

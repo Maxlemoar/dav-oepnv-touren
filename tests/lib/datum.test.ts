@@ -42,6 +42,12 @@ describe('zuUtcIso', () => {
   it('05:00 lokal im Winter ist 04:00Z', () => {
     expect(zuUtcIso('2026-01-10', 5 * 60)).toBe('2026-01-10T04:00:00Z')
   })
+  it('01:00 am Tag der Umstellung auf Sommerzeit ist noch Winterzeit (00:00Z)', () => {
+    expect(zuUtcIso('2026-03-29', 60)).toBe('2026-03-29T00:00:00Z')
+  })
+  it('01:00 am Tag der Umstellung auf Winterzeit ist noch Sommerzeit (23:00Z Vortag)', () => {
+    expect(zuUtcIso('2026-10-25', 60)).toBe('2026-10-24T23:00:00Z')
+  })
 })
 
 describe('wochentagKurz', () => {
@@ -54,5 +60,9 @@ describe('minutenAlsDauer', () => {
   it('formatiert h:mm', () => {
     expect(minutenAlsDauer(250)).toBe('4:10 h')
     expect(minutenAlsDauer(45)).toBe('0:45 h')
+  })
+  it('negative Werte mit Vorzeichen', () => {
+    expect(minutenAlsDauer(-30)).toBe('-0:30 h')
+    expect(minutenAlsDauer(-90)).toBe('-1:30 h')
   })
 })
