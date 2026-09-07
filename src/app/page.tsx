@@ -16,7 +16,7 @@ export default function Start() {
       return {
         id: g.id, name: g.name, region: h.region, beschreibung: g.beschreibung, sportarten: g.sportarten, saison: g.saison,
         fahrzeitMin: r?.fahrzeitMin, umstiege: r?.umstiege, takt: r?.takt, ticket: r?.ticket,
-        anzahlHuetten: huettenImGebiet(i, g.id).length, lat: g.lat, lon: g.lon, hauptHaltestelleId: h.id,
+        anzahlHuetten: huettenImGebiet(i, g.id).length, anzahlTouren: g.touren.length, lat: g.lat, lon: g.lon, hauptHaltestelleId: h.id,
       }
     })
     .sort((a, b) => (a.fahrzeitMin ?? 9999) - (b.fahrzeitMin ?? 9999))

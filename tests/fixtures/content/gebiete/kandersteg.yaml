@@ -4,5 +4,7 @@ beschreibung: Oeschinensee, Gemmi und drei SAC-Hütten direkt ab Bahnhof.
 haltestellen: [kandersteg]
 sportarten: [wandern, hochtour]
 saison: sommer
+touren:
+  - { titel: Oeschinensee Rundwanderung, url: "https://www.alpenvereinaktiv.com/de/tour/oeschinensee-rundwanderung/808431897/", anbieter: alpenvereinaktiv, sportart: wandern }
 lat: 46.495
 lon: 7.671

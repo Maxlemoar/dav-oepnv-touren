@@ -69,6 +69,16 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
 - **Sheet "Was?"**: Art-Segment (Alle / Tagestour / Mit Hütte), Sportart-Chips, Fahrzeit-Chips, unten "Zurücksetzen" (sekundär) neben "Fertig".
 - **Empfehlungsleiste**: einzeilig in tanne-tint, Label fett, Links nebeneinander, horizontal scrollbar. Ersetzt den Kasten.
 - **Skeleton**: nebel-Fläche mit `animate-pulse`, gleiche Höhe wie die spätere Zeile.
+- **Tour-Card**: Card ohne Ganzflächen-Link; der Titel ist der Link zum Portal (neuer Tab). Darunter eine Meta-Zeile mit
+  Punkt-Trennern in fester Reihenfolge (Sportart · Dauer h:mm · Höhenmeter · Länge · Schwierigkeit), nur belegte Werte.
+  Dritte Zeile: Anbieter-Badge (nebel: "Alpenvereinaktiv", "SAC-Tourenportal", "komoot") und Badge "ÖV-tauglich" (tanne-tint).
+  Raster wie Hütten (sm: 2 Spalten). Reihenfolge auf der Gebietsseite: Kopf, Anreise, Touren, Hütten.
+- **Einbettung (Platzhalter bis Klick)**: Fremdinhalte (Karte, Höhenprofil eines Tourenportals) laden nie von selbst.
+  Platzhalter in Kartenhöhe (520 px, sm 600 px), Rahmen linie, Radius karte, nebel-Fläche, ein Satz zum Datenabfluss und ein
+  `knopf` "Karte und Höhenprofil laden (Anbieter)". Erst nach Klick ersetzt das iframe (`loading="lazy"`, `allow="geolocation"`,
+  volle Breite, gleiche Höhe) den Platzhalter. Darunter immer der Textlink "Bei Anbieter öffnen" (44 px hoch).
+  Auf der Gebietsseite liegt der Tour-Embed hinter `details`/`summary` "Karte anzeigen" über beide Spalten; ein Sammlungs-Embed
+  steht offen über den Tour-Cards.
 
 ## Verhalten
 

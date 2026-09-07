@@ -13,6 +13,7 @@ export type GebietEintrag = {
   takt?: Takt
   ticket?: Ticket
   anzahlHuetten: number
+  anzahlTouren: number
   lat: number
   lon: number
   hauptHaltestelleId: string

@@ -18,6 +18,7 @@ describe('ladeInhalt', () => {
     expect(inhalt.startorte.map((s) => s.id)).toEqual(['offenburg'])
     expect(inhalt.haltestellen[0].richtwerte.offenburg.fahrzeitMin).toBe(250)
     expect(inhalt.gebiete[0].id).toBe('kandersteg')
+    expect(inhalt.gebiete[0].touren[0].oeffiTauglich).toBe(true)
     expect(inhalt.huetten[0].zustiege[0].bergbahn).toBe(false)
     expect(inhalt.tickets.regeln).toHaveLength(4)
     expect(inhalt.emissionen.personenProPkw).toBe(2.5)

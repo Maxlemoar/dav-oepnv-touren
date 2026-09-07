@@ -1,12 +1,14 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { Suspense } from 'react'
+import { Fragment, Suspense } from 'react'
 import { inhalt, findeGebiet, findeHaltestelle, huettenImGebiet, sichtbareStartorte } from '@/lib/content/laden'
 import { SAISON_LABEL, SPORTART_LABEL } from '@/lib/content/schema'
 import { co2ErsparnisKg } from '@/lib/co2'
 import { Co2Zeile } from '@/components/Co2Zeile'
 import { FehlerMelden } from '@/components/FehlerMelden'
 import { HuetteKarte } from '@/components/HuetteKarte'
+import { TourEmbed } from '@/components/TourEmbed'
+import { TourKarte } from '@/components/TourKarte'
 import { VerbindungZeile } from '@/components/VerbindungZeile'
 
 export function generateStaticParams() {
@@ -56,21 +58,44 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
         })}
       </section>
 
+      {(gebiet.touren.length > 0 || gebiet.links.length > 0) && (
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold">Touren</h2>
+          {gebiet.sammlungEmbed && <TourEmbed sammlung={gebiet.sammlungEmbed} titel={`Tourensammlung ${gebiet.name}`} />}
+          {gebiet.touren.length > 0 && (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {gebiet.touren.map((t) => (
+                <Fragment key={t.url}>
+                  <TourKarte tour={t} />
+                  {t.embed && (
+                    // Eigenes Raster-Kind über beide Spalten, damit die Karte volle Breite bekommt.
+                    <details className="group sm:col-span-2">
+                      <summary className="inline-flex min-h-11 cursor-pointer list-none items-center text-sm text-tanne underline">
+                        <span className="group-open:hidden">Karte anzeigen: {t.titel}</span>
+                        <span className="hidden group-open:inline">Karte ausblenden: {t.titel}</span>
+                      </summary>
+                      <div className="mt-2"><TourEmbed tour={t.embed} titel={t.titel} /></div>
+                    </details>
+                  )}
+                </Fragment>
+              ))}
+            </div>
+          )}
+          {gebiet.links.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2 text-sm text-tinte-2">
+              <span>Mehr Touren:</span>
+              {gebiet.links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="knopf-sekundaer no-underline">{l.titel}</a>)}
+            </div>
+          )}
+        </section>
+      )}
+
       {huetten.length > 0 && (
         <section className="space-y-3">
           <h2 className="text-xl font-semibold">Hütten</h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {huetten.map((h) => <HuetteKarte key={h.id} huette={h} haltestellen={i.haltestellen} />)}
           </div>
-        </section>
-      )}
-
-      {gebiet.links.length > 0 && (
-        <section className="space-y-2">
-          <h2 className="text-xl font-semibold">Touren</h2>
-          <ul className="space-y-1">
-            {gebiet.links.map((l) => <li key={l.url}><a href={l.url} target="_blank" rel="noreferrer" className="text-tanne underline">{l.titel}</a></li>)}
-          </ul>
         </section>
       )}
 

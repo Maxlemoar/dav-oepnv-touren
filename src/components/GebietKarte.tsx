@@ -26,6 +26,7 @@ export function GebietKarte({ g, tagesziel, laedt, naechte }: Props) {
       <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-tinte-3">
         {g.umstiege !== undefined && <span>{g.umstiege} Umstiege</span>}
         {g.anzahlHuetten > 0 && <span>· {g.anzahlHuetten} {g.anzahlHuetten === 1 ? 'Hütte' : 'Hütten'}</span>}
+        {g.anzahlTouren > 0 && <span>· {g.anzahlTouren} {g.anzahlTouren === 1 ? 'Tour' : 'Touren'}</span>}
         <span>· {g.region}</span>
         <span>· {g.sportarten.map((s) => SPORTART_LABEL[s]).join(', ')}</span>
       </div>

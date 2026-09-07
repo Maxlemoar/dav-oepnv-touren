@@ -19,7 +19,7 @@ Alle Inhalte liegen als YAML unter `content/`:
 
 - `startorte/` Bahnhöfe, von denen aus gerechnet wird (nur `sichtbar: true` erscheint)
 - `haltestellen/` Zielbahnhöfe und Bushaltestellen mit Richtwerten (werden per Skript berechnet)
-- `gebiete/` Tourengebiete mit Haltestellen, Sportarten, Links
+- `gebiete/` Tourengebiete mit Haltestellen, Sportarten, Touren (`touren`), optional einer eingebetteten Sammlung (`sammlungEmbed`) und Links
 - `huetten/` Hütten mit Zustiegen ab Haltestelle
 - `tickets.yaml`, `emissionen.yaml` Regeln und Faktoren mit Quelle
 
@@ -38,6 +38,45 @@ npm run rauchtest                  # 5 Live-Abfragen, warnt nur
 ```
 
 Ungültige Inhalte brechen den Build mit Dateiname und Feld.
+
+### Touren eines Gebiets
+
+Jedes Gebiet kann unter `touren` echte Tourenvorschläge tragen, die an der Haltestelle des Gebiets starten. Pflicht sind `titel`, `url`
+und `anbieter` (`alpenvereinaktiv`, `sac`, `komoot`, `sonstig`); alles andere nur eintragen, wenn es so auf der verlinkten Seite steht:
+
+```yaml
+touren:
+  - titel: Oeschinensee Rundwanderung
+    url: "https://www.alpenvereinaktiv.com/de/tour/oeschinensee-rundwanderung/808431897/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern          # wandern, hochtour, skitour, klettern, klettersteig, schneeschuh
+    dauerMin: 355              # Minuten
+    hoehenmeter: 820           # Aufstieg in m
+    laengeKm: 14.8
+    schwierigkeit: mittel      # Freitext, z. B. "T3", "WS", "mittel"
+    oeffiTauglich: true        # Standard true; false, wenn Start oder Ziel nur mit Auto erreichbar ist
+```
+
+**Karte und Höhenprofil einbetten (`embed`):** Alpenvereinaktiv erlaubt das Einbetten einzelner Touren und Sammlungen per iframe,
+offiziell aber nur für Pro+-Konten (5 €/Monat bzw. 59,99 €/Jahr; Details in `docs/research/touren-einbettung.md`). Solange der
+Arbeitskreis das nicht entschieden hat, bleibt `embed` weg und die Tour ist nur verlinkt. Nach Freischaltung: ID und Slug aus der
+Tour-URL (`…/de/tour/<slug>/<id>/`) eintragen, der Slug ist optional:
+
+```yaml
+    embed: { anbieter: alpenvereinaktiv, id: "50994062", slug: "kandersteg-ryharts-allmenalp" }
+```
+
+komoot-Touren (nur eigene, dauerhaft öffentliche): `embed: { anbieter: komoot, id: "384495679" }`. Die Seite lädt das iframe erst
+nach Klick auf "Karte und Höhenprofil laden", vorher geht kein Request an den Anbieter.
+
+**Sammlung für das ganze Gebiet (`sammlungEmbed`):** Eine Alpenvereinaktiv-Liste (z. B. eine selbst gepflegte Sammlung "Kandersteg
+mit ÖV") erscheint mit Karte über den Tour-Cards. ID und Slug aus der Listen-URL (`…/de/liste/<slug>/<id>/`), gleiche Pro+-Bedingung:
+
+```yaml
+sammlungEmbed: { id: "202105012", slug: "nur-mit-oeffis" }
+```
+
+`links` bleibt für Portalsuchen ohne konkrete Tour ("Mehr Touren: Alpenvereinaktiv · SAC-Tourenportal").
 
 ## Wie es funktioniert
 

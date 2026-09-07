@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { filtereGebiete, leseFilter, passtZurSuche, schreibeFilter, type GebietEintrag } from '@/lib/filter'
 
 const g = (id: string, extra: Partial<GebietEintrag> = {}): GebietEintrag => ({
-  id, name: id, region: '', beschreibung: '', sportarten: ['wandern'], saison: 'sommer', fahrzeitMin: 200, anzahlHuetten: 1,
+  id, name: id, region: '', beschreibung: '', sportarten: ['wandern'], saison: 'sommer', fahrzeitMin: 200, anzahlHuetten: 1, anzahlTouren: 0,
   lat: 0, lon: 0, hauptHaltestelleId: id, ...extra,
 })
 

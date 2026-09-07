@@ -17,6 +17,7 @@ export const LandSchema = z.enum(['DE', 'FR', 'CH', 'AT'])
 export const TicketSchema = z.enum(['deutschlandticket', 'halbtax', 'europass', 'keins'])
 export const TaktSchema = z.enum(['stuendlich', 'zweistuendlich', 'unregelmaessig'])
 export const BetreiberTypSchema = z.enum(['dav', 'sac', 'oeav', 'caf', 'naturfreunde', 'privat'])
+export const TourAnbieterSchema = z.enum(['alpenvereinaktiv', 'sac', 'komoot', 'sonstig'])
 
 export const StartortSchema = z.object({
   id: Id,
@@ -48,6 +49,33 @@ export const HaltestelleSchema = z.object({
   bahn: BahnOrtSchema.optional(),
 })
 
+/** Einbettbare Tour: Alpenvereinaktiv nur mit Pro+-Konto (siehe README), komoot nur eigene Touren. */
+export const TourEmbedSchema = z.object({
+  anbieter: z.enum(['alpenvereinaktiv', 'komoot']),
+  id: z.string().regex(/^\d+$/, 'id: nur Ziffern'),
+  slug: z.string().min(1).optional(),
+})
+
+export const TourSchema = z.object({
+  titel: z.string().min(1),
+  url: z.string().url(),
+  anbieter: TourAnbieterSchema,
+  sportart: SportartSchema.optional(),
+  dauerMin: z.number().int().positive().optional(),
+  hoehenmeter: z.number().int().min(0).optional(),
+  laengeKm: z.number().positive().optional(),
+  /** Freitext wie "T3", "WS", "mittel" – die Skalen der Anbieter unterscheiden sich. */
+  schwierigkeit: z.string().min(1).optional(),
+  oeffiTauglich: z.boolean().default(true),
+  embed: TourEmbedSchema.optional(),
+})
+
+/** Alpenvereinaktiv-Sammlung (Liste mit Karte) für das ganze Gebiet, z.B. "Nur mit Öffis". */
+export const SammlungEmbedSchema = z.object({
+  id: z.string().regex(/^\d+$/, 'id: nur Ziffern'),
+  slug: z.string().min(1),
+})
+
 export const GebietSchema = z.object({
   id: Id,
   name: z.string().min(1),
@@ -55,6 +83,8 @@ export const GebietSchema = z.object({
   haltestellen: z.array(Id).min(1),
   sportarten: z.array(SportartSchema).min(1),
   saison: SaisonSchema,
+  touren: z.array(TourSchema).default([]),
+  sammlungEmbed: SammlungEmbedSchema.optional(),
   links: z.array(z.object({ titel: z.string().min(1), url: z.string().url() })).default([]),
   ...Koordinate,
 })
@@ -112,6 +142,10 @@ export type Startort = z.infer<typeof StartortSchema>
 export type Richtwert = z.infer<typeof RichtwertSchema>
 export type Haltestelle = z.infer<typeof HaltestelleSchema>
 export type Gebiet = z.infer<typeof GebietSchema>
+export type Tour = z.infer<typeof TourSchema>
+export type TourAnbieter = z.infer<typeof TourAnbieterSchema>
+export type TourEmbed = z.infer<typeof TourEmbedSchema>
+export type SammlungEmbed = z.infer<typeof SammlungEmbedSchema>
 export type Zustieg = z.infer<typeof ZustiegSchema>
 export type Huette = z.infer<typeof HuetteSchema>
 export type TicketTabelle = z.infer<typeof TicketTabelleSchema>
@@ -126,6 +160,9 @@ export const SAISON_LABEL: Record<Saison, string> = {
 }
 export const BETREIBER_LABEL: Record<BetreiberTyp, string> = {
   dav: 'DAV', sac: 'SAC', oeav: 'ÖAV', caf: 'CAF', naturfreunde: 'Naturfreunde', privat: 'privat',
+}
+export const TOUR_ANBIETER_LABEL: Record<TourAnbieter, string> = {
+  alpenvereinaktiv: 'Alpenvereinaktiv', sac: 'SAC-Tourenportal', komoot: 'komoot', sonstig: 'Tourenportal',
 }
 export const TICKET_LABEL: Record<Ticket, string> = {
   deutschlandticket: 'Deutschlandticket', halbtax: 'Halbtax', europass: 'Europass', keins: 'Einzelticket',
