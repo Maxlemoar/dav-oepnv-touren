@@ -4,5 +4,5 @@ haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:1687
 lat: 46.09993
 lon: 7.78146
 land: CH
-region: Mattertal
+region: Mattertal (Wallis)
 richtwerte: { kehl: { fahrzeitMin: 343, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 453, bahnKm: 344 }, lahr: { fahrzeitMin: 293, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 425, bahnKm: 311 }, offenburg: { fahrzeitMin: 266, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 439, bahnKm: 331 } }

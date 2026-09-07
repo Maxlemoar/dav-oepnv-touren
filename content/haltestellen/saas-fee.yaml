@@ -4,5 +4,5 @@ haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:1782
 lat: 46.1088
 lon: 7.92957
 land: CH
-region: Saastal
+region: Saastal (Wallis)
 richtwerte: { kehl: { fahrzeitMin: 351, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 453, bahnKm: 343 }, lahr: { fahrzeitMin: 301, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 425, bahnKm: 310 }, offenburg: { fahrzeitMin: 274, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 438, bahnKm: 329 } }

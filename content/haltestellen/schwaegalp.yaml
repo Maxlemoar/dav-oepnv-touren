@@ -4,5 +4,5 @@ haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:6787
 lat: 47.25622
 lon: 9.31856
 land: CH
-region: Alpstein
+region: Alpstein (Appenzell)
 richtwerte: { kehl: { fahrzeitMin: 327, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 316, bahnKm: 231 }, lahr: { fahrzeitMin: 307, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 288, bahnKm: 205 }, offenburg: { fahrzeitMin: 284, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 222, bahnKm: 212 } }

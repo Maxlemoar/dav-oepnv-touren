@@ -4,5 +4,5 @@ haltestelleId: de-DELFI_at:48:577:0:1
 lat: 47.3238
 lon: 10.15486
 land: AT
-region: Kleinwalsertal
+region: Kleinwalsertal (Allgäu)
 richtwerte: { kehl: { fahrzeitMin: 402, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 376, bahnKm: 279 }, lahr: { fahrzeitMin: 375, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 393, bahnKm: 258 }, offenburg: { fahrzeitMin: 353, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 376, bahnKm: 261 } }

@@ -46,6 +46,13 @@ function schreibeUrl(sp: URLSearchParams) {
 
 const abonniereNichts = () => () => {}
 
+const LG = '(min-width: 1024px)'
+function abonniereBreit(cb: () => void) {
+  const mq = window.matchMedia(LG)
+  mq.addEventListener('change', cb)
+  return () => mq.removeEventListener('change', cb)
+}
+
 export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: Props) {
   const suche = useSyncExternalStore(abonniereUrl, leseUrl, leseUrlServer)
   const { filter, datum, rueck, fenster } = useMemo<Auswahl>(() => {
@@ -59,6 +66,11 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
   const [karteOffen, setKarteOffen] = useState(false)
   // Die Karte (ssr: false) erst nach der Hydration rendern, damit im Server-HTML nur das Skeleton steht.
   const montiert = useSyncExternalStore(abonniereNichts, () => true, () => false)
+  // MapLibre darf erst starten, wenn der Container sichtbar ist (sonst Nullgröße, keine Kacheln, kein load-Event).
+  // Ab lg ist die Karte immer sichtbar; auf dem Handy nach dem ersten Öffnen, danach bleibt sie montiert.
+  const breit = useSyncExternalStore(abonniereBreit, () => window.matchMedia(LG).matches, () => false)
+  const [einmalGeoeffnet, setEinmalGeoeffnet] = useState(false)
+  const karteMontieren = montiert && (breit || karteOffen || einmalGeoeffnet)
 
   const naechte = tageDifferenz(datum, rueck)
   // Tagesziel gibt es nur bei Rückfahrt am selben Tag; sonst gilt der Filter "Tagestour" wie "Alle".
@@ -118,11 +130,11 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
           {sichtbar.length === 0 && <p className="text-tinte-2">Nichts gefunden. Filter lockern oder Fahrzeit erhöhen.</p>}
         </section>
         <section className={`${karteOffen ? 'block' : 'hidden'} h-[70dvh] overflow-hidden rounded-[var(--radius-karte)] border border-linie lg:sticky lg:top-20 lg:block lg:h-[calc(100dvh-6rem)]`}>
-          {montiert ? <Karte gebietIds={sichtbar.map((g) => g.id)} uebersicht={uebersicht} /> : KARTE_SKELETON}
+          {karteMontieren ? <Karte gebietIds={sichtbar.map((g) => g.id)} uebersicht={uebersicht} /> : KARTE_SKELETON}
         </section>
       </div>
 
-      <button type="button" onClick={() => setKarteOffen((o) => !o)} aria-pressed={karteOffen}
+      <button type="button" onClick={() => { setKarteOffen(!karteOffen); if (!karteOffen) setEinmalGeoeffnet(true) }} aria-pressed={karteOffen}
         className="knopf fixed bottom-4 left-1/2 z-30 -translate-x-1/2 shadow-lg lg:hidden">
         {karteOffen ? 'Liste' : 'Karte'}
       </button>

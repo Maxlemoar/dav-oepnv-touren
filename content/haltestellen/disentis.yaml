@@ -4,5 +4,5 @@ haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:9179
 lat: 46.70509
 lon: 8.85518
 land: CH
-region: Surselva
+region: Surselva (Graubünden)
 richtwerte: { kehl: { fahrzeitMin: 387, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 335, bahnKm: 278 }, lahr: { fahrzeitMin: 337, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 307, bahnKm: 247 }, offenburg: { fahrzeitMin: 310, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 321, bahnKm: 261 } }

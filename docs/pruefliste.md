@@ -144,51 +144,51 @@ Takt = Verbindungen ab Startort zwischen 6 und 12 Uhr am Referenz-Samstag (stün
 
 | Haltestelle | Region | Fahrzeit | Umstiege | Takt | Ticket | Berechnet am |
 |---|---|---|---|---|---|---|
-| Göschenen, Abzw. Voralp | Uri | 4:56 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Göschenen, Abzw. Voralp | Uri (Zentralschweiz) | 4:56 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Adelboden, Post | Berner Oberland | 4:00 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Airolo | Tessin / Bedretto | 4:31 h | 1 | stuendlich | halbtax | 2026-09-07 |
 | All'Acqua | Tessin / Bedretto | 4:55 h | 2 | zweistuendlich | halbtax | 2026-09-07 |
 | Alpnachstad | Zentralschweiz | 2:58 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Andermatt | Uri | 4:36 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Appenzell | Alpstein | 4:32 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Andermatt | Uri (Zentralschweiz) | 4:36 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Appenzell | Alpstein (Appenzell) | 4:32 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Arth-Goldau | Zentralschweiz | 3:11 h | 1 | stuendlich | halbtax | 2026-09-07 |
 | Bad Griesbach Bahnhof | Nordschwarzwald | 0:48 h | 0 | stuendlich | deutschlandticket | 2026-09-07 |
 | Bad Hindelang Busbahnhof | Allgäu | 5:28 h | 2 | zweistuendlich | keins | 2026-09-07 |
 | Barr | Nordvogesen | 1:36 h | 1 | stuendlich | europass | 2026-09-07 |
 | Bielerhöhe Silvrettasee | Vorarlberg | 7:54 h | 6 | stuendlich | keins | 2026-09-07 |
-| Binn, Fäld | Aletsch / Goms | 5:02 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Binn, Fäld | Aletsch / Goms (Wallis) | 5:02 h | 3 | stuendlich | halbtax | 2026-09-07 |
 | Birgsau | Allgäu | 5:29 h | 2 | zweistuendlich | keins | 2026-09-07 |
-| Blatten b. Naters (Belalpbahn) | Aletsch / Goms | 4:12 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Blatten b. Naters (Belalpbahn) | Aletsch / Goms (Wallis) | 4:12 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Bludenz Bahnhof | Vorarlberg | 5:02 h | 5 | stuendlich | keins | 2026-09-07 |
 | Brand Lünerseebahn | Vorarlberg | 6:29 h | 5 | stuendlich | keins | 2026-09-07 |
 | Bregenz Bahnhof | Vorarlberg | 4:04 h | 3 | stuendlich | keins | 2026-09-07 |
-| Bristen, Dorf | Uri | 4:20 h | 3 | stuendlich | halbtax | 2026-09-07 |
-| Brügg (Bürglen UR), Seilbahn Biel-Kinzig | Uri | 4:10 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Brülisau (Kastenbahn) | Alpstein | 4:48 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Bristen, Dorf | Uri (Zentralschweiz) | 4:20 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Brügg (Bürglen UR), Seilbahn Biel-Kinzig | Uri (Zentralschweiz) | 4:10 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Brülisau (Kastenbahn) | Alpstein (Appenzell) | 4:48 h | 3 | stuendlich | halbtax | 2026-09-07 |
 | Riemenstalden, Chäppeliberg | Zentralschweiz | 6:01 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Col de la Schlucht (Bus) | Vogesen | 3:19 h | 3 | stuendlich | europass | 2026-09-07 |
 | Cruina (Nufenen) | Tessin / Bedretto | 5:54 h | 3 | zweistuendlich | halbtax | 2026-09-07 |
-| Davos Dischma, Dürrboden | Davos | 6:15 h | 4 | zweistuendlich | halbtax | 2026-09-07 |
-| Davos Dorf | Davos | 4:47 h | 3 | stuendlich | halbtax | 2026-09-07 |
-| Disentis/Mustér | Surselva | 5:10 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Davos Dischma, Dürrboden | Davos (Graubünden) | 6:15 h | 4 | zweistuendlich | halbtax | 2026-09-07 |
+| Davos Dorf | Davos (Graubünden) | 4:47 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Disentis/Mustér | Surselva (Graubünden) | 5:10 h | 3 | stuendlich | halbtax | 2026-09-07 |
 | Dornbirn Bahnhof | Vorarlberg | 4:24 h | 4 | stuendlich | keins | 2026-09-07 |
-| Elm, Dorf | Glarner Alpen | 4:23 h | 4 | stuendlich | halbtax | 2026-09-07 |
+| Elm, Dorf | Glarner Alpen (Glarus) | 4:23 h | 4 | stuendlich | halbtax | 2026-09-07 |
 | Engelberg | Zentralschweiz | 3:29 h | 3 | stuendlich | halbtax | 2026-09-07 |
-| Erstfeld | Uri | 3:54 h | 1 | stuendlich | halbtax | 2026-09-07 |
+| Erstfeld | Uri (Zentralschweiz) | 3:54 h | 1 | stuendlich | halbtax | 2026-09-07 |
 | Feldberg-Bärental Bahnhof | Südschwarzwald | 2:08 h | 2 | stuendlich | keins | 2026-09-07 |
-| Fidaz, Bargis | Surselva | 5:07 h | 4 | stuendlich | halbtax | 2026-09-07 |
-| Fiesch | Aletsch / Goms | 4:25 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Flims Dorf, Post | Surselva | 4:29 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Fidaz, Bargis | Surselva (Graubünden) | 5:07 h | 4 | stuendlich | halbtax | 2026-09-07 |
+| Fiesch | Aletsch / Goms (Wallis) | 4:25 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Flims Dorf, Post | Surselva (Graubünden) | 4:29 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Freudenstadt Hauptbahnhof | Nordschwarzwald | 1:45 h | 1 | stuendlich | deutschlandticket | 2026-09-07 |
 | Gänsbrunnen | Solothurner Jura | 2:36 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Gargellen Schafbergbahn | Vorarlberg | 6:49 h | 5 | stuendlich | keins | 2026-09-07 |
-| Göschenen | Uri | 4:20 h | 1 | stuendlich | halbtax | 2026-09-07 |
-| Göscheneralp, Dammagletscher | Uri | 5:13 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Goppenstein | Lötschental | 4:22 h | 1 | stuendlich | halbtax | 2026-09-07 |
+| Göschenen | Uri (Zentralschweiz) | 4:20 h | 1 | stuendlich | halbtax | 2026-09-07 |
+| Göscheneralp, Dammagletscher | Uri (Zentralschweiz) | 5:13 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Goppenstein | Lötschental (Wallis) | 4:22 h | 1 | stuendlich | halbtax | 2026-09-07 |
 | Griesalp, Kurhaus | Berner Oberland | 5:40 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Grimsel, Hospiz | Berner Oberland | 5:07 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Grindelwald | Berner Oberland | 4:10 h | 1 | stuendlich | halbtax | 2026-09-07 |
-| Gurtnellen Wiler, Gotthardstr. | Uri | 4:22 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Gurtnellen Wiler, Gotthardstr. | Uri (Zentralschweiz) | 4:22 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Handegg, Gelmerbahn | Berner Oberland | 4:53 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Hausach Bahnhof | Mittlerer Schwarzwald | 0:27 h | 0 | stuendlich | deutschlandticket | 2026-09-07 |
 | Hinterstein Grüner Hut | Allgäu | 5:47 h | 3 | zweistuendlich | keins | 2026-09-07 |
@@ -196,21 +196,21 @@ Takt = Verbindungen ab Startort zwischen 6 und 12 Uhr am Referenz-Samstag (stün
 | Hornberg Bahnhof | Mittlerer Schwarzwald | 0:30 h | 0 | stuendlich | deutschlandticket | 2026-09-07 |
 | Lenk, Iffigenalp | Berner Oberland | 6:24 h | 3 | stuendlich | halbtax | 2026-09-07 |
 | Innertkirchen, Grimseltor | Berner Oberland | 4:22 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Intschi, Seilbahn | Uri | 4:14 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Intschi, Seilbahn | Uri (Zentralschweiz) | 4:14 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Kandersteg | Berner Oberland | 4:10 h | 1 | stuendlich | halbtax | 2026-09-07 |
-| Klosters Platz | Prättigau | 4:28 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Klosters Platz | Prättigau (Graubünden) | 4:28 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Kruth | Vogesen | 3:35 h | 3 | stuendlich | europass | 2026-09-07 |
 | Langen am Arlberg Bahnhof | Vorarlberg | 5:28 h | 5 | stuendlich | keins | 2026-09-07 |
 | Lauterbrunnen | Berner Oberland | 3:56 h | 1 | stuendlich | halbtax | 2026-09-07 |
 | Lech Rüfiplatz | Vorarlberg | 5:56 h | 6 | stuendlich | keins | 2026-09-07 |
 | Lenk im Simmental | Berner Oberland | 4:27 h | 3 | stuendlich | halbtax | 2026-09-07 |
 | Les Prés-d'Orvin, Bellevue (Bus) | Berner Jura | 3:17 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Leukerbad, Busterminal | Leukerbad / Gemmi | 4:42 h | 3 | stuendlich | halbtax | 2026-09-07 |
-| Linthal | Glarner Alpen | 4:11 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Leukerbad, Busterminal | Leukerbad / Gemmi (Wallis) | 4:42 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Linthal | Glarner Alpen (Glarus) | 4:11 h | 3 | stuendlich | halbtax | 2026-09-07 |
 | Meiringen | Berner Oberland | 4:05 h | 1 | stuendlich | halbtax | 2026-09-07 |
-| Mettmen (Bergstation) | Glarner Alpen | 4:49 h | 5 | stuendlich | halbtax | 2026-09-07 |
+| Mettmen (Bergstation) | Glarner Alpen (Glarus) | 4:49 h | 5 | stuendlich | halbtax | 2026-09-07 |
 | Metzeral | Vogesen | 2:33 h | 2 | zweistuendlich | europass | 2026-09-07 |
-| Mittelberg | Kleinwalsertal | 5:53 h | 2 | zweistuendlich | keins | 2026-09-07 |
+| Mittelberg | Kleinwalsertal (Allgäu) | 5:53 h | 2 | zweistuendlich | keins | 2026-09-07 |
 | Munster (Haut-Rhin) | Vogesen | 2:21 h | 2 | zweistuendlich | europass | 2026-09-07 |
 | Nessental, Triftbahn | Berner Oberland | 4:41 h | 3 | stuendlich | halbtax | 2026-09-07 |
 | Oberdorf SO (Seilbahn Weissenstein) | Solothurner Jura | 2:40 h | 2 | stuendlich | halbtax | 2026-09-07 |
@@ -218,36 +218,36 @@ Takt = Verbindungen ab Startort zwischen 6 und 12 Uhr am Referenz-Samstag (stün
 | Ossasco (Bedretto) | Tessin / Bedretto | 4:45 h | 2 | zweistuendlich | halbtax | 2026-09-07 |
 | Partenen Zentrum | Vorarlberg | 6:14 h | 7 | stuendlich | keins | 2026-09-07 |
 | Räterichsboden | Berner Oberland | 4:59 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Randa | Mattertal | 4:26 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Realp | Uri | 5:19 h | 3 | stuendlich | halbtax | 2026-09-07 |
-| Riezlern Post | Kleinwalsertal | 5:38 h | 2 | zweistuendlich | keins | 2026-09-07 |
+| Randa | Mattertal (Wallis) | 4:26 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Realp | Uri (Zentralschweiz) | 5:19 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Riezlern Post | Kleinwalsertal (Allgäu) | 5:38 h | 2 | zweistuendlich | keins | 2026-09-07 |
 | Rosenlaui, Hotel | Berner Oberland | 5:21 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Saas-Almagell, Dorfplatz | Saastal | 4:37 h | 3 | stuendlich | halbtax | 2026-09-07 |
-| Saas-Fee, Busterminal | Saastal | 4:34 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Saas-Grund, Post | Saastal | 4:22 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Saas-Almagell, Dorfplatz | Saastal (Wallis) | 4:37 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Saas-Fee, Busterminal | Saastal (Wallis) | 4:34 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Saas-Grund, Post | Saastal (Wallis) | 4:22 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Sand Kapelle (Schwarzwaldhochstraße) | Nordschwarzwald | 1:32 h | 1 | stuendlich | deutschlandticket | 2026-09-07 |
 | Schruns Bahnhof | Vorarlberg | 5:28 h | 6 | stuendlich | keins | 2026-09-07 |
-| Schwägalp, Säntis-Schwebebahn | Alpstein | 4:44 h | 3 | stuendlich | halbtax | 2026-09-07 |
-| Schwanden GL | Glarner Alpen | 3:54 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Schwägalp, Säntis-Schwebebahn | Alpstein (Appenzell) | 4:44 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| Schwanden GL | Glarner Alpen (Glarus) | 3:54 h | 3 | stuendlich | halbtax | 2026-09-07 |
 | Seebrugg Bahnhof (Schluchsee) | Südschwarzwald | 2:25 h | 2 | stuendlich | keins | 2026-09-07 |
 | Sonthofen Bahnhof | Allgäu | 4:38 h | 1 | zweistuendlich | keins | 2026-09-07 |
 | Spielmannsau | Allgäu | 5:43 h | 2 | zweistuendlich | keins | 2026-09-07 |
-| St. Antönien, Rüti | Prättigau | 5:17 h | 3 | stuendlich | halbtax | 2026-09-07 |
-| St. Anton am Arlberg Bahnhof | Tirol | 6:23 h | 7 | stuendlich | keins | 2026-09-07 |
+| St. Antönien, Rüti | Prättigau (Graubünden) | 5:17 h | 3 | stuendlich | halbtax | 2026-09-07 |
+| St. Anton am Arlberg Bahnhof | Arlberg (Tirol) | 6:23 h | 7 | stuendlich | keins | 2026-09-07 |
 | St-Imier | Berner Jura | 3:30 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Stechelberg (Schilthornbahn) | Berner Oberland | 4:17 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Steingletscher, Susten | Berner Oberland | 5:16 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Täsch | Mattertal | 4:32 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Täsch | Mattertal (Wallis) | 4:32 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Tavannes | Berner Jura | 3:27 h | 3 | stuendlich | halbtax | 2026-09-07 |
-| Tiefenbach (Furka) | Uri | 6:36 h | 3 | zweistuendlich | halbtax | 2026-09-07 |
+| Tiefenbach (Furka) | Uri (Zentralschweiz) | 6:36 h | 3 | zweistuendlich | halbtax | 2026-09-07 |
 | Todtnau Busbahnhof | Südschwarzwald | 2:09 h | 2 | stuendlich | keins | 2026-09-07 |
 | Triberg Bahnhof | Mittlerer Schwarzwald | 0:43 h | 0 | stuendlich | deutschlandticket | 2026-09-07 |
-| Urnerboden, Dorf | Glarner Alpen | 5:30 h | 3 | zweistuendlich | halbtax | 2026-09-07 |
+| Urnerboden, Dorf | Glarner Alpen (Glarus) | 5:30 h | 3 | zweistuendlich | halbtax | 2026-09-07 |
 | Vandans Bahnhof | Vorarlberg | 5:20 h | 6 | stuendlich | keins | 2026-09-07 |
-| Wasserauen | Alpstein | 4:47 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Wildhaus, Dorf | Toggenburg | 4:57 h | 4 | stuendlich | halbtax | 2026-09-07 |
-| Wiler (Lötschen), Dorf | Lötschental | 4:45 h | 2 | stuendlich | halbtax | 2026-09-07 |
-| Zermatt | Mattertal | 4:47 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Wasserauen | Alpstein (Appenzell) | 4:47 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Wildhaus, Dorf | Toggenburg (Ostschweiz) | 4:57 h | 4 | stuendlich | halbtax | 2026-09-07 |
+| Wiler (Lötschen), Dorf | Lötschental (Wallis) | 4:45 h | 2 | stuendlich | halbtax | 2026-09-07 |
+| Zermatt | Mattertal (Wallis) | 4:47 h | 2 | stuendlich | halbtax | 2026-09-07 |
 | Zugertal Formarinsee | Vorarlberg | 6:34 h | 7 | stuendlich | keins | 2026-09-07 |
 
 ## Gebiete

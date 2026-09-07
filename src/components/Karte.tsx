@@ -97,8 +97,10 @@ export function Karte({ gebietIds, uebersicht }: Props) {
 
     const beobachter = new ResizeObserver(() => m.resize())
     beobachter.observe(container.current)
+    const frame = requestAnimationFrame(() => m.resize())
 
     return () => {
+      cancelAnimationFrame(frame)
       beobachter.disconnect()
       m.remove()
       karte.current = null

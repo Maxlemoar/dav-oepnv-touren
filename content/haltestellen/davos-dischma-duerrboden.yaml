@@ -4,5 +4,5 @@ haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:87442
 lat: 46.72105
 lon: 9.92184
 land: CH
-region: Davos
+region: Davos (Graubünden)
 richtwerte: { kehl: { fahrzeitMin: 452, umstiege: 5, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 380, bahnKm: 325 }, lahr: { fahrzeitMin: 402, umstiege: 5, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 352, bahnKm: 298 }, offenburg: { fahrzeitMin: 375, umstiege: 4, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 366, bahnKm: 306 } }

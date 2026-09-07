@@ -4,5 +4,5 @@ haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:5778
 lat: 46.76889
 lon: 8.68995
 land: CH
-region: Uri
+region: Uri (Zentralschweiz)
 richtwerte: { kehl: { fahrzeitMin: 337, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 287, bahnKm: 265 }, lahr: { fahrzeitMin: 287, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 259, bahnKm: 233 }, offenburg: { fahrzeitMin: 260, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 273, bahnKm: 247 } }
