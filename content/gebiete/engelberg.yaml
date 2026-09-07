@@ -4,5 +4,30 @@ beschreibung: Titlis, Brunni und Rugghubel. Bergbahnen ab Dorf, SAC-Hütten in z
 haltestellen: [engelberg]
 sportarten: [wandern, hochtour, skitour, klettern]
 saison: ganzjaehrig
+touren:
+  - titel: "Erlebnisweg Engelberger Aaschlucht"
+    url: "https://www.alpenvereinaktiv.com/de/tour/erlebnisweg-engelberger-aaschlucht/29370545/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 150
+    hoehenmeter: 5
+    laengeKm: 8.9
+    schwierigkeit: "mittel"
+  - titel: "Alpelenhörnli – mittelschwere Skitour in Engelberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/alpelenhoernli-mittelschwere-skitour-in-engelberg/65651109/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 195
+    hoehenmeter: 1027
+    laengeKm: 11.8
+    schwierigkeit: "schwer"
+  - titel: "Engelberg – Bergli – Ristis (Winterwanderung)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/engelberg-bergli-ristis/35734721/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 164
+    hoehenmeter: 602
+    laengeKm: 8.8
+    schwierigkeit: "schwer"
 lat: 46.82
 lon: 8.40

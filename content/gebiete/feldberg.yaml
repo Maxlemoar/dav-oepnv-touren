@@ -4,6 +4,31 @@ beschreibung: Höchster Schwarzwaldgipfel, ab Bahnhof Bärental über den Seebuc
 haltestellen: [feldberg-baerental]
 sportarten: [wandern, skitour, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Schönster Aufstieg zum Feldberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/schoenster-aufstieg-zum-feldberg/3663463/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 270
+    hoehenmeter: 675
+    laengeKm: 14.8
+    schwierigkeit: "T2"
+  - titel: "Auf aussichtsreichen Pfaden über den Feldberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/auf-aussichtsreichen-pfaden-ueber-den-feldberg/2807902/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 330
+    hoehenmeter: 700
+    laengeKm: 18.4
+    schwierigkeit: "T2"
+  - titel: "Von Bärental über den Zweiseenblick und Grafenmatt zum Feldbergpass"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-baerental-ueber-den-zweiseenblick-und-grafenmatt-zum-feldbergpass/801970604/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 330
+    hoehenmeter: 800
+    laengeKm: 16.1
+    schwierigkeit: "T3"
 links:
   - { titel: Alpenvereinaktiv Feldberg, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Feldberg" }
 lat: 47.874

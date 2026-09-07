@@ -4,6 +4,31 @@ beschreibung: Säntis, Ebenalp und Seealpsee ab Wasserauen, Fälensee und Hoher 
 haltestellen: [wasserauen, appenzell, bruelisau, schwaegalp]
 sportarten: [wandern, klettern, klettersteig, schneeschuh]
 saison: sommer
+touren:
+  - titel: "Von Wasserauen über Äscher und Ebenalp zum Berggasthaus Schäffler"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-wasserauen-ueber-aescher-und-ebenalp-zum-berggasthaus-schaeffler/805622751/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 1000
+    laengeKm: 6.5
+    schwierigkeit: "T2"
+  - titel: "Von Wasserauen über Bogartenlücke und Marwees zur Meglisalp"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-wasserauen-ueber-bogartenluecke-und-marwees-zur-meglisalp/51563417/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 440
+    hoehenmeter: 1200
+    laengeKm: 13.6
+    schwierigkeit: "T4"
+  - titel: "Von der Schwägalp auf den Säntis"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-der-schwaegalp-auf-den-saentis/24501542/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 210
+    hoehenmeter: 1180
+    laengeKm: 4.9
+    schwierigkeit: "schwer"
 links:
   - { titel: SAC Säntis, url: "https://www.sac-saentis.ch" }
 lat: 47.27

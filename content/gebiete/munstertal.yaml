@@ -4,6 +4,31 @@ beschreibung: Hohneck, Kastelberg und Petit Ballon ab Metzeral, mit dem TER in g
 haltestellen: [metzeral, munster, col-de-la-schlucht]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Der Felsenweg: Kleine Runde vom Col de la Schlucht über das Refuge des 3 Fours"
+    url: "https://www.alpenvereinaktiv.com/de/tour/der-felsenweg-kleine-runde-vom-col-de-la-schlucht-ueber-das-refuge-des/802474029/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 332
+    laengeKm: 6.6
+    schwierigkeit: "mittel"
+  - titel: "Vogesen ohne Auto: Col de la Schlucht nach Metzeral"
+    url: "https://www.alpenvereinaktiv.com/de/tour/vogesen-ohne-auto-wanderung-col-de-la-schlucht-nach-metzeral/282370098/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 305
+    hoehenmeter: 366
+    laengeKm: 14.4
+    schwierigkeit: "leicht"
+  - titel: "Frankenthal, Schaeferthal, Hohneck über den Sentier des Roches"
+    url: "https://www.alpenvereinaktiv.com/de/tour/frankenthal-schaeferthal-hohneck-ueber-den-sentier-des-roches/58528946/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 270
+    hoehenmeter: 600
+    laengeKm: 10.2
+    schwierigkeit: "schwer"
 links:
   - { titel: Alpenvereinaktiv Hohneck, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Hohneck" }
 lat: 48.03

@@ -4,6 +4,25 @@ beschreibung: Eiger, Wetterhorn und Schreckhorn direkt ab Bahnhof. Bus zur Gross
 haltestellen: [grindelwald]
 sportarten: [wandern, hochtour, klettern, skitour]
 saison: ganzjaehrig
+touren:
+  # Start an der Ortsbus-Haltestelle Gaggi Säge (Bus 122 ab Bahnhof), nicht direkt am Bahnhof.
+  - titel: "Bachsee ab Grindelwald"
+    url: "https://www.alpenvereinaktiv.com/de/tour/bachsee-ab-grindelwald/809510832/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 250
+    hoehenmeter: 1223
+    laengeKm: 7.1
+    schwierigkeit: "T2"
+  # Start an der Bergstation First (Firstbahn ab Dorf), nicht direkt am Bahnhof.
+  - titel: "Von Grindelwald First über den Bachalpsee zum Faulhorn"
+    url: "https://www.alpenvereinaktiv.com/de/tour/aussichtsreiche-wanderung-von-grindelwald-first-ueber-den-bachalpsee-zum/807601847/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 545
+    laengeKm: 11.6
+    schwierigkeit: "T2"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
   - { titel: Naturfreundehaus Grindelwald, url: "https://naturfreunde.ch/haeuser/grindelwald/" }

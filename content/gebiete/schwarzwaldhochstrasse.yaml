@@ -4,5 +4,23 @@ beschreibung: Hornisgrinde, Mummelsee und das Sandkästle der Sektion. Bus ab B�
 haltestellen: [sand-kapelle]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Von Sand zu Schwarzenbach-Talsperre und Badener Höhe"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-sand-zu-schwarzenbach-talsperre-und-badener-hoehe/7013821/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 315
+    hoehenmeter: 343
+    laengeKm: 14.5
+    schwierigkeit: "mittel"
+  # Rundtour, laut Seite ab Plättig; führt über Sand und ist dort ebenso startbar.
+  - titel: "Plättig – Bärenstein, Sandsee, Herrenwies und Wildnispfad"
+    url: "https://www.alpenvereinaktiv.com/de/tour/plaettig-baerenstein-sandsee-herrenwies-und-wildnispfad/141021360/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 175
+    hoehenmeter: 264
+    laengeKm: 9.4
+    schwierigkeit: "T1"
 lat: 48.63
 lon: 8.21

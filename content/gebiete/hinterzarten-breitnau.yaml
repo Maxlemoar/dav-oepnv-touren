@@ -4,6 +4,31 @@ beschreibung: Ravennaschlucht, Feldberg-Nordseite über den Rinken und die Hochf
 haltestellen: [hinterzarten]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Zu den Moorwächtern von Hinterzarten"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zu-den-moorwaechtern-von-hinterzarten/804240821/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 60
+    hoehenmeter: 25
+    laengeKm: 4.1
+    schwierigkeit: "T1"
+  - titel: "Von Hinterzarten nach Breitnau"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-hinterzarten-nach-breitnau/4680246/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 225
+    hoehenmeter: 425
+    laengeKm: 12.5
+    schwierigkeit: "mittel"
+  - titel: "Von Hinterzarten zum Mathisleweiher und Feldsee"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-hinterzarten-zum-mathisleweiher-und-feldsee/805233602/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 400
+    laengeKm: 17.4
+    schwierigkeit: "T2"
 links:
   - { titel: Alpenvereinaktiv Hinterzarten, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Hinterzarten" }
 lat: 47.93

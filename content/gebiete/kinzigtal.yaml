@@ -4,6 +4,31 @@ beschreibung: Brandenkopf, Farrenkopf und die Westweg-Etappen zwischen Hausach u
 haltestellen: [hausach, hornberg]
 sportarten: [wandern, klettersteig]
 saison: ganzjaehrig
+touren:
+  - titel: "Höhenwanderung von Hausach nach Hornberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/hoehenwanderung-von-hausach-nach-hornberg/807884803/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 420
+    hoehenmeter: 950
+    laengeKm: 19.4
+    schwierigkeit: "T2"
+  - titel: "Hausach und der Silberbergbau"
+    url: "https://www.alpenvereinaktiv.com/de/tour/hausach-und-der-silberbergbau/4248703/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 375
+    hoehenmeter: 650
+    laengeKm: 19.3
+    schwierigkeit: "T2"
+  - titel: "Durch den Hornberger Stadtwald"
+    url: "https://www.alpenvereinaktiv.com/de/tour/durch-den-hornberger-stadtwald/5452688/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 210
+    hoehenmeter: 500
+    laengeKm: 10.4
+    schwierigkeit: "T2"
 links:
   - { titel: Alpenvereinaktiv Kinzigtal, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Kinzigtal" }
 lat: 48.25

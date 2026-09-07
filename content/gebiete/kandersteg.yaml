@@ -4,6 +4,33 @@ beschreibung: Oeschinensee, Gemmipass und drei SAC-Hütten, alle direkt ab Bahnh
 haltestellen: [kandersteg]
 sportarten: [wandern, hochtour, klettern]
 saison: sommer
+touren:
+  # Demo, bis Pro+ geklärt: einzige Tour mit `embed`, damit der Platzhalter-Mechanismus sichtbar ist.
+  - titel: "Kandersteg-Ryharts-Allmenalp"
+    url: "https://www.alpenvereinaktiv.com/de/tour/kandersteg-ryharts-allmenalp/50994062/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 135
+    hoehenmeter: 604
+    laengeKm: 4.0
+    schwierigkeit: "mittel"
+    embed: { anbieter: alpenvereinaktiv, id: "50994062", slug: "kandersteg-ryharts-allmenalp" }
+  - titel: "Allmenalp Klettersteig – Kandersteg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/allmenalp-klettersteig-kandersteg/15633930/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 210
+    hoehenmeter: 533
+    laengeKm: 1.4
+    schwierigkeit: "D"
+  - titel: "Panoramatour Höh – Kandersteg (Schneeschuh, signalisiert)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/panoramatour-hoeh-kandersteg-signalisiert-/8990485/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 75
+    hoehenmeter: 160
+    laengeKm: 2.0
+    schwierigkeit: "leicht"
 links:
   - { titel: SAC-Tourenportal Kandersteg, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.495

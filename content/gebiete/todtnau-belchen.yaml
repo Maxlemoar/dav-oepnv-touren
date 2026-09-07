@@ -4,6 +4,23 @@ beschreibung: Feldberg-Südseite, Todtnauer Wasserfall und der Belchen ab dem To
 haltestellen: [todtnau-busbahnhof]
 sportarten: [wandern, skitour, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Panoramaweg von Todtnau zum Feldberger Hof (Winterwanderung)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/panoramaweg-von-todtnau-zum-feldberger-hof/806280469/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 850
+    laengeKm: 15.2
+    schwierigkeit: "schwer"
+  - titel: "Rund um den Todtnauer Wasserfall"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rund-um-den-todtnauer-wasserfall/3208246/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 120
+    hoehenmeter: 270
+    laengeKm: 6.1
+    schwierigkeit: "leicht"
 links:
   - { titel: Alpenvereinaktiv Belchen, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Belchen" }
 lat: 47.84

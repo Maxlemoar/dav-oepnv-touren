@@ -308,3 +308,37 @@ Takt = Verbindungen ab Startort zwischen 6 und 12 Uhr am Referenz-Samstag (stün
 | Triberg und Brend | triberg | wandern | ganzjaehrig | 2 |
 | Weissenstein und Hasenmatt | oberdorf-so, gaensbrunnen | wandern, schneeschuh | ganzjaehrig | 1 |
 | Zermatt / Mattertal | zermatt, taesch, randa | wandern, hochtour, skitour, klettern | ganzjaehrig | 6 |
+
+## Touren
+
+Daten belegt = Dauer, Höhenmeter, Länge und Schwierigkeit stehen so auf der verlinkten Seite; fehlt ein Wert, ist er dort nicht ersichtlich. Bitte prüfen, ob die Tour wirklich an der Haltestelle startet.
+
+| Gebiet | Tour | Anbieter | Daten belegt? |
+|---|---|---|---|
+| Alpstein | [Von Wasserauen über Äscher und Ebenalp zum Berggasthaus Schäffler](https://www.alpenvereinaktiv.com/de/tour/von-wasserauen-ueber-aescher-und-ebenalp-zum-berggasthaus-schaeffler/805622751/) | Alpenvereinaktiv | vollständig |
+| Alpstein | [Von Wasserauen über Bogartenlücke und Marwees zur Meglisalp](https://www.alpenvereinaktiv.com/de/tour/von-wasserauen-ueber-bogartenluecke-und-marwees-zur-meglisalp/51563417/) | Alpenvereinaktiv | vollständig |
+| Alpstein | [Von der Schwägalp auf den Säntis](https://www.alpenvereinaktiv.com/de/tour/von-der-schwaegalp-auf-den-saentis/24501542/) | Alpenvereinaktiv | vollständig |
+| Engelberg | [Erlebnisweg Engelberger Aaschlucht](https://www.alpenvereinaktiv.com/de/tour/erlebnisweg-engelberger-aaschlucht/29370545/) | Alpenvereinaktiv | vollständig |
+| Engelberg | [Alpelenhörnli – mittelschwere Skitour in Engelberg](https://www.alpenvereinaktiv.com/de/tour/alpelenhoernli-mittelschwere-skitour-in-engelberg/65651109/) | Alpenvereinaktiv | vollständig |
+| Engelberg | [Engelberg – Bergli – Ristis (Winterwanderung)](https://www.alpenvereinaktiv.com/de/tour/engelberg-bergli-ristis/35734721/) | Alpenvereinaktiv | vollständig |
+| Feldberg | [Schönster Aufstieg zum Feldberg](https://www.alpenvereinaktiv.com/de/tour/schoenster-aufstieg-zum-feldberg/3663463/) | Alpenvereinaktiv | vollständig |
+| Feldberg | [Auf aussichtsreichen Pfaden über den Feldberg](https://www.alpenvereinaktiv.com/de/tour/auf-aussichtsreichen-pfaden-ueber-den-feldberg/2807902/) | Alpenvereinaktiv | vollständig |
+| Feldberg | [Von Bärental über den Zweiseenblick und Grafenmatt zum Feldbergpass](https://www.alpenvereinaktiv.com/de/tour/von-baerental-ueber-den-zweiseenblick-und-grafenmatt-zum-feldbergpass/801970604/) | Alpenvereinaktiv | vollständig |
+| Grindelwald | [Bachsee ab Grindelwald](https://www.alpenvereinaktiv.com/de/tour/bachsee-ab-grindelwald/809510832/) | Alpenvereinaktiv | vollständig |
+| Grindelwald | [Von Grindelwald First über den Bachalpsee zum Faulhorn](https://www.alpenvereinaktiv.com/de/tour/aussichtsreiche-wanderung-von-grindelwald-first-ueber-den-bachalpsee-zum/807601847/) | Alpenvereinaktiv | vollständig |
+| Hinterzarten und Breitnau | [Zu den Moorwächtern von Hinterzarten](https://www.alpenvereinaktiv.com/de/tour/zu-den-moorwaechtern-von-hinterzarten/804240821/) | Alpenvereinaktiv | vollständig |
+| Hinterzarten und Breitnau | [Von Hinterzarten nach Breitnau](https://www.alpenvereinaktiv.com/de/tour/von-hinterzarten-nach-breitnau/4680246/) | Alpenvereinaktiv | vollständig |
+| Hinterzarten und Breitnau | [Von Hinterzarten zum Mathisleweiher und Feldsee](https://www.alpenvereinaktiv.com/de/tour/von-hinterzarten-zum-mathisleweiher-und-feldsee/805233602/) | Alpenvereinaktiv | vollständig |
+| Kandersteg | [Kandersteg-Ryharts-Allmenalp](https://www.alpenvereinaktiv.com/de/tour/kandersteg-ryharts-allmenalp/50994062/) (Embed) | Alpenvereinaktiv | vollständig |
+| Kandersteg | [Allmenalp Klettersteig – Kandersteg](https://www.alpenvereinaktiv.com/de/tour/allmenalp-klettersteig-kandersteg/15633930/) | Alpenvereinaktiv | vollständig |
+| Kandersteg | [Panoramatour Höh – Kandersteg (Schneeschuh, signalisiert)](https://www.alpenvereinaktiv.com/de/tour/panoramatour-hoeh-kandersteg-signalisiert-/8990485/) | Alpenvereinaktiv | vollständig |
+| Kinzigtal (Hausach, Hornberg) | [Höhenwanderung von Hausach nach Hornberg](https://www.alpenvereinaktiv.com/de/tour/hoehenwanderung-von-hausach-nach-hornberg/807884803/) | Alpenvereinaktiv | vollständig |
+| Kinzigtal (Hausach, Hornberg) | [Hausach und der Silberbergbau](https://www.alpenvereinaktiv.com/de/tour/hausach-und-der-silberbergbau/4248703/) | Alpenvereinaktiv | vollständig |
+| Kinzigtal (Hausach, Hornberg) | [Durch den Hornberger Stadtwald](https://www.alpenvereinaktiv.com/de/tour/durch-den-hornberger-stadtwald/5452688/) | Alpenvereinaktiv | vollständig |
+| Munstertal (Vogesen) | [Der Felsenweg: Kleine Runde vom Col de la Schlucht über das Refuge des 3 Fours](https://www.alpenvereinaktiv.com/de/tour/der-felsenweg-kleine-runde-vom-col-de-la-schlucht-ueber-das-refuge-des/802474029/) | Alpenvereinaktiv | vollständig |
+| Munstertal (Vogesen) | [Vogesen ohne Auto: Col de la Schlucht nach Metzeral](https://www.alpenvereinaktiv.com/de/tour/vogesen-ohne-auto-wanderung-col-de-la-schlucht-nach-metzeral/282370098/) | Alpenvereinaktiv | vollständig |
+| Munstertal (Vogesen) | [Frankenthal, Schaeferthal, Hohneck über den Sentier des Roches](https://www.alpenvereinaktiv.com/de/tour/frankenthal-schaeferthal-hohneck-ueber-den-sentier-des-roches/58528946/) | Alpenvereinaktiv | vollständig |
+| Schwarzwaldhochstraße | [Von Sand zu Schwarzenbach-Talsperre und Badener Höhe](https://www.alpenvereinaktiv.com/de/tour/von-sand-zu-schwarzenbach-talsperre-und-badener-hoehe/7013821/) | Alpenvereinaktiv | vollständig |
+| Schwarzwaldhochstraße | [Plättig – Bärenstein, Sandsee, Herrenwies und Wildnispfad](https://www.alpenvereinaktiv.com/de/tour/plaettig-baerenstein-sandsee-herrenwies-und-wildnispfad/141021360/) | Alpenvereinaktiv | vollständig |
+| Todtnau und Belchen | [Panoramaweg von Todtnau zum Feldberger Hof (Winterwanderung)](https://www.alpenvereinaktiv.com/de/tour/panoramaweg-von-todtnau-zum-feldberger-hof/806280469/) | Alpenvereinaktiv | vollständig |
+| Todtnau und Belchen | [Rund um den Todtnauer Wasserfall](https://www.alpenvereinaktiv.com/de/tour/rund-um-den-todtnauer-wasserfall/3208246/) | Alpenvereinaktiv | vollständig |
