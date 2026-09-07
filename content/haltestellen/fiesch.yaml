@@ -6,3 +6,8 @@ lon: 8.13419
 land: CH
 region: Aletsch / Goms (Wallis)
 richtwerte: { kehl: { fahrzeitMin: 342, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 364, bahnKm: 303 }, lahr: { fahrzeitMin: 292, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 336, bahnKm: 270 }, offenburg: { fahrzeitMin: 265, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 350, bahnKm: 288 } }
+bahn:
+  extId: "8501672"
+  name: Fiesch
+  x: 8134195
+  y: 46406281

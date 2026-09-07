@@ -6,3 +6,8 @@ lon: 7.98428
 land: CH
 region: Aletsch / Goms (Wallis)
 richtwerte: { kehl: { fahrzeitMin: 329, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 387, bahnKm: 309 }, lahr: { fahrzeitMin: 279, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 359, bahnKm: 276 }, offenburg: { fahrzeitMin: 252, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 373, bahnKm: 294 } }
+bahn:
+  extId: "8501754"
+  name: Blatten b. Naters,Luftseilbahn
+  x: 7983698
+  y: 46359205

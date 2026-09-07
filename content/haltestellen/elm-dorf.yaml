@@ -6,3 +6,8 @@ lon: 9.17189
 land: CH
 region: Glarner Alpen (Glarus)
 richtwerte: { kehl: { fahrzeitMin: 340, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 310, bahnKm: 263 }, lahr: { fahrzeitMin: 290, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 283, bahnKm: 234 }, offenburg: { fahrzeitMin: 263, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 296, bahnKm: 245 } }
+bahn:
+  extId: "8503616"
+  name: Elm, Dorf
+  x: 9171892
+  y: 46918918

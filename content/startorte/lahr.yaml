@@ -5,3 +5,8 @@ haltestelleId: de-DELFI_de:08317:12103
 lat: 48.34057
 lon: 7.83571
 sichtbar: false
+bahn:
+  extId: "372103"
+  name: Bahnhof, Lahr (Schwarzwald)
+  x: 7836158
+  y: 48340517

@@ -6,3 +6,8 @@ lon: 8.21203
 land: CH
 region: Aletsch / Goms (Wallis)
 richtwerte: { kehl: { fahrzeitMin: 359, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 379, bahnKm: 309 }, lahr: { fahrzeitMin: 315, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 351, bahnKm: 276 }, offenburg: { fahrzeitMin: 302, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 365, bahnKm: 294 } }
+bahn:
+  extId: "8589093"
+  name: Binn, Fäld
+  x: 8212033
+  y: 46368760

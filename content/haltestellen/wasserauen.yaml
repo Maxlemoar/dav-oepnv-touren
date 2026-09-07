@@ -30,3 +30,8 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 222
     bahnKm: 216
+bahn:
+  extId: "8506289"
+  name: Wasserauen
+  x: 9428615
+  y: 47285561

@@ -15,6 +15,20 @@ describe('StartortSchema', () => {
     })
     expect(r.success).toBe(false)
   })
+  it('akzeptiert optionale bahn.de-Daten', () => {
+    const r = StartortSchema.safeParse({
+      id: 'offenburg', name: 'Offenburg', haltestelleId: 'x', lat: 48.476, lon: 7.946, sichtbar: true,
+      bahn: { extId: '8000290', name: 'Offenburg', x: 7946725, y: 48476479 },
+    })
+    expect(r.success).toBe(true)
+  })
+  it('lehnt bahn.extId mit Buchstaben ab', () => {
+    const r = StartortSchema.safeParse({
+      id: 'offenburg', name: 'Offenburg', haltestelleId: 'x', lat: 48.476, lon: 7.946, sichtbar: true,
+      bahn: { extId: 'A8000290', name: 'Offenburg', x: 7946725, y: 48476479 },
+    })
+    expect(r.success).toBe(false)
+  })
 })
 
 describe('HaltestelleSchema', () => {
@@ -24,6 +38,21 @@ describe('HaltestelleSchema', () => {
       land: 'CH', region: 'Berner Oberland',
     })
     expect(r.richtwerte).toEqual({})
+    expect(r.bahn).toBeUndefined()
+  })
+  it('akzeptiert bahn.de-Daten mit ganzzahligen Koordinaten', () => {
+    const r = HaltestelleSchema.safeParse({
+      id: 'kandersteg', name: 'Kandersteg', haltestelleId: 'ch-x', lat: 46.49, lon: 7.67,
+      land: 'CH', region: 'Berner Oberland',
+      bahn: { extId: '8507475', name: 'Kandersteg', x: 7671412, y: 46495401 },
+    })
+    expect(r.success).toBe(true)
+    const falsch = HaltestelleSchema.safeParse({
+      id: 'kandersteg', name: 'Kandersteg', haltestelleId: 'ch-x', lat: 46.49, lon: 7.67,
+      land: 'CH', region: 'Berner Oberland',
+      bahn: { extId: '8507475', name: 'Kandersteg', x: 7.671412, y: 46.495401 },
+    })
+    expect(falsch.success).toBe(false)
   })
   it('validiert einen Richtwert', () => {
     const r = HaltestelleSchema.safeParse({

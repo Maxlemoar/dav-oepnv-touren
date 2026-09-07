@@ -6,3 +6,8 @@ lon: 6.96909
 land: FR
 region: Vogesen
 richtwerte: { kehl: { fahrzeitMin: 210, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 163, bahnKm: 119 }, lahr: { fahrzeitMin: 206, umstiege: 4, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 135, bahnKm: 99 }, offenburg: { fahrzeitMin: 215, umstiege: 3, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 149, bahnKm: 119 } }
+bahn:
+  extId: "8701342"
+  name: Kruth(Cernay)
+  x: 6969031
+  y: 47924137

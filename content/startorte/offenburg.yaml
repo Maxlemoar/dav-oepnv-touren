@@ -4,3 +4,8 @@ haltestelleId: de-DELFI_de:08317:14506_G
 lat: 48.476475
 lon: 7.946723
 sichtbar: true
+bahn:
+  extId: "8000290"
+  name: Offenburg
+  x: 7946725
+  y: 48476479

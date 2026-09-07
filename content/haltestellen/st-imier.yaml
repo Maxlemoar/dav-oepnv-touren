@@ -6,3 +6,8 @@ lon: 7.00123
 land: CH
 region: Berner Jura
 richtwerte: { kehl: { fahrzeitMin: 239, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 250, bahnKm: 212 }, lahr: { fahrzeitMin: 237, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 222, bahnKm: 183 }, offenburg: { fahrzeitMin: 210, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 236, bahnKm: 204 } }
+bahn:
+  extId: "8504310"
+  name: St-Imier
+  x: 7001222
+  y: 47151712

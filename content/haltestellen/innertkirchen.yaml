@@ -6,3 +6,8 @@ lon: 8.22959
 land: CH
 region: Berner Oberland
 richtwerte: { kehl: { fahrzeitMin: 339, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 286, bahnKm: 263 }, lahr: { fahrzeitMin: 289, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 259, bahnKm: 230 }, offenburg: { fahrzeitMin: 262, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 272, bahnKm: 248 } }
+bahn:
+  extId: "8508395"
+  name: Innertkirchen Grimseltor
+  x: 8229597
+  y: 46705577

@@ -6,3 +6,8 @@ lon: 7.44352
 land: CH
 region: Berner Oberland
 richtwerte: { kehl: { fahrzeitMin: 316, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 312, bahnKm: 296 }, lahr: { fahrzeitMin: 294, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 284, bahnKm: 264 }, offenburg: { fahrzeitMin: 267, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 297, bahnKm: 284 } }
+bahn:
+  extId: "8507279"
+  name: Lenk im Simmental
+  x: 7443518
+  y: 46458581

@@ -6,3 +6,8 @@ lon: 8.10669
 land: DE
 region: Hochschwarzwald
 richtwerte: { kehl: { fahrzeitMin: 128, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 107, bahnKm: 97 }, lahr: { fahrzeitMin: 87, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 79, bahnKm: 65 }, offenburg: { fahrzeitMin: 89, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 92, bahnKm: 81 } }
+bahn:
+  extId: "8002848"
+  name: Hinterzarten
+  x: 8106032
+  y: 47906275

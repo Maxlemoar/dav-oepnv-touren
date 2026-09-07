@@ -6,3 +6,8 @@ lon: 9.32667
 land: CH
 region: Surselva (Graubünden)
 richtwerte: { kehl: { fahrzeitMin: 384, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 364, bahnKm: 278 }, lahr: { fahrzeitMin: 334, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 336, bahnKm: 249 }, offenburg: { fahrzeitMin: 307, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 350, bahnKm: 260 } }
+bahn:
+  extId: "8509721"
+  name: Fidaz, Bargis
+  x: 9326668
+  y: 46854052

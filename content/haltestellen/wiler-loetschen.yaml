@@ -6,3 +6,8 @@ lon: 7.78343
 land: CH
 region: Lötschental (Wallis)
 richtwerte: { kehl: { fahrzeitMin: 302, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 432, bahnKm: 302 }, lahr: { fahrzeitMin: 312, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 404, bahnKm: 269 }, offenburg: { fahrzeitMin: 285, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 418, bahnKm: 289 } }
+bahn:
+  extId: "8571019"
+  name: Wiler (Lötschen), Dorf
+  x: 7783427
+  y: 46402425

@@ -6,3 +6,8 @@ lon: 10.26709
 land: AT
 region: Arlberg (Tirol)
 richtwerte: { kehl: { fahrzeitMin: 438, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 335, bahnKm: 305 }, lahr: { fahrzeitMin: 406, umstiege: 8, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 331, bahnKm: 283 }, offenburg: { fahrzeitMin: 383, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 315, bahnKm: 286 } }
+bahn:
+  extId: "8100064"
+  name: St. Anton am Arlberg
+  x: 10267083
+  y: 47127333

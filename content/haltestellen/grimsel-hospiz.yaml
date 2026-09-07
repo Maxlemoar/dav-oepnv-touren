@@ -6,3 +6,8 @@ lon: 8.33181
 land: CH
 region: Berner Oberland
 richtwerte: { kehl: { fahrzeitMin: 384, umstiege: 4, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 310, bahnKm: 283 }, lahr: { fahrzeitMin: 334, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 282, bahnKm: 250 }, offenburg: { fahrzeitMin: 307, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 296, bahnKm: 267 } }
+bahn:
+  extId: "8577049"
+  name: Grimsel, Hospiz
+  x: 8331814
+  y: 46571611

@@ -6,3 +6,8 @@ lon: 7.44157
 land: CH
 region: Berner Oberland
 richtwerte: { kehl: { fahrzeitMin: 341, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 320, bahnKm: 304 }, lahr: { fahrzeitMin: 411, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 292, bahnKm: 272 }, offenburg: { fahrzeitMin: 384, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 306, bahnKm: 292 } }
+bahn:
+  extId: "8507609"
+  name: Lenk, Iffigenalp
+  x: 7441567
+  y: 46400169

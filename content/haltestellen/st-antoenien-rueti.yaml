@@ -6,3 +6,8 @@ lon: 9.82779
 land: CH
 region: Prättigau (Graubünden)
 richtwerte: { kehl: { fahrzeitMin: 394, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 354, bahnKm: 292 }, lahr: { fahrzeitMin: 344, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 326, bahnKm: 266 }, offenburg: { fahrzeitMin: 317, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 340, bahnKm: 273 } }
+bahn:
+  extId: "8509746"
+  name: St. Antönien, Rüti
+  x: 9827781
+  y: 46972764

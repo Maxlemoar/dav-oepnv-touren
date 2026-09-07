@@ -30,3 +30,8 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 264
     bahnKm: 233
+bahn:
+  extId: "8505658"
+  name: Brügg (Bürglen UR)
+  x: 8681809
+  y: 46876777

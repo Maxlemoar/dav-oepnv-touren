@@ -7,3 +7,8 @@ lon: 8.58871
 land: CH
 region: Uri (Zentralschweiz)
 richtwerte: { kehl: { fahrzeitMin: 337, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 298, bahnKm: 276 }, lahr: { fahrzeitMin: 287, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 270, bahnKm: 243 }, offenburg: { fahrzeitMin: 260, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 284, bahnKm: 259 } }
+bahn:
+  extId: "8505119"
+  name: Göschenen
+  x: 8588806
+  y: 46665818

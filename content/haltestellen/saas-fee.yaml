@@ -6,3 +6,8 @@ lon: 7.92957
 land: CH
 region: Saastal (Wallis)
 richtwerte: { kehl: { fahrzeitMin: 351, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 453, bahnKm: 343 }, lahr: { fahrzeitMin: 301, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 425, bahnKm: 310 }, offenburg: { fahrzeitMin: 274, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 438, bahnKm: 329 } }
+bahn:
+  extId: "8501782"
+  name: Saas-Fee, Busterminal
+  x: 7929565
+  y: 46108792

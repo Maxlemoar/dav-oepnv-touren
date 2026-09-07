@@ -6,3 +6,8 @@ lon: 9.28761
 land: CH
 region: Surselva (Graubünden)
 richtwerte: { kehl: { fahrzeitMin: 346, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 358, bahnKm: 279 }, lahr: { fahrzeitMin: 296, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 330, bahnKm: 249 }, offenburg: { fahrzeitMin: 269, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 344, bahnKm: 260 } }
+bahn:
+  extId: "8509773"
+  name: Flims Dorf, Post
+  x: 9287610
+  y: 46836658

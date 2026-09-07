@@ -30,3 +30,8 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 105
     bahnKm: 85
+bahn:
+  extId: "8001971"
+  name: Feldberg-Bärental
+  x: 8098292
+  y: 47871442

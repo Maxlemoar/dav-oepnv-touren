@@ -30,3 +30,8 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 252
     bahnKm: 234
+bahn:
+  extId: "8508399"
+  name: Engelberg(CH)
+  x: 8402505
+  y: 46819516

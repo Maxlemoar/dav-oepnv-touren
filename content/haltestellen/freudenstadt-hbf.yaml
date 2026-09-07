@@ -6,3 +6,8 @@ lon: 8.4288
 land: DE
 region: Nordschwarzwald
 richtwerte: { kehl: { fahrzeitMin: 151, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 59, bahnKm: 60 }, lahr: { fahrzeitMin: 118, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 76, bahnKm: 57 }, offenburg: { fahrzeitMin: 105, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 51, bahnKm: 44 } }
+bahn:
+  extId: "8000110"
+  name: Freudenstadt Hbf
+  x: 8428807
+  y: 48460326

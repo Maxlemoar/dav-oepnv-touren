@@ -6,3 +6,8 @@ lon: 9.92184
 land: CH
 region: Davos (Graubünden)
 richtwerte: { kehl: { fahrzeitMin: 452, umstiege: 5, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 380, bahnKm: 325 }, lahr: { fahrzeitMin: 402, umstiege: 5, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 352, bahnKm: 298 }, offenburg: { fahrzeitMin: 375, umstiege: 4, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 366, bahnKm: 306 } }
+bahn:
+  extId: "8587442"
+  name: Davos Dischma, Dürrboden
+  x: 9921835
+  y: 46721048

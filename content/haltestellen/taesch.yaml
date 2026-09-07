@@ -6,3 +6,8 @@ lon: 7.77451
 land: CH
 region: Mattertal (Wallis)
 richtwerte: { kehl: { fahrzeitMin: 349, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 457, bahnKm: 349 }, lahr: { fahrzeitMin: 299, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 429, bahnKm: 316 }, offenburg: { fahrzeitMin: 272, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 443, bahnKm: 335 } }
+bahn:
+  extId: "8501688"
+  name: Täsch
+  x: 7774510
+  y: 46067460

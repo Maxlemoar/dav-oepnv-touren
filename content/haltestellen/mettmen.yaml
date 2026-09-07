@@ -6,3 +6,8 @@ lon: 9.09592
 land: CH
 region: Glarner Alpen (Glarus)
 richtwerte: { kehl: { fahrzeitMin: 366, umstiege: 6, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 304, bahnKm: 255 }, lahr: { fahrzeitMin: 316, umstiege: 6, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 276, bahnKm: 225 }, offenburg: { fahrzeitMin: 289, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 290, bahnKm: 237 } }
+bahn:
+  extId: "8530518"
+  name: Mettmen
+  x: 9095915
+  y: 46958678

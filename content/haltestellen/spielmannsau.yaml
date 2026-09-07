@@ -6,3 +6,8 @@ lon: 10.305
 land: DE
 region: Allgäu
 richtwerte: { kehl: { fahrzeitMin: 392, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 372, bahnKm: 289 }, lahr: { fahrzeitMin: 365, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 389, bahnKm: 269 }, offenburg: { fahrzeitMin: 343, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 372, bahnKm: 270 } }
+bahn:
+  extId: "592282"
+  name: Spielmannsau, Oberstdorf
+  x: 10304928
+  y: 47347218

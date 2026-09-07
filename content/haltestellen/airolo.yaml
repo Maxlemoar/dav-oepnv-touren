@@ -6,3 +6,8 @@ lon: 8.60862
 land: CH
 region: Tessin / Bedretto
 richtwerte: { kehl: { fahrzeitMin: 348, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 316, bahnKm: 295 }, lahr: { fahrzeitMin: 298, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 289, bahnKm: 262 }, offenburg: { fahrzeitMin: 271, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 302, bahnKm: 278 } }
+bahn:
+  extId: "8505201"
+  name: Airolo
+  x: 8608619
+  y: 46527528

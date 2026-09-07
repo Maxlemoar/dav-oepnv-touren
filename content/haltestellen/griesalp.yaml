@@ -6,3 +6,8 @@ lon: 7.76167
 land: CH
 region: Berner Oberland
 richtwerte: { kehl: { fahrzeitMin: 297, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 287, bahnKm: 282 }, lahr: { fahrzeitMin: 367, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 259, bahnKm: 249 }, offenburg: { fahrzeitMin: 340, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 273, bahnKm: 269 } }
+bahn:
+  extId: "8507755"
+  name: Griesalp, Kurhaus
+  x: 7761673
+  y: 46547475

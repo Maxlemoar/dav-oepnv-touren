@@ -6,3 +6,8 @@ lon: 8.31827
 land: CH
 region: Berner Oberland
 richtwerte: { kehl: { fahrzeitMin: 358, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 295, bahnKm: 262 }, lahr: { fahrzeitMin: 308, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 267, bahnKm: 230 }, offenburg: { fahrzeitMin: 281, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 280, bahnKm: 247 } }
+bahn:
+  extId: "8571603"
+  name: Nessental, Triftbahn
+  x: 8318276
+  y: 46720778

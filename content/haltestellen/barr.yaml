@@ -6,3 +6,8 @@ lon: 7.45671
 land: FR
 region: Nordvogesen
 richtwerte: { kehl: { fahrzeitMin: 71, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 40, bahnKm: 40 }, lahr: { fahrzeitMin: 131, umstiege: 2, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 67, bahnKm: 36 }, offenburg: { fahrzeitMin: 96, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 50, bahnKm: 46 } }
+bahn:
+  extId: "8700290"
+  name: Barr
+  x: 7456930
+  y: 48403316

@@ -30,3 +30,8 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 54
     bahnKm: 37
+bahn:
+  extId: "720870"
+  name: Sand Kapelle, Bühl
+  x: 8237346
+  y: 48657135

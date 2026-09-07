@@ -6,3 +6,8 @@ lon: 9.07747
 land: CH
 region: Glarner Alpen (Glarus)
 richtwerte: { kehl: { fahrzeitMin: 311, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 296, bahnKm: 250 }, lahr: { fahrzeitMin: 261, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 268, bahnKm: 220 }, offenburg: { fahrzeitMin: 234, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 282, bahnKm: 231 } }
+bahn:
+  extId: "8503233"
+  name: Schwanden GL
+  x: 9077469
+  y: 46996855

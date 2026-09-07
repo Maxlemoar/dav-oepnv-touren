@@ -4,3 +4,8 @@ haltestelleId: de-DELFI_de:08317:15011
 lat: 48.57666
 lon: 7.80656
 sichtbar: false
+bahn:
+  extId: "8003218"
+  name: Kehl
+  x: 7806556
+  y: 48576655

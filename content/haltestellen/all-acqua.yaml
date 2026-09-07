@@ -6,3 +6,8 @@ lon: 8.47417
 land: CH
 region: Tessin / Bedretto
 richtwerte: { kehl: { fahrzeitMin: 372, umstiege: 3, takt: unregelmaessig, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 327, bahnKm: 297 }, lahr: { fahrzeitMin: 322, umstiege: 3, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 299, bahnKm: 265 }, offenburg: { fahrzeitMin: 295, umstiege: 2, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 313, bahnKm: 281 } }
+bahn:
+  extId: "8505869"
+  name: All'Acqua
+  x: 8474167
+  y: 46485971

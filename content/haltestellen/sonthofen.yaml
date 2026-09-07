@@ -6,3 +6,8 @@ lon: 10.27255
 land: DE
 region: Allgäu
 richtwerte: { kehl: { fahrzeitMin: 327, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 352, bahnKm: 273 }, lahr: { fahrzeitMin: 300, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 369, bahnKm: 254 }, offenburg: { fahrzeitMin: 278, umstiege: 1, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 352, bahnKm: 254 } }
+bahn:
+  extId: "965322"
+  name: Bahnhof, Sonthofen
+  x: 10272558
+  y: 47513806

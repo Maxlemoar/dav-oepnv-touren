@@ -6,3 +6,8 @@ lon: 8.90057
 land: CH
 region: Glarner Alpen (Glarus)
 richtwerte: { kehl: { fahrzeitMin: 391, umstiege: 3, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 307, bahnKm: 256 }, lahr: { fahrzeitMin: 316, umstiege: 4, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 280, bahnKm: 225 }, offenburg: { fahrzeitMin: 330, umstiege: 3, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 293, bahnKm: 238 } }
+bahn:
+  extId: "8505776"
+  name: Urnerboden, Dorf
+  x: 8900570
+  y: 46889811

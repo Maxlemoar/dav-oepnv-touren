@@ -6,3 +6,8 @@ lon: 10.09234
 land: AT
 region: Vorarlberg
 richtwerte: { kehl: { fahrzeitMin: 577, umstiege: 5, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 393, bahnKm: 314 }, lahr: { fahrzeitMin: 497, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 390, bahnKm: 289 }, offenburg: { fahrzeitMin: 474, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 373, bahnKm: 295 } }
+bahn:
+  extId: "311813"
+  name: Bielerhöhe Silvrettasee, Gaschurn (A)
+  x: 10092612
+  y: 46917273

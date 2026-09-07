@@ -30,3 +30,8 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 104
     bahnKm: 103
+bahn:
+  extId: "8700541"
+  name: Metzeral
+  x: 7073369
+  y: 48013580

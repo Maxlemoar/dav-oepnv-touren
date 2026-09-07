@@ -6,3 +6,8 @@ lon: 8.54945
 land: CH
 region: Zentralschweiz
 richtwerte: { kehl: { fahrzeitMin: 238, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 261, bahnKm: 223 }, lahr: { fahrzeitMin: 218, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 233, bahnKm: 192 }, offenburg: { fahrzeitMin: 191, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 247, bahnKm: 206 } }
+bahn:
+  extId: "8505004"
+  name: Arth-Goldau
+  x: 8549443
+  y: 47049046

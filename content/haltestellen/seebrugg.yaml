@@ -6,3 +6,8 @@ lon: 8.19099
 land: DE
 region: Südschwarzwald
 richtwerte: { kehl: { fahrzeitMin: 209, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 132, bahnKm: 113 }, lahr: { fahrzeitMin: 143, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 104, bahnKm: 82 }, offenburg: { fahrzeitMin: 145, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 118, bahnKm: 96 } }
+bahn:
+  extId: "8005502"
+  name: Schluchsee-Seebrugg
+  x: 8191115
+  y: 47803520

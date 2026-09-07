@@ -30,3 +30,8 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 277
     bahnKm: 277
+bahn:
+  extId: "8507475"
+  name: Kandersteg
+  x: 7671412
+  y: 46495401

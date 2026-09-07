@@ -6,3 +6,8 @@ lon: 8.99779
 land: CH
 region: Glarner Alpen (Glarus)
 richtwerte: { kehl: { fahrzeitMin: 328, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 307, bahnKm: 255 }, lahr: { fahrzeitMin: 278, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 279, bahnKm: 225 }, offenburg: { fahrzeitMin: 251, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 293, bahnKm: 237 } }
+bahn:
+  extId: "8503239"
+  name: Linthal
+  x: 8997798
+  y: 46925561

@@ -13,6 +13,7 @@
     "karte": "tsx scripts/karte.ts",
     "rauchtest": "tsx scripts/rauchtest.ts",
     "pruefliste": "tsx scripts/pruefliste.ts",
+    "bahn-ids": "tsx scripts/bahn-ids.ts",
     "prebuild": "tsx scripts/maplibre-worker.ts && tsx scripts/karte.ts",
     "maplibre-worker": "tsx scripts/maplibre-worker.ts",
     "predev": "tsx scripts/maplibre-worker.ts && tsx scripts/karte.ts"

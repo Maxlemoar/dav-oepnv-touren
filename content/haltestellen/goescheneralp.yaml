@@ -6,3 +6,8 @@ lon: 8.49919
 land: CH
 region: Uri (Zentralschweiz)
 richtwerte: { kehl: { fahrzeitMin: 390, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 307, bahnKm: 276 }, lahr: { fahrzeitMin: 340, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 280, bahnKm: 243 }, offenburg: { fahrzeitMin: 313, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 293, bahnKm: 259 } }
+bahn:
+  extId: "8505779"
+  name: Göscheneralp, Dammagletscher
+  x: 8499184
+  y: 46649026

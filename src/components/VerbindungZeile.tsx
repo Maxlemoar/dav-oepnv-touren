@@ -2,17 +2,17 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
-import type { Land } from '@/lib/content/schema'
+import type { BahnOrt, Land } from '@/lib/content/schema'
 import { datumKurz, lokaleUhrzeit, minutenAlsDauer, tageDifferenz, wochentagKurz } from '@/lib/datum'
 import { zeitraumAusUrl } from '@/lib/verbindung/parameter'
 import { naechteText } from '@/lib/zeitraum'
-import { fahrplanLink } from '@/lib/links'
+import { fahrplanLink, rueckfahrtLink } from '@/lib/links'
 import { TageszielBadge, TicketBadge } from './Badges'
 import { VerbindungDetail } from './VerbindungDetail'
 
 type Props = {
-  von: { id: string; name: string }
-  nach: { id: string; name: string; land: Land }
+  von: { id: string; name: string; bahn?: BahnOrt }
+  nach: { id: string; name: string; land: Land; bahn?: BahnOrt }
   /** Hütte 1 (Rückfahrt frühestens am Folgetag), Gebiet 0. */
   mindestNaechte: 0 | 1
   /** Gehzeit bis zur Hütte, für "an der Hütte gegen …" */
@@ -48,7 +48,10 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin }: Props
     return () => { aktiv = false }
   }, [anfrage])
 
-  const link = fahrplanLink(nach.land, von.name, nach.name, datum)
+  const portal = nach.land === 'CH' ? 'SBB' : 'bahn.de'
+  // Links tragen Datum und lokale Abfahrtszeit der gezeigten Verbindung; ohne Live-Daten die Standardzeiten.
+  const hinLink = (zeitLokal?: string) => fahrplanLink({ land: nach.land, von, nach, datum, zeitLokal })
+  const rueckLink = (rueckDatum: string, zeitLokal?: string) => rueckfahrtLink({ land: nach.land, von, nach, datum: rueckDatum, zeitLokal })
 
   if (!antwort) {
     return (
@@ -69,13 +72,17 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin }: Props
         </div>
         <div className="text-sm text-tinte-3">
           {antwort.quelle === 'richtwert' ? 'Live-Fahrplan gerade nicht erreichbar. ' : ''}
-          <a href={link} target="_blank" rel="noreferrer" className="underline">Fahrplan bei {nach.land === 'CH' ? 'SBB' : 'bahn.de'} öffnen</a>
+          <a href={hinLink()} target="_blank" rel="noreferrer" className="underline">Hinfahrt bei {portal}</a>
+          {' · '}
+          <a href={rueckLink(antwort.rueckfahrtDatum)} target="_blank" rel="noreferrer" className="underline">Rückfahrt bei {portal}</a>
         </div>
       </div>
     )
   }
 
   const h = antwort.hinfahrt
+  const hinfahrtUrl = hinLink(lokaleUhrzeit(h.ab))
+  const rueckfahrtUrl = rueckLink(antwort.rueckfahrtDatum, antwort.rueckfahrt ? lokaleUhrzeit(antwort.rueckfahrt.ab) : undefined)
   const ankunftHuette = zustiegMin ? new Date(Date.parse(h.an) + zustiegMin * 60_000).toISOString() : undefined
 
   return (
@@ -105,13 +112,16 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin }: Props
       </button>
       {offen && (
         <div className="space-y-3 rounded-[var(--radius-knopf)] bg-papier p-3">
-          <VerbindungDetail titel="Hinfahrt" v={h} />
-          {antwort.hinfahrtSpaeter && <VerbindungDetail titel="Später los" v={antwort.hinfahrtSpaeter} />}
-          {antwort.rueckfahrt && <VerbindungDetail titel="Rückfahrt" v={antwort.rueckfahrt} />}
+          <VerbindungDetail titel="Hinfahrt" v={h} link={{ href: hinfahrtUrl, text: `Hinfahrt bei ${portal}` }} />
+          {antwort.hinfahrtSpaeter && (
+            <VerbindungDetail titel="Später los" v={antwort.hinfahrtSpaeter} link={{ href: hinLink(lokaleUhrzeit(antwort.hinfahrtSpaeter.ab)), text: `Spätere Hinfahrt bei ${portal}` }} />
+          )}
+          {antwort.rueckfahrt && <VerbindungDetail titel="Rückfahrt" v={antwort.rueckfahrt} link={{ href: rueckfahrtUrl, text: `Rückfahrt bei ${portal}` }} />}
           <p className="text-sm text-tinte-2">{antwort.ticket.hinweis}</p>
-          <a href={link} target="_blank" rel="noreferrer" className="knopf-sekundaer w-full sm:w-auto">
-            Bei {nach.land === 'CH' ? 'SBB' : 'bahn.de'} buchen
-          </a>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <a href={hinfahrtUrl} target="_blank" rel="noreferrer" className="knopf-sekundaer w-full sm:w-auto">Hinfahrt bei {portal}</a>
+            <a href={rueckfahrtUrl} target="_blank" rel="noreferrer" className="knopf-sekundaer w-full sm:w-auto">Rückfahrt bei {portal}</a>
+          </div>
         </div>
       )}
     </div>

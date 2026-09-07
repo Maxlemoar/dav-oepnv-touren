@@ -3,6 +3,14 @@ import { z } from 'zod'
 const Id = z.string().regex(/^[a-z0-9-]+$/, 'id: nur a-z, 0-9 und Bindestrich')
 const Koordinate = { lat: z.number().min(-90).max(90), lon: z.number().min(-180).max(180) }
 
+/** Bahnhof bei bahn.de (Orte-API): extId = EVA-Nummer, x/y = lon/lat × 1e6 wie in der DB-Orts-ID. */
+export const BahnOrtSchema = z.object({
+  extId: z.string().regex(/^\d+$/, 'extId: nur Ziffern'),
+  name: z.string().min(1),
+  x: z.number().int(),
+  y: z.number().int(),
+})
+
 export const SportartSchema = z.enum(['wandern', 'hochtour', 'skitour', 'klettern', 'klettersteig', 'schneeschuh'])
 export const SaisonSchema = z.enum(['sommer', 'winter', 'ganzjaehrig'])
 export const LandSchema = z.enum(['DE', 'FR', 'CH', 'AT'])
@@ -16,6 +24,7 @@ export const StartortSchema = z.object({
   haltestelleId: z.string().min(1),
   ...Koordinate,
   sichtbar: z.boolean(),
+  bahn: BahnOrtSchema.optional(),
 })
 
 export const RichtwertSchema = z.object({
@@ -36,6 +45,7 @@ export const HaltestelleSchema = z.object({
   land: LandSchema,
   region: z.string().min(1),
   richtwerte: z.record(z.string(), RichtwertSchema).default({}),
+  bahn: BahnOrtSchema.optional(),
 })
 
 export const GebietSchema = z.object({
@@ -97,6 +107,7 @@ export type Land = z.infer<typeof LandSchema>
 export type Ticket = z.infer<typeof TicketSchema>
 export type Takt = z.infer<typeof TaktSchema>
 export type BetreiberTyp = z.infer<typeof BetreiberTypSchema>
+export type BahnOrt = z.infer<typeof BahnOrtSchema>
 export type Startort = z.infer<typeof StartortSchema>
 export type Richtwert = z.infer<typeof RichtwertSchema>
 export type Haltestelle = z.infer<typeof HaltestelleSchema>

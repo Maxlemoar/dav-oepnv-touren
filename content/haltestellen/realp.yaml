@@ -6,3 +6,8 @@ lon: 8.50346
 land: CH
 region: Uri (Zentralschweiz)
 richtwerte: { kehl: { fahrzeitMin: 396, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 311, bahnKm: 283 }, lahr: { fahrzeitMin: 346, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 284, bahnKm: 250 }, offenburg: { fahrzeitMin: 319, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 297, bahnKm: 266 } }
+bahn:
+  extId: "8505163"
+  name: Realp
+  x: 8503463
+  y: 46598624

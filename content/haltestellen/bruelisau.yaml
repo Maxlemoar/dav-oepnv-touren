@@ -6,3 +6,8 @@ lon: 9.45681
 land: CH
 region: Alpstein (Appenzell)
 richtwerte: { kehl: { fahrzeitMin: 331, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 315, bahnKm: 235 }, lahr: { fahrzeitMin: 311, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 287, bahnKm: 210 }, offenburg: { fahrzeitMin: 288, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 221, bahnKm: 216 } }
+bahn:
+  extId: "8587015"
+  name: Brülisau, Kastenbahn
+  x: 9456805
+  y: 47296690

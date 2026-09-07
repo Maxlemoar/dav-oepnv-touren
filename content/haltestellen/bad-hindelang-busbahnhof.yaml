@@ -6,3 +6,8 @@ lon: 10.37011
 land: DE
 region: Allgäu
 richtwerte: { kehl: { fahrzeitMin: 377, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 359, bahnKm: 281 }, lahr: { fahrzeitMin: 350, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 376, bahnKm: 263 }, offenburg: { fahrzeitMin: 328, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 358, bahnKm: 263 } }
+bahn:
+  extId: "965176"
+  name: Busbahnhof, Bad Hindelang
+  x: 10369938
+  y: 47504835

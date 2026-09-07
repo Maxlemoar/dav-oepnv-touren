@@ -6,3 +6,8 @@ lon: 8.46159
 land: CH
 region: Uri (Zentralschweiz)
 richtwerte: { kehl: { fahrzeitMin: 412, umstiege: 5, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 318, bahnKm: 283 }, lahr: { fahrzeitMin: 423, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 290, bahnKm: 250 }, offenburg: { fahrzeitMin: 396, umstiege: 3, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 304, bahnKm: 266 } }
+bahn:
+  extId: "8508982"
+  name: Tiefenbach (Furka)
+  x: 8461591
+  y: 46592709

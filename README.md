@@ -31,6 +31,8 @@ npm run richtwerte                 # Fahrzeit, Umstiege, Takt, Ticket, Distanzen
 npm run richtwerte -- --nur kandersteg
 npm run richtwerte -- --datum 2026-09-19
 npm run karte                      # public/karte.json neu erzeugen
+npm run bahn-ids                   # bahn.de-Bahnhofsdaten (Feld `bahn`) für Startorte und Haltestellen ohne dieses Feld
+npm run bahn-ids -- --alle         # … für alle neu; --nur <id> für einen Eintrag. Ohne `bahn` fällt der Buchungslink auf eine Namenssuche zurück
 npm run pruefliste                 # docs/pruefliste.md für den Arbeitskreis
 npm run rauchtest                  # 5 Live-Abfragen, warnt nur
 ```

@@ -6,3 +6,8 @@ lon: 8.18425
 land: CH
 region: Berner Oberland
 richtwerte: { kehl: { fahrzeitMin: 293, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 280, bahnKm: 259 }, lahr: { fahrzeitMin: 272, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 253, bahnKm: 227 }, offenburg: { fahrzeitMin: 245, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 266, bahnKm: 244 } }
+bahn:
+  extId: "8508308"
+  name: Meiringen
+  x: 8184247
+  y: 46727331

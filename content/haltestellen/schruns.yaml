@@ -6,3 +6,8 @@ lon: 9.91771
 land: AT
 region: Vorarlberg
 richtwerte: { kehl: { fahrzeitMin: 401, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 306, bahnKm: 287 }, lahr: { fahrzeitMin: 351, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 302, bahnKm: 262 }, offenburg: { fahrzeitMin: 328, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 286, bahnKm: 268 } }
+bahn:
+  extId: "8100117"
+  name: Schruns
+  x: 9917601
+  y: 47079502
