@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from 'react'
 import dynamic from 'next/dynamic'
 import { filtereGebiete, leseFilter, schreibeFilter, STANDARD_FILTER, type FilterZustand, type GebietEintrag } from '@/lib/filter'
-import { naechsterSamstag } from '@/lib/datum'
+import { naechsterSamstag, tageDifferenz } from '@/lib/datum'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
 import { verbindungParameter } from '@/lib/verbindung/parameter'
 import { DatumWahl, STANDARD_FENSTER } from './DatumWahl'
@@ -22,7 +22,7 @@ type Props = {
   empfehlungen: ReactNode
 }
 
-type Auswahl = { filter: FilterZustand; datum: string; fenster: number }
+type Auswahl = { filter: FilterZustand; datum: string; rueck: string; fenster: number }
 
 /**
  * Die Seiten-URL als externer Store: window.location.search, Server-Wert leer. So braucht die Seite
@@ -48,8 +48,11 @@ const abonniereNichts = () => () => {}
 
 export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: Props) {
   const suche = useSyncExternalStore(abonniereUrl, leseUrl, leseUrlServer)
-  const { filter, datum, fenster } = useMemo<Auswahl>(() => {
-    if (!suche) return { filter: STANDARD_FILTER, datum: naechsterSamstag(), fenster: STANDARD_FENSTER }
+  const { filter, datum, rueck, fenster } = useMemo<Auswahl>(() => {
+    if (!suche) {
+      const samstag = naechsterSamstag()
+      return { filter: STANDARD_FILTER, datum: samstag, rueck: samstag, fenster: STANDARD_FENSTER }
+    }
     const sp = new URLSearchParams(suche)
     return { filter: leseFilter(sp), ...verbindungParameter(sp) }
   }, [suche])
@@ -57,8 +60,13 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
   // Die Karte (ssr: false) erst nach der Hydration rendern, damit im Server-HTML nur das Skeleton steht.
   const montiert = useSyncExternalStore(abonniereNichts, () => true, () => false)
 
+  const naechte = tageDifferenz(datum, rueck)
+  // Tagesziel gibt es nur bei Rückfahrt am selben Tag; sonst gilt der Filter "Tagestour" wie "Alle".
+  const tagestourMoeglich = naechte === 0
+  const filterWirksam = tagestourMoeglich || filter.art !== 'tag' ? filter : { ...filter, art: 'alle' as const }
+
   // Übersicht wird mit ihrer Anfrage gespeichert; passt sie nicht mehr, gilt sie als ladend.
-  const anfrage = `von=${startort.id}&datum=${datum}&fenster=${fenster}`
+  const anfrage = `von=${startort.id}&datum=${datum}${tagestourMoeglich ? '' : `&rueck=${rueck}`}&fenster=${fenster}`
   const [geladen, setGeladen] = useState<{ anfrage: string; uebersicht: Record<string, boolean | undefined> } | null>(null)
   const laedt = geladen?.anfrage !== anfrage
   const uebersicht = useMemo(() => (laedt ? {} : geladen!.uebersicht), [laedt, geladen])
@@ -80,12 +88,13 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
   function aendere(neu: Auswahl) {
     const sp = schreibeFilter(new URLSearchParams(window.location.search), neu.filter)
     if (neu.datum === naechsterSamstag()) sp.delete('datum'); else sp.set('datum', neu.datum)
+    if (neu.rueck === neu.datum) sp.delete('rueck'); else sp.set('rueck', neu.rueck)
     if (neu.fenster === STANDARD_FENSTER) sp.delete('fenster'); else sp.set('fenster', String(neu.fenster))
     schreibeUrl(sp)
   }
-  const onFilter = (f: FilterZustand) => aendere({ filter: f, datum, fenster })
+  const onFilter = (f: FilterZustand) => aendere({ filter: f, datum, rueck, fenster })
 
-  const sichtbar = filtereGebiete(gebiete, filter, uebersicht)
+  const sichtbar = filtereGebiete(gebiete, filterWirksam, uebersicht)
 
   return (
     <div className="space-y-5">
@@ -94,10 +103,10 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
       </section>
 
       <section className="space-y-3">
-        <DatumWahl datum={datum} fenster={fenster}
-          onDatum={(d) => aendere({ filter, datum: d, fenster })}
-          onFenster={(f) => aendere({ filter, datum, fenster: f })} />
-        <Filter wert={filter} onChange={onFilter} />
+        <DatumWahl datum={datum} rueck={rueck} fenster={fenster}
+          onZeitraum={(d, r) => aendere({ filter, datum: d, rueck: r, fenster })}
+          onFenster={(f) => aendere({ filter, datum, rueck, fenster: f })} />
+        <Filter wert={filter} tagestourMoeglich={tagestourMoeglich} onChange={onFilter} />
       </section>
 
       {!filter.suche && empfehlungen}
@@ -105,7 +114,7 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
       <div className="lg:grid lg:grid-cols-[1fr_1fr] lg:gap-6">
         <section className={`space-y-3 ${karteOffen ? 'hidden lg:block' : ''}`}>
           <h2 className="text-sm text-tinte-3">{sichtbar.length} {sichtbar.length === 1 ? 'Ziel' : 'Ziele'}, nach Fahrzeit sortiert</h2>
-          {sichtbar.map((g) => <GebietKarte key={g.id} g={g} tagesziel={uebersicht[g.id]} laedt={laedt} />)}
+          {sichtbar.map((g) => <GebietKarte key={g.id} g={g} tagesziel={uebersicht[g.id]} laedt={laedt} naechte={naechte} />)}
           {sichtbar.length === 0 && <p className="text-tinte-2">Nichts gefunden. Filter lockern oder Fahrzeit erhöhen.</p>}
         </section>
         <section className={`${karteOffen ? 'block' : 'hidden'} h-[70dvh] overflow-hidden rounded-[var(--radius-karte)] border border-linie lg:sticky lg:top-20 lg:block lg:h-[calc(100dvh-6rem)]`}>

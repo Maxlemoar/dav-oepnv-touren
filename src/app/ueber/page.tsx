@@ -14,7 +14,7 @@ export default function UeberSeite() {
       </p>
       <h2 className="text-xl font-semibold">So rechnen wir</h2>
       <ul className="list-disc space-y-1 pl-5">
-        <li>Hinfahrt: früheste Ankunft bei Abfahrt zwischen 5 und 8 Uhr. Rückfahrt: letzte Verbindung mit Ankunft vor 23 Uhr.</li>
+        <li>Hinfahrt: früheste Ankunft bei Abfahrt zwischen 5 und 8 Uhr. Rückfahrt: letzte Verbindung mit Ankunft vor 23 Uhr. Bei Hütten liegt die Rückfahrt frühestens am Folgetag; ein längerer Zeitraum lässt sich oben wählen.</li>
         <li>Tagesziel: Ankunft bis 10 Uhr, Rückfahrt ab 16:30, dazwischen mindestens 6 Stunden (einstellbar).</li>
         <li>CO₂: {i.emissionen.pkwGrammProFahrzeugKm} g/km pro Pkw bei {i.emissionen.personenProPkw} Personen gegen {i.emissionen.bahnGrammProPersonenKm} g pro Personenkilometer Bahn.
           Quelle: <a href={i.emissionen.quelleUrl} className="underline">{i.emissionen.quelle}</a>, Stand {i.emissionen.stand}.</li>

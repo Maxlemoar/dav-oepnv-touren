@@ -1,9 +1,19 @@
 import Link from 'next/link'
 import { SPORTART_LABEL } from '@/lib/content/schema'
 import type { GebietEintrag } from '@/lib/filter'
+import { naechteText } from '@/lib/zeitraum'
 import { ReisezeitBadge, TageszielBadge, TicketBadge } from './Badges'
 
-export function GebietKarte({ g, tagesziel, laedt }: { g: GebietEintrag; tagesziel: boolean | undefined; laedt: boolean }) {
+type Props = {
+  g: GebietEintrag
+  tagesziel: boolean | undefined
+  laedt: boolean
+  /** Nächte im gewählten Zeitraum; ab 1 gibt es kein Tagesziel-Urteil, dafür die Nächte-Zeile bei Gebieten mit Hütten. */
+  naechte: number
+}
+
+export function GebietKarte({ g, tagesziel, laedt, naechte }: Props) {
+  const tagestour = naechte === 0
   return (
     <Link href={`/gebiet/${g.id}`} className="karte-card no-underline hover:shadow-md">
       <div className="flex items-start justify-between gap-3">
@@ -16,10 +26,11 @@ export function GebietKarte({ g, tagesziel, laedt }: { g: GebietEintrag; tageszi
         {g.anzahlHuetten > 0 && <span>· {g.anzahlHuetten} {g.anzahlHuetten === 1 ? 'Hütte' : 'Hütten'}</span>}
         <span>· {g.sportarten.map((s) => SPORTART_LABEL[s]).join(', ')}</span>
       </div>
-      <div className="mt-2 flex flex-wrap gap-2">
-        {laedt ? <span className="skeleton h-6 w-24" /> : <TageszielBadge tagesziel={tagesziel} />}
+      <div className="mt-2 flex flex-wrap items-center gap-2">
+        {tagestour && (laedt ? <span className="skeleton h-6 w-24" /> : <TageszielBadge tagesziel={tagesziel} />)}
         {g.ticket && <TicketBadge ticket={g.ticket} />}
       </div>
+      {!tagestour && g.anzahlHuetten > 0 && <p className="mt-2 text-xs text-tinte-3">{naechteText(naechte)}</p>}
     </Link>
   )
 }

@@ -7,7 +7,7 @@ Eine Farbe trägt Bedeutung, sonst Grau- und Papiertöne.
 
 1. **Mobile first.** Alles wird für 360 px Breite entworfen und wächst ab 640 px (sm) und 1024 px (lg).
    Auf dem Handy ist die Liste der Normalfall, die Karte ein Knopf. Ab lg stehen Liste und Karte nebeneinander.
-2. **Eine Spalte, klare Reihenfolge.** Versprechen, Suche, Datum, Filter, Ergebnisse. Keine Sidebar auf dem Handy.
+2. **Eine Spalte, klare Reihenfolge.** Versprechen, Suche, Zeitraum, Filter, Ergebnisse. Keine Sidebar auf dem Handy.
 3. **Berührbar.** Jedes Bedienelement mindestens 44 px hoch. Chips 36 px mit 8 px Abstand. Keine Hover-only-Funktionen.
 4. **Farbe heißt etwas.** Grün bis Orange ist Reisezeit. Signalfarbe nur für Handlungen und das Tagesziel-Urteil.
    Betreiberfarben (DAV, SAC) nur als kleines Symbol, nie als Fläche.
@@ -58,12 +58,12 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
 - **Karte (Card)**: weiß, Radius 14, 16 px Innenabstand, Titel + Meta-Zeile + Verbindungszeile. Ganze Karte ist Link.
 - **Badge**: 24 px hoch, Radius 999. Varianten: stufe (Reisezeit), tagesziel (signal), ticket (nebel), betreiber (Symbol + Text).
 - **Verbindungszeile**: eine Zeile fett mit Zahlen, darunter Meta. Aufklappbar zu Abschnitten.
-- **Datum**: natives `input type=date` in Karte-Weiß, daneben Chips "Sa" und "So" für das kommende Wochenende.
+- **Zeitraum**: zwei native Datumsfelder "Hin" und "Zurück" (Labels klein in tinte-3, je halbe Breite auf dem Handy) in Karte-Weiß, darunter Chips "Sa", "So", "Wochenende" (Sa→So) und "Fr–So" für das kommende Wochenende. "Zurück" liegt nie vor "Hin"; das Select "Mindestens am Berg" erscheint nur bei Hin- und Rückfahrt am selben Tag.
 - **Kartenknopf**: auf dem Handy fest unten mittig (`fixed bottom-4`), 48 px hoch, tanne mit weißem Text.
 - **Skeleton**: nebel-Fläche mit `animate-pulse`, gleiche Höhe wie die spätere Zeile.
 
 ## Verhalten
 
-- Zustand (Datum, Filter, Suche) lebt in der URL. Zurück-Taste und Teilen funktionieren.
+- Zustand (Zeitraum, Filter, Suche) lebt in der URL. Zurück-Taste und Teilen funktionieren.
 - Live-Daten laden nach dem Rendern. Die Seite ist ohne JavaScript lesbar, nur ohne Uhrzeiten.
 - Fokus sichtbar (2 px tanne-Ring). Kontraste mindestens 4.5:1 für Text.
