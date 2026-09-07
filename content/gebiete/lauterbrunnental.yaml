@@ -4,6 +4,31 @@ beschreibung: Talschluss unter Jungfrau und Breithorn. Bus ab Lauterbrunnen bis 
 haltestellen: [lauterbrunnen, stechelberg]
 sportarten: [wandern, hochtour, klettersteig]
 saison: sommer
+touren:
+  - titel: "Von Stechelberg zum Berghotel Obersteinberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-stechelberg-zum-berghotel-obersteinberg/23964025/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 870
+    laengeKm: 11.1
+    schwierigkeit: "schwer"
+  - titel: "Mürrenfluh Klettersteig – Mürren (Seilbahn ab Stechelberg)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/muerrenfluh-klettersteig-muerren/11093522/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 180
+    hoehenmeter: 731
+    laengeKm: 1.8
+    schwierigkeit: "C"
+  - titel: "Jungfrau über Innerer Rottalgrat (ab Stechelberg via Rottalhütte)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/jungfrau-ueber-innerer-rottalgrat/112006887/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 900
+    hoehenmeter: 3600
+    laengeKm: 13.5
+    schwierigkeit: "ZS+"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.575

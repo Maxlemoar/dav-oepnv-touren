@@ -4,6 +4,39 @@ beschreibung: Ab Partenen mit Vermuntbahn und Tunnelbus oder Linienbus auf die B
 haltestellen: [partenen-zentrum, bielerhoehe, schruns]
 sportarten: [hochtour, wandern, skitour]
 saison: sommer
+touren:
+  - titel: "Großer Piz Buin (3312 m) über die Wiesbadener Hütte (2443 m)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/grosser-piz-buin-3312-m-ueber-die-wiesbadener-huette-2443-m-/26661832/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 720
+    hoehenmeter: 1423
+    laengeKm: 22.2
+    schwierigkeit: "WS"
+  - titel: "Silvretta: Bielerhoehe - Bieltal - Radsattel - Wiesbadener Huette - Bielerhoehe"
+    url: "https://www.alpenvereinaktiv.com/de/tour/silvretta-bielerhoehe-bieltal-radsattel-wiesbadener-huette-/345851252/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 305
+    hoehenmeter: 705
+    laengeKm: 15.1
+    schwierigkeit: "T3"
+  - titel: "Piz Buin, 3312m - Skihochtour auf den höchsten Vorarlberger Silvretta-Gipfel"
+    url: "https://www.alpenvereinaktiv.com/de/tour/piz-buin-3312m-skihochtour-auf-den-hoechsten-vorarlberger-silvretta/13160122/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 510
+    hoehenmeter: 1405
+    laengeKm: 21.4
+    schwierigkeit: "mittel"
+  - titel: "A7: Silvretta-Bielerhöhe über die Saarbrücker Hütte zum Vermuntsee"
+    url: "https://www.alpenvereinaktiv.com/de/tour/a7-silvretta-bielerhoehe-ueber-die-saarbruecker-huette-zum-vermuntsee/7424980/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 249
+    hoehenmeter: 607
+    laengeKm: 10.9
+    schwierigkeit: "mittel"
 links:
   - { titel: Alpenvereinaktiv Silvretta, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Silvretta" }
   - { titel: Silvretta-Bielerhöhe, url: "https://www.silvretta-bielerhoehe.at/de" }

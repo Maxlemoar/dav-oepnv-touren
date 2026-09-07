@@ -4,5 +4,22 @@ beschreibung: Klausenpass-Seite mit dem Gruppenhaus Rämsenberg der Sektion. Bus
 haltestellen: [bruegg-buerglen]
 sportarten: [wandern, skitour]
 saison: ganzjaehrig
+touren:
+  - titel: "ViaSuworow, Etappe 6: Biel-Chinzig – Muotathal"
+    url: "https://www.alpenvereinaktiv.com/de/tour/viasuworow-etappe-6-biel-chinzig-muotathal/25013693/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 560
+    laengeKm: 14.5
+    schwierigkeit: "schwer"
+  - titel: "Winterwanderweg 520: Ratzi – Biel – Ruogig"
+    url: "https://www.alpenvereinaktiv.com/de/tour/winterwanderweg-520-ruogig-biel-ratzi/25309238/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 138
+    hoehenmeter: 342
+    laengeKm: 7.8
+    schwierigkeit: "mittel"
 lat: 46.87
 lon: 8.70

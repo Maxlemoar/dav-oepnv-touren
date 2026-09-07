@@ -4,6 +4,38 @@ beschreibung: Talschluss des Glarnerlands unter dem Tödi mit Fridolins- und Mut
 haltestellen: [linthal, urnerboden-dorf]
 sportarten: [wandern, hochtour, skitour]
 saison: sommer
+touren:
+  - titel: "Fisetenpass – Gämsfairenstock – Claridenhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/fisetenpass-gaemsfairenstock-claridenhuette/67634158/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 960
+    laengeKm: 8.1
+    schwierigkeit: "mittel"
+  - titel: "Fridolinshütte – vom Fisetenpass über die Claridenhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/fridolinshuette-vom-fisetenpass-ueber-claridenhuette/36441227/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 403
+    hoehenmeter: 1032
+    laengeKm: 13.8
+    schwierigkeit: "mittel"
+  - titel: "Skitour vom Urnerboden über den Gämsfairenstock zur Claridenhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/skitour-vom-urnerboden-ueber-den-gaemsfairenstock-zur-claridenhuette-in/801602224/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 180
+    hoehenmeter: 960
+    laengeKm: 6.3
+  - titel: "Urnerboden – Braunwald"
+    url: "https://www.alpenvereinaktiv.com/de/tour/urnerboden-braunwald/38589206/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 412
+    laengeKm: 8.8
+    schwierigkeit: "leicht"
 links:
   - { titel: SAC Tödi, url: "https://www.sac-toedi.ch" }
 lat: 46.92

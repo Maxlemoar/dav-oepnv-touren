@@ -4,5 +4,37 @@ beschreibung: Gotthard-Südseite mit dem Val Bedretto, im Sommer Bus bis All'Acq
 haltestellen: [airolo, all-acqua, ossasco, cruina]
 sportarten: [wandern, hochtour, skitour]
 saison: ganzjaehrig
+touren:
+  - titel: "Zustieg zur Capanna Piansecco im Winter (ab All'Acqua)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zustieg-zur-capanna-piansecco-im-winter/65082253/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 105
+    hoehenmeter: 377
+    laengeKm: 2.6
+    schwierigkeit: "mittel"
+  - titel: "Corno Gries – Nufenenpass über den Griespass (ab Cruina)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/corno-gries-nufenpass-ueber-den-griespass/808410764/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 150
+    hoehenmeter: 418
+    laengeKm: 6.5
+    schwierigkeit: "T2"
+  - titel: "Von Ossasco via Capanna Cristallina nach Piano di Peccia (2 Tage)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-ossasco-via-capanna-cristallina-nach-piano-di-peccia-2-tage-/28035755/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 585
+    hoehenmeter: 1552
+    laengeKm: 23.8
+  - titel: "Sentiero Cristallina Etappe 3: Capanna Cristallina – Airolo"
+    url: "https://www.alpenvereinaktiv.com/de/tour/sentiero-cristallina-svizzeramobile-59-etappe-3-capanna/21733678/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 231
+    laengeKm: 17.6
+    schwierigkeit: "T3"
 lat: 46.53
 lon: 8.61

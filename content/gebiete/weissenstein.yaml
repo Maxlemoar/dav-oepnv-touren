@@ -4,6 +4,39 @@ beschreibung: Erste und zweite Jurakette bei Solothurn, Seilbahn ab Oberdorf auf
 haltestellen: [oberdorf-so, gaensbrunnen]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Von Oberdorf via Stigelos und Nesselboden auf den Weissenstein"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-oberdorf-via-stigelos-und-nesselboden-auf-den-weissenstein/26620825/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 150
+    hoehenmeter: 636
+    laengeKm: 4.9
+    schwierigkeit: "T2"
+  - titel: "von Gänsbrunnen auf die Hasenmatt"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-gaensbrunnen-auf-die-hasenmatt/104453158/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 700
+    laengeKm: 10.6
+    schwierigkeit: "leicht"
+  - titel: "Überschreitung Hasenmatt"
+    url: "https://www.alpenvereinaktiv.com/de/tour/ueberschreitung-hasenmatt/105608439/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 270
+    hoehenmeter: 849
+    laengeKm: 10.7
+    schwierigkeit: "mittel"
+  - titel: "Panoramatour"
+    url: "https://www.alpenvereinaktiv.com/de/tour/panoramatour/23424887/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 210
+    hoehenmeter: 774
+    laengeKm: 8.3
+    schwierigkeit: "mittel"
 links:
   - { titel: SAC-Tourenportal Weissenstein, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 47.25

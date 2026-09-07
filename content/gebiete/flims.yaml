@@ -4,5 +4,38 @@ beschreibung: Flimserstein, Segnesboden und Cassons über dem Rheintal, im Somme
 haltestellen: [flims-dorf-post, fidaz-bargis]
 sportarten: [wandern, hochtour, skitour]
 saison: sommer
+touren:
+  - titel: "Von Cassons über den Flimserstein nach Bargis"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-cassons-ueber-den-flimserstein-nach-bargis/23434814/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 210
+    hoehenmeter: 195
+    laengeKm: 9.1
+    schwierigkeit: "T3"
+  - titel: "Bargis – magische Wasserfälle und Bergwald"
+    url: "https://www.alpenvereinaktiv.com/de/tour/bargis-magische-wasserfaelle-und-bergwald/800259611/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 410
+    laengeKm: 13.7
+    schwierigkeit: "mittel"
+  - titel: "Von der Ringelspitzhütte über das Tschepband auf die Ringelspitz (Piz Barghis)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-der-ringelspitzhuette-ueber-das-tschepband-auf-die-ringelspitz-piz/801270014/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 215
+    hoehenmeter: 1225
+    laengeKm: 6.1
+    schwierigkeit: "T5"
+  - titel: "Segnes Trek Etappe 2: Ringelspitzhütte SAC – Bargis"
+    url: "https://www.alpenvereinaktiv.com/de/tour/segnes-trek-etappe-2-ringelspitzhuette-sac-bargis/801387944/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 325
+    hoehenmeter: 841
+    laengeKm: 13.7
+    schwierigkeit: "T5"
 lat: 46.84
 lon: 9.29

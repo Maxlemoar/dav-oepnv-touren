@@ -4,6 +4,36 @@ beschreibung: Rund um den Schluchsee und über den Mittelweg nach Häusern, Endp
 haltestellen: [seebrugg]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Seebrugg - Unterkrummenhof - Aha"
+    url: "https://www.alpenvereinaktiv.com/de/tour/seebrugg-unterkrummenhof-aha/810314311/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 165
+    hoehenmeter: 25
+    laengeKm: 11.0
+  - titel: "GeoTour: Von Seebrugg nach Altglashütten"
+    url: "https://www.alpenvereinaktiv.com/de/tour/geotour-von-seebrugg-nach-altglashuetten/811131999/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 280
+    hoehenmeter: 250
+    laengeKm: 18.0
+  - titel: "Seebrugg - Aha"
+    url: "https://www.alpenvereinaktiv.com/de/tour/seebrugg-aha/810822167/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 225
+    hoehenmeter: 130
+    laengeKm: 11.6
+  - titel: "Rund um den Schluchsee"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rund-um-den-schluchsee/4136859/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 180
+    laengeKm: 19.4
+    schwierigkeit: "T1"
 links:
   - { titel: Alpenvereinaktiv Schluchsee, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Schluchsee" }
 lat: 47.79

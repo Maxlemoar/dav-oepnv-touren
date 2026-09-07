@@ -4,6 +4,39 @@ beschreibung: Kürzestes deutsches Alpenziel ab Offenburg, mit Bergsteigerbus na
 haltestellen: [oberstdorf, spielmannsau, birgsau]
 sportarten: [wandern, hochtour, klettersteig, skitour]
 saison: sommer
+touren:
+  - titel: "Zustieg Kemptner Hütte von Spielmannsau"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zustieg-kemptner-huette-von-spielmannsau/26747776/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 165
+    hoehenmeter: 924
+    laengeKm: 6.1
+    schwierigkeit: "mittel"
+  - titel: "Zustieg Rappenseehütte von Birgsau"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zustieg-rappenseehuette-von-birgsau/26246567/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 1143
+    laengeKm: 8.5
+    schwierigkeit: "mittel"
+  - titel: "Vom Edmund-Probst-Haus über den Hindelanger Klettersteig"
+    url: "https://www.alpenvereinaktiv.com/de/tour/vom-edmund-probst-haus-ueber-den-hindelanger-klettersteig/47968818/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 360
+    hoehenmeter: 779
+    laengeKm: 10.0
+    schwierigkeit: "B/C"
+  - titel: "Mädelegabel von Birgsau über das Waltenbergerhaus"
+    url: "https://www.alpenvereinaktiv.com/de/tour/maedelegabel-von-birgsau-ueber-das-waltenbergerhaus/25543138/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 600
+    hoehenmeter: 1765
+    laengeKm: 20.3
+    schwierigkeit: "T4"
 links:
   - { titel: Alpenvereinaktiv Oberstdorf, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Oberstdorf" }
   - { titel: Oberstdorf Tourismus, url: "https://www.oberstdorf.de" }

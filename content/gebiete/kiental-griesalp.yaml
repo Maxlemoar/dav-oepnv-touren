@@ -4,6 +4,31 @@ beschreibung: Ruhiges Seitental zwischen Kandertal und Lauterbrunnen. Bus ab Rei
 haltestellen: [griesalp]
 sportarten: [wandern, hochtour]
 saison: sommer
+touren:
+  - titel: "Griesalp – Bundalp – Hohtürli – Kandersteg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/griesalp-bundalp-hohtuerli-kandersteg/62273914/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 450
+    hoehenmeter: 1371
+    laengeKm: 17.2
+    schwierigkeit: "T3+"
+  - titel: "Morgenhorn (3627 m) ab Griesalp"
+    url: "https://www.alpenvereinaktiv.com/de/tour/morgenhorn-3627-m/64236517/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 750
+    hoehenmeter: 2224
+    laengeKm: 9.2
+    schwierigkeit: "WS+"
+  - titel: "Griesalp zur Rotstockhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/griesalp-zur-rotstockhuette-mai-2022/242477216/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 305
+    hoehenmeter: 1182
+    laengeKm: 9.6
+    schwierigkeit: "mittel"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.547

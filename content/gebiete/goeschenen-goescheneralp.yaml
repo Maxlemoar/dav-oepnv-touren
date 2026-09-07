@@ -4,6 +4,39 @@ beschreibung: Granit am Gotthard. Bahn bis Göschenen, im Sommer Bus zum Gösche
 haltestellen: [goeschenen, goescheneralp, abzw-voralp]
 sportarten: [klettern, hochtour, wandern, skitour]
 saison: sommer
+touren:
+  - titel: "5-Hütten-Panoramarunde, Etappe 1: Göschenen – Salbithütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/5-huetten-panoramarunde-um-die-goeschener-alpe-etappe-1-goeschenen-/20396720/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 1031
+    laengeKm: 5.7
+    schwierigkeit: "T2/T3"
+  - titel: "Rundwanderung um den Göscheneralpsee"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rundwanderung-um-den-goescheneralpsee/186679281/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 381
+    laengeKm: 8.6
+    schwierigkeit: "mittel"
+  - titel: "Bergseehütte SAC ab Göscheneralp"
+    url: "https://www.alpenvereinaktiv.com/de/tour/bergseehuette-sac/23417379/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 160
+    hoehenmeter: 587
+    laengeKm: 6.5
+    schwierigkeit: "mittel"
+  - titel: "Dammastock Ostgrat ab Dammahütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/dammastock-ostgrat/124443024/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 330
+    hoehenmeter: 1206
+    laengeKm: 3.3
+    schwierigkeit: "ZS+"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.655

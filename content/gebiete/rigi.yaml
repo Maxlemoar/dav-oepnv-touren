@@ -4,6 +4,30 @@ beschreibung: Tagesziel in gut drei Stunden ab Offenburg. Ab Arth-Goldau mit der
 haltestellen: [arth-goldau]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Schwyzer Höhenweg, Etappe 2: Rigi Staffel – Goldau"
+    url: "https://www.alpenvereinaktiv.com/de/tour/schwyzer-hoehenweg-etappe-2-rigi-goldau-/13833049/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 190
+    hoehenmeter: 1
+    laengeKm: 9.1
+    schwierigkeit: "mittel"
+  - titel: "Chäserenholz-Schneeschuhtrail ab Rigi Kulm"
+    url: "https://www.alpenvereinaktiv.com/de/tour/chaeserenholz-trail/37283077/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 65
+    hoehenmeter: 150
+    laengeKm: 1.5
+    schwierigkeit: "leicht"
+  - titel: "Rigi Kulm – Scheidegg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/schweiz-1.-rigi-kulm-scheidegg/119707126/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 182
+    hoehenmeter: 366
+    laengeKm: 7.4
 links:
   - { titel: Rigi Bahnen, url: "https://www.rigi.ch" }
 lat: 47.056

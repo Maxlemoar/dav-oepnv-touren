@@ -4,6 +4,39 @@ beschreibung: Triberger Wasserfälle, Westweg über den Brend und das Naturfreun
 haltestellen: [triberg]
 sportarten: [wandern]
 saison: ganzjaehrig
+touren:
+  - titel: "Höhenwanderung von Triberg nach Hornberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/hoehenwanderung-von-triberg-nach-hornberg/807757644/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 360
+    hoehenmeter: 625
+    laengeKm: 18.9
+    schwierigkeit: "T2"
+  - titel: "Schwarzwaldbahn Erlebnispfad Triberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/schwarzwaldbahn-erlebnispfad-triberg/243715505/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 155
+    hoehenmeter: 255
+    laengeKm: 7.1
+    schwierigkeit: "mittel"
+  - titel: "WasserWeltenSteig: von den Triberger Wasserfällen zum Brend"
+    url: "https://www.alpenvereinaktiv.com/de/tour/wasserweltensteig-von-den-triberger-wasserfaellen-zum-brend/38617871/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 330
+    hoehenmeter: 575
+    laengeKm: 20.0
+    schwierigkeit: "T2"
+  - titel: "Von St. Georgen nach Triberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-st.-georgen-nach-triberg/14574120/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 315
+    hoehenmeter: 450
+    laengeKm: 16.8
+    schwierigkeit: "T2"
 links:
   - { titel: Alpenvereinaktiv Triberg, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Triberg" }
 lat: 48.11

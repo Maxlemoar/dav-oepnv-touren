@@ -4,5 +4,38 @@ beschreibung: Sernftal mit Elm unter den Tschingelhörnern und dem Martinsloch, 
 haltestellen: [schwanden-gl, elm-dorf, mettmen]
 sportarten: [wandern, skitour]
 saison: sommer
+touren:
+  - titel: "Rundwanderung Mettmen – Leglerhütte SAC"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rundwanderung-mettmen-leglerhuette-sac/26459349/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 870
+    laengeKm: 11.8
+    schwierigkeit: "schwer"
+  - titel: "Leglerhütte (2273 m) ab Mettmen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/leglerhuette-2273-m.ue.m.-/24505683/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 165
+    hoehenmeter: 558
+    laengeKm: 5.5
+    schwierigkeit: "leicht"
+  - titel: "Rundtour Mittaghorn über die Martinsmadhütte (Alpinwanderweg, ab Elm)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rundtour-mittaghorn-alpinwanderweg-/26509718/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 330
+    hoehenmeter: 978
+    laengeKm: 8.2
+    schwierigkeit: "schwer"
+  - titel: "Segnespass: Elm – Martinsloch – Flims"
+    url: "https://www.alpenvereinaktiv.com/de/tour/segnespass/27188810/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 393
+    hoehenmeter: 1111
+    laengeKm: 17.4
+    schwierigkeit: "mittel"
 lat: 46.92
 lon: 9.17

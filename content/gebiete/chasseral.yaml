@@ -4,6 +4,39 @@ beschreibung: Höchster Berg des Berner Jura mit Alpenblick, Zustieg ab St-Imier
 haltestellen: [st-imier, les-pres-d-orvin]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Saint-Imier - Mont Soleil"
+    url: "https://www.alpenvereinaktiv.com/de/tour/saint-imier-mont-soleil/257051893/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 190
+    hoehenmeter: 478
+    laengeKm: 9.8
+    schwierigkeit: "T2"
+  - titel: "Combe Grède / Chasseral (17.5.2026)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/combe-grede-chasseral-17.5.2026-/341351339/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 390
+    hoehenmeter: 986
+    laengeKm: 18.5
+    schwierigkeit: "T2"
+  - titel: "Les pres d'Orvin - Chasseral"
+    url: "https://www.alpenvereinaktiv.com/de/tour/les-pres-d-orvin-chasseral/112538665/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 253
+    hoehenmeter: 724
+    laengeKm: 12.2
+    schwierigkeit: "mittel"
+  - titel: "Durchs Jahr wandern - Aprilglocken im Grand Chasseral"
+    url: "https://www.alpenvereinaktiv.com/de/tour/durchs-jahr-wandern-aprilglocken-im-grand-chasseral/37772617/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 170
+    hoehenmeter: 380
+    laengeKm: 9.3
+    schwierigkeit: "mittel"
 links:
   - { titel: SAC-Tourenportal Chasseral, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 47.13

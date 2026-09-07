@@ -4,6 +4,39 @@ beschreibung: Wildhorn und Wildstrubel am Ende des Simmentals. Bahn bis Lenk, im
 haltestellen: [lenk, iffigenalp]
 sportarten: [wandern, hochtour, skitour]
 saison: ganzjaehrig
+touren:
+  - titel: "Iffigenalp – Iffigsee retour"
+    url: "https://www.alpenvereinaktiv.com/de/tour/iffigenalp-iffigsee-retour/800124264/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 185
+    hoehenmeter: 523
+    laengeKm: 7.6
+    schwierigkeit: "leicht"
+  - titel: "Leiterli – Iffigenalp via Wildhornhütte SAC"
+    url: "https://www.alpenvereinaktiv.com/de/tour/vom-lenker-hausberg-zur-iffigenalp-via-wildhornhuette-sac/37459857/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 314
+    hoehenmeter: 562
+    laengeKm: 15.4
+    schwierigkeit: "T3"
+  - titel: "Schneeschuhhochtour auf Wildhorn und Schnidehorn ab Wildhornhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/schneeschuhhochtour-auf-das-wildhorn-3250m-und-das-schnidehorn2937m/312524906/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 420
+    hoehenmeter: 1500
+    laengeKm: 11.9
+    schwierigkeit: "WT5"
+  - titel: "Umrundung des Wildstrubel – von der Wildstrubelhütte zu den Simmenfällen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/umrundung-des-wildstrubel-von-der-wildstrubelhuette-zu-den-simmenfaellen/115980139/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 270
+    hoehenmeter: 300
+    laengeKm: 11.1
+    schwierigkeit: "schwer"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.43

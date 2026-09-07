@@ -4,5 +4,37 @@ beschreibung: Bus ab Visp durch das Saastal nach Saas-Grund, Saas-Almagell und S
 haltestellen: [saas-fee, saas-grund, saas-almagell]
 sportarten: [wandern, hochtour, skitour, klettersteig]
 saison: ganzjaehrig
+touren:
+  - titel: "Saas-Almagell – Britanniahütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/saas-almagell-britannia-huette/219581577/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 215
+    hoehenmeter: 1357
+    laengeKm: 7.5
+  - titel: "Weissmies (4017 m) Normalweg von der Weissmieshütte über Hohsaas"
+    url: "https://www.alpenvereinaktiv.com/de/tour/weissmies-4017-m-normalweg-von-der-weissmies-huette-ueber-hohsaas/19194745/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 390
+    hoehenmeter: 1425
+    laengeKm: 11.3
+    schwierigkeit: "WS+"
+  - titel: "Jegihorn-Klettersteig von der Weissmieshütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/jegihorn-klettersteig-von-der-weissmies-huette/19339234/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 330
+    hoehenmeter: 558
+    laengeKm: 3.8
+    schwierigkeit: "D"
+  - titel: "Strahlhorn (4190 m) Normalweg von der Britanniahütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/strahlhorn-4190-m-normalweg-von-der-britanniahuette/7807938/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 540
+    hoehenmeter: 1437
+    laengeKm: 16.0
+    schwierigkeit: "WS"
 lat: 46.11
 lon: 7.93

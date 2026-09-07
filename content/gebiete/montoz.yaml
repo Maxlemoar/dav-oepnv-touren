@@ -4,6 +4,31 @@ beschreibung: Aussichtskamm oberhalb von Tavannes im Berner Jura mit dem Naturfr
 haltestellen: [tavannes]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Wertvolle Baukunst und ein traditionsreicher Käse"
+    url: "https://www.alpenvereinaktiv.com/de/tour/wertvolle-baukunst-und-ein-traditionsreicher-kaese/8483404/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 135
+    hoehenmeter: 280
+    laengeKm: 7.5
+    schwierigkeit: "T1"
+  - titel: "Le Grimm Trail: Grand Chasseral im Winterzauber"
+    url: "https://www.alpenvereinaktiv.com/de/tour/le-grimm-trail-grand-chasseral-im-winterzauber/806014411/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 110
+    hoehenmeter: 250
+    laengeKm: 3.5
+    schwierigkeit: "mittel"
+  - titel: "Zum lebendigen Hochmoor und feinem Tête de Moine"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zum-lebendigen-hochmoor-und-feinem-tete-de-moine/60534713/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 255
+    hoehenmeter: 420
+    laengeKm: 14.8
+    schwierigkeit: "mittel"
 links:
   - { titel: SAC-Tourenportal Montoz, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 47.21

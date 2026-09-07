@@ -4,6 +4,30 @@ beschreibung: Der Bregenzer Hausberg über dem Bodensee, zu Fuß vom Bahnhof in 
 haltestellen: [bregenz]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Vom Stadtzentrum Bregenz auf den Pfänder"
+    url: "https://www.alpenvereinaktiv.com/de/tour/vom-stadtzentrum-bregenz-auf-den-pfaender/40065508/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 120
+    hoehenmeter: 658
+    laengeKm: 5.2
+    schwierigkeit: "T2"
+  - titel: "Bregenz - Pfänder, 1064 m - Haggen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/bregenz-pfaender-1064-m-haggen/810310910/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 714
+    laengeKm: 12.4
+  - titel: "Auf den Pfänder - Erdal Allwettertouren"
+    url: "https://www.alpenvereinaktiv.com/de/tour/auf-den-pfaender-erdal-allwettertouren/809780852/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 280
+    hoehenmeter: 662
+    laengeKm: 13.6
+    schwierigkeit: "T2"
 links:
   - { titel: Alpenvereinaktiv Pfänder, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Pf%C3%A4nder" }
   - { titel: Pfänderbahn, url: "https://www.pfaenderbahn.at" }

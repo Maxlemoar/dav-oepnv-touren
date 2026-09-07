@@ -4,6 +4,39 @@ beschreibung: Seitentäler entlang der Gotthardstrecke, alle ab Erstfeld oder mi
 haltestellen: [erstfeld, gurtnellen-wiler, intschi, bristen]
 sportarten: [wandern, hochtour, skitour]
 saison: sommer
+touren:
+  - titel: "Arnisee – Leutschachhütte – Kröntenhütte – Erstfeld"
+    url: "https://www.alpenvereinaktiv.com/de/tour/arnisee-leutschachhuette-kroentenhuette-erstfeld/110931497/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 510
+    hoehenmeter: 1560
+    laengeKm: 19.4
+    schwierigkeit: "mittel"
+  - titel: "Krönten von der Kröntenhütte via Westgrat (Normalweg)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/kroenten-von-der-kroentenhuette-ueber-westgrat-normalweg-/57528086/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 510
+    hoehenmeter: 2100
+    laengeKm: 18.5
+    schwierigkeit: "WS"
+  - titel: "Krönten (3108 m) – Skitour ab Kröntenhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/kroenten-3108-m-/65632263/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 240
+    hoehenmeter: 1202
+    laengeKm: 10.4
+    schwierigkeit: "mittel"
+  - titel: "Höhenweg Maderanertal (ab Bristen, Talstation Golzern)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/hoehenweg-maderanertal/115477342/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 360
+    hoehenmeter: 800
+    laengeKm: 15.6
+    schwierigkeit: "mittel"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.76

@@ -4,6 +4,39 @@ beschreibung: Vom Bahnhof Langen am Arlberg mit dem Bus nach Lech, dort im Somme
 haltestellen: [langen-am-arlberg, lech-ruefiplatz, zugertal-formarinsee]
 sportarten: [wandern, klettern, klettersteig]
 saison: sommer
+touren:
+  - titel: "Basislager Hotel Adler (15): Lech - Zuger Tal - Freiburger Hütte - Formarinsee"
+    url: "https://www.alpenvereinaktiv.com/de/tour/basislager-hotel-adler-15-lech-zuger-tal-freiburger-huette-/50151648/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 334
+    hoehenmeter: 546
+    laengeKm: 17.2
+    schwierigkeit: "leicht"
+  - titel: "Basislager Hotel Adler (12): Spullersee - Steinernes Meer - Freiburger Hütte - Formarin Alpe"
+    url: "https://www.alpenvereinaktiv.com/de/tour/basislager-hotel-adler-12-spullersee-steinernes-meer-freiburger/50151623/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 632
+    laengeKm: 11.2
+    schwierigkeit: "mittel"
+  - titel: "Freiburger Hütte - Gehrengrat"
+    url: "https://www.alpenvereinaktiv.com/de/tour/freiburger-huette-gehrengrat/1522327/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 521
+    laengeKm: 11.6
+    schwierigkeit: "T3"
+  - titel: "Basislager Hotel Adler (11): Zug - Ravensburger Hütte - Spullersee"
+    url: "https://www.alpenvereinaktiv.com/de/tour/basislager-hotel-adler-11-zug-ravensburger-huette-spullersee/51214313/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 172
+    hoehenmeter: 580
+    laengeKm: 7.0
+    schwierigkeit: "leicht"
 links:
   - { titel: Alpenvereinaktiv Lechquellengebirge, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Lechquellengebirge" }
   - { titel: Anreise Freiburger Hütte (Wanderbus Formarinsee), url: "https://www.freiburger-huette.at/anreise" }

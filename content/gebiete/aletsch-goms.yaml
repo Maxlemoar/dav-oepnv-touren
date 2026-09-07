@@ -4,6 +4,39 @@ beschreibung: Grosser Aletschgletscher ab Fiescheralp mit der Konkordiahütte al
 haltestellen: [fiesch, blatten-bei-naters, binn-faeld]
 sportarten: [wandern, hochtour, skitour]
 saison: sommer
+touren:
+  - titel: "Aletschgletscher 1: Fiescheralp – Bettmerhorn – Märjelensee – Gletscherstube"
+    url: "https://www.alpenvereinaktiv.com/de/tour/aletschgletscher-1-fiescheralp-bettmerhorn-maerjelensee-gletscherstube/116177379/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 330
+    hoehenmeter: 519
+    laengeKm: 10.9
+    schwierigkeit: "mittel"
+  - titel: "Belalp – Oberaletschhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/belalp-oberaletschhuette/29489556/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 270
+    hoehenmeter: 824
+    laengeKm: 10.0
+    schwierigkeit: "schwer"
+  - titel: "Von der Konkordiahütte auf das Grünegghorn"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-der-konkordia-huette-auf-das-gruenegghorn/302544082/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 450
+    hoehenmeter: 1291
+    laengeKm: 9.2
+    schwierigkeit: "WS+"
+  - titel: "Fäld – Halsesee – Brunnebiel – Fäld"
+    url: "https://www.alpenvereinaktiv.com/de/tour/faeld-halsesee-brunnebiel-faeld/168923563/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 210
+    hoehenmeter: 600
+    laengeKm: 10.4
+    schwierigkeit: "mittel"
 links:
   - { titel: Aletsch Arena, url: "https://www.aletscharena.ch" }
 lat: 46.41

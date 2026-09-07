@@ -4,6 +4,39 @@ beschreibung: Sanfte Voralpen zwischen Dornbirn und Hochtannberg, ab Bahnhof Dor
 haltestellen: [dornbirn]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Zustieg von Dornbirn zur Lustenauer Hütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zustieg-von-dornbirn-zur-lustenauer-huette/25479291/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 772
+    laengeKm: 6.3
+    schwierigkeit: "T1"
+  - titel: "Vom Bödele auf die Lustenauer Hütte bis nach Schwarzenberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/vom-boedele-auf-die-lustenauer-huette-bis-nach-schwarzenberg/40082923/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 244
+    laengeKm: 9.6
+    schwierigkeit: "T1"
+  - titel: "Rickatschwende - Bödele - Schwende"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rickatschwende-boedele-schwende/109091813/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 211
+    hoehenmeter: 348
+    laengeKm: 9.0
+    schwierigkeit: "mittel"
+  - titel: "Vom Ebnit über den Bocksberg nach Dornbirn"
+    url: "https://www.alpenvereinaktiv.com/de/tour/vom-ebnit-ueber-den-bocksberg-nach-dornbirn/19630158/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 451
+    laengeKm: 11.5
+    schwierigkeit: "mittel"
 links:
   - { titel: Alpenvereinaktiv Bregenzerwald, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Bregenzerwald" }
   - { titel: Landbus Vorarlberg (vmobil), url: "https://www.vmobil.at/de" }

@@ -4,6 +4,39 @@ beschreibung: Vom Bahnhof Bludenz mit dem Landbus 580 nach Brand zur Lünerseeba
 haltestellen: [bludenz, brand-luenerseebahn]
 sportarten: [wandern, hochtour, klettern, skitour]
 saison: sommer
+touren:
+  - titel: "Von Brand auf die Schesaplana"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-brand-auf-die-schesaplana/807537861/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 420
+    hoehenmeter: 1400
+    laengeKm: 13.6
+    schwierigkeit: "T3"
+  - titel: "Rundwanderung um den Lünersee in Vorarlberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rundwanderung-um-den-luenersee-in-vorarlberg/807606594/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 225
+    hoehenmeter: 505
+    laengeKm: 9.5
+    schwierigkeit: "T2"
+  - titel: "Zustieg Mannheimer Hütte vom Lünersee"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zustieg-mannheimer-huette-vom-luenersee/42082590/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 285
+    hoehenmeter: 959
+    laengeKm: 8.1
+    schwierigkeit: "T3"
+  - titel: "Be Bop A Luner (IV+) am Lünersee mit Verlängerung und Abstieg über Lünerkrinne"
+    url: "https://www.alpenvereinaktiv.com/de/tour/be-bop-a-luner-iv-am-luenersee-mit-verlaengerung-und-abstieg-ueber/802915861/"
+    anbieter: alpenvereinaktiv
+    sportart: klettern
+    dauerMin: 435
+    hoehenmeter: 685
+    laengeKm: 7.2
+    schwierigkeit: "IV+"
 links:
   - { titel: Alpenvereinaktiv Brandnertal, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Brandnertal" }
   - { titel: Lünerseebahn, url: "https://www.luenersee.at/de/luenerseebahn" }

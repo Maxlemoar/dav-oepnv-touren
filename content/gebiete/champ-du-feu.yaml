@@ -4,6 +4,31 @@ beschreibung: Nordvogesen um Champ du Feu und Le Hohwald mit der DAV-Hütte der 
 haltestellen: [barr]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Kienberg und Kamelweg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/kienberg-und-kamelweg/44650007/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 330
+    hoehenmeter: 626
+    laengeKm: 14.9
+    schwierigkeit: "mittel"
+  - titel: "Rundweg von Barr zu den Burgruinen Landsberg, Spesbourg und Haut-Andlau"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rundweg-von-barr-zu-den-burgruinen-landsberg-spesbourg-und-haut-andlau/312920569/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 315
+    hoehenmeter: 682
+    laengeKm: 16.9
+    schwierigkeit: "T2"
+  - titel: "Burgen und Weinberge im Pays de Barr"
+    url: "https://www.alpenvereinaktiv.com/de/tour/burgen-und-weinberge-im-pays-de-barr/42273049/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 330
+    hoehenmeter: 673
+    laengeKm: 18.5
+    schwierigkeit: "mittel"
 links:
   - { titel: Alpenvereinaktiv Champ du Feu, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Champ%20du%20Feu" }
 lat: 48.40

@@ -4,5 +4,38 @@ beschreibung: Das Dischmatal ab Davos Dorf führt mit dem Bus bis Dürrboden, vo
 haltestellen: [davos-dorf, davos-dischma-duerrboden]
 sportarten: [wandern, hochtour, skitour]
 saison: ganzjaehrig
+touren:
+  - titel: "Dischmatal: Dürrboden – Grialetschhütte – Dürrboden"
+    url: "https://www.alpenvereinaktiv.com/de/tour/dischmatal-duerrboden-grialetschhuette-duerrboden/250284862/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 142
+    hoehenmeter: 525
+    laengeKm: 8.5
+    schwierigkeit: "leicht"
+  - titel: "Dischmatal – Grialetschhütte SAC – Chant Sura (ab Bahnhof Davos Dorf)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/dischmatal-grialetschhuette-sac-chant-sura/800819386/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 465
+    hoehenmeter: 1290
+    laengeKm: 23.9
+    schwierigkeit: "schwer"
+  - titel: "Piz Grialetsch (3131 m) – Gletschertour über Dürrboden und die Grialetschhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/piz-grialetsch-3131-m-gletschertour-ueber-davos-duerrboden-und-die/114686647/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 570
+    hoehenmeter: 1181
+    laengeKm: 16.0
+    schwierigkeit: "schwer"
+  - titel: "Von der Grialetschhütte über den Piz Sarsura nach Susch"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-der-grialetschhuette-ueber-den-piz-sarsura-nach-susch/805989916/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 420
+    hoehenmeter: 860
+    laengeKm: 18.4
+    schwierigkeit: "WS+"
 lat: 46.80
 lon: 9.84

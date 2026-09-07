@@ -4,6 +4,31 @@ beschreibung: Tagesziel ab Alpnachstad, keine drei Stunden ab Offenburg. Aufstie
 haltestellen: [alpnachstad]
 sportarten: [wandern, klettersteig]
 saison: sommer
+touren:
+  - titel: "Alpnachstad – Pilatus"
+    url: "https://www.alpenvereinaktiv.com/de/tour/alpnachstad-pilatus/101585316/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 292
+    hoehenmeter: 1605
+    laengeKm: 8.1
+    schwierigkeit: "schwer"
+  - titel: "Pilatus – (Matthorn) – Fräkmünt – Ämsigen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/pilatus-matthorn-fraekmuent-aemsigen/44649380/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 203
+    hoehenmeter: 361
+    laengeKm: 9.8
+    schwierigkeit: "mittel"
+  - titel: "Alpnachstad – Kriens"
+    url: "https://www.alpenvereinaktiv.com/de/tour/alpnachstad-kriens/111501226/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 523
+    hoehenmeter: 1772
+    laengeKm: 18.2
+    schwierigkeit: "schwer"
 links:
   - { titel: Pilatus-Bahnen, url: "https://www.pilatus.ch" }
 lat: 46.979

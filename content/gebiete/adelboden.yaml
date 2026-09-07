@@ -4,6 +4,39 @@ beschreibung: Engstligenalp, Bunderspitz und Lohner. Bus ab Frutigen bis Adelbod
 haltestellen: [adelboden]
 sportarten: [wandern, skitour, klettersteig]
 saison: ganzjaehrig
+touren:
+  - titel: "Sonnenaufgangs-Wanderung Bunderspitz ab Adelboden"
+    url: "https://www.alpenvereinaktiv.com/de/tour/sunrise-hike-bunderspitz/51906358/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 435
+    hoehenmeter: 1308
+    laengeKm: 16.2
+    schwierigkeit: "T2"
+  - titel: "Adelboden – Flueweid – Schermtanne – TschentenAlp"
+    url: "https://www.alpenvereinaktiv.com/de/tour/adelboden-flueweid-schermtanne-tschentenalp/57732009/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 185
+    hoehenmeter: 704
+    laengeKm: 7.8
+    schwierigkeit: "T1"
+  - titel: "Chäligang Klettersteig – Engstligenalp (ab Unter dem Birg)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/chaeligang-klettersteig-adelboden/11019254/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 180
+    hoehenmeter: 343
+    laengeKm: 0.6
+    schwierigkeit: "B"
+  - titel: "Grossstrubel via Engstligenalp"
+    url: "https://www.alpenvereinaktiv.com/de/tour/grossstrubel-via-engstligenalp/117953727/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 181
+    hoehenmeter: 1309
+    laengeKm: 6.8
+    schwierigkeit: "WS-"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.494

@@ -4,5 +4,38 @@ beschreibung: Klosterdorf am Oberalppass mit der Cavardirashütte auf der Tödi-
 haltestellen: [disentis]
 sportarten: [wandern, hochtour, skitour]
 saison: ganzjaehrig
+touren:
+  - titel: "Kronenwanderung: Disentis – Cavardirashütte (Etappe 1)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/kronenwanderung-disentis-cavardirashuette-etappe-1-/23438581/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 1024
+    laengeKm: 6.3
+    schwierigkeit: "T4"
+  - titel: "Rundwanderung Lag Serein bei Caischavedra"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rundwanderung-lag-serein-bei-caischavedra/9881853/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 510
+    laengeKm: 8.4
+    schwierigkeit: "mittel"
+  - titel: "Disentis nach Caischavedra und Abfahrt ins Tal"
+    url: "https://www.alpenvereinaktiv.com/de/tour/disentis-nach-caischavedra-und-abfahrt-ins-tal/127950348/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 140
+    hoehenmeter: 621
+    laengeKm: 9.1
+    schwierigkeit: "leicht"
+  - titel: "Cavardirashütte – Abstieg über Alp Cavrain Sut nach Sumvitg-Cumpadials"
+    url: "https://www.alpenvereinaktiv.com/de/tour/cavardirashuette-abstieg-ueber-alp-cavrain-sut-nach-sumvitg-cumpadials/805968511/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 420
+    hoehenmeter: 39
+    laengeKm: 16.4
+    schwierigkeit: "T3"
 lat: 46.70
 lon: 8.85

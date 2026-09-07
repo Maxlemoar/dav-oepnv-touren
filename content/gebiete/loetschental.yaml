@@ -4,6 +4,39 @@ beschreibung: Abgeschlossenes Hochtal mit Bus ab Goppenstein nach Wiler, Laucher
 haltestellen: [goppenstein, wiler-loetschen]
 sportarten: [wandern, hochtour, skitour, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Rundwanderung Lötschenpasshütte (ab Lauchernalp)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rundwanderung-loetschenpasshuette/2811513/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 310
+    hoehenmeter: 774
+    laengeKm: 12.7
+    schwierigkeit: "mittel"
+  - titel: "Lauchernalp – Lötschenpass – Selden"
+    url: "https://www.alpenvereinaktiv.com/de/tour/lauchernalp-loetschenpass-selden/2811504/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 305
+    hoehenmeter: 727
+    laengeKm: 12.2
+    schwierigkeit: "schwer"
+  - titel: "Lötschental: Fafleralp – Anenhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/loetschental-anenhuette/116366804/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 227
+    hoehenmeter: 593
+    laengeKm: 10.1
+    schwierigkeit: "leicht"
+  - titel: "Lötschenpass Trail (ab Hockenhorngrat)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/loetschenpass-trail/66295350/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 240
+    hoehenmeter: 509
+    laengeKm: 6.7
+    schwierigkeit: "WT2"
 links:
   - { titel: Lötschental Tourismus, url: "https://www.loetschental.ch" }
 lat: 46.40

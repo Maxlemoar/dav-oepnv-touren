@@ -4,5 +4,38 @@ beschreibung: Wildhaus zwischen Churfirsten und Alpstein-Südseite, Bus ab Buchs
 haltestellen: [wildhaus-dorf]
 sportarten: [wandern, klettern, skitour]
 saison: sommer
+touren:
+  - titel: "Wanderung auf den Zwinglipass (ab Wildhaus)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/wanderung-auf-den-zwinglipass/32058226/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 390
+    hoehenmeter: 1039
+    laengeKm: 14.1
+    schwierigkeit: "schwer"
+  - titel: "Wildhaus – Chreialpfirst – Zwinglipass – Wildhaus"
+    url: "https://www.alpenvereinaktiv.com/de/tour/wildhaus-chreialpfirst-zwinglipass-wildhaus/23425318/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 360
+    hoehenmeter: 909
+    laengeKm: 13.3
+    schwierigkeit: "schwer"
+  - titel: "Skitour auf den Wildhauser Schafberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/skitour-auf-den-wildhauser-schafberg/34921141/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 240
+    hoehenmeter: 1020
+    laengeKm: 5.8
+    schwierigkeit: "schwer"
+  - titel: "Alpstein-Kammtour: Zwinglipasshütte – Säntis – Ebenalp"
+    url: "https://www.alpenvereinaktiv.com/de/tour/alpstein-kammtour-zwinglipasshuette-saentis-ebenalp/54801748/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 480
+    hoehenmeter: 950
+    laengeKm: 14.1
+    schwierigkeit: "T4 I+ A"
 lat: 47.20
 lon: 9.35

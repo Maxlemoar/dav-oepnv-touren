@@ -4,6 +4,39 @@ beschreibung: Mit der Montafonerbahn ab Bludenz nach Vandans und Schruns, weiter
 haltestellen: [schruns, vandans, gargellen-schafbergbahn]
 sportarten: [wandern, klettern, klettersteig, skitour]
 saison: sommer
+touren:
+  - titel: "Zustieg von Vandans zur Heinrich-Hueter-Hütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zustieg-von-vandans-zur-heinrich-hueter-huette/807544764/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 1122
+    laengeKm: 10.0
+    schwierigkeit: "T1"
+  - titel: "Tübinger Hütte von Gargellen über Vergaldner Joch"
+    url: "https://www.alpenvereinaktiv.com/de/tour/tuebinger-huette-von-gargellen-ueber-vergaldner-joch/14607059/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 360
+    hoehenmeter: 1086
+    laengeKm: 12.9
+    schwierigkeit: "leicht"
+  - titel: "Röbischlucht Klettersteig und Rongg Wasserfall Klettersteig Gargellen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/roebischlucht-klettersteig-und-rongg-wasserfall-klettersteig-gargellen/117038421/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 180
+    hoehenmeter: 309
+    laengeKm: 3.2
+    schwierigkeit: "mittel"
+  - titel: "Skitour Rotbühelspitze Gargellen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/skitour-rotbuehelspitze-gargellen/119133115/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 360
+    hoehenmeter: 1410
+    laengeKm: 17.6
+    schwierigkeit: "mittel"
 links:
   - { titel: Alpenvereinaktiv Montafon, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Montafon" }
   - { titel: Öffentliche Anreise zu den Hütten des Alpenverein Vorarlberg, url: "https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg" }

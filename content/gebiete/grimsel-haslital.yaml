@@ -4,6 +4,39 @@ beschreibung: Oberhasli ab Innertkirchen mit drei Pässen. Postauto über die Gr
 haltestellen: [innertkirchen, handegg, raeterichsboden, grimsel-hospiz, nessental-triftbahn, steingletscher]
 sportarten: [wandern, hochtour, klettern]
 saison: sommer
+touren:
+  - titel: "Tierberglihütte – Aufstieg über Steigletscher"
+    url: "https://www.alpenvereinaktiv.com/de/tour/tierberglihuette-aufstieg-ueber-steigletscher/9506909/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 150
+    hoehenmeter: 932
+    laengeKm: 5.5
+    schwierigkeit: "mittel"
+  - titel: "Sustenhorn (3502 m) – Normalweg von der Tierberglihütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/sustenhorn-3502m-normalweg-von-der-tierberglihuette/55638574/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 165
+    hoehenmeter: 750
+    laengeKm: 9.0
+    schwierigkeit: "WS-"
+  - titel: "Vom Gelmersee zur Gelmerhütte (Gelmerbahn ab Handegg)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/from-gelmersee-to-gelmerhuette/24519445/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 225
+    hoehenmeter: 609
+    laengeKm: 8.7
+    schwierigkeit: "mittel"
+  - titel: "Wanderung zur Bächlitalhütte ab Räterichsboden"
+    url: "https://www.alpenvereinaktiv.com/de/tour/wanderung-zur-baechlitalhuette/180911526/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 256
+    hoehenmeter: 760
+    laengeKm: 10.7
+    schwierigkeit: "T2"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
   - { titel: Windegghütte im SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/windegghuette-sac-2147000295/" }

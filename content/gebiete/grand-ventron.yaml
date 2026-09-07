@@ -4,6 +4,23 @@ beschreibung: Grand Ventron und der Vogesenkamm bis zum Rainkopf ab Kruth, Endpu
 haltestellen: [kruth]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Rundwanderung zum Le Grand Ventron und Cascades Bocksloch vom Campingplatz Schlossberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rundwanderung-zum-le-grand-ventron-und-cascades-bocksloch-vom-/322132730/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 301
+    hoehenmeter: 736
+    laengeKm: 14.0
+    schwierigkeit: "T2"
+  - titel: "Der Gedenkweg Bernard Arnold"
+    url: "https://www.alpenvereinaktiv.com/de/tour/der-gedenkweg-bernard-arnold/54303677/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 75
+    hoehenmeter: 143
+    laengeKm: 3.4
+    schwierigkeit: "leicht"
 links:
   - { titel: Alpenvereinaktiv Grand Ventron, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Grand%20Ventron" }
 lat: 47.96

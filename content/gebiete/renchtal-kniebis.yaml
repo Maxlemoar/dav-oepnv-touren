@@ -4,6 +4,38 @@ beschreibung: Westweg-Zubringer ab Bad Griesbach auf den Kniebis, Schliffkopf un
 haltestellen: [bad-griesbach, freudenstadt-hbf]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Winterwandertour rund um Bad Griesbach"
+    url: "https://www.alpenvereinaktiv.com/de/tour/winterwandertour-rund-um-bad-griesbach/8863158/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 105
+    hoehenmeter: 131
+    laengeKm: 4.8
+    schwierigkeit: "leicht"
+  - titel: "Bad Griesbach - Alexanderschanze - Renchtalhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/bad-griesbach-alexanderschanze-renchtalhuette/810314198/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 405
+    hoehenmeter: 649
+    laengeKm: 22.4
+  - titel: "Bad Peterstal zum Glaswaldsee, Haberer Turm nach Bad Griesbach"
+    url: "https://www.alpenvereinaktiv.com/de/tour/bad-peterstal-zum-glaswaldsee-haberer-turm-nach-bad-griesbach/3522902/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 360
+    hoehenmeter: 797
+    laengeKm: 18.1
+    schwierigkeit: "schwer"
+  - titel: "Auf dem Grenzweg von Freudenstadt nach Kniebis"
+    url: "https://www.alpenvereinaktiv.com/de/tour/auf-dem-grenzweg-von-freudenstadt-nach-kniebis/15725352/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 255
+    hoehenmeter: 364
+    laengeKm: 15.4
+    schwierigkeit: "mittel"
 links:
   - { titel: Alpenvereinaktiv Kniebis, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Kniebis" }
 lat: 48.47

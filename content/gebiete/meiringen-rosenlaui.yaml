@@ -4,6 +4,31 @@ beschreibung: Haslital mit Reichenbachtal und Engelhörnern. Bus ab Meiringen na
 haltestellen: [meiringen, rosenlaui]
 sportarten: [wandern, klettern, hochtour]
 saison: sommer
+touren:
+  - titel: "Vom Hotel Rosenlaui zur Engelhornhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/vom-hotel-rosenlaui-zur-engelhornhuette/24878725/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 210
+    hoehenmeter: 615
+    laengeKm: 8.4
+    schwierigkeit: "mittel"
+  - titel: "Rosenhorn (3689 m) – Normalweg von der Dossenhütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rosenhorn-3689m-normalweg-von-der-dossenhuette/54890409/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 330
+    hoehenmeter: 2350
+    laengeKm: 10.1
+    schwierigkeit: "WS"
+  - titel: "Rosenlaui – Dossenhütte – Innertkirchen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/dossenhuette/23431939/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 510
+    hoehenmeter: 1474
+    laengeKm: 19.4
+    schwierigkeit: "T4"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.690

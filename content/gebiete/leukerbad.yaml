@@ -4,5 +4,38 @@ beschreibung: Gemmibahn direkt aus dem Bäderdorf auf den Pass, dahinter Daubens
 haltestellen: [leukerbad]
 sportarten: [wandern, hochtour, skitour, klettersteig]
 saison: ganzjaehrig
+touren:
+  - titel: "Der Leukerbad-Klettersteig auf das Daubenhorn"
+    url: "https://www.alpenvereinaktiv.com/de/tour/der-leukerbad-klettersteig-auf-das-daubenhorn/1386946/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 510
+    hoehenmeter: 1954
+    laengeKm: 13.8
+    schwierigkeit: "C/D"
+  - titel: "Gemmi – Daubenhorn"
+    url: "https://www.alpenvereinaktiv.com/de/tour/gemmi-daubenhorn/36953716/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 745
+    laengeKm: 10.6
+    schwierigkeit: "mittel"
+  - titel: "Besteigung des Torrenthorns (ab Rinderhütte)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/besteigung-des-torrenthorns/29148418/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 690
+    laengeKm: 6.8
+    schwierigkeit: "mittel"
+  - titel: "Panoramatrail Gemmi"
+    url: "https://www.alpenvereinaktiv.com/de/tour/panoramatrail-gemmi/63631365/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 180
+    hoehenmeter: 308
+    laengeKm: 7.0
+    schwierigkeit: "mittel"
 lat: 46.38
 lon: 7.63

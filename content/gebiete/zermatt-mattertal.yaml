@@ -4,6 +4,39 @@ beschreibung: Sechs SAC-Hütten ab Bahnhof, von Schönbiel und Rothorn bis zur M
 haltestellen: [zermatt, taesch, randa]
 sportarten: [wandern, hochtour, skitour, klettern]
 saison: ganzjaehrig
+touren:
+  - titel: "Rothornhütte (3198 m) ab Zermatt"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rothornhuette-3198m/45454173/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 1600
+    laengeKm: 9.5
+    schwierigkeit: "T3"
+  - titel: "Domhütte: Zustieg von Randa inkl. Hängebrücke"
+    url: "https://www.alpenvereinaktiv.com/de/tour/domhuette-zustieg-von-randa-inkl.-haengebruecke/800548025/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 200
+    hoehenmeter: 1610
+    laengeKm: 6.1
+    schwierigkeit: "mittel"
+  - titel: "Neuer Zustieg Monte-Rosa-Hütte ab Riffelberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/neuer-zustieg-monte-rosa-huette-ab-riffelberg-furi-bergstation-/803163377/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 210
+    hoehenmeter: 573
+    laengeKm: 9.6
+    schwierigkeit: "L / T2"
+  - titel: "Hochtour von der Täschhütte auf den Alphubel"
+    url: "https://www.alpenvereinaktiv.com/de/tour/hochtour-von-der-taeschhuette-auf-den-alphubel/311372754/"
+    anbieter: alpenvereinaktiv
+    sportart: hochtour
+    dauerMin: 480
+    hoehenmeter: 1500
+    laengeKm: 12.9
+    schwierigkeit: "WS"
 links:
   - { titel: SAC Monte Rosa, url: "https://www.section-monte-rosa.ch/de/" }
 lat: 46.02

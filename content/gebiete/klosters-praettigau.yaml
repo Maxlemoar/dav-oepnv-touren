@@ -4,6 +4,38 @@ beschreibung: Silvrettahütte und Fergenhütte direkt ab Bahnhof Klosters Platz,
 haltestellen: [klosters-platz, st-antoenien-rueti]
 sportarten: [wandern, hochtour, skitour, klettern, klettersteig]
 saison: ganzjaehrig
+touren:
+  - titel: "Prättigauer Höhenweg Etappe 2: St. Antönien – Carschinahütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/72-praettigauer-hoehenweg-etappe-2-st.-antoenien-carschinahuette/13873650/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 220
+    hoehenmeter: 816
+    laengeKm: 9.9
+    schwierigkeit: "mittel"
+  - titel: "Klettersteig Sulzfluh, St. Antönien"
+    url: "https://www.alpenvereinaktiv.com/de/tour/klettersteig-sulzfluh-st.-antoenien/9408873/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 400
+    hoehenmeter: 1196
+    laengeKm: 11.1
+    schwierigkeit: "C/D"
+  - titel: "Skitour Klosters Platz – Furka Berg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/skitour-klosters-platz-furka-berg-entspannte-skitour-zum-saisonstart/207019186/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 232
+    hoehenmeter: 1139
+    laengeKm: 9.6
+  - titel: "Silvretta-Skidurchquerung Etappe 4: Silvrettahütte – Vermuntstausee"
+    url: "https://www.alpenvereinaktiv.com/de/tour/silvretta-skidurchquerung-etappe-4-silvrettahuette-vermuntstausee/12633223/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 465
+    hoehenmeter: 1500
+    laengeKm: 16.7
+    schwierigkeit: "schwer"
 links:
   - { titel: SAC Prättigau, url: "https://www.sac-praettigau.ch" }
 lat: 46.87

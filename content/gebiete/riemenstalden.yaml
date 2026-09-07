@@ -4,6 +4,39 @@ beschreibung: Kleines Tal oberhalb des Urnersees, Bus ab Sisikon bis Chäppelibe
 haltestellen: [chaeppeliberg]
 sportarten: [wandern, skitour, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Chaiserstock – Fulen – Rossstock (Seilbahn ab Chäppeliberg)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/chaiserstock-fulen-rossstock/802259111/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 410
+    hoehenmeter: 1324
+    laengeKm: 12.7
+    schwierigkeit: "T4+"
+  - titel: "Rossstock von der Lidernenhütte (Schneeschuh)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rossstock-von-der-lidernenhuette/45378711/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 270
+    hoehenmeter: 750
+    laengeKm: 6.3
+    schwierigkeit: "WT4"
+  - titel: "Rossstock und Hagelstock (Skitour ab Riemenstalden)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rossstock-und-hagelstock/64684908/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 300
+    hoehenmeter: 1100
+    laengeKm: 10.8
+    schwierigkeit: "WS"
+  - titel: "Alpenkranz, 6. Etappe: Lidernenhütte – Rossstock – Biel"
+    url: "https://www.alpenvereinaktiv.com/de/tour/alpenkranz-6.-etappe-lidernenhuette-rossstock-biel/28919014/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 225
+    hoehenmeter: 729
+    laengeKm: 7.5
+    schwierigkeit: "T4"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.94

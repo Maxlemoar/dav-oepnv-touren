@@ -4,6 +4,39 @@ beschreibung: Österreichisches Hochtal, nur über Oberstdorf erreichbar; der Wa
 haltestellen: [riezlern-post, mittelberg, oberstdorf]
 sportarten: [wandern, klettersteig, skitour, schneeschuh]
 saison: ganzjaehrig
+touren:
+  - titel: "Von Riezlern im Kleinwalsertal auf den Gottesacker"
+    url: "https://www.alpenvereinaktiv.com/de/tour/von-riezlern-im-kleinwalsertal-auf-den-gottesacker/1362481/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 330
+    hoehenmeter: 1039
+    laengeKm: 16.4
+    schwierigkeit: "schwer"
+  - titel: "Riezlern - Gehrenspitze - 2-Länder-Sportklettersteig - Kanzelwand - Walser Steig - Walser Hammerspitze - Kuhgehrenspitze - Riezlern"
+    url: "https://www.alpenvereinaktiv.com/de/tour/riezlern-gehrenspitze-2-laender-sportklettersteig-kanzelwand-/242906187/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 505
+    hoehenmeter: 1529
+    laengeKm: 14.3
+    schwierigkeit: "C/D"
+  - titel: "Schwarzwasserhütte - Zustieg von Mittelberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/schwarzwasserhuette-zustieg-von-mittelberg/24161921/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 135
+    hoehenmeter: 171
+    laengeKm: 5.7
+    schwierigkeit: "mittel"
+  - titel: "Vom Kleinwalsertal auf den Hohen Ifen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/vom-kleinwalsertal-auf-den-hohen-ifen/1374459/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 210
+    hoehenmeter: 981
+    laengeKm: 14.2
+    schwierigkeit: "mittel"
 links:
   - { titel: Alpenvereinaktiv Kleinwalsertal, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Kleinwalsertal" }
 lat: 47.33

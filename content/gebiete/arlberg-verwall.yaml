@@ -4,6 +4,39 @@ beschreibung: St. Anton ist direkt per Railjet ab Zürich erreichbar und Ausgang
 haltestellen: [st-anton-am-arlberg]
 sportarten: [wandern, hochtour, klettern, skitour]
 saison: ganzjaehrig
+touren:
+  - titel: "Zustieg Darmstädter Hütte von St. Anton"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zustieg-darmstaedter-huette-von-st.-anton/14490191/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 270
+    hoehenmeter: 1150
+    laengeKm: 11.1
+    schwierigkeit: "mittel"
+  - titel: "Zustieg auf die Konstanzer Hütte von St. Anton"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zustieg-auf-die-konstanzer-huette-von-st.-anton/20029233/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 210
+    hoehenmeter: 440
+    laengeKm: 10.9
+    schwierigkeit: "T2"
+  - titel: "Zustieg Ulmer Hütte von St. Anton"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zustieg-ulmer-huette-von-st.-anton/29367808/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 822
+    laengeKm: 5.1
+    schwierigkeit: "mittel"
+  - titel: "Konstanzer Winter"
+    url: "https://www.alpenvereinaktiv.com/de/tour/konstanzer-winter/288453861/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 380
+    hoehenmeter: 593
+    laengeKm: 22.7
+    schwierigkeit: "mittel"
 links:
   - { titel: Alpenvereinaktiv Verwall, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Verwall" }
   - { titel: Hüttenverzeichnis St. Anton, url: "https://www.stantonamarlberg.com/de/home" }

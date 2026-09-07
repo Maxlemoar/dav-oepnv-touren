@@ -4,6 +4,39 @@ beschreibung: Ab Bahnhof Sonthofen mit dem Bus nach Bad Hindelang und Hinterstei
 haltestellen: [sonthofen, bad-hindelang-busbahnhof, hinterstein-gruener-hut]
 sportarten: [wandern, hochtour, skitour]
 saison: sommer
+touren:
+  - titel: "Rauhhorn (2241m) Überschreitung von Hinterstein über den Schrecksee"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rauhhorn-2241m-ueberschreitung-von-hinterstein-ueber-den-schrecksee/16442281/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 525
+    hoehenmeter: 1465
+    laengeKm: 16.9
+    schwierigkeit: "schwer"
+  - titel: "Türle"
+    url: "https://www.alpenvereinaktiv.com/de/tour/tuerle/1374768/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 360
+    hoehenmeter: 1085
+    laengeKm: 13.0
+    schwierigkeit: "schwer"
+  - titel: "Obertal"
+    url: "https://www.alpenvereinaktiv.com/de/tour/obertal/1398578/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 225
+    hoehenmeter: 285
+    laengeKm: 7.7
+    schwierigkeit: "mittel"
+  - titel: "Vom Giebelhaus über das Prinz-Luitpold-Haus auf den Wiedemerkopf"
+    url: "https://www.alpenvereinaktiv.com/de/tour/vom-giebelhaus-ueber-das-prinz-luitpold-haus-auf-den-wiedemerkopf/45393078/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 234
+    hoehenmeter: 1087
+    laengeKm: 7.3
+    schwierigkeit: "mittel"
 links:
   - { titel: Alpenvereinaktiv Bad Hindelang, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Bad%20Hindelang" }
   - { titel: Bad Hindelang Tourismus, url: "https://www.badhindelang.de" }

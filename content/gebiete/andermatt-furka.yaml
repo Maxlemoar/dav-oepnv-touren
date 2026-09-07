@@ -4,6 +4,39 @@ beschreibung: Urserental mit Matterhorn-Gotthard-Bahn bis Realp, im Sommer Posta
 haltestellen: [andermatt, realp, tiefenbach]
 sportarten: [skitour, hochtour, wandern, klettern]
 saison: ganzjaehrig
+touren:
+  - titel: "Realp – Hotel Tiefenbach – Albert-Heim-Hütte (Skitour)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/realp-hotel-tiefenbach-albert-heim-huette/802313175/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 225
+    hoehenmeter: 1004
+    laengeKm: 6.3
+    schwierigkeit: "mittel"
+  - titel: "Tour du Soleil, Tag 1: Realp zur Rotondohütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/tour-du-soleil-tag-1-realp-zur-rotondohuette/807296062/"
+    anbieter: alpenvereinaktiv
+    sportart: skitour
+    dauerMin: 210
+    hoehenmeter: 1035
+    laengeKm: 8.7
+    schwierigkeit: "WS-"
+  - titel: "Rundtour von Tiefenbach zur Albert-Heim-Hütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rundtour-von-tiefenbach-zur-albert-heim-huette/800061643/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 165
+    hoehenmeter: 482
+    laengeKm: 7.3
+    schwierigkeit: "mittel"
+  - titel: "Realp zur Albert-Heim-Hütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/realp-zur-albert-heim-huette/112798687/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 342
+    hoehenmeter: 1012
+    laengeKm: 14.4
+    schwierigkeit: "mittel"
 links:
   - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
 lat: 46.60
