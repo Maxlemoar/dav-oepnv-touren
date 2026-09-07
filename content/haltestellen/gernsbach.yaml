@@ -1,0 +1,13 @@
+id: gernsbach
+name: Gernsbach Bahnhof
+haltestelleId: "de-DELFI_de:08216:32142"
+lat: 48.76831
+lon: 8.33671
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 133, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 71, bahnKm: 55 }, lahr: { fahrzeitMin: 85, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 75 }, offenburg: { fahrzeitMin: 70, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 71, bahnKm: 54 } }
+bahn:
+  extId: "724288"
+  name: Bahnhof, Gernsbach
+  x: 8336048
+  y: 48767954

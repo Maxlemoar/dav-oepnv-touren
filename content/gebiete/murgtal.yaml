@@ -1,0 +1,32 @@
+id: murgtal
+name: Murgtal (Gernsbach, Forbach, Baiersbronn)
+beschreibung: Die Murgleiter führt in fünf Etappen von Gaggenau über Gernsbach und Forbach nach Baiersbronn, die Stadtbahn S8 hält an jeder Etappe. Teufelsmühle, Schwarzenbachtalsperre und Herrenwieser See sind Tagesziele ab Forbach, im Winter mit Schneeschuhen. Zwei Naturfreundehäuser in Hörden und Michelbach liegen direkt am Bahnhof. Deutschlandticket reicht.
+haltestellen: [gernsbach, hoerden, gaggenau, forbach, baiersbronn]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+touren:
+  - titel: "Wanderung von Gernsbach via Teufelsmühle nach Bad Herrenalb"
+    url: "https://www.alpenvereinaktiv.com/de/tour/wanderung-von-gernsbach-via-teufelsmuehle-nach-bad-herrenalb/804445365/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 290
+    hoehenmeter: 717
+    schwierigkeit: "mittel"
+  - titel: "Forbach - Schwarzenbachtalsperre - Herrenwieser See - Forbach"
+    url: "https://www.alpenvereinaktiv.com/de/tour/forbach-schwarzenbachtalsperre-herrenwieser-see-forbach/55856365/"
+    anbieter: alpenvereinaktiv
+    sportart: schneeschuh
+    dauerMin: 420
+    hoehenmeter: 858
+    schwierigkeit: "mittel"
+  - titel: "Murgleiter Etappe 3: Schönmünzach - Baiersbronn"
+    url: "https://www.alpenvereinaktiv.com/de/tour/murgleiter-etappe3-schoenmuenzach-bayersbronn/1529785/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 405
+    hoehenmeter: 982
+    schwierigkeit: "mittel"
+links:
+  - { titel: Alpenvereinaktiv Murgtal, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Murgtal" }
+lat: 48.66
+lon: 8.36

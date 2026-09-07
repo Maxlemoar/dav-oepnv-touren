@@ -1,0 +1,13 @@
+id: hochgratbahn
+name: Hochgratbahn Talstation
+haltestelleId: "de-DELFI_de:09780:2106:0:1"
+lat: 47.50946
+lon: 10.05752
+land: DE
+region: Allgäu
+richtwerte: { kehl: { fahrzeitMin: 387, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 274, bahnKm: 256 }, lahr: { fahrzeitMin: 360, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 270, bahnKm: 237 }, offenburg: { fahrzeitMin: 338, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 254, bahnKm: 238 } }
+bahn:
+  extId: "965195"
+  name: Steibis Hochgratbahn, Oberstaufen
+  x: 10057284
+  y: 47509573

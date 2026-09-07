@@ -1,0 +1,13 @@
+id: brienz
+name: Brienz
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:8305"
+lat: 46.75484
+lon: 8.03894
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 280, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 283, bahnKm: 254 }, lahr: { fahrzeitMin: 258, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 255, bahnKm: 221 }, offenburg: { fahrzeitMin: 231, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 269, bahnKm: 239 } }
+bahn:
+  extId: "8508305"
+  name: Brienz
+  x: 8038945
+  y: 46754847

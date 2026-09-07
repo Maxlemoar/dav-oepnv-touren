@@ -1,0 +1,13 @@
+id: flumserberg-tannenboden
+name: Flumserberg Tannenboden
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:30493"
+lat: 47.09379
+lon: 9.28089
+land: CH
+region: Walensee (St. Gallen)
+richtwerte: { kehl: { fahrzeitMin: 320, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 314, bahnKm: 248 }, lahr: { fahrzeitMin: 270, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 287, bahnKm: 220 }, offenburg: { fahrzeitMin: 243, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 300, bahnKm: 229 } }
+bahn:
+  extId: "8580592"
+  name: Flumserberg, Tannenboden
+  x: 9280383
+  y: 47092518

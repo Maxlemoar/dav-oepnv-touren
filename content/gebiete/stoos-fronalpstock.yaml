@@ -1,0 +1,11 @@
+id: stoos-fronalpstock
+name: Stoos und Fronalpstock
+beschreibung: Autofreies Dorf über Schwyz, erreichbar mit der steilsten Standseilbahn der Welt ab Schlattli (Bus ab Schwyz). Die Gratwanderung Klingenstock–Fronalpstock über dem Vierwaldstättersee ist der Klassiker, im Winter Skitouren und Schneeschuhrouten. Ab Offenburg in gut vier Stunden.
+haltestellen: [stoos]
+sportarten: [wandern, skitour, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Stoos, url: "https://www.stoos.ch/" }
+lat: 46.98
+lon: 8.67

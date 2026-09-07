@@ -1,0 +1,17 @@
+id: kaiserstuhl
+name: Kaiserstuhl
+beschreibung: Vulkanhügel zwischen Rhein und Schwarzwald mit Lösshohlwegen, Trockenrasen und Reben. Ihringen und Endingen liegen an der Kaiserstuhlbahn, der Neunlindenturm auf dem Totenkopf ist von beiden Bahnhöfen in gut zwei Stunden erreicht. Gut im Frühjahr und Herbst, wenn die Alpen noch oder schon Schnee haben; Deutschlandticket reicht.
+haltestellen: [ihringen, endingen-kaiserstuhl]
+sportarten: [wandern]
+saison: ganzjaehrig
+touren:
+  - titel: "Endingen - Bischoffingen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/endingen-bischoffingen/105162879/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 184
+    hoehenmeter: 357
+links:
+  - { titel: Alpenvereinaktiv Kaiserstuhl, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Kaiserstuhl" }
+lat: 48.09
+lon: 7.68

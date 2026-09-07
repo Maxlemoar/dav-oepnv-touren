@@ -1,0 +1,16 @@
+id: wanderheim-eninger-weide
+name: Wanderheim Eninger Weide (Hans-Schenk-Haus)
+betreiber: { typ: privat, sektion: Schwäbischer Albverein }
+hoehe: 751
+lat: 48.49367
+lon: 9.30317
+gebietId: albtrauf-bad-urach
+saison: ganzjaehrig
+webUrl: https://tuerme-wanderheime.albverein.net/wanderheime/wanderheim-eninger-weide-hans-schenk-haus/
+zustiege:
+  - haltestelleId: eningen-eninger-weide
+    gehzeitMin: 15
+    hoehenmeter: 30
+    hinweis: Bus 7644 ab Reutlingen, Haltestelle 1 km vom Haus. Bewirtschaftet Fr–So, Übernachtung täglich nach Absprache, 34 Betten.
+quelle: https://tuerme-wanderheime.albverein.net/wanderheime/wanderheim-eninger-weide-hans-schenk-haus/
+geschaetzt: true

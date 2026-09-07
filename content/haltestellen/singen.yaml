@@ -1,0 +1,13 @@
+id: singen
+name: Singen (Hohentwiel) Bahnhof
+haltestelleId: "de-DELFI_de:08335:6588"
+lat: 47.75888
+lon: 8.84127
+land: DE
+region: Hegau
+richtwerte: { kehl: { fahrzeitMin: 137, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 157, bahnKm: 149 }, lahr: { fahrzeitMin: 137, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 154, bahnKm: 124 }, offenburg: { fahrzeitMin: 114, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 137, bahnKm: 130 } }
+bahn:
+  extId: "8000073"
+  name: Singen(Hohentwiel)
+  x: 8841268
+  y: 47758879

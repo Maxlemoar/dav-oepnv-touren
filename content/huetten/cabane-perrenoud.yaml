@@ -1,0 +1,16 @@
+id: cabane-perrenoud
+name: Cabane Perrenoud
+betreiber: { typ: sac, sektion: Neuchâteloise }
+hoehe: 1419
+lat: 46.91833
+lon: 6.72383
+gebietId: creux-du-van
+saison: ganzjaehrig
+webUrl: https://www.cas-neuchatel.ch/cabanes/cabane-perrenoud/
+zustiege:
+  - haltestelleId: noiraigue
+    gehzeitMin: 150
+    hoehenmeter: 700
+    hinweis: Über die Ferme Robert und den Soliat auf den Jurakamm, 23 Plätze, an Wochenenden bewartet, sonst Schlüssel bei der Sektion.
+quelle: https://www.cas-neuchatel.ch/cabanes/
+geschaetzt: true

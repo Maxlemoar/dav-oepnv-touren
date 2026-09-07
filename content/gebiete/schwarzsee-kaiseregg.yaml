@@ -1,0 +1,18 @@
+id: schwarzsee-kaiseregg
+name: Schwarzsee und Kaiseregg
+beschreibung: Bergsee am Fuß der Kaiseregg (2185 m) in den Freiburger Voralpen, Bus 123 ab Fribourg bis Gypsera. Kaiseregg, Schafberg und die Breccaschlund-Runde sind Tagestouren, das Naturfreundehaus Aurore fünf Minuten von der Haltestelle. Im Winter Skitouren und Schneeschuhrouten.
+haltestellen: [schwarzsee-gypsera]
+sportarten: [wandern, skitour, schneeschuh]
+saison: ganzjaehrig
+touren:
+  - titel: "Schwarzsee-Runde"
+    url: "https://www.alpenvereinaktiv.com/de/tour/schwarzsee-runde/115190639/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 39
+    hoehenmeter: 15
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Schwarzsee Tourismus, url: "https://www.schwarzsee.ch/" }
+lat: 46.66
+lon: 7.29

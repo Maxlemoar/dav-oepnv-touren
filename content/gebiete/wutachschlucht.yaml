@@ -1,0 +1,25 @@
+id: wutachschlucht
+name: Wutachschlucht und Gauchachschlucht
+beschreibung: Die tiefste Schlucht des Schwarzwalds mit Lotenbachklamm, Schattenmühle und Gauchachschlucht. Die Höllentalbahn hält in Löffingen und Bachheim, von dort in die Gauchachschlucht; die Wanderbusse 950/7258 verbinden Löffingen, Schattenmühle und Wutachmühle. Lange Talwanderungen ohne große Höhenmeter, im Winter teils gesperrt. Deutschlandticket reicht.
+haltestellen: [loeffingen, bachheim, wutachmuehle]
+sportarten: [wandern]
+saison: sommer
+touren:
+  - titel: "Lotenbachklamm und Wutachschlucht"
+    url: "https://www.alpenvereinaktiv.com/de/tour/lotenbachklamm-und-wutachschlucht/14605178/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 225
+    hoehenmeter: 380
+    schwierigkeit: "mittel"
+  - titel: "Gauchachschlucht - Wutachschlucht - Rötenbachklamm"
+    url: "https://www.alpenvereinaktiv.com/de/tour/gauchachschlucht-wutachschlucht-roetenbachklamm/804362760/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 600
+    hoehenmeter: 687
+    schwierigkeit: "mittel"
+links:
+  - { titel: Alpenvereinaktiv Wutachschlucht, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Wutachschlucht" }
+lat: 47.86
+lon: 8.4

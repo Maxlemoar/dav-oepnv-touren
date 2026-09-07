@@ -1,0 +1,13 @@
+id: jaun-dorf
+name: Jaun, Dorf
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:4860"
+lat: 46.61088
+lon: 7.2759
+land: CH
+region: Freiburger Voralpen
+richtwerte: { kehl: { fahrzeitMin: 293, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 310, bahnKm: 278 }, lahr: { fahrzeitMin: 317, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 283, bahnKm: 246 }, offenburg: { fahrzeitMin: 290, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 296, bahnKm: 267 } }
+bahn:
+  extId: "8504860"
+  name: Jaun, Dorf
+  x: 7275905
+  y: 46610885

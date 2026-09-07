@@ -1,0 +1,11 @@
+id: wasserfallen-baselbiet
+name: Wasserfallen und Passwang (Baselbieter Jura)
+beschreibung: Gondelbahn ab Reigoldswil auf die Wasserfallen, Gratweg über Vogelberg und Hintere Egg zum Passwang mit Alpenblick vom Säntis bis zum Mont Blanc. Bus 70 ab Liestal, ab Offenburg in zweieinhalb Stunden das nächste Schweizer Ziel. Im Winter Schneeschuhrouten.
+haltestellen: [reigoldswil]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Wasserfallenbahn, url: "https://www.wasserfallenbahn.ch/" }
+lat: 47.37
+lon: 7.7

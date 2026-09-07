@@ -1,0 +1,13 @@
+id: soerenberg-post
+name: Sörenberg, Post
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:8789"
+lat: 46.82182
+lon: 8.03461
+land: CH
+region: Entlebuch (Luzern)
+richtwerte: { kehl: { fahrzeitMin: 284, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 250, bahnKm: 245 }, lahr: { fahrzeitMin: 264, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 222, bahnKm: 212 }, offenburg: { fahrzeitMin: 237, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 236, bahnKm: 230 } }
+bahn:
+  extId: "8508789"
+  name: Sörenberg, Post
+  x: 8034612
+  y: 46821817

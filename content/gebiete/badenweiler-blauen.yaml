@@ -1,0 +1,23 @@
+id: badenweiler-blauen
+name: Badenweiler und Hochblauen
+beschreibung: Der Blauen (1165 m) ist der südwestliche Eckpfeiler des Schwarzwalds mit Rundblick von Belchen bis Jura. Bus 650 ab Müllheim (Baden) bringt einen in einer Viertelstunde nach Badenweiler, von der Kurstadt führt der direkte Aufstieg in gut zwei Stunden zum Turm. Deutschlandticket reicht.
+haltestellen: [badenweiler-schule]
+sportarten: [wandern]
+saison: ganzjaehrig
+touren:
+  - titel: "Badenweiler auf den Blauen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/badenweiler-auf-den-blauen/127774580/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 136
+    hoehenmeter: 635
+  - titel: "Badenweiler zum Blauen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/badenweiler-zum-blauen/118261845/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 343
+    hoehenmeter: 713
+links:
+  - { titel: Alpenvereinaktiv Blauen, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Blauen" }
+lat: 47.79
+lon: 7.7

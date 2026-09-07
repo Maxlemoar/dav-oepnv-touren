@@ -1,0 +1,13 @@
+id: erlenbach-simmental
+name: Erlenbach im Simmental
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:7296"
+lat: 46.6591
+lon: 7.55524
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 255, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 274, bahnKm: 268 }, lahr: { fahrzeitMin: 230, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 247, bahnKm: 235 }, offenburg: { fahrzeitMin: 203, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 260, bahnKm: 255 } }
+bahn:
+  extId: "8507296"
+  name: Erlenbach im Simmental
+  x: 7555236
+  y: 46659094

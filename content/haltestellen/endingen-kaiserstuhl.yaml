@@ -1,0 +1,13 @@
+id: endingen-kaiserstuhl
+name: Endingen am Kaiserstuhl Bahnhof
+haltestelleId: "de-DELFI_de:08316:6688_G"
+lat: 48.14425
+lon: 7.70192
+land: DE
+region: Kaiserstuhl
+richtwerte: { kehl: { fahrzeitMin: 84, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 63, bahnKm: 61 }, lahr: { fahrzeitMin: 32, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 36, bahnKm: 30 }, offenburg: { fahrzeitMin: 43, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 49, bahnKm: 51 } }
+bahn:
+  extId: "499630"
+  name: Bahnhof, Endingen am Kaiserstuhl
+  x: 7702092
+  y: 48144139

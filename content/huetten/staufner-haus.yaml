@@ -1,0 +1,20 @@
+id: staufner-haus
+name: Staufner Haus
+betreiber: { typ: dav, sektion: Oberstaufen-Lindenberg }
+hoehe: 1634
+lat: 47.49165
+lon: 10.0692
+gebietId: nagelfluhkette
+saison: ganzjaehrig
+webUrl: https://www.staufner-haus.de/
+zustiege:
+  - haltestelleId: hochgratbahn
+    gehzeitMin: 120
+    hoehenmeter: 790
+    hinweis: Über Untere und Obere Lauchalpe, Fahrweg. Bus 95 ab Oberstaufen Bahnhof bis Hochgratbahn.
+  - haltestelleId: hochgratbahn
+    gehzeitMin: 10
+    hoehenmeter: -80
+    bergbahn: true
+    hinweis: Mit der Hochgratbahn zur Bergstation, die Hütte liegt 80 m unterhalb. Winter Do–So, Sommer täglich, 60 Lager und 17 Betten.
+quelle: https://www.dav-ol.de/staufner-haus/

@@ -1,0 +1,16 @@
+id: naturfreundehaus-aurore
+name: Naturfreundehaus Aurore (Schwarzsee)
+betreiber: { typ: naturfreunde }
+hoehe: 1070
+lat: 46.669
+lon: 7.2865
+gebietId: schwarzsee-kaiseregg
+saison: ganzjaehrig
+webUrl: https://aurore.nfh.ch/
+zustiege:
+  - haltestelleId: schwarzsee-gypsera
+    gehzeitMin: 5
+    hoehenmeter: 10
+    hinweis: 5 Minuten bergauf ab Bushaltestelle Gypsera. Selbstversorger-Gruppenhaus, 48 Betten, Schlafsack nötig.
+quelle: https://naturfreunde.ch/haeuser/aurore/
+geschaetzt: true

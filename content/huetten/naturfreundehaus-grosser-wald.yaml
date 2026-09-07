@@ -1,0 +1,15 @@
+id: naturfreundehaus-grosser-wald
+name: Naturfreundehaus Großer Wald (Michelbach)
+betreiber: { typ: naturfreunde }
+hoehe: 500
+lat: 48.81787
+lon: 8.34595
+gebietId: murgtal
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: gaggenau
+    gehzeitMin: 45
+    hoehenmeter: 150
+    hinweis: Bus 253 ab Gaggenau Bahnhof nach Michelbach, ab Haltestelle 500 m; zu Fuß 3 km. 30 Betten, Verpflegung nach Absprache.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-grosser-wald
+geschaetzt: true

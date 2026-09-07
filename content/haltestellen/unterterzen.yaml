@@ -1,0 +1,13 @@
+id: unterterzen
+name: Unterterzen
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:9416"
+lat: 47.11385
+lon: 9.25502
+land: CH
+region: Walensee (St. Gallen)
+richtwerte: { kehl: { fahrzeitMin: 297, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 294, bahnKm: 244 }, lahr: { fahrzeitMin: 247, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 267, bahnKm: 216 }, offenburg: { fahrzeitMin: 220, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 280, bahnKm: 225 } }
+bahn:
+  extId: "8509416"
+  name: Unterterzen
+  x: 9255015
+  y: 47113858

@@ -1,0 +1,11 @@
+id: donon-schirmeck
+name: Donon ab Schirmeck
+beschreibung: Der Donon (1009 m) mit gallorömischem Tempel ist der Aussichtsberg der Nordvogesen, ab Bahnhof Schirmeck über Grandfontaine in gut drei Stunden zu Fuß. Das Refuge du Club Vosgien in Fréconrupt oberhalb von La Broque erlaubt ein günstiges Wochenende im Bruchetal. TER ab Strasbourg, Europass.
+haltestellen: [schirmeck]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Donon, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Donon" }
+  - { titel: Rando Bruche, url: "https://www.rando-bruche.fr/" }
+lat: 48.51
+lon: 7.16

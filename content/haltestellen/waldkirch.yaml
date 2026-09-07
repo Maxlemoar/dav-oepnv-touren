@@ -1,0 +1,13 @@
+id: waldkirch
+name: Waldkirch Bahnhof
+haltestelleId: "de-DELFI_de:08316:6530_G"
+lat: 48.09568
+lon: 7.95721
+land: DE
+region: Mittlerer Schwarzwald
+richtwerte: { kehl: { fahrzeitMin: 101, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 84, bahnKm: 68 }, lahr: { fahrzeitMin: 49, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 56, bahnKm: 36 }, offenburg: { fahrzeitMin: 60, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 70, bahnKm: 53 } }
+bahn:
+  extId: "8006159"
+  name: Waldkirch
+  x: 7957242
+  y: 48095687

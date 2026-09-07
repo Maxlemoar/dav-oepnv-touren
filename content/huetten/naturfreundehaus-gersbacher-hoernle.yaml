@@ -1,0 +1,19 @@
+id: naturfreundehaus-gersbacher-hoernle
+name: Naturfreundehaus Gersbacher Hörnle
+betreiber: { typ: naturfreunde }
+hoehe: 994
+lat: 47.70766
+lon: 7.91634
+gebietId: wiesental-hohe-moehr
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: gersbach-post
+    gehzeitMin: 20
+    hoehenmeter: 80
+    hinweis: Bus 9002 ab Zell oder ab Schopfheim bis Gersbach, dann 1 km mit mäßiger Steigung. Bewirtschaftet, 40 Betten, Mo/Di geschlossen.
+  - haltestelleId: zell-wiesental
+    gehzeitMin: 150
+    hoehenmeter: 570
+    hinweis: Zu Fuß über die Hohe Möhr nach Gersbach.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-gersbacher-hoernle
+geschaetzt: true

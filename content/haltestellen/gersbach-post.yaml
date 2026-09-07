@@ -1,0 +1,13 @@
+id: gersbach-post
+name: Schopfheim-Gersbach Post
+haltestelleId: "de-DELFI_de:08336:3734:0:1"
+lat: 47.698
+lon: 7.9322
+land: DE
+region: Südschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 208, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 166, bahnKm: 123 }, lahr: { fahrzeitMin: 162, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 138, bahnKm: 90 }, offenburg: { fahrzeitMin: 164, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 152, bahnKm: 108 } }
+bahn:
+  extId: "502206"
+  name: Gersbach Post, Schopfheim
+  x: 7932189
+  y: 47697995

@@ -1,0 +1,13 @@
+id: hinterweidenthal-ort
+name: Hinterweidenthal Ort
+haltestelleId: "de-DELFI_de:07340:6269"
+lat: 49.1975
+lon: 7.75057
+land: DE
+region: Pfälzerwald
+richtwerte: { kehl: { fahrzeitMin: 227, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 96, bahnKm: 86 }, lahr: { fahrzeitMin: 212, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 139, bahnKm: 119 }, offenburg: { fahrzeitMin: 185, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 121, bahnKm: 102 } }
+bahn:
+  extId: "8079088"
+  name: Hinterweidenthal Ort
+  x: 7750571
+  y: 49197495

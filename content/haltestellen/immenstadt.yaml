@@ -1,0 +1,13 @@
+id: immenstadt
+name: Immenstadt Bahnhof
+haltestelleId: "de-DELFI_de:09780:750"
+lat: 47.5592
+lon: 10.214
+land: DE
+region: Allgäu
+richtwerte: { kehl: { fahrzeitMin: 311, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 347, bahnKm: 265 }, lahr: { fahrzeitMin: 284, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 364, bahnKm: 247 }, offenburg: { fahrzeitMin: 262, umstiege: 1, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 347, bahnKm: 246 } }
+bahn:
+  extId: "8003065"
+  name: Immenstadt
+  x: 10214002
+  y: 47559202

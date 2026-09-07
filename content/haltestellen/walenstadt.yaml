@@ -1,0 +1,13 @@
+id: walenstadt
+name: Walenstadt
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:9414"
+lat: 47.11988
+lon: 9.31298
+land: CH
+region: Walensee (St. Gallen)
+richtwerte: { kehl: { fahrzeitMin: 302, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 302, bahnKm: 246 }, lahr: { fahrzeitMin: 252, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 274, bahnKm: 219 }, offenburg: { fahrzeitMin: 225, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 287, bahnKm: 228 } }
+bahn:
+  extId: "8509414"
+  name: Walenstadt
+  x: 9312977
+  y: 47119872

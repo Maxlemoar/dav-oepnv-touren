@@ -1,0 +1,21 @@
+id: spitzmeilenhuette
+name: Spitzmeilenhütte
+betreiber: { typ: sac, sektion: Piz Sol }
+hoehe: 2087
+lat: 47.03424
+lon: 9.25058
+gebietId: walensee-churfirsten-flumserberg
+saison: sommer
+webUrl: https://www.spitzmeilenhuette.ch/
+zustiege:
+  - haltestelleId: flumserberg-tannenboden
+    gehzeitMin: 150
+    hoehenmeter: 230
+    bergbahn: true
+    hinweis: Berg Jet auf den Maschgenkamm, dann 2–2,5 h über Calans (T2). Zu Fuß ab Tannenboden 4–5 h.
+  - haltestelleId: unterterzen
+    gehzeitMin: 180
+    hoehenmeter: 230
+    bergbahn: true
+    hinweis: Gondelbahn Unterterzen–Tannenboden und Berg Jet Maschgenkamm, danach wie ab Tannenboden.
+quelle: https://www.spitzmeilenhuette.ch/zustiege

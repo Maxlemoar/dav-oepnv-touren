@@ -1,0 +1,13 @@
+id: bachheim
+name: Bachheim Bahnhof
+haltestelleId: "de-DELFI_de:08315:6659"
+lat: 47.86203
+lon: 8.39926
+land: DE
+region: Hochschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 153, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 135, bahnKm: 113 }, lahr: { fahrzeitMin: 154, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 107, bahnKm: 85 }, offenburg: { fahrzeitMin: 131, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 121, bahnKm: 95 } }
+bahn:
+  extId: "8000686"
+  name: Bachheim
+  x: 8399395
+  y: 47862076

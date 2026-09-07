@@ -1,0 +1,25 @@
+id: hegau-hohentwiel
+name: Hegau und Hohentwiel
+beschreibung: "Vulkankegel über dem Bodensee: Hohentwiel mit Festungsruine direkt über dem Bahnhof Singen, Hohenkrähen und Hohenstoffeln auf dem Hegauhöhenweg. Die Schwarzwaldbahn fährt ohne Umstieg in zwei Stunden nach Singen. Ganzjährig gut, Deutschlandticket reicht."
+haltestellen: [singen]
+sportarten: [wandern]
+saison: ganzjaehrig
+touren:
+  - titel: "Auf dem Burgenweg von Singen nach Mühlhausen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/auf-dem-burgenweg-von-singen-nach-muehlhausen/1560463/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 240
+    hoehenmeter: 493
+    schwierigkeit: "mittel"
+  - titel: "Hegauhöhen - über fünf Hegauberge von Engen nach Singen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/hegauhoehen-ueber-fuenf-hegauberge-von-engen-nach-singen/109919387/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 692
+    hoehenmeter: 1109
+    schwierigkeit: "schwer"
+links:
+  - { titel: Alpenvereinaktiv Hegau, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Hegau" }
+lat: 47.76
+lon: 8.82

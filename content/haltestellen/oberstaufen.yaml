@@ -1,0 +1,13 @@
+id: oberstaufen
+name: Oberstaufen Bahnhof
+haltestelleId: "de-DELFI_de:09780:1783"
+lat: 47.55421
+lon: 10.02529
+land: DE
+region: Allgäu
+richtwerte: { kehl: { fahrzeitMin: 339, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 266, bahnKm: 250 }, lahr: { fahrzeitMin: 369, umstiege: 5, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 262, bahnKm: 231 }, offenburg: { fahrzeitMin: 346, umstiege: 4, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 246, bahnKm: 232 } }
+bahn:
+  extId: "8004584"
+  name: Oberstaufen
+  x: 10025283
+  y: 47554204

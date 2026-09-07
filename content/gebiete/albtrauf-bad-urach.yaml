@@ -1,0 +1,30 @@
+id: albtrauf-bad-urach
+name: Albtrauf bei Bad Urach und Reutlingen
+beschreibung: Uracher Wasserfall, Ruine Hohenurach und die Traufkanten der Schwäbischen Alb, Bahnhof Bad Urach an der Ermstalbahn ab Metzingen. Auf der Reutlinger Seite liegt das Wanderheim Eninger Weide des Albvereins an der Bushaltestelle für Achalm und Roßberg. Über Stuttgart in gut drei Stunden erreichbar, Deutschlandticket reicht.
+haltestellen: [bad-urach, eningen-eninger-weide]
+sportarten: [wandern]
+saison: ganzjaehrig
+touren:
+  - titel: "Bad Urach mit 2 Wasserfällen und Burg Hohenurach"
+    url: "https://www.alpenvereinaktiv.com/de/tour/bad-urach-mit-2-wasserfaellen-und-burg-hohenurach/150295245/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 237
+    hoehenmeter: 604
+  - titel: "Durch die Hölle nach Bad Urach"
+    url: "https://www.alpenvereinaktiv.com/de/tour/durch-die-hoelle-nach-bad-urach/100277042/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 135
+    hoehenmeter: 342
+    schwierigkeit: "mittel"
+  - titel: "Grafenberg - Hörnle - Bad Urach"
+    url: "https://www.alpenvereinaktiv.com/de/tour/grafenberg-hoernle-bad-urach/116978703/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 290
+    hoehenmeter: 472
+links:
+  - { titel: Alpenvereinaktiv Bad Urach, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Bad%20Urach" }
+lat: 48.49
+lon: 9.36

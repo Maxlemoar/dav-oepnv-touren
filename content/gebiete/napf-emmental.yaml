@@ -1,0 +1,11 @@
+id: napf-emmental
+name: Napf und Emmental
+beschreibung: Der Napf (1408 m) ist der Aussichtsberg zwischen Emmental und Entlebuch, ab Trubschachen über Fankhaus in drei bis vier Stunden. Das Naturfreundehaus Ämmital auf der Alp Höchschwendi ist von Wasen in zwei Stunden erreicht. Hügelland ohne Bergbahnen, ganzjährig und ab Offenburg in dreieinhalb Stunden.
+haltestellen: [trubschachen, wasen-emmental]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Naturfreundehaus Ämmital, url: "https://naturfreunde.ch/haeuser/aemmital/" }
+lat: 47.0
+lon: 7.9

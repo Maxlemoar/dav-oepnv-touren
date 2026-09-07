@@ -1,0 +1,13 @@
+id: moleson-sur-gruyeres
+name: Moléson-sur-Gruyères
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:4880"
+lat: 46.56128
+lon: 7.03815
+land: CH
+region: Freiburger Voralpen
+richtwerte: { kehl: { fahrzeitMin: 331, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 298, bahnKm: 289 }, lahr: { fahrzeitMin: 281, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 270, bahnKm: 258 }, offenburg: { fahrzeitMin: 254, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 284, bahnKm: 280 } }
+bahn:
+  extId: "8504880"
+  name: Moléson-sur-Gruyères
+  x: 7038149
+  y: 46561282

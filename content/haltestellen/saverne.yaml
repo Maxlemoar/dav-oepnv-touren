@@ -1,0 +1,13 @@
+id: saverne
+name: Saverne
+haltestelleId: "fr-horaires-sncf_FR::LMU:7e64b200-cb0a-11e8-8bfa-f784c1c7c611:"
+lat: 48.74448
+lon: 7.36205
+land: FR
+region: Nordvogesen
+richtwerte: { kehl: { fahrzeitMin: 129, umstiege: 2, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 55, bahnKm: 47 }, lahr: { fahrzeitMin: 104, umstiege: 2, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 96, bahnKm: 71 }, offenburg: { fahrzeitMin: 69, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 73, bahnKm: 65 } }
+bahn:
+  extId: "8700266"
+  name: Saverne
+  x: 7362093
+  y: 48744861

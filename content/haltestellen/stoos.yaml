@@ -1,0 +1,13 @@
+id: stoos
+name: Stoos SZ
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:5091"
+lat: 46.978
+lon: 8.66767
+land: CH
+region: Schwyz (Zentralschweiz)
+richtwerte: { kehl: { fahrzeitMin: 304, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 278, bahnKm: 236 }, lahr: { fahrzeitMin: 284, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 250, bahnKm: 205 }, offenburg: { fahrzeitMin: 257, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 264, bahnKm: 219 } }
+bahn:
+  extId: "8505091"
+  name: Stoos SZ
+  x: 8667669
+  y: 46977995

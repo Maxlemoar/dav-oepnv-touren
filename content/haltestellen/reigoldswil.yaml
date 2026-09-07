@@ -1,0 +1,13 @@
+id: reigoldswil
+name: Reigoldswil, Dorfplatz
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:852"
+lat: 47.3974
+lon: 7.69184
+land: CH
+region: Baselbieter Jura
+richtwerte: { kehl: { fahrzeitMin: 162, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 165, bahnKm: 164 }, lahr: { fahrzeitMin: 172, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 137, bahnKm: 132 }, offenburg: { fahrzeitMin: 145, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 151, bahnKm: 152 } }
+bahn:
+  extId: "8500852"
+  name: Reigoldswil, Dorfplatz
+  x: 7691836
+  y: 47397396

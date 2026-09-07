@@ -1,0 +1,13 @@
+id: freiburg-schauinslandbahn
+name: Freiburg, Schauinslandbahn Talstation
+haltestelleId: "de-DELFI_de:08315:30048:0:1"
+lat: 47.93622
+lon: 7.86501
+land: DE
+region: Südschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 130, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 89 }, lahr: { fahrzeitMin: 99, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 60, bahnKm: 56 }, offenburg: { fahrzeitMin: 101, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 73, bahnKm: 75 } }
+bahn:
+  extId: "808034"
+  name: Schauinslandbahn Talstation, Horben
+  x: 7865103
+  y: 47936290

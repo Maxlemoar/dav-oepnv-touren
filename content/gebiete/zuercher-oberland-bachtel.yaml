@@ -1,0 +1,10 @@
+id: zuercher-oberland-bachtel
+name: Bachtel und Zürcher Oberland
+beschreibung: Bachtel (1115 m) und Tössstock sind die Hausberge des Zürcher Oberlands, Start am Bahnhof Wald mit S-Bahn-Anschluss ab Zürich. Aussichtsturm, Tösstal und der Höhenweg zum Hörnli; ganzjährig und ab Offenburg in gut drei Stunden das nächstgelegene Alpenrand-Panorama.
+haltestellen: [wald-zh]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 47.28
+lon: 8.9

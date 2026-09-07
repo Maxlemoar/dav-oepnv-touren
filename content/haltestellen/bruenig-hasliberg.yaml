@@ -1,0 +1,13 @@
+id: bruenig-hasliberg
+name: Brünig-Hasliberg
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:8309"
+lat: 46.75776
+lon: 8.13866
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 290, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 272, bahnKm: 255 }, lahr: { fahrzeitMin: 261, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 245, bahnKm: 222 }, offenburg: { fahrzeitMin: 234, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 258, bahnKm: 240 } }
+bahn:
+  extId: "8508309"
+  name: Brünig-Hasliberg
+  x: 8138654
+  y: 46757760

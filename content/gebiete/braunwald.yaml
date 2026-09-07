@@ -1,0 +1,11 @@
+id: braunwald
+name: Braunwald
+beschreibung: Autofreie Terrasse über Linthal mit Standseilbahn, gegenüber Tödi und Clariden. Ortstock, Bächistock und der Höhenweg zum Oberblegisee sind Tagestouren, im Winter Skitouren auf Gumen und Ortstock. Ab Offenburg über Zürich und Ziegelbrücke in viereinhalb Stunden.
+haltestellen: [braunwald]
+sportarten: [wandern, skitour, klettersteig]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Braunwald, url: "https://www.braunwald.ch/" }
+lat: 46.94
+lon: 8.99

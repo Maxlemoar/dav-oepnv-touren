@@ -1,0 +1,23 @@
+id: schauinsland
+name: Schauinsland
+beschreibung: Freiburgs Hausberg mit Schauinslandbahn ab Horben, Stadtbahn und Bus 21 bringen einen ab Freiburg Hauptbahnhof in einer halben Stunde zur Talstation. Aufstieg über das Bohrertal oder den Kohlerhau, oben Gipfelturm, Bergwerk und Abstieg nach Todtnau oder ins Münstertal. Im Winter Schneeschuhrouten am Gipfel. Deutschlandticket reicht.
+haltestellen: [freiburg-schauinslandbahn]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+touren:
+  - titel: "Schauinsland - Bohrertal"
+    url: "https://www.alpenvereinaktiv.com/de/tour/schauinsland-bohrertal/108227973/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 293
+    hoehenmeter: 1138
+  - titel: "Freiburg nach Horben"
+    url: "https://www.alpenvereinaktiv.com/de/tour/freiburg-nach-horben/108227604/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 115
+    hoehenmeter: 317
+links:
+  - { titel: Alpenvereinaktiv Schauinsland, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Schauinsland" }
+lat: 47.91
+lon: 7.9

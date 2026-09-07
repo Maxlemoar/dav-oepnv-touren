@@ -1,0 +1,11 @@
+id: walensee-churfirsten-flumserberg
+name: "Walensee: Churfirsten und Flumserberg"
+beschreibung: Die sieben Churfirsten stehen 1800 Meter über dem Walensee, Walenstadt ist der Bahnhof für den Aufstieg auf den Leistchamm oder Paxmal. Gegenüber führen ab Unterterzen die Bahnen auf den Flumserberg, von dort Spitzmeilenhütte, Prodkamm und Skitouren. Direktzug Basel–Chur, ab Offenburg unter vier Stunden.
+haltestellen: [walenstadt, unterterzen, flumserberg-tannenboden]
+sportarten: [wandern, skitour, hochtour]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Spitzmeilenhütte, url: "https://www.spitzmeilenhuette.ch/" }
+lat: 47.1
+lon: 9.29

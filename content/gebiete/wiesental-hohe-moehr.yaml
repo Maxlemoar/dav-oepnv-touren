@@ -1,0 +1,18 @@
+id: wiesental-hohe-moehr
+name: Wiesental und Hohe Möhr
+beschreibung: Hohe Möhr (984 m) mit Aussichtsturm und Gersbach mit seinen barocken Schanzen liegen über dem mittleren Wiesental. Die S6 fährt ab Basel bis Zell, Bus 9002 weiter nach Gersbach. Das Naturfreundehaus Gersbacher Hörnle ist Übernachtungsziel für ein Wochenende zwischen Hochrhein und Belchen. Deutschlandticket gilt ab Basel Bad Bf.
+haltestellen: [zell-wiesental, gersbach-post]
+sportarten: [wandern]
+saison: ganzjaehrig
+touren:
+  - titel: "Panoramatour und barocke Schanzen in Gersbach (Schwarzwald)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/panoramatour-und-barocke-schanzen-in-gersbach-schwarzwald-/51841752/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 180
+    hoehenmeter: 312
+    schwierigkeit: "leicht"
+links:
+  - { titel: Alpenvereinaktiv Hohe Möhr, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Hohe%20Möhr" }
+lat: 47.7
+lon: 7.91

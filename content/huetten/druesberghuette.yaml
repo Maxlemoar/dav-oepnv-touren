@@ -1,0 +1,16 @@
+id: druesberghuette
+name: Druesberghütte
+betreiber: { typ: privat }
+hoehe: 1581
+lat: 47.0206
+lon: 8.8261
+gebietId: hoch-ybrig
+saison: ganzjaehrig
+webUrl: https://druesberghuette.ch/
+zustiege:
+  - haltestelleId: hoch-ybrig-weglosen
+    gehzeitMin: 105
+    hoehenmeter: 550
+    hinweis: Sommerweg 1,5–2 h, alternativ Leiterliweg; im Winter über die Alpstraße. 40 Schlafplätze, bewirtschaftet.
+quelle: https://druesberghuette.ch/hutte-wegbeschreibung/
+geschaetzt: true

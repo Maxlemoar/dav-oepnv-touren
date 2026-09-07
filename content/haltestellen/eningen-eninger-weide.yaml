@@ -1,0 +1,13 @@
+id: eningen-eninger-weide
+name: Eningen, Eninger Weide
+haltestelleId: "de-DELFI_de:08415:28401:0:1"
+lat: 48.48779
+lon: 9.3006
+land: DE
+region: Schwäbische Alb
+richtwerte: { kehl: { fahrzeitMin: 312, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 179, bahnKm: 138 }, lahr: { fahrzeitMin: 237, umstiege: 4, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 196, bahnKm: 137 }, offenburg: { fahrzeitMin: 209, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 179, bahnKm: 125 } }
+bahn:
+  extId: "491764"
+  name: Eninger Weide, Eningen unter Achalm
+  x: 9300527
+  y: 48487806

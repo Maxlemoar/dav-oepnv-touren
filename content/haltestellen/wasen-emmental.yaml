@@ -1,0 +1,13 @@
+id: wasen-emmental
+name: Wasen i.E.
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:8273"
+lat: 47.04342
+lon: 7.79137
+land: CH
+region: Emmental (Bern)
+richtwerte: { kehl: { fahrzeitMin: 279, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 228, bahnKm: 213 }, lahr: { fahrzeitMin: 229, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 200, bahnKm: 180 }, offenburg: { fahrzeitMin: 202, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 214, bahnKm: 200 } }
+bahn:
+  extId: "8508273"
+  name: Wasen i.E.
+  x: 7791364
+  y: 47043419

@@ -1,0 +1,13 @@
+id: hoerden
+name: Hörden (Murgtal)
+haltestelleId: "de-DELFI_de:08216:32828:1:1"
+lat: 48.78162
+lon: 8.34515
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 131, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 70, bahnKm: 57 }, lahr: { fahrzeitMin: 83, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 87, bahnKm: 77 }, offenburg: { fahrzeitMin: 68, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 70, bahnKm: 56 } }
+bahn:
+  extId: "8002910"
+  name: Hörden
+  x: 8345190
+  y: 48781519

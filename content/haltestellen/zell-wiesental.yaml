@@ -1,0 +1,13 @@
+id: zell-wiesental
+name: Zell im Wiesental Bahnhof
+haltestelleId: "de-DELFI_de:08336:6599"
+lat: 47.7053
+lon: 7.8486
+land: DE
+region: Südschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 193, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 159, bahnKm: 121 }, lahr: { fahrzeitMin: 132, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 131, bahnKm: 88 }, offenburg: { fahrzeitMin: 116, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 145, bahnKm: 108 } }
+bahn:
+  extId: "502168"
+  name: Bahnhof, Zell im Wiesental
+  x: 7848796
+  y: 47705753

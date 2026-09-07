@@ -1,0 +1,32 @@
+id: dahner-felsenland
+name: Dahner Felsenland (Pfälzerwald)
+beschreibung: Buntsandsteintürme, Felsenpfade und über 1000 Kletterrouten im südlichen Pfälzerwald. Bus 250/252 ab Hinterweidenthal (Bahnhof an der Strecke Landau–Pirmasens) nach Dahn, sonn- und feiertags von Mai bis Oktober fährt die Wieslauterbahn direkt. Dahner Felsenpfad und die Klettersteige am Hochstein sind Halbtagesrunden. Deutschlandticket reicht.
+haltestellen: [hinterweidenthal-ort, dahn-sued]
+sportarten: [klettern, wandern, klettersteig]
+saison: ganzjaehrig
+touren:
+  - titel: "Dahner Felsenpfad"
+    url: "https://www.alpenvereinaktiv.com/de/tour/2023_10-pfalz-dahner-felsenpfad/282673431/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 197
+    hoehenmeter: 408
+  - titel: "Klettersteigrunde Hanselsteig, Felsenpfad und Leiterlsteig"
+    url: "https://www.alpenvereinaktiv.com/de/tour/klettersteigrunde-hanselsteig-felsenpfad-und-leiterlsteig/45326356/"
+    anbieter: alpenvereinaktiv
+    sportart: klettersteig
+    dauerMin: 120
+    hoehenmeter: 333
+    schwierigkeit: "leicht"
+  - titel: "Napoleon-Steig mit Lämmerteichfelsen und großem Eyberg"
+    url: "https://www.alpenvereinaktiv.com/de/tour/napoleon-steig-mit-laemmerteichfelsen-und-grossem-eyberg/801389080/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 360
+    hoehenmeter: 675
+    schwierigkeit: "mittel"
+links:
+  - { titel: Alpenvereinaktiv Dahner Felsenland, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Dahner%20Felsenland" }
+  - { titel: PfalzKletterer (Felsinfo Pfalz), url: "https://www.pfalzkletterer.de/" }
+lat: 49.15
+lon: 7.78

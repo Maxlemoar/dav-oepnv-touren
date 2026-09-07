@@ -1,0 +1,13 @@
+id: loeffingen
+name: Löffingen Bahnhof
+haltestelleId: "de-DELFI_de:08315:6543_G"
+lat: 47.88333
+lon: 8.34207
+land: DE
+region: Hochschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 159, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 126, bahnKm: 108 }, lahr: { fahrzeitMin: 159, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 99, bahnKm: 79 }, offenburg: { fahrzeitMin: 136, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 112, bahnKm: 90 } }
+bahn:
+  extId: "8003724"
+  name: Löffingen
+  x: 8342071
+  y: 47883335

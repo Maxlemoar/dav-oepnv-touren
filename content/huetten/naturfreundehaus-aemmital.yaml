@@ -1,0 +1,16 @@
+id: naturfreundehaus-aemmital
+name: Naturfreundehaus Ämmital (Höchschwendi)
+betreiber: { typ: naturfreunde }
+hoehe: 1150
+lat: 47.03028
+lon: 7.89189
+gebietId: napf-emmental
+saison: ganzjaehrig
+webUrl: https://naturfreunde.ch/haeuser/aemmital/
+zustiege:
+  - haltestelleId: wasen-emmental
+    gehzeitMin: 120
+    hoehenmeter: 460
+    hinweis: Ab Bahnhof Wasen durchs Hornbachtal bis Hinterried, 2 h; Ahornbus nur mit Reservation (busalpin.ch). Selbstversorger, Bewirtung an Wochenenden.
+quelle: https://naturfreunde.ch/haeuser/aemmital/
+geschaetzt: true

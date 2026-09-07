@@ -1,0 +1,11 @@
+id: hoch-ybrig
+name: Hoch-Ybrig und Druesberg
+beschreibung: Voralpines Ski- und Wandergebiet über Unteriberg, Bus 556 ab Einsiedeln bis zur Talstation Weglosen. Druesberghütte (privat, 40 Schlafplätze) in zwei Stunden ab Weglosen, darüber Druesberg und Forstberg; im Winter Skitouren und Schlittelweg. Ab Offenburg in vier Stunden.
+haltestellen: [hoch-ybrig-weglosen]
+sportarten: [wandern, skitour, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Druesberghütte, url: "https://druesberghuette.ch/" }
+lat: 47.02
+lon: 8.82

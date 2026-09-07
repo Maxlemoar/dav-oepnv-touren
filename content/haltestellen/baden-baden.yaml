@@ -1,0 +1,13 @@
+id: baden-baden
+name: Baden-Baden Bahnhof
+haltestelleId: "de-DELFI_de:08211:1847"
+lat: 48.79033
+lon: 8.19083
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 51, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 49, bahnKm: 46 }, lahr: { fahrzeitMin: 42, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 66, bahnKm: 71 }, offenburg: { fahrzeitMin: 27, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 49, bahnKm: 49 } }
+bahn:
+  extId: "8000774"
+  name: Baden Baden Bahnhof
+  x: 8190827
+  y: 48790329

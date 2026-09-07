@@ -1,0 +1,19 @@
+id: wiedenbachhuette
+name: Wiedenbachhütte
+betreiber: { typ: dav, sektion: Heidelberg }
+hoehe: 370
+lat: 48.67005
+lon: 8.20048
+gebietId: buehlertal
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: buehlertal-gertelbachstrasse
+    gehzeitMin: 5
+    hoehenmeter: 0
+    hinweis: Selbstversorgerhütte, 32 Betten, Bus 264 ab Bühl Bahnhof bis Gertelbachstraße, Hütte direkt am Weg zu den Gertelbachfällen.
+  - haltestelleId: buehl
+    gehzeitMin: 90
+    hoehenmeter: 150
+    hinweis: Zu Fuß durchs Bühlertal, rund 7 km.
+quelle: https://www.alpenvereinaktiv.com/de/selbstversorgerhuette/wiedenbachhuette/7242196/
+geschaetzt: true

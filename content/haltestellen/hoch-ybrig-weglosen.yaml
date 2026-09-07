@@ -1,0 +1,13 @@
+id: hoch-ybrig-weglosen
+name: Hoch-Ybrig, Talstation Weglosen
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:3753"
+lat: 47.02017
+lon: 8.80821
+land: CH
+region: Schwyz (Zentralschweiz)
+richtwerte: { lahr: { fahrzeitMin: 352, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 248, bahnKm: 205 }, kehl: { fahrzeitMin: 297, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 276, bahnKm: 236 }, offenburg: { fahrzeitMin: 340, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 261, bahnKm: 218 } }
+bahn:
+  extId: "8503753"
+  name: Hoch-Ybrig, Talst. Weglosen
+  x: 8808206
+  y: 47020173

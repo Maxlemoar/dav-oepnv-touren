@@ -1,0 +1,13 @@
+id: buehl
+name: Bühl (Baden) Bahnhof
+haltestelleId: "de-DELFI_de:08216:32227"
+lat: 48.69693
+lon: 8.12991
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 44, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 43, bahnKm: 34 }, lahr: { fahrzeitMin: 34, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 60, bahnKm: 56 }, offenburg: { fahrzeitMin: 19, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 42, bahnKm: 35 } }
+bahn:
+  extId: "8001252"
+  name: Bühl(Baden)
+  x: 8129296
+  y: 48696679

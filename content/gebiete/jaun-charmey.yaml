@@ -1,0 +1,19 @@
+id: jaun-charmey
+name: Jaun, Gastlosen und Vanil Noir
+beschreibung: Die Gastlosen sind die Kletter- und Wanderkette der Freiburger Voralpen, die Umrundung startet in Jaun (Bus 260 ab Bulle). Von Charmey aus führt der Zustieg zur Cabane des Marindes unter dem Vanil Noir, dem höchsten Freiburger Gipfel. Ab Offenburg in viereinhalb Stunden, eher ein Wochenendziel.
+haltestellen: [jaun-dorf, charmey-village]
+sportarten: [wandern, klettern]
+saison: sommer
+touren:
+  - titel: "Tour des Gastlosen"
+    url: "https://www.alpenvereinaktiv.com/de/tour/tour-des-gastlosen/104523583/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 300
+    hoehenmeter: 750
+    schwierigkeit: "mittel"
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: CAS Gruyère, url: "https://www.cas-gruyere.ch/" }
+lat: 46.6
+lon: 7.22

@@ -1,0 +1,11 @@
+id: creux-du-van
+name: Creux du Van (Neuenburger Jura)
+beschreibung: Der 160 Meter hohe Felskessel des Creux du Van ist die bekannteste Wanderung im Jura, ab Bahnhof Noiraigue in zwei Stunden über die Ferme Robert zum Soliat. Die Cabane Perrenoud des SAC Neuchâtel liegt am Kammweg und ist an Wochenenden bewartet. Ab Offenburg in dreieinhalb Stunden über Basel und Neuchâtel.
+haltestellen: [noiraigue]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: CAS Neuchâtel Cabanes, url: "https://www.cas-neuchatel.ch/cabanes/" }
+lat: 46.93
+lon: 6.72

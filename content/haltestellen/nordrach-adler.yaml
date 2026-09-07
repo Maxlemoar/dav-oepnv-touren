@@ -1,0 +1,13 @@
+id: nordrach-adler
+name: Nordrach Adler
+haltestelleId: "de-DELFI_de:08317:11039:1:1"
+lat: 48.42313
+lon: 8.11584
+land: DE
+region: Mittlerer Schwarzwald
+richtwerte: { kehl: { fahrzeitMin: 143, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 54, bahnKm: 36 }, lahr: { fahrzeitMin: 116, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 31, bahnKm: 28 }, offenburg: { fahrzeitMin: 104, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 34, bahnKm: 17 } }
+bahn:
+  extId: "882478"
+  name: Adler, Nordrach
+  x: 8115911
+  y: 48423047

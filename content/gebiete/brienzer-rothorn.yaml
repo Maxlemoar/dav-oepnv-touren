@@ -1,0 +1,11 @@
+id: brienzer-rothorn
+name: Brienzer Rothorn (Brienz, Sörenberg, Brünig)
+beschreibung: "Das Brienzer Rothorn (2350 m) verbindet Berner Oberland und Entlebuch: Dampfzahnradbahn ab Brienz, Gondel ab Sörenberg, Gratweg über Eiseesattel und Arnihaaggen bis zum Brünig. Das Naturfreundehaus Brünig liegt fünf Minuten vom Bahnhof Brünig-Hasliberg. Ab Offenburg über Luzern in knapp vier Stunden."
+haltestellen: [brienz, bruenig-hasliberg, soerenberg-post]
+sportarten: [wandern, skitour]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Brienz Rothorn Bahn, url: "https://www.brienz-rothorn-bahn.ch/" }
+lat: 46.79
+lon: 8.05

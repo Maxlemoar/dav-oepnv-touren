@@ -1,0 +1,13 @@
+id: schirmeck
+name: Schirmeck - La Broque
+haltestelleId: "fr-horaires-sncf_FR::LMU:66da63a0-cb0a-11e8-8bfa-f784c1c7c611:"
+lat: 48.47999
+lon: 7.21634
+land: FR
+region: Nordvogesen
+richtwerte: { kehl: { fahrzeitMin: 78, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 52, bahnKm: 56 }, lahr: { fahrzeitMin: 109, umstiege: 2, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 79, bahnKm: 60 }, offenburg: { fahrzeitMin: 74, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 62, bahnKm: 67 } }
+bahn:
+  extId: "8700419"
+  name: Schirmeck-la-Broque
+  x: 7215704
+  y: 48480057

@@ -1,0 +1,25 @@
+id: baden-baden-battert
+name: Battert und Merkur (Baden-Baden)
+beschreibung: Der Battert ist mit über 100 Routen im Porphyr das klassische Klettergebiet der Region, dazu Battertfelsen-Rundweg, Altes Schloss und der Merkur mit Standseilbahn. Ab Baden-Baden Bahnhof mit Bus 205/244 bis Ebersteinburg Wolfsschlucht, von dort 20 Minuten zum Einstieg. Deutschlandticket reicht.
+haltestellen: [baden-baden, ebersteinburg-wolfsschlucht]
+sportarten: [klettern, wandern]
+saison: ganzjaehrig
+touren:
+  - titel: "Zum Klettern von Karlsruhe an den Battert per ÖPNV"
+    url: "https://www.alpenvereinaktiv.com/de/tour/zum-klettern-von-karlsruhe-an-den-battert-per-oepnv/58421699/"
+    anbieter: alpenvereinaktiv
+    sportart: klettern
+    dauerMin: 90
+    hoehenmeter: 123
+  - titel: "Ebersteinburg Rundweg (blau)"
+    url: "https://www.alpenvereinaktiv.com/de/tour/ebersteinburg-rundweg-blau-/112235638/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 255
+    hoehenmeter: 345
+    schwierigkeit: "schwer"
+links:
+  - { titel: Alpenvereinaktiv Battert, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Battert" }
+  - { titel: DAV Felsinfo Battert, url: "https://www.alpenverein.de/felsinfo" }
+lat: 48.775
+lon: 8.265

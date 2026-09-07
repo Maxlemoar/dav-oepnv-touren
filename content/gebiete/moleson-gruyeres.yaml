@@ -1,0 +1,11 @@
+id: moleson-gruyeres
+name: Moléson und Gruyères
+beschreibung: Der Moléson (2002 m) ist der Aussichtsberg über Gruyères mit Standseilbahn und Pendelbahn ab Moléson-sur-Gruyères (Bus 263 ab Bulle). Aufstieg zu Fuß in drei Stunden, Klettersteig am Gipfelaufbau, Abstieg über Plan-Francey. Ab Offenburg in gut vier Stunden, ganzjährig.
+haltestellen: [moleson-sur-gruyeres]
+sportarten: [wandern, klettersteig, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Moléson, url: "https://www.moleson.ch/" }
+lat: 46.55
+lon: 7.02

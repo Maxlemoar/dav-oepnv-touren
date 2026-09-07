@@ -1,0 +1,13 @@
+id: buehlertal-gertelbachstrasse
+name: Bühlertal Gertelbachstraße
+haltestelleId: "de-KVV_Pde:08216:32200"
+lat: 48.67043
+lon: 8.20072
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 91, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 48, bahnKm: 38 }, lahr: { fahrzeitMin: 124, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 65, bahnKm: 57 }, offenburg: { fahrzeitMin: 66, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 48, bahnKm: 36 } }
+bahn:
+  extId: "720532"
+  name: Gertelbachstraße, Bühlertal
+  x: 8201075
+  y: 48670080

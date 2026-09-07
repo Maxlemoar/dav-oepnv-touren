@@ -1,0 +1,16 @@
+id: naturfreundehaus-kornebene
+name: Naturfreundehaus Kornebene
+betreiber: { typ: naturfreunde }
+hoehe: 640
+lat: 48.43018
+lon: 8.09318
+gebietId: nordrach
+saison: ganzjaehrig
+webUrl: https://www.kornebene.de/
+zustiege:
+  - haltestelleId: nordrach-adler
+    gehzeitMin: 40
+    hoehenmeter: 190
+    hinweis: Bus 7131 ab Biberach (Baden) Bahnhof. Bewirtschaftet, 15 Betten, Gaststätte.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-kornebene
+geschaetzt: true

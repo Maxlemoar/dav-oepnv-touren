@@ -1,0 +1,17 @@
+id: buehlertal
+name: Bühlertal und Gertelbach
+beschreibung: Gertelbachfälle, Wiedenfelsen und Falkenfelsen bilden eine der alpinsten Runden im Nordschwarzwald, Ausgangspunkt ist die Bushaltestelle Gertelbachstraße im oberen Bühlertal (Bus ab Bühl Bahnhof, 20 Minuten). Die Wiedenbachhütte der DAV-Sektion Heidelberg steht direkt an der Haltestelle. Deutschlandticket reicht.
+haltestellen: [buehl, buehlertal-gertelbachstrasse]
+sportarten: [wandern]
+saison: ganzjaehrig
+touren:
+  - titel: "Rund um den Wiedenfelsen, Gertelbacher Wasserfälle, Falkenfelsen und Hertahütte"
+    url: "https://www.alpenvereinaktiv.com/de/tour/rund-um-den-wiedenfelsen-gertelbacher-wasserfaelle-falkenfelsen-und/119266514/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 205
+    hoehenmeter: 462
+links:
+  - { titel: Alpenvereinaktiv Bühlertal, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Bühlertal" }
+lat: 48.665
+lon: 8.22

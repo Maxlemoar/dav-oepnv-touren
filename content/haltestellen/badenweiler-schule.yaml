@@ -1,0 +1,13 @@
+id: badenweiler-schule
+name: Badenweiler Schule
+haltestelleId: "de-DELFI_de:08315:5473:1:1"
+lat: 47.80801
+lon: 7.67472
+land: DE
+region: Südschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 179, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 116, bahnKm: 108 }, lahr: { fahrzeitMin: 94, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 76 }, offenburg: { fahrzeitMin: 105, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 101, bahnKm: 96 } }
+bahn:
+  extId: "499585"
+  name: Schule, Badenweiler
+  x: 7672491
+  y: 47807754

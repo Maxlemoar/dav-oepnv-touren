@@ -1,0 +1,13 @@
+id: ebersteinburg-wolfsschlucht
+name: Ebersteinburg Wolfsschlucht
+haltestelleId: "de-KVV_Pde:08211:31838"
+lat: 48.77428
+lon: 8.27612
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 150, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 57, bahnKm: 51 }, lahr: { fahrzeitMin: 102, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 74, bahnKm: 73 }, offenburg: { fahrzeitMin: 87, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 56, bahnKm: 51 } }
+bahn:
+  extId: "720683"
+  name: Ebersteinburg Wolfsschlucht, Baden-Baden
+  x: 8276126
+  y: 48774283

@@ -1,0 +1,13 @@
+id: trubschachen
+name: Trubschachen
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:8208"
+lat: 46.9217
+lon: 7.84615
+land: CH
+region: Emmental (Bern)
+richtwerte: { kehl: { fahrzeitMin: 270, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 245, bahnKm: 230 }, lahr: { fahrzeitMin: 246, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 217, bahnKm: 197 }, offenburg: { fahrzeitMin: 219, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 231, bahnKm: 216 } }
+bahn:
+  extId: "8508208"
+  name: Trubschachen
+  x: 7846145
+  y: 46921696

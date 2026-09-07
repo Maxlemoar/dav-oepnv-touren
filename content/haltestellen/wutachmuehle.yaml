@@ -1,0 +1,13 @@
+id: wutachmuehle
+name: Wutachmühle
+haltestelleId: "de-DELFI_de:08337:1090:0:1"
+lat: 47.84812
+lon: 8.44945
+land: DE
+region: Hochschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 154, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 143, bahnKm: 117 }, lahr: { fahrzeitMin: 169, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 116, bahnKm: 89 }, offenburg: { fahrzeitMin: 146, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 129, bahnKm: 99 } }
+bahn:
+  extId: "500791"
+  name: Wutachmühle, Wutach
+  x: 8449447
+  y: 47848115

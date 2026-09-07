@@ -1,0 +1,13 @@
+id: braunwald
+name: Braunwald
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:3261"
+lat: 46.93871
+lon: 8.99859
+land: CH
+region: Glarner Alpen (Glarus)
+richtwerte: { kehl: { fahrzeitMin: 349, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 308, bahnKm: 253 }, lahr: { fahrzeitMin: 299, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 280, bahnKm: 223 }, offenburg: { fahrzeitMin: 272, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 293, bahnKm: 235 } }
+bahn:
+  extId: "8503261"
+  name: Braunwald
+  x: 8998589
+  y: 46938704

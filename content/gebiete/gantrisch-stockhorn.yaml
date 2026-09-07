@@ -1,0 +1,19 @@
+id: gantrisch-stockhorn
+name: Gantrisch, Stockhorn und Niesen
+beschreibung: Die Gantrischkette zwischen Gurnigel und Simmental mit dem Stockhorn (2190 m) als Gratwanderung ab Bus Wasserscheide oder Gurnigel Berghaus. Erlenbach ist der Bahnhof für die Stockhornbahn, Mülenen der für den Niesen mit seiner Standseilbahn. Alles ab Offenburg in dreieinhalb Stunden, ideal für den ersten Voralpen-Tag der Saison.
+haltestellen: [erlenbach-simmental, gurnigel-berghaus, muelenen]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+touren:
+  - titel: "Grat- und Höhenwanderung zum Stockhorn"
+    url: "https://www.alpenvereinaktiv.com/de/tour/grat-und-hoehenwanderung-zum-stockhorn/102955995/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 307
+    hoehenmeter: 1000
+    schwierigkeit: "mittel"
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Naturpark Gantrisch, url: "https://www.gantrisch.ch/" }
+lat: 46.69
+lon: 7.53

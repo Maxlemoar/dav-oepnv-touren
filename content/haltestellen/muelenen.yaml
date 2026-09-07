@@ -1,0 +1,13 @@
+id: muelenen
+name: Mülenen
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:7481"
+lat: 46.63803
+lon: 7.69131
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 244, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 272, bahnKm: 270 }, lahr: { fahrzeitMin: 224, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 245, bahnKm: 237 }, offenburg: { fahrzeitMin: 197, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 258, bahnKm: 257 } }
+bahn:
+  extId: "8507481"
+  name: Mülenen
+  x: 7691314
+  y: 46638032

@@ -1,0 +1,13 @@
+id: forbach
+name: Forbach (Schwarzwald) Bahnhof
+haltestelleId: "de-DELFI_de:08216:32191_G"
+lat: 48.6804
+lon: 8.36149
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 151, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 83, bahnKm: 53 }, lahr: { fahrzeitMin: 103, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 100, bahnKm: 68 }, offenburg: { fahrzeitMin: 88, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 82, bahnKm: 48 } }
+bahn:
+  extId: "8002022"
+  name: Forbach(Schwarzw)
+  x: 8361487
+  y: 48680400

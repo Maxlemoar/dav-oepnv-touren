@@ -1,0 +1,16 @@
+id: cabane-des-marindes
+name: Cabane des Marindes
+betreiber: { typ: sac, sektion: Gruyère }
+hoehe: 1868
+lat: 46.53611
+lon: 7.16206
+gebietId: jaun-charmey
+saison: sommer
+webUrl: https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/
+zustiege:
+  - haltestelleId: charmey-village
+    gehzeitMin: 240
+    hoehenmeter: 1000
+    hinweis: Bus 260 bis Charmey, Pra Jean, ab dort 3,5 h durchs Vallon des Morteys; ab Parkplatz Gros Mont 2 h, 500 hm (T2). 37 Lager, bewartet Mitte Mai bis Anfang Oktober, Reservation nötig.
+quelle: https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/
+geschaetzt: true

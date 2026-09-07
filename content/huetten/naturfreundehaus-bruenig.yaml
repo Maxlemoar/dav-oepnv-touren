@@ -1,0 +1,15 @@
+id: naturfreundehaus-bruenig
+name: Naturfreundehaus Brünig
+betreiber: { typ: naturfreunde }
+hoehe: 960
+lat: 46.75971
+lon: 8.14469
+gebietId: brienzer-rothorn
+saison: ganzjaehrig
+webUrl: https://mos-guesthouse.ch/
+zustiege:
+  - haltestelleId: bruenig-hasliberg
+    gehzeitMin: 5
+    hoehenmeter: -40
+    hinweis: 5 Minuten ab Bahnhof Brünig-Hasliberg, ausgeschildert. 52 Betten, Halbpension möglich.
+quelle: https://naturfreunde.ch/haeuser/bruenig/

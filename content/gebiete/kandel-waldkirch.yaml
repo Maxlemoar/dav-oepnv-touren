@@ -1,0 +1,24 @@
+id: kandel-waldkirch
+name: Kandel ab Waldkirch
+beschreibung: Der Kandel (1241 m) steigt direkt hinter dem Bahnhof Waldkirch aus dem Elztal auf, gut 950 Höhenmeter über Kandelfelsen und Kandelhöhenweg. Wer weiter will, geht über St. Peter nach Kirchzarten und fährt mit der Höllentalbahn zurück. Deutschlandticket reicht, Breisgau-S-Bahn ab Freiburg halbstündlich.
+haltestellen: [waldkirch]
+sportarten: [wandern]
+saison: ganzjaehrig
+touren:
+  - titel: "KK Waldkirch - St. Peter - Kirchzarten"
+    url: "https://www.alpenvereinaktiv.com/de/tour/kk-waldkirch-st.-peter-kirchzarten/109925611/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 506
+    hoehenmeter: 1202
+    schwierigkeit: "schwer"
+  - titel: "KK Kirchzarten - St. Peter - Kandel - Waldkirch"
+    url: "https://www.alpenvereinaktiv.com/de/tour/kk-kirchzarten-st.-peter-kandel-waldkirch/109863993/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 524
+    hoehenmeter: 1069
+links:
+  - { titel: Alpenvereinaktiv Kandel, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Kandel" }
+lat: 48.06
+lon: 8.01

@@ -1,0 +1,13 @@
+id: ihringen
+name: Ihringen Bahnhof
+haltestelleId: "de-DELFI_de:08315:6517"
+lat: 48.0405
+lon: 7.64949
+land: DE
+region: Kaiserstuhl
+richtwerte: { kehl: { fahrzeitMin: 173, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 79, bahnKm: 76 }, lahr: { fahrzeitMin: 54, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 51, bahnKm: 45 }, offenburg: { fahrzeitMin: 64, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 65, bahnKm: 67 } }
+bahn:
+  extId: "8003052"
+  name: Ihringen
+  x: 7648777
+  y: 48040413

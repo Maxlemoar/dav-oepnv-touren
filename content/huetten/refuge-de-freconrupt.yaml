@@ -1,0 +1,15 @@
+id: refuge-de-freconrupt
+name: Refuge du Club Vosgien de Fréconrupt
+betreiber: { typ: privat, sektion: Club Vosgien Schiltigheim }
+hoehe: 630
+lat: 48.47133
+lon: 7.18433
+gebietId: donon-schirmeck
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: schirmeck
+    gehzeitMin: 70
+    hoehenmeter: 310
+    hinweis: 4 km westlich von Schirmeck oberhalb La Broque. 25–30 Plätze, Lager und Zimmer, ganzjährig auf Anfrage.
+quelle: https://www.rando-bruche.fr/pratique/refuges/
+geschaetzt: true

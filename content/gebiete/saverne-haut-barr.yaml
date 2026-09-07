@@ -1,0 +1,11 @@
+id: saverne-haut-barr
+name: Saverne und Haut-Barr (Nordvogesen)
+beschreibung: "Sandsteinburgen am Nordrand der Vogesen: Haut-Barr, Grand Geroldseck und der Saut du Prince Charles liegen in einem Bogen über der Stadt, Start am Bahnhof Saverne. Mit dem TER ab Strasbourg in einer Stunde ab Offenburg, damit das schnellste Vogesenziel. Ganzjährig, Europass oder TER-Ticket."
+haltestellen: [saverne]
+sportarten: [wandern]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Saverne, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Saverne" }
+  - { titel: Club Vosgien, url: "https://www.club-vosgien.eu/" }
+lat: 48.73
+lon: 7.35

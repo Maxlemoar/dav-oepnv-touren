@@ -1,0 +1,13 @@
+id: charmey-village
+name: Charmey (Gruyère), village
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:4852"
+lat: 46.61847
+lon: 7.16557
+land: CH
+region: Freiburger Voralpen
+richtwerte: { kehl: { fahrzeitMin: 282, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 300, bahnKm: 279 }, lahr: { fahrzeitMin: 306, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 273, bahnKm: 247 }, offenburg: { fahrzeitMin: 279, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 286, bahnKm: 268 } }
+bahn:
+  extId: "8504852"
+  name: Charmey (Gruyère), village
+  x: 7165571
+  y: 46618472

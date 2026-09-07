@@ -1,0 +1,13 @@
+id: gaggenau
+name: Gaggenau Bahnhof
+haltestelleId: "de-DELFI_de:08216:32160"
+lat: 48.80577
+lon: 8.31998
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 126, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 66, bahnKm: 57 }, lahr: { fahrzeitMin: 78, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 83, bahnKm: 79 }, offenburg: { fahrzeitMin: 63, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 66, bahnKm: 57 } }
+bahn:
+  extId: "720302"
+  name: Bahnhof, Gaggenau
+  x: 8319912
+  y: 48805260

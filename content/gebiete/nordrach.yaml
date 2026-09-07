@@ -1,0 +1,10 @@
+id: nordrach
+name: Nordrach und Moosgebirge
+beschreibung: Stilles Seitental des Kinzigtals unter Brandenkopf und Mooskopf, Bus 7131 ab Biberach (Baden) bis Nordrach. Vom Naturfreundehaus Kornebene führen Wege über die Kornebene zum Brandenkopf und hinüber ins Harmersbachtal. Deutschlandticket reicht.
+haltestellen: [nordrach-adler]
+sportarten: [wandern]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Nordrach, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Nordrach" }
+lat: 48.42
+lon: 8.1

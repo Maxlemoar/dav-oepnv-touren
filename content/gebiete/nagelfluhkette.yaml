@@ -1,0 +1,31 @@
+id: nagelfluhkette
+name: Nagelfluhkette (Oberstaufen, Immenstadt)
+beschreibung: Hochgrat (1834 m) und die Gratüberschreitung der Nagelfluhkette bis zum Mittag über Immenstadt gehören zu den schönsten Höhenwegen im Allgäu. Bus 95 ab Oberstaufen zur Hochgratbahn, dort das Staufner Haus des DAV. Ab Offenburg über Ulm und Kempten in viereinhalb Stunden, Deutschlandticket ab Ulm.
+haltestellen: [oberstaufen, immenstadt, hochgratbahn]
+sportarten: [wandern, skitour, schneeschuh]
+saison: ganzjaehrig
+touren:
+  - titel: "Staufner Haus, von der Talstation Hochgratbahn"
+    url: "https://www.alpenvereinaktiv.com/de/tour/staufner-haus-von-der-talstation-hochgratbahn/10227372/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 120
+    hoehenmeter: 790
+    schwierigkeit: "leicht"
+  - titel: "Nagelfluhkette Mittag - Hochgrat"
+    url: "https://www.alpenvereinaktiv.com/de/tour/nagelfluhkette-mittag-hochgrat/803079884/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 420
+    hoehenmeter: 1288
+    schwierigkeit: "schwer"
+  - titel: "Hochgrat"
+    url: "https://www.alpenvereinaktiv.com/de/tour/hochgrat/102724191/"
+    anbieter: alpenvereinaktiv
+    sportart: wandern
+    dauerMin: 460
+    hoehenmeter: 1613
+links:
+  - { titel: Alpenvereinaktiv Nagelfluhkette, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Nagelfluhkette" }
+lat: 47.51
+lon: 10.08

@@ -1,0 +1,13 @@
+id: gurnigel-berghaus
+name: Gurnigel, Berghaus
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:7788"
+lat: 46.73329
+lon: 7.45262
+land: CH
+region: Gantrisch (Bern)
+richtwerte: { kehl: { fahrzeitMin: 288, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 268, bahnKm: 258 }, lahr: { fahrzeitMin: 325, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 240, bahnKm: 226 }, offenburg: { fahrzeitMin: 298, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 254, bahnKm: 247 } }
+bahn:
+  extId: "8507788"
+  name: Gurnigel, Berghaus
+  x: 7452624
+  y: 46733291

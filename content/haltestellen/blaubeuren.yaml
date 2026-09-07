@@ -1,0 +1,13 @@
+id: blaubeuren
+name: Blaubeuren Bahnhof
+haltestelleId: "de-DELFI_de:08425:2811_G_G"
+lat: 48.40382
+lon: 9.79198
+land: DE
+region: Schwäbische Alb
+richtwerte: { kehl: { fahrzeitMin: 247, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 218, bahnKm: 184 }, lahr: { fahrzeitMin: 259, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 234, bahnKm: 181 }, offenburg: { fahrzeitMin: 244, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 217, bahnKm: 170 } }
+bahn:
+  extId: "800189"
+  name: Bahnhof, Blaubeuren
+  x: 9791905
+  y: 48403990

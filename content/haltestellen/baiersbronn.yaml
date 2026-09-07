@@ -1,0 +1,13 @@
+id: baiersbronn
+name: Baiersbronn Bahnhof
+haltestelleId: "de-DELFI_de:08237:1201_G"
+lat: 48.50357
+lon: 8.37204
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 182, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 64, bahnKm: 53 }, lahr: { fahrzeitMin: 134, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 81, bahnKm: 54 }, offenburg: { fahrzeitMin: 119, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 56, bahnKm: 39 } }
+bahn:
+  extId: "8000782"
+  name: Baiersbronn Bf
+  x: 8372041
+  y: 48503573
