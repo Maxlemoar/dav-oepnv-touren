@@ -1,12 +1,14 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Map as MlMap, NavigationControl, Popup, type MapLayerMouseEvent } from 'maplibre-gl'
+import { Map as MlMap, NavigationControl, Popup, setWorkerUrl, type MapLayerMouseEvent } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { STUFE_FARBE } from '@/lib/stufe'
 import { popupHtml, type KarteGeoJson } from '@/lib/karte'
 
 const STIL = 'https://tiles.openfreemap.org/styles/liberty'
+// Worker als eigene Datei (siehe scripts/maplibre-worker.ts): Turbopack löst die interne Worker-URL sonst falsch auf.
+setWorkerUrl('/maplibre/maplibre-gl-worker.mjs')
 const OFFENBURG: [number, number] = [7.946, 48.476]
 const OHNE_STUFE = '#7a8078'
 
