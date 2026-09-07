@@ -1,0 +1,19 @@
+id: grialetschhuette
+name: Grialetschhütte
+betreiber: { typ: sac, sektion: St. Gallen }
+hoehe: 2542
+lat: 46.7101
+lon: 9.96064
+gebietId: davos
+saison: ganzjaehrig
+webUrl: https://www.grialetsch.ch
+zustiege:
+  - haltestelleId: davos-dischma-duerrboden
+    gehzeitMin: 90
+    hoehenmeter: 540
+    hinweis: "Bus Dischma ab Davos Dorf bis Dürrboden (Sommer), ab dort 1:30 h (T2)."
+  - haltestelleId: davos-dorf
+    gehzeitMin: 270
+    hoehenmeter: 990
+    hinweis: Zu Fuss durchs Dischmatal; im Winter fährt der Bus nur bis Teufi.
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

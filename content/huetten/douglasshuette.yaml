@@ -1,0 +1,15 @@
+id: douglasshuette
+name: Douglasshütte
+betreiber: { typ: privat }
+hoehe: 1979
+lat: 47.0597
+lon: 9.7545
+gebietId: brandnertal
+saison: sommer
+zustiege:
+  - haltestelleId: brand-luenerseebahn
+    gehzeitMin: 5
+    hoehenmeter: 0
+    bergbahn: true
+    hinweis: Landbus 580 ab Bludenz bis Brand Lünerseebahn, Lünerseebahn zur Bergstation; die Hütte steht direkt am Lünersee. Betreiber illwerke vkw, Alpenvereinstarif.
+quelle: https://de.wikipedia.org/wiki/Douglassh%C3%BCtte

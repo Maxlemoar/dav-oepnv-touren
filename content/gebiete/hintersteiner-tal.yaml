@@ -1,0 +1,11 @@
+id: hintersteiner-tal
+name: Bad Hindelang und Hintersteiner Tal
+beschreibung: Ab Bahnhof Sonthofen mit dem Bus nach Bad Hindelang und Hinterstein, von dort im Sommer der private Wanderbus zum Giebelhaus. Prinz-Luitpold-Haus unter dem Hochvogel, Schwarzenberghütte als Familienziel, Übergänge zum Nebelhorn.
+haltestellen: [sonthofen, bad-hindelang-busbahnhof, hinterstein-gruener-hut]
+sportarten: [wandern, hochtour, skitour]
+saison: sommer
+links:
+  - { titel: Alpenvereinaktiv Bad Hindelang, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Bad%20Hindelang" }
+  - { titel: Bad Hindelang Tourismus, url: "https://www.badhindelang.de" }
+lat: 47.44
+lon: 10.41

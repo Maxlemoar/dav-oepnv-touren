@@ -1,0 +1,8 @@
+id: raeterichsboden
+name: Räterichsboden
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:71611
+lat: 46.59139
+lon: 8.32630
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 376, umstiege: 4, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 306, bahnKm: 280 }, lahr: { fahrzeitMin: 326, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 278, bahnKm: 247 }, offenburg: { fahrzeitMin: 299, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 291, bahnKm: 264 } }

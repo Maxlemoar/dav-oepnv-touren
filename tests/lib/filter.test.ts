@@ -49,3 +49,15 @@ describe('filtereGebiete', () => {
     expect(filtereGebiete(gebiete, { sport: [], art: 'alle', maxStd: 5, suche: 'B' }, {}).map((x) => x.id)).toEqual(['b'])
   })
 })
+
+describe('maxStd 99', () => {
+  it('liest max=99 als "alle" und schreibt es in die URL', () => {
+    expect(leseFilter(new URLSearchParams('max=99')).maxStd).toBe(99)
+    expect(schreibeFilter(new URLSearchParams(''), { sport: [], art: 'alle', maxStd: 99, suche: '' }).toString()).toBe('max=99')
+  })
+  it('zeigt mit 99 auch Ziele über 5 h', () => {
+    const weit = { ...g('z', { fahrzeitMin: 330 }) }
+    expect(filtereGebiete([weit], { sport: [], art: 'alle', maxStd: 5, suche: '' }, {})).toHaveLength(0)
+    expect(filtereGebiete([weit], { sport: [], art: 'alle', maxStd: 99, suche: '' }, {})).toHaveLength(1)
+  })
+})

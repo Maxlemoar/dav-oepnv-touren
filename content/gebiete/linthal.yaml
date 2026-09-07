@@ -1,0 +1,10 @@
+id: linthal
+name: Linthal / Tödi
+beschreibung: Talschluss des Glarnerlands unter dem Tödi mit Fridolins- und Muttseehütte ab Tierfehd, dazu Claridenhütte und Planurahütte über Urnerboden und Fisetengrat. Braunwald oben an der Standseilbahn ist autofrei und Ausgangspunkt für Ortstock und Bächistock.
+haltestellen: [linthal, urnerboden-dorf]
+sportarten: [wandern, hochtour, skitour]
+saison: sommer
+links:
+  - { titel: SAC Tödi, url: "https://www.sac-toedi.ch" }
+lat: 46.92
+lon: 8.99

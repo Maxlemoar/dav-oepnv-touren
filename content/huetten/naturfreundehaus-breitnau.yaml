@@ -1,0 +1,15 @@
+id: naturfreundehaus-breitnau
+name: Naturfreundehaus Breitnau
+betreiber: { typ: naturfreunde }
+hoehe: 1060
+lat: 47.95187
+lon: 8.07639
+gebietId: hinterzarten-breitnau
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: hinterzarten
+    gehzeitMin: 20
+    hoehenmeter: 30
+    hinweis: Bus ab Hinterzarten Richtung St. Märgen bis Breitnau Kirche oder Oberer Fahrenberg, ab dort beschildert. Bewirtschaftet, 58 Betten.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-breitnau-wanderhuette-am-fahrenberg
+geschaetzt: true

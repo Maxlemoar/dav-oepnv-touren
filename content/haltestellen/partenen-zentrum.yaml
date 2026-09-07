@@ -1,0 +1,8 @@
+id: partenen-zentrum
+name: Partenen Zentrum
+haltestelleId: at-PTA-Vorarlberg-Flex-2026_at:48:1428:0:1
+lat: 46.96887
+lon: 10.06276
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 447, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 324, bahnKm: 307 }, lahr: { fahrzeitMin: 397, umstiege: 8, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 320, bahnKm: 283 }, offenburg: { fahrzeitMin: 374, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 303, bahnKm: 288 } }

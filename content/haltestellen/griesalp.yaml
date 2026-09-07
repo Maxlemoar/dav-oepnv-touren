@@ -1,0 +1,8 @@
+id: griesalp
+name: Griesalp, Kurhaus
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:7755
+lat: 46.54748
+lon: 7.76167
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 297, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 287, bahnKm: 282 }, lahr: { fahrzeitMin: 367, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 259, bahnKm: 249 }, offenburg: { fahrzeitMin: 340, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 273, bahnKm: 269 } }

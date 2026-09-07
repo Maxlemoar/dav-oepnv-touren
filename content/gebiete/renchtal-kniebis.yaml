@@ -1,0 +1,10 @@
+id: renchtal-kniebis
+name: Renchtal und Kniebis
+beschreibung: Westweg-Zubringer ab Bad Griesbach auf den Kniebis, Schliffkopf und Lotharpfad am Nationalpark. Freudenstadt ist der zweite Zugang mit Bus zum Kniebis. Im Winter Loipen und Schneeschuhrouten auf der Hochfläche.
+haltestellen: [bad-griesbach, freudenstadt-hbf]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Kniebis, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Kniebis" }
+lat: 48.47
+lon: 8.30

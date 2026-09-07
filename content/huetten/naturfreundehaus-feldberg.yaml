@@ -2,15 +2,14 @@ id: naturfreundehaus-feldberg
 name: Naturfreundehaus Feldberg
 betreiber: { typ: naturfreunde }
 hoehe: 1350
-lat: 47.862
-lon: 8.030
+lat: 47.88173
+lon: 8.01621
 gebietId: feldberg
 saison: ganzjaehrig
-webUrl: https://www.naturfreunde.de/haus/naturfreundehaus-feldberg
+webUrl: https://www.naturfreundehaus-feldberg.de/
 zustiege:
   - haltestelleId: feldberg-baerental
-    gehzeitMin: 15
-    hoehenmeter: 50
-    hinweis: Bus 7300 bis Feldberger Hof, dann 15 Minuten.
+    gehzeitMin: 90
+    hoehenmeter: 100
+    hinweis: Bus 7300 bis Feldberger Hof, dann etwa 1,5 Stunden über den Feldberg-Nordhang zum Haus am Baldenweger Buck. Bewirtschaftet, 46 Betten.
 quelle: https://www.naturfreunde.de/haus/naturfreundehaus-feldberg
-geschaetzt: true

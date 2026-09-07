@@ -1,0 +1,8 @@
+id: lauterbrunnen
+name: Lauterbrunnen
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:7384
+lat: 46.59843
+lon: 7.90809
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 283, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 294, bahnKm: 275 }, lahr: { fahrzeitMin: 263, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 266, bahnKm: 242 }, offenburg: { fahrzeitMin: 236, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 280, bahnKm: 261 } }

@@ -1,0 +1,10 @@
+id: andermatt-furka
+name: Andermatt und Furka
+beschreibung: Urserental mit Matterhorn-Gotthard-Bahn bis Realp, im Sommer Postauto zur Furka (Tiefenbach). Rotondo- und Albert-Heim-Hütte, im Winter Skitourenklassiker um Andermatt. Fahrzeit ab Offenburg an der Grenze von fünf Stunden.
+haltestellen: [andermatt, realp, tiefenbach]
+sportarten: [skitour, hochtour, wandern, klettern]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 46.60
+lon: 8.52

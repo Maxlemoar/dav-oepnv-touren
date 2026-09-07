@@ -1,0 +1,8 @@
+id: st-anton-am-arlberg
+name: St. Anton am Arlberg Bahnhof
+haltestelleId: de-DELFI_at:47:1222
+lat: 47.12733
+lon: 10.26709
+land: AT
+region: Tirol
+richtwerte: { kehl: { fahrzeitMin: 438, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 335, bahnKm: 305 }, lahr: { fahrzeitMin: 406, umstiege: 8, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 331, bahnKm: 283 }, offenburg: { fahrzeitMin: 383, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 315, bahnKm: 286 } }

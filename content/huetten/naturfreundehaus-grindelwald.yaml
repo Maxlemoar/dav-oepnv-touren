@@ -1,0 +1,15 @@
+id: naturfreundehaus-grindelwald
+name: Naturfreundehaus Grindelwald
+betreiber: { typ: naturfreunde }
+hoehe: 1126
+lat: 46.6281
+lon: 8.0333
+gebietId: grindelwald
+saison: ganzjaehrig
+webUrl: https://naturfreunde.ch/haeuser/grindelwald/
+zustiege:
+  - haltestelleId: grindelwald
+    gehzeitMin: 15
+    hoehenmeter: 90
+    hinweis: "Am Terrassenweg oberhalb des Bahnhofs, auch per Ortsbus."
+quelle: https://naturfreunde.ch/haeuser/grindelwald/

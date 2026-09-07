@@ -1,0 +1,16 @@
+id: silvrettahuette
+name: Silvrettahütte
+betreiber: { typ: sac, sektion: St. Gallen }
+hoehe: 2341
+lat: 46.8545
+lon: 10.0415
+gebietId: klosters-praettigau
+saison: ganzjaehrig
+webUrl: https://www.silvrettahuette.ch
+zustiege:
+  - haltestelleId: klosters-platz
+    gehzeitMin: 270
+    hoehenmeter: 1150
+    hinweis: "Ortsbus bis Monbiel Parkplatz spart rund 45 min; ab Monbiel 3:45 h (T2) durchs Sardascatal."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs
+geschaetzt: true

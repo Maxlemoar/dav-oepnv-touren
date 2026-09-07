@@ -1,0 +1,10 @@
+id: loetschental
+name: Lötschental
+beschreibung: Abgeschlossenes Hochtal mit Bus ab Goppenstein nach Wiler, Lauchernalp-Bahn und dem Lötschenpass hinüber nach Kandersteg. Anenhütte im Talschluss unter dem Langgletscher, Lötschenpasshütte als Übergang ins Berner Oberland.
+haltestellen: [goppenstein, wiler-loetschen]
+sportarten: [wandern, hochtour, skitour, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Lötschental Tourismus, url: "https://www.loetschental.ch" }
+lat: 46.40
+lon: 7.78

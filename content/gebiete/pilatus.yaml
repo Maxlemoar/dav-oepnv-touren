@@ -1,0 +1,10 @@
+id: pilatus
+name: Pilatus
+beschreibung: Tagesziel ab Alpnachstad, keine drei Stunden ab Offenburg. Aufstieg zu Fuß über Ämsigen oder mit der Zahnradbahn, Abstieg nach Kriens oder Hergiswil.
+haltestellen: [alpnachstad]
+sportarten: [wandern, klettersteig]
+saison: sommer
+links:
+  - { titel: Pilatus-Bahnen, url: "https://www.pilatus.ch" }
+lat: 46.979
+lon: 8.255

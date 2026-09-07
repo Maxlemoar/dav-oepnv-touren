@@ -1,0 +1,8 @@
+id: meiringen
+name: Meiringen
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:8308
+lat: 46.72733
+lon: 8.18425
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 293, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 280, bahnKm: 259 }, lahr: { fahrzeitMin: 272, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 253, bahnKm: 227 }, offenburg: { fahrzeitMin: 245, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 266, bahnKm: 244 } }

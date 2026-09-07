@@ -1,0 +1,8 @@
+id: freudenstadt-hbf
+name: Freudenstadt Hauptbahnhof
+haltestelleId: "de-DELFI_de:08237:1050"
+lat: 48.46032
+lon: 8.4288
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 151, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 59, bahnKm: 60 }, lahr: { fahrzeitMin: 118, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 76, bahnKm: 57 }, offenburg: { fahrzeitMin: 105, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 51, bahnKm: 44 } }

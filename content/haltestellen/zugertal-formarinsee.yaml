@@ -1,0 +1,8 @@
+id: zugertal-formarinsee
+name: Zugertal Formarinsee
+haltestelleId: at-PTA-Vorarlberg-Flex-2026_at:48:865:0:1
+lat: 47.17131
+lon: 9.99904
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 492, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 346, bahnKm: 283 }, lahr: { fahrzeitMin: 417, umstiege: 8, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 342, bahnKm: 259 }, offenburg: { fahrzeitMin: 394, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 326, bahnKm: 264 } }

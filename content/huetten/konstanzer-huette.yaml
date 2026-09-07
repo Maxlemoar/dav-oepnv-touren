@@ -1,0 +1,15 @@
+id: konstanzer-huette
+name: Konstanzer Hütte
+betreiber: { typ: dav, sektion: Konstanz }
+hoehe: 1688
+lat: 47.0694
+lon: 10.1889
+gebietId: arlberg-verwall
+saison: sommer
+webUrl: https://www.dav-konstanz.de
+zustiege:
+  - haltestelleId: st-anton-am-arlberg
+    gehzeitMin: 90
+    hoehenmeter: 200
+    hinweis: Im Sommer Gratis-Wanderbus Linie 6 ab St. Anton ins Verwalltal bis Salzhüttle, dann Fahrweg zur Hütte. Zu Fuß ab Bahnhof rund 3 h.
+quelle: https://www.stantonamarlberg.com/de/sommer/bergregion/huettenverzeichnis/-addresses/konstanzer-huette

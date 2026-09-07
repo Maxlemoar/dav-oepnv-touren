@@ -1,0 +1,8 @@
+id: grimsel-hospiz
+name: Grimsel, Hospiz
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:77049
+lat: 46.57161
+lon: 8.33181
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 384, umstiege: 4, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 310, bahnKm: 283 }, lahr: { fahrzeitMin: 334, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 282, bahnKm: 250 }, offenburg: { fahrzeitMin: 307, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 296, bahnKm: 267 } }

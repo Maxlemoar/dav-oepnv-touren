@@ -1,0 +1,20 @@
+id: jurahaus
+name: Jurahaus (Cabane du Jura)
+betreiber: { typ: sac, sektion: Biel/Bienne }
+hoehe: 1326
+lat: 47.16072
+lon: 7.15784
+gebietId: chasseral
+saison: ganzjaehrig
+webUrl: https://www.sac-biel.ch/huetten/jurahaus.php
+zustiege:
+  - haltestelleId: les-pres-d-orvin
+    gehzeitMin: 60
+    hoehenmeter: 250
+    hinweis: Bus ab Biel bis Les Prés-d'Orvin, dann T1 zum Haus. Bewartet an Wochenenden, 35 Schlafplätze.
+  - haltestelleId: st-imier
+    gehzeitMin: 180
+    hoehenmeter: 800
+    hinweis: Über den Chasseral-Kamm, Abstieg zum Haus auf der Südseite.
+quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/jurahaus-2147469225/
+geschaetzt: true

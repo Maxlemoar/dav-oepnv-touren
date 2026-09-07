@@ -1,0 +1,11 @@
+id: grimsel-haslital
+name: Grimsel, Trift und Susten
+beschreibung: Oberhasli ab Innertkirchen mit drei Pässen. Postauto über die Grimsel (Handegg, Räterichsboden, Hospiz) und den Susten (Steingletscher), Triftbahn im Gadmertal. Granitklettern, Hochtouren und mehrere SAC-Hütten; Busse nur etwa Juni bis Oktober.
+haltestellen: [innertkirchen, handegg, raeterichsboden, grimsel-hospiz, nessental-triftbahn, steingletscher]
+sportarten: [wandern, hochtour, klettern]
+saison: sommer
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Windegghütte im SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/windegghuette-sac-2147000295/" }
+lat: 46.62
+lon: 8.31

@@ -1,0 +1,8 @@
+id: handegg
+name: Handegg, Gelmerbahn
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:8764
+lat: 46.61122
+lon: 8.30816
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 370, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 301, bahnKm: 277 }, lahr: { fahrzeitMin: 320, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 273, bahnKm: 244 }, offenburg: { fahrzeitMin: 293, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 287, bahnKm: 261 } }

@@ -1,0 +1,15 @@
+id: hundsteinhuette
+name: Hundsteinhütte
+betreiber: { typ: sac, sektion: Säntis }
+hoehe: 1554
+lat: 47.2548
+lon: 9.42233
+gebietId: alpstein
+saison: sommer
+webUrl: https://www.sac-saentis.ch
+zustiege:
+  - haltestelleId: bruelisau
+    gehzeitMin: 165
+    hoehenmeter: 630
+    hinweis: "Über Sämtisersee und Fälensee, 2:45 h (T2); ab Staubern (Bahn ab Frümsen) 1:45 h."
+quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/hundsteinhuette-sac-2147000138/

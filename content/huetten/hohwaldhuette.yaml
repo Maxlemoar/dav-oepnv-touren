@@ -1,0 +1,16 @@
+id: hohwaldhuette
+name: Hohwaldhütte
+betreiber: { typ: dav, sektion: Bergfreunde Saar }
+hoehe: 900
+lat: 48.38667
+lon: 7.27722
+gebietId: champ-du-feu
+saison: ganzjaehrig
+webUrl: https://www.bergfreunde-saar.de/hohwaldhuette
+zustiege:
+  - haltestelleId: barr
+    gehzeitMin: 30
+    hoehenmeter: 100
+    hinweis: Bus Fluo 67 Barr–Le Hohwald, wenige Kurse, am Wochenende kaum. Ab Le Hohwald 30 Minuten zur Chaume des Veaux, zu Fuß ab Barr etwa 4 Stunden. Selbstversorgerhütte, 48 Plätze.
+quelle: https://www.bergfreunde-saar.de/hohwaldhuette
+geschaetzt: true

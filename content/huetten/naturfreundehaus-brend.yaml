@@ -1,0 +1,16 @@
+id: naturfreundehaus-brend
+name: Naturfreundehaus Brend
+betreiber: { typ: naturfreunde }
+hoehe: 1150
+lat: 48.08127
+lon: 8.15963
+gebietId: triberg-brend
+saison: ganzjaehrig
+webUrl: https://naturfreundehaus-brend.de/
+zustiege:
+  - haltestelleId: triberg
+    gehzeitMin: 75
+    hoehenmeter: 300
+    hinweis: Bus ab Triberg bis Furtwangen Busbahnhof, dann über den Westweg auf den Brend. Zu Fuß ab Triberg auf dem Westweg etwa 4 Stunden.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-brend
+geschaetzt: true

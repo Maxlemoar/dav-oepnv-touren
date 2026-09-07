@@ -1,0 +1,14 @@
+id: bergseehuette
+name: Bergseehütte
+betreiber: { typ: sac, sektion: Angenstein }
+hoehe: 2370
+lat: 46.6574
+lon: 8.4849
+gebietId: goeschenen-goescheneralp
+saison: sommer
+zustiege:
+  - haltestelleId: goescheneralp
+    gehzeitMin: 90
+    hoehenmeter: 590
+    hinweis: "Bus Göschenen–Göscheneralp nur im Sommer (T2). Klettergebiet Bergseeschijen."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

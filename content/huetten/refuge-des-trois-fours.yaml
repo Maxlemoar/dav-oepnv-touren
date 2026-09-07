@@ -1,0 +1,20 @@
+id: refuge-des-trois-fours
+name: Refuge des Trois Fours
+betreiber: { typ: caf, sektion: Nancy }
+hoehe: 1197
+lat: 48.05329
+lon: 7.02575
+gebietId: munstertal
+saison: ganzjaehrig
+webUrl: https://chaletrefuge3fours.ffcam.fr/
+zustiege:
+  - haltestelleId: col-de-la-schlucht
+    gehzeitMin: 30
+    hoehenmeter: 60
+    hinweis: Bus zum Col de la Schlucht nur saisonal (Navette des Crêtes ab Munster bzw. Colmar), dann 2 km auf der Route des Crêtes Richtung Hohneck.
+  - haltestelleId: metzeral
+    gehzeitMin: 180
+    hoehenmeter: 720
+    hinweis: Zu Fuß über Frankenthal oder das Wormsatal auf den Kamm.
+quelle: https://chaletrefuge3fours.ffcam.fr/
+geschaetzt: true

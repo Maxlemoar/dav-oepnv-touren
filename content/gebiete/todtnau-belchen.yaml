@@ -1,0 +1,10 @@
+id: todtnau-belchen
+name: Todtnau und Belchen
+beschreibung: Feldberg-Südseite, Todtnauer Wasserfall und der Belchen ab dem Todtnauer Busbahnhof. Bus 7300 fährt weiter über Fahl zum Feldberger Hof. Im Winter Skitouren und Schneeschuh am Feldberg-Südhang.
+haltestellen: [todtnau-busbahnhof]
+sportarten: [wandern, skitour, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Belchen, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Belchen" }
+lat: 47.84
+lon: 7.94

@@ -1,0 +1,8 @@
+id: bad-griesbach
+name: Bad Griesbach Bahnhof
+haltestelleId: "de-DELFI_de:08317:14460"
+lat: 48.44862
+lon: 8.23057
+land: DE
+region: Nordschwarzwald
+richtwerte: { kehl: { fahrzeitMin: 93, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 44, bahnKm: 43 }, lahr: { fahrzeitMin: 66, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 61, bahnKm: 39 }, offenburg: { fahrzeitMin: 48, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 36, bahnKm: 26 } }

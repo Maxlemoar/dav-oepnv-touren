@@ -1,0 +1,15 @@
+id: rappenseehuette
+name: Rappenseehütte
+betreiber: { typ: dav, sektion: Allgäu-Kempten }
+hoehe: 2091
+lat: 47.2889
+lon: 10.2549
+gebietId: oberstdorf
+saison: sommer
+webUrl: https://www.dav-kempten.de/huetten/rappenseehuette
+zustiege:
+  - haltestelleId: birgsau
+    gehzeitMin: 180
+    hoehenmeter: 1130
+    hinweis: Linienbus ab Bahnhof Oberstdorf nach Birgsau, dann über Einödsbach und Linkersalpe oder über die Schwarze Hütte und den Körbertobel. Größte DAV-Hütte, Ausgangspunkt des Heilbronner Wegs.
+quelle: https://www.alpenvereinaktiv.com/de/tour/zustieg-rappenseehuette-von-birgsau/26246567/

@@ -1,0 +1,11 @@
+id: montafon-raetikon
+name: Montafon und Rätikon
+beschreibung: Mit der Montafonerbahn ab Bludenz nach Vandans und Schruns, weiter mit Landbus 670 nach Gargellen oder Wanderbus ins Rellstal. Kalkgipfel wie Sulzfluh, Drei Türme und Zimba, Hütten von DAV Karlsruhe, Lindau und Worms sowie des Alpenverein Vorarlberg.
+haltestellen: [schruns, vandans, gargellen-schafbergbahn]
+sportarten: [wandern, klettern, klettersteig, skitour]
+saison: sommer
+links:
+  - { titel: Alpenvereinaktiv Montafon, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Montafon" }
+  - { titel: Öffentliche Anreise zu den Hütten des Alpenverein Vorarlberg, url: "https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg" }
+lat: 47.03
+lon: 9.88

@@ -1,0 +1,20 @@
+id: naturfreundehaus-kniebis
+name: Naturfreundehaus Kniebis
+betreiber: { typ: naturfreunde }
+hoehe: 920
+lat: 48.46784
+lon: 8.29919
+gebietId: renchtal-kniebis
+saison: ganzjaehrig
+webUrl: https://www.naturfreundehaus-kniebis.de/
+zustiege:
+  - haltestelleId: freudenstadt-hbf
+    gehzeitMin: 10
+    hoehenmeter: 0
+    hinweis: Bus ab Freudenstadt bis Kniebis-Skistation, dann 600 m Richtung Bad Rippoldsau in den Naturfreundeweg.
+  - haltestelleId: bad-griesbach
+    gehzeitMin: 150
+    hoehenmeter: 450
+    hinweis: Zu Fuß über den Westweg-Zubringer auf den Kniebis.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-kniebis
+geschaetzt: true

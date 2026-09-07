@@ -1,0 +1,11 @@
+id: oberstdorf
+name: Oberstdorf und Allgäuer Hauptkamm
+beschreibung: Kürzestes deutsches Alpenziel ab Offenburg, mit Bergsteigerbus nach Spielmannsau und Linienbus nach Birgsau. Kemptner Hütte am E5, Rappenseehütte am Heilbronner Weg und Waltenbergerhaus unter der Mädelegabel; das Edmund-Probst-Haus liegt direkt an der Nebelhornbahn.
+haltestellen: [oberstdorf, spielmannsau, birgsau]
+sportarten: [wandern, hochtour, klettersteig, skitour]
+saison: sommer
+links:
+  - { titel: Alpenvereinaktiv Oberstdorf, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Oberstdorf" }
+  - { titel: Oberstdorf Tourismus, url: "https://www.oberstdorf.de" }
+lat: 47.35
+lon: 10.29

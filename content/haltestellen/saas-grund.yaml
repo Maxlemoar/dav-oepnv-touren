@@ -1,0 +1,8 @@
+id: saas-grund
+name: Saas-Grund, Post
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:1783
+lat: 46.12352
+lon: 7.93681
+land: CH
+region: Saastal
+richtwerte: { kehl: { fahrzeitMin: 339, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 449, bahnKm: 341 }, lahr: { fahrzeitMin: 289, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 422, bahnKm: 308 }, offenburg: { fahrzeitMin: 262, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 435, bahnKm: 327 } }

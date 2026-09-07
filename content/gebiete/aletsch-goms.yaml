@@ -1,0 +1,10 @@
+id: aletsch-goms
+name: Aletsch / Goms
+beschreibung: Grosser Aletschgletscher ab Fiescheralp mit der Konkordiahütte als Hochtourenbasis, Oberaletschhütte über die Belalp ab Brig und das ruhige Binntal mit der Binntalhütte. Fiesch ist mit direktem Umstieg in Brig gut erreichbar.
+haltestellen: [fiesch, blatten-bei-naters, binn-faeld]
+sportarten: [wandern, hochtour, skitour]
+saison: sommer
+links:
+  - { titel: Aletsch Arena, url: "https://www.aletscharena.ch" }
+lat: 46.41
+lon: 8.10

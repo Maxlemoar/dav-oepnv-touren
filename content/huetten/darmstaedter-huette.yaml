@@ -1,0 +1,15 @@
+id: darmstaedter-huette
+name: Darmstädter Hütte
+betreiber: { typ: dav, sektion: Darmstadt-Starkenburg }
+hoehe: 2384
+lat: 47.0531
+lon: 10.2464
+gebietId: arlberg-verwall
+saison: sommer
+webUrl: https://www.alpenverein-darmstadt.de/huetten/darmstaedterhuette
+zustiege:
+  - haltestelleId: st-anton-am-arlberg
+    gehzeitMin: 210
+    hoehenmeter: 1100
+    hinweis: Ab Bahnhof St. Anton durchs Moostal zur Hütte; mit der Rendlbahn zur Bergstation verkürzt sich der Aufstieg auf 2 bis 2:30 h.
+quelle: https://www.alpenvereinaktiv.com/de/tour/zustieg-darmstaedter-huette-von-st.-anton/14490191/

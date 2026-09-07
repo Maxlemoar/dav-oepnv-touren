@@ -1,0 +1,17 @@
+id: konkordiahuette
+name: Konkordiahütte
+betreiber: { typ: sac, sektion: Grindelwald }
+hoehe: 2850
+lat: 46.50046
+lon: 8.05325
+gebietId: aletsch-goms
+saison: sommer
+webUrl: https://www.konkordiahuette.ch
+zustiege:
+  - haltestelleId: fiesch
+    gehzeitMin: 300
+    hoehenmeter: 700
+    bergbahn: true
+    hinweis: Bahn Fiesch–Fiescheralp, über Märjelensee auf den Aletschgletscher; Gletscherausrüstung und -erfahrung nötig, rund 5 h ab Fiescheralp.
+quelle: https://www.konkordiahuette.ch
+geschaetzt: true

@@ -1,0 +1,14 @@
+id: baechlitalhuette
+name: Bächlitalhütte
+betreiber: { typ: sac, sektion: Am Albis }
+hoehe: 2328
+lat: 46.5870
+lon: 8.2826
+gebietId: grimsel-haslital
+saison: sommer
+zustiege:
+  - haltestelleId: raeterichsboden
+    gehzeitMin: 135
+    hoehenmeter: 590
+    hinweis: "Ab Staumauer Räterichsboden (T2)."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

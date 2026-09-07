@@ -1,0 +1,8 @@
+id: binn-faeld
+name: Binn, Fäld
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:89093
+lat: 46.36876
+lon: 8.21203
+land: CH
+region: Aletsch / Goms
+richtwerte: { kehl: { fahrzeitMin: 359, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 379, bahnKm: 309 }, lahr: { fahrzeitMin: 315, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 351, bahnKm: 276 }, offenburg: { fahrzeitMin: 302, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 365, bahnKm: 294 } }

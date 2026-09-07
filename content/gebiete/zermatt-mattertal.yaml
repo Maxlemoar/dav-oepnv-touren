@@ -1,0 +1,10 @@
+id: zermatt-mattertal
+name: Zermatt / Mattertal
+beschreibung: Sechs SAC-Hütten ab Bahnhof, von Schönbiel und Rothorn bis zur Monte-Rosa-Hütte über die Gornergratbahn. Randa und Täsch sind die Zustiege für Dom-, Weisshorn- und Täschhütte. Fahrzeit knapp über fünf Stunden, für Wochenenden mit Hochtouren besser drei Tage.
+haltestellen: [zermatt, taesch, randa]
+sportarten: [wandern, hochtour, skitour, klettern]
+saison: ganzjaehrig
+links:
+  - { titel: SAC Monte Rosa, url: "https://www.section-monte-rosa.ch/de/" }
+lat: 46.02
+lon: 7.75

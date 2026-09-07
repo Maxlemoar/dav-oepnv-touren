@@ -1,0 +1,15 @@
+id: capanna-corno-gries
+name: Capanna Corno Gries
+betreiber: { typ: sac, sektion: Rossberg }
+hoehe: 2338
+lat: 46.46709
+lon: 8.41013
+gebietId: airolo-bedretto
+saison: sommer
+webUrl: https://www.corno-gries.ch
+zustiege:
+  - haltestelleId: cruina
+    gehzeitMin: 60
+    hoehenmeter: 340
+    hinweis: Bus Airolo–Nufenenpass (Sommer) bis Cruina, ab dort 1 h (T3).
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

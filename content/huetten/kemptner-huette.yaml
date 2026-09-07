@@ -1,0 +1,15 @@
+id: kemptner-huette
+name: Kemptner Hütte
+betreiber: { typ: dav, sektion: Allgäu-Kempten }
+hoehe: 1844
+lat: 47.3133
+lon: 10.3278
+gebietId: oberstdorf
+saison: sommer
+webUrl: https://www.kemptner-huette.de
+zustiege:
+  - haltestelleId: spielmannsau
+    gehzeitMin: 180
+    hoehenmeter: 860
+    hinweis: Bergsteigerbus ab Bahnhof Oberstdorf nach Spielmannsau (morgens, Stand 2024 8:45 Uhr), dann markierter Weg durch den Sperrbachtobel. Etappenziel des E5.
+quelle: https://www.kemptner-huette.de/anreise-kontakt

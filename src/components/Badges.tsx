@@ -30,7 +30,7 @@ export function TicketBadge({ ticket }: { ticket: Ticket }) {
 }
 
 const BETREIBER_PUNKT: Record<BetreiberTyp, string> = {
-  dav: 'bg-dav', sac: 'bg-sac', oeav: 'bg-tinte-2', naturfreunde: 'bg-stufe-3', privat: 'bg-tinte-3',
+  dav: 'bg-dav', sac: 'bg-sac', oeav: 'bg-tinte-2', caf: 'bg-stufe-4', naturfreunde: 'bg-stufe-3', privat: 'bg-tinte-3',
 }
 
 export function BetreiberBadge({ typ, sektion }: { typ: BetreiberTyp; sektion?: string }) {

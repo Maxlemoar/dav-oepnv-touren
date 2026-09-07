@@ -1,0 +1,11 @@
+id: lechquellengebirge
+name: Lechquellengebirge (Lech und Zug)
+beschreibung: Vom Bahnhof Langen am Arlberg mit dem Bus nach Lech, dort im Sommer stündliche Wanderbusse zum Formarinsee und zum Spullersee. Freiburger Hütte unter der Roten Wand und Ravensburger Hütte sind in unter einer Stunde ab Busendhaltestelle erreichbar.
+haltestellen: [langen-am-arlberg, lech-ruefiplatz, zugertal-formarinsee]
+sportarten: [wandern, klettern, klettersteig]
+saison: sommer
+links:
+  - { titel: Alpenvereinaktiv Lechquellengebirge, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Lechquellengebirge" }
+  - { titel: Anreise Freiburger Hütte (Wanderbus Formarinsee), url: "https://www.freiburger-huette.at/anreise" }
+lat: 47.17
+lon: 10.05

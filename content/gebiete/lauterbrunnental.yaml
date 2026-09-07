@@ -1,0 +1,10 @@
+id: lauterbrunnental
+name: Lauterbrunnental
+beschreibung: Talschluss unter Jungfrau und Breithorn. Bus ab Lauterbrunnen bis Stechelberg, von dort lange Hochtourenzustiege ins Rottal; Schilthorn- und Mürrenseite für Wanderungen und Klettersteig.
+haltestellen: [lauterbrunnen, stechelberg]
+sportarten: [wandern, hochtour, klettersteig]
+saison: sommer
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 46.575
+lon: 7.905

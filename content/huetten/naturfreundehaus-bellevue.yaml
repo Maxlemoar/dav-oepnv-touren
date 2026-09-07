@@ -1,0 +1,15 @@
+id: naturfreundehaus-bellevue
+name: Naturfreundehaus Bellevue (Montoz)
+betreiber: { typ: naturfreunde, sektion: Naturfreunde Schweiz }
+hoehe: 1284
+lat: 47.20534
+lon: 7.21274
+gebietId: montoz
+saison: ganzjaehrig
+webUrl: https://naturfreunde.ch/haeuser/bellevue/
+zustiege:
+  - haltestelleId: tavannes
+    gehzeitMin: 90
+    hoehenmeter: 530
+    hinweis: Ab Bahnhof Tavannes oder Reconvilier 90 Gehminuten auf den Montoz.
+quelle: https://naturfreunde.ch/haeuser/bellevue/

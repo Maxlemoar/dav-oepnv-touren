@@ -1,0 +1,16 @@
+id: lindauer-huette
+name: Lindauer Hütte
+betreiber: { typ: dav, sektion: Lindau }
+hoehe: 1744
+lat: 47.0344
+lon: 9.8356
+gebietId: montafon-raetikon
+saison: sommer
+webUrl: https://lindauerhuette.com/
+zustiege:
+  - haltestelleId: schruns
+    gehzeitMin: 120
+    hoehenmeter: 750
+    hinweis: Landbus ab Schruns nach Tschagguns-Latschau, dann Fahrweg durchs Gauertal zur Hütte am Fuß der Drei Türme. Alternativ Golmerbahn ab Vandans und Höhenweg.
+quelle: https://de.wikipedia.org/wiki/Lindauer_H%C3%BCtte
+geschaetzt: true

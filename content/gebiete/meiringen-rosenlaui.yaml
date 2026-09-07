@@ -1,0 +1,10 @@
+id: meiringen-rosenlaui
+name: Meiringen und Rosenlaui
+beschreibung: Haslital mit Reichenbachtal und Engelhörnern. Bus ab Meiringen nach Rosenlaui (Sommer), dort Klettergebiet und Zustiege zu Engelhorn- und Dossenhütte.
+haltestellen: [meiringen, rosenlaui]
+sportarten: [wandern, klettern, hochtour]
+saison: sommer
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 46.690
+lon: 8.165

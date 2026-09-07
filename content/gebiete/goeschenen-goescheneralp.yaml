@@ -1,0 +1,10 @@
+id: goeschenen-goescheneralp
+name: Göschenen und Göscheneralp
+beschreibung: Granit am Gotthard. Bahn bis Göschenen, im Sommer Bus zum Göscheneralpsee; fünf SAC-Hütten rund um Salbitschijen, Damma- und Chelengletscher.
+haltestellen: [goeschenen, goescheneralp, abzw-voralp]
+sportarten: [klettern, hochtour, wandern, skitour]
+saison: sommer
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 46.655
+lon: 8.53

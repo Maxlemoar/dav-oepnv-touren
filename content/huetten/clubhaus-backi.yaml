@@ -1,0 +1,21 @@
+id: clubhaus-backi
+name: Clubhaus Backi
+betreiber: { typ: sac, sektion: Weissenstein }
+hoehe: 1165
+lat: 47.26270
+lon: 7.44443
+gebietId: weissenstein
+saison: ganzjaehrig
+webUrl: https://www.sac-weissenstein.ch/clubhaus-backi.html
+zustiege:
+  - haltestelleId: gaensbrunnen
+    gehzeitMin: 70
+    hoehenmeter: 450
+    hinweis: Ab Bahnhof Gänsbrunnen gut eine Stunde auf der Fahrstraße. 30 Schlafplätze, Miete nur mit Begleitung durch ein Clubmitglied.
+  - haltestelleId: oberdorf-so
+    gehzeitMin: 120
+    hoehenmeter: 200
+    bergbahn: true
+    hinweis: Seilbahn Oberdorf–Weissenstein, dann Gratweg über die Hasenmatt und Abstieg zum Backi.
+quelle: https://www.sac-weissenstein.ch/clubhaus-backi.html
+geschaetzt: true

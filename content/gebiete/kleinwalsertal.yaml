@@ -1,0 +1,10 @@
+id: kleinwalsertal
+name: Kleinwalsertal
+beschreibung: Österreichisches Hochtal, nur über Oberstdorf erreichbar; der Walserbus fährt ab Bahnhof Oberstdorf nach Riezlern, Mittelberg und Baad. Rundtouren über Fiderepass- und Mindelheimer Hütte, Schwarzwasserhütte am Hohen Ifen als Winterziel.
+haltestellen: [riezlern-post, mittelberg, oberstdorf]
+sportarten: [wandern, klettersteig, skitour, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Kleinwalsertal, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Kleinwalsertal" }
+lat: 47.33
+lon: 10.16

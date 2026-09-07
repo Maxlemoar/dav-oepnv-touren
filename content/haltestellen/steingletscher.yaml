@@ -1,0 +1,8 @@
+id: steingletscher
+name: Steingletscher, Susten
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:8877
+lat: 46.73114
+lon: 8.42749
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 393, umstiege: 4, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 317, bahnKm: 263 }, lahr: { fahrzeitMin: 343, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 289, bahnKm: 230 }, offenburg: { fahrzeitMin: 316, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 303, bahnKm: 247 } }

@@ -1,0 +1,8 @@
+id: kruth
+name: Kruth
+haltestelleId: "fr-horaires-sncf_FR::LMU:68b983e0-cb0a-11e8-8bfa-f784c1c7c611:"
+lat: 47.92396
+lon: 6.96909
+land: FR
+region: Vogesen
+richtwerte: { kehl: { fahrzeitMin: 210, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 163, bahnKm: 119 }, lahr: { fahrzeitMin: 206, umstiege: 4, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 135, bahnKm: 99 }, offenburg: { fahrzeitMin: 215, umstiege: 3, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 149, bahnKm: 119 } }

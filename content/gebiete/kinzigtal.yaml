@@ -1,0 +1,10 @@
+id: kinzigtal
+name: Kinzigtal (Hausach, Hornberg)
+beschreibung: Brandenkopf, Farrenkopf und die Westweg-Etappen zwischen Hausach und Hornberg, mit der Schwarzwaldbahn in einer halben Stunde ab Offenburg. In Hausach führt ein Klettersteig über den Hausacher Felsen. Deutschlandticket reicht.
+haltestellen: [hausach, hornberg]
+sportarten: [wandern, klettersteig]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Kinzigtal, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Kinzigtal" }
+lat: 48.25
+lon: 8.21

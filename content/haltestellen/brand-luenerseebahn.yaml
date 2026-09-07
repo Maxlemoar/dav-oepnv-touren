@@ -1,0 +1,8 @@
+id: brand-luenerseebahn
+name: Brand Lünerseebahn
+haltestelleId: at-PTA-Vorarlberg-Flex-2026_at:48:1311:0:1
+lat: 47.06688
+lon: 9.75499
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 432, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 309, bahnKm: 278 }, lahr: { fahrzeitMin: 412, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 305, bahnKm: 252 }, offenburg: { fahrzeitMin: 389, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 289, bahnKm: 259 } }

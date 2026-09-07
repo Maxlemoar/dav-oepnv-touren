@@ -1,0 +1,8 @@
+id: saastal
+name: Saastal
+beschreibung: Bus ab Visp durch das Saastal nach Saas-Grund, Saas-Almagell und Saas-Fee. Weissmieshütte und Britanniahütte sind per Bergbahn in unter einer Stunde erreichbar, die Almagellerhütte ist ein klassischer Talzustieg. Viertausender wie Weissmies und Allalinhorn als Hochtouren.
+haltestellen: [saas-fee, saas-grund, saas-almagell]
+sportarten: [wandern, hochtour, skitour, klettersteig]
+saison: ganzjaehrig
+lat: 46.11
+lon: 7.93

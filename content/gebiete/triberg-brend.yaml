@@ -1,0 +1,10 @@
+id: triberg-brend
+name: Triberg und Brend
+beschreibung: Triberger Wasserfälle, Westweg über den Brend und das Naturfreundehaus auf dem Furtwanger Hausberg. Bahnhof Triberg liegt direkt am Westweg, Bus nach Furtwangen. Deutschlandticket reicht.
+haltestellen: [triberg]
+sportarten: [wandern]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Triberg, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Triberg" }
+lat: 48.11
+lon: 8.20

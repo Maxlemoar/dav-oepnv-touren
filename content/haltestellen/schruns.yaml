@@ -1,0 +1,8 @@
+id: schruns
+name: Schruns Bahnhof
+haltestelleId: at-Railway-Current-Reference-Data-2026_Pat:48:134
+lat: 47.0796
+lon: 9.91771
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 401, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 306, bahnKm: 287 }, lahr: { fahrzeitMin: 351, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 302, bahnKm: 262 }, offenburg: { fahrzeitMin: 328, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 286, bahnKm: 268 } }

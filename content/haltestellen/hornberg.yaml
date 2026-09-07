@@ -1,0 +1,8 @@
+id: hornberg
+name: Hornberg Bahnhof
+haltestelleId: "de-DELFI_de:08317:18820"
+lat: 48.2121
+lon: 8.23298
+land: DE
+region: Mittlerer Schwarzwald
+richtwerte: { kehl: { fahrzeitMin: 54, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 67, bahnKm: 64 }, lahr: { fahrzeitMin: 53, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 44, bahnKm: 41 }, offenburg: { fahrzeitMin: 30, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 47, bahnKm: 45 } }

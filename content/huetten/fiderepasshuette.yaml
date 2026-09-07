@@ -1,0 +1,16 @@
+id: fiderepasshuette
+name: Fiderepasshütte
+betreiber: { typ: dav, sektion: Oberstdorf }
+hoehe: 2067
+lat: 47.3156
+lon: 10.2125
+gebietId: kleinwalsertal
+saison: sommer
+webUrl: https://www.fiderepasshuette.de/de/
+zustiege:
+  - haltestelleId: mittelberg
+    gehzeitMin: 150
+    hoehenmeter: 850
+    hinweis: Walserbus ab Bahnhof Oberstdorf nach Mittelberg, dann über die Wildentalhütte zum Fiderepass. Alternativ Fellhornbahn ab Oberstdorf und Höhenweg (ca. 2 h).
+quelle: https://de.wikipedia.org/wiki/Fiderepassh%C3%BCtte
+geschaetzt: true

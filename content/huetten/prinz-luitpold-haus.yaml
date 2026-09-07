@@ -1,0 +1,15 @@
+id: prinz-luitpold-haus
+name: Prinz-Luitpold-Haus
+betreiber: { typ: dav, sektion: Allgäu-Immenstadt }
+hoehe: 1846
+lat: 47.3922
+lon: 10.4197
+gebietId: hintersteiner-tal
+saison: sommer
+webUrl: https://www.prinz-luitpoldhaus.de/cms
+zustiege:
+  - haltestelleId: hinterstein-gruener-hut
+    gehzeitMin: 165
+    hoehenmeter: 780
+    hinweis: RVA-Bus Linie 49 ab Sonthofen/Bad Hindelang bis Hinterstein Grüner Hut, dort privater Wanderbus Linie 50 zum Giebelhaus, dann durchs Bärgündletal zur Hütte unter dem Hochvogel.
+quelle: https://www.prinz-luitpoldhaus.de/cms

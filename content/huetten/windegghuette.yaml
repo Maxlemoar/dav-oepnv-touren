@@ -1,0 +1,16 @@
+id: windegghuette
+name: Windegghütte
+betreiber: { typ: sac, sektion: Bern }
+hoehe: 1886
+lat: 46.6950
+lon: 8.3480
+gebietId: grimsel-haslital
+saison: sommer
+webUrl: https://www.windegghuette.ch
+zustiege:
+  - haltestelleId: nessental-triftbahn
+    gehzeitMin: 90
+    hoehenmeter: 530
+    bergbahn: true
+    hinweis: "Triftbahn bis Underi Trift (1357 m), ab dort 1:30 h (T2), Triftbrücke."
+quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/windegghuette-sac-2147000295/

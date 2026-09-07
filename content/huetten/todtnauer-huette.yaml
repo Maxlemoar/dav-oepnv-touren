@@ -1,0 +1,19 @@
+id: todtnauer-huette
+name: Todtnauer Hütte
+betreiber: { typ: privat }
+hoehe: 1321
+lat: 47.86720
+lon: 7.99990
+gebietId: todtnau-belchen
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: todtnau-busbahnhof
+    gehzeitMin: 45
+    hoehenmeter: 380
+    hinweis: Bus 7300 ab Todtnau bis Fahl, Todtnauerhütte, dann Aufstieg zur Hütte am Feldberg-Südhang.
+  - haltestelleId: feldberg-baerental
+    gehzeitMin: 60
+    hoehenmeter: 100
+    hinweis: Bus 7300 bis Feldberger Hof, dann über das Grüble zur Hütte.
+quelle: https://de.wikipedia.org/wiki/Todtnauer_H%C3%BCtte
+geschaetzt: true

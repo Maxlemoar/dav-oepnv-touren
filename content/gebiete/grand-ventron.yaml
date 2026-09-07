@@ -1,0 +1,10 @@
+id: grand-ventron
+name: Thur-Tal und Grand Ventron
+beschreibung: Grand Ventron und der Vogesenkamm bis zum Rainkopf ab Kruth, Endpunkt der TER-Strecke im Thur-Tal. Unbewartete CAF-Hütte nahe dem Gipfel, im Winter Schneeschuh im Naturreservat.
+haltestellen: [kruth]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Grand Ventron, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Grand%20Ventron" }
+lat: 47.96
+lon: 6.93

@@ -1,0 +1,17 @@
+id: totalphuette
+name: Totalphütte
+betreiber: { typ: oeav, sektion: Vorarlberg }
+hoehe: 2385
+lat: 47.0525
+lon: 9.7269
+gebietId: brandnertal
+saison: sommer
+webUrl: https://www.totalp.at
+zustiege:
+  - haltestelleId: brand-luenerseebahn
+    gehzeitMin: 90
+    hoehenmeter: 410
+    bergbahn: true
+    hinweis: Lünerseebahn zur Bergstation (Douglasshütte), dann am Westufer des Lünersees und über den Totalpsteig zur Hütte. Stützpunkt für die Schesaplana.
+quelle: https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg
+geschaetzt: true

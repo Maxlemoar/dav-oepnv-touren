@@ -1,0 +1,15 @@
+id: chalet-schnepfenried
+name: Chalet-Refuge Schnepfenried
+betreiber: { typ: naturfreunde, sektion: Amis de la Nature Haut-Rhin }
+hoehe: 1250
+lat: 47.98707
+lon: 7.04585
+gebietId: munstertal
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: metzeral
+    gehzeitMin: 120
+    hoehenmeter: 770
+    hinweis: Ab Metzeral über Sondernach zum Schnepfenried, Bus nur saisonal. 45 Plätze, Selbstversorgung.
+quelle: https://www.massif-des-vosges.fr/sit/231001216-chalet-refuge-des-amis-de-la-nature-du-schnepfenried/
+geschaetzt: true

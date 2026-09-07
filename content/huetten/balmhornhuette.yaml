@@ -1,0 +1,15 @@
+id: balmhornhuette
+name: Balmhornhütte
+betreiber: { typ: sac, sektion: Altels }
+hoehe: 1955
+lat: 46.4514
+lon: 7.6894
+gebietId: kandersteg
+saison: sommer
+webUrl: https://www.balmhornhuette.ch
+zustiege:
+  - haltestelleId: kandersteg
+    gehzeitMin: 150
+    hoehenmeter: 780
+    hinweis: "Bus ab Bahnhof bis Eggenschwand, ab dort 2 h durchs Gasterntal (T3)."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

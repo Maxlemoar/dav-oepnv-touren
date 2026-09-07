@@ -1,0 +1,16 @@
+id: engelhornhuette
+name: Engelhornhütte
+betreiber: { typ: privat, sektion: Akademischer Alpenclub Bern }
+hoehe: 1901
+lat: 46.6832
+lon: 8.1728
+gebietId: meiringen-rosenlaui
+saison: sommer
+webUrl: https://www.engelhornhuette.ch
+zustiege:
+  - haltestelleId: rosenlaui
+    gehzeitMin: 105
+    hoehenmeter: 540
+    hinweis: "Klettergebiet Engelhörner; Zeit nach Tourenportal 1:30 bis 2 h."
+quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/engelhornhuette-aacb-2147000088/
+geschaetzt: true

@@ -1,0 +1,19 @@
+id: freiburger-huette
+name: Freiburger Hütte
+betreiber: { typ: dav, sektion: Freiburg-Breisgau }
+hoehe: 1931
+lat: 47.1628
+lon: 9.9903
+gebietId: lechquellengebirge
+saison: sommer
+webUrl: https://www.freiburger-huette.at
+zustiege:
+  - haltestelleId: zugertal-formarinsee
+    gehzeitMin: 30
+    hoehenmeter: 140
+    hinweis: Bus ab Langen am Arlberg nach Lech, dort Wanderbus ab Lech Dorfbahn zum Formarinsee (Sommer stündlich, letzte Rückfahrt gegen 18:35 Uhr). Hütte der Nachbarsektion Freiburg unter der Roten Wand.
+  - haltestelleId: lech-ruefiplatz
+    gehzeitMin: 240
+    hoehenmeter: 550
+    hinweis: Zu Fuß ab Lech über Zug und das Zugertal (Lechweg), falls der Wanderbus nicht fährt.
+quelle: https://www.freiburger-huette.at/anreise

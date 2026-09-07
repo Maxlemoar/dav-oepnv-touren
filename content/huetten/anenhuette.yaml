@@ -1,0 +1,16 @@
+id: anenhuette
+name: Anenhütte
+betreiber: { typ: privat }
+hoehe: 2358
+lat: 46.45456
+lon: 7.91163
+gebietId: loetschental
+saison: sommer
+webUrl: https://www.anenhuette.ch
+zustiege:
+  - haltestelleId: wiler-loetschen
+    gehzeitMin: 210
+    hoehenmeter: 940
+    hinweis: "Bus bis Fafleralp (Sommer) verkürzt auf 1:30 h, Fafleralp liegt aber über 5:30 h ab Offenburg."
+quelle: https://www.anenhuette.ch
+geschaetzt: true

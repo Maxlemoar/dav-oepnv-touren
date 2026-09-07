@@ -1,0 +1,16 @@
+id: ravensburger-huette
+name: Ravensburger Hütte
+betreiber: { typ: dav, sektion: Ravensburg }
+hoehe: 1948
+lat: 47.1683
+lon: 10.0922
+gebietId: lechquellengebirge
+saison: sommer
+webUrl: https://www.ravensburgerhuette.at
+zustiege:
+  - haltestelleId: lech-ruefiplatz
+    gehzeitMin: 45
+    hoehenmeter: 120
+    hinweis: Wanderbus Linie 706 ab Lech Rüfiplatz zum Spullersee (Mitte Juni bis Anfang Oktober, kostenpflichtig), dann kurzer Aufstieg zur Hütte.
+quelle: https://www.ravensburgerhuette.at/die-berghuette/anreise/oeffentlichen-verkehrsmitteln/wanderbus-spullersee/
+geschaetzt: true

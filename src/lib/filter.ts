@@ -19,13 +19,16 @@ export type GebietEintrag = {
 export type Art = 'alle' | 'tag' | 'nacht'
 export type FilterZustand = { sport: Sportart[]; art: Art; maxStd: number; suche: string }
 
+/** 99 = keine Grenze (Grenzfälle über 5 h) */
+export const MAX_STD_WERTE = [2, 3, 4, 5, 99]
+
 export const STANDARD_FILTER: FilterZustand = { sport: [], art: 'alle', maxStd: 5, suche: '' }
 
 export function leseFilter(sp: URLSearchParams): FilterZustand {
   const sport = (sp.get('sport') ?? '').split(',').filter((s): s is Sportart => (SportartSchema.options as string[]).includes(s))
   const art = (sp.get('art') ?? 'alle') as Art
   const maxStd = Number(sp.get('max') ?? 5)
-  return { sport, art: ['alle', 'tag', 'nacht'].includes(art) ? art : 'alle', maxStd: [2, 3, 4, 5].includes(maxStd) ? maxStd : 5, suche: sp.get('q') ?? '' }
+  return { sport, art: ['alle', 'tag', 'nacht'].includes(art) ? art : 'alle', maxStd: MAX_STD_WERTE.includes(maxStd) ? maxStd : 5, suche: sp.get('q') ?? '' }
 }
 
 export function schreibeFilter(sp: URLSearchParams, f: FilterZustand): URLSearchParams {

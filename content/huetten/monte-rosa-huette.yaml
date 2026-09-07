@@ -1,0 +1,16 @@
+id: monte-rosa-huette
+name: Monte-Rosa-Hütte
+betreiber: { typ: sac, sektion: Monte Rosa }
+hoehe: 2883
+lat: 45.95792
+lon: 7.81239
+gebietId: zermatt-mattertal
+saison: ganzjaehrig
+webUrl: https://www.section-monte-rosa.ch/de/
+zustiege:
+  - haltestelleId: zermatt
+    gehzeitMin: 225
+    hoehenmeter: 400
+    bergbahn: true
+    hinweis: "Gornergratbahn bis Rotenboden, Querung von Gorner- und Grenzgletscher, Gletscherausrüstung nötig, 3:45 h."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

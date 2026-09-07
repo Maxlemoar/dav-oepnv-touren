@@ -1,0 +1,8 @@
+id: abzw-voralp
+name: Göschenen, Abzw. Voralp
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:73111
+lat: 46.66151
+lon: 8.53158
+land: CH
+region: Uri
+richtwerte: { kehl: { fahrzeitMin: 373, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 303, bahnKm: 275 }, lahr: { fahrzeitMin: 323, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 275, bahnKm: 242 }, offenburg: { fahrzeitMin: 296, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 289, bahnKm: 258 } }

@@ -1,0 +1,8 @@
+id: adelboden
+name: Adelboden, Post
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:7851
+lat: 46.49369
+lon: 7.56029
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 289, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 295, bahnKm: 290 }, lahr: { fahrzeitMin: 267, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 267, bahnKm: 258 }, offenburg: { fahrzeitMin: 240, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 281, bahnKm: 278 } }

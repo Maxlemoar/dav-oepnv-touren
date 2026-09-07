@@ -1,0 +1,11 @@
+id: grindelwald
+name: Grindelwald
+beschreibung: Eiger, Wetterhorn und Schreckhorn direkt ab Bahnhof. Bus zur Grossen Scheidegg und Pfingsteggbahn verkürzen die Zustiege zu Gleckstein- und Schreckhornhütte; das Naturfreundehaus liegt im Dorf.
+haltestellen: [grindelwald]
+sportarten: [wandern, hochtour, klettern, skitour]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+  - { titel: Naturfreundehaus Grindelwald, url: "https://naturfreunde.ch/haeuser/grindelwald/" }
+lat: 46.624
+lon: 8.033

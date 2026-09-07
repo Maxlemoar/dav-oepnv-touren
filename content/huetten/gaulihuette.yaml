@@ -1,0 +1,16 @@
+id: gaulihuette
+name: Gaulihütte
+betreiber: { typ: sac, sektion: Bern }
+hoehe: 2205
+lat: 46.6238
+lon: 8.2166
+gebietId: grimsel-haslital
+saison: sommer
+webUrl: https://www.gaulihuette.ch
+zustiege:
+  - haltestelleId: innertkirchen
+    gehzeitMin: 330
+    hoehenmeter: 1580
+    hinweis: "4:30 h ab Urbachtal (Wikipedia); von Innertkirchen zusätzlich rund 1 h ins Urbachtal, alternativ Taxi."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs
+geschaetzt: true

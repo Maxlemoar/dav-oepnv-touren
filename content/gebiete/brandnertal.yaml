@@ -1,0 +1,11 @@
+id: brandnertal
+name: Brandnertal und Lünersee
+beschreibung: Vom Bahnhof Bludenz mit dem Landbus 580 nach Brand zur Lünerseebahn. Oben am Lünersee beginnen die Wege zur Totalphütte und auf die Schesaplana, den höchsten Rätikongipfel; die Mannheimer Hütte am Brandner Gletscher ist Stützpunkt für Hochtouren.
+haltestellen: [bludenz, brand-luenerseebahn]
+sportarten: [wandern, hochtour, klettern, skitour]
+saison: sommer
+links:
+  - { titel: Alpenvereinaktiv Brandnertal, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Brandnertal" }
+  - { titel: Lünerseebahn, url: "https://www.luenersee.at/de/luenerseebahn" }
+lat: 47.06
+lon: 9.75

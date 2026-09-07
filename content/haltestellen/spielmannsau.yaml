@@ -1,0 +1,8 @@
+id: spielmannsau
+name: Spielmannsau
+haltestelleId: de-DELFI_de:09780:7623:0:1
+lat: 47.34721
+lon: 10.305
+land: DE
+region: Allgäu
+richtwerte: { kehl: { fahrzeitMin: 392, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 372, bahnKm: 289 }, lahr: { fahrzeitMin: 365, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 389, bahnKm: 269 }, offenburg: { fahrzeitMin: 343, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 372, bahnKm: 270 } }

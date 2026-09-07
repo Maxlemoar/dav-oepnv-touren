@@ -1,0 +1,8 @@
+id: hausach
+name: Hausach Bahnhof
+haltestelleId: "de-DELFI_de:08317:18620"
+lat: 48.28493
+lon: 8.18167
+land: DE
+region: Mittlerer Schwarzwald
+richtwerte: { kehl: { fahrzeitMin: 46, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 57, bahnKm: 53 }, lahr: { fahrzeitMin: 40, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 34, bahnKm: 33 }, offenburg: { fahrzeitMin: 27, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 37, bahnKm: 34 } }

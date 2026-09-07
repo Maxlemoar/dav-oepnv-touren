@@ -1,0 +1,8 @@
+id: stechelberg
+name: Stechelberg (Schilthornbahn)
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:7799
+lat: 46.55526
+lon: 7.90162
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 304, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 300, bahnKm: 281 }, lahr: { fahrzeitMin: 284, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 272, bahnKm: 248 }, offenburg: { fahrzeitMin: 257, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 286, bahnKm: 267 } }

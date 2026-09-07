@@ -1,0 +1,16 @@
+id: wormser-huette
+name: Wormser Hütte
+betreiber: { typ: dav, sektion: Worms }
+hoehe: 2305
+lat: 47.0639
+lon: 9.9747
+gebietId: montafon-raetikon
+saison: ganzjaehrig
+webUrl: https://www.dav-worms.de/index.php/die-wormser-huette
+zustiege:
+  - haltestelleId: schruns
+    gehzeitMin: 75
+    hoehenmeter: 430
+    bergbahn: true
+    hinweis: Hochjochbahn ab Schruns bis Bergstation Kapell (1873 m), dann Höhenweg zur Hütte. Zu Fuß ab Schruns 5 bis 6 h.
+quelle: https://www.dav-worms.de/index.php/die-wormser-huette

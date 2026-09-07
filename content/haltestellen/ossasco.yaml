@@ -1,0 +1,8 @@
+id: ossasco
+name: Ossasco (Bedretto)
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:5866
+lat: 46.51242
+lon: 8.53801
+land: CH
+region: Tessin / Bedretto
+richtwerte: { kehl: { fahrzeitMin: 362, umstiege: 3, takt: unregelmaessig, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 321, bahnKm: 295 }, lahr: { fahrzeitMin: 312, umstiege: 3, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 293, bahnKm: 263 }, offenburg: { fahrzeitMin: 285, umstiege: 2, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 307, bahnKm: 279 } }

@@ -1,0 +1,10 @@
+id: reusstal-maderanertal
+name: Reusstal und Maderanertal (Uri)
+beschreibung: Seitentäler entlang der Gotthardstrecke, alle ab Erstfeld oder mit Bus ab Amsteg. Kröntenhütte direkt ab Bahnhof Erstfeld, Leutschachhütte über die Arnisee-Seilbahn, Etzli- und Hüfihütte ab Bristen.
+haltestellen: [erstfeld, gurtnellen-wiler, intschi, bristen]
+sportarten: [wandern, hochtour, skitour]
+saison: sommer
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 46.76
+lon: 8.66

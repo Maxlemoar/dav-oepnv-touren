@@ -1,0 +1,16 @@
+id: zwinglipasshuette
+name: Zwinglipasshütte
+betreiber: { typ: sac, sektion: Toggenburg }
+hoehe: 1998
+lat: 47.23319
+lon: 9.37616
+gebietId: toggenburg
+saison: sommer
+webUrl: https://sac-toggenburg.ch
+zustiege:
+  - haltestelleId: wildhaus-dorf
+    gehzeitMin: 180
+    hoehenmeter: 910
+    hinweis: Über Gamplüt (Sesselbahn optional) zum Zwinglipass, T2.
+quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/zwinglipasshuette-2147000300/
+geschaetzt: true

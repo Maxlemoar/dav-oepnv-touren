@@ -1,0 +1,16 @@
+id: saarbruecker-huette
+name: Saarbrücker Hütte
+betreiber: { typ: dav, sektion: Alpenverein und Skiclub Saarbrücken }
+hoehe: 2538
+lat: 46.8983
+lon: 10.0369
+gebietId: silvretta
+saison: sommer
+webUrl: https://saarbrueckerhuette.at/
+zustiege:
+  - haltestelleId: bielerhoehe
+    gehzeitMin: 90
+    hoehenmeter: 500
+    hinweis: Ab Bielerhöhe über die Staumauer und den Fahrweg ins Kromertal zur Hütte unter dem Großlitzner. Alternativ ab Partenen mit Vermuntbahn und Aufstieg über die Vermuntstaumauer.
+quelle: https://www.alpenverein.de/artikel/huetten-mit-bahn-anreise_44a4563e-7782-4e99-bf0a-61f283766eea
+geschaetzt: true

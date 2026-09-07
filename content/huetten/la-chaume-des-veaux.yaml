@@ -1,0 +1,16 @@
+id: la-chaume-des-veaux
+name: La Chaume des Veaux
+betreiber: { typ: naturfreunde, sektion: Amis de la Nature Strasbourg-Neudorf }
+hoehe: 980
+lat: 48.38972
+lon: 7.28032
+gebietId: champ-du-feu
+saison: ganzjaehrig
+webUrl: https://www.amis-nature-strasbourg.net/
+zustiege:
+  - haltestelleId: barr
+    gehzeitMin: 40
+    hoehenmeter: 180
+    hinweis: Bus Fluo 67 Barr–Le Hohwald, wenige Kurse. Ab Le Hohwald 40 Minuten, zu Fuß ab Barr etwa 4 Stunden. 80 Betten, Selbstversorgung mit Hüttendienst.
+quelle: https://www.naturfreunde.de/naturfreundehaeuser-den-vogesen-f
+geschaetzt: true

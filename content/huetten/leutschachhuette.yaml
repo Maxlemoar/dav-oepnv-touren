@@ -1,0 +1,16 @@
+id: leutschachhuette
+name: Leutschachhütte
+betreiber: { typ: sac, sektion: Zimmerberg }
+hoehe: 2208
+lat: 46.7837
+lon: 8.6015
+gebietId: reusstal-maderanertal
+saison: sommer
+webUrl: https://www.leutschachhuette.ch
+zustiege:
+  - haltestelleId: intschi
+    gehzeitMin: 150
+    hoehenmeter: 840
+    bergbahn: true
+    hinweis: "Seilbahn Intschi–Arnisee (1370 m), ab Bergstation 2:30 h."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

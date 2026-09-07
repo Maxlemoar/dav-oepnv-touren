@@ -1,0 +1,14 @@
+id: naturfreundehaus-haeusern
+name: Naturfreundehaus Häusern
+betreiber: { typ: naturfreunde }
+hoehe: 920
+lat: 47.75833
+lon: 8.18024
+gebietId: schluchsee-haeusern
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: seebrugg
+    gehzeitMin: 15
+    hoehenmeter: 40
+    hinweis: Bus 7319 ab Seebrugg bis Häusern Rathaus, dann 15 Minuten leicht ansteigend. Nur für Gruppen, teilbewirtschaftet.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-haeusern

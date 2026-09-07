@@ -1,6 +1,6 @@
 'use client'
 import { SPORTART_LABEL, SportartSchema, type Sportart } from '@/lib/content/schema'
-import type { Art, FilterZustand } from '@/lib/filter'
+import { MAX_STD_WERTE, type Art, type FilterZustand } from '@/lib/filter'
 
 const ARTEN: { wert: Art; label: string }[] = [
   { wert: 'alle', label: 'Alle' }, { wert: 'tag', label: 'Tagestour' }, { wert: 'nacht', label: 'Mit Hütte' },
@@ -27,9 +27,9 @@ export function Filter({ wert, onChange }: { wert: FilterZustand; onChange: (f: 
       </div>
       <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Maximale Fahrzeit">
         <span className="text-sm text-tinte-2">Fahrzeit bis</span>
-        {[2, 3, 4, 5].map((h) => (
+        {MAX_STD_WERTE.map((h) => (
           <button key={h} type="button" onClick={() => onChange({ ...wert, maxStd: h })} aria-pressed={wert.maxStd === h}
-            className={`chip ${wert.maxStd === h ? 'chip-aktiv' : ''}`}>{h} h</button>
+            className={`chip ${wert.maxStd === h ? 'chip-aktiv' : ''}`}>{h === 99 ? 'alle' : `${h} h`}</button>
         ))}
       </div>
     </div>

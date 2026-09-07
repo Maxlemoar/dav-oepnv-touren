@@ -1,0 +1,15 @@
+id: leglerhuette
+name: Leglerhütte
+betreiber: { typ: sac, sektion: Tödi }
+hoehe: 2273
+lat: 46.9272
+lon: 9.08028
+gebietId: elm-sernftal
+saison: sommer
+webUrl: https://www.leglerhuette.ch
+zustiege:
+  - haltestelleId: mettmen
+    gehzeitMin: 150
+    hoehenmeter: 670
+    hinweis: "Bus Schwanden–Kies und Seilbahn Kies–Mettmen sind im Fahrplan enthalten; ab Mettmen 2:30 h (T2)."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

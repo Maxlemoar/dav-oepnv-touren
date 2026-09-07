@@ -1,0 +1,8 @@
+id: goppenstein
+name: Goppenstein
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:7474
+lat: 46.36771
+lon: 7.75492
+land: CH
+region: Lötschental
+richtwerte: { kehl: { fahrzeitMin: 279, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 428, bahnKm: 307 }, lahr: { fahrzeitMin: 289, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 400, bahnKm: 274 }, offenburg: { fahrzeitMin: 262, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 413, bahnKm: 294 } }

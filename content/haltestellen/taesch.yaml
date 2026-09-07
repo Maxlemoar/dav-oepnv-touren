@@ -1,0 +1,8 @@
+id: taesch
+name: Täsch
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:1688
+lat: 46.06746
+lon: 7.77451
+land: CH
+region: Mattertal
+richtwerte: { kehl: { fahrzeitMin: 349, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 457, bahnKm: 349 }, lahr: { fahrzeitMin: 299, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 429, bahnKm: 316 }, offenburg: { fahrzeitMin: 272, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 443, bahnKm: 335 } }

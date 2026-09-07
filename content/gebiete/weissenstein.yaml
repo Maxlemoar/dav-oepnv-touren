@@ -1,0 +1,10 @@
+id: weissenstein
+name: Weissenstein und Hasenmatt
+beschreibung: Erste und zweite Jurakette bei Solothurn, Seilbahn ab Oberdorf auf den Weissenstein, Gratweg zur Hasenmatt und hinunter zum Clubhaus Backi des SAC Weissenstein. Gänsbrunnen ist der Bahnhof auf der Nordseite.
+haltestellen: [oberdorf-so, gaensbrunnen]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal Weissenstein, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 47.25
+lon: 7.47

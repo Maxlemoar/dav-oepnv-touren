@@ -1,0 +1,16 @@
+id: naturfreundehaus-sommerecke
+name: Naturfreundehaus Sommerecke
+betreiber: { typ: naturfreunde }
+hoehe: 800
+lat: 48.25537
+lon: 8.26703
+gebietId: kinzigtal
+saison: ganzjaehrig
+webUrl: https://taenzerdorf.org/de/sommerecke/vermietung-sommerecke
+zustiege:
+  - haltestelleId: hornberg
+    gehzeitMin: 60
+    hoehenmeter: 50
+    hinweis: Bus ab Hornberg bis Fohrenbühl, dann 4 km Fußweg. Selbstversorgerhaus für Gruppen, 50 Betten und 10 Lager.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-sommerecke
+geschaetzt: true

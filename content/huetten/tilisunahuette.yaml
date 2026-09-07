@@ -1,0 +1,16 @@
+id: tilisunahuette
+name: Tilisunahütte
+betreiber: { typ: oeav, sektion: Vorarlberg }
+hoehe: 2211
+lat: 47.0244
+lon: 9.8725
+gebietId: montafon-raetikon
+saison: sommer
+webUrl: https://tilisuna-huette.at/
+zustiege:
+  - haltestelleId: schruns
+    gehzeitMin: 180
+    hoehenmeter: 1200
+    hinweis: Landbus ab Schruns nach Tschagguns-Latschau, dann über Alpila oder durchs Gampadelstal zum Tilisunasee. Ausgangspunkt für die Sulzfluh.
+quelle: https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg
+geschaetzt: true

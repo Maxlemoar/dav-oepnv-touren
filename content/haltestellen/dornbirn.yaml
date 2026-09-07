@@ -1,0 +1,8 @@
+id: dornbirn
+name: Dornbirn Bahnhof
+haltestelleId: at-Railway-Current-Reference-Data-2026_at:48:585:0:3
+lat: 47.41723
+lon: 9.73784
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 312, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 253, bahnKm: 241 }, lahr: { fahrzeitMin: 287, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 250, bahnKm: 219 }, offenburg: { fahrzeitMin: 264, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 233, bahnKm: 222 } }

@@ -1,0 +1,15 @@
+id: madrisahuette
+name: Madrisahütte
+betreiber: { typ: dav, sektion: Karlsruhe }
+hoehe: 1660
+lat: 46.9513
+lon: 9.9109
+gebietId: montafon-raetikon
+saison: ganzjaehrig
+webUrl: https://www.alpenverein-karlsruhe.de/huetten/madrisahuette
+zustiege:
+  - haltestelleId: gargellen-schafbergbahn
+    gehzeitMin: 60
+    hoehenmeter: 240
+    hinweis: Landbus 670 ab Bahnhof Schruns nach Gargellen (halbstündlich), dann Fahrweg ins Valzifenztal. Selbstversorgerhütte, Schlüssel über die Sektion Karlsruhe.
+quelle: https://www.alpenverein-karlsruhe.de/huetten/madrisahuette/standort

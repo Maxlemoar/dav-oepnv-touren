@@ -1,0 +1,10 @@
+id: hinterzarten-breitnau
+name: Hinterzarten und Breitnau
+beschreibung: Ravennaschlucht, Feldberg-Nordseite über den Rinken und die Hochfläche um Breitnau mit zwei Häusern direkt an der Buslinie Richtung St. Märgen. Höllentalbahn ab Freiburg, Deutschlandticket reicht.
+haltestellen: [hinterzarten]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Hinterzarten, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Hinterzarten" }
+lat: 47.93
+lon: 8.09

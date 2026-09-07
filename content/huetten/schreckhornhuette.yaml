@@ -1,0 +1,16 @@
+id: schreckhornhuette
+name: Schreckhornhütte
+betreiber: { typ: sac, sektion: Basel }
+hoehe: 2530
+lat: 46.5819
+lon: 8.0987
+gebietId: grindelwald
+saison: sommer
+webUrl: https://www.schreckhornhuette.ch
+zustiege:
+  - haltestelleId: grindelwald
+    gehzeitMin: 270
+    hoehenmeter: 1140
+    bergbahn: true
+    hinweis: "Pfingsteggbahn bis 1391 m, dann über Bäregg und gesicherten Steig (T4)."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

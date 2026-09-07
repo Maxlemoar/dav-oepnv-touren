@@ -1,0 +1,15 @@
+id: domhuette
+name: Domhütte
+betreiber: { typ: sac, sektion: Uto }
+hoehe: 2940
+lat: 46.10278
+lon: 7.81778
+gebietId: zermatt-mattertal
+saison: sommer
+webUrl: https://www.domhuette.ch
+zustiege:
+  - haltestelleId: randa
+    gehzeitMin: 270
+    hoehenmeter: 1530
+    hinweis: Steiler Zustieg mit gesicherten Passagen (T4).
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

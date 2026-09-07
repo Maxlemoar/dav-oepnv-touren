@@ -1,0 +1,11 @@
+id: bregenz-pfaender
+name: Bregenz und Pfänder
+beschreibung: Der Bregenzer Hausberg über dem Bodensee, zu Fuß vom Bahnhof in gut zwei Stunden oder mit der Pfänderbahn. Schnellstes Alpenziel ab Offenburg, als Tagestour mit Blick auf Allgäuer Alpen, Säntis und Rätikon. Ab Bregenz Landbus in den Bregenzerwald.
+haltestellen: [bregenz]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Pfänder, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Pf%C3%A4nder" }
+  - { titel: Pfänderbahn, url: "https://www.pfaenderbahn.at" }
+lat: 47.507
+lon: 9.780

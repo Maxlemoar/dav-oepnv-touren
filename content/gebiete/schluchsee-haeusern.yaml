@@ -1,0 +1,10 @@
+id: schluchsee-haeusern
+name: Schluchsee und Häusern
+beschreibung: Rund um den Schluchsee und über den Mittelweg nach Häusern, Endpunkt der Dreiseenbahn in Seebrugg. Ruhigere Alternative zum Feldberg, im Winter Loipen und Winterwanderwege.
+haltestellen: [seebrugg]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Schluchsee, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Schluchsee" }
+lat: 47.79
+lon: 8.18

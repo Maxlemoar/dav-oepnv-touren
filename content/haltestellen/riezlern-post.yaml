@@ -1,0 +1,8 @@
+id: riezlern-post
+name: Riezlern Post
+haltestelleId: de-DELFI_at:48:602:0:1
+lat: 47.35907
+lon: 10.19002
+land: AT
+region: Kleinwalsertal
+richtwerte: { kehl: { fahrzeitMin: 387, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 371, bahnKm: 279 }, lahr: { fahrzeitMin: 360, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 388, bahnKm: 259 }, offenburg: { fahrzeitMin: 338, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 371, bahnKm: 260 } }

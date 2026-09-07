@@ -1,0 +1,16 @@
+id: refuge-du-grand-ventron
+name: Refuge du Grand Ventron
+betreiber: { typ: caf, sektion: Hautes-Vosges }
+hoehe: 1150
+lat: 47.96030
+lon: 6.92170
+gebietId: grand-ventron
+saison: ganzjaehrig
+webUrl: https://refugegrandventron.ffcam.fr/
+zustiege:
+  - haltestelleId: kruth
+    gehzeitMin: 150
+    hoehenmeter: 700
+    hinweis: Unbewartete Hütte mit 22 Plätzen nahe dem Gipfel, Zustieg ab Kruth über Wildenstein oder den Col du Bramont.
+quelle: https://refugegrandventron.ffcam.fr/
+geschaetzt: true

@@ -1,0 +1,16 @@
+id: lustenauer-huette
+name: Lustenauer Hütte
+betreiber: { typ: oeav, sektion: Vorarlberg }
+hoehe: 1250
+lat: 47.3947
+lon: 9.8247
+gebietId: bregenzerwald
+saison: sommer
+webUrl: https://www.alpenverein-vorarlberg.at/huetten
+zustiege:
+  - haltestelleId: dornbirn
+    gehzeitMin: 90
+    hoehenmeter: 200
+    hinweis: Landbus 47 ab Bahnhof Dornbirn aufs Bödele (Losenpass), dann über die Lustenauer Hütte-Wege auf der Nagelfluhkette.
+quelle: https://de.wikipedia.org/wiki/Lustenauer_H%C3%BCtte
+geschaetzt: true

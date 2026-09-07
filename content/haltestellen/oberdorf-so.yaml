@@ -1,0 +1,8 @@
+id: oberdorf-so
+name: Oberdorf SO (Seilbahn Weissenstein)
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:264"
+lat: 47.23589
+lon: 7.49369
+land: CH
+region: Solothurner Jura
+richtwerte: { kehl: { fahrzeitMin: 213, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 209, bahnKm: 189 }, lahr: { fahrzeitMin: 187, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 181, bahnKm: 157 }, offenburg: { fahrzeitMin: 160, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 195, bahnKm: 178 } }

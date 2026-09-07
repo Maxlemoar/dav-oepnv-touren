@@ -1,0 +1,8 @@
+id: gargellen-schafbergbahn
+name: Gargellen Schafbergbahn
+haltestelleId: at-PTA-Vorarlberg-Flex-2026_at:48:961:0:1
+lat: 46.96821
+lon: 9.91797
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 452, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 321, bahnKm: 298 }, lahr: { fahrzeitMin: 432, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 317, bahnKm: 273 }, offenburg: { fahrzeitMin: 409, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 301, bahnKm: 279 } }

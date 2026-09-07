@@ -1,0 +1,10 @@
+id: chasseral
+name: Chasseral
+beschreibung: Höchster Berg des Berner Jura mit Alpenblick, Zustieg ab St-Imier über Mont-Soleil oder ab Les Prés-d'Orvin über das Jurahaus des SAC Biel. Gut dreieinhalb Stunden ab Offenburg. Im Winter Schneeschuh und Langlauf.
+haltestellen: [st-imier, les-pres-d-orvin]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal Chasseral, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 47.13
+lon: 7.06

@@ -1,0 +1,16 @@
+id: bollenwees
+name: Berggasthaus Bollenwees
+betreiber: { typ: privat }
+hoehe: 1470
+lat: 47.253
+lon: 9.42443
+gebietId: alpstein
+saison: sommer
+webUrl: https://www.bollenwees.ch
+zustiege:
+  - haltestelleId: bruelisau
+    gehzeitMin: 105
+    hoehenmeter: 550
+    hinweis: Über Sämtisersee zum Fälensee, T1–T2.
+quelle: https://www.bollenwees.ch
+geschaetzt: true

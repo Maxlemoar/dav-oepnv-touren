@@ -1,0 +1,16 @@
+id: mindelheimer-huette
+name: Mindelheimer Hütte
+betreiber: { typ: dav, sektion: Mindelheim }
+hoehe: 2013
+lat: 47.2919
+lon: 10.195
+gebietId: kleinwalsertal
+saison: sommer
+webUrl: https://www.mindelheimer-huette.de
+zustiege:
+  - haltestelleId: mittelberg
+    gehzeitMin: 180
+    hoehenmeter: 800
+    hinweis: Walserbus ab Oberstdorf über Mittelberg bis Endhaltestelle Baad, dann durchs Bärgunttal zur Hütte. Ausgangspunkt für den Mindelheimer Klettersteig.
+quelle: https://de.wikipedia.org/wiki/Mindelheimer_H%C3%BCtte
+geschaetzt: true

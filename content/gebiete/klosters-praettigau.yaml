@@ -1,0 +1,10 @@
+id: klosters-praettigau
+name: Klosters / Prättigau
+beschreibung: Silvrettahütte und Fergenhütte direkt ab Bahnhof Klosters Platz, dazu Piz Buin und Silvrettagletscher für Hochtouren. Über Küblis und St. Antönien liegt die Carschinahütte am Fuss der Sulzfluh mit Klettergärten und Klettersteig.
+haltestellen: [klosters-platz, st-antoenien-rueti]
+sportarten: [wandern, hochtour, skitour, klettern, klettersteig]
+saison: ganzjaehrig
+links:
+  - { titel: SAC Prättigau, url: "https://www.sac-praettigau.ch" }
+lat: 46.87
+lon: 9.88

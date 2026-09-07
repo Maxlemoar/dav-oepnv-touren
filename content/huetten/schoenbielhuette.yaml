@@ -1,0 +1,15 @@
+id: schoenbielhuette
+name: Schönbielhütte
+betreiber: { typ: sac, sektion: Monte Rosa }
+hoehe: 2694
+lat: 46.00194
+lon: 7.62917
+gebietId: zermatt-mattertal
+saison: sommer
+zustiege:
+  - haltestelleId: zermatt
+    gehzeitMin: 270
+    hoehenmeter: 1090
+    bergbahn: true
+    hinweis: "Ab Zermatt zu Fuss 4:30 h (T2); Schwarzsee-Bahn verkürzt auf 2:30 h."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

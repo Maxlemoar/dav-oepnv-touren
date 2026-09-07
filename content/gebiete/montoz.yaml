@@ -1,0 +1,10 @@
+id: montoz
+name: Montoz (Tavannes)
+beschreibung: Aussichtskamm oberhalb von Tavannes im Berner Jura mit dem Naturfreundehaus Bellevue in anderthalb Stunden ab Bahnhof. Übergänge Richtung Court und ins Vallon de St-Imier, im Winter Schneeschuh.
+haltestellen: [tavannes]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal Montoz, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 47.21
+lon: 7.22

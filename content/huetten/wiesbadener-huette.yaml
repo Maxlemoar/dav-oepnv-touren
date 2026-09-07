@@ -1,0 +1,15 @@
+id: wiesbadener-huette
+name: Wiesbadener Hütte
+betreiber: { typ: dav, sektion: Wiesbaden }
+hoehe: 2443
+lat: 46.8681
+lon: 10.1158
+gebietId: silvretta
+saison: ganzjaehrig
+webUrl: https://www.wiesbadener-huette.com
+zustiege:
+  - haltestelleId: bielerhoehe
+    gehzeitMin: 120
+    hoehenmeter: 410
+    hinweis: Ab Partenen mit Vermuntbahn und Tunnelbus oder Linienbus auf die Bielerhöhe, dann am Silvrettasee entlang und durchs Ochsental. Stützpunkt für Piz Buin.
+quelle: https://www.wiesbadener-huette.com

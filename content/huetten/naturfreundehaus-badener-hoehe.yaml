@@ -1,0 +1,16 @@
+id: naturfreundehaus-badener-hoehe
+name: Naturfreundehaus Badener Höhe
+betreiber: { typ: naturfreunde, sektion: NaturFreunde Karlsruhe }
+hoehe: 880
+lat: 48.66650
+lon: 8.25761
+gebietId: schwarzwaldhochstrasse
+saison: ganzjaehrig
+webUrl: https://www.naturfreunde-karlsruhe.de/unsere-haeuser/badener-hoehe
+zustiege:
+  - haltestelleId: sand-kapelle
+    gehzeitMin: 30
+    hoehenmeter: 50
+    hinweis: Bus ab Bühl bis Sand, dann 2 km am Westweg. Bewirtschaftet, 50 Betten.
+quelle: https://www.naturfreunde.de/haus/naturfreundehaus-badener-hoehe
+geschaetzt: true

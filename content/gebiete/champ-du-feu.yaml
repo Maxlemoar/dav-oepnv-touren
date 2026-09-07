@@ -1,0 +1,10 @@
+id: champ-du-feu
+name: Champ du Feu und Le Hohwald
+beschreibung: Nordvogesen um Champ du Feu und Le Hohwald mit der DAV-Hütte der Bergfreunde Saar und dem Naturfreundehaus La Chaume des Veaux. Bahnhof Barr in eineinhalb Stunden ab Offenburg, der Bus nach Le Hohwald fährt selten, am Wochenende kaum.
+haltestellen: [barr]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Champ du Feu, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Champ%20du%20Feu" }
+lat: 48.40
+lon: 7.27

@@ -1,0 +1,8 @@
+id: andermatt
+name: Andermatt
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:5165
+lat: 46.63689
+lon: 8.59328
+land: CH
+region: Uri
+richtwerte: { kehl: { fahrzeitMin: 353, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 303, bahnKm: 280 }, lahr: { fahrzeitMin: 303, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 275, bahnKm: 247 }, offenburg: { fahrzeitMin: 276, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 289, bahnKm: 263 } }

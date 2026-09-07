@@ -1,0 +1,17 @@
+id: loetschenpasshuette
+name: Lötschenpasshütte
+betreiber: { typ: privat }
+hoehe: 2690
+lat: 46.41631
+lon: 7.71689
+gebietId: loetschental
+saison: ganzjaehrig
+webUrl: https://www.loetschenpass.ch
+zustiege:
+  - haltestelleId: wiler-loetschen
+    gehzeitMin: 150
+    hoehenmeter: 720
+    bergbahn: true
+    hinweis: "Luftseilbahn Wiler–Lauchernalp, ab Bergstation 2:30 h (T3); ab Ferden über Kummenalp 3:45 h."
+quelle: https://www.loetschenpass.ch
+geschaetzt: true

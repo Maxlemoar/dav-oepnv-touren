@@ -1,0 +1,17 @@
+id: mannheimer-huette
+name: Mannheimer Hütte
+betreiber: { typ: dav, sektion: Mannheim }
+hoehe: 2679
+lat: 47.0656
+lon: 9.6933
+gebietId: brandnertal
+saison: sommer
+webUrl: https://www.mannheimerhuette.co.at/mannheimerhuette/
+zustiege:
+  - haltestelleId: brand-luenerseebahn
+    gehzeitMin: 180
+    hoehenmeter: 750
+    bergbahn: true
+    hinweis: Lünerseebahn zur Bergstation, über die Totalphütte und den Leibersteig weiter zur Hütte am Brandner Gletscher (alpin, Trittsicherheit nötig).
+quelle: https://de.wikipedia.org/wiki/Mannheimer_H%C3%BCtte
+geschaetzt: true

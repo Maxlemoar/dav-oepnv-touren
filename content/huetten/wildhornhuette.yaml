@@ -1,0 +1,19 @@
+id: wildhornhuette
+name: Wildhornhütte
+betreiber: { typ: sac, sektion: Moléson }
+hoehe: 2303
+lat: 46.3792
+lon: 7.3880
+gebietId: lenk
+saison: sommer
+webUrl: https://www.wildhornhuette.ch
+zustiege:
+  - haltestelleId: iffigenalp
+    gehzeitMin: 225
+    hoehenmeter: 680
+    hinweis: "Bus Lenk–Iffigenalp nur im Sommer, Fahrzeit ab Offenburg über 5 h."
+  - haltestelleId: lenk
+    gehzeitMin: 300
+    hoehenmeter: 1240
+    hinweis: "Ganz zu Fuß ab Bahnhof Lenk."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

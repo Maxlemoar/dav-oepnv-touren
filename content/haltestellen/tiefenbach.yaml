@@ -1,0 +1,8 @@
+id: tiefenbach
+name: Tiefenbach (Furka)
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:8982
+lat: 46.59271
+lon: 8.46159
+land: CH
+region: Uri
+richtwerte: { kehl: { fahrzeitMin: 412, umstiege: 5, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 318, bahnKm: 283 }, lahr: { fahrzeitMin: 423, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 290, bahnKm: 250 }, offenburg: { fahrzeitMin: 396, umstiege: 3, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 304, bahnKm: 266 } }

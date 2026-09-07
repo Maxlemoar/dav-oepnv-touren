@@ -1,0 +1,20 @@
+id: albert-heim-huette
+name: Albert-Heim-Hütte
+betreiber: { typ: sac, sektion: Uto }
+hoehe: 2543
+lat: 46.6090
+lon: 8.4636
+gebietId: andermatt-furka
+saison: sommer
+webUrl: https://www.albertheimhuette.ch
+zustiege:
+  - haltestelleId: tiefenbach
+    gehzeitMin: 90
+    hoehenmeter: 430
+    hinweis: "Postauto Furka bis Tiefenbach nur im Sommer, wenige Kurse, Fahrzeit ab Offenburg um 5:30 h. Zustieg T2."
+  - haltestelleId: realp
+    gehzeitMin: 180
+    hoehenmeter: 1000
+    hinweis: "Zu Fuß ab Bahnhof Realp über die alte Furkastrasse und Tiefenbach."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs
+geschaetzt: true

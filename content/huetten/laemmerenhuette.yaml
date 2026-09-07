@@ -1,0 +1,21 @@
+id: laemmerenhuette
+name: Lämmerenhütte
+betreiber: { typ: sac, sektion: Angenstein }
+hoehe: 2507
+lat: 46.4003
+lon: 7.5746
+gebietId: kandersteg
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: kandersteg
+    gehzeitMin: 210
+    hoehenmeter: 700
+    bergbahn: true
+    hinweis: "Sunnbüel-Bahn bis 1934 m, über Schwarenbach zum Gemmipass, ab dort 1:30 h (T2)."
+  - haltestelleId: leukerbad
+    gehzeitMin: 90
+    hoehenmeter: 250
+    bergbahn: true
+    hinweis: "Gemmibahn ab Leukerbad, ab Gemmipass 1:30 h (T2)."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs
+geschaetzt: true

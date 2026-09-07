@@ -1,0 +1,9 @@
+id: goeschenen
+name: Göschenen
+# Transitous führt den Bahnhof Göschenen unter der European-Sleeper-ID (zusammengeführter Parent), erreichbar geprüft.
+haltestelleId: eu-european-sleeper_8505119
+lat: 46.66580
+lon: 8.58871
+land: CH
+region: Uri
+richtwerte: { kehl: { fahrzeitMin: 337, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 298, bahnKm: 276 }, lahr: { fahrzeitMin: 287, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 270, bahnKm: 243 }, offenburg: { fahrzeitMin: 260, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 284, bahnKm: 259 } }

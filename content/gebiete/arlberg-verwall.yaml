@@ -1,0 +1,11 @@
+id: arlberg-verwall
+name: Arlberg und Verwall
+beschreibung: St. Anton ist direkt per Railjet ab Zürich erreichbar und Ausgangspunkt ins Verwall (Konstanzer und Darmstädter Hütte) und in die Lechtaler Alpen (Ulmer Hütte). Im Sommer Gratis-Wanderbus ins Verwalltal, im Winter Skitouren und Freeride abseits der Pisten.
+haltestellen: [st-anton-am-arlberg]
+sportarten: [wandern, hochtour, klettern, skitour]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Verwall, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Verwall" }
+  - { titel: Hüttenverzeichnis St. Anton, url: "https://www.stantonamarlberg.com/de/home" }
+lat: 47.10
+lon: 10.22

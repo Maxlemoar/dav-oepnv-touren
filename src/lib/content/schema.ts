@@ -8,7 +8,7 @@ export const SaisonSchema = z.enum(['sommer', 'winter', 'ganzjaehrig'])
 export const LandSchema = z.enum(['DE', 'FR', 'CH', 'AT'])
 export const TicketSchema = z.enum(['deutschlandticket', 'halbtax', 'europass', 'keins'])
 export const TaktSchema = z.enum(['stuendlich', 'zweistuendlich', 'unregelmaessig'])
-export const BetreiberTypSchema = z.enum(['dav', 'sac', 'oeav', 'naturfreunde', 'privat'])
+export const BetreiberTypSchema = z.enum(['dav', 'sac', 'oeav', 'caf', 'naturfreunde', 'privat'])
 
 export const StartortSchema = z.object({
   id: Id,
@@ -114,7 +114,7 @@ export const SAISON_LABEL: Record<Saison, string> = {
   sommer: 'Sommer', winter: 'Winter', ganzjaehrig: 'ganzjährig',
 }
 export const BETREIBER_LABEL: Record<BetreiberTyp, string> = {
-  dav: 'DAV', sac: 'SAC', oeav: 'ÖAV', naturfreunde: 'Naturfreunde', privat: 'privat',
+  dav: 'DAV', sac: 'SAC', oeav: 'ÖAV', caf: 'CAF', naturfreunde: 'Naturfreunde', privat: 'privat',
 }
 export const TICKET_LABEL: Record<Ticket, string> = {
   deutschlandticket: 'Deutschlandticket', halbtax: 'Halbtax', europass: 'Europass', keins: 'Einzelticket',

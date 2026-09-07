@@ -11,7 +11,7 @@ richtwerte:
     umstiege: 3
     takt: stuendlich
     ticket: halbtax
-    berechnetAm: 2026-09-06
+    berechnetAm: 2026-09-07
     strassenKm: 291
     bahnKm: 290
   lahr:
@@ -19,7 +19,7 @@ richtwerte:
     umstiege: 2
     takt: stuendlich
     ticket: halbtax
-    berechnetAm: 2026-09-06
+    berechnetAm: 2026-09-07
     strassenKm: 263
     bahnKm: 257
   offenburg:
@@ -27,6 +27,6 @@ richtwerte:
     umstiege: 1
     takt: stuendlich
     ticket: halbtax
-    berechnetAm: 2026-09-06
+    berechnetAm: 2026-09-07
     strassenKm: 277
     bahnKm: 277

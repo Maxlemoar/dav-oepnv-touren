@@ -1,0 +1,8 @@
+id: wildhaus-dorf
+name: Wildhaus, Dorf
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:6780
+lat: 47.20324
+lon: 9.35135
+land: CH
+region: Toggenburg
+richtwerte: { kehl: { fahrzeitMin: 340, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 317, bahnKm: 239 }, lahr: { fahrzeitMin: 320, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 289, bahnKm: 212 }, offenburg: { fahrzeitMin: 297, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 256, bahnKm: 220 } }

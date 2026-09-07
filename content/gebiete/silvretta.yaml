@@ -1,0 +1,11 @@
+id: silvretta
+name: Silvretta und Bielerhöhe
+beschreibung: Ab Partenen mit Vermuntbahn und Tunnelbus oder Linienbus auf die Bielerhöhe am Silvrettasee. Gletscherhochtouren auf Piz Buin, Silvrettahorn und Dreiländerspitze ab Wiesbadener und Saarbrücker Hütte, im Frühjahr ein Skitourenklassiker.
+haltestellen: [partenen-zentrum, bielerhoehe, schruns]
+sportarten: [hochtour, wandern, skitour]
+saison: sommer
+links:
+  - { titel: Alpenvereinaktiv Silvretta, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Silvretta" }
+  - { titel: Silvretta-Bielerhöhe, url: "https://www.silvretta-bielerhoehe.at/de" }
+lat: 46.90
+lon: 10.09

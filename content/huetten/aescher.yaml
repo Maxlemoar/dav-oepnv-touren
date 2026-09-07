@@ -1,0 +1,17 @@
+id: aescher
+name: Berggasthaus Äscher
+betreiber: { typ: privat }
+hoehe: 1454
+lat: 47.28339
+lon: 9.41436
+gebietId: alpstein
+saison: sommer
+webUrl: https://www.aescher.ch
+zustiege:
+  - haltestelleId: wasserauen
+    gehzeitMin: 15
+    hoehenmeter: -190
+    bergbahn: true
+    hinweis: "Ebenalpbahn ab Wasserauen, ab Bergstation 15 min bergab durch die Wildkirchli-Höhlen; zu Fuss ab Wasserauen 1:45 h."
+quelle: https://www.aescher.ch
+geschaetzt: true

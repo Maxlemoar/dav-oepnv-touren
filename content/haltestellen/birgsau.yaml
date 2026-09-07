@@ -1,0 +1,8 @@
+id: birgsau
+name: Birgsau
+haltestelleId: de-DELFI_de:09780:4104:0:1
+lat: 47.33341
+lon: 10.26641
+land: DE
+region: Allgäu
+richtwerte: { kehl: { fahrzeitMin: 378, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 373, bahnKm: 287 }, lahr: { fahrzeitMin: 351, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 390, bahnKm: 266 }, offenburg: { fahrzeitMin: 329, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 373, bahnKm: 268 } }

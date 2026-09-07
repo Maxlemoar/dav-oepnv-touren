@@ -1,0 +1,8 @@
+id: langen-am-arlberg
+name: Langen am Arlberg Bahnhof
+haltestelleId: de-DELFI_at:48:1226
+lat: 47.13172
+lon: 10.12037
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 452, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 319, bahnKm: 295 }, lahr: { fahrzeitMin: 351, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 315, bahnKm: 272 }, offenburg: { fahrzeitMin: 328, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 299, bahnKm: 276 } }

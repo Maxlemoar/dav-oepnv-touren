@@ -1,0 +1,15 @@
+id: schwarzwasserhuette
+name: Schwarzwasserhütte
+betreiber: { typ: dav, sektion: Schwaben }
+hoehe: 1620
+lat: 47.3311
+lon: 10.0872
+gebietId: kleinwalsertal
+saison: ganzjaehrig
+webUrl: https://www.alpenverein-schwaben.de/schwarzwasserhuette
+zustiege:
+  - haltestelleId: riezlern-post
+    gehzeitMin: 90
+    hoehenmeter: 380
+    hinweis: Walserbus Linie 1 ab Oberstdorf bis Riezlern Post, Linie 5 weiter zur Ifen-Talstation (Auenhütte, 1238 m), dann Fahrweg durchs Schwarzwassertal. Im Winter beliebtes Skitouren- und Schneeschuhziel.
+quelle: https://www.alpenverein-schwaben.de/schwarzwasserhuette

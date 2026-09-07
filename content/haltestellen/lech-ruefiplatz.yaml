@@ -1,0 +1,8 @@
+id: lech-ruefiplatz
+name: Lech Rüfiplatz
+haltestelleId: at-PTA-Vorarlberg-Flex-2026_at:48:1265:0:1
+lat: 47.20803
+lon: 10.14176
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 479, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 333, bahnKm: 289 }, lahr: { fahrzeitMin: 379, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 329, bahnKm: 267 }, offenburg: { fahrzeitMin: 356, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 313, bahnKm: 270 } }

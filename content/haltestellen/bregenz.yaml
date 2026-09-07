@@ -1,0 +1,8 @@
+id: bregenz
+name: Bregenz Bahnhof
+haltestelleId: at-Railway-Current-Reference-Data-2026_Pat:48:452
+lat: 47.50237
+lon: 9.73977
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 327, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 241, bahnKm: 234 }, lahr: { fahrzeitMin: 267, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 237, bahnKm: 212 }, offenburg: { fahrzeitMin: 244, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 221, bahnKm: 215 } }

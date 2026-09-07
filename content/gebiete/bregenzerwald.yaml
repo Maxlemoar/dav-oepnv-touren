@@ -1,0 +1,11 @@
+id: bregenzerwald
+name: Bregenzerwald
+beschreibung: Sanfte Voralpen zwischen Dornbirn und Hochtannberg, ab Bahnhof Dornbirn mit dem Landbus aufs Bödele und weiter nach Schwarzenberg, Bezau oder Au. Wanderungen auf der Nagelfluhkette zur Lustenauer Hütte, im Winter Schneeschuhtouren am Bödele.
+haltestellen: [dornbirn]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Bregenzerwald, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Bregenzerwald" }
+  - { titel: Landbus Vorarlberg (vmobil), url: "https://www.vmobil.at/de" }
+lat: 47.40
+lon: 9.85

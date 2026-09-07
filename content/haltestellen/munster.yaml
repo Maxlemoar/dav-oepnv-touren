@@ -1,0 +1,8 @@
+id: munster
+name: Munster (Haut-Rhin)
+haltestelleId: "fr-horaires-sncf_FR::LMU:98fcb590-cb0a-11e8-8bfa-f784c1c7c611:"
+lat: 48.03862
+lon: 7.13357
+land: FR
+region: Vogesen
+richtwerte: { kehl: { fahrzeitMin: 145, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 96, bahnKm: 97 }, lahr: { fahrzeitMin: 173, umstiege: 3, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 77 }, offenburg: { fahrzeitMin: 141, umstiege: 2, takt: zweistuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 98, bahnKm: 97 } }

@@ -1,0 +1,10 @@
+id: kiental-griesalp
+name: Kiental und Griesalp
+beschreibung: Ruhiges Seitental zwischen Kandertal und Lauterbrunnen. Bus ab Reichenbach über die steilste Postautostrecke Europas zur Griesalp; von dort Gspaltenhornhütte und über das Hohtürli die Blüemlisalphütte.
+haltestellen: [griesalp]
+sportarten: [wandern, hochtour]
+saison: sommer
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 46.547
+lon: 7.762

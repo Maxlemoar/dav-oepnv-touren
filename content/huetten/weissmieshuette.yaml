@@ -1,0 +1,16 @@
+id: weissmieshuette
+name: Weissmieshütte
+betreiber: { typ: sac, sektion: Olten }
+hoehe: 2726
+lat: 46.14386
+lon: 7.9779
+gebietId: saastal
+saison: ganzjaehrig
+webUrl: https://www.weissmieshuette.ch
+zustiege:
+  - haltestelleId: saas-grund
+    gehzeitMin: 45
+    hoehenmeter: 330
+    bergbahn: true
+    hinweis: Bergbahn Saas-Grund–Kreuzboden, ab Bergstation 45 min.
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

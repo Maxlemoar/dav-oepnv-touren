@@ -1,0 +1,8 @@
+id: les-pres-d-orvin
+name: Les Prés-d'Orvin, Bellevue (Bus)
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:76400"
+lat: 47.15328
+lon: 7.17837
+land: CH
+region: Berner Jura
+richtwerte: { kehl: { fahrzeitMin: 244, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 233, bahnKm: 206 }, lahr: { fahrzeitMin: 210, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 205, bahnKm: 176 }, offenburg: { fahrzeitMin: 197, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 219, bahnKm: 197 } }

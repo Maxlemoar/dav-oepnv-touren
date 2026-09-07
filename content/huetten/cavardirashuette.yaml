@@ -1,0 +1,16 @@
+id: cavardirashuette
+name: Cavardirashütte
+betreiber: { typ: sac, sektion: Winterthur }
+hoehe: 2649
+lat: 46.7425
+lon: 8.81422
+gebietId: disentis
+saison: ganzjaehrig
+webUrl: https://www.cavardirashuette.ch
+zustiege:
+  - haltestelleId: disentis
+    gehzeitMin: 210
+    hoehenmeter: 1520
+    bergbahn: true
+    hinweis: "Seilbahn Disentis–Caischavedra (Sommer an Wochenenden, Winter täglich) verkürzt auf 1:30 h; Skitourenzustieg im Winter."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

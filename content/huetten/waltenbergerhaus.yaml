@@ -1,0 +1,16 @@
+id: waltenbergerhaus
+name: Waltenbergerhaus
+betreiber: { typ: dav, sektion: Allgäu-Immenstadt }
+hoehe: 2085
+lat: 47.2977
+lon: 10.2822
+gebietId: oberstdorf
+saison: sommer
+webUrl: https://waltenbergerhaus.de/
+zustiege:
+  - haltestelleId: birgsau
+    gehzeitMin: 210
+    hoehenmeter: 1130
+    hinweis: Bus ab Oberstdorf nach Birgsau, über Einödsbach und die Bacherloch-Alpe steil zur Hütte unter Mädelegabel und Trettachspitze.
+quelle: https://de.wikipedia.org/wiki/Waltenbergerhaus
+geschaetzt: true

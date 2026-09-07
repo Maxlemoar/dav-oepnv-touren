@@ -1,0 +1,8 @@
+id: bludenz
+name: Bludenz Bahnhof
+haltestelleId: at-Railway-Current-Reference-Data-2026_at:48:130:0:10
+lat: 47.15523
+lon: 9.81428
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 368, umstiege: 4, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 294, bahnKm: 272 }, lahr: { fahrzeitMin: 325, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 291, bahnKm: 248 }, offenburg: { fahrzeitMin: 302, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 274, bahnKm: 253 } }

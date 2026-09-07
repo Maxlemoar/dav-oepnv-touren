@@ -1,8 +1,10 @@
 id: munstertal
 name: Munstertal (Vogesen)
-beschreibung: Hohneck und Petit Ballon ab Metzeral, mit dem TER in gut zwei Stunden. Naturfreundehäuser statt Alpenvereinshütten.
-haltestellen: [metzeral]
+beschreibung: Hohneck, Kastelberg und Petit Ballon ab Metzeral, mit dem TER in gut zwei Stunden. Naturfreundehäuser und eine CAF-Hütte am Col de la Schlucht statt Alpenvereinshütten; die Schlucht ist per Bus ab Munster nur saisonal erreichbar.
+haltestellen: [metzeral, munster, col-de-la-schlucht]
 sportarten: [wandern, schneeschuh]
 saison: ganzjaehrig
+links:
+  - { titel: Alpenvereinaktiv Hohneck, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Hohneck" }
 lat: 48.03
 lon: 7.05

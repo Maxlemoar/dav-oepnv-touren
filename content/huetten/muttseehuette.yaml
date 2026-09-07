@@ -1,0 +1,16 @@
+id: muttseehuette
+name: Muttseehütte
+betreiber: { typ: sac, sektion: Winterthur }
+hoehe: 2501
+lat: 46.8575
+lon: 9.01917
+gebietId: linthal
+saison: sommer
+webUrl: https://www.muttseehuette.ch
+zustiege:
+  - haltestelleId: linthal
+    gehzeitMin: 210
+    hoehenmeter: 1850
+    hinweis: "Ab Tierfehd 2:30 h (T3); Bus Linthal–Tierfehd saisonal, spart rund 1 h Talweg."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs
+geschaetzt: true

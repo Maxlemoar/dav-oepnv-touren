@@ -1,0 +1,15 @@
+id: glecksteinhuette
+name: Glecksteinhütte
+betreiber: { typ: sac, sektion: Burgdorf }
+hoehe: 2317
+lat: 46.6251
+lon: 8.0966
+gebietId: grindelwald
+saison: sommer
+webUrl: https://www.gleckstein.ch
+zustiege:
+  - haltestelleId: grindelwald
+    gehzeitMin: 165
+    hoehenmeter: 850
+    hinweis: "Bus 128 Richtung Grosse Scheidegg bis Hst. Abzweigung Gleckstein (Sommer), ab dort 2:45 h (T3)."
+quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/glecksteinhuette-sac-2147000118/

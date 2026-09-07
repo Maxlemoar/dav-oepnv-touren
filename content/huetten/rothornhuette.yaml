@@ -1,0 +1,15 @@
+id: rothornhuette
+name: Rothornhütte
+betreiber: { typ: sac, sektion: Oberaargau }
+hoehe: 3180
+lat: 46.04867
+lon: 7.69735
+gebietId: zermatt-mattertal
+saison: sommer
+webUrl: https://www.sac-oberaargau.ch/huetten/rothornhuette
+zustiege:
+  - haltestelleId: zermatt
+    gehzeitMin: 300
+    hoehenmeter: 1575
+    hinweis: Über Trift, 5 h (T3); Neubau 2024.
+quelle: https://www.sac-oberaargau.ch/huetten/rothornhuette

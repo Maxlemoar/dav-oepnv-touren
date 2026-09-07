@@ -1,0 +1,8 @@
+id: vandans
+name: Vandans Bahnhof
+haltestelleId: at-Railway-Current-Reference-Data-2026_at:48:326:0:3
+lat: 47.09877
+lon: 9.86874
+land: AT
+region: Vorarlberg
+richtwerte: { kehl: { fahrzeitMin: 393, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 302, bahnKm: 281 }, lahr: { fahrzeitMin: 343, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 298, bahnKm: 257 }, offenburg: { fahrzeitMin: 320, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 281, bahnKm: 262 } }

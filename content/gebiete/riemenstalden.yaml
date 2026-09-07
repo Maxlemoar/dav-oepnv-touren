@@ -1,0 +1,10 @@
+id: riemenstalden
+name: Riemenstaldental
+beschreibung: Kleines Tal oberhalb des Urnersees, Bus ab Sisikon bis Chäppeliberg. Die Lidernenhütte ist mit der Seilbahn in einer Viertelstunde erreichbar und im Winter ein Skitourenstützpunkt.
+haltestellen: [chaeppeliberg]
+sportarten: [wandern, skitour, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: SAC-Tourenportal, url: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/" }
+lat: 46.94
+lon: 8.69

@@ -1,0 +1,16 @@
+id: britanniahuette
+name: Britanniahütte
+betreiber: { typ: sac, sektion: Genf }
+hoehe: 3030
+lat: 46.06011
+lon: 7.93504
+gebietId: saastal
+saison: ganzjaehrig
+webUrl: https://www.cas-geneve.ch
+zustiege:
+  - haltestelleId: saas-fee
+    gehzeitMin: 60
+    hoehenmeter: 50
+    bergbahn: true
+    hinweis: Alpin Express und Felskinn-Bahn ab Saas-Fee, ab Felskinn rund 1 h über das Egginerjoch (Gletscherpfad).
+quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/?type=hut

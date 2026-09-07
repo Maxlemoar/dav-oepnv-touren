@@ -1,0 +1,15 @@
+id: chelenalphuette
+name: Chelenalphütte
+betreiber: { typ: sac, sektion: Aarau }
+hoehe: 2350
+lat: 46.6717
+lon: 8.4399
+gebietId: goeschenen-goescheneralp
+saison: sommer
+webUrl: https://www.chelenalp.ch
+zustiege:
+  - haltestelleId: goescheneralp
+    gehzeitMin: 180
+    hoehenmeter: 570
+    hinweis: "Entlang des Göscheneralpsees ins Chelenalptal (T2)."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

@@ -1,0 +1,10 @@
+id: rigi
+name: Rigi
+beschreibung: Tagesziel in gut drei Stunden ab Offenburg. Ab Arth-Goldau mit der Zahnradbahn oder zu Fuß auf die Rigi, Höhenwege über Rigi Kulm, Scheidegg und First, Abstieg nach Vitznau oder Weggis.
+haltestellen: [arth-goldau]
+sportarten: [wandern, schneeschuh]
+saison: ganzjaehrig
+links:
+  - { titel: Rigi Bahnen, url: "https://www.rigi.ch" }
+lat: 47.056
+lon: 8.485

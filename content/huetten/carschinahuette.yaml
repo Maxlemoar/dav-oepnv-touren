@@ -1,0 +1,15 @@
+id: carschinahuette
+name: Carschinahütte
+betreiber: { typ: sac, sektion: Rätia }
+hoehe: 2236
+lat: 47.007
+lon: 9.82734
+gebietId: klosters-praettigau
+saison: sommer
+webUrl: https://www.carschina.ch
+zustiege:
+  - haltestelleId: st-antoenien-rueti
+    gehzeitMin: 165
+    hoehenmeter: 820
+    hinweis: "Postauto ab Bahnhof Küblis bis St. Antönien Rüti, ab dort 2:45 h (T2)."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

@@ -1,0 +1,8 @@
+id: cruina
+name: Cruina (Nufenen)
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:75695
+lat: 46.47557
+lon: 8.42364
+land: CH
+region: Tessin / Bedretto
+richtwerte: { kehl: { fahrzeitMin: 431, umstiege: 5, takt: unregelmaessig, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 332, bahnKm: 298 }, lahr: { fahrzeitMin: 381, umstiege: 4, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 304, bahnKm: 265 }, offenburg: { fahrzeitMin: 354, umstiege: 3, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 318, bahnKm: 282 } }

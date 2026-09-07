@@ -1,0 +1,14 @@
+id: treschhuette
+name: Treschhütte
+betreiber: { typ: sac, sektion: Am Albis }
+hoehe: 1475
+lat: 46.7186
+lon: 8.6494
+gebietId: reusstal-maderanertal
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: gurtnellen-wiler
+    gehzeitMin: 150
+    hoehenmeter: 740
+    hinweis: "Bahnhof Gurtnellen ist aufgehoben, Bus ab Erstfeld oder Göschenen bis Gurtnellen Wiler; Zustieg ins Fellital (T2)."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs

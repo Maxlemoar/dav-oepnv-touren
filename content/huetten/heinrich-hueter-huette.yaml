@@ -1,0 +1,15 @@
+id: heinrich-hueter-huette
+name: Heinrich-Hueter-Hütte
+betreiber: { typ: oeav, sektion: Vorarlberg }
+hoehe: 1766
+lat: 47.0789
+lon: 9.7837
+gebietId: montafon-raetikon
+saison: sommer
+webUrl: https://hueterhuette.at/
+zustiege:
+  - haltestelleId: vandans
+    gehzeitMin: 45
+    hoehenmeter: 280
+    hinweis: Wanderbus Rellstal ab Bahnhof Vandans bis Endhaltestelle Rellstal (1490 m), dann Forstweg oder Steig zur Hütte. Direkt ab Vandans zu Fuß 3:15 h.
+quelle: https://hueterhuette.at/

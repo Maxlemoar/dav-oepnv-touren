@@ -1,0 +1,16 @@
+id: ramshaldenhuette
+name: Ramshaldenhütte
+betreiber: { typ: dav, sektion: Freiburg-Breisgau }
+hoehe: 1035
+lat: 47.95328
+lon: 8.09864
+gebietId: hinterzarten-breitnau
+saison: ganzjaehrig
+webUrl: https://www.dav-freiburg.de/de/huette/ramshalde.php
+zustiege:
+  - haltestelleId: hinterzarten
+    gehzeitMin: 5
+    hoehenmeter: 0
+    hinweis: Bus ab Hinterzarten Richtung St. Märgen bis Breitnau, Ramshalde, die Hütte liegt direkt oberhalb. Zu Fuß ab Bahnhof etwa 1:15 h und 150 Höhenmeter. Selbstversorgerhütte, 51 Betten.
+quelle: https://www.dav-freiburg.de/de/huette/ramshalde.php
+geschaetzt: true

@@ -1,0 +1,17 @@
+id: edmund-probst-haus
+name: Edmund-Probst-Haus
+betreiber: { typ: dav, sektion: Allgäu-Immenstadt }
+hoehe: 1930
+lat: 47.4135
+lon: 10.3471
+gebietId: oberstdorf
+saison: ganzjaehrig
+webUrl: https://www.edmund-probst-haus.de
+zustiege:
+  - haltestelleId: oberstdorf
+    gehzeitMin: 10
+    hoehenmeter: 0
+    bergbahn: true
+    hinweis: Nebelhornbahn ab Oberstdorf bis Station Höfatsblick, die Hütte liegt wenige Minuten unterhalb. Zu Fuß ab Bahnhof rund 4 h.
+quelle: https://de.wikipedia.org/wiki/Edmund-Probst-Haus
+geschaetzt: true

@@ -1,0 +1,8 @@
+id: tavannes
+name: Tavannes
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:100"
+lat: 47.21984
+lon: 7.20164
+land: CH
+region: Berner Jura
+richtwerte: { kehl: { fahrzeitMin: 231, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 208, bahnKm: 197 }, lahr: { fahrzeitMin: 234, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 180, bahnKm: 167 }, offenburg: { fahrzeitMin: 207, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 194, bahnKm: 188 } }

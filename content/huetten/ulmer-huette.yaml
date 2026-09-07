@@ -1,0 +1,17 @@
+id: ulmer-huette
+name: Ulmer Hütte
+betreiber: { typ: dav, sektion: Ulm }
+hoehe: 2288
+lat: 47.1469
+lon: 10.2092
+gebietId: arlberg-verwall
+saison: ganzjaehrig
+webUrl: https://www.ulmerhuette.at
+zustiege:
+  - haltestelleId: st-anton-am-arlberg
+    gehzeitMin: 60
+    hoehenmeter: 150
+    bergbahn: true
+    hinweis: Galzigbahn ab St. Anton zur Bergstation Galzig, dann Höhenweg zur Hütte unter der Valluga. Alternativ Bus bis Alpe Rauz und Aufstieg.
+quelle: https://www.stantonamarlberg.com/de/sommer/bergregion/huettenverzeichnis/-addresses/ulmer-huette-0
+geschaetzt: true

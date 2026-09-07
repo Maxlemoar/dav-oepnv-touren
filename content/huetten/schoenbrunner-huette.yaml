@@ -1,0 +1,16 @@
+id: schoenbrunner-huette
+name: Schönbrunner Hütte
+betreiber: { typ: dav, sektion: Ettlingen }
+hoehe: 720
+lat: 48.65139
+lon: 8.18778
+gebietId: schwarzwaldhochstrasse
+saison: ganzjaehrig
+webUrl: https://www.schoenbrunner-huette.de/
+zustiege:
+  - haltestelleId: sand-kapelle
+    gehzeitMin: 60
+    hoehenmeter: -110
+    hinweis: Bus ab Bühl bis Sand, dann Abstieg Richtung Bühlertal-Obertal. Selbstversorgerhütte, 11 Betten und 24 Lager.
+quelle: https://de.wikipedia.org/wiki/Sch%C3%B6nbrunner_H%C3%BCtte
+geschaetzt: true

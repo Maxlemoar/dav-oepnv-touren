@@ -1,0 +1,8 @@
+id: innertkirchen
+name: Innertkirchen, Grimseltor
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:8395
+lat: 46.70557
+lon: 8.22959
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 339, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 286, bahnKm: 263 }, lahr: { fahrzeitMin: 289, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 259, bahnKm: 230 }, offenburg: { fahrzeitMin: 262, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 272, bahnKm: 248 } }

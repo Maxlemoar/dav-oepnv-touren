@@ -1,0 +1,17 @@
+id: planurahuette
+name: Planurahütte
+betreiber: { typ: sac, sektion: Tödi }
+hoehe: 2947
+lat: 46.82
+lon: 8.88056
+gebietId: linthal
+saison: sommer
+webUrl: https://www.planurahuette.ch
+zustiege:
+  - haltestelleId: urnerboden-dorf
+    gehzeitMin: 300
+    hoehenmeter: 920
+    bergbahn: true
+    hinweis: "Ab Fisetengrat über Gemsfairenjoch und Claridenfirn, Gletscherausrüstung nötig; offizielle Angabe 4:15 h ab Klausenpass."
+quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs
+geschaetzt: true

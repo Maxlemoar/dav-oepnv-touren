@@ -1,0 +1,14 @@
+id: schwenninger-huette
+name: Schwenninger Hütte
+betreiber: { typ: dav, sektion: Baar }
+hoehe: 800
+lat: 48.10876
+lon: 8.26108
+gebietId: triberg-brend
+saison: ganzjaehrig
+zustiege:
+  - haltestelleId: triberg
+    gehzeitMin: 60
+    hoehenmeter: 190
+    hinweis: Selbstversorgerhütte mit 20 Lagern oberhalb von Nußbach.
+quelle: https://de.wikipedia.org/wiki/Schwenninger_H%C3%BCtte

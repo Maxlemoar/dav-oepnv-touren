@@ -1,0 +1,16 @@
+id: schwarzenberghuette
+name: Schwarzenberghütte
+betreiber: { typ: dav, sektion: Illertissen }
+hoehe: 1380
+lat: 47.4292
+lon: 10.4067
+gebietId: hintersteiner-tal
+saison: ganzjaehrig
+webUrl: https://www.dav-illertissen.de/Schwarzenberghutte/SBHInfo.htm
+zustiege:
+  - haltestelleId: hinterstein-gruener-hut
+    gehzeitMin: 60
+    hoehenmeter: 520
+    hinweis: Bus Linie 49 ab Sonthofen bis Hinterstein, dann Fahrweg zur Hütte oberhalb des Hintersteiner Tals. Familienfreundlich, im Winter Rodelbahn.
+quelle: https://de.wikipedia.org/wiki/Schwarzenbergh%C3%BCtte_(Allg%C3%A4uer_Alpen)
+geschaetzt: true

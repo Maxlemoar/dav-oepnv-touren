@@ -1,0 +1,8 @@
+id: erstfeld
+name: Erstfeld
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:5114
+lat: 46.82034
+lon: 8.65045
+land: CH
+region: Uri
+richtwerte: { kehl: { fahrzeitMin: 284, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 278, bahnKm: 257 }, lahr: { fahrzeitMin: 261, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 250, bahnKm: 225 }, offenburg: { fahrzeitMin: 234, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 264, bahnKm: 239 } }

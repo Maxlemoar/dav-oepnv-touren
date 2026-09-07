@@ -1,0 +1,8 @@
+id: grindelwald
+name: Grindelwald
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:7380
+lat: 46.62436
+lon: 8.03331
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 297, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 302, bahnKm: 272 }, lahr: { fahrzeitMin: 277, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 274, bahnKm: 239 }, offenburg: { fahrzeitMin: 250, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 288, bahnKm: 258 } }

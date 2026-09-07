@@ -1,0 +1,8 @@
+id: gaensbrunnen
+name: Gänsbrunnen
+haltestelleId: "ch-opentransportdataswiss26_Parentch:1:sloid:265"
+lat: 47.26566
+lon: 7.46492
+land: CH
+region: Solothurner Jura
+richtwerte: { kehl: { fahrzeitMin: 217, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 207, bahnKm: 185 }, lahr: { fahrzeitMin: 183, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 179, bahnKm: 153 }, offenburg: { fahrzeitMin: 156, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 192, bahnKm: 174 } }

@@ -1,0 +1,8 @@
+id: rosenlaui
+name: Rosenlaui, Hotel
+haltestelleId: ch-opentransportdataswiss26_Parentch:1:sloid:8781
+lat: 46.68026
+lon: 8.15370
+land: CH
+region: Berner Oberland
+richtwerte: { kehl: { fahrzeitMin: 338, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 291, bahnKm: 266 }, lahr: { fahrzeitMin: 348, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 263, bahnKm: 233 }, offenburg: { fahrzeitMin: 321, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 276, bahnKm: 250 } }

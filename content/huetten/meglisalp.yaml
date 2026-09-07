@@ -1,0 +1,16 @@
+id: meglisalp
+name: Berggasthaus Meglisalp
+betreiber: { typ: privat }
+hoehe: 1517
+lat: 47.25588
+lon: 9.38554
+gebietId: alpstein
+saison: sommer
+webUrl: https://www.meglisalp.ch
+zustiege:
+  - haltestelleId: wasserauen
+    gehzeitMin: 120
+    hoehenmeter: 650
+    hinweis: Über den Seealpsee, T2.
+quelle: https://www.meglisalp.ch
+geschaetzt: true

@@ -1,0 +1,8 @@
+id: hinterstein-gruener-hut
+name: Hinterstein Grüner Hut
+haltestelleId: de-DELFI_de:09780:9151:0:1
+lat: 47.47553
+lon: 10.41431
+land: DE
+region: Allgäu
+richtwerte: { kehl: { fahrzeitMin: 396, umstiege: 4, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 364, bahnKm: 287 }, lahr: { fahrzeitMin: 369, umstiege: 4, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 381, bahnKm: 269 }, offenburg: { fahrzeitMin: 347, umstiege: 3, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 364, bahnKm: 268 } }
