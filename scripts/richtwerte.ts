@@ -5,6 +5,7 @@
  *   npm run richtwerte                       nächster Samstag in mindestens 7 Tagen
  *   npm run richtwerte -- --datum 2026-09-19
  *   npm run richtwerte -- --nur kandersteg
+ *   npm run richtwerte -- --fehlend          nur Haltestellen ohne Richtwerte für alle Startorte
  */
 import fs from 'node:fs'
 import path from 'node:path'
@@ -20,6 +21,7 @@ const arg = (k: string) => { const i = args.indexOf(k); return i >= 0 ? args[i +
 const inEinerWoche = new Date(Date.now() + 7 * 86400_000)
 const datum = arg('--datum') ?? naechsterSamstag(inEinerWoche)
 const nur = arg('--nur')
+const fehlend = args.includes('--fehlend')
 const heute = lokalesDatum(new Date())
 const wurzel = path.join(process.cwd(), 'content')
 /** Bahnstrecke ist im Mittel etwa ein Viertel länger als die Luftlinie. */
@@ -45,7 +47,11 @@ async function strassenKm(a: { lat: number; lon: number }, b: { lat: number; lon
 
 async function main() {
   const i = ladeInhalt(wurzel)
-  const haltestellen = nur ? i.haltestellen.filter((h) => h.id === nur) : i.haltestellen
+  const haltestellen = nur
+    ? i.haltestellen.filter((h) => h.id === nur)
+    : fehlend
+      ? i.haltestellen.filter((h) => i.startorte.some((s) => !h.richtwerte[s.id]))
+      : i.haltestellen
   if (nur && haltestellen.length === 0) throw new Error(`Haltestelle "${nur}" nicht gefunden`)
   console.log(`Richtwerte für ${datum}, ${haltestellen.length} Haltestellen × ${i.startorte.length} Startorte`)
 
