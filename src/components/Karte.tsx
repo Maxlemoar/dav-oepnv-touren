@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Map as MlMap, NavigationControl, Popup, setWorkerUrl, type MapLayerMouseEvent } from 'maplibre-gl'
+import { LngLatBounds, Map as MlMap, NavigationControl, Popup, setWorkerUrl, type MapLayerMouseEvent } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { STUFE_FARBE } from '@/lib/stufe'
 import { popupHtml, type KarteGeoJson } from '@/lib/karte'
@@ -18,6 +18,7 @@ type Props = { gebietIds: string[]; uebersicht: Record<string, boolean | undefin
 export function Karte({ gebietIds, uebersicht }: Props) {
   const container = useRef<HTMLDivElement>(null)
   const karte = useRef<MlMap | null>(null)
+  const daten = useRef<KarteGeoJson | null>(null)
   const router = useRouter()
   // Der Klick-Handler wird einmal registriert; Übersicht und Router deshalb über Refs lesen, nicht aus der Closure.
   const uebersichtRef = useRef(uebersicht)
@@ -43,6 +44,7 @@ export function Karte({ gebietIds, uebersicht }: Props) {
         return
       }
       if (karte.current !== m) return
+      daten.current = fc
       m.addSource('ziele', { type: 'geojson', data: fc })
       m.addSource('start', {
         type: 'geojson',
@@ -111,7 +113,7 @@ export function Karte({ gebietIds, uebersicht }: Props) {
 
   useEffect(() => {
     const m = karte.current
-    if (bereit && m && m.getLayer('gebiete')) wendeFilterAn(m, gebietIds)
+    if (bereit && m && m.getLayer('gebiete')) { wendeFilterAn(m, gebietIds); zoomeAufGebiete(m, daten.current, gebietIds) }
   }, [bereit, gebietIds])
 
   return <div ref={container} className="h-full w-full" role="region" aria-label="Karte der Ziele" />
@@ -122,4 +124,15 @@ function wendeFilterAn(m: MlMap, gebietIds: string[]) {
   m.setFilter('gebiete', ['all', ['==', ['get', 'typ'], 'gebiet'], ['in', ['get', 'id'], ['literal', ids]]])
   m.setFilter('gebiete-label', ['all', ['==', ['get', 'typ'], 'gebiet'], ['in', ['get', 'id'], ['literal', ids]]])
   m.setFilter('huetten', ['all', ['==', ['get', 'typ'], 'huette'], ['in', ['get', 'gebietId'], ['literal', ids]]])
+}
+
+/** Kartenausschnitt auf Startort und sichtbare Gebiete legen, damit z.B. eine Suche nach "Schwarzwald" dorthin springt. */
+function zoomeAufGebiete(m: MlMap, fc: KarteGeoJson | null, gebietIds: string[]) {
+  if (!fc || gebietIds.length === 0) return
+  const ids = new Set(gebietIds)
+  const grenzen = new LngLatBounds(OFFENBURG, OFFENBURG)
+  for (const f of fc.features) {
+    if (f.properties.typ === 'gebiet' && ids.has(f.properties.id)) grenzen.extend(f.geometry.coordinates)
+  }
+  m.fitBounds(grenzen, { padding: 48, maxZoom: 9.5, duration: 600 })
 }

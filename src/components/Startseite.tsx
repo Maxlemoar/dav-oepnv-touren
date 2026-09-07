@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from 'react'
 import dynamic from 'next/dynamic'
 import { filtereGebiete, leseFilter, schreibeFilter, STANDARD_FILTER, type FilterZustand, type GebietEintrag } from '@/lib/filter'
 import { naechsterSamstag, tageDifferenz } from '@/lib/datum'
@@ -70,6 +70,7 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
   // Ab lg ist die Karte immer sichtbar; auf dem Handy nach dem ersten Öffnen, danach bleibt sie montiert.
   const breit = useSyncExternalStore(abonniereBreit, () => window.matchMedia(LG).matches, () => false)
   const [einmalGeoeffnet, setEinmalGeoeffnet] = useState(false)
+  const karteAbschnitt = useRef<HTMLElement>(null)
   const karteMontieren = montiert && (breit || karteOffen || einmalGeoeffnet)
 
   const naechte = tageDifferenz(datum, rueck)
@@ -129,12 +130,22 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
           {sichtbar.map((g) => <GebietKarte key={g.id} g={g} tagesziel={uebersicht[g.id]} laedt={laedt} naechte={naechte} />)}
           {sichtbar.length === 0 && <p className="text-tinte-2">Nichts gefunden. Filter lockern oder Fahrzeit erhöhen.</p>}
         </section>
-        <section className={`${karteOffen ? 'block' : 'hidden'} h-[70dvh] overflow-hidden rounded-[var(--radius-karte)] border border-linie lg:sticky lg:top-20 lg:block lg:h-[calc(100dvh-6rem)]`}>
+        <section ref={karteAbschnitt} className={`${karteOffen ? 'block' : 'hidden'} h-[70dvh] overflow-hidden rounded-[var(--radius-karte)] border border-linie lg:sticky lg:top-20 lg:block lg:h-[calc(100dvh-6rem)]`}>
           {karteMontieren ? <Karte gebietIds={sichtbar.map((g) => g.id)} uebersicht={uebersicht} /> : KARTE_SKELETON}
         </section>
       </div>
 
-      <button type="button" onClick={() => { setKarteOffen(!karteOffen); if (!karteOffen) setEinmalGeoeffnet(true) }} aria-pressed={karteOffen}
+      <button type="button" onClick={() => {
+          const oeffnen = !karteOffen
+          setKarteOffen(oeffnen)
+          if (oeffnen) {
+            setEinmalGeoeffnet(true)
+            // Karte liegt unter den Filtern; nach dem Einblenden dorthin scrollen, damit niemand suchen muss.
+            requestAnimationFrame(() => karteAbschnitt.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }
+        }} aria-pressed={karteOffen}
         className="knopf fixed bottom-4 left-1/2 z-30 -translate-x-1/2 shadow-lg lg:hidden">
         {karteOffen ? 'Liste' : 'Karte'}
       </button>
