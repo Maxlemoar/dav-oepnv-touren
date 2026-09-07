@@ -23,12 +23,14 @@ const rueck: Itinerary[] = [
 describe('verbindungErmitteln', () => {
   it('liefert live Hinfahrt, Rückfahrt, Tourenfenster und Tagesziel', async () => {
     const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin))
-    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets }, { planen })
     expect(a.quelle).toBe('live')
     expect(a.hinfahrt?.ab).toBe('2026-09-12T04:30:00Z')
     expect(a.rueckfahrt?.ab).toBe('2026-09-12T16:14:00Z')
     expect(a.tourenfensterMin).toBe(454) // 10:40 bis 18:14
     expect(a.tagesziel).toBe(false) // Ankunft 10:40 ist nach 10:00
+    expect(a.naechte).toBe(0)
+    expect(a.rueckfahrtDatum).toBe('2026-09-12')
     expect(a.ticket).toEqual({ ticket: 'halbtax', hinweis: 'CH' })
     // Hinfahrt: Abfahrt ab 05:00 lokal = 03:00Z im Sommer; Rückfahrt: Ankunft bis 23:00 lokal = 21:00Z
     expect(planen.mock.calls[0][0]).toMatchObject({ von: 'de:og', nach: 'ch:ka', zeit: '2026-09-12T03:00:00Z', ankunftBis: false, anzahl: 12 })
@@ -37,24 +39,39 @@ describe('verbindungErmitteln', () => {
 
   it('fragt die Hinfahrt im Winter ab 04:00Z ab (05:00 CET)', async () => {
     const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin))
-    await verbindungErmitteln({ startort, haltestelle, datum: '2026-01-10', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    await verbindungErmitteln({ startort, haltestelle, datum: '2026-01-10', rueckfahrtDatum: '2026-01-10', mindestFensterMin: 360, tickets }, { planen })
     expect(planen.mock.calls[0][0]).toMatchObject({ zeit: '2026-01-10T04:00:00Z', ankunftBis: false })
     expect(planen.mock.calls[1][0]).toMatchObject({ zeit: '2026-01-10T22:00:00Z', ankunftBis: true })
   })
 
   it('fragt Rückfahrt am Folgetag ab und setzt kein Tagesziel-Urteil', async () => {
     const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck.map((r) => ({ ...r, startTime: r.startTime.replace('12T', '13T'), endTime: r.endTime.replace('12T', '13T') })) : hin))
-    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrt: 'folgetag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrtDatum: '2026-09-13', mindestFensterMin: 360, tickets }, { planen })
     expect(planen.mock.calls[1][0]).toMatchObject({ zeit: '2026-09-13T21:00:00Z' })
     expect(a.rueckfahrt?.ab).toBe('2026-09-13T16:14:00Z')
+    expect(a.rueckfahrtDatum).toBe('2026-09-13')
+    expect(a.naechte).toBe(1)
+    expect(a.tagesziel).toBeUndefined()
+    expect(a.tourenfensterMin).toBeUndefined()
+  })
+
+  it('rechnet zwei Nächte von Freitag bis Sonntag', async () => {
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck.map((r) => ({ ...r, startTime: r.startTime.replace('12T', '13T'), endTime: r.endTime.replace('12T', '13T') })) : hin.map((h) => ({ ...h, startTime: h.startTime.replace('12T', '11T'), endTime: h.endTime.replace('12T', '11T') }))))
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-11', rueckfahrtDatum: '2026-09-13', mindestFensterMin: 360, tickets }, { planen })
+    expect(planen.mock.calls[0][0]).toMatchObject({ zeit: '2026-09-11T03:00:00Z', ankunftBis: false })
+    expect(planen.mock.calls[1][0]).toMatchObject({ zeit: '2026-09-13T21:00:00Z', ankunftBis: true })
+    expect(a.datum).toBe('2026-09-11')
+    expect(a.rueckfahrtDatum).toBe('2026-09-13')
+    expect(a.naechte).toBe(2)
     expect(a.tagesziel).toBeUndefined()
     expect(a.tourenfensterMin).toBeUndefined()
   })
 
   it('fällt auf den Richtwert zurück, wenn Transitous fehlschlägt', async () => {
     const planen = vi.fn(async () => { throw new TransitousFehler('503', 503) })
-    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets }, { planen })
     expect(a.quelle).toBe('richtwert')
+    expect(a.naechte).toBe(0)
     expect(a.richtwert?.fahrzeitMin).toBe(250)
     expect(a.hinfahrt).toBeUndefined()
     expect(a.ticket.ticket).toBe('halbtax')
@@ -63,7 +80,7 @@ describe('verbindungErmitteln', () => {
   it('nimmt im Fallback das Ticket aus dem Richtwert', async () => {
     const de: Haltestelle = { ...haltestelle, land: 'DE', richtwerte: { offenburg: { ...haltestelle.richtwerte.offenburg, ticket: 'keins' } } }
     const planen = vi.fn(async () => { throw new TransitousFehler('503', 503) })
-    const a = await verbindungErmitteln({ startort, haltestelle: de, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle: de, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets }, { planen })
     expect(a.quelle).toBe('richtwert')
     expect(a.ticket).toEqual({ ticket: 'keins', hinweis: 'Fern' })
   })
@@ -71,7 +88,7 @@ describe('verbindungErmitteln', () => {
   it('nutzt im Fallback ohne Richtwert die Tabelle', async () => {
     const ohne: Haltestelle = { ...haltestelle, richtwerte: {} }
     const planen = vi.fn(async () => { throw new TransitousFehler('503', 503) })
-    const a = await verbindungErmitteln({ startort, haltestelle: ohne, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle: ohne, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets }, { planen })
     expect(a.richtwert).toBeUndefined()
     expect(a.ticket).toEqual({ ticket: 'halbtax', hinweis: 'CH' })
   })
@@ -81,7 +98,7 @@ describe('verbindungErmitteln', () => {
       if (p.ankunftBis) throw new TransitousFehler('Transitous HTTP 503', 503)
       return hin
     })
-    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets }, { planen })
     expect(a.quelle).toBe('live')
     expect(a.hinfahrt?.ab).toBe('2026-09-12T04:30:00Z')
     expect(a.rueckfahrt).toBeUndefined()
@@ -95,7 +112,7 @@ describe('verbindungErmitteln', () => {
       if (!p.ankunftBis) throw new TransitousFehler('Transitous HTTP 503', 503)
       return rueck
     })
-    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets }, { planen })
     expect(a.quelle).toBe('live')
     expect(a.hinfahrt).toBeUndefined()
     expect(a.rueckfahrt?.ab).toBe('2026-09-12T16:14:00Z')
@@ -105,7 +122,7 @@ describe('verbindungErmitteln', () => {
   it('Fernverkehr in DE ergibt Ticket keins, wenn es keine Nahverkehrsalternative gibt', async () => {
     const de: Haltestelle = { ...haltestelle, land: 'DE' }
     const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin.filter(hatFernverkehr)))
-    const a = await verbindungErmitteln({ startort, haltestelle: de, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle: de, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets }, { planen })
     expect(a.hinfahrt?.ab).toBe('2026-09-12T04:30:00Z')
     expect(a.ticket).toEqual({ ticket: 'keins', hinweis: 'Fern' })
   })
@@ -113,7 +130,7 @@ describe('verbindungErmitteln', () => {
   it('in DE wird die Nahverkehrsverbindung bevorzugt und das Deutschlandticket empfohlen', async () => {
     const de: Haltestelle = { ...haltestelle, land: 'DE' }
     const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin))
-    const a = await verbindungErmitteln({ startort, haltestelle: de, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle: de, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets }, { planen })
     expect(a.hinfahrt?.ab).toBe('2026-09-12T04:12:00Z')
     expect(a.hinfahrt?.fernverkehr).toBe(false)
     expect(a.ticket).toEqual({ ticket: 'deutschlandticket', hinweis: 'DE' })
@@ -121,7 +138,7 @@ describe('verbindungErmitteln', () => {
 
   it('in CH bleibt die schnellste Verbindung trotz Nahverkehrsalternative', async () => {
     const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin))
-    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrt: 'gleicher-tag', mindestFensterMin: 360, tickets }, { planen })
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets }, { planen })
     expect(a.hinfahrt?.ab).toBe('2026-09-12T04:30:00Z')
   })
 })

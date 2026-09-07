@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
 import type { Land } from '@/lib/content/schema'
-import { datumLesbar, lokaleUhrzeit, minutenAlsDauer, wochentagKurz } from '@/lib/datum'
-import { verbindungParameter } from '@/lib/verbindung/parameter'
+import { datumKurz, lokaleUhrzeit, minutenAlsDauer, tageDifferenz, wochentagKurz } from '@/lib/datum'
+import { zeitraumAusUrl } from '@/lib/verbindung/parameter'
+import { naechteText } from '@/lib/zeitraum'
 import { fahrplanLink } from '@/lib/links'
 import { TageszielBadge, TicketBadge } from './Badges'
 import { VerbindungDetail } from './VerbindungDetail'
@@ -12,28 +13,38 @@ import { VerbindungDetail } from './VerbindungDetail'
 type Props = {
   von: { id: string; name: string }
   nach: { id: string; name: string; land: Land }
-  rueckfahrt: 'gleicher-tag' | 'folgetag'
+  /** Hütte 1 (Rückfahrt frühestens am Folgetag), Gebiet 0. */
+  mindestNaechte: 0 | 1
   /** Gehzeit bis zur Hütte, für "an der Hütte gegen …" */
   zustiegMin?: number
 }
 
-export function VerbindungZeile({ von, nach, rueckfahrt, zustiegMin }: Props) {
+export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin }: Props) {
   const sp = useSearchParams()
-  const { datum, fenster } = verbindungParameter(sp)
+  const { datum, rueck, fenster } = zeitraumAusUrl(sp, mindestNaechte)
   // Antwort wird mit ihrer Anfrage gespeichert; passt sie nicht mehr, zeigt die Zeile das Skeleton.
-  const anfrage = new URLSearchParams({ von: von.id, nach: nach.id, datum, rueckfahrt, fenster: String(fenster) }).toString()
+  const anfrage = new URLSearchParams({ von: von.id, nach: nach.id, datum, rueck, fenster: String(fenster) }).toString()
   const [geladen, setGeladen] = useState<{ anfrage: string; antwort: VerbindungAntwort } | null>(null)
   const [offen, setOffen] = useState(false)
   const antwort = geladen?.anfrage === anfrage ? geladen.antwort : null
 
   useEffect(() => {
     let aktiv = true
-    // Das Datum steckt in der Anfrage; für den Fallback dort wieder herauslesen.
-    const datumAnfrage = new URLSearchParams(anfrage).get('datum')!
+    // Der Zeitraum steckt in der Anfrage; für den Fallback dort wieder herauslesen.
+    const q = new URLSearchParams(anfrage)
+    const datumAnfrage = q.get('datum')!
+    const rueckAnfrage = q.get('rueck')!
     fetch(`/api/verbindung?${anfrage}`)
       .then((r) => r.json())
       .then((a: VerbindungAntwort) => { if (aktiv) setGeladen({ anfrage, antwort: a }) })
-      .catch(() => { if (aktiv) setGeladen({ anfrage, antwort: { quelle: 'richtwert', datum: datumAnfrage, rueckfahrtDatum: datumAnfrage, ticket: { ticket: 'keins', hinweis: '' } } }) })
+      .catch(() => {
+        if (!aktiv) return
+        const antwort: VerbindungAntwort = {
+          quelle: 'richtwert', datum: datumAnfrage, rueckfahrtDatum: rueckAnfrage,
+          naechte: tageDifferenz(datumAnfrage, rueckAnfrage), ticket: { ticket: 'keins', hinweis: '' },
+        }
+        setGeladen({ anfrage, antwort })
+      })
     return () => { aktiv = false }
   }, [anfrage])
 
@@ -78,12 +89,13 @@ export function VerbindungZeile({ von, nach, rueckfahrt, zustiegMin }: Props) {
       <div className="flex flex-wrap items-center gap-2 text-sm text-tinte-2">
         <span>{minutenAlsDauer(h.dauerMin)}, {h.umstiege === 0 ? 'direkt' : `${h.umstiege} ${h.umstiege === 1 ? 'Umstieg' : 'Umstiege'}`}</span>
         {ankunftHuette && <span>· an der Hütte gegen <span className="zahl">{lokaleUhrzeit(ankunftHuette)}</span></span>}
+        {mindestNaechte >= 1 && antwort.naechte >= 1 && <span>· {naechteText(antwort.naechte)}</span>}
         <TageszielBadge tagesziel={antwort.tagesziel} />
         <TicketBadge ticket={antwort.ticket.ticket} />
       </div>
       {antwort.rueckfahrt && (
         <div className="text-sm text-tinte-2">
-          Rückfahrt {datumLesbar(antwort.rueckfahrtDatum)}: <span className="zahl">{lokaleUhrzeit(antwort.rueckfahrt.ab)}</span> ab {nach.name},{' '}
+          Rückfahrt {datumKurz(antwort.rueckfahrtDatum)}: <span className="zahl">{lokaleUhrzeit(antwort.rueckfahrt.ab)}</span> ab {nach.name},{' '}
           <span className="zahl">{lokaleUhrzeit(antwort.rueckfahrt.an)}</span> in {von.name}
           {antwort.tourenfensterMin !== undefined && <> · <span className="zahl">{minutenAlsDauer(antwort.tourenfensterMin)}</span> am Berg</>}
         </div>

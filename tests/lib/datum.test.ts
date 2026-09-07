@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { lokaleMinuten, lokaleUhrzeit, lokalesDatum, naechsterSamstag, folgetag, zuUtcIso, wochentagKurz, minutenAlsDauer } from '@/lib/datum'
+import { lokaleMinuten, lokaleUhrzeit, lokalesDatum, naechsterSamstag, folgetag, tageAddieren, tageDifferenz, zuUtcIso, wochentagKurz, minutenAlsDauer, datumKurz } from '@/lib/datum'
 
 describe('lokaleMinuten', () => {
   it('rechnet Sommerzeit um (UTC+2)', () => {
@@ -32,6 +32,24 @@ describe('naechsterSamstag', () => {
 describe('folgetag', () => {
   it('über Monatsgrenze', () => {
     expect(folgetag('2026-09-30')).toBe('2026-10-01')
+  })
+})
+
+describe('tageAddieren / tageDifferenz', () => {
+  it('addiert auch negativ und über Jahresgrenzen', () => {
+    expect(tageAddieren('2026-01-01', -1)).toBe('2025-12-31')
+    expect(tageAddieren('2026-09-12', 2)).toBe('2026-09-14')
+  })
+  it('zählt Nächte zwischen zwei Daten', () => {
+    expect(tageDifferenz('2026-09-12', '2026-09-12')).toBe(0)
+    expect(tageDifferenz('2026-09-11', '2026-09-13')).toBe(2)
+    expect(tageDifferenz('2026-10-24', '2026-10-26')).toBe(2) // über die Zeitumstellung
+  })
+})
+
+describe('datumKurz', () => {
+  it('Wochentag mit Tag und Monat ohne Jahr', () => {
+    expect(datumKurz('2026-09-13')).toBe('So 13.9.')
   })
 })
 

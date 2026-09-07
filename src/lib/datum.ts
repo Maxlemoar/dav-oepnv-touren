@@ -31,10 +31,15 @@ export function lokalesDatum(iso: string | Date): string {
   return `${t.jahr}-${t.monat}-${t.tag}`
 }
 
-function tageAddieren(datum: string, tage: number): string {
+export function tageAddieren(datum: string, tage: number): string {
   const d = new Date(`${datum}T00:00:00Z`)
   d.setUTCDate(d.getUTCDate() + tage)
   return d.toISOString().slice(0, 10)
+}
+
+/** Kalendertage von `von` bis `bis` (Nächte dazwischen); negativ, wenn `bis` vor `von` liegt. */
+export function tageDifferenz(von: string, bis: string): number {
+  return Math.round((Date.parse(`${bis}T00:00:00Z`) - Date.parse(`${von}T00:00:00Z`)) / 86_400_000)
 }
 
 export function folgetag(datum: string): string {
@@ -77,4 +82,10 @@ export function minutenAlsDauer(min: number): string {
 export function datumLesbar(datum: string): string {
   const [j, m, t] = datum.split('-')
   return `${wochentagKurz(datum)} ${Number(t)}.${Number(m)}.${j}`
+}
+
+/** "So 13.9." ohne Jahr, für Zeilen, in denen das Jahr klar ist. */
+export function datumKurz(datum: string): string {
+  const [, m, t] = datum.split('-')
+  return `${wochentagKurz(datum)} ${Number(t)}.${Number(m)}.`
 }

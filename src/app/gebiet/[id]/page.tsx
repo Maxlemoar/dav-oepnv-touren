@@ -48,7 +48,7 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
             <div key={hid} className="karte-card space-y-3">
               <div className="font-medium">Bis {h.name}</div>
               <Suspense fallback={<div className="skeleton h-6 w-3/4" />}>
-                <VerbindungZeile von={{ id: startort.id, name: startort.name }} nach={{ id: h.id, name: h.name, land: h.land }} rueckfahrt="gleicher-tag" />
+                <VerbindungZeile von={{ id: startort.id, name: startort.name }} nach={{ id: h.id, name: h.name, land: h.land }} mindestNaechte={0} />
               </Suspense>
               {r && <Co2Zeile kg={co2ErsparnisKg({ strassenKm: r.strassenKm, bahnKm: r.bahnKm }, i.emissionen)} />}
             </div>

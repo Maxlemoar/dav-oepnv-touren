@@ -16,7 +16,7 @@ async function main() {
   for (const id of ZIELE) {
     const h = findeHaltestelle(i, id)
     if (!h) { console.warn(`WARN ${id}: Haltestelle fehlt im Inhalt`); warnungen++; continue }
-    const a = await verbindungErmitteln({ startort, haltestelle: h, datum, rueckfahrt: 'gleicher-tag', mindestFensterMin: TAGESZIEL.mindestFensterMin, tickets: i.tickets })
+    const a = await verbindungErmitteln({ startort, haltestelle: h, datum, rueckfahrtDatum: datum, mindestFensterMin: TAGESZIEL.mindestFensterMin, tickets: i.tickets })
     if (a.quelle !== 'live' || !a.hinfahrt) { console.warn(`WARN ${id}: ${a.fehler ?? 'keine Hinfahrt im Fenster'}`); warnungen++; continue }
     const rueck = a.rueckfahrt ? `zurück ab ${lokaleUhrzeit(a.rueckfahrt.ab)}` : 'keine Rückfahrt'
     console.log(`OK   ${id}: ab ${lokaleUhrzeit(a.hinfahrt.ab)}, an ${lokaleUhrzeit(a.hinfahrt.an)}, ${a.hinfahrt.umstiege} Umstiege, ${rueck}, Tagesziel ${a.tagesziel ?? '?'}, ${a.ticket.ticket}${a.fehler ? ` (${a.fehler})` : ''}`)

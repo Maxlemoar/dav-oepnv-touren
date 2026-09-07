@@ -1,11 +1,11 @@
 import { describe, it, expect, vi } from 'vitest'
 import { parseVerbindungParameter } from '@/lib/verbindung/parameter'
 import { GET } from '@/app/api/verbindung/route'
-import type { VerbindungAntwort } from '@/lib/verbindung/service'
+import { verbindungErmitteln, type VerbindungAntwort } from '@/lib/verbindung/service'
 
 vi.mock('@/lib/verbindung/service', () => ({
   verbindungErmitteln: vi.fn(async (): Promise<VerbindungAntwort> => ({
-    quelle: 'richtwert', datum: '2026-09-12', rueckfahrtDatum: '2026-09-12',
+    quelle: 'richtwert', datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', naechte: 0,
     ticket: { ticket: 'halbtax', hinweis: 'CH' }, fehler: 'Test',
   })),
 }))
@@ -13,12 +13,21 @@ vi.mock('@/lib/verbindung/service', () => ({
 describe('parseVerbindungParameter', () => {
   it('liest gültige Parameter mit Standardwerten', () => {
     const p = parseVerbindungParameter(new URLSearchParams('von=offenburg&nach=kandersteg&datum=2026-09-12'))
-    expect(p).toEqual({ ok: true, wert: { von: 'offenburg', nach: 'kandersteg', datum: '2026-09-12', rueckfahrt: 'gleicher-tag', fenster: 360 } })
+    expect(p).toEqual({ ok: true, wert: { von: 'offenburg', nach: 'kandersteg', datum: '2026-09-12', rueck: '2026-09-12', fenster: 360 } })
   })
-  it('akzeptiert folgetag und fenster', () => {
-    const p = parseVerbindungParameter(new URLSearchParams('von=offenburg&nach=kandersteg&datum=2026-09-12&rueckfahrt=folgetag&fenster=240'))
-    expect(p.ok && p.wert.rueckfahrt).toBe('folgetag')
+  it('akzeptiert rueck und fenster', () => {
+    const p = parseVerbindungParameter(new URLSearchParams('von=offenburg&nach=kandersteg&datum=2026-09-12&rueck=2026-09-13&fenster=240'))
+    expect(p.ok && p.wert.rueck).toBe('2026-09-13')
     expect(p.ok && p.wert.fenster).toBe(240)
+  })
+  it('lehnt rueck vor datum ab', () => {
+    const p = parseVerbindungParameter(new URLSearchParams('von=offenburg&nach=kandersteg&datum=2026-09-12&rueck=2026-09-11'))
+    expect(p.ok).toBe(false)
+    expect(!p.ok && p.fehler).toMatch(/rueck/)
+  })
+  it('lehnt ein ungültiges rueck ab', () => {
+    const p = parseVerbindungParameter(new URLSearchParams('von=offenburg&nach=kandersteg&datum=2026-09-12&rueck=13.09.2026'))
+    expect(p.ok).toBe(false)
   })
   it('lehnt falsches Datum ab', () => {
     const p = parseVerbindungParameter(new URLSearchParams('von=offenburg&nach=kandersteg&datum=12.09.2026'))
@@ -39,6 +48,22 @@ describe('GET /api/verbindung', () => {
     const r = await GET(new Request('http://x/api/verbindung?von=offenburg&datum=2026-09-12'))
     expect(r.status).toBe(400)
     expect((await r.json()).fehler).toMatch(/nach/)
+  })
+  it('antwortet 400 bei rueck vor datum', async () => {
+    const r = await GET(new Request('http://x/api/verbindung?von=offenburg&nach=kandersteg&datum=2026-09-12&rueck=2026-09-11'))
+    expect(r.status).toBe(400)
+    expect((await r.json()).fehler).toMatch(/rueck/)
+  })
+  it('reicht rueck als rueckfahrtDatum an den Dienst durch', async () => {
+    vi.mocked(verbindungErmitteln).mockClear()
+    const r = await GET(new Request('http://x/api/verbindung?von=offenburg&nach=kandersteg&datum=2026-09-11&rueck=2026-09-13'))
+    expect(r.status).toBe(200)
+    expect(vi.mocked(verbindungErmitteln).mock.calls[0][0]).toMatchObject({ datum: '2026-09-11', rueckfahrtDatum: '2026-09-13' })
+  })
+  it('setzt rueckfahrtDatum ohne rueck auf das Datum', async () => {
+    vi.mocked(verbindungErmitteln).mockClear()
+    await GET(new Request('http://x/api/verbindung?von=offenburg&nach=kandersteg&datum=2026-09-12'))
+    expect(vi.mocked(verbindungErmitteln).mock.calls[0][0]).toMatchObject({ datum: '2026-09-12', rueckfahrtDatum: '2026-09-12' })
   })
   it('antwortet 404 bei unbekannter Haltestelle', async () => {
     const r = await GET(new Request('http://x/api/verbindung?von=offenburg&nach=nirgendwo&datum=2026-09-12'))

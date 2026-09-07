@@ -16,7 +16,7 @@ export async function GET(req: Request) {
   const i = inhalt()
   const startort = findeStartort(i, p.wert.von)
   if (!startort) return NextResponse.json({ fehler: 'Startort unbekannt' }, { status: 404 })
-  const { datum, fenster } = p.wert
+  const { datum, rueck, fenster } = p.wert
 
   const start = Date.now()
   const ergebnis: Record<string, VerbindungAntwort> = {}
@@ -27,7 +27,7 @@ export async function GET(req: Request) {
       const haltestelle = findeHaltestelle(i, g.haltestellen[0])
       if (!haltestelle) continue
       ergebnis[g.id] = await verbindungErmitteln({
-        startort, haltestelle, datum, rueckfahrt: 'gleicher-tag', mindestFensterMin: fenster, tickets: i.tickets,
+        startort, haltestelle, datum, rueckfahrtDatum: rueck, mindestFensterMin: fenster, tickets: i.tickets,
       })
     }
   }

@@ -60,7 +60,7 @@ export default async function HuetteSeite({ params }: { params: Promise<{ id: st
                 </p>
               </div>
               <Suspense fallback={<div className="skeleton h-6 w-3/4" />}>
-                <VerbindungZeile von={{ id: startort.id, name: startort.name }} nach={{ id: h.id, name: h.name, land: h.land }} rueckfahrt="folgetag" zustiegMin={z.gehzeitMin} />
+                <VerbindungZeile von={{ id: startort.id, name: startort.name }} nach={{ id: h.id, name: h.name, land: h.land }} mindestNaechte={1} zustiegMin={z.gehzeitMin} />
               </Suspense>
               {r && <Co2Zeile kg={co2ErsparnisKg({ strassenKm: r.strassenKm, bahnKm: r.bahnKm }, i.emissionen)} />}
             </div>

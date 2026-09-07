@@ -13,7 +13,7 @@ export async function GET(req: Request) {
   const haltestelle = findeHaltestelle(i, p.wert.nach)
   if (!startort || !haltestelle) return NextResponse.json({ fehler: 'Startort oder Haltestelle unbekannt' }, { status: 404 })
   const antwort = await verbindungErmitteln({
-    startort, haltestelle, datum: p.wert.datum, rueckfahrt: p.wert.rueckfahrt,
+    startort, haltestelle, datum: p.wert.datum, rueckfahrtDatum: p.wert.rueck,
     mindestFensterMin: p.wert.fenster, tickets: i.tickets,
   })
   return NextResponse.json(antwort, { headers: { 'Cache-Control': CACHE_CONTROL } })
