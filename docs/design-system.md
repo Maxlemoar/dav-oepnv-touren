@@ -6,13 +6,17 @@ Eine Farbe trägt Bedeutung, sonst Grau- und Papiertöne.
 ## Grundsätze
 
 1. **Mobile first.** Alles wird für 360 px Breite entworfen und wächst ab 640 px (sm) und 1024 px (lg).
-   Auf dem Handy ist die Liste der Normalfall, die Karte ein Knopf. Ab lg stehen Liste und Karte nebeneinander.
-2. **Eine Spalte, klare Reihenfolge.** Versprechen, Suche, Zeitraum, Filter, Ergebnisse. Keine Sidebar auf dem Handy.
+   Auf dem Handy ist die Liste der Normalfall, die Karte ein Segment in der Steuerleiste. Ab lg stehen Liste und Karte nebeneinander.
+2. **Eine Spalte, klare Reihenfolge.** Versprechen, Suche, Steuerleiste (Zeitraum, Filter, Ansicht), Ergebnisse. Keine Sidebar auf dem Handy.
+   Details zu Zeitraum und Filter liegen in Sheets, nicht auf der Seite.
 3. **Berührbar.** Jedes Bedienelement mindestens 44 px hoch. Chips 36 px mit 8 px Abstand. Keine Hover-only-Funktionen.
 4. **Farbe heißt etwas.** Grün bis Orange ist Reisezeit. Signalfarbe nur für Handlungen und das Tagesziel-Urteil.
    Betreiberfarben (DAV, SAC) nur als kleines Symbol, nie als Fläche.
 5. **Zahlen zuerst.** Fahrzeit, Umstiege, Tourenfenster stehen fett am Anfang der Zeile. Prosa danach.
 6. **Wartezustände sind ehrlich.** Skeleton beim Laden, klarer Hinweis beim Richtwert-Fallback, nie leere Fläche.
+7. **Ergebnisse über der Falz.** Auf 390 px Breite ist die erste Ergebniskarte ohne Scrollen sichtbar: Kopf inkl. Suchfeld
+   höchstens ca. 190 px (Titel eine Zeile, Untertitel eine Zeile, Suchfeld 44 px), darunter die 57 px hohe Steuerleiste,
+   dann sofort die Empfehlungsleiste und die Karten. Die Seite lädt zum Stöbern ein, nicht zum Formularausfüllen.
 
 ## Farben (Tokens in globals.css)
 
@@ -39,7 +43,7 @@ Geist Sans (self-hosted über next/font), Fallback system-ui. Basis 16 px, Zeile
 
 | Stil | Größe | Gewicht | Verwendung |
 |---|---|---|---|
-| titel | 28 px / lg 36 px | 600 | Seitentitel |
+| titel | 24 px / sm 36 px | 600 | Seitentitel |
 | h2 | 22 px | 600 | Abschnitte |
 | h3 | 18 px | 600 | Kartentitel |
 | text | 16 px | 400 | Fließtext |
@@ -58,8 +62,12 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
 - **Karte (Card)**: weiß, Radius 14, 16 px Innenabstand, Titel + Meta-Zeile + Verbindungszeile. Ganze Karte ist Link.
 - **Badge**: 24 px hoch, Radius 999. Varianten: stufe (Reisezeit), tagesziel (signal), ticket (nebel), betreiber (Symbol + Text).
 - **Verbindungszeile**: eine Zeile fett mit Zahlen, darunter Meta. Aufklappbar zu Abschnitten.
-- **Zeitraum**: zwei native Datumsfelder "Hin" und "Zurück" (Labels klein in tinte-3, je halbe Breite auf dem Handy) in Karte-Weiß, darunter Chips "Sa", "So", "Wochenende" (Sa→So) und "Fr–So" für das kommende Wochenende. "Zurück" liegt nie vor "Hin"; das Select "Mindestens am Berg" erscheint nur bei Hin- und Rückfahrt am selben Tag.
-- **Kartenknopf**: auf dem Handy fest unten mittig (`fixed bottom-4`), 48 px hoch, tanne mit weißem Text.
+- **Steuerleiste**: eine Zeile, sticky unter dem Header (`sticky top-14`), bg-papier/95 mit backdrop-blur und Trennlinie unten, 56 px + 1 px hoch, horizontal scrollbar. Links die Pills Zeitraum und Filter, rechts das Segment Liste | Karte (nur unter lg). Muss direktes Kind des Ergebnis-Containers sein, sonst trägt sticky nicht.
+- **Pill**: 40 px hoch, Radius 999, Rahmen linie auf Karte-Weiß, Symbol + Text, `aria-haspopup="dialog"`. Zeitraum-Pill zeigt "Sa 12.9." oder "Sa 12.9. – So 13.9." (`zeitraumText`), Filter-Pill trägt einen tanne-Zähler (`anzahlAktiverFilter`: Sportarten + Art + Fahrzeit ≠ 5 h + Fenster ≠ 6 h) als kleines Badge.
+- **Sheet**: natives `<dialog>` mit `showModal()`. Auf dem Handy von unten (rounded-t-2xl, max-h 85dvh, Griff-Linie), ab sm zentriert (max-w-md, rounded-2xl). Backdrop tinte/50, Klick darauf und Esc schließen, Body-Scroll gesperrt, Fokus auf dem ersten Bedienelement. Kopf mit Titel, Body scrollbar, unten "Fertig" (knopf, volle Breite) und optional ein sekundärer Knopf. Auswahl wirkt sofort im Hintergrund, "Fertig" schließt nur.
+- **Sheet "Wann?"**: 2×2-Raster großer Chips Sa / So / Wochenende / Fr–So (44 px, Datum klein als zweite Zeile), darunter aufklappbar "Anderes Datum" mit den Feldern Hin und Zurück ("Zurück" liegt nie vor "Hin"), darunter "Mindestens am Berg" als Chip-Reihe 3 / 4 / 5 / 6 / 8 h, nur bei gleichem Tag aktiv, sonst ausgegraut mit Hinweis.
+- **Sheet "Was?"**: Art-Segment (Alle / Tagestour / Mit Hütte), Sportart-Chips, Fahrzeit-Chips, unten "Zurücksetzen" (sekundär) neben "Fertig".
+- **Empfehlungsleiste**: einzeilig in tanne-tint, Label fett, Links nebeneinander, horizontal scrollbar. Ersetzt den Kasten.
 - **Skeleton**: nebel-Fläche mit `animate-pulse`, gleiche Höhe wie die spätere Zeile.
 
 ## Verhalten

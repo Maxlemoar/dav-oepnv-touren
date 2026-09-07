@@ -41,10 +41,10 @@ export default function Start() {
     })
 
   return (
-    <div className="space-y-3">
-      <section className="space-y-3">
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">In die Berge, ohne Auto.</h1>
-        <p className="text-tinte-2">Hütten und Tourengebiete, die du von {startort.name} aus mit Bahn und Bus erreichst. Mit echter Verbindung für dein Datum.</p>
+    <div>
+      <section className="mb-3">
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-4xl">In die Berge, ohne Auto.</h1>
+        <p className="mt-1 text-sm text-tinte-2 sm:text-base">Hütten und Touren ab {startort.name} mit Bahn und Bus.</p>
       </section>
       <Startseite
         startort={{ id: startort.id, name: startort.name }}
@@ -52,13 +52,14 @@ export default function Start() {
         suchEintraege={suchEintraege}
         empfehlungen={empfehlungen.length > 0 && (
           // key: als Prop übergebene Elemente landen im Client in einer Kinderliste; ohne key warnt React.
-          <section key="empfehlungen" className="rounded-[var(--radius-karte)] bg-tanne-tint p-4">
-            <h2 className="text-sm font-semibold text-tanne">Häuser der Sektion Offenburg</h2>
-            <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-              {empfehlungen.map((e) => (
-                <li key={e.id}><Link href={`/huette/${e.id}`} className="text-tanne underline">{e.name}</Link> <span className="text-tinte-2">{e.meta}</span></li>
-              ))}
-            </ul>
+          <section key="empfehlungen" aria-label="Häuser der Sektion Offenburg"
+            className="flex items-center gap-x-3 overflow-x-auto whitespace-nowrap rounded-[var(--radius-karte)] bg-tanne-tint px-3 py-1 text-sm [scrollbar-width:none]">
+            <span className="shrink-0 font-semibold text-tanne">Sektion Offenburg:</span>
+            {empfehlungen.map((e) => (
+              <Link key={e.id} href={`/huette/${e.id}`} className="inline-flex min-h-9 shrink-0 items-center gap-1 text-tanne underline">
+                {e.name}{e.meta && <span className="text-tinte-2">{e.meta}</span>}
+              </Link>
+            ))}
           </section>
         )}
       />

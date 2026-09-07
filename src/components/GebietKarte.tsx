@@ -17,21 +17,25 @@ export function GebietKarte({ g, tagesziel, laedt, naechte }: Props) {
   return (
     <Link href={`/gebiet/${g.id}`} className="karte-card no-underline hover:shadow-md">
       <div className="flex items-start justify-between gap-3">
-        <h3 className="text-lg font-semibold">{g.name}</h3>
-        {g.fahrzeitMin !== undefined ? <ReisezeitBadge fahrzeitMin={g.fahrzeitMin} ca /> : <span className="badge bg-nebel">Fahrzeit offen</span>}
+        <h3 className="text-lg font-semibold leading-snug">{g.name}</h3>
+        <span className="shrink-0 pt-0.5">
+          {g.fahrzeitMin !== undefined ? <ReisezeitBadge fahrzeitMin={g.fahrzeitMin} ca /> : <span className="badge bg-nebel">Fahrzeit offen</span>}
+        </span>
       </div>
       <p className="mt-1 line-clamp-2 text-sm text-tinte-2">{g.beschreibung}</p>
-      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-tinte-3">
+      <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-tinte-3">
         {g.umstiege !== undefined && <span>{g.umstiege} Umstiege</span>}
         {g.anzahlHuetten > 0 && <span>· {g.anzahlHuetten} {g.anzahlHuetten === 1 ? 'Hütte' : 'Hütten'}</span>}
         <span>· {g.region}</span>
         <span>· {g.sportarten.map((s) => SPORTART_LABEL[s]).join(', ')}</span>
       </div>
-      <div className="mt-2 flex flex-wrap items-center gap-2">
-        {tagestour && (laedt ? <span className="skeleton h-6 w-24" /> : <TageszielBadge tagesziel={tagesziel} />)}
-        {g.ticket && <TicketBadge ticket={g.ticket} />}
-      </div>
-      {!tagestour && g.anzahlHuetten > 0 && <p className="mt-2 text-xs text-tinte-3">{naechteText(naechte)}</p>}
+      {(tagestour || g.ticket) && (
+        <div className="mt-1.5 flex flex-wrap items-center gap-2">
+          {tagestour && (laedt ? <span className="skeleton h-6 w-24" /> : <TageszielBadge tagesziel={tagesziel} />)}
+          {g.ticket && <TicketBadge ticket={g.ticket} />}
+        </div>
+      )}
+      {!tagestour && g.anzahlHuetten > 0 && <p className="mt-1.5 text-xs text-tinte-3">{naechteText(naechte)}</p>}
     </Link>
   )
 }

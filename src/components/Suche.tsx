@@ -91,10 +91,10 @@ export function Suche({ eintraege, wert, onChange }: { eintraege: SuchEintrag[];
         placeholder="Wohin willst du? Hütte oder Gebiet" aria-label="Ziel suchen" autoComplete="off"
         role="combobox" aria-expanded={listeSichtbar} aria-controls={listeId} aria-autocomplete="list"
         aria-activedescendant={listeSichtbar && aktiv >= 0 ? optionId(aktiv) : undefined}
-        className="min-h-12 w-full rounded-[var(--radius-karte)] border border-linie bg-karte px-4 text-base shadow-[var(--shadow-karte)]" />
+        className="h-11 w-full rounded-[var(--radius-karte)] border border-linie bg-karte px-4 text-base shadow-[var(--shadow-karte)]" />
       {listeSichtbar && (
         <ul id={listeId} role="listbox" aria-label="Treffer"
-          className="absolute z-10 mt-1 w-full overflow-hidden rounded-[var(--radius-karte)] border border-linie bg-karte shadow-md">
+          className="absolute z-[15] mt-1 w-full overflow-hidden rounded-[var(--radius-karte)] border border-linie bg-karte shadow-md">
           {treffer.map((t, n) => (
             <li key={`${t.typ}-${t.id}`} role="none">
               <Link href={`/${t.typ}/${t.id}`} id={optionId(n)} role="option" aria-selected={n === aktiv}

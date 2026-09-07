@@ -41,7 +41,11 @@
   }
   .chip-aktiv { @apply border-tanne bg-tanne-tint text-tanne font-medium; }
   .karte-card { @apply block rounded-[var(--radius-karte)] bg-karte p-4 shadow-[var(--shadow-karte)]; }
-  .badge { @apply inline-flex h-6 items-center rounded-full px-2 text-xs font-medium; }
+  .badge { @apply inline-flex h-6 items-center whitespace-nowrap rounded-full px-2 text-xs font-medium; }
+  .pill {
+    @apply inline-flex h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-linie bg-karte px-3 text-sm font-medium text-tinte transition-colors hover:border-tanne;
+  }
+  .pill-zaehler { @apply inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-tanne px-1.5 text-xs font-semibold text-white; }
   .knopf { @apply inline-flex min-h-11 items-center justify-center rounded-[var(--radius-knopf)] bg-tanne px-4 font-medium text-white hover:bg-tanne-hell; }
   .knopf-sekundaer { @apply inline-flex min-h-11 items-center justify-center rounded-[var(--radius-knopf)] border border-linie bg-karte px-4 font-medium text-tinte hover:border-tanne; }
   .zahl { @apply font-semibold tabular-nums; }
