@@ -2,8 +2,17 @@
 import { useEffect, useId, useRef, useState, type FocusEvent, type KeyboardEvent } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { passtZurSuche } from '@/lib/filter'
 
-export type SuchEintrag = { id: string; name: string; typ: 'gebiet' | 'huette'; meta: string }
+export type SuchEintrag = {
+  id: string
+  name: string
+  typ: 'gebiet' | 'huette'
+  /** Kurzinfo rechts im Vorschlag: Region beim Gebiet, "Gebiet · Höhe" bei der Hütte. */
+  meta: string
+  /** Zusätzlich durchsuchter Text (Region, bei Hütten auch der Gebietsname). */
+  suchtext?: string
+}
 
 const VERZOEGERUNG_MS = 250
 
@@ -44,8 +53,8 @@ export function Suche({ eintraege, wert, onChange }: { eintraege: SuchEintrag[];
     timer.current = setTimeout(() => sende(v), VERZOEGERUNG_MS)
   }
 
-  const q = text.trim().toLowerCase()
-  const treffer = q ? eintraege.filter((e) => e.name.toLowerCase().includes(q)).slice(0, 8) : []
+  const q = text.trim()
+  const treffer = q ? eintraege.filter((e) => passtZurSuche(`${e.name} ${e.suchtext ?? ''}`, q)).slice(0, 8) : []
   const listeSichtbar = offen && treffer.length > 0
   const optionId = (n: number) => `${listeId}-${n}`
 

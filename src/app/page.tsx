@@ -14,16 +14,22 @@ export default function Start() {
       const h = findeHaltestelle(i, g.haltestellen[0])!
       const r = h.richtwerte[startort.id]
       return {
-        id: g.id, name: g.name, beschreibung: g.beschreibung, sportarten: g.sportarten, saison: g.saison,
+        id: g.id, name: g.name, region: h.region, beschreibung: g.beschreibung, sportarten: g.sportarten, saison: g.saison,
         fahrzeitMin: r?.fahrzeitMin, umstiege: r?.umstiege, takt: r?.takt, ticket: r?.ticket,
         anzahlHuetten: huettenImGebiet(i, g.id).length, lat: g.lat, lon: g.lon, hauptHaltestelleId: h.id,
       }
     })
     .sort((a, b) => (a.fahrzeitMin ?? 9999) - (b.fahrzeitMin ?? 9999))
 
+  const regionVonGebiet = new Map(gebiete.map((g) => [g.id, g.region]))
+  const nameVonGebiet = new Map(i.gebiete.map((g) => [g.id, g.name]))
   const suchEintraege: SuchEintrag[] = [
-    ...i.gebiete.map((g) => ({ id: g.id, name: g.name, typ: 'gebiet' as const, meta: 'Gebiet' })),
-    ...i.huetten.map((h) => ({ id: h.id, name: h.name, typ: 'huette' as const, meta: `${h.hoehe} m` })),
+    ...gebiete.map((g) => ({ id: g.id, name: g.name, typ: 'gebiet' as const, meta: g.region, suchtext: g.region })),
+    ...i.huetten.map((h) => {
+      const gebiet = nameVonGebiet.get(h.gebietId) ?? ''
+      const region = regionVonGebiet.get(h.gebietId) ?? ''
+      return { id: h.id, name: h.name, typ: 'huette' as const, meta: `${gebiet} · ${h.hoehe} m`, suchtext: `${gebiet} ${region}` }
+    }),
   ]
 
   const empfehlungen = i.huetten

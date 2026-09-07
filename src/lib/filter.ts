@@ -3,6 +3,8 @@ import { SportartSchema, type Sportart, type Saison, type Takt, type Ticket } fr
 export type GebietEintrag = {
   id: string
   name: string
+  /** Region der Hauptzugangs-Haltestelle, z. B. "Südschwarzwald". */
+  region: string
   beschreibung: string
   sportarten: Sportart[]
   saison: Saison
@@ -41,14 +43,26 @@ export function schreibeFilter(sp: URLSearchParams, f: FilterZustand): URLSearch
   return neu
 }
 
+/** Kleinbuchstaben ohne Diakritika: "Südschwarzwald" -> "sudschwarzwald". */
+function normalisiere(text: string): string {
+  return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+}
+
+/** Alle Suchwörter (durch Leerzeichen getrennt) müssen im Text vorkommen; ohne Groß/Klein und Diakritika. Leere Suche passt immer. */
+export function passtZurSuche(text: string, suche: string): boolean {
+  const woerter = normalisiere(suche).split(/\s+/).filter(Boolean)
+  if (woerter.length === 0) return true
+  const t = normalisiere(text)
+  return woerter.every((w) => t.includes(w))
+}
+
 /** uebersicht: gebietId -> tagesziel (true/false), fehlt = noch nicht geladen */
 export function filtereGebiete(gebiete: GebietEintrag[], f: FilterZustand, uebersicht: Record<string, boolean | undefined>): GebietEintrag[] {
-  const q = f.suche.trim().toLowerCase()
   return gebiete
     .filter((g) => (g.fahrzeitMin ?? 0) <= f.maxStd * 60)
     .filter((g) => f.sport.length === 0 || f.sport.some((s) => g.sportarten.includes(s)))
     .filter((g) => f.art !== 'tag' || uebersicht[g.id] !== false)
     .filter((g) => f.art !== 'nacht' || g.anzahlHuetten > 0)
-    .filter((g) => !q || g.name.toLowerCase().includes(q))
+    .filter((g) => passtZurSuche(`${g.name} ${g.region} ${g.beschreibung}`, f.suche))
     .sort((a, b) => (a.fahrzeitMin ?? 9999) - (b.fahrzeitMin ?? 9999))
 }

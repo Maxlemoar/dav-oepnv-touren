@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
-import { filtereGebiete, leseFilter, schreibeFilter, type GebietEintrag } from '@/lib/filter'
+import { filtereGebiete, leseFilter, passtZurSuche, schreibeFilter, type GebietEintrag } from '@/lib/filter'
 
 const g = (id: string, extra: Partial<GebietEintrag> = {}): GebietEintrag => ({
-  id, name: id, beschreibung: '', sportarten: ['wandern'], saison: 'sommer', fahrzeitMin: 200, anzahlHuetten: 1,
+  id, name: id, region: '', beschreibung: '', sportarten: ['wandern'], saison: 'sommer', fahrzeitMin: 200, anzahlHuetten: 1,
   lat: 0, lon: 0, hauptHaltestelleId: id, ...extra,
 })
 
@@ -48,6 +48,33 @@ describe('filtereGebiete', () => {
   it('Suche im Namen, ohne Groß/Klein', () => {
     expect(filtereGebiete(gebiete, { sport: [], art: 'alle', maxStd: 5, suche: 'B' }, {}).map((x) => x.id)).toEqual(['b'])
   })
+  describe('Suche in Region und Beschreibung', () => {
+    const suche = (q: string, liste: GebietEintrag[]) => filtereGebiete(liste, { sport: [], art: 'alle', maxStd: 5, suche: q }, {}).map((x) => x.id)
+    const schwarzwald = [
+      g('kinzigtal', { name: 'Kinzigtal', region: 'Mittlerer Schwarzwald', beschreibung: 'Sanfte Höhen im mittleren Schwarzwald.' }),
+      g('feldberg', { name: 'Feldberg-Gebiet', region: 'Südschwarzwald', beschreibung: 'Rund um den höchsten Gipfel des Schwarzwalds.' }),
+      g('hochstrasse', { name: 'Schwarzwaldhochstraße', region: 'Nordschwarzwald', beschreibung: '' }),
+      g('alpstein', { name: 'Alpstein', region: 'Alpstein', beschreibung: 'Säntis und Seealpsee.' }),
+      g('grindelwald', { name: 'Grindelwald', region: 'Berner Oberland', beschreibung: 'Eiger-Nordwand vor der Tür.' }),
+    ]
+    it('trifft die Region', () => {
+      expect(suche('schwarzwald', schwarzwald)).toEqual(['kinzigtal', 'feldberg', 'hochstrasse'])
+    })
+    it('trifft die Beschreibung', () => {
+      expect(suche('höchsten gipfel', schwarzwald)).toEqual(['feldberg'])
+    })
+    it('mehrere Suchwörter müssen alle treffen', () => {
+      expect(suche('berner oberland', schwarzwald)).toEqual(['grindelwald'])
+      expect(suche('berner schwarzwald', schwarzwald)).toEqual([])
+    })
+    it('Name ohne Groß/Klein', () => {
+      expect(suche('alpstein', schwarzwald)).toEqual(['alpstein'])
+    })
+    it('diakritik-tolerant', () => {
+      expect(suche('sudschwarzwald', schwarzwald)).toEqual(['feldberg'])
+      expect(suche('Südschwarzwald', schwarzwald)).toEqual(['feldberg'])
+    })
+  })
 })
 
 describe('maxStd 99', () => {
@@ -59,5 +86,17 @@ describe('maxStd 99', () => {
     const weit = { ...g('z', { fahrzeitMin: 330 }) }
     expect(filtereGebiete([weit], { sport: [], art: 'alle', maxStd: 5, suche: '' }, {})).toHaveLength(0)
     expect(filtereGebiete([weit], { sport: [], art: 'alle', maxStd: 99, suche: '' }, {})).toHaveLength(1)
+  })
+})
+
+describe('passtZurSuche', () => {
+  it('leere Suche passt immer', () => {
+    expect(passtZurSuche('irgendwas', '')).toBe(true)
+    expect(passtZurSuche('irgendwas', '   ')).toBe(true)
+  })
+  it('ohne Groß/Klein und Diakritik, alle Wörter', () => {
+    expect(passtZurSuche('Lötschental', 'lotschen')).toBe(true)
+    expect(passtZurSuche('Feldberg · Südschwarzwald', 'feldberg schwarz')).toBe(true)
+    expect(passtZurSuche('Feldberg · Südschwarzwald', 'feldberg wallis')).toBe(false)
   })
 })
