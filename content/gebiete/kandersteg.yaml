@@ -1,8 +1,13 @@
 id: kandersteg
 name: Kandersteg
 beschreibung: Oeschinensee, Gemmipass und drei SAC-Hütten, alle direkt ab Bahnhof. Der Klassiker unter den ÖV-Zielen im Berner Oberland.
-haltestellen: [kandersteg]
-sportarten: [wandern, hochtour, klettern]
+haltestellen: [ kandersteg ]
+sportarten:
+  - wandern
+  - hochtour
+  - klettern
+  - klettersteig
+  - schneeschuh
 saison: sommer
 touren:
   # Demo, bis Pro+ geklärt: einzige Tour mit `embed`, damit der Platzhalter-Mechanismus sichtbar ist.

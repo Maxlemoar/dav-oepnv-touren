@@ -1,8 +1,12 @@
 id: lenk
 name: Lenk im Simmental
 beschreibung: Wildhorn und Wildstrubel am Ende des Simmentals. Bahn bis Lenk, im Sommer Bus zur Iffigenalp als Ausgangspunkt für Wildhorn- und Wildstrubelhütte.
-haltestellen: [lenk, iffigenalp]
-sportarten: [wandern, hochtour, skitour]
+haltestellen: [ lenk, iffigenalp ]
+sportarten:
+  - wandern
+  - hochtour
+  - skitour
+  - schneeschuh
 saison: ganzjaehrig
 touren:
   - titel: "Iffigenalp – Iffigsee retour"

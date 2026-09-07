@@ -1,8 +1,12 @@
 id: airolo-bedretto
 name: Airolo / Bedretto
 beschreibung: Gotthard-Südseite mit dem Val Bedretto, im Sommer Bus bis All'Acqua und zum Nufenenpass. Pianseccohütte in einer Stunde, Cristallina und Corno Gries als Ziele für Wanderungen und Skitouren, italienisch geprägte Hüttenküche.
-haltestellen: [airolo, all-acqua, ossasco, cruina]
-sportarten: [wandern, hochtour, skitour]
+haltestellen: [ airolo, all-acqua, ossasco, cruina ]
+sportarten:
+  - wandern
+  - hochtour
+  - skitour
+  - schneeschuh
 saison: ganzjaehrig
 touren:
   - titel: "Zustieg zur Capanna Piansecco im Winter (ab All'Acqua)"

@@ -1,8 +1,12 @@
 id: adelboden
 name: Adelboden
 beschreibung: Engstligenalp, Bunderspitz und Lohner. Bus ab Frutigen bis Adelboden Post; die Lohnerhütte ist der einzige SAC-Stützpunkt, der Zustieg ist alpin (T5-).
-haltestellen: [adelboden]
-sportarten: [wandern, skitour, klettersteig]
+haltestellen: [ adelboden ]
+sportarten:
+  - wandern
+  - skitour
+  - klettersteig
+  - hochtour
 saison: ganzjaehrig
 touren:
   - titel: "Sonnenaufgangs-Wanderung Bunderspitz ab Adelboden"
