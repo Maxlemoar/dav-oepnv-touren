@@ -1,6 +1,19 @@
 import { datumKurz } from '@/lib/datum'
 import { STANDARD_FILTER, type FilterZustand } from '@/lib/filter'
 
+/** Liste oder Karte; unter lg schaltet das Segment der Steuerleiste um, ab lg stehen beide nebeneinander. */
+export type Ansicht = 'liste' | 'karte'
+
+/** Ohne Angabe startet die Seite mit der Karte: sie zeigt Lage und Reisezeit auf einen Blick. */
+export const STANDARD_ANSICHT: Ansicht = 'karte'
+
+/** URL schlägt gemerkte Wahl schlägt Standard. Unbekannte Werte werden ignoriert. */
+export function ansichtAus(ausUrl: string | null, gemerkt: string | null): Ansicht {
+  if (ausUrl === 'liste' || ausUrl === 'karte') return ausUrl
+  if (gemerkt === 'liste' || gemerkt === 'karte') return gemerkt
+  return STANDARD_ANSICHT
+}
+
 /** Tourenfenster-Standard "Mindestens am Berg" in Minuten (6 h). */
 export const STANDARD_FENSTER = 360
 

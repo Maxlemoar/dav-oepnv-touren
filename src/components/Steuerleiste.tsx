@@ -1,5 +1,7 @@
 'use client'
-export type Ansicht = 'liste' | 'karte'
+import type { Ansicht } from '@/lib/steuerleiste'
+
+export type { Ansicht }
 
 type Props = {
   /** Beschriftung der Zeitraum-Pill, siehe zeitraumText(). */

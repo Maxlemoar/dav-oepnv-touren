@@ -80,6 +80,18 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
   Auf der Gebietsseite liegt der Tour-Embed hinter `details`/`summary` "Karte anzeigen" über beide Spalten; ein Sammlungs-Embed
   steht offen über den Tour-Cards.
 
+## Ansichten auf dem Handy
+
+- **Karte ist der Standard.** Sie zeigt Lage und Reisezeit auf einen Blick und lädt zum Stöbern ein.
+  Das Segment in der Steuerleiste schaltet auf die Liste um; die Wahl steht in der URL und wird im
+  Browser gemerkt. Server und erste Darstellung liefern die Liste, damit die Ziele auch ohne
+  JavaScript und für Suchmaschinen im HTML stehen.
+- **Kartenansicht füllt den Bildschirm:** eine Spalte über die volle Höhe unter dem Header, Titelzeile
+  ausgeblendet, kein Scrollen nötig.
+- **Ergebnisstreifen** über dem unteren Kartenrand: waagerecht wischbare Karten mit Einrasten, je Karte
+  Name, Reisezeit, Region und Zahl der Hütten und Touren. Die Karte fliegt zum eingerasteten Ziel.
+  Unterer Rand lässt die Kartenlizenz frei. Ab lg entfällt der Streifen, dort steht die Liste daneben.
+
 ## Verhalten
 
 - Zustand (Zeitraum, Filter, Suche) lebt in der URL. Zurück-Taste und Teilen funktionieren.

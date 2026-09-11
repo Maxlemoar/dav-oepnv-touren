@@ -3,13 +3,14 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactN
 import dynamic from 'next/dynamic'
 import { filtereGebiete, leseFilter, schreibeFilter, STANDARD_FILTER, type FilterZustand, type GebietEintrag } from '@/lib/filter'
 import { naechsterSamstag, tageDifferenz } from '@/lib/datum'
-import { anzahlAktiverFilter, STANDARD_FENSTER, zeitraumText } from '@/lib/steuerleiste'
+import { ansichtAus, anzahlAktiverFilter, STANDARD_ANSICHT, STANDARD_FENSTER, zeitraumText, type Ansicht } from '@/lib/steuerleiste'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
 import { verbindungParameter } from '@/lib/verbindung/parameter'
 import { DatumWahl } from './DatumWahl'
 import { Filter } from './Filter'
 import { Sheet } from './Sheet'
-import { Steuerleiste, type Ansicht } from './Steuerleiste'
+import { Steuerleiste } from './Steuerleiste'
+import { Ergebnisstreifen, STREIFEN_PX } from './Ergebnisstreifen'
 import { Suche, type SuchEintrag } from './Suche'
 import { GebietKarte } from './GebietKarte'
 
@@ -24,6 +25,8 @@ type Props = {
   /** Nach Richtwert-Fahrzeit sortiert. */
   gebiete: GebietEintrag[]
   suchEintraege: SuchEintrag[]
+  /** Serverseitig gerenderte Überschrift; in der Kartenansicht auf dem Handy ausgeblendet. */
+  titel: ReactNode
   /** Serverseitig gerenderte Empfehlungsleiste, wird bei aktiver Suche ausgeblendet. */
   empfehlungen: ReactNode
 }
@@ -53,6 +56,15 @@ function schreibeUrl(sp: URLSearchParams) {
 
 const abonniereNichts = () => () => {}
 
+const ANSICHT_SCHLUESSEL = 'ansicht'
+function leseAnsicht(): Ansicht {
+  let gemerkt: string | null = null
+  try { gemerkt = window.localStorage.getItem(ANSICHT_SCHLUESSEL) } catch { /* Speicher gesperrt */ }
+  return ansichtAus(new URLSearchParams(window.location.search).get(ANSICHT_SCHLUESSEL), gemerkt)
+}
+/** Server und Hydration zeigen die Liste, damit die Ziele auch ohne JavaScript im HTML stehen. */
+const leseAnsichtServer = (): Ansicht => 'liste'
+
 const LG = '(min-width: 1024px)'
 function abonniereBreit(cb: () => void) {
   const mq = window.matchMedia(LG)
@@ -60,7 +72,7 @@ function abonniereBreit(cb: () => void) {
   return () => mq.removeEventListener('change', cb)
 }
 
-export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: Props) {
+export function Startseite({ startort, gebiete, suchEintraege, titel, empfehlungen }: Props) {
   const suche = useSyncExternalStore(abonniereUrl, leseUrl, leseUrlServer)
   const { filter, datum, rueck, fenster } = useMemo<Auswahl>(() => {
     if (!suche) {
@@ -70,7 +82,7 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
     const sp = new URLSearchParams(suche)
     return { filter: leseFilter(sp), ...verbindungParameter(sp) }
   }, [suche])
-  const [ansicht, setAnsicht] = useState<Ansicht>('liste')
+  const ansicht = useSyncExternalStore(abonniereUrl, leseAnsicht, leseAnsichtServer)
   const [sheet, setSheet] = useState<SheetName>(null)
   const karteOffen = ansicht === 'karte'
   // Die Karte (ssr: false) erst nach der Hydration rendern, damit im Server-HTML nur das Skeleton steht.
@@ -119,7 +131,10 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
   const onFilter = (f: FilterZustand) => aendere({ filter: f, datum, rueck, fenster })
 
   function zeigeAnsicht(a: Ansicht) {
-    setAnsicht(a)
+    try { window.localStorage.setItem(ANSICHT_SCHLUESSEL, a) } catch { /* Speicher gesperrt */ }
+    const sp = new URLSearchParams(window.location.search)
+    if (a === STANDARD_ANSICHT) sp.delete(ANSICHT_SCHLUESSEL); else sp.set(ANSICHT_SCHLUESSEL, a)
+    schreibeUrl(sp)
     if (a !== 'karte') return
     setEinmalGeoeffnet(true)
     // Die Karte liegt direkt unter der Steuerleiste: so scrollen, dass die Leiste am Header klebt und die Karte den Rest
@@ -129,11 +144,20 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
   }
 
   const sichtbar = filtereGebiete(gebiete, filterWirksam, uebersicht)
+  // Kennung der Trefferliste: setzt den Fokus des Streifens zurück, sobald sich die Treffer ändern.
+  const sichtbareIds = sichtbar.map((g) => g.id)
+  const idsSchluessel = sichtbareIds.join(',')
+  const [fokusZustand, setFokusZustand] = useState<{ schluessel: string; id: string } | null>(null)
+  const fokus = fokusZustand?.schluessel === idsSchluessel ? fokusZustand.id : undefined
+  const randUnten = breit ? 0 : STREIFEN_PX
   // Das Tourenfenster zählt nur, wenn es wirkt (Rückfahrt am selben Tag).
   const anzahlFilter = anzahlAktiverFilter(filterWirksam, tagestourMoeglich ? fenster : STANDARD_FENSTER)
 
   return (
-    <div>
+    // Kartenansicht auf dem Handy: eine Spalte über die volle Höhe unter dem Header, damit die Karte samt
+    // Ergebnisstreifen ohne Scrollen sichtbar ist. Ab lg stehen Liste und Karte wie bisher nebeneinander.
+    <div className={karteOffen ? 'flex h-[calc(100dvh-7rem)] flex-col lg:block lg:h-auto' : undefined}>
+      <div className={karteOffen ? 'hidden lg:block' : undefined}>{titel}</div>
       <Suche eintraege={suchEintraege} wert={filter.suche} onChange={(suche) => onFilter({ ...filter, suche })} />
 
       <div ref={anker} className="h-2" aria-hidden />
@@ -141,7 +165,7 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
       <Steuerleiste zeitraum={zeitraumText(datum, rueck)} anzahlFilter={anzahlFilter} ansicht={ansicht}
         onZeitraum={() => setSheet('wann')} onFilter={() => setSheet('was')} onAnsicht={zeigeAnsicht} />
 
-      <div className="lg:grid lg:grid-cols-[1fr_1fr] lg:gap-6">
+      <div className={`lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-6 ${karteOffen ? 'min-h-0 flex-1 lg:flex-none' : ''}`}>
         <section className={`space-y-3 pt-3 ${karteOffen ? 'hidden lg:block' : ''}`}>
           {!filter.suche && empfehlungen}
           <h2 className="text-sm text-tinte-3">{`${sichtbar.length} ${sichtbar.length === 1 ? 'Ziel' : 'Ziele'}, nach Fahrzeit sortiert`}</h2>
@@ -149,8 +173,9 @@ export function Startseite({ startort, gebiete, suchEintraege, empfehlungen }: P
           {sichtbar.length === 0 && <p className="text-tinte-2">Nichts gefunden. Filter lockern oder Fahrzeit erhöhen.</p>}
         </section>
         {/* Handy: füllt den Bereich unter Header (3.5rem) und Steuerleiste (3.5rem + 1px). Ab lg: sticky rechte Spalte. */}
-        <section className={`${karteOffen ? 'block' : 'hidden'} -mx-4 h-[calc(100dvh-7rem-1px)] overflow-hidden border-b border-linie sm:-mx-6 lg:sticky lg:top-[calc(8rem+1px)] lg:mx-0 lg:mt-3 lg:block lg:h-[calc(100dvh-9rem-1px)] lg:rounded-[var(--radius-karte)] lg:border`}>
-          {karteMontieren ? <Karte gebietIds={sichtbar.map((g) => g.id)} uebersicht={uebersicht} /> : KARTE_SKELETON}
+        <section className={`${karteOffen ? 'block h-full' : 'hidden'} relative -mx-4 overflow-hidden border-b border-linie sm:-mx-6 lg:sticky lg:top-[calc(8rem+1px)] lg:mx-0 lg:mt-3 lg:block lg:h-[calc(100dvh-9rem-1px)] lg:rounded-[var(--radius-karte)] lg:border`}>
+          {karteMontieren ? <Karte gebietIds={sichtbareIds} uebersicht={uebersicht} fokusGebiet={fokus} randUnten={randUnten} /> : KARTE_SKELETON}
+          {karteMontieren && <Ergebnisstreifen gebiete={sichtbar} onFokus={(id) => setFokusZustand({ schluessel: idsSchluessel, id })} />}
         </section>
       </div>
 

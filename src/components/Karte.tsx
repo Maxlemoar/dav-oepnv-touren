@@ -12,10 +12,17 @@ setWorkerUrl('/maplibre/maplibre-gl-worker.mjs')
 const OFFENBURG: [number, number] = [7.946, 48.476]
 const OHNE_STUFE = '#7a8078'
 
-type Props = { gebietIds: string[]; uebersicht: Record<string, boolean | undefined> }
+type Props = {
+  gebietIds: string[]
+  uebersicht: Record<string, boolean | undefined>
+  /** Gebiet, auf das die Karte fliegt (aus dem Ergebnisstreifen); ohne Wert bleibt der Ausschnitt. */
+  fokusGebiet?: string
+  /** Vom Ergebnisstreifen verdeckte Höhe in Pixeln; Punkte bleiben darüber. */
+  randUnten?: number
+}
 
 /** MapLibre-Karte mit Gebieten (Farbe nach Reisezeitstufe) und Hütten ab Zoom 9; Daten aus /karte.json. */
-export function Karte({ gebietIds, uebersicht }: Props) {
+export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0 }: Props) {
   const container = useRef<HTMLDivElement>(null)
   const karte = useRef<MlMap | null>(null)
   const daten = useRef<KarteGeoJson | null>(null)
@@ -111,10 +118,23 @@ export function Karte({ gebietIds, uebersicht }: Props) {
     }
   }, [])
 
+  const gebietSchluessel = gebietIds.join(',')
   useEffect(() => {
     const m = karte.current
-    if (bereit && m && m.getLayer('gebiete')) { wendeFilterAn(m, gebietIds); zoomeAufGebiete(m, daten.current, gebietIds) }
-  }, [bereit, gebietIds])
+    if (!bereit || !m || !m.getLayer('gebiete')) return
+    const ids = gebietSchluessel ? gebietSchluessel.split(',') : []
+    wendeFilterAn(m, ids)
+    zoomeAufGebiete(m, daten.current, ids, randUnten)
+  }, [bereit, gebietSchluessel, randUnten])
+
+  useEffect(() => {
+    const m = karte.current
+    if (!bereit || !m || !fokusGebiet) return
+    const f = daten.current?.features.find((x) => x.properties.typ === 'gebiet' && x.properties.id === fokusGebiet)
+    if (!f) return
+    // Ziel um die halbe Streifenhöhe nach oben versetzen, damit es nicht hinter den Karten liegt.
+    m.flyTo({ center: f.geometry.coordinates, zoom: Math.max(m.getZoom(), 8.5), offset: [0, -randUnten / 2], duration: 500 })
+  }, [bereit, fokusGebiet, randUnten])
 
   return <div ref={container} className="h-full w-full" role="region" aria-label="Karte der Ziele" />
 }
@@ -127,12 +147,12 @@ function wendeFilterAn(m: MlMap, gebietIds: string[]) {
 }
 
 /** Kartenausschnitt auf Startort und sichtbare Gebiete legen, damit z.B. eine Suche nach "Schwarzwald" dorthin springt. */
-function zoomeAufGebiete(m: MlMap, fc: KarteGeoJson | null, gebietIds: string[]) {
+function zoomeAufGebiete(m: MlMap, fc: KarteGeoJson | null, gebietIds: string[], randUnten: number) {
   if (!fc || gebietIds.length === 0) return
   const ids = new Set(gebietIds)
   const grenzen = new LngLatBounds(OFFENBURG, OFFENBURG)
   for (const f of fc.features) {
     if (f.properties.typ === 'gebiet' && ids.has(f.properties.id)) grenzen.extend(f.geometry.coordinates)
   }
-  m.fitBounds(grenzen, { padding: 48, maxZoom: 9.5, duration: 600 })
+  m.fitBounds(grenzen, { padding: { top: 48, right: 48, bottom: 48 + randUnten, left: 48 }, maxZoom: 9.5, duration: 600 })
 }
