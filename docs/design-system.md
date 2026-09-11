@@ -16,7 +16,7 @@ Eine Farbe trägt Bedeutung, sonst Grau- und Papiertöne.
 6. **Wartezustände sind ehrlich.** Skeleton beim Laden, klarer Hinweis beim Richtwert-Fallback, nie leere Fläche.
 7. **Ergebnisse über der Falz.** Auf 390 px Breite ist die erste Ergebniskarte ohne Scrollen sichtbar: Kopf inkl. Suchfeld
    höchstens ca. 190 px (Titel eine Zeile, Untertitel eine Zeile, Suchfeld 44 px), darunter die 57 px hohe Steuerleiste,
-   dann sofort die Empfehlungsleiste und die Karten. Die Seite lädt zum Stöbern ein, nicht zum Formularausfüllen.
+   dann sofort die Ergebnisse. Die Seite lädt zum Stöbern ein, nicht zum Formularausfüllen.
 
 ## Farben (Tokens in globals.css)
 
@@ -67,7 +67,8 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
 - **Sheet**: natives `<dialog>` mit `showModal()`. Auf dem Handy von unten (rounded-t-2xl, max-h 85dvh, Griff-Linie), ab sm zentriert (max-w-md, rounded-2xl). Backdrop tinte/50, Klick darauf und Esc schließen, Body-Scroll gesperrt, Fokus auf dem ersten Bedienelement. Kopf mit Titel, Body scrollbar, unten "Fertig" (knopf, volle Breite) und optional ein sekundärer Knopf. Auswahl wirkt sofort im Hintergrund, "Fertig" schließt nur.
 - **Sheet "Wann?"**: 2×2-Raster großer Chips Sa / So / Wochenende / Fr–So (44 px, Datum klein als zweite Zeile), darunter aufklappbar "Anderes Datum" mit den Feldern Hin und Zurück ("Zurück" liegt nie vor "Hin"), darunter "Mindestens am Berg" als Chip-Reihe 3 / 4 / 5 / 6 / 8 h, nur bei gleichem Tag aktiv, sonst ausgegraut mit Hinweis.
 - **Sheet "Was?"**: Art-Segment (Alle / Tagestour / Mit Hütte), Sportart-Chips, Fahrzeit-Chips, unten "Zurücksetzen" (sekundär) neben "Fertig".
-- **Empfehlungsleiste**: einzeilig in tanne-tint, Label fett, Links nebeneinander, horizontal scrollbar. Ersetzt den Kasten.
+- **Badge "Haus der Sektion"**: tanne-tint mit tanne-Text auf Gebieten, in denen ein Haus der eigenen Sektion steht;
+  auf der Karte ein dunkler Ring um den Punkt, im Popup als Zeile. Keine Dauerleiste über den Ergebnissen.
 - **Skeleton**: nebel-Fläche mit `animate-pulse`, gleiche Höhe wie die spätere Zeile.
 - **Tour-Card**: Card ohne Ganzflächen-Link; der Titel ist der Link zum Portal (neuer Tab). Darunter eine Meta-Zeile mit
   Punkt-Trennern in fester Reihenfolge (Sportart · Dauer h:mm · Höhenmeter · Länge · Schwierigkeit), nur belegte Werte.

@@ -14,6 +14,8 @@ export type GebietEintrag = {
   ticket?: Ticket
   anzahlHuetten: number
   anzahlTouren: number
+  /** Im Gebiet steht ein Haus der eigenen Sektion. */
+  sektionshaus: boolean
   lat: number
   lon: number
   hauptHaltestelleId: string

@@ -50,3 +50,21 @@ describe('popupHtml', () => {
     expect(html).not.toContain('Tagesziel')
   })
 })
+
+describe('Häuser der eigenen Sektion', () => {
+  it('markiert Gebiete mit einem Haus der Sektion Offenburg', () => {
+    const i = ladeInhalt(FIX)
+    const ohne = karteGeoJson(i, 'offenburg').features.find((f) => f.properties.typ === 'gebiet')!
+    expect(ohne.properties).toMatchObject({ sektionshaus: false })
+
+    const mit = karteGeoJson(
+      { ...i, huetten: [{ ...i.huetten[0], betreiber: { typ: 'dav', sektion: 'Offenburg' } }] },
+      'offenburg',
+    ).features.find((f) => f.properties.typ === 'gebiet')!
+    expect(mit.properties).toMatchObject({ sektionshaus: true })
+  })
+  it('nennt das Haus der Sektion im Popup', () => {
+    expect(popupHtml('/gebiet/x', { typ: 'gebiet', name: 'X', sektionshaus: true }, undefined)).toContain('Haus der Sektion')
+    expect(popupHtml('/gebiet/x', { typ: 'gebiet', name: 'X', sektionshaus: false }, undefined)).not.toContain('Haus der Sektion')
+  })
+})

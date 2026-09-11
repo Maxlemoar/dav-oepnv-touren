@@ -151,6 +151,13 @@ export type Huette = z.infer<typeof HuetteSchema>
 export type TicketTabelle = z.infer<typeof TicketTabelleSchema>
 export type Emissionen = z.infer<typeof EmissionenSchema>
 
+/** Sektion, deren Häuser auf der Seite hervorgehoben werden. */
+export const EIGENE_SEKTION = 'Offenburg'
+
+export function istSektionshaus(h: Huette): boolean {
+  return h.betreiber.typ === 'dav' && h.betreiber.sektion === EIGENE_SEKTION
+}
+
 export const SPORTART_LABEL: Record<Sportart, string> = {
   wandern: 'Wandern', hochtour: 'Hochtour', skitour: 'Skitour',
   klettern: 'Klettern', klettersteig: 'Klettersteig', schneeschuh: 'Schneeschuh',

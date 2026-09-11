@@ -60,6 +60,7 @@ export function Ergebnisstreifen({ gebiete, onFokus }: Props) {
               <span>{g.region}</span>
               {g.anzahlHuetten > 0 && <span>· {g.anzahlHuetten} {g.anzahlHuetten === 1 ? 'Hütte' : 'Hütten'}</span>}
               {g.anzahlTouren > 0 && <span>· {g.anzahlTouren} {g.anzahlTouren === 1 ? 'Tour' : 'Touren'}</span>}
+              {g.sektionshaus && <span className="font-medium text-tanne">· Haus der Sektion</span>}
             </div>
             <p className="mt-1 truncate text-sm text-tinte-2">{g.beschreibung}</p>
           </Link>

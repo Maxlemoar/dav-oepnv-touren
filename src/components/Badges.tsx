@@ -25,6 +25,11 @@ export function TageszielBadge({ tagesziel }: { tagesziel: boolean | undefined }
     : <span className="badge bg-nebel text-tinte-2">Besser mit Übernachtung</span>
 }
 
+/** Markiert Gebiete mit einem Haus der eigenen Sektion. */
+export function SektionshausBadge() {
+  return <span className="badge bg-tanne-tint text-tanne">Haus der Sektion</span>
+}
+
 export function TicketBadge({ ticket }: { ticket: Ticket }) {
   return <span className="badge bg-nebel text-tinte-2">{TICKET_LABEL[ticket]}</span>
 }

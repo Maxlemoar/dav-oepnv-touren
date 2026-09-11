@@ -61,6 +61,16 @@ export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0 }: Pro
         id: 'start', type: 'circle', source: 'start',
         paint: { 'circle-radius': 7, 'circle-color': '#1b1f1c', 'circle-stroke-color': '#fff', 'circle-stroke-width': 2 },
       })
+      // Dunkler Ring hinter dem Punkt markiert Gebiete mit einem Haus der Sektion; das Popup nennt es im Klartext.
+      // Eigene Ebene statt Rahmenfarbe, weil ein dunkler Rahmen auf dunkelgrüner Füllung verschwimmt.
+      m.addLayer({
+        id: 'gebiete-sektion', type: 'circle', source: 'ziele',
+        filter: ['all', ['==', ['get', 'typ'], 'gebiet'], ['==', ['get', 'sektionshaus'], true]],
+        paint: {
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 13, 10, 20],
+          'circle-color': '#1b1f1c',
+        },
+      })
       m.addLayer({
         id: 'gebiete', type: 'circle', source: 'ziele', filter: ['==', ['get', 'typ'], 'gebiet'],
         paint: {
@@ -86,7 +96,7 @@ export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0 }: Pro
         m.on('click', ebene, (e: MapLayerMouseEvent) => {
           const f = e.features?.[0]
           if (!f || f.geometry.type !== 'Point') return
-          const p = f.properties as Record<string, string | number | null>
+          const p = f.properties as Record<string, string | number | boolean | null>
           const pfad = p.typ === 'gebiet' ? `/gebiet/${p.id}` : `/huette/${p.id}`
           const popup = new Popup({ offset: 12, closeButton: false })
             .setLngLat(f.geometry.coordinates as [number, number])
@@ -121,7 +131,7 @@ export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0 }: Pro
   const gebietSchluessel = gebietIds.join(',')
   useEffect(() => {
     const m = karte.current
-    if (!bereit || !m || !m.getLayer('gebiete')) return
+    if (!bereit || !m || !m.getLayer('gebiete') || !m.getLayer('gebiete-sektion')) return
     const ids = gebietSchluessel ? gebietSchluessel.split(',') : []
     wendeFilterAn(m, ids)
     zoomeAufGebiete(m, daten.current, ids, randUnten)
@@ -142,6 +152,7 @@ export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0 }: Pro
 function wendeFilterAn(m: MlMap, gebietIds: string[]) {
   const ids = gebietIds.length ? gebietIds : ['__keine__']
   m.setFilter('gebiete', ['all', ['==', ['get', 'typ'], 'gebiet'], ['in', ['get', 'id'], ['literal', ids]]])
+  m.setFilter('gebiete-sektion', ['all', ['==', ['get', 'typ'], 'gebiet'], ['==', ['get', 'sektionshaus'], true], ['in', ['get', 'id'], ['literal', ids]]])
   m.setFilter('gebiete-label', ['all', ['==', ['get', 'typ'], 'gebiet'], ['in', ['get', 'id'], ['literal', ids]]])
   m.setFilter('huetten', ['all', ['==', ['get', 'typ'], 'huette'], ['in', ['get', 'gebietId'], ['literal', ids]]])
 }

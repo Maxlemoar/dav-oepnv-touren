@@ -27,8 +27,6 @@ type Props = {
   suchEintraege: SuchEintrag[]
   /** Serverseitig gerenderte Überschrift; in der Kartenansicht auf dem Handy ausgeblendet. */
   titel: ReactNode
-  /** Serverseitig gerenderte Empfehlungsleiste, wird bei aktiver Suche ausgeblendet. */
-  empfehlungen: ReactNode
 }
 
 type Auswahl = { filter: FilterZustand; datum: string; rueck: string; fenster: number }
@@ -72,7 +70,7 @@ function abonniereBreit(cb: () => void) {
   return () => mq.removeEventListener('change', cb)
 }
 
-export function Startseite({ startort, gebiete, suchEintraege, titel, empfehlungen }: Props) {
+export function Startseite({ startort, gebiete, suchEintraege, titel }: Props) {
   const suche = useSyncExternalStore(abonniereUrl, leseUrl, leseUrlServer)
   const { filter, datum, rueck, fenster } = useMemo<Auswahl>(() => {
     if (!suche) {
@@ -167,7 +165,6 @@ export function Startseite({ startort, gebiete, suchEintraege, titel, empfehlung
 
       <div className={`lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-6 ${karteOffen ? 'min-h-0 flex-1 lg:flex-none' : ''}`}>
         <section className={`space-y-3 pt-3 ${karteOffen ? 'hidden lg:block' : ''}`}>
-          {!filter.suche && empfehlungen}
           <h2 className="text-sm text-tinte-3">{`${sichtbar.length} ${sichtbar.length === 1 ? 'Ziel' : 'Ziele'}, nach Fahrzeit sortiert`}</h2>
           {sichtbar.map((g) => <GebietKarte key={g.id} g={g} tagesziel={uebersicht[g.id]} laedt={laedt} naechte={naechte} />)}
           {sichtbar.length === 0 && <p className="text-tinte-2">Nichts gefunden. Filter lockern oder Fahrzeit erhöhen.</p>}

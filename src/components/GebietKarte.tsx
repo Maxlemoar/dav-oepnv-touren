@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { SPORTART_LABEL } from '@/lib/content/schema'
 import type { GebietEintrag } from '@/lib/filter'
 import { naechteText } from '@/lib/zeitraum'
-import { ReisezeitBadge, TageszielBadge, TicketBadge } from './Badges'
+import { ReisezeitBadge, SektionshausBadge, TageszielBadge, TicketBadge } from './Badges'
 
 type Props = {
   g: GebietEintrag
@@ -30,8 +30,9 @@ export function GebietKarte({ g, tagesziel, laedt, naechte }: Props) {
         <span>· {g.region}</span>
         <span>· {g.sportarten.map((s) => SPORTART_LABEL[s]).join(', ')}</span>
       </div>
-      {(tagestour || g.ticket) && (
+      {(tagestour || g.ticket || g.sektionshaus) && (
         <div className="mt-1.5 flex flex-wrap items-center gap-2">
+          {g.sektionshaus && <SektionshausBadge />}
           {tagestour && (laedt ? <span className="skeleton h-6 w-24" /> : <TageszielBadge tagesziel={tagesziel} />)}
           {g.ticket && <TicketBadge ticket={g.ticket} />}
         </div>
