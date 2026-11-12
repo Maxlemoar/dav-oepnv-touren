@@ -36,6 +36,7 @@ npm run bahn-ids                   # bahn.de-Bahnhofsdaten (Feld `bahn`) für St
 npm run bahn-ids -- --alle         # … für alle neu; --nur <id> für einen Eintrag. Ohne `bahn` fällt der Buchungslink auf eine Namenssuche zurück
 npm run pruefliste                 # docs/pruefliste.md für den Arbeitskreis
 npm run rauchtest                  # 5 Live-Abfragen, warnt nur
+npm run audit                      # vollständige Prüfung: Verbindungen, Hütten, Touren, Links (dauert etwa 45 min)
 ```
 
 Ungültige Inhalte brechen den Build mit Dateiname und Feld.

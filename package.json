@@ -16,7 +16,8 @@
     "bahn-ids": "tsx scripts/bahn-ids.ts",
     "prebuild": "tsx scripts/maplibre-worker.ts && tsx scripts/karte.ts",
     "maplibre-worker": "tsx scripts/maplibre-worker.ts",
-    "predev": "tsx scripts/maplibre-worker.ts && tsx scripts/karte.ts"
+    "predev": "tsx scripts/maplibre-worker.ts && tsx scripts/karte.ts",
+    "audit": "tsx scripts/audit.ts"
   },
   "dependencies": {
     "maplibre-gl": "^6.7.0",

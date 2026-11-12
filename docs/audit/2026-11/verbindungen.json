@@ -1,0 +1,3358 @@
+[
+  {
+    "id": "abzw-voralp",
+    "name": "Göschenen, Abzw. Voralp",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 296,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "adelboden",
+    "name": "Adelboden, Post",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 240,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:02",
+      "min": 254,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:51",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:02",
+      "min": 297,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "airolo",
+    "name": "Airolo",
+    "land": "CH",
+    "region": "Tessin / Bedretto",
+    "richtwertMin": 271,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:01",
+      "min": 271,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "17:57",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "13:01",
+      "min": 356,
+      "umstiege": 2
+    }
+  },
+  {
+    "id": "all-acqua",
+    "name": "All'Acqua",
+    "land": "CH",
+    "region": "Tessin / Bedretto",
+    "richtwertMin": 295,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:25",
+      "min": 295,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "17:35",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "alpnachstad",
+    "name": "Alpnachstad",
+    "land": "CH",
+    "region": "Zentralschweiz",
+    "richtwertMin": 178,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "09:28",
+      "min": 178,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "19:29",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "10:58",
+      "min": 233,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "andermatt",
+    "name": "Andermatt",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 276,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:06",
+      "min": 276,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "17:50",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "13:06",
+      "min": 361,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "appenzell",
+    "name": "Appenzell",
+    "land": "CH",
+    "region": "Alpstein (Appenzell)",
+    "richtwertMin": 272,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "10:28",
+      "min": 272,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:00",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "arth-goldau",
+    "name": "Arth-Goldau",
+    "land": "CH",
+    "region": "Zentralschweiz",
+    "richtwertMin": 191,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:16",
+      "min": 208,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "19:15",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:11",
+      "min": 246,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "bachheim",
+    "name": "Bachheim Bahnhof",
+    "land": "DE",
+    "region": "Hochschwarzwald",
+    "richtwertMin": 131,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "08:07",
+      "min": 131,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:07",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "bad-griesbach",
+    "name": "Bad Griesbach Bahnhof",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 48,
+    "richtwertUmstiege": 0,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:00",
+      "an": "05:48",
+      "min": 48,
+      "umstiege": 0
+    },
+    "winterRueckSo": {
+      "ab": "22:01",
+      "an": "22:48"
+    }
+  },
+  {
+    "id": "bad-hindelang-busbahnhof",
+    "name": "Bad Hindelang Busbahnhof",
+    "land": "DE",
+    "region": "Allgäu",
+    "richtwertMin": 328,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "11:50",
+      "min": 352,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:00",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "bad-urach",
+    "name": "Bad Urach Bahnhof",
+    "land": "DE",
+    "region": "Schwäbische Alb",
+    "richtwertMin": 228,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "09:36",
+      "min": 218,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "19:21",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "baden-baden",
+    "name": "Baden-Baden Bahnhof",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 27,
+    "richtwertUmstiege": 0,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "06:11",
+      "min": 13,
+      "umstiege": 0
+    },
+    "winterRueckSo": {
+      "ab": "22:19",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "badenweiler-schule",
+    "name": "Badenweiler Schule",
+    "land": "DE",
+    "region": "Südschwarzwald",
+    "richtwertMin": 105,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:52",
+      "an": "07:36",
+      "min": 104,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:21",
+      "an": "22:33"
+    }
+  },
+  {
+    "id": "baiersbronn",
+    "name": "Baiersbronn Bahnhof",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 119,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "07:47",
+      "min": 119,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:11",
+      "an": "21:56"
+    }
+  },
+  {
+    "id": "barr",
+    "name": "Barr",
+    "land": "FR",
+    "region": "Nordvogesen",
+    "richtwertMin": 96,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:35",
+      "an": "08:11",
+      "min": 96,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:46",
+      "an": "22:22"
+    },
+    "nachWechselHin": {
+      "ab": "06:35",
+      "an": "08:11",
+      "min": 96,
+      "umstiege": 1
+    }
+  },
+  {
+    "id": "bielerhoehe",
+    "name": "Bielerhöhe Silvrettasee",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 474,
+    "richtwertUmstiege": 6,
+    "flags": [
+      "abfrage_fehlgeschlagen"
+    ],
+    "fehler": [
+      "winter hin: HTTP 404",
+      "rueck: HTTP 404"
+    ]
+  },
+  {
+    "id": "binn-faeld",
+    "name": "Binn, Fäld",
+    "land": "CH",
+    "region": "Aletsch / Goms (Wallis)",
+    "richtwertMin": 302,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "birgsau",
+    "name": "Birgsau",
+    "land": "DE",
+    "region": "Allgäu",
+    "richtwertMin": 329,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "07:22",
+      "an": "13:49",
+      "min": 387,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "16:00",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "blatten-bei-naters",
+    "name": "Blatten b. Naters (Belalpbahn)",
+    "land": "CH",
+    "region": "Aletsch / Goms (Wallis)",
+    "richtwertMin": 252,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "10:42",
+      "min": 252,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:45",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "blaubeuren",
+    "name": "Blaubeuren Bahnhof",
+    "land": "DE",
+    "region": "Schwäbische Alb",
+    "richtwertMin": 244,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "09:26",
+      "min": 210,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "19:27",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "bludenz",
+    "name": "Bludenz Bahnhof",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 302,
+    "richtwertUmstiege": 5,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:51",
+      "min": 303,
+      "umstiege": 5
+    },
+    "winterRueckSo": {
+      "ab": "17:30",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:28",
+      "min": 323,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "brand-luenerseebahn",
+    "name": "Brand Lünerseebahn",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 389,
+    "richtwertUmstiege": 5,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "braunwald",
+    "name": "Braunwald",
+    "land": "CH",
+    "region": "Glarner Alpen (Glarus)",
+    "richtwertMin": 272,
+    "richtwertUmstiege": 4,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:32",
+      "min": 284,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:25",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:32",
+      "min": 327,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "bregenz",
+    "name": "Bregenz Bahnhof",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 244,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "10:00",
+      "min": 244,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:01",
+      "an": "22:32"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:40",
+      "min": 335,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "brienz",
+    "name": "Brienz",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 231,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "mehr_umstiege_als_richtwert"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:21",
+      "min": 273,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:02",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:53",
+      "min": 288,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "bristen",
+    "name": "Bristen, Dorf",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 260,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "07:30",
+      "an": "11:50",
+      "min": 260,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:02",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "bruegg-buerglen",
+    "name": "Brügg (Bürglen UR), Seilbahn Biel-Kinzig",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 250,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "mehr_umstiege_als_richtwert",
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:10",
+      "min": 262,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "18:44",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:10",
+      "min": 305,
+      "umstiege": 5
+    }
+  },
+  {
+    "id": "bruelisau",
+    "name": "Brülisau (Kastenbahn)",
+    "land": "CH",
+    "region": "Alpstein (Appenzell)",
+    "richtwertMin": 288,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "10:44",
+      "min": 288,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:44",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "bruenig-hasliberg",
+    "name": "Brünig-Hasliberg",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 234,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:03",
+      "min": 255,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:51",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "buehl",
+    "name": "Bühl (Baden) Bahnhof",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 19,
+    "richtwertUmstiege": 0,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "06:07",
+      "min": 19,
+      "umstiege": 0
+    },
+    "winterRueckSo": {
+      "ab": "21:35",
+      "an": "21:56"
+    }
+  },
+  {
+    "id": "buehlertal-gertelbachstrasse",
+    "name": "Bühlertal Gertelbachstraße",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 66,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:58",
+      "an": "08:04",
+      "min": 66,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:51",
+      "an": "21:56"
+    }
+  },
+  {
+    "id": "chaeppeliberg",
+    "name": "Riemenstalden, Chäppeliberg",
+    "land": "CH",
+    "region": "Zentralschweiz",
+    "richtwertMin": 361,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "07:30",
+      "an": "12:31",
+      "min": 301,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "16:44",
+      "an": "21:25"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:39",
+      "min": 334,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "charmey-village",
+    "name": "Charmey (Gruyère), village",
+    "land": "CH",
+    "region": "Freiburger Voralpen",
+    "richtwertMin": 279,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:55",
+      "min": 247,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:02",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "col-de-la-schlucht",
+    "name": "Col de la Schlucht (Bus)",
+    "land": "FR",
+    "region": "Vogesen",
+    "richtwertMin": 199,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "abfrage_fehlgeschlagen"
+    ],
+    "fehler": [
+      "winter hin: HTTP 404",
+      "rueck: HTTP 404"
+    ]
+  },
+  {
+    "id": "cruina",
+    "name": "Cruina (Nufenen)",
+    "land": "CH",
+    "region": "Tessin / Bedretto",
+    "richtwertMin": 354,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "dahn-sued",
+    "name": "Dahn Süd",
+    "land": "DE",
+    "region": "Pfälzerwald",
+    "richtwertMin": 208,
+    "richtwertUmstiege": 4,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "10:05",
+      "min": 247,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "19:56",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "davos-dischma-duerrboden",
+    "name": "Davos Dischma, Dürrboden",
+    "land": "CH",
+    "region": "Davos (Graubünden)",
+    "richtwertMin": 375,
+    "richtwertUmstiege": 4,
+    "flags": [
+      "winter_keine_fruehe_hinfahrt"
+    ],
+    "winterErsteAnkunft": "20:30",
+    "winterRueckSo": {
+      "ab": "02:00",
+      "an": "21:25"
+    }
+  },
+  {
+    "id": "davos-dorf",
+    "name": "Davos Dorf",
+    "land": "CH",
+    "region": "Davos (Graubünden)",
+    "richtwertMin": 287,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:57",
+      "min": 309,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:37",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:56",
+      "min": 351,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "disentis",
+    "name": "Disentis/Mustér",
+    "land": "CH",
+    "region": "Surselva (Graubünden)",
+    "richtwertMin": 310,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "11:09",
+      "min": 321,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:10",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "13:09",
+      "min": 364,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "dornbirn",
+    "name": "Dornbirn Bahnhof",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 264,
+    "richtwertUmstiege": 4,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "10:19",
+      "min": 263,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "17:39",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:56",
+      "min": 351,
+      "umstiege": 5
+    }
+  },
+  {
+    "id": "ebersteinburg-wolfsschlucht",
+    "name": "Ebersteinburg Wolfsschlucht",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 87,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "07:15",
+      "min": 87,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "21:19",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "elm-dorf",
+    "name": "Elm, Dorf",
+    "land": "CH",
+    "region": "Glarner Alpen (Glarus)",
+    "richtwertMin": 263,
+    "richtwertUmstiege": 4,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:53",
+      "min": 305,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:01",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "endingen-kaiserstuhl",
+    "name": "Endingen am Kaiserstuhl Bahnhof",
+    "land": "DE",
+    "region": "Kaiserstuhl",
+    "richtwertMin": 43,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:52",
+      "an": "06:35",
+      "min": 43,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "21:17",
+      "an": "22:38"
+    }
+  },
+  {
+    "id": "engelberg",
+    "name": "Engelberg",
+    "land": "CH",
+    "region": "Zentralschweiz",
+    "richtwertMin": 209,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "09:53",
+      "min": 203,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "19:02",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:22",
+      "min": 257,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "eningen-eninger-weide",
+    "name": "Eningen, Eninger Weide",
+    "land": "DE",
+    "region": "Schwäbische Alb",
+    "richtwertMin": 209,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "09:57",
+      "min": 239,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "19:15",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "erlenbach-simmental",
+    "name": "Erlenbach im Simmental",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 203,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:28",
+      "min": 220,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:30",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:28",
+      "min": 263,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "erstfeld",
+    "name": "Erstfeld",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 234,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "mehr_umstiege_als_richtwert",
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:57",
+      "min": 249,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "19:01",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:57",
+      "min": 292,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "feldberg-baerental",
+    "name": "Feldberg-Bärental Bahnhof",
+    "land": "DE",
+    "region": "Südschwarzwald",
+    "richtwertMin": 128,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "07:37",
+      "min": 109,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "20:19",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "fidaz-bargis",
+    "name": "Fidaz, Bargis",
+    "land": "CH",
+    "region": "Surselva (Graubünden)",
+    "richtwertMin": 307,
+    "richtwertUmstiege": 4,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "fiesch",
+    "name": "Fiesch",
+    "land": "CH",
+    "region": "Aletsch / Goms (Wallis)",
+    "richtwertMin": 265,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "10:55",
+      "min": 265,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:55",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:55",
+      "min": 350,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "flims-dorf-post",
+    "name": "Flims Dorf, Post",
+    "land": "CH",
+    "region": "Surselva (Graubünden)",
+    "richtwertMin": 269,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:29",
+      "min": 281,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:58",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:29",
+      "min": 324,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "flumserberg-tannenboden",
+    "name": "Flumserberg Tannenboden",
+    "land": "CH",
+    "region": "Walensee (St. Gallen)",
+    "richtwertMin": 243,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:23",
+      "min": 275,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:30",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "forbach",
+    "name": "Forbach (Schwarzwald) Bahnhof",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 88,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "07:16",
+      "min": 88,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:42",
+      "an": "21:56"
+    }
+  },
+  {
+    "id": "freiburg-schauinslandbahn",
+    "name": "Freiburg, Schauinslandbahn Talstation",
+    "land": "DE",
+    "region": "Südschwarzwald",
+    "richtwertMin": 101,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "07:23",
+      "min": 95,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "21:36",
+      "an": "23:00"
+    }
+  },
+  {
+    "id": "freudenstadt-hbf",
+    "name": "Freudenstadt Hauptbahnhof",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 105,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:46",
+      "an": "07:09",
+      "min": 83,
+      "umstiege": 0
+    },
+    "winterRueckSo": {
+      "ab": "21:01",
+      "an": "22:16"
+    }
+  },
+  {
+    "id": "gaensbrunnen",
+    "name": "Gänsbrunnen",
+    "land": "CH",
+    "region": "Solothurner Jura",
+    "richtwertMin": 156,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "08:50",
+      "min": 182,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "19:50",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "gaggenau",
+    "name": "Gaggenau Bahnhof",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 63,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "06:51",
+      "min": 63,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "21:07",
+      "an": "21:56"
+    }
+  },
+  {
+    "id": "gargellen-schafbergbahn",
+    "name": "Gargellen Schafbergbahn",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 409,
+    "richtwertUmstiege": 5,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "12:45",
+      "min": 375,
+      "umstiege": 5
+    },
+    "winterRueckSo": {
+      "ab": "12:46",
+      "an": "20:38"
+    }
+  },
+  {
+    "id": "gernsbach",
+    "name": "Gernsbach Bahnhof",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 70,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "06:58",
+      "min": 70,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "21:02",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "gersbach-post",
+    "name": "Schopfheim-Gersbach Post",
+    "land": "DE",
+    "region": "Südschwarzwald",
+    "richtwertMin": 164,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_keine_rueckfahrt_sonntag"
+    ],
+    "winterHin": {
+      "ab": "06:42",
+      "an": "09:26",
+      "min": 164,
+      "umstiege": 2
+    }
+  },
+  {
+    "id": "goeschenen",
+    "name": "Göschenen",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 260,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "10:50",
+      "min": 260,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "18:09",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:50",
+      "min": 345,
+      "umstiege": 2
+    }
+  },
+  {
+    "id": "goescheneralp",
+    "name": "Göscheneralp, Dammagletscher",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 313,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "goppenstein",
+    "name": "Goppenstein",
+    "land": "CH",
+    "region": "Lötschental (Wallis)",
+    "richtwertMin": 262,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:52",
+      "min": 244,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:02",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:52",
+      "min": 287,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "griesalp",
+    "name": "Griesalp, Kurhaus",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 340,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "grimsel-hospiz",
+    "name": "Grimsel, Hospiz",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 307,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "grindelwald",
+    "name": "Grindelwald",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 250,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "mehr_umstiege_als_richtwert",
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:10",
+      "min": 262,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:17",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:10",
+      "min": 305,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "gurnigel-berghaus",
+    "name": "Gurnigel, Berghaus",
+    "land": "CH",
+    "region": "Gantrisch (Bern)",
+    "richtwertMin": 298,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:28",
+      "min": 298,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "16:28",
+      "an": "21:25"
+    }
+  },
+  {
+    "id": "gurtnellen-wiler",
+    "name": "Gurtnellen Wiler, Gotthardstr.",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 262,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "10:52",
+      "min": 262,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:00",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "handegg",
+    "name": "Handegg, Gelmerbahn",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 293,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "hausach",
+    "name": "Hausach Bahnhof",
+    "land": "DE",
+    "region": "Mittlerer Schwarzwald",
+    "richtwertMin": 27,
+    "richtwertUmstiege": 0,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:46",
+      "an": "06:13",
+      "min": 27,
+      "umstiege": 0
+    },
+    "winterRueckSo": {
+      "ab": "21:49",
+      "an": "22:16"
+    }
+  },
+  {
+    "id": "hinterstein-gruener-hut",
+    "name": "Hinterstein Grüner Hut",
+    "land": "DE",
+    "region": "Allgäu",
+    "richtwertMin": 347,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "07:22",
+      "an": "13:09",
+      "min": 347,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "16:40",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "hinterweidenthal-ort",
+    "name": "Hinterweidenthal Ort",
+    "land": "DE",
+    "region": "Pfälzerwald",
+    "richtwertMin": 185,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "08:31",
+      "min": 153,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "20:24",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "hinterzarten",
+    "name": "Hinterzarten Bahnhof",
+    "land": "DE",
+    "region": "Hochschwarzwald",
+    "richtwertMin": 89,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "07:13",
+      "min": 85,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:45",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "hoch-ybrig-weglosen",
+    "name": "Hoch-Ybrig, Talstation Weglosen",
+    "land": "CH",
+    "region": "Schwyz (Zentralschweiz)",
+    "richtwertMin": 340,
+    "richtwertUmstiege": 4,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:10",
+      "min": 262,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "16:45",
+      "an": "21:25"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:36",
+      "min": 331,
+      "umstiege": 5
+    }
+  },
+  {
+    "id": "hochgratbahn",
+    "name": "Hochgratbahn Talstation",
+    "land": "DE",
+    "region": "Allgäu",
+    "richtwertMin": 338,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "12:00",
+      "min": 362,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "17:05",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "hoerden",
+    "name": "Hörden (Murgtal)",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 68,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "06:56",
+      "min": 68,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "21:02",
+      "an": "21:56"
+    }
+  },
+  {
+    "id": "hornberg",
+    "name": "Hornberg Bahnhof",
+    "land": "DE",
+    "region": "Mittlerer Schwarzwald",
+    "richtwertMin": 30,
+    "richtwertUmstiege": 0,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "06:26",
+      "min": 30,
+      "umstiege": 0
+    },
+    "winterRueckSo": {
+      "ab": "21:29",
+      "an": "21:59"
+    }
+  },
+  {
+    "id": "iffigenalp",
+    "name": "Lenk, Iffigenalp",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 384,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "ihringen",
+    "name": "Ihringen Bahnhof",
+    "land": "DE",
+    "region": "Kaiserstuhl",
+    "richtwertMin": 64,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:52",
+      "an": "07:22",
+      "min": 90,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "21:37",
+      "an": "22:38"
+    }
+  },
+  {
+    "id": "immenstadt",
+    "name": "Immenstadt Bahnhof",
+    "land": "DE",
+    "region": "Allgäu",
+    "richtwertMin": 262,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "10:44",
+      "min": 286,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:17",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "innertkirchen",
+    "name": "Innertkirchen, Grimseltor",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 262,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "mehr_umstiege_als_richtwert"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:52",
+      "min": 304,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "17:03",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:25",
+      "min": 320,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "intschi",
+    "name": "Intschi, Seilbahn",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 254,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "10:44",
+      "min": 254,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:08",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "jaun-dorf",
+    "name": "Jaun, Dorf",
+    "land": "CH",
+    "region": "Freiburger Voralpen",
+    "richtwertMin": 290,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:06",
+      "min": 258,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:52",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:06",
+      "min": 301,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "kandersteg",
+    "name": "Kandersteg",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 250,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:40",
+      "min": 232,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:14",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:41",
+      "min": 276,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "klosters-platz",
+    "name": "Klosters Platz",
+    "land": "CH",
+    "region": "Prättigau (Graubünden)",
+    "richtwertMin": 268,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:28",
+      "min": 280,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:00",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:28",
+      "min": 323,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "kruth",
+    "name": "Kruth",
+    "land": "FR",
+    "region": "Vogesen",
+    "richtwertMin": 215,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "08:50",
+      "min": 182,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "19:16",
+      "an": "22:22"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "10:10",
+      "min": 185,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "langen-am-arlberg",
+    "name": "Langen am Arlberg Bahnhof",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 328,
+    "richtwertUmstiege": 5,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "11:40",
+      "min": 352,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "16:46",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "lauterbrunnen",
+    "name": "Lauterbrunnen",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 236,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "mehr_umstiege_als_richtwert",
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:56",
+      "min": 248,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:31",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:56",
+      "min": 291,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "lech-ruefiplatz",
+    "name": "Lech Rüfiplatz",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 356,
+    "richtwertUmstiege": 6,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "13:12",
+      "min": 444,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "16:01",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "lenk",
+    "name": "Lenk im Simmental",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 267,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:25",
+      "min": 277,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:35",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:25",
+      "min": 320,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "les-pres-d-orvin",
+    "name": "Les Prés-d'Orvin, Bellevue (Bus)",
+    "land": "CH",
+    "region": "Berner Jura",
+    "richtwertMin": 197,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:17",
+      "min": 209,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:41",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "leukerbad",
+    "name": "Leukerbad, Busterminal",
+    "land": "CH",
+    "region": "Leukerbad / Gemmi (Wallis)",
+    "richtwertMin": 282,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:12",
+      "min": 282,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "17:43",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "13:12",
+      "min": 367,
+      "umstiege": 5
+    }
+  },
+  {
+    "id": "linthal",
+    "name": "Linthal",
+    "land": "CH",
+    "region": "Glarner Alpen (Glarus)",
+    "richtwertMin": 251,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:16",
+      "min": 268,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "17:42",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:16",
+      "min": 311,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "loeffingen",
+    "name": "Löffingen Bahnhof",
+    "land": "DE",
+    "region": "Hochschwarzwald",
+    "richtwertMin": 136,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "08:12",
+      "min": 136,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:13",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "meiringen",
+    "name": "Meiringen",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 245,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "mehr_umstiege_als_richtwert",
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:16",
+      "min": 268,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:51",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:06",
+      "min": 301,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "mettmen",
+    "name": "Mettmen (Bergstation)",
+    "land": "CH",
+    "region": "Glarner Alpen (Glarus)",
+    "richtwertMin": 289,
+    "richtwertUmstiege": 5,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "metzeral",
+    "name": "Metzeral",
+    "land": "FR",
+    "region": "Vogesen",
+    "richtwertMin": 153,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:35",
+      "an": "09:08",
+      "min": 153,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "20:19",
+      "an": "22:22"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "09:09",
+      "min": 124,
+      "umstiege": 2
+    }
+  },
+  {
+    "id": "mittelberg",
+    "name": "Mittelberg",
+    "land": "AT",
+    "region": "Kleinwalsertal (Allgäu)",
+    "richtwertMin": 353,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "12:15",
+      "min": 377,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:00",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "moleson-sur-gruyeres",
+    "name": "Moléson-sur-Gruyères",
+    "land": "CH",
+    "region": "Freiburger Voralpen",
+    "richtwertMin": 254,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "10:44",
+      "min": 254,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:18",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:44",
+      "min": 339,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "muelenen",
+    "name": "Mülenen",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 197,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:17",
+      "min": 209,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:35",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "munster",
+    "name": "Munster (Haut-Rhin)",
+    "land": "FR",
+    "region": "Vogesen",
+    "richtwertMin": 141,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:35",
+      "an": "08:56",
+      "min": 141,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "20:28",
+      "an": "22:22"
+    }
+  },
+  {
+    "id": "nessental-triftbahn",
+    "name": "Nessental, Triftbahn",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 281,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "mehr_umstiege_als_richtwert"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "11:11",
+      "min": 323,
+      "umstiege": 5
+    },
+    "winterRueckSo": {
+      "ab": "16:40",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "noiraigue",
+    "name": "Noiraigue",
+    "land": "CH",
+    "region": "Neuenburger Jura",
+    "richtwertMin": 213,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:34",
+      "min": 226,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:54",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:03",
+      "min": 298,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "nordrach-adler",
+    "name": "Nordrach Adler",
+    "land": "DE",
+    "region": "Mittlerer Schwarzwald",
+    "richtwertMin": 104,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "07:12",
+      "an": "08:56",
+      "min": 104,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "17:37",
+      "an": "19:16"
+    }
+  },
+  {
+    "id": "oberdorf-so",
+    "name": "Oberdorf SO (Seilbahn Weissenstein)",
+    "land": "CH",
+    "region": "Solothurner Jura",
+    "richtwertMin": 160,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "08:46",
+      "min": 178,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "19:46",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "10:46",
+      "min": 221,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "oberstaufen",
+    "name": "Oberstaufen Bahnhof",
+    "land": "DE",
+    "region": "Allgäu",
+    "richtwertMin": 346,
+    "richtwertUmstiege": 4,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "11:16",
+      "min": 318,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:42",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "oberstdorf",
+    "name": "Oberstdorf Bahnhof",
+    "land": "DE",
+    "region": "Allgäu",
+    "richtwertMin": 299,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "11:19",
+      "min": 321,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "17:38",
+      "an": "22:32"
+    },
+    "nachWechselHin": {
+      "ab": "06:35",
+      "an": "16:30",
+      "min": 595,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "ossasco",
+    "name": "Ossasco (Bedretto)",
+    "land": "CH",
+    "region": "Tessin / Bedretto",
+    "richtwertMin": 285,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:15",
+      "min": 285,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "17:45",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "partenen-zentrum",
+    "name": "Partenen Zentrum",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 374,
+    "richtwertUmstiege": 7,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "12:10",
+      "min": 374,
+      "umstiege": 6
+    },
+    "winterRueckSo": {
+      "ab": "16:17",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "raeterichsboden",
+    "name": "Räterichsboden",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 299,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "randa",
+    "name": "Randa",
+    "land": "CH",
+    "region": "Mattertal (Wallis)",
+    "richtwertMin": 266,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "10:56",
+      "min": 266,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:57",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "realp",
+    "name": "Realp",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 319,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:49",
+      "min": 319,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:05",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "reigoldswil",
+    "name": "Reigoldswil, Dorfplatz",
+    "land": "CH",
+    "region": "Baselbieter Jura",
+    "richtwertMin": 145,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "08:22",
+      "min": 154,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "20:02",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "09:55",
+      "min": 170,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "riezlern-post",
+    "name": "Riezlern Post",
+    "land": "AT",
+    "region": "Kleinwalsertal (Allgäu)",
+    "richtwertMin": 338,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "12:00",
+      "min": 362,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:15",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "rosenlaui",
+    "name": "Rosenlaui, Hotel",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 321,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "saas-almagell",
+    "name": "Saas-Almagell, Dorfplatz",
+    "land": "CH",
+    "region": "Saastal (Wallis)",
+    "richtwertMin": 277,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:08",
+      "min": 278,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "17:42",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "saas-fee",
+    "name": "Saas-Fee, Busterminal",
+    "land": "CH",
+    "region": "Saastal (Wallis)",
+    "richtwertMin": 274,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:04",
+      "min": 274,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:50",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "13:04",
+      "min": 359,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "saas-grund",
+    "name": "Saas-Grund, Post",
+    "land": "CH",
+    "region": "Saastal (Wallis)",
+    "richtwertMin": 262,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "10:52",
+      "min": 262,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:57",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "sand-kapelle",
+    "name": "Sand Kapelle (Schwarzwaldhochstraße)",
+    "land": "DE",
+    "region": "Nordschwarzwald",
+    "richtwertMin": 92,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "06:58",
+      "an": "08:13",
+      "min": 75,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "18:44",
+      "an": "19:56"
+    }
+  },
+  {
+    "id": "saverne",
+    "name": "Saverne",
+    "land": "FR",
+    "region": "Nordvogesen",
+    "richtwertMin": 69,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:35",
+      "an": "07:44",
+      "min": 69,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "21:04",
+      "an": "22:22"
+    },
+    "nachWechselHin": {
+      "ab": "06:35",
+      "an": "07:44",
+      "min": 69,
+      "umstiege": 1
+    }
+  },
+  {
+    "id": "schirmeck",
+    "name": "Schirmeck - La Broque",
+    "land": "FR",
+    "region": "Nordvogesen",
+    "richtwertMin": 74,
+    "richtwertUmstiege": 1,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:35",
+      "an": "07:49",
+      "min": 74,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:23",
+      "an": "22:22"
+    },
+    "nachWechselHin": {
+      "ab": "06:35",
+      "an": "07:49",
+      "min": 74,
+      "umstiege": 1
+    }
+  },
+  {
+    "id": "schruns",
+    "name": "Schruns Bahnhof",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 328,
+    "richtwertUmstiege": 6,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "11:24",
+      "min": 328,
+      "umstiege": 5
+    },
+    "winterRueckSo": {
+      "ab": "17:04",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "schwaegalp",
+    "name": "Schwägalp, Säntis-Schwebebahn",
+    "land": "CH",
+    "region": "Alpstein (Appenzell)",
+    "richtwertMin": 284,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "11:10",
+      "min": 314,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:31",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "schwanden-gl",
+    "name": "Schwanden GL",
+    "land": "CH",
+    "region": "Glarner Alpen (Glarus)",
+    "richtwertMin": 234,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:54",
+      "min": 246,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:34",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:55",
+      "min": 290,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "schwarzsee-gypsera",
+    "name": "Schwarzsee, Gypsera",
+    "land": "CH",
+    "region": "Freiburger Voralpen",
+    "richtwertMin": 233,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:53",
+      "min": 245,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:34",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:53",
+      "min": 288,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "seebrugg",
+    "name": "Seebrugg Bahnhof (Schluchsee)",
+    "land": "DE",
+    "region": "Südschwarzwald",
+    "richtwertMin": 145,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "07:55",
+      "min": 127,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "20:01",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "singen",
+    "name": "Singen (Hohentwiel) Bahnhof",
+    "land": "DE",
+    "region": "Hegau",
+    "richtwertMin": 114,
+    "richtwertUmstiege": 0,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "07:50",
+      "min": 114,
+      "umstiege": 0
+    },
+    "winterRueckSo": {
+      "ab": "20:05",
+      "an": "21:59"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:30",
+      "min": 265,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "soerenberg-post",
+    "name": "Sörenberg, Post",
+    "land": "CH",
+    "region": "Entlebuch (Luzern)",
+    "richtwertMin": 237,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:57",
+      "min": 249,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:55",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "sonthofen",
+    "name": "Sonthofen Bahnhof",
+    "land": "DE",
+    "region": "Allgäu",
+    "richtwertMin": 278,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:58",
+      "an": "11:00",
+      "min": 302,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:02",
+      "an": "22:32"
+    }
+  },
+  {
+    "id": "spielmannsau",
+    "name": "Spielmannsau",
+    "land": "DE",
+    "region": "Allgäu",
+    "richtwertMin": 343,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "st-antoenien-rueti",
+    "name": "St. Antönien, Rüti",
+    "land": "CH",
+    "region": "Prättigau (Graubünden)",
+    "richtwertMin": 317,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:42",
+      "an": "12:13",
+      "min": 331,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "17:08",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "st-anton-am-arlberg",
+    "name": "St. Anton am Arlberg Bahnhof",
+    "land": "AT",
+    "region": "Arlberg (Tirol)",
+    "richtwertMin": 383,
+    "richtwertUmstiege": 7,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "12:00",
+      "min": 372,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "16:15",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "13:01",
+      "min": 356,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "st-imier",
+    "name": "St-Imier",
+    "land": "CH",
+    "region": "Berner Jura",
+    "richtwertMin": 210,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:12",
+      "min": 204,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:59",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:12",
+      "min": 247,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "stechelberg",
+    "name": "Stechelberg (Schilthornbahn)",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 257,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "mehr_umstiege_als_richtwert"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:17",
+      "min": 269,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "18:10",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "steingletscher",
+    "name": "Steingletscher, Susten",
+    "land": "CH",
+    "region": "Berner Oberland",
+    "richtwertMin": 316,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "stoos",
+    "name": "Stoos SZ",
+    "land": "CH",
+    "region": "Schwyz (Zentralschweiz)",
+    "richtwertMin": 257,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:17",
+      "min": 269,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "18:10",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:17",
+      "min": 312,
+      "umstiege": 5
+    }
+  },
+  {
+    "id": "taesch",
+    "name": "Täsch",
+    "land": "CH",
+    "region": "Mattertal (Wallis)",
+    "richtwertMin": 272,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:02",
+      "min": 272,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:51",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "tavannes",
+    "name": "Tavannes",
+    "land": "CH",
+    "region": "Berner Jura",
+    "richtwertMin": 207,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:04",
+      "min": 196,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:56",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:04",
+      "min": 239,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "tiefenbach",
+    "name": "Tiefenbach (Furka)",
+    "land": "CH",
+    "region": "Uri (Zentralschweiz)",
+    "richtwertMin": 396,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  },
+  {
+    "id": "todtnau-busbahnhof",
+    "name": "Todtnau Busbahnhof",
+    "land": "DE",
+    "region": "Südschwarzwald",
+    "richtwertMin": 129,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "06:42",
+      "an": "08:51",
+      "min": 129,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "19:53",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "triberg",
+    "name": "Triberg Bahnhof",
+    "land": "DE",
+    "region": "Mittlerer Schwarzwald",
+    "richtwertMin": 43,
+    "richtwertUmstiege": 0,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "06:39",
+      "min": 43,
+      "umstiege": 0
+    },
+    "winterRueckSo": {
+      "ab": "21:15",
+      "an": "21:59"
+    }
+  },
+  {
+    "id": "trubschachen",
+    "name": "Trubschachen",
+    "land": "CH",
+    "region": "Emmental (Bern)",
+    "richtwertMin": 219,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:12",
+      "min": 204,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "18:47",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:12",
+      "min": 247,
+      "umstiege": 3
+    }
+  },
+  {
+    "id": "unterterzen",
+    "name": "Unterterzen",
+    "land": "CH",
+    "region": "Walensee (St. Gallen)",
+    "richtwertMin": 220,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:41",
+      "min": 233,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:48",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "urnerboden-dorf",
+    "name": "Urnerboden, Dorf",
+    "land": "CH",
+    "region": "Glarner Alpen (Glarus)",
+    "richtwertMin": 330,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "12:00",
+      "min": 372,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "16:00",
+      "an": "21:25"
+    }
+  },
+  {
+    "id": "vandans",
+    "name": "Vandans Bahnhof",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 320,
+    "richtwertUmstiege": 6,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "11:16",
+      "min": 320,
+      "umstiege": 5
+    },
+    "winterRueckSo": {
+      "ab": "17:10",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "wald-zh",
+    "name": "Wald ZH",
+    "land": "CH",
+    "region": "Zürcher Oberland",
+    "richtwertMin": 199,
+    "richtwertUmstiege": 3,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:19",
+      "min": 211,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "19:18",
+      "an": "23:00"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:19",
+      "min": 254,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "waldkirch",
+    "name": "Waldkirch Bahnhof",
+    "land": "DE",
+    "region": "Mittlerer Schwarzwald",
+    "richtwertMin": 60,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "nach_fahrplanwechsel_keine_hinfahrt"
+    ],
+    "winterHin": {
+      "ab": "05:52",
+      "an": "06:52",
+      "min": 60,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "21:34",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "walenstadt",
+    "name": "Walenstadt",
+    "land": "CH",
+    "region": "Walensee (St. Gallen)",
+    "richtwertMin": 225,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:46",
+      "min": 238,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "18:44",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "11:46",
+      "min": 281,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "wasen-emmental",
+    "name": "Wasen i.E.",
+    "land": "CH",
+    "region": "Emmental (Bern)",
+    "richtwertMin": 202,
+    "richtwertUmstiege": 3,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "09:52",
+      "min": 244,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "19:02",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "wasserauen",
+    "name": "Wasserauen",
+    "land": "CH",
+    "region": "Alpstein (Appenzell)",
+    "richtwertMin": 287,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "10:43",
+      "min": 287,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "17:48",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:43",
+      "min": 338,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "wildhaus-dorf",
+    "name": "Wildhaus, Dorf",
+    "land": "CH",
+    "region": "Toggenburg (Ostschweiz)",
+    "richtwertMin": 297,
+    "richtwertUmstiege": 4,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:28",
+      "min": 280,
+      "umstiege": 4
+    },
+    "winterRueckSo": {
+      "ab": "18:06",
+      "an": "23:00"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "12:28",
+      "min": 323,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "wiler-loetschen",
+    "name": "Wiler (Lötschen), Dorf",
+    "land": "CH",
+    "region": "Lötschental (Wallis)",
+    "richtwertMin": 285,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "10:15",
+      "min": 267,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:33",
+      "an": "22:29"
+    }
+  },
+  {
+    "id": "wutachmuehle",
+    "name": "Wutachmühle",
+    "land": "DE",
+    "region": "Hochschwarzwald",
+    "richtwertMin": 146,
+    "richtwertUmstiege": 2,
+    "flags": [],
+    "winterHin": {
+      "ab": "05:56",
+      "an": "08:14",
+      "min": 138,
+      "umstiege": 2
+    },
+    "winterRueckSo": {
+      "ab": "19:37",
+      "an": "21:59"
+    }
+  },
+  {
+    "id": "zell-wiesental",
+    "name": "Zell im Wiesental Bahnhof",
+    "land": "DE",
+    "region": "Südschwarzwald",
+    "richtwertMin": 116,
+    "richtwertUmstiege": 1,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "05:48",
+      "an": "07:56",
+      "min": 128,
+      "umstiege": 1
+    },
+    "winterRueckSo": {
+      "ab": "20:34",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "10:26",
+      "min": 201,
+      "umstiege": 2
+    }
+  },
+  {
+    "id": "zermatt",
+    "name": "Zermatt",
+    "land": "CH",
+    "region": "Mattertal (Wallis)",
+    "richtwertMin": 287,
+    "richtwertUmstiege": 2,
+    "flags": [
+      "fahrplanwechsel_aendert_fahrzeit"
+    ],
+    "winterHin": {
+      "ab": "06:30",
+      "an": "11:17",
+      "min": 287,
+      "umstiege": 3
+    },
+    "winterRueckSo": {
+      "ab": "17:37",
+      "an": "22:29"
+    },
+    "nachWechselHin": {
+      "ab": "07:05",
+      "an": "13:14",
+      "min": 369,
+      "umstiege": 4
+    }
+  },
+  {
+    "id": "zugertal-formarinsee",
+    "name": "Zugertal Formarinsee",
+    "land": "AT",
+    "region": "Vorarlberg",
+    "richtwertMin": 394,
+    "richtwertUmstiege": 7,
+    "flags": [
+      "winter_unerreichbar",
+      "winter_keine_rueckfahrt_sonntag"
+    ]
+  }
+]

@@ -1,0 +1,3013 @@
+[
+  {
+    "id": "aescher",
+    "name": "Berggasthaus Äscher",
+    "gebietId": "alpstein",
+    "hoeheYaml": 1454,
+    "hoeheGelaende": 1570,
+    "zustiege": [
+      {
+        "haltestelleId": "wasserauen",
+        "luftlinieKm": 1.1,
+        "gehzeitMin": 15,
+        "schaetzungMin": 152,
+        "hmYaml": -190,
+        "hmGelaende": 703,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 2,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "albert-heim-huette",
+    "name": "Albert-Heim-Hütte",
+    "gebietId": "andermatt-furka",
+    "hoeheYaml": 2543,
+    "hoeheGelaende": 2518,
+    "zustiege": [
+      {
+        "haltestelleId": "tiefenbach",
+        "luftlinieKm": 1.8,
+        "gehzeitMin": 90,
+        "schaetzungMin": 99,
+        "hmYaml": 430,
+        "hmGelaende": 404,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "realp",
+        "luftlinieKm": 3.3,
+        "gehzeitMin": 180,
+        "schaetzungMin": 229,
+        "hmYaml": 1000,
+        "hmGelaende": 979,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "almagellerhuette",
+    "name": "Almagellerhütte",
+    "gebietId": "saastal",
+    "hoeheYaml": 2894,
+    "hoeheGelaende": 2905,
+    "zustiege": [
+      {
+        "haltestelleId": "saas-almagell",
+        "luftlinieKm": 4.1,
+        "gehzeitMin": 210,
+        "schaetzungMin": 289,
+        "hmYaml": 1225,
+        "hmGelaende": 1235,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 6,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "anenhuette",
+    "name": "Anenhütte",
+    "gebietId": "loetschental",
+    "hoeheYaml": 2358,
+    "hoeheGelaende": 2345,
+    "zustiege": [
+      {
+        "haltestelleId": "wiler-loetschen",
+        "luftlinieKm": 11.4,
+        "gehzeitMin": 210,
+        "schaetzungMin": 326,
+        "hmYaml": 940,
+        "hmGelaende": 945,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 12,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "baechlitalhuette",
+    "name": "Bächlitalhütte",
+    "gebietId": "grimsel-haslital",
+    "hoeheYaml": 2328,
+    "hoeheGelaende": 2334,
+    "zustiege": [
+      {
+        "haltestelleId": "raeterichsboden",
+        "luftlinieKm": 3.4,
+        "gehzeitMin": 135,
+        "schaetzungMin": 153,
+        "hmYaml": 590,
+        "hmGelaende": 594,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "balmhornhuette",
+    "name": "Balmhornhütte",
+    "gebietId": "kandersteg",
+    "hoeheYaml": 1955,
+    "hoeheGelaende": 1900,
+    "zustiege": [
+      {
+        "haltestelleId": "kandersteg",
+        "luftlinieKm": 5.1,
+        "gehzeitMin": 150,
+        "schaetzungMin": 197,
+        "hmYaml": 780,
+        "hmGelaende": 727,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "bergseehuette",
+    "name": "Bergseehütte",
+    "gebietId": "goeschenen-goescheneralp",
+    "hoeheYaml": 2370,
+    "hoeheGelaende": 2358,
+    "zustiege": [
+      {
+        "haltestelleId": "goescheneralp",
+        "luftlinieKm": 1.4,
+        "gehzeitMin": 90,
+        "schaetzungMin": 129,
+        "hmYaml": 590,
+        "hmGelaende": 572,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "binntalhuette",
+    "name": "Binntalhütte",
+    "gebietId": "aletsch-goms",
+    "hoeheYaml": 2267,
+    "hoeheGelaende": 2266,
+    "zustiege": [
+      {
+        "haltestelleId": "binn-faeld",
+        "luftlinieKm": 6.2,
+        "gehzeitMin": 180,
+        "schaetzungMin": 213,
+        "hmYaml": 720,
+        "hmGelaende": 753,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 15,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "bluemlisalphuette",
+    "name": "Blüemlisalphütte",
+    "gebietId": "kandersteg",
+    "hoeheYaml": 2840,
+    "hoeheGelaende": 2964,
+    "zustiege": [
+      {
+        "haltestelleId": "kandersteg",
+        "luftlinieKm": 7.6,
+        "gehzeitMin": 240,
+        "schaetzungMin": 435,
+        "hmYaml": 1300,
+        "hmGelaende": 1791,
+        "bergbahn": true
+      },
+      {
+        "haltestelleId": "griesalp",
+        "luftlinieKm": 5.3,
+        "gehzeitMin": 240,
+        "schaetzungMin": 365,
+        "hmYaml": 1430,
+        "hmGelaende": 1557,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "bollenwees",
+    "name": "Berggasthaus Bollenwees",
+    "gebietId": "alpstein",
+    "hoeheYaml": 1470,
+    "hoeheGelaende": 1462,
+    "zustiege": [
+      {
+        "haltestelleId": "bruelisau",
+        "luftlinieKm": 5.4,
+        "gehzeitMin": 105,
+        "schaetzungMin": 164,
+        "hmYaml": 550,
+        "hmGelaende": 537,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "britanniahuette",
+    "name": "Britanniahütte",
+    "gebietId": "saastal",
+    "hoeheYaml": 3030,
+    "hoeheGelaende": 2994,
+    "zustiege": [
+      {
+        "haltestelleId": "saas-fee",
+        "luftlinieKm": 5.4,
+        "gehzeitMin": 60,
+        "schaetzungMin": 293,
+        "hmYaml": 50,
+        "hmGelaende": 1189,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 6,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "cabane-des-marindes",
+    "name": "Cabane des Marindes",
+    "gebietId": "jaun-charmey",
+    "hoeheYaml": 1868,
+    "hoeheGelaende": 1887,
+    "zustiege": [
+      {
+        "haltestelleId": "charmey-village",
+        "luftlinieKm": 9.2,
+        "gehzeitMin": 240,
+        "schaetzungMin": 291,
+        "hmYaml": 1000,
+        "hmGelaende": 993,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "cabane-perrenoud",
+    "name": "Cabane Perrenoud",
+    "gebietId": "creux-du-van",
+    "hoeheYaml": 1419,
+    "hoeheGelaende": 1421,
+    "zustiege": [
+      {
+        "haltestelleId": "noiraigue",
+        "luftlinieKm": 4.1,
+        "gehzeitMin": 150,
+        "schaetzungMin": 179,
+        "hmYaml": 700,
+        "hmGelaende": 689,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "capanna-corno-gries",
+    "name": "Capanna Corno Gries",
+    "gebietId": "airolo-bedretto",
+    "hoeheYaml": 2338,
+    "hoeheGelaende": 2315,
+    "zustiege": [
+      {
+        "haltestelleId": "cruina",
+        "luftlinieKm": 1.4,
+        "gehzeitMin": 60,
+        "schaetzungMin": 70,
+        "hmYaml": 340,
+        "hmGelaende": 281,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 17,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "capanna-cristallina",
+    "name": "Capanna Cristallina",
+    "gebietId": "airolo-bedretto",
+    "hoeheYaml": 2575,
+    "hoeheGelaende": 2604,
+    "zustiege": [
+      {
+        "haltestelleId": "ossasco",
+        "luftlinieKm": 4.6,
+        "gehzeitMin": 225,
+        "schaetzungMin": 306,
+        "hmYaml": 1260,
+        "hmGelaende": 1296,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 9,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "capanna-piansecco",
+    "name": "Capanna Piansecco",
+    "gebietId": "airolo-bedretto",
+    "hoeheYaml": 1982,
+    "hoeheGelaende": 1994,
+    "zustiege": [
+      {
+        "haltestelleId": "all-acqua",
+        "luftlinieKm": 1,
+        "gehzeitMin": 60,
+        "schaetzungMin": 83,
+        "hmYaml": 370,
+        "hmGelaende": 366,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 11,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "carschinahuette",
+    "name": "Carschinahütte",
+    "gebietId": "klosters-praettigau",
+    "hoeheYaml": 2236,
+    "hoeheGelaende": 2234,
+    "zustiege": [
+      {
+        "haltestelleId": "st-antoenien-rueti",
+        "luftlinieKm": 3.8,
+        "gehzeitMin": 165,
+        "schaetzungMin": 192,
+        "hmYaml": 820,
+        "hmGelaende": 766,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 16,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "cavardirashuette",
+    "name": "Cavardirashütte",
+    "gebietId": "disentis",
+    "hoeheYaml": 2649,
+    "hoeheGelaende": 2624,
+    "zustiege": [
+      {
+        "haltestelleId": "disentis",
+        "luftlinieKm": 5.2,
+        "gehzeitMin": 210,
+        "schaetzungMin": 347,
+        "hmYaml": 1520,
+        "hmGelaende": 1471,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "chalet-schnepfenried",
+    "name": "Chalet-Refuge Schnepfenried",
+    "gebietId": "munstertal",
+    "hoeheYaml": 1250,
+    "hoeheGelaende": 1077,
+    "zustiege": [
+      {
+        "haltestelleId": "metzeral",
+        "luftlinieKm": 3.6,
+        "gehzeitMin": 120,
+        "schaetzungMin": 156,
+        "hmYaml": 770,
+        "hmGelaende": 599,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": true,
+    "flags": [
+      "hoehe_passt_nicht_zu_koordinaten"
+    ]
+  },
+  {
+    "id": "chelenalphuette",
+    "name": "Chelenalphütte",
+    "gebietId": "goeschenen-goescheneralp",
+    "hoeheYaml": 2350,
+    "hoeheGelaende": 2371,
+    "zustiege": [
+      {
+        "haltestelleId": "goescheneralp",
+        "luftlinieKm": 5.2,
+        "gehzeitMin": 180,
+        "schaetzungMin": 169,
+        "hmYaml": 570,
+        "hmGelaende": 585,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "claridenhuette",
+    "name": "Claridenhütte",
+    "gebietId": "linthal",
+    "hoeheYaml": 2457,
+    "hoeheGelaende": 2406,
+    "zustiege": [
+      {
+        "haltestelleId": "urnerboden-dorf",
+        "luftlinieKm": 4.3,
+        "gehzeitMin": 150,
+        "schaetzungMin": 248,
+        "hmYaml": 430,
+        "hmGelaende": 1024,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "clubhaus-backi",
+    "name": "Clubhaus Backi",
+    "gebietId": "weissenstein",
+    "hoeheYaml": 1165,
+    "hoeheGelaende": 1138,
+    "zustiege": [
+      {
+        "haltestelleId": "gaensbrunnen",
+        "luftlinieKm": 1.6,
+        "gehzeitMin": 70,
+        "schaetzungMin": 97,
+        "hmYaml": 450,
+        "hmGelaende": 406,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "oberdorf-so",
+        "luftlinieKm": 4.8,
+        "gehzeitMin": 120,
+        "schaetzungMin": 145,
+        "hmYaml": 200,
+        "hmGelaende": 481,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 2,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "dammahuette",
+    "name": "Dammahütte",
+    "gebietId": "goeschenen-goescheneralp",
+    "hoeheYaml": 2438,
+    "hoeheGelaende": 2440,
+    "zustiege": [
+      {
+        "haltestelleId": "goescheneralp",
+        "luftlinieKm": 3.2,
+        "gehzeitMin": 165,
+        "schaetzungMin": 163,
+        "hmYaml": 650,
+        "hmGelaende": 654,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 6,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "darmstaedter-huette",
+    "name": "Darmstädter Hütte",
+    "gebietId": "arlberg-verwall",
+    "hoeheYaml": 2384,
+    "hoeheGelaende": 2382,
+    "zustiege": [
+      {
+        "haltestelleId": "st-anton-am-arlberg",
+        "luftlinieKm": 8.4,
+        "gehzeitMin": 210,
+        "schaetzungMin": 302,
+        "hmYaml": 1100,
+        "hmGelaende": 1085,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 6,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "doldenhornhuette",
+    "name": "Doldenhornhütte",
+    "gebietId": "kandersteg",
+    "hoeheYaml": 1915,
+    "hoeheGelaende": 2354,
+    "zustiege": [
+      {
+        "haltestelleId": "kandersteg",
+        "luftlinieKm": 2.8,
+        "gehzeitMin": 150,
+        "schaetzungMin": 265,
+        "hmYaml": 740,
+        "hmGelaende": 1181,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": false,
+    "flags": [
+      "hoehe_passt_nicht_zu_koordinaten",
+      "hoehenmeter_abweichung:kandersteg"
+    ]
+  },
+  {
+    "id": "domhuette",
+    "name": "Domhütte",
+    "gebietId": "zermatt-mattertal",
+    "hoeheYaml": 2940,
+    "hoeheGelaende": 2930,
+    "zustiege": [
+      {
+        "haltestelleId": "randa",
+        "luftlinieKm": 2.8,
+        "gehzeitMin": 270,
+        "schaetzungMin": 334,
+        "hmYaml": 1530,
+        "hmGelaende": 1527,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 11,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "dossenhuette",
+    "name": "Dossenhütte",
+    "gebietId": "meiringen-rosenlaui",
+    "hoeheYaml": 2663,
+    "hoeheGelaende": 2586,
+    "zustiege": [
+      {
+        "haltestelleId": "rosenlaui",
+        "luftlinieKm": 3,
+        "gehzeitMin": 270,
+        "schaetzungMin": 276,
+        "hmYaml": 1300,
+        "hmGelaende": 1225,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "douglasshuette",
+    "name": "Douglasshütte",
+    "gebietId": "brandnertal",
+    "hoeheYaml": 1979,
+    "hoeheGelaende": 1960,
+    "zustiege": [
+      {
+        "haltestelleId": "brand-luenerseebahn",
+        "luftlinieKm": 0.8,
+        "gehzeitMin": 5,
+        "schaetzungMin": 88,
+        "hmYaml": 0,
+        "hmGelaende": 399,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 0,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "druesberghuette",
+    "name": "Druesberghütte",
+    "gebietId": "hoch-ybrig",
+    "hoeheYaml": 1581,
+    "hoeheGelaende": 1574,
+    "zustiege": [
+      {
+        "haltestelleId": "hoch-ybrig-weglosen",
+        "luftlinieKm": 1.4,
+        "gehzeitMin": 105,
+        "schaetzungMin": 118,
+        "hmYaml": 550,
+        "hmGelaende": 521,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 0,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "edmund-probst-haus",
+    "name": "Edmund-Probst-Haus",
+    "gebietId": "oberstdorf",
+    "hoeheYaml": 1930,
+    "hoeheGelaende": 1929,
+    "zustiege": [
+      {
+        "haltestelleId": "oberstdorf",
+        "luftlinieKm": 5.2,
+        "gehzeitMin": 10,
+        "schaetzungMin": 278,
+        "hmYaml": 0,
+        "hmGelaende": 1125,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "engelhornhuette",
+    "name": "Engelhornhütte",
+    "gebietId": "meiringen-rosenlaui",
+    "hoeheYaml": 1901,
+    "hoeheGelaende": 1877,
+    "zustiege": [
+      {
+        "haltestelleId": "rosenlaui",
+        "luftlinieKm": 1.5,
+        "gehzeitMin": 105,
+        "schaetzungMin": 118,
+        "hmYaml": 540,
+        "hmGelaende": 516,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "etzlihuette",
+    "name": "Etzlihütte",
+    "gebietId": "reusstal-maderanertal",
+    "hoeheYaml": 2052,
+    "hoeheGelaende": 1932,
+    "zustiege": [
+      {
+        "haltestelleId": "bristen",
+        "luftlinieKm": 6,
+        "gehzeitMin": 240,
+        "schaetzungMin": 294,
+        "hmYaml": 1290,
+        "hmGelaende": 1167,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "fergenhuette",
+    "name": "Fergenhütte",
+    "gebietId": "klosters-praettigau",
+    "hoeheYaml": 2141,
+    "hoeheGelaende": 2147,
+    "zustiege": [
+      {
+        "haltestelleId": "klosters-platz",
+        "luftlinieKm": 6.4,
+        "gehzeitMin": 165,
+        "schaetzungMin": 255,
+        "hmYaml": 950,
+        "hmGelaende": 952,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 6,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "fiderepasshuette",
+    "name": "Fiderepasshütte",
+    "gebietId": "kleinwalsertal",
+    "hoeheYaml": 2067,
+    "hoeheGelaende": 2060,
+    "zustiege": [
+      {
+        "haltestelleId": "mittelberg",
+        "luftlinieKm": 4.4,
+        "gehzeitMin": 150,
+        "schaetzungMin": 215,
+        "hmYaml": 850,
+        "hmGelaende": 850,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "freiburger-huette",
+    "name": "Freiburger Hütte",
+    "gebietId": "lechquellengebirge",
+    "hoeheYaml": 1931,
+    "hoeheGelaende": 1908,
+    "zustiege": [
+      {
+        "haltestelleId": "zugertal-formarinsee",
+        "luftlinieKm": 1.2,
+        "gehzeitMin": 30,
+        "schaetzungMin": 27,
+        "hmYaml": 140,
+        "hmGelaende": 33,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "lech-ruefiplatz",
+        "luftlinieKm": 12.5,
+        "gehzeitMin": 240,
+        "schaetzungMin": 300,
+        "hmYaml": 550,
+        "hmGelaende": 468,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": [
+      "zustieg_weit:lech-ruefiplatz"
+    ]
+  },
+  {
+    "id": "fridolinshuette",
+    "name": "Fridolinshütte",
+    "gebietId": "linthal",
+    "hoeheYaml": 2111,
+    "hoeheGelaende": 2102,
+    "zustiege": [
+      {
+        "haltestelleId": "linthal",
+        "luftlinieKm": 12.1,
+        "gehzeitMin": 300,
+        "schaetzungMin": 414,
+        "hmYaml": 1460,
+        "hmGelaende": 1454,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 11,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_weit:linthal"
+    ]
+  },
+  {
+    "id": "fruendenhuette",
+    "name": "Fründenhütte",
+    "gebietId": "kandersteg",
+    "hoeheYaml": 2562,
+    "hoeheGelaende": 2422,
+    "zustiege": [
+      {
+        "haltestelleId": "kandersteg",
+        "luftlinieKm": 5.4,
+        "gehzeitMin": 165,
+        "schaetzungMin": 304,
+        "hmYaml": 1000,
+        "hmGelaende": 1249,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "gaulihuette",
+    "name": "Gaulihütte",
+    "gebietId": "grimsel-haslital",
+    "hoeheYaml": 2205,
+    "hoeheGelaende": 2234,
+    "zustiege": [
+      {
+        "haltestelleId": "innertkirchen",
+        "luftlinieKm": 9.1,
+        "gehzeitMin": 330,
+        "schaetzungMin": 414,
+        "hmYaml": 1580,
+        "hmGelaende": 1607,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "gelmerhuette",
+    "name": "Gelmerhütte",
+    "gebietId": "grimsel-haslital",
+    "hoeheYaml": 2412,
+    "hoeheGelaende": 2400,
+    "zustiege": [
+      {
+        "haltestelleId": "handegg",
+        "luftlinieKm": 3.5,
+        "gehzeitMin": 120,
+        "schaetzungMin": 232,
+        "hmYaml": 550,
+        "hmGelaende": 984,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "glecksteinhuette",
+    "name": "Glecksteinhütte",
+    "gebietId": "grindelwald",
+    "hoeheYaml": 2317,
+    "hoeheGelaende": 2287,
+    "zustiege": [
+      {
+        "haltestelleId": "grindelwald",
+        "luftlinieKm": 4.8,
+        "gehzeitMin": 165,
+        "schaetzungMin": 298,
+        "hmYaml": 850,
+        "hmGelaende": 1245,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": [
+      "hoehenmeter_abweichung:grindelwald"
+    ]
+  },
+  {
+    "id": "grialetschhuette",
+    "name": "Grialetschhütte",
+    "gebietId": "davos",
+    "hoeheYaml": 2542,
+    "hoeheGelaende": 2539,
+    "zustiege": [
+      {
+        "haltestelleId": "davos-dischma-duerrboden",
+        "luftlinieKm": 3.2,
+        "gehzeitMin": 90,
+        "schaetzungMin": 141,
+        "hmYaml": 540,
+        "hmGelaende": 542,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "davos-dorf",
+        "luftlinieKm": 14.3,
+        "gehzeitMin": 270,
+        "schaetzungMin": 387,
+        "hmYaml": 990,
+        "hmGelaende": 973,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 14,
+    "geschaetzt": false,
+    "flags": [
+      "zustieg_weit:davos-dorf"
+    ]
+  },
+  {
+    "id": "gspaltenhornhuette",
+    "name": "Gspaltenhornhütte",
+    "gebietId": "kiental-griesalp",
+    "hoeheYaml": 2455,
+    "hoeheGelaende": 2414,
+    "zustiege": [
+      {
+        "haltestelleId": "griesalp",
+        "luftlinieKm": 5.4,
+        "gehzeitMin": 210,
+        "schaetzungMin": 256,
+        "hmYaml": 1050,
+        "hmGelaende": 1007,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "heinrich-hueter-huette",
+    "name": "Heinrich-Hueter-Hütte",
+    "gebietId": "montafon-raetikon",
+    "hoeheYaml": 1766,
+    "hoeheGelaende": 1771,
+    "zustiege": [
+      {
+        "haltestelleId": "vandans",
+        "luftlinieKm": 6.8,
+        "gehzeitMin": 45,
+        "schaetzungMin": 297,
+        "hmYaml": 280,
+        "hmGelaende": 1142,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 9,
+    "geschaetzt": false,
+    "flags": [
+      "zustieg_zu_kurz:vandans",
+      "hoehenmeter_abweichung:vandans"
+    ]
+  },
+  {
+    "id": "hohwaldhuette",
+    "name": "Hohwaldhütte",
+    "gebietId": "champ-du-feu",
+    "hoeheYaml": 900,
+    "hoeheGelaende": 981,
+    "zustiege": [
+      {
+        "haltestelleId": "barr",
+        "luftlinieKm": 13.4,
+        "gehzeitMin": 30,
+        "schaetzungMin": 349,
+        "hmYaml": 100,
+        "hmGelaende": 778,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 2,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:barr",
+      "zustieg_weit:barr",
+      "hoehenmeter_abweichung:barr"
+    ]
+  },
+  {
+    "id": "huefihuette",
+    "name": "Hüfihütte",
+    "gebietId": "reusstal-maderanertal",
+    "hoeheYaml": 2334,
+    "hoeheGelaende": 2159,
+    "zustiege": [
+      {
+        "haltestelleId": "bristen",
+        "luftlinieKm": 10.3,
+        "gehzeitMin": 300,
+        "schaetzungMin": 383,
+        "hmYaml": 1570,
+        "hmGelaende": 1394,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 13,
+    "geschaetzt": false,
+    "flags": [
+      "hoehe_passt_nicht_zu_koordinaten"
+    ]
+  },
+  {
+    "id": "hundsteinhuette",
+    "name": "Hundsteinhütte",
+    "gebietId": "alpstein",
+    "hoeheYaml": 1554,
+    "hoeheGelaende": 1590,
+    "zustiege": [
+      {
+        "haltestelleId": "bruelisau",
+        "luftlinieKm": 5.3,
+        "gehzeitMin": 165,
+        "schaetzungMin": 187,
+        "hmYaml": 630,
+        "hmGelaende": 665,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 2,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "jurahaus",
+    "name": "Jurahaus (Cabane du Jura)",
+    "gebietId": "chasseral",
+    "hoeheYaml": 1326,
+    "hoeheGelaende": 1324,
+    "zustiege": [
+      {
+        "haltestelleId": "les-pres-d-orvin",
+        "luftlinieKm": 1.8,
+        "gehzeitMin": 60,
+        "schaetzungMin": 81,
+        "hmYaml": 250,
+        "hmGelaende": 317,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "st-imier",
+        "luftlinieKm": 11.9,
+        "gehzeitMin": 180,
+        "schaetzungMin": 292,
+        "hmYaml": 800,
+        "hmGelaende": 518,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "kemptner-huette",
+    "name": "Kemptner Hütte",
+    "gebietId": "oberstdorf",
+    "hoeheYaml": 1844,
+    "hoeheGelaende": 1850,
+    "zustiege": [
+      {
+        "haltestelleId": "spielmannsau",
+        "luftlinieKm": 4.1,
+        "gehzeitMin": 180,
+        "schaetzungMin": 215,
+        "hmYaml": 860,
+        "hmGelaende": 864,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "konkordiahuette",
+    "name": "Konkordiahütte",
+    "gebietId": "aletsch-goms",
+    "hoeheYaml": 2850,
+    "hoeheGelaende": 2753,
+    "zustiege": [
+      {
+        "haltestelleId": "fiesch",
+        "luftlinieKm": 12.2,
+        "gehzeitMin": 300,
+        "schaetzungMin": 461,
+        "hmYaml": 700,
+        "hmGelaende": 1688,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 11,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "konstanzer-huette",
+    "name": "Konstanzer Hütte",
+    "gebietId": "arlberg-verwall",
+    "hoeheYaml": 1688,
+    "hoeheGelaende": 1689,
+    "zustiege": [
+      {
+        "haltestelleId": "st-anton-am-arlberg",
+        "luftlinieKm": 8.7,
+        "gehzeitMin": 90,
+        "schaetzungMin": 216,
+        "hmYaml": 200,
+        "hmGelaende": 392,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": false,
+    "flags": [
+      "zustieg_zu_kurz:st-anton-am-arlberg"
+    ]
+  },
+  {
+    "id": "kroentenhuette",
+    "name": "Kröntenhütte",
+    "gebietId": "reusstal-maderanertal",
+    "hoeheYaml": 1903,
+    "hoeheGelaende": 1865,
+    "zustiege": [
+      {
+        "haltestelleId": "erstfeld",
+        "luftlinieKm": 6.1,
+        "gehzeitMin": 210,
+        "schaetzungMin": 341,
+        "hmYaml": 1430,
+        "hmGelaende": 1393,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "la-chaume-des-veaux",
+    "name": "La Chaume des Veaux",
+    "gebietId": "champ-du-feu",
+    "hoeheYaml": 980,
+    "hoeheGelaende": 928,
+    "zustiege": [
+      {
+        "haltestelleId": "barr",
+        "luftlinieKm": 13.1,
+        "gehzeitMin": 40,
+        "schaetzungMin": 338,
+        "hmYaml": 180,
+        "hmGelaende": 725,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:barr",
+      "zustieg_weit:barr",
+      "hoehenmeter_abweichung:barr"
+    ]
+  },
+  {
+    "id": "laemmerenhuette",
+    "name": "Lämmerenhütte",
+    "gebietId": "kandersteg",
+    "hoeheYaml": 2507,
+    "hoeheGelaende": 2505,
+    "zustiege": [
+      {
+        "haltestelleId": "kandersteg",
+        "luftlinieKm": 12.9,
+        "gehzeitMin": 210,
+        "schaetzungMin": 397,
+        "hmYaml": 700,
+        "hmGelaende": 1332,
+        "bergbahn": true
+      },
+      {
+        "haltestelleId": "leukerbad",
+        "luftlinieKm": 4.6,
+        "gehzeitMin": 90,
+        "schaetzungMin": 273,
+        "hmYaml": 250,
+        "hmGelaende": 1134,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 13,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "lauteraarhuette",
+    "name": "Lauteraarhütte",
+    "gebietId": "grimsel-haslital",
+    "hoeheYaml": 2393,
+    "hoeheGelaende": 2401,
+    "zustiege": [
+      {
+        "haltestelleId": "grimsel-hospiz",
+        "luftlinieKm": 8.4,
+        "gehzeitMin": 255,
+        "schaetzungMin": 215,
+        "hmYaml": 450,
+        "hmGelaende": 454,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 9,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "leglerhuette",
+    "name": "Leglerhütte",
+    "gebietId": "elm-sernftal",
+    "hoeheYaml": 2273,
+    "hoeheGelaende": 2267,
+    "zustiege": [
+      {
+        "haltestelleId": "mettmen",
+        "luftlinieKm": 3.7,
+        "gehzeitMin": 150,
+        "schaetzungMin": 183,
+        "hmYaml": 670,
+        "hmGelaende": 730,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "les-jonquilles",
+    "name": "Les Jonquilles",
+    "gebietId": "munstertal",
+    "hoeheYaml": 900,
+    "hoeheGelaende": 729,
+    "zustiege": [
+      {
+        "haltestelleId": "metzeral",
+        "luftlinieKm": 1.4,
+        "gehzeitMin": 60,
+        "schaetzungMin": 64,
+        "hmYaml": 300,
+        "hmGelaende": 251,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": true,
+    "flags": [
+      "hoehe_passt_nicht_zu_koordinaten"
+    ]
+  },
+  {
+    "id": "leutschachhuette",
+    "name": "Leutschachhütte",
+    "gebietId": "reusstal-maderanertal",
+    "hoeheYaml": 2208,
+    "hoeheGelaende": 2206,
+    "zustiege": [
+      {
+        "haltestelleId": "intschi",
+        "luftlinieKm": 4.5,
+        "gehzeitMin": 150,
+        "schaetzungMin": 354,
+        "hmYaml": 840,
+        "hmGelaende": 1542,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "lidernenhuette",
+    "name": "Lidernenhütte",
+    "gebietId": "riemenstalden",
+    "hoeheYaml": 1727,
+    "hoeheGelaende": 1703,
+    "zustiege": [
+      {
+        "haltestelleId": "chaeppeliberg",
+        "luftlinieKm": 1.4,
+        "gehzeitMin": 15,
+        "schaetzungMin": 116,
+        "hmYaml": 20,
+        "hmGelaende": 513,
+        "bergbahn": true
+      },
+      {
+        "haltestelleId": "chaeppeliberg",
+        "luftlinieKm": 1.4,
+        "gehzeitMin": 90,
+        "schaetzungMin": 116,
+        "hmYaml": 540,
+        "hmGelaende": 513,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "lindauer-huette",
+    "name": "Lindauer Hütte",
+    "gebietId": "montafon-raetikon",
+    "hoeheYaml": 1744,
+    "hoeheGelaende": 1741,
+    "zustiege": [
+      {
+        "haltestelleId": "schruns",
+        "luftlinieKm": 8,
+        "gehzeitMin": 120,
+        "schaetzungMin": 293,
+        "hmYaml": 750,
+        "hmGelaende": 1058,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:schruns",
+      "hoehenmeter_abweichung:schruns"
+    ]
+  },
+  {
+    "id": "loetschenpasshuette",
+    "name": "Lötschenpasshütte",
+    "gebietId": "loetschental",
+    "hoeheYaml": 2690,
+    "hoeheGelaende": 2691,
+    "zustiege": [
+      {
+        "haltestelleId": "wiler-loetschen",
+        "luftlinieKm": 5.3,
+        "gehzeitMin": 150,
+        "schaetzungMin": 312,
+        "hmYaml": 720,
+        "hmGelaende": 1291,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "lohnerhuette",
+    "name": "Lohnerhütte",
+    "gebietId": "adelboden",
+    "hoeheYaml": 2171,
+    "hoeheGelaende": 2102,
+    "zustiege": [
+      {
+        "haltestelleId": "adelboden",
+        "luftlinieKm": 3.7,
+        "gehzeitMin": 210,
+        "schaetzungMin": 185,
+        "hmYaml": 810,
+        "hmGelaende": 739,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "lustenauer-huette",
+    "name": "Lustenauer Hütte",
+    "gebietId": "bregenzerwald",
+    "hoeheYaml": 1250,
+    "hoeheGelaende": 1246,
+    "zustiege": [
+      {
+        "haltestelleId": "dornbirn",
+        "luftlinieKm": 7,
+        "gehzeitMin": 90,
+        "schaetzungMin": 234,
+        "hmYaml": 200,
+        "hmGelaende": 817,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 2,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:dornbirn",
+      "hoehenmeter_abweichung:dornbirn"
+    ]
+  },
+  {
+    "id": "madrisahuette",
+    "name": "Madrisahütte",
+    "gebietId": "montafon-raetikon",
+    "hoeheYaml": 1660,
+    "hoeheGelaende": 1683,
+    "zustiege": [
+      {
+        "haltestelleId": "gargellen-schafbergbahn",
+        "luftlinieKm": 2,
+        "gehzeitMin": 60,
+        "schaetzungMin": 69,
+        "hmYaml": 240,
+        "hmGelaende": 245,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 9,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "mannheimer-huette",
+    "name": "Mannheimer Hütte",
+    "gebietId": "brandnertal",
+    "hoeheYaml": 2679,
+    "hoeheGelaende": 2636,
+    "zustiege": [
+      {
+        "haltestelleId": "brand-luenerseebahn",
+        "luftlinieKm": 4.7,
+        "gehzeitMin": 180,
+        "schaetzungMin": 262,
+        "hmYaml": 750,
+        "hmGelaende": 1075,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "martinsmadhuette",
+    "name": "Martinsmadhütte",
+    "gebietId": "elm-sernftal",
+    "hoeheYaml": 2002,
+    "hoeheGelaende": 1978,
+    "zustiege": [
+      {
+        "haltestelleId": "elm-dorf",
+        "luftlinieKm": 3.2,
+        "gehzeitMin": 210,
+        "schaetzungMin": 232,
+        "hmYaml": 1020,
+        "hmGelaende": 1000,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "meglisalp",
+    "name": "Berggasthaus Meglisalp",
+    "gebietId": "alpstein",
+    "hoeheYaml": 1517,
+    "hoeheGelaende": 1522,
+    "zustiege": [
+      {
+        "haltestelleId": "wasserauen",
+        "luftlinieKm": 4.6,
+        "gehzeitMin": 120,
+        "schaetzungMin": 178,
+        "hmYaml": 650,
+        "hmGelaende": 655,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 2,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "mindelheimer-huette",
+    "name": "Mindelheimer Hütte",
+    "gebietId": "kleinwalsertal",
+    "hoeheYaml": 2013,
+    "hoeheGelaende": 2023,
+    "zustiege": [
+      {
+        "haltestelleId": "mittelberg",
+        "luftlinieKm": 4.7,
+        "gehzeitMin": 180,
+        "schaetzungMin": 210,
+        "hmYaml": 800,
+        "hmGelaende": 813,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "monte-rosa-huette",
+    "name": "Monte-Rosa-Hütte",
+    "gebietId": "zermatt-mattertal",
+    "hoeheYaml": 2883,
+    "hoeheGelaende": 2771,
+    "zustiege": [
+      {
+        "haltestelleId": "zermatt",
+        "luftlinieKm": 8.9,
+        "gehzeitMin": 225,
+        "schaetzungMin": 322,
+        "hmYaml": 400,
+        "hmGelaende": 1159,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "muttseehuette",
+    "name": "Muttseehütte",
+    "gebietId": "linthal",
+    "hoeheYaml": 2501,
+    "hoeheGelaende": 2485,
+    "zustiege": [
+      {
+        "haltestelleId": "linthal",
+        "luftlinieKm": 7.7,
+        "gehzeitMin": 210,
+        "schaetzungMin": 446,
+        "hmYaml": 1850,
+        "hmGelaende": 1837,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:linthal"
+    ]
+  },
+  {
+    "id": "naturfreundehaus-aemmital",
+    "name": "Naturfreundehaus Ämmital (Höchschwendi)",
+    "gebietId": "napf-emmental",
+    "hoeheYaml": 1150,
+    "hoeheGelaende": 1130,
+    "zustiege": [
+      {
+        "haltestelleId": "wasen-emmental",
+        "luftlinieKm": 7.8,
+        "gehzeitMin": 120,
+        "schaetzungMin": 196,
+        "hmYaml": 460,
+        "hmGelaende": 387,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "naturfreundehaus-aurore",
+    "name": "Naturfreundehaus Aurore (Schwarzsee)",
+    "gebietId": "schwarzsee-kaiseregg",
+    "hoeheYaml": 1070,
+    "hoeheGelaende": 1045,
+    "zustiege": [
+      {
+        "haltestelleId": "schwarzsee-gypsera",
+        "luftlinieKm": 0.2,
+        "gehzeitMin": 5,
+        "schaetzungMin": 4,
+        "hmYaml": 10,
+        "hmGelaende": -1,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "naturfreundehaus-badener-hoehe",
+    "name": "Naturfreundehaus Badener Höhe",
+    "gebietId": "schwarzwaldhochstrasse",
+    "hoeheYaml": 880,
+    "hoeheGelaende": 888,
+    "zustiege": [
+      {
+        "haltestelleId": "sand-kapelle",
+        "luftlinieKm": 1.8,
+        "gehzeitMin": 30,
+        "schaetzungMin": 40,
+        "hmYaml": 50,
+        "hmGelaende": 33,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "naturfreundehaus-bellevue",
+    "name": "Naturfreundehaus Bellevue (Montoz)",
+    "gebietId": "montoz",
+    "hoeheYaml": 1284,
+    "hoeheGelaende": 1270,
+    "zustiege": [
+      {
+        "haltestelleId": "tavannes",
+        "luftlinieKm": 1.8,
+        "gehzeitMin": 90,
+        "schaetzungMin": 121,
+        "hmYaml": 530,
+        "hmGelaende": 514,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "naturfreundehaus-breitnau",
+    "name": "Naturfreundehaus Breitnau",
+    "gebietId": "hinterzarten-breitnau",
+    "hoeheYaml": 1060,
+    "hoeheGelaende": 1054,
+    "zustiege": [
+      {
+        "haltestelleId": "hinterzarten",
+        "luftlinieKm": 5.6,
+        "gehzeitMin": 20,
+        "schaetzungMin": 130,
+        "hmYaml": 30,
+        "hmGelaende": 171,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:hinterzarten"
+    ]
+  },
+  {
+    "id": "naturfreundehaus-brend",
+    "name": "Naturfreundehaus Brend",
+    "gebietId": "triberg-brend",
+    "hoeheYaml": 1150,
+    "hoeheGelaende": 1140,
+    "zustiege": [
+      {
+        "haltestelleId": "triberg",
+        "luftlinieKm": 8.7,
+        "gehzeitMin": 75,
+        "schaetzungMin": 228,
+        "hmYaml": 300,
+        "hmGelaende": 517,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:triberg"
+    ]
+  },
+  {
+    "id": "naturfreundehaus-bruenig",
+    "name": "Naturfreundehaus Brünig",
+    "gebietId": "brienzer-rothorn",
+    "hoeheYaml": 960,
+    "hoeheGelaende": 965,
+    "zustiege": [
+      {
+        "haltestelleId": "bruenig-hasliberg",
+        "luftlinieKm": 0.5,
+        "gehzeitMin": 5,
+        "schaetzungMin": 10,
+        "hmYaml": -40,
+        "hmGelaende": -62,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": false,
+    "flags": [
+      "zustieg_zu_kurz:bruenig-hasliberg"
+    ]
+  },
+  {
+    "id": "naturfreundehaus-feldberg",
+    "name": "Naturfreundehaus Feldberg",
+    "gebietId": "feldberg",
+    "hoeheYaml": 1350,
+    "hoeheGelaende": 1328,
+    "zustiege": [
+      {
+        "haltestelleId": "feldberg-baerental",
+        "luftlinieKm": 6.2,
+        "gehzeitMin": 90,
+        "schaetzungMin": 163,
+        "hmYaml": 100,
+        "hmGelaende": 367,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "naturfreundehaus-gersbacher-hoernle",
+    "name": "Naturfreundehaus Gersbacher Hörnle",
+    "gebietId": "wiesental-hohe-moehr",
+    "hoeheYaml": 994,
+    "hoeheGelaende": 989,
+    "zustiege": [
+      {
+        "haltestelleId": "gersbach-post",
+        "luftlinieKm": 1.6,
+        "gehzeitMin": 20,
+        "schaetzungMin": 45,
+        "hmYaml": 80,
+        "hmGelaende": 126,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "zell-wiesental",
+        "luftlinieKm": 5.1,
+        "gehzeitMin": 150,
+        "schaetzungMin": 163,
+        "hmYaml": 570,
+        "hmGelaende": 557,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:gersbach-post"
+    ]
+  },
+  {
+    "id": "naturfreundehaus-grindelwald",
+    "name": "Naturfreundehaus Grindelwald",
+    "gebietId": "grindelwald",
+    "hoeheYaml": 1126,
+    "hoeheGelaende": 1134,
+    "zustiege": [
+      {
+        "haltestelleId": "grindelwald",
+        "luftlinieKm": 0.4,
+        "gehzeitMin": 15,
+        "schaetzungMin": 23,
+        "hmYaml": 90,
+        "hmGelaende": 92,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 0,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "naturfreundehaus-grosser-wald",
+    "name": "Naturfreundehaus Großer Wald (Michelbach)",
+    "gebietId": "murgtal",
+    "hoeheYaml": 500,
+    "hoeheGelaende": 240,
+    "zustiege": [
+      {
+        "haltestelleId": "gaggenau",
+        "luftlinieKm": 2.3,
+        "gehzeitMin": 45,
+        "schaetzungMin": 57,
+        "hmYaml": 150,
+        "hmGelaende": 96,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 18,
+    "geschaetzt": true,
+    "flags": [
+      "hoehe_passt_nicht_zu_koordinaten"
+    ]
+  },
+  {
+    "id": "naturfreundehaus-haeusern",
+    "name": "Naturfreundehaus Häusern",
+    "gebietId": "schluchsee-haeusern",
+    "hoeheYaml": 920,
+    "hoeheGelaende": 952,
+    "zustiege": [
+      {
+        "haltestelleId": "seebrugg",
+        "luftlinieKm": 5.1,
+        "gehzeitMin": 15,
+        "schaetzungMin": 103,
+        "hmYaml": 40,
+        "hmGelaende": -15,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": false,
+    "flags": [
+      "zustieg_zu_kurz:seebrugg"
+    ]
+  },
+  {
+    "id": "naturfreundehaus-hoerden",
+    "name": "Naturfreundehaus Hörden",
+    "gebietId": "murgtal",
+    "hoeheYaml": 220,
+    "hoeheGelaende": 218,
+    "zustiege": [
+      {
+        "haltestelleId": "hoerden",
+        "luftlinieKm": 0.8,
+        "gehzeitMin": 15,
+        "schaetzungMin": 22,
+        "hmYaml": 60,
+        "hmGelaende": 64,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 14,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "naturfreundehaus-kniebis",
+    "name": "Naturfreundehaus Kniebis",
+    "gebietId": "renchtal-kniebis",
+    "hoeheYaml": 920,
+    "hoeheGelaende": 920,
+    "zustiege": [
+      {
+        "haltestelleId": "freudenstadt-hbf",
+        "luftlinieKm": 9.6,
+        "gehzeitMin": 10,
+        "schaetzungMin": 219,
+        "hmYaml": 0,
+        "hmGelaende": 250,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "bad-griesbach",
+        "luftlinieKm": 5.5,
+        "gehzeitMin": 150,
+        "schaetzungMin": 157,
+        "hmYaml": 450,
+        "hmGelaende": 453,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 0,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:freudenstadt-hbf"
+    ]
+  },
+  {
+    "id": "naturfreundehaus-kornebene",
+    "name": "Naturfreundehaus Kornebene",
+    "gebietId": "nordrach",
+    "hoeheYaml": 640,
+    "hoeheGelaende": 647,
+    "zustiege": [
+      {
+        "haltestelleId": "nordrach-adler",
+        "luftlinieKm": 1.8,
+        "gehzeitMin": 40,
+        "schaetzungMin": 71,
+        "hmYaml": 190,
+        "hmGelaende": 260,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "naturfreundehaus-sommerecke",
+    "name": "Naturfreundehaus Sommerecke",
+    "gebietId": "kinzigtal",
+    "hoeheYaml": 800,
+    "hoeheGelaende": 774,
+    "zustiege": [
+      {
+        "haltestelleId": "hornberg",
+        "luftlinieKm": 5.4,
+        "gehzeitMin": 60,
+        "schaetzungMin": 150,
+        "hmYaml": 50,
+        "hmGelaende": 395,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:hornberg",
+      "hoehenmeter_abweichung:hornberg"
+    ]
+  },
+  {
+    "id": "oberaletschhuette",
+    "name": "Oberaletschhütte",
+    "gebietId": "aletsch-goms",
+    "hoeheYaml": 2640,
+    "hoeheGelaende": 2627,
+    "zustiege": [
+      {
+        "haltestelleId": "blatten-bei-naters",
+        "luftlinieKm": 7.4,
+        "gehzeitMin": 270,
+        "schaetzungMin": 333,
+        "hmYaml": 600,
+        "hmGelaende": 1292,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 10,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "planurahuette",
+    "name": "Planurahütte",
+    "gebietId": "linthal",
+    "hoeheYaml": 2947,
+    "hoeheGelaende": 2905,
+    "zustiege": [
+      {
+        "haltestelleId": "urnerboden-dorf",
+        "luftlinieKm": 7.9,
+        "gehzeitMin": 300,
+        "schaetzungMin": 385,
+        "hmYaml": 920,
+        "hmGelaende": 1523,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 14,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "prinz-luitpold-haus",
+    "name": "Prinz-Luitpold-Haus",
+    "gebietId": "hintersteiner-tal",
+    "hoeheYaml": 1846,
+    "hoeheGelaende": 1826,
+    "zustiege": [
+      {
+        "haltestelleId": "hinterstein-gruener-hut",
+        "luftlinieKm": 9.3,
+        "gehzeitMin": 165,
+        "schaetzungMin": 286,
+        "hmYaml": 780,
+        "hmGelaende": 959,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "raemsenberg",
+    "name": "Gruppenhaus Rämsenberg",
+    "gebietId": "schaechental",
+    "hoeheYaml": 1634,
+    "hoeheGelaende": 1238,
+    "zustiege": [
+      {
+        "haltestelleId": "bruegg-buerglen",
+        "luftlinieKm": 2.5,
+        "gehzeitMin": 30,
+        "schaetzungMin": 142,
+        "hmYaml": 100,
+        "hmGelaende": 586,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": [
+      "hoehe_passt_nicht_zu_koordinaten"
+    ]
+  },
+  {
+    "id": "ramshaldenhuette",
+    "name": "Ramshaldenhütte",
+    "gebietId": "hinterzarten-breitnau",
+    "hoeheYaml": 1035,
+    "hoeheGelaende": 1052,
+    "zustiege": [
+      {
+        "haltestelleId": "hinterzarten",
+        "luftlinieKm": 5.3,
+        "gehzeitMin": 5,
+        "schaetzungMin": 124,
+        "hmYaml": 0,
+        "hmGelaende": 169,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:hinterzarten"
+    ]
+  },
+  {
+    "id": "rappenseehuette",
+    "name": "Rappenseehütte",
+    "gebietId": "oberstdorf",
+    "hoeheYaml": 2091,
+    "hoeheGelaende": 2074,
+    "zustiege": [
+      {
+        "haltestelleId": "birgsau",
+        "luftlinieKm": 5,
+        "gehzeitMin": 180,
+        "schaetzungMin": 275,
+        "hmYaml": 1130,
+        "hmGelaende": 1121,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "ravensburger-huette",
+    "name": "Ravensburger Hütte",
+    "gebietId": "lechquellengebirge",
+    "hoeheYaml": 1948,
+    "hoeheGelaende": 1955,
+    "zustiege": [
+      {
+        "haltestelleId": "lech-ruefiplatz",
+        "luftlinieKm": 5.8,
+        "gehzeitMin": 45,
+        "schaetzungMin": 169,
+        "hmYaml": 120,
+        "hmGelaende": 515,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:lech-ruefiplatz",
+      "hoehenmeter_abweichung:lech-ruefiplatz"
+    ]
+  },
+  {
+    "id": "refuge-de-freconrupt",
+    "name": "Refuge du Club Vosgien de Fréconrupt",
+    "gebietId": "donon-schirmeck",
+    "hoeheYaml": 630,
+    "hoeheGelaende": 622,
+    "zustiege": [
+      {
+        "haltestelleId": "schirmeck",
+        "luftlinieKm": 2.5,
+        "gehzeitMin": 70,
+        "schaetzungMin": 87,
+        "hmYaml": 310,
+        "hmGelaende": 307,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "refuge-des-trois-fours",
+    "name": "Refuge des Trois Fours",
+    "gebietId": "munstertal",
+    "hoeheYaml": 1197,
+    "hoeheGelaende": 1215,
+    "zustiege": [
+      {
+        "haltestelleId": "col-de-la-schlucht",
+        "luftlinieKm": 1.2,
+        "gehzeitMin": 30,
+        "schaetzungMin": 33,
+        "hmYaml": 60,
+        "hmGelaende": 82,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "metzeral",
+        "luftlinieKm": 5.7,
+        "gehzeitMin": 180,
+        "schaetzungMin": 205,
+        "hmYaml": 720,
+        "hmGelaende": 737,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "refuge-du-grand-ventron",
+    "name": "Refuge du Grand Ventron",
+    "gebietId": "grand-ventron",
+    "hoeheYaml": 1150,
+    "hoeheGelaende": 1155,
+    "zustiege": [
+      {
+        "haltestelleId": "kruth",
+        "luftlinieKm": 5.4,
+        "gehzeitMin": 150,
+        "schaetzungMin": 190,
+        "hmYaml": 700,
+        "hmGelaende": 676,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "ringelspitzhuette",
+    "name": "Ringelspitzhütte",
+    "gebietId": "flims",
+    "hoeheYaml": 2000,
+    "hoeheGelaende": 1989,
+    "zustiege": [
+      {
+        "haltestelleId": "fidaz-bargis",
+        "luftlinieKm": 4.3,
+        "gehzeitMin": 135,
+        "schaetzungMin": 131,
+        "hmYaml": 450,
+        "hmGelaende": 436,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "flims-dorf-post",
+        "luftlinieKm": 7.8,
+        "gehzeitMin": 210,
+        "schaetzungMin": 262,
+        "hmYaml": 920,
+        "hmGelaende": 914,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "rothornhuette",
+    "name": "Rothornhütte",
+    "gebietId": "zermatt-mattertal",
+    "hoeheYaml": 3180,
+    "hoeheGelaende": 3224,
+    "zustiege": [
+      {
+        "haltestelleId": "zermatt",
+        "luftlinieKm": 4.8,
+        "gehzeitMin": 300,
+        "schaetzungMin": 371,
+        "hmYaml": 1575,
+        "hmGelaende": 1612,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "rotondohuette",
+    "name": "Rotondohütte",
+    "gebietId": "andermatt-furka",
+    "hoeheYaml": 2570,
+    "hoeheGelaende": 2558,
+    "zustiege": [
+      {
+        "haltestelleId": "realp",
+        "luftlinieKm": 6.1,
+        "gehzeitMin": 210,
+        "schaetzungMin": 266,
+        "hmYaml": 1030,
+        "hmGelaende": 1019,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "rottalhuette",
+    "name": "Rottalhütte",
+    "gebietId": "lauterbrunnental",
+    "hoeheYaml": 2755,
+    "hoeheGelaende": 2748,
+    "zustiege": [
+      {
+        "haltestelleId": "stechelberg",
+        "luftlinieKm": 4.6,
+        "gehzeitMin": 300,
+        "schaetzungMin": 424,
+        "hmYaml": 1890,
+        "hmGelaende": 1886,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 6,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "rugghubelhuette",
+    "name": "Rugghubelhütte",
+    "gebietId": "engelberg",
+    "hoeheYaml": 2294,
+    "hoeheGelaende": 1792,
+    "zustiege": [
+      {
+        "haltestelleId": "engelberg",
+        "luftlinieKm": 4.1,
+        "gehzeitMin": 135,
+        "schaetzungMin": 199,
+        "hmYaml": 700,
+        "hmGelaende": 788,
+        "bergbahn": true
+      },
+      {
+        "haltestelleId": "engelberg",
+        "luftlinieKm": 4.1,
+        "gehzeitMin": 240,
+        "schaetzungMin": 199,
+        "hmYaml": 1290,
+        "hmGelaende": 788,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": false,
+    "flags": [
+      "hoehe_passt_nicht_zu_koordinaten",
+      "hoehenmeter_abweichung:engelberg"
+    ]
+  },
+  {
+    "id": "saarbruecker-huette",
+    "name": "Saarbrücker Hütte",
+    "gebietId": "silvretta",
+    "hoeheYaml": 2538,
+    "hoeheGelaende": 2534,
+    "zustiege": [
+      {
+        "haltestelleId": "bielerhoehe",
+        "luftlinieKm": 4.7,
+        "gehzeitMin": 90,
+        "schaetzungMin": 148,
+        "hmYaml": 500,
+        "hmGelaende": 502,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "salbithuette",
+    "name": "Salbithütte",
+    "gebietId": "goeschenen-goescheneralp",
+    "hoeheYaml": 2105,
+    "hoeheGelaende": 2103,
+    "zustiege": [
+      {
+        "haltestelleId": "goeschenen",
+        "luftlinieKm": 3.1,
+        "gehzeitMin": 195,
+        "schaetzungMin": 225,
+        "hmYaml": 1000,
+        "hmGelaende": 972,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "sandkaestle",
+    "name": "Sandkästle",
+    "gebietId": "schwarzwaldhochstrasse",
+    "hoeheYaml": 830,
+    "hoeheGelaende": 855,
+    "zustiege": [
+      {
+        "haltestelleId": "sand-kapelle",
+        "luftlinieKm": 0.1,
+        "gehzeitMin": 5,
+        "schaetzungMin": 2,
+        "hmYaml": 0,
+        "hmGelaende": 0,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "schoenbielhuette",
+    "name": "Schönbielhütte",
+    "gebietId": "zermatt-mattertal",
+    "hoeheYaml": 2694,
+    "hoeheGelaende": 2704,
+    "zustiege": [
+      {
+        "haltestelleId": "zermatt",
+        "luftlinieKm": 9.5,
+        "gehzeitMin": 270,
+        "schaetzungMin": 314,
+        "hmYaml": 1090,
+        "hmGelaende": 1092,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 10,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "schoenbrunner-huette",
+    "name": "Schönbrunner Hütte",
+    "gebietId": "schwarzwaldhochstrasse",
+    "hoeheYaml": 720,
+    "hoeheGelaende": 718,
+    "zustiege": [
+      {
+        "haltestelleId": "sand-kapelle",
+        "luftlinieKm": 3.7,
+        "gehzeitMin": 60,
+        "schaetzungMin": 75,
+        "hmYaml": -110,
+        "hmGelaende": -137,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 3,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "schreckhornhuette",
+    "name": "Schreckhornhütte",
+    "gebietId": "grindelwald",
+    "hoeheYaml": 2530,
+    "hoeheGelaende": 2542,
+    "zustiege": [
+      {
+        "haltestelleId": "grindelwald",
+        "luftlinieKm": 6.9,
+        "gehzeitMin": 270,
+        "schaetzungMin": 370,
+        "hmYaml": 1140,
+        "hmGelaende": 1500,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "schwarzenberghuette",
+    "name": "Schwarzenberghütte",
+    "gebietId": "hintersteiner-tal",
+    "hoeheYaml": 1380,
+    "hoeheGelaende": 1446,
+    "zustiege": [
+      {
+        "haltestelleId": "hinterstein-gruener-hut",
+        "luftlinieKm": 5.2,
+        "gehzeitMin": 60,
+        "schaetzungMin": 168,
+        "hmYaml": 520,
+        "hmGelaende": 579,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:hinterstein-gruener-hut"
+    ]
+  },
+  {
+    "id": "schwarzwasserhuette",
+    "name": "Schwarzwasserhütte",
+    "gebietId": "kleinwalsertal",
+    "hoeheYaml": 1620,
+    "hoeheGelaende": 1628,
+    "zustiege": [
+      {
+        "haltestelleId": "riezlern-post",
+        "luftlinieKm": 8.3,
+        "gehzeitMin": 90,
+        "schaetzungMin": 223,
+        "hmYaml": 380,
+        "hmGelaende": 537,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": [
+      "zustieg_zu_kurz:riezlern-post"
+    ]
+  },
+  {
+    "id": "schwenninger-huette",
+    "name": "Schwenninger Hütte",
+    "gebietId": "triberg-brend",
+    "hoeheYaml": 800,
+    "hoeheGelaende": 836,
+    "zustiege": [
+      {
+        "haltestelleId": "triberg",
+        "luftlinieKm": 3.9,
+        "gehzeitMin": 60,
+        "schaetzungMin": 101,
+        "hmYaml": 190,
+        "hmGelaende": 213,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "silvrettahuette",
+    "name": "Silvrettahütte",
+    "gebietId": "klosters-praettigau",
+    "hoeheYaml": 2341,
+    "hoeheGelaende": 2336,
+    "zustiege": [
+      {
+        "haltestelleId": "klosters-platz",
+        "luftlinieKm": 12.3,
+        "gehzeitMin": 270,
+        "schaetzungMin": 364,
+        "hmYaml": 1150,
+        "hmGelaende": 1141,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 12,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_weit:klosters-platz"
+    ]
+  },
+  {
+    "id": "spannorthuette",
+    "name": "Spannorthütte",
+    "gebietId": "engelberg",
+    "hoeheYaml": 1956,
+    "hoeheGelaende": 1933,
+    "zustiege": [
+      {
+        "haltestelleId": "engelberg",
+        "luftlinieKm": 8.5,
+        "gehzeitMin": 180,
+        "schaetzungMin": 271,
+        "hmYaml": 950,
+        "hmGelaende": 929,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 9,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "spitzmeilenhuette",
+    "name": "Spitzmeilenhütte",
+    "gebietId": "walensee-churfirsten-flumserberg",
+    "hoeheYaml": 2087,
+    "hoeheGelaende": 2077,
+    "zustiege": [
+      {
+        "haltestelleId": "flumserberg-tannenboden",
+        "luftlinieKm": 7,
+        "gehzeitMin": 150,
+        "schaetzungMin": 212,
+        "hmYaml": 230,
+        "hmGelaende": 703,
+        "bergbahn": true
+      },
+      {
+        "haltestelleId": "unterterzen",
+        "luftlinieKm": 8.9,
+        "gehzeitMin": 180,
+        "schaetzungMin": 420,
+        "hmYaml": 230,
+        "hmGelaende": 1651,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "staufner-haus",
+    "name": "Staufner Haus",
+    "gebietId": "nagelfluhkette",
+    "hoeheYaml": 1634,
+    "hoeheGelaende": 1610,
+    "zustiege": [
+      {
+        "haltestelleId": "hochgratbahn",
+        "luftlinieKm": 2.2,
+        "gehzeitMin": 120,
+        "schaetzungMin": 172,
+        "hmYaml": 790,
+        "hmGelaende": 751,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "hochgratbahn",
+        "luftlinieKm": 2.2,
+        "gehzeitMin": 10,
+        "schaetzungMin": 172,
+        "hmYaml": -80,
+        "hmGelaende": 751,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 2,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "taeschhuette",
+    "name": "Täschhütte",
+    "gebietId": "zermatt-mattertal",
+    "hoeheYaml": 2701,
+    "hoeheGelaende": 2665,
+    "zustiege": [
+      {
+        "haltestelleId": "taesch",
+        "luftlinieKm": 4.6,
+        "gehzeitMin": 240,
+        "schaetzungMin": 290,
+        "hmYaml": 1250,
+        "hmGelaende": 1217,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "tierberglihuette",
+    "name": "Tierberglihütte",
+    "gebietId": "grimsel-haslital",
+    "hoeheYaml": 2795,
+    "hoeheGelaende": 2759,
+    "zustiege": [
+      {
+        "haltestelleId": "steingletscher",
+        "luftlinieKm": 3.4,
+        "gehzeitMin": 180,
+        "schaetzungMin": 211,
+        "hmYaml": 920,
+        "hmGelaende": 882,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 12,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "tilisunahuette",
+    "name": "Tilisunahütte",
+    "gebietId": "montafon-raetikon",
+    "hoeheYaml": 2211,
+    "hoeheGelaende": 2210,
+    "zustiege": [
+      {
+        "haltestelleId": "schruns",
+        "luftlinieKm": 7,
+        "gehzeitMin": 180,
+        "schaetzungMin": 377,
+        "hmYaml": 1200,
+        "hmGelaende": 1527,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 1,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:schruns",
+      "hoehenmeter_abweichung:schruns"
+    ]
+  },
+  {
+    "id": "todtnauer-huette",
+    "name": "Todtnauer Hütte",
+    "gebietId": "todtnau-belchen",
+    "hoeheYaml": 1321,
+    "hoeheGelaende": 1323,
+    "zustiege": [
+      {
+        "haltestelleId": "todtnau-busbahnhof",
+        "luftlinieKm": 6.1,
+        "gehzeitMin": 45,
+        "schaetzungMin": 197,
+        "hmYaml": 380,
+        "hmGelaende": 676,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "feldberg-baerental",
+        "luftlinieKm": 7.4,
+        "gehzeitMin": 60,
+        "schaetzungMin": 185,
+        "hmYaml": 100,
+        "hmGelaende": 362,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": true,
+    "flags": [
+      "zustieg_zu_kurz:todtnau-busbahnhof",
+      "zustieg_zu_kurz:feldberg-baerental"
+    ]
+  },
+  {
+    "id": "totalphuette",
+    "name": "Totalphütte",
+    "gebietId": "brandnertal",
+    "hoeheYaml": 2385,
+    "hoeheGelaende": 2334,
+    "zustiege": [
+      {
+        "haltestelleId": "brand-luenerseebahn",
+        "luftlinieKm": 2.7,
+        "gehzeitMin": 90,
+        "schaetzungMin": 182,
+        "hmYaml": 410,
+        "hmGelaende": 773,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 2,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "treschhuette",
+    "name": "Treschhütte",
+    "gebietId": "reusstal-maderanertal",
+    "hoeheYaml": 1475,
+    "hoeheGelaende": 1509,
+    "zustiege": [
+      {
+        "haltestelleId": "gurtnellen-wiler",
+        "luftlinieKm": 2.2,
+        "gehzeitMin": 150,
+        "schaetzungMin": 177,
+        "hmYaml": 740,
+        "hmGelaende": 770,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "ulmer-huette",
+    "name": "Ulmer Hütte",
+    "gebietId": "arlberg-verwall",
+    "hoeheYaml": 2288,
+    "hoeheGelaende": 2281,
+    "zustiege": [
+      {
+        "haltestelleId": "st-anton-am-arlberg",
+        "luftlinieKm": 4.9,
+        "gehzeitMin": 60,
+        "schaetzungMin": 246,
+        "hmYaml": 150,
+        "hmGelaende": 984,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "voralphuette",
+    "name": "Voralphütte",
+    "gebietId": "goeschenen-goescheneralp",
+    "hoeheYaml": 2126,
+    "hoeheGelaende": 2128,
+    "zustiege": [
+      {
+        "haltestelleId": "abzw-voralp",
+        "luftlinieKm": 4.7,
+        "gehzeitMin": 150,
+        "schaetzungMin": 182,
+        "hmYaml": 670,
+        "hmGelaende": 672,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "waltenbergerhaus",
+    "name": "Waltenbergerhaus",
+    "gebietId": "oberstdorf",
+    "hoeheYaml": 2085,
+    "hoeheGelaende": 2051,
+    "zustiege": [
+      {
+        "haltestelleId": "birgsau",
+        "luftlinieKm": 4.1,
+        "gehzeitMin": 210,
+        "schaetzungMin": 262,
+        "hmYaml": 1130,
+        "hmGelaende": 1098,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 6,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "wanderheim-eninger-weide",
+    "name": "Wanderheim Eninger Weide (Hans-Schenk-Haus)",
+    "gebietId": "albtrauf-bad-urach",
+    "hoeheYaml": 751,
+    "hoeheGelaende": 757,
+    "zustiege": [
+      {
+        "haltestelleId": "eningen-eninger-weide",
+        "luftlinieKm": 0.7,
+        "gehzeitMin": 15,
+        "schaetzungMin": 16,
+        "hmYaml": 30,
+        "hmGelaende": 24,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "weisshornhuette",
+    "name": "Weisshornhütte",
+    "gebietId": "zermatt-mattertal",
+    "hoeheYaml": 2932,
+    "hoeheGelaende": 2919,
+    "zustiege": [
+      {
+        "haltestelleId": "randa",
+        "luftlinieKm": 3.3,
+        "gehzeitMin": 270,
+        "schaetzungMin": 337,
+        "hmYaml": 1520,
+        "hmGelaende": 1516,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "weissmieshuette",
+    "name": "Weissmieshütte",
+    "gebietId": "saastal",
+    "hoeheYaml": 2726,
+    "hoeheGelaende": 2705,
+    "zustiege": [
+      {
+        "haltestelleId": "saas-grund",
+        "luftlinieKm": 3.9,
+        "gehzeitMin": 45,
+        "schaetzungMin": 268,
+        "hmYaml": 330,
+        "hmGelaende": 1145,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 5,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "wiedenbachhuette",
+    "name": "Wiedenbachhütte",
+    "gebietId": "buehlertal",
+    "hoeheYaml": 370,
+    "hoeheGelaende": 370,
+    "zustiege": [
+      {
+        "haltestelleId": "buehlertal-gertelbachstrasse",
+        "luftlinieKm": 0,
+        "gehzeitMin": 5,
+        "schaetzungMin": 1,
+        "hmYaml": 0,
+        "hmGelaende": 0,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "buehl",
+        "luftlinieKm": 6,
+        "gehzeitMin": 90,
+        "schaetzungMin": 145,
+        "hmYaml": 150,
+        "hmGelaende": 234,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 2,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "wiesbadener-huette",
+    "name": "Wiesbadener Hütte",
+    "gebietId": "silvretta",
+    "hoeheYaml": 2443,
+    "hoeheGelaende": 2407,
+    "zustiege": [
+      {
+        "haltestelleId": "bielerhoehe",
+        "luftlinieKm": 5.8,
+        "gehzeitMin": 120,
+        "schaetzungMin": 154,
+        "hmYaml": 410,
+        "hmGelaende": 375,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "wildhornhuette",
+    "name": "Wildhornhütte",
+    "gebietId": "lenk",
+    "hoeheYaml": 2303,
+    "hoeheGelaende": 2322,
+    "zustiege": [
+      {
+        "haltestelleId": "iffigenalp",
+        "luftlinieKm": 4.7,
+        "gehzeitMin": 225,
+        "schaetzungMin": 186,
+        "hmYaml": 680,
+        "hmGelaende": 693,
+        "bergbahn": false
+      },
+      {
+        "haltestelleId": "lenk",
+        "luftlinieKm": 9.8,
+        "gehzeitMin": 300,
+        "schaetzungMin": 350,
+        "hmYaml": 1240,
+        "hmGelaende": 1253,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 7,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "wildstrubelhuette",
+    "name": "Wildstrubelhütte",
+    "gebietId": "lenk",
+    "hoeheYaml": 2793,
+    "hoeheGelaende": 2782,
+    "zustiege": [
+      {
+        "haltestelleId": "iffigenalp",
+        "luftlinieKm": 2.8,
+        "gehzeitMin": 270,
+        "schaetzungMin": 259,
+        "hmYaml": 1170,
+        "hmGelaende": 1153,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 6,
+    "geschaetzt": true,
+    "flags": []
+  },
+  {
+    "id": "windegghuette",
+    "name": "Windegghütte",
+    "gebietId": "grimsel-haslital",
+    "hoeheYaml": 1886,
+    "hoeheGelaende": 1847,
+    "zustiege": [
+      {
+        "haltestelleId": "nessental-triftbahn",
+        "luftlinieKm": 3.7,
+        "gehzeitMin": 90,
+        "schaetzungMin": 203,
+        "hmYaml": 530,
+        "hmGelaende": 828,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 9,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "wormser-huette",
+    "name": "Wormser Hütte",
+    "gebietId": "montafon-raetikon",
+    "hoeheYaml": 2305,
+    "hoeheGelaende": 2293,
+    "zustiege": [
+      {
+        "haltestelleId": "schruns",
+        "luftlinieKm": 4.7,
+        "gehzeitMin": 75,
+        "schaetzungMin": 369,
+        "hmYaml": 430,
+        "hmGelaende": 1610,
+        "bergbahn": true
+      }
+    ],
+    "abstandGebietKm": 8,
+    "geschaetzt": false,
+    "flags": []
+  },
+  {
+    "id": "zwinglipasshuette",
+    "name": "Zwinglipasshütte",
+    "gebietId": "toggenburg",
+    "hoeheYaml": 1998,
+    "hoeheGelaende": 1990,
+    "zustiege": [
+      {
+        "haltestelleId": "wildhaus-dorf",
+        "luftlinieKm": 3.8,
+        "gehzeitMin": 180,
+        "schaetzungMin": 218,
+        "hmYaml": 910,
+        "hmGelaende": 898,
+        "bergbahn": false
+      }
+    ],
+    "abstandGebietKm": 4,
+    "geschaetzt": true,
+    "flags": []
+  }
+]

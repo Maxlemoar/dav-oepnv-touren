@@ -1,0 +1,80 @@
+# Vorgeschlagene Änderungen Gruppe g2 (Berner Oberland, Freiburger Voralpen, Emmental, Wallis), Stand 12.11.2026.
+# Nichts davon ist eingespielt. sicher: true nur mit belastbarer Quelle (SAC-Tourenportal, Hüttenseite, Betreiber, OSM).
+# SAC-Tourenportal-Links: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/<id>/
+
+# --- Anenhütte (geschlossen) ---
+- { datei: content/huetten/anenhuette.yaml, feld: "zustiege[0].hinweis", alt: "Bus bis Fafleralp (Sommer) verkürzt auf 1:30 h, Fafleralp liegt aber über 5:30 h ab Offenburg.", neu: "Nach dem Bergsturz von Blatten (28.05.2025) keine Sommersaison; Wiedereröffnung laut Hütte frühestens 2028. Fafleralp nur per Postauto ab Lauchernalp mit Voranmeldung.", quelle: "https://www.anenhuette.ch", sicher: true }
+- { datei: content/huetten/anenhuette.yaml, feld: "(ganze Hütte)", alt: "sichtbar", neu: "ausblenden oder als geschlossen kennzeichnen bis zur Wiedereröffnung", quelle: "https://www.anenhuette.ch", sicher: true }
+
+# --- Fründenhütte (Normalweg gesperrt) ---
+- { datei: content/huetten/fruendenhuette.yaml, feld: "zustiege[0].gehzeitMin", alt: 165, neu: 225, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000102/", sicher: true }
+- { datei: content/huetten/fruendenhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 1000, neu: 1130, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000102/", sicher: true }
+- { datei: content/huetten/fruendenhuette.yaml, feld: "zustiege[0].hinweis", alt: "Gondel oder Bus zum Oeschinensee, ab dort 2:45 h (T3).", neu: "Gondelbahn Kandersteg–Oeschinen (im Sommer 2026 mit Zeitfenster-Reservation). Der T3-Weg am Oeschinensee ist gesperrt (Spitze Stei), Normalweg jetzt über die Untere Fründschnuer, T4, 3:30–4 h.", quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000102/", sicher: true }
+
+# --- Windegghütte (Triftbahn 2026 außer Betrieb) ---
+- { datei: content/huetten/windegghuette.yaml, feld: "zustiege[0].hinweis", alt: "Triftbahn bis Underi Trift (1357 m), ab dort 1:30 h (T2), Triftbrücke.", neu: "Triftbahn bis Underi Trift, ab dort 1:30 h (T2). Die Triftbahn fuhr 2026 wegen technischer Probleme nicht; Betrieb 2027 vor der Tour prüfen.", quelle: "https://www.grimselwelt.ch/en/trift", sicher: true }
+
+# --- Konkordiahütte (geschätzt -> belegt) ---
+- { datei: content/huetten/konkordiahuette.yaml, feld: "zustiege[0].gehzeitMin", alt: 300, neu: 330, quelle: "https://www.konkordiahuette.ch/index.php/en/access-and-tours/summer", sicher: true }
+- { datei: content/huetten/konkordiahuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 700, neu: 1050, quelle: "https://www.konkordiahuette.ch/index.php/en/access-and-tours/summer", sicher: true }
+- { datei: content/huetten/konkordiahuette.yaml, feld: "geschaetzt", alt: true, neu: false, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000142/", sicher: true }
+- { datei: content/huetten/konkordiahuette.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000142/", sicher: false }
+
+# --- Koordinaten ---
+- { datei: content/huetten/bluemlisalphuette.yaml, feld: "lat", alt: 46.5, neu: 46.5102, quelle: "https://www.openstreetmap.org/node/11174401522", sicher: true }
+- { datei: content/huetten/bluemlisalphuette.yaml, feld: "lon", alt: 7.77, neu: 7.7716, quelle: "https://www.openstreetmap.org/node/11174401522", sicher: true }
+- { datei: content/huetten/doldenhornhuette.yaml, feld: "lat", alt: 46.4735, neu: 46.4869, quelle: "https://www.openstreetmap.org/way/222825784", sicher: true }
+- { datei: content/huetten/doldenhornhuette.yaml, feld: "lon", alt: 7.6895, neu: 7.6974, quelle: "https://www.openstreetmap.org/way/222825784", sicher: true }
+
+# --- Höhenmeter/Gehzeiten laut SAC-Tourenportal ---
+- { datei: content/huetten/lauteraarhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 450, neu: 950, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000148/", sicher: true }
+- { datei: content/huetten/oberaletschhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 600, neu: 970, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000193/", sicher: true }
+- { datei: content/huetten/schreckhornhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 1140, neu: 1380, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000243/", sicher: true }
+- { datei: content/huetten/lohnerhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 810, neu: 980, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000157/", sicher: true }
+- { datei: content/huetten/monte-rosa-huette.yaml, feld: "zustiege[0].hoehenmeter", alt: 400, neu: 540, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000182/", sicher: true }
+- { datei: content/huetten/monte-rosa-huette.yaml, feld: "zustiege[0].hinweis", alt: "Gornergratbahn bis Rotenboden, Querung von Gorner- und Grenzgletscher, Gletscherausrüstung nötig, 3:45 h.", neu: "Gornergratbahn bis Rotenboden, Querung des Gornergletschers (T4), Gletscherausrüstung nötig, 3:30–4 h.", quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000182/", sicher: true }
+- { datei: content/huetten/schoenbielhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 1090, neu: 1160, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000241/", sicher: true }
+- { datei: content/huetten/britanniahuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 50, neu: 150, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000046/", sicher: true }
+- { datei: content/huetten/britanniahuette.yaml, feld: "zustiege[0].gehzeitMin", alt: 60, neu: 75, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000046/", sicher: false }
+- { datei: content/huetten/dossenhuette.yaml, feld: "zustiege[0].gehzeitMin", alt: 270, neu: 240, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000082/", sicher: true }
+- { datei: content/huetten/dossenhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 1300, neu: 1360, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000082/", sicher: true }
+- { datei: content/huetten/loetschenpasshuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 720, neu: 790, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000159/", sicher: true }
+- { datei: content/huetten/loetschenpasshuette.yaml, feld: "geschaetzt", alt: true, neu: false, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000159/", sicher: true }
+- { datei: content/huetten/binntalhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 720, neu: 770, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000035/", sicher: true }
+- { datei: content/huetten/binntalhuette.yaml, feld: "webUrl", alt: null, neu: "http://www.cabane-binntal.ch", quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000035/", sicher: true }
+- { datei: content/huetten/rottalhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 1890, neu: 1800, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000226/", sicher: true }
+- { datei: content/huetten/rothornhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 1575, neu: 1620, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000222/", sicher: true }
+- { datei: content/huetten/rothornhuette.yaml, feld: "webUrl", alt: "https://www.sac-oberaargau.ch/huetten/rothornhuette", neu: "http://www.rothornhuette-sac.ch", quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000222/", sicher: false }
+- { datei: content/huetten/engelhornhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 540, neu: 570, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000088/", sicher: true }
+- { datei: content/huetten/engelhornhuette.yaml, feld: "geschaetzt", alt: true, neu: false, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000088/", sicher: true }
+- { datei: content/huetten/bluemlisalphuette.yaml, feld: "webUrl", alt: "https://www.bluemlisalphuette.ch", neu: "https://www.bluemlisalphuette.com", quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000036/", sicher: false }
+
+# --- Cabane des Marindes: Zustieg ab Bushaltestelle Im Fang, Praz-Jean (Linie 260) ---
+- { datei: content/haltestellen/im-fang-praz-jean.yaml, feld: "(neu)", alt: null, neu: "{ id: im-fang-praz-jean, name: \"Im Fang, Praz-Jean\", haltestelleId: \"ch-opentransportdataswiss26_Parentch:1:sloid:77758\", lat: 46.60206, lon: 7.20289, land: CH, region: Freiburger Voralpen }", quelle: "https://api.transitous.org/api/v1/geocode?text=Pra%20Jean&type=STOP&language=de", sicher: true }
+- { datei: content/huetten/cabane-des-marindes.yaml, feld: "zustiege[0].haltestelleId", alt: charmey-village, neu: im-fang-praz-jean, quelle: "https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/", sicher: true }
+- { datei: content/huetten/cabane-des-marindes.yaml, feld: "zustiege[0].gehzeitMin", alt: 240, neu: 210, quelle: "https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/", sicher: true }
+- { datei: content/huetten/cabane-des-marindes.yaml, feld: "geschaetzt", alt: true, neu: false, quelle: "https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/", sicher: false }
+
+# --- Unsicher (nur Schätzung belegbar) ---
+- { datei: content/huetten/wildhornhuette.yaml, feld: "zustiege[0].gehzeitMin", alt: 225, neu: 180, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000293/", sicher: false }
+- { datei: content/huetten/wildstrubelhuette.yaml, feld: "zustiege[0].hoehenmeter", alt: 1170, neu: 1280, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000294/", sicher: false }
+- { datei: content/huetten/laemmerenhuette.yaml, feld: "zustiege[0].gehzeitMin", alt: 210, neu: 240, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000145/", sicher: false }
+
+# --- Saison: Hütten mit Frühjahrs-/Winterbewartung laut SAC (bisher "sommer"); Konvention wie Britannia/Monte Rosa/Weissmies ---
+- { datei: content/huetten/schoenbielhuette.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000241/", sicher: false }
+- { datei: content/huetten/taeschhuette.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000265/", sicher: false }
+- { datei: content/huetten/tierberglihuette.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000269/", sicher: false }
+- { datei: content/huetten/gaulihuette.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000111/", sicher: false }
+- { datei: content/huetten/oberaletschhuette.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000193/", sicher: false }
+- { datei: content/huetten/wildhornhuette.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000293/", sicher: false }
+- { datei: content/huetten/wildstrubelhuette.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000294/", sicher: false }
+- { datei: content/huetten/baechlitalhuette.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000021/", sicher: false }
+
+# --- Gebiete ---
+- { datei: content/gebiete/loetschental.yaml, feld: "beschreibung", alt: "… Anenhütte im Talschluss unter dem Langgletscher, Lötschenpasshütte als Übergang ins Berner Oberland.", neu: "… Lötschenpasshütte als Übergang ins Berner Oberland. Nach dem Bergsturz von Blatten (Mai 2025) ist der Talschluss nur eingeschränkt erreichbar: Postauto Lauchernalp–Fafleralp mit Voranmeldung, die Anenhütte bleibt bis voraussichtlich 2028 zu.", quelle: "https://www.srf.ch/news/schweiz/nach-bergsturz-von-blatten-aufatmen-im-hinteren-loetschental-der-oev-ist-zurueck", sicher: true }
+- { datei: content/gebiete/grimsel-haslital.yaml, feld: "beschreibung", alt: "… Triftbahn im Gadmertal …", neu: "… Triftbahn im Gadmertal (2026 außer Betrieb) …", quelle: "https://www.grimselwelt.ch/en/trift", sicher: true }
+- { datei: content/gebiete/kandersteg.yaml, feld: "beschreibung", alt: "Oeschinensee, Gemmipass und drei SAC-Hütten, alle direkt ab Bahnhof. …", neu: "Oeschinensee, Gemmipass und fünf SAC-Hütten (Doldenhorn, Fründen, Blüemlisalp, Balmhorn, Lämmeren), zu Fuß, per Bus oder Bergbahn ab Bahnhof. …", quelle: "content/huetten/*.yaml (gebietId kandersteg)", sicher: true }
+- { datei: content/gebiete/kandersteg.yaml, feld: "saison", alt: sommer, neu: ganzjaehrig, quelle: "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000145/", sicher: false }
+- { datei: content/gebiete/zermatt-mattertal.yaml, feld: "beschreibung", alt: "Sechs SAC-Hütten ab Bahnhof, … Fahrzeit knapp über fünf Stunden …", neu: "Sechs SAC-Hütten, drei davon ab Bahnhof Zermatt (Schönbiel, Rothorn, Monte Rosa über die Gornergratbahn) … Fahrzeit knapp fünf Stunden …", quelle: "content/haltestellen/zermatt.yaml (richtwerte.offenburg.fahrzeitMin 287)", sicher: true }
+- { datei: content/gebiete/gantrisch-stockhorn.yaml, feld: "beschreibung", alt: "Alles ab Offenburg in dreieinhalb Stunden …", neu: "Erlenbach und Mülenen ab Offenburg in dreieinhalb Stunden, Gurnigel in rund fünf …", quelle: "content/haltestellen/gurnigel-berghaus.yaml (richtwerte.offenburg.fahrzeitMin 298)", sicher: true }
+- { datei: content/gebiete/jaun-charmey.yaml, feld: "beschreibung", alt: "Von Charmey aus führt der Zustieg zur Cabane des Marindes …", neu: "Ab der Haltestelle Im Fang, Praz-Jean (Bus 260) führt der Zustieg zur Cabane des Marindes in 3:30 h …", quelle: "https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/", sicher: true }

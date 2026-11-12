@@ -1,0 +1,2078 @@
+[
+  {
+    "wo": "huette aescher webUrl",
+    "url": "https://www.aescher.ch",
+    "status": 200,
+    "endUrl": "https://aescher.ch/"
+  },
+  {
+    "wo": "huette aescher quelle",
+    "url": "https://www.aescher.ch",
+    "status": 200,
+    "endUrl": "https://aescher.ch/"
+  },
+  {
+    "wo": "huette albert-heim-huette webUrl",
+    "url": "https://www.albertheimhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.albertheimhuette.ch/huetteninformationen"
+  },
+  {
+    "wo": "huette albert-heim-huette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette almagellerhuette webUrl",
+    "url": "https://www.almagellerhuette.ch",
+    "status": 200,
+    "endUrl": "https://almagellerhuette.ch/de/"
+  },
+  {
+    "wo": "huette almagellerhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette anenhuette webUrl",
+    "url": "https://www.anenhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.anenhuette.ch/"
+  },
+  {
+    "wo": "huette anenhuette quelle",
+    "url": "https://www.anenhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.anenhuette.ch/"
+  },
+  {
+    "wo": "huette baechlitalhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette balmhornhuette webUrl",
+    "url": "https://www.balmhornhuette.ch",
+    "status": 200,
+    "endUrl": "https://balmhornhuette.ch/"
+  },
+  {
+    "wo": "huette balmhornhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette bergseehuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette binntalhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette bluemlisalphuette webUrl",
+    "url": "https://www.bluemlisalphuette.ch",
+    "status": 200,
+    "endUrl": "https://www.sac-bluemlisalp.ch/Blueemlisalphuette"
+  },
+  {
+    "wo": "huette bluemlisalphuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette bollenwees webUrl",
+    "url": "https://www.bollenwees.ch",
+    "status": 200,
+    "endUrl": "https://bollenwees.ch/"
+  },
+  {
+    "wo": "huette bollenwees quelle",
+    "url": "https://www.bollenwees.ch",
+    "status": 200,
+    "endUrl": "https://bollenwees.ch/"
+  },
+  {
+    "wo": "huette britanniahuette webUrl",
+    "url": "https://www.cas-geneve.ch",
+    "status": 200,
+    "endUrl": "https://www.cas-geneve.ch/"
+  },
+  {
+    "wo": "huette britanniahuette quelle",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/?type=hut",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/?type=hut"
+  },
+  {
+    "wo": "huette cabane-des-marindes webUrl",
+    "url": "https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/",
+    "status": 200,
+    "endUrl": "https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/"
+  },
+  {
+    "wo": "huette cabane-des-marindes quelle",
+    "url": "https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/",
+    "status": 200,
+    "endUrl": "https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/"
+  },
+  {
+    "wo": "huette cabane-perrenoud webUrl",
+    "url": "https://www.cas-neuchatel.ch/cabanes/cabane-perrenoud/",
+    "status": 200,
+    "endUrl": "https://www.cas-neuchatel.ch/cabanes/cabane-perrenoud/"
+  },
+  {
+    "wo": "huette cabane-perrenoud quelle",
+    "url": "https://www.cas-neuchatel.ch/cabanes/",
+    "status": 200,
+    "endUrl": "https://www.cas-neuchatel.ch/cabanes/"
+  },
+  {
+    "wo": "huette capanna-corno-gries webUrl",
+    "url": "https://www.corno-gries.ch",
+    "status": 200,
+    "endUrl": "https://www.corno-gries.ch/"
+  },
+  {
+    "wo": "huette capanna-corno-gries quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette capanna-cristallina quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette capanna-piansecco webUrl",
+    "url": "https://www.capannapiansecco.ch",
+    "status": 200,
+    "endUrl": "https://capannapiansecco.ch/"
+  },
+  {
+    "wo": "huette capanna-piansecco quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette carschinahuette webUrl",
+    "url": "https://www.carschina.ch",
+    "status": 200,
+    "endUrl": "https://www.carschina.ch/"
+  },
+  {
+    "wo": "huette carschinahuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette cavardirashuette webUrl",
+    "url": "https://www.cavardirashuette.ch",
+    "status": 200,
+    "endUrl": "https://www.cavardirashuette.ch/"
+  },
+  {
+    "wo": "huette cavardirashuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette chalet-schnepfenried quelle",
+    "url": "https://www.massif-des-vosges.fr/sit/231001216-chalet-refuge-des-amis-de-la-nature-du-schnepfenried/",
+    "status": 200,
+    "endUrl": "https://www.massif-des-vosges.fr/sit/231001216-chalet-refuge-des-amis-de-la-nature-du-schnepfenried/"
+  },
+  {
+    "wo": "huette chelenalphuette webUrl",
+    "url": "https://www.chelenalp.ch",
+    "status": 200,
+    "endUrl": "https://www.chelenalp.ch/"
+  },
+  {
+    "wo": "huette chelenalphuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette claridenhuette webUrl",
+    "url": "https://www.claridenhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.claridenhuette.ch/huette/index.php"
+  },
+  {
+    "wo": "huette claridenhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette clubhaus-backi webUrl",
+    "url": "https://www.sac-weissenstein.ch/clubhaus-backi.html",
+    "status": 200,
+    "endUrl": "https://www.sac-weissenstein.ch/clubhaus-backi.html"
+  },
+  {
+    "wo": "huette clubhaus-backi quelle",
+    "url": "https://www.sac-weissenstein.ch/clubhaus-backi.html",
+    "status": 200,
+    "endUrl": "https://www.sac-weissenstein.ch/clubhaus-backi.html"
+  },
+  {
+    "wo": "huette dammahuette webUrl",
+    "url": "https://www.dammahuette.ch",
+    "status": 200,
+    "endUrl": "https://www.dammahuette.ch/"
+  },
+  {
+    "wo": "huette dammahuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette darmstaedter-huette webUrl",
+    "url": "https://www.alpenverein-darmstadt.de/huetten/darmstaedterhuette",
+    "status": 200,
+    "endUrl": "https://www.alpenverein-darmstadt.de/huetten/darmstaedterhuette"
+  },
+  {
+    "wo": "huette darmstaedter-huette quelle",
+    "url": "https://www.alpenvereinaktiv.com/de/tour/zustieg-darmstaedter-huette-von-st.-anton/14490191/",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/tour/zustieg-darmstaedter-huette-von-st.-anton/14490191/"
+  },
+  {
+    "wo": "huette doldenhornhuette webUrl",
+    "url": "https://www.doldenhornhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.doldenhornhuette.ch/"
+  },
+  {
+    "wo": "huette doldenhornhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette domhuette webUrl",
+    "url": "https://www.domhuette.ch",
+    "status": 200,
+    "endUrl": "https://domhuette.ch/huetteninformationen"
+  },
+  {
+    "wo": "huette domhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette dossenhuette webUrl",
+    "url": "https://www.dossenhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.dossenhuette.ch/"
+  },
+  {
+    "wo": "huette dossenhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette douglasshuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Douglassh%C3%BCtte",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Douglassh%C3%BCtte"
+  },
+  {
+    "wo": "huette druesberghuette webUrl",
+    "url": "https://druesberghuette.ch/",
+    "status": 200,
+    "endUrl": "https://druesberghuette.ch/"
+  },
+  {
+    "wo": "huette druesberghuette quelle",
+    "url": "https://druesberghuette.ch/hutte-wegbeschreibung/",
+    "status": 200,
+    "endUrl": "https://druesberghuette.ch/hutte-wegbeschreibung/"
+  },
+  {
+    "wo": "huette edmund-probst-haus webUrl",
+    "url": "https://www.edmund-probst-haus.de",
+    "status": 200,
+    "endUrl": "https://www.edmund-probst-haus.de/"
+  },
+  {
+    "wo": "huette edmund-probst-haus quelle",
+    "url": "https://de.wikipedia.org/wiki/Edmund-Probst-Haus",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Edmund-Probst-Haus"
+  },
+  {
+    "wo": "huette engelhornhuette webUrl",
+    "url": "https://www.engelhornhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.aacb.ch/huetten/engelhornhuette/"
+  },
+  {
+    "wo": "huette engelhornhuette quelle",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/engelhornhuette-aacb-2147000088/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/engelhornhuette-aacb-2147000088/"
+  },
+  {
+    "wo": "huette etzlihuette webUrl",
+    "url": "https://www.etzlihuette.ch",
+    "status": 200,
+    "endUrl": "https://etzlihuette.ch/"
+  },
+  {
+    "wo": "huette etzlihuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette fergenhuette webUrl",
+    "url": "https://www.sac-praettigau.ch",
+    "status": 200,
+    "endUrl": "https://www.sac-praettigau.ch/"
+  },
+  {
+    "wo": "huette fergenhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette fiderepasshuette webUrl",
+    "url": "https://www.fiderepasshuette.de/de/",
+    "status": 200,
+    "endUrl": "https://www.fiderepasshuette.de/de/home/"
+  },
+  {
+    "wo": "huette fiderepasshuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Fiderepassh%C3%BCtte",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Fiderepassh%C3%BCtte"
+  },
+  {
+    "wo": "huette freiburger-huette webUrl",
+    "url": "https://www.freiburger-huette.at",
+    "status": 200,
+    "endUrl": "https://www.freiburger-huette.at/"
+  },
+  {
+    "wo": "huette freiburger-huette quelle",
+    "url": "https://www.freiburger-huette.at/anreise",
+    "status": 200,
+    "endUrl": "https://www.freiburger-huette.at/anreise"
+  },
+  {
+    "wo": "huette fridolinshuette webUrl",
+    "url": "https://www.fridolinshuette.ch",
+    "status": 200,
+    "endUrl": "https://fridolinshuette.ch/"
+  },
+  {
+    "wo": "huette fridolinshuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette fruendenhuette webUrl",
+    "url": "https://www.fruendenhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.fruendenhuette.ch/"
+  },
+  {
+    "wo": "huette fruendenhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette gaulihuette webUrl",
+    "url": "https://www.gaulihuette.ch",
+    "status": 200,
+    "endUrl": "https://gaulihuette.ch/"
+  },
+  {
+    "wo": "huette gaulihuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette gelmerhuette webUrl",
+    "url": "https://www.gelmerhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.gelmerhuette.ch/"
+  },
+  {
+    "wo": "huette gelmerhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette glecksteinhuette webUrl",
+    "url": "https://www.gleckstein.ch",
+    "status": 200,
+    "endUrl": "https://www.gleckstein.ch/index.php/de/"
+  },
+  {
+    "wo": "huette glecksteinhuette quelle",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/glecksteinhuette-sac-2147000118/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/glecksteinhuette-sac-2147000118/"
+  },
+  {
+    "wo": "huette grialetschhuette webUrl",
+    "url": "https://www.grialetsch.ch",
+    "status": 200,
+    "endUrl": "https://www.grialetsch.ch/DE/home.html"
+  },
+  {
+    "wo": "huette grialetschhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette gspaltenhornhuette webUrl",
+    "url": "https://www.gspaltenhornhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.gspaltenhornhuette.ch/"
+  },
+  {
+    "wo": "huette gspaltenhornhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette heinrich-hueter-huette webUrl",
+    "url": "https://hueterhuette.at/",
+    "status": 200,
+    "endUrl": "https://hueterhuette.at/"
+  },
+  {
+    "wo": "huette heinrich-hueter-huette quelle",
+    "url": "https://hueterhuette.at/",
+    "status": 200,
+    "endUrl": "https://hueterhuette.at/"
+  },
+  {
+    "wo": "huette hohwaldhuette webUrl",
+    "url": "https://www.bergfreunde-saar.de/hohwaldhuette",
+    "status": 200,
+    "endUrl": "https://www.bergfreunde-saar.de/hohwaldhuette"
+  },
+  {
+    "wo": "huette hohwaldhuette quelle",
+    "url": "https://www.bergfreunde-saar.de/hohwaldhuette",
+    "status": 200,
+    "endUrl": "https://www.bergfreunde-saar.de/hohwaldhuette"
+  },
+  {
+    "wo": "huette huefihuette webUrl",
+    "url": "https://www.huefihuette.ch",
+    "status": 200,
+    "endUrl": "https://huefihuette.ch/"
+  },
+  {
+    "wo": "huette huefihuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette hundsteinhuette webUrl",
+    "url": "https://www.sac-saentis.ch",
+    "status": 200,
+    "endUrl": "https://sac-saentis.ch/"
+  },
+  {
+    "wo": "huette hundsteinhuette quelle",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/hundsteinhuette-sac-2147000138/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/hundsteinhuette-sac-2147000138/"
+  },
+  {
+    "wo": "huette jurahaus webUrl",
+    "url": "https://www.sac-biel.ch/huetten/jurahaus.php",
+    "status": 200,
+    "endUrl": "https://www.sac-biel.ch/huetten/jurahaus.php"
+  },
+  {
+    "wo": "huette jurahaus quelle",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/jurahaus-2147469225/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/jurahaus-2147469225/"
+  },
+  {
+    "wo": "huette kemptner-huette webUrl",
+    "url": "https://www.kemptner-huette.de",
+    "status": 200,
+    "endUrl": "https://www.kemptner-huette.de/"
+  },
+  {
+    "wo": "huette kemptner-huette quelle",
+    "url": "https://www.kemptner-huette.de/anreise-kontakt",
+    "status": 200,
+    "endUrl": "https://www.kemptner-huette.de/anreise-kontakt"
+  },
+  {
+    "wo": "huette konkordiahuette webUrl",
+    "url": "https://www.konkordiahuette.ch",
+    "status": 200,
+    "endUrl": "https://www.konkordiahuette.ch/index.php/de/"
+  },
+  {
+    "wo": "huette konkordiahuette quelle",
+    "url": "https://www.konkordiahuette.ch",
+    "status": 200,
+    "endUrl": "https://www.konkordiahuette.ch/index.php/de/"
+  },
+  {
+    "wo": "huette konstanzer-huette webUrl",
+    "url": "https://www.dav-konstanz.de",
+    "status": 200,
+    "endUrl": "https://www.dav-konstanz.de/"
+  },
+  {
+    "wo": "huette konstanzer-huette quelle",
+    "url": "https://www.stantonamarlberg.com/de/sommer/bergregion/huettenverzeichnis/-addresses/konstanzer-huette",
+    "status": 200,
+    "endUrl": "https://www.stantonamarlberg.com/de/sommer/bergregion/huettenverzeichnis/-addresses/konstanzer-huette"
+  },
+  {
+    "wo": "huette kroentenhuette webUrl",
+    "url": "https://www.kroenten.ch",
+    "status": 200,
+    "endUrl": "https://kroenten.ch/"
+  },
+  {
+    "wo": "huette kroentenhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette la-chaume-des-veaux webUrl",
+    "url": "https://www.amis-nature-strasbourg.net/",
+    "status": 200,
+    "endUrl": "https://www.amis-nature-strasbourg.net/"
+  },
+  {
+    "wo": "huette la-chaume-des-veaux quelle",
+    "url": "https://www.naturfreunde.de/naturfreundehaeuser-den-vogesen-f",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/naturfreundehaeuser-den-vogesen-f"
+  },
+  {
+    "wo": "huette laemmerenhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette lauteraarhuette webUrl",
+    "url": "https://www.lauteraarhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.lauteraarhuette.ch/"
+  },
+  {
+    "wo": "huette lauteraarhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette leglerhuette webUrl",
+    "url": "https://www.leglerhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.leglerhuette.ch/"
+  },
+  {
+    "wo": "huette leglerhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette les-jonquilles webUrl",
+    "url": "https://amis-nature.org/article236.html",
+    "status": 404,
+    "endUrl": "https://amis-nature.fr/article236.html"
+  },
+  {
+    "wo": "huette les-jonquilles quelle",
+    "url": "https://amis-nature.org/article236.html",
+    "status": 404,
+    "endUrl": "https://amis-nature.fr/article236.html"
+  },
+  {
+    "wo": "huette leutschachhuette webUrl",
+    "url": "https://www.leutschachhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.leutschachhuette.ch/"
+  },
+  {
+    "wo": "huette leutschachhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette lidernenhuette webUrl",
+    "url": "https://www.lidernen.ch",
+    "status": 200,
+    "endUrl": "https://lidernen.ch/"
+  },
+  {
+    "wo": "huette lidernenhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette lindauer-huette webUrl",
+    "url": "https://lindauerhuette.com/",
+    "status": 200,
+    "endUrl": "https://lindauerhuette.com/"
+  },
+  {
+    "wo": "huette lindauer-huette quelle",
+    "url": "https://de.wikipedia.org/wiki/Lindauer_H%C3%BCtte",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Lindauer_H%C3%BCtte"
+  },
+  {
+    "wo": "huette loetschenpasshuette webUrl",
+    "url": "https://www.loetschenpass.ch",
+    "status": 200,
+    "endUrl": "https://www.loetschenpass.ch/"
+  },
+  {
+    "wo": "huette loetschenpasshuette quelle",
+    "url": "https://www.loetschenpass.ch",
+    "status": 200,
+    "endUrl": "https://www.loetschenpass.ch/"
+  },
+  {
+    "wo": "huette lohnerhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette lustenauer-huette webUrl",
+    "url": "https://www.alpenverein-vorarlberg.at/huetten",
+    "status": 200,
+    "endUrl": "https://www.alpenverein-vorarlberg.at/huetten"
+  },
+  {
+    "wo": "huette lustenauer-huette quelle",
+    "url": "https://de.wikipedia.org/wiki/Lustenauer_H%C3%BCtte",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Lustenauer_H%C3%BCtte"
+  },
+  {
+    "wo": "huette madrisahuette webUrl",
+    "url": "https://www.alpenverein-karlsruhe.de/huetten/madrisahuette",
+    "status": 200,
+    "endUrl": "https://www.alpenverein-karlsruhe.de/huetten/madrisahuette"
+  },
+  {
+    "wo": "huette madrisahuette quelle",
+    "url": "https://www.alpenverein-karlsruhe.de/huetten/madrisahuette/standort",
+    "status": 200,
+    "endUrl": "https://www.alpenverein-karlsruhe.de/huetten/madrisahuette/standort"
+  },
+  {
+    "wo": "huette mannheimer-huette webUrl",
+    "url": "https://www.mannheimerhuette.co.at/mannheimerhuette/",
+    "status": 404,
+    "endUrl": "https://www.mannheimerhuette.co.at/mannheimerhuette/"
+  },
+  {
+    "wo": "huette mannheimer-huette quelle",
+    "url": "https://de.wikipedia.org/wiki/Mannheimer_H%C3%BCtte",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Mannheimer_H%C3%BCtte"
+  },
+  {
+    "wo": "huette martinsmadhuette webUrl",
+    "url": "https://www.martinsmadhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.martinsmadhuette.ch/"
+  },
+  {
+    "wo": "huette martinsmadhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette meglisalp webUrl",
+    "url": "https://www.meglisalp.ch",
+    "status": 200,
+    "endUrl": "https://meglisalp.ch/"
+  },
+  {
+    "wo": "huette meglisalp quelle",
+    "url": "https://www.meglisalp.ch",
+    "status": 200,
+    "endUrl": "https://meglisalp.ch/"
+  },
+  {
+    "wo": "huette mindelheimer-huette webUrl",
+    "url": "https://www.mindelheimer-huette.de",
+    "status": 200,
+    "endUrl": "https://www.mindelheimer-huette.de/"
+  },
+  {
+    "wo": "huette mindelheimer-huette quelle",
+    "url": "https://de.wikipedia.org/wiki/Mindelheimer_H%C3%BCtte",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Mindelheimer_H%C3%BCtte"
+  },
+  {
+    "wo": "huette monte-rosa-huette webUrl",
+    "url": "https://www.section-monte-rosa.ch/de/",
+    "status": 0,
+    "endUrl": "https://www.section-monte-rosa.ch/de/"
+  },
+  {
+    "wo": "huette monte-rosa-huette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette muttseehuette webUrl",
+    "url": "https://www.muttseehuette.ch",
+    "status": 200,
+    "endUrl": "https://www.muttseehuette.ch/"
+  },
+  {
+    "wo": "huette muttseehuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette naturfreundehaus-aemmital webUrl",
+    "url": "https://naturfreunde.ch/haeuser/aemmital/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/aemmital/"
+  },
+  {
+    "wo": "huette naturfreundehaus-aemmital quelle",
+    "url": "https://naturfreunde.ch/haeuser/aemmital/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/aemmital/"
+  },
+  {
+    "wo": "huette naturfreundehaus-aurore webUrl",
+    "url": "https://aurore.nfh.ch/",
+    "status": 200,
+    "endUrl": "https://aurore.nfh.ch/"
+  },
+  {
+    "wo": "huette naturfreundehaus-aurore quelle",
+    "url": "https://naturfreunde.ch/haeuser/aurore/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/aurore/"
+  },
+  {
+    "wo": "huette naturfreundehaus-badener-hoehe webUrl",
+    "url": "https://www.naturfreunde-karlsruhe.de/unsere-haeuser/badener-hoehe",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde-karlsruhe.de/unsere-haeuser/badener-hoehe"
+  },
+  {
+    "wo": "huette naturfreundehaus-badener-hoehe quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-badener-hoehe",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-badener-hoehe"
+  },
+  {
+    "wo": "huette naturfreundehaus-bellevue webUrl",
+    "url": "https://naturfreunde.ch/haeuser/bellevue/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/bellevue/"
+  },
+  {
+    "wo": "huette naturfreundehaus-bellevue quelle",
+    "url": "https://naturfreunde.ch/haeuser/bellevue/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/bellevue/"
+  },
+  {
+    "wo": "huette naturfreundehaus-breitnau quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-breitnau-wanderhuette-am-fahrenberg",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-breitnau-wanderhuette-am-fahrenberg"
+  },
+  {
+    "wo": "huette naturfreundehaus-brend webUrl",
+    "url": "https://naturfreundehaus-brend.de/",
+    "status": 200,
+    "endUrl": "https://naturfreundehaus-brend.de/"
+  },
+  {
+    "wo": "huette naturfreundehaus-brend quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-brend",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-brend"
+  },
+  {
+    "wo": "huette naturfreundehaus-bruenig webUrl",
+    "url": "https://mos-guesthouse.ch/",
+    "status": 200,
+    "endUrl": "https://mos-guesthouse.ch/"
+  },
+  {
+    "wo": "huette naturfreundehaus-bruenig quelle",
+    "url": "https://naturfreunde.ch/haeuser/bruenig/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/bruenig/"
+  },
+  {
+    "wo": "huette naturfreundehaus-feldberg webUrl",
+    "url": "https://www.naturfreundehaus-feldberg.de/",
+    "status": 200,
+    "endUrl": "https://www.naturfreundehaus-feldberg.de/"
+  },
+  {
+    "wo": "huette naturfreundehaus-feldberg quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-feldberg",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-feldberg"
+  },
+  {
+    "wo": "huette naturfreundehaus-gersbacher-hoernle quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-gersbacher-hoernle",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-gersbacher-hoernle"
+  },
+  {
+    "wo": "huette naturfreundehaus-grindelwald webUrl",
+    "url": "https://naturfreunde.ch/haeuser/grindelwald/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/grindelwald/"
+  },
+  {
+    "wo": "huette naturfreundehaus-grindelwald quelle",
+    "url": "https://naturfreunde.ch/haeuser/grindelwald/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/grindelwald/"
+  },
+  {
+    "wo": "huette naturfreundehaus-grosser-wald quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-grosser-wald",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-grosser-wald"
+  },
+  {
+    "wo": "huette naturfreundehaus-haeusern quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-haeusern",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-haeusern"
+  },
+  {
+    "wo": "huette naturfreundehaus-hoerden webUrl",
+    "url": "https://www.naturfreunde-hoerden.de/",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde-hoerden.de/"
+  },
+  {
+    "wo": "huette naturfreundehaus-hoerden quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-hoerden",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-hoerden"
+  },
+  {
+    "wo": "huette naturfreundehaus-kniebis webUrl",
+    "url": "https://www.naturfreundehaus-kniebis.de/",
+    "status": 200,
+    "endUrl": "https://www.naturfreundehaus-kniebis.de/"
+  },
+  {
+    "wo": "huette naturfreundehaus-kniebis quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-kniebis",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-kniebis"
+  },
+  {
+    "wo": "huette naturfreundehaus-kornebene webUrl",
+    "url": "https://www.kornebene.de/",
+    "status": 200,
+    "endUrl": "https://www.kornebene.de/"
+  },
+  {
+    "wo": "huette naturfreundehaus-kornebene quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-kornebene",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-kornebene"
+  },
+  {
+    "wo": "huette naturfreundehaus-sommerecke webUrl",
+    "url": "https://taenzerdorf.org/de/sommerecke/vermietung-sommerecke",
+    "status": 200,
+    "endUrl": "https://taenzerdorf.org/de/sommerecke/vermietung-sommerecke"
+  },
+  {
+    "wo": "huette naturfreundehaus-sommerecke quelle",
+    "url": "https://www.naturfreunde.de/haus/naturfreundehaus-sommerecke",
+    "status": 200,
+    "endUrl": "https://www.naturfreunde.de/haus/naturfreundehaus-sommerecke"
+  },
+  {
+    "wo": "huette oberaletschhuette webUrl",
+    "url": "https://www.oberaletsch.ch",
+    "status": 200,
+    "endUrl": "https://oberaletsch.ch/"
+  },
+  {
+    "wo": "huette oberaletschhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette planurahuette webUrl",
+    "url": "https://www.planurahuette.ch",
+    "status": 200,
+    "endUrl": "https://planurahuette.ch/"
+  },
+  {
+    "wo": "huette planurahuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette prinz-luitpold-haus webUrl",
+    "url": "https://www.prinz-luitpoldhaus.de/cms",
+    "status": 200,
+    "endUrl": "https://www.prinz-luitpoldhaus.de/cms/"
+  },
+  {
+    "wo": "huette prinz-luitpold-haus quelle",
+    "url": "https://www.prinz-luitpoldhaus.de/cms",
+    "status": 200,
+    "endUrl": "https://www.prinz-luitpoldhaus.de/cms/"
+  },
+  {
+    "wo": "huette raemsenberg webUrl",
+    "url": "https://www.dav-offenburg.de/Sektion/H%C3%BCtten/R%C3%A4msenberg",
+    "status": 200,
+    "endUrl": "https://www.dav-offenburg.de/Sektion/H%C3%BCtten/R%C3%A4msenberg"
+  },
+  {
+    "wo": "huette raemsenberg quelle",
+    "url": "https://www.dav-offenburg.de/Sektion/H%C3%BCtten/R%C3%A4msenberg",
+    "status": 200,
+    "endUrl": "https://www.dav-offenburg.de/Sektion/H%C3%BCtten/R%C3%A4msenberg"
+  },
+  {
+    "wo": "huette ramshaldenhuette webUrl",
+    "url": "https://www.dav-freiburg.de/de/huette/ramshalde.php",
+    "status": 200,
+    "endUrl": "https://www.dav-freiburg.de/de/huette/ramshalde.php"
+  },
+  {
+    "wo": "huette ramshaldenhuette quelle",
+    "url": "https://www.dav-freiburg.de/de/huette/ramshalde.php",
+    "status": 200,
+    "endUrl": "https://www.dav-freiburg.de/de/huette/ramshalde.php"
+  },
+  {
+    "wo": "huette rappenseehuette webUrl",
+    "url": "https://www.dav-kempten.de/huetten/rappenseehuette",
+    "status": 200,
+    "endUrl": "https://www.dav-kempten.de/huetten/rappenseehuette"
+  },
+  {
+    "wo": "huette rappenseehuette quelle",
+    "url": "https://www.alpenvereinaktiv.com/de/tour/zustieg-rappenseehuette-von-birgsau/26246567/",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/tour/zustieg-rappenseehuette-von-birgsau/26246567/"
+  },
+  {
+    "wo": "huette ravensburger-huette webUrl",
+    "url": "https://www.ravensburgerhuette.at",
+    "status": 200,
+    "endUrl": "https://www.ravensburgerhuette.at/"
+  },
+  {
+    "wo": "huette ravensburger-huette quelle",
+    "url": "https://www.ravensburgerhuette.at/die-berghuette/anreise/oeffentlichen-verkehrsmitteln/wanderbus-spullersee/",
+    "status": 200,
+    "endUrl": "https://www.ravensburgerhuette.at/die-berghuette/anreise/oeffentlichen-verkehrsmitteln/wanderbus-spullersee/"
+  },
+  {
+    "wo": "huette refuge-de-freconrupt quelle",
+    "url": "https://www.rando-bruche.fr/pratique/refuges/",
+    "status": 200,
+    "endUrl": "https://www.rando-bruche.fr/pratique/refuges/"
+  },
+  {
+    "wo": "huette refuge-des-trois-fours webUrl",
+    "url": "https://chaletrefuge3fours.ffcam.fr/",
+    "status": 200,
+    "endUrl": "https://chaletrefuge3fours.ffcam.fr/"
+  },
+  {
+    "wo": "huette refuge-des-trois-fours quelle",
+    "url": "https://chaletrefuge3fours.ffcam.fr/",
+    "status": 200,
+    "endUrl": "https://chaletrefuge3fours.ffcam.fr/"
+  },
+  {
+    "wo": "huette refuge-du-grand-ventron webUrl",
+    "url": "https://refugegrandventron.ffcam.fr/",
+    "status": 200,
+    "endUrl": "https://refugegrandventron.ffcam.fr/"
+  },
+  {
+    "wo": "huette refuge-du-grand-ventron quelle",
+    "url": "https://refugegrandventron.ffcam.fr/",
+    "status": 200,
+    "endUrl": "https://refugegrandventron.ffcam.fr/"
+  },
+  {
+    "wo": "huette ringelspitzhuette webUrl",
+    "url": "https://www.ringelspitzhuette.ch",
+    "status": 200,
+    "endUrl": "https://ringelspitzhuette.ch/"
+  },
+  {
+    "wo": "huette ringelspitzhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette rothornhuette webUrl",
+    "url": "https://www.sac-oberaargau.ch/huetten/rothornhuette",
+    "status": 200,
+    "endUrl": "https://www.sac-oberaargau.ch/huetten/rothornhuette"
+  },
+  {
+    "wo": "huette rothornhuette quelle",
+    "url": "https://www.sac-oberaargau.ch/huetten/rothornhuette",
+    "status": 200,
+    "endUrl": "https://www.sac-oberaargau.ch/huetten/rothornhuette"
+  },
+  {
+    "wo": "huette rotondohuette webUrl",
+    "url": "https://www.rotondohuette.ch",
+    "status": 200,
+    "endUrl": "https://www.rotondohuette.ch/"
+  },
+  {
+    "wo": "huette rotondohuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette rottalhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette rugghubelhuette webUrl",
+    "url": "https://www.rugghubel.ch",
+    "status": 200,
+    "endUrl": "https://www.rugghubel.ch/"
+  },
+  {
+    "wo": "huette rugghubelhuette quelle",
+    "url": "https://www.rugghubel.ch/zugang",
+    "status": 200,
+    "endUrl": "https://www.rugghubel.ch/zugang"
+  },
+  {
+    "wo": "huette saarbruecker-huette webUrl",
+    "url": "https://saarbrueckerhuette.at/",
+    "status": 0,
+    "endUrl": "https://saarbrueckerhuette.at/"
+  },
+  {
+    "wo": "huette saarbruecker-huette quelle",
+    "url": "https://www.alpenverein.de/artikel/huetten-mit-bahn-anreise_44a4563e-7782-4e99-bf0a-61f283766eea",
+    "status": 200,
+    "endUrl": "https://www.alpenverein.de/artikel/huetten-mit-bahn-anreise_44a4563e-7782-4e99-bf0a-61f283766eea"
+  },
+  {
+    "wo": "huette salbithuette webUrl",
+    "url": "https://www.salbit.ch",
+    "status": 200,
+    "endUrl": "https://salbit.ch/"
+  },
+  {
+    "wo": "huette salbithuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette sandkaestle webUrl",
+    "url": "https://www.dav-offenburg.de/Sektion/H%C3%BCtten/Sandk%C3%A4stle",
+    "status": 200,
+    "endUrl": "https://www.dav-offenburg.de/Sektion/H%C3%BCtten/Sandk%C3%A4stle"
+  },
+  {
+    "wo": "huette sandkaestle quelle",
+    "url": "https://www.dav-offenburg.de/Sektion/H%C3%BCtten/Sandk%C3%A4stle",
+    "status": 200,
+    "endUrl": "https://www.dav-offenburg.de/Sektion/H%C3%BCtten/Sandk%C3%A4stle"
+  },
+  {
+    "wo": "huette schoenbielhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette schoenbrunner-huette webUrl",
+    "url": "https://www.schoenbrunner-huette.de/",
+    "status": 200,
+    "endUrl": "https://www.schoenbrunner-huette.de/index.php?id=280"
+  },
+  {
+    "wo": "huette schoenbrunner-huette quelle",
+    "url": "https://de.wikipedia.org/wiki/Sch%C3%B6nbrunner_H%C3%BCtte",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Sch%C3%B6nbrunner_H%C3%BCtte"
+  },
+  {
+    "wo": "huette schreckhornhuette webUrl",
+    "url": "https://www.schreckhornhuette.ch",
+    "status": 200,
+    "endUrl": "https://schreckhornhuette.ch/"
+  },
+  {
+    "wo": "huette schreckhornhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette schwarzenberghuette webUrl",
+    "url": "https://www.dav-illertissen.de/Schwarzenberghutte/SBHInfo.htm",
+    "status": 403,
+    "endUrl": "https://www.dav-illertissen.de/Schwarzenberghutte/SBHInfo.htm"
+  },
+  {
+    "wo": "huette schwarzenberghuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Schwarzenbergh%C3%BCtte_(Allg%C3%A4uer_Alpen)",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Schwarzenbergh%C3%BCtte_(Allg%C3%A4uer_Alpen)"
+  },
+  {
+    "wo": "huette schwarzwasserhuette webUrl",
+    "url": "https://www.alpenverein-schwaben.de/schwarzwasserhuette",
+    "status": 200,
+    "endUrl": "https://www.alpenverein-schwaben.de/schwarzwasserhuette"
+  },
+  {
+    "wo": "huette schwarzwasserhuette quelle",
+    "url": "https://www.alpenverein-schwaben.de/schwarzwasserhuette",
+    "status": 200,
+    "endUrl": "https://www.alpenverein-schwaben.de/schwarzwasserhuette"
+  },
+  {
+    "wo": "huette schwenninger-huette quelle",
+    "url": "https://de.wikipedia.org/wiki/Schwenninger_H%C3%BCtte",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Schwenninger_H%C3%BCtte"
+  },
+  {
+    "wo": "huette silvrettahuette webUrl",
+    "url": "https://www.silvrettahuette.ch",
+    "status": 200,
+    "endUrl": "https://www.silvrettahuette.ch/de/"
+  },
+  {
+    "wo": "huette silvrettahuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette spannorthuette webUrl",
+    "url": "https://www.spannorthuette.ch",
+    "status": 200,
+    "endUrl": "https://www.spannorthuette.ch/spannorthuette"
+  },
+  {
+    "wo": "huette spannorthuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette spitzmeilenhuette webUrl",
+    "url": "https://www.spitzmeilenhuette.ch/",
+    "status": 200,
+    "endUrl": "https://www.spitzmeilenhuette.ch/"
+  },
+  {
+    "wo": "huette spitzmeilenhuette quelle",
+    "url": "https://www.spitzmeilenhuette.ch/zustiege",
+    "status": 200,
+    "endUrl": "https://www.spitzmeilenhuette.ch/zustiege"
+  },
+  {
+    "wo": "huette staufner-haus webUrl",
+    "url": "https://www.staufner-haus.de/",
+    "status": 200,
+    "endUrl": "https://www.staufner-haus.de/cms/"
+  },
+  {
+    "wo": "huette staufner-haus quelle",
+    "url": "https://www.dav-ol.de/staufner-haus/",
+    "status": 200,
+    "endUrl": "https://www.dav-ol.de/staufner-haus/"
+  },
+  {
+    "wo": "huette taeschhuette webUrl",
+    "url": "https://www.taeschhuette.ch",
+    "status": 200,
+    "endUrl": "https://www.taeschhuette.ch/huette"
+  },
+  {
+    "wo": "huette taeschhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette tierberglihuette webUrl",
+    "url": "https://www.tierbergli.ch",
+    "status": 200,
+    "endUrl": "https://tierbergli.ch/"
+  },
+  {
+    "wo": "huette tierberglihuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette tilisunahuette webUrl",
+    "url": "https://tilisuna-huette.at/",
+    "status": 200,
+    "endUrl": "https://tilisuna-huette.at/"
+  },
+  {
+    "wo": "huette tilisunahuette quelle",
+    "url": "https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg",
+    "status": 200,
+    "endUrl": "https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg"
+  },
+  {
+    "wo": "huette todtnauer-huette quelle",
+    "url": "https://de.wikipedia.org/wiki/Todtnauer_H%C3%BCtte",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Todtnauer_H%C3%BCtte"
+  },
+  {
+    "wo": "huette totalphuette webUrl",
+    "url": "https://www.totalp.at",
+    "status": 200,
+    "endUrl": "https://www.totalp.at/"
+  },
+  {
+    "wo": "huette totalphuette quelle",
+    "url": "https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg",
+    "status": 200,
+    "endUrl": "https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg"
+  },
+  {
+    "wo": "huette treschhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette ulmer-huette webUrl",
+    "url": "https://www.ulmerhuette.at",
+    "status": 200,
+    "endUrl": "https://www.ulmerhuette.at/"
+  },
+  {
+    "wo": "huette ulmer-huette quelle",
+    "url": "https://www.stantonamarlberg.com/de/sommer/bergregion/huettenverzeichnis/-addresses/ulmer-huette-0",
+    "status": 200,
+    "endUrl": "https://www.stantonamarlberg.com/de/sommer/bergregion/huettenverzeichnis/-addresses/ulmer-huette-0"
+  },
+  {
+    "wo": "huette voralphuette webUrl",
+    "url": "https://www.voralphuette.ch",
+    "status": 200,
+    "endUrl": "https://www.voralphuette.ch/home"
+  },
+  {
+    "wo": "huette voralphuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette waltenbergerhaus webUrl",
+    "url": "https://waltenbergerhaus.de/",
+    "status": 200,
+    "endUrl": "https://waltenbergerhaus.de/"
+  },
+  {
+    "wo": "huette waltenbergerhaus quelle",
+    "url": "https://de.wikipedia.org/wiki/Waltenbergerhaus",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Waltenbergerhaus"
+  },
+  {
+    "wo": "huette wanderheim-eninger-weide webUrl",
+    "url": "https://tuerme-wanderheime.albverein.net/wanderheime/wanderheim-eninger-weide-hans-schenk-haus/",
+    "status": 200,
+    "endUrl": "https://tuerme-wanderheime.albverein.net/wanderheime/wanderheim-eninger-weide-hans-schenk-haus/"
+  },
+  {
+    "wo": "huette wanderheim-eninger-weide quelle",
+    "url": "https://tuerme-wanderheime.albverein.net/wanderheime/wanderheim-eninger-weide-hans-schenk-haus/",
+    "status": 200,
+    "endUrl": "https://tuerme-wanderheime.albverein.net/wanderheime/wanderheim-eninger-weide-hans-schenk-haus/"
+  },
+  {
+    "wo": "huette weisshornhuette webUrl",
+    "url": "https://www.sac-basel.ch/deutsch/huetten/weisshornhuette/",
+    "status": 200,
+    "endUrl": "https://www.sac-basel.ch/deutsch/huetten/weisshornhuette/"
+  },
+  {
+    "wo": "huette weisshornhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette weissmieshuette webUrl",
+    "url": "https://www.weissmieshuette.ch",
+    "status": 200,
+    "endUrl": "https://weissmieshuette.ch/"
+  },
+  {
+    "wo": "huette weissmieshuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette wiedenbachhuette quelle",
+    "url": "https://www.alpenvereinaktiv.com/de/selbstversorgerhuette/wiedenbachhuette/7242196/",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/selbstversorgerhuette/wiedenbachhuette/7242196/"
+  },
+  {
+    "wo": "huette wiesbadener-huette webUrl",
+    "url": "https://www.wiesbadener-huette.com",
+    "status": 200,
+    "endUrl": "https://www.wiesbadener-huette.com/"
+  },
+  {
+    "wo": "huette wiesbadener-huette quelle",
+    "url": "https://www.wiesbadener-huette.com",
+    "status": 200,
+    "endUrl": "https://www.wiesbadener-huette.com/"
+  },
+  {
+    "wo": "huette wildhornhuette webUrl",
+    "url": "https://www.wildhornhuette.ch",
+    "status": 200,
+    "endUrl": "https://wildhornhuette.ch/"
+  },
+  {
+    "wo": "huette wildhornhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette wildstrubelhuette webUrl",
+    "url": "https://www.wildstrubelhuette.ch",
+    "status": 200,
+    "endUrl": "https://wildstrubelhuette.ch/de"
+  },
+  {
+    "wo": "huette wildstrubelhuette quelle",
+    "url": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs",
+    "status": 200,
+    "endUrl": "https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs"
+  },
+  {
+    "wo": "huette windegghuette webUrl",
+    "url": "https://www.windegghuette.ch",
+    "status": 200,
+    "endUrl": "https://www.windegghuette.ch/"
+  },
+  {
+    "wo": "huette windegghuette quelle",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/windegghuette-sac-2147000295/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/windegghuette-sac-2147000295/"
+  },
+  {
+    "wo": "huette wormser-huette webUrl",
+    "url": "https://www.dav-worms.de/index.php/die-wormser-huette",
+    "status": 200,
+    "endUrl": "https://www.dav-worms.de/index.php/die-wormser-huette"
+  },
+  {
+    "wo": "huette wormser-huette quelle",
+    "url": "https://www.dav-worms.de/index.php/die-wormser-huette",
+    "status": 200,
+    "endUrl": "https://www.dav-worms.de/index.php/die-wormser-huette"
+  },
+  {
+    "wo": "huette zwinglipasshuette webUrl",
+    "url": "https://sac-toggenburg.ch",
+    "status": 200,
+    "endUrl": "https://sac-toggenburg.ch/"
+  },
+  {
+    "wo": "huette zwinglipasshuette quelle",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/zwinglipasshuette-2147000300/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/zwinglipasshuette-2147000300/"
+  },
+  {
+    "wo": "gebiet adelboden link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet albtrauf-bad-urach link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Bad%20Urach",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Bad%20Urach"
+  },
+  {
+    "wo": "gebiet aletsch-goms link",
+    "url": "https://www.aletscharena.ch",
+    "status": 200,
+    "endUrl": "https://www.aletscharena.ch/"
+  },
+  {
+    "wo": "gebiet alpstein link",
+    "url": "https://www.sac-saentis.ch",
+    "status": 200,
+    "endUrl": "https://sac-saentis.ch/"
+  },
+  {
+    "wo": "gebiet andermatt-furka link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet arlberg-verwall link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Verwall",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Verwall"
+  },
+  {
+    "wo": "gebiet arlberg-verwall link",
+    "url": "https://www.stantonamarlberg.com/de/home",
+    "status": 200,
+    "endUrl": "https://www.stantonamarlberg.com/de/home"
+  },
+  {
+    "wo": "gebiet baden-baden-battert link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Battert",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Battert"
+  },
+  {
+    "wo": "gebiet baden-baden-battert link",
+    "url": "https://www.alpenverein.de/felsinfo",
+    "status": 200,
+    "endUrl": "https://www.alpenverein.de/thema/felsinfo"
+  },
+  {
+    "wo": "gebiet badenweiler-blauen link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Blauen",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Blauen"
+  },
+  {
+    "wo": "gebiet blaubeuren link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Blaubeuren",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Blaubeuren"
+  },
+  {
+    "wo": "gebiet blaubeuren link",
+    "url": "https://www.alpenverein.de/felsinfo",
+    "status": 200,
+    "endUrl": "https://www.alpenverein.de/thema/felsinfo"
+  },
+  {
+    "wo": "gebiet brandnertal link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Brandnertal",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Brandnertal"
+  },
+  {
+    "wo": "gebiet brandnertal link",
+    "url": "https://www.luenersee.at/de/luenerseebahn",
+    "status": 200,
+    "endUrl": "https://www.luenersee.at/de/luenerseebahn"
+  },
+  {
+    "wo": "gebiet braunwald link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet braunwald link",
+    "url": "https://www.braunwald.ch/",
+    "status": 403,
+    "endUrl": "https://braunwald.ch/"
+  },
+  {
+    "wo": "gebiet bregenz-pfaender link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Pf%C3%A4nder",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Pf%C3%A4nder"
+  },
+  {
+    "wo": "gebiet bregenz-pfaender link",
+    "url": "https://www.pfaenderbahn.at",
+    "status": 200,
+    "endUrl": "https://www.pfaenderbahn.at/"
+  },
+  {
+    "wo": "gebiet bregenzerwald link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Bregenzerwald",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Bregenzerwald"
+  },
+  {
+    "wo": "gebiet bregenzerwald link",
+    "url": "https://www.vmobil.at/de",
+    "status": 200,
+    "endUrl": "https://www.vmobil.at/de"
+  },
+  {
+    "wo": "gebiet brienzer-rothorn link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet brienzer-rothorn link",
+    "url": "https://www.brienz-rothorn-bahn.ch/",
+    "status": 200,
+    "endUrl": "https://brienz-rothorn-bahn.ch/"
+  },
+  {
+    "wo": "gebiet buehlertal link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Bühlertal",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Bühlertal"
+  },
+  {
+    "wo": "gebiet champ-du-feu link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Champ%20du%20Feu",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Champ%20du%20Feu"
+  },
+  {
+    "wo": "gebiet chasseral link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet creux-du-van link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet creux-du-van link",
+    "url": "https://www.cas-neuchatel.ch/cabanes/",
+    "status": 200,
+    "endUrl": "https://www.cas-neuchatel.ch/cabanes/"
+  },
+  {
+    "wo": "gebiet dahner-felsenland link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Dahner%20Felsenland",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Dahner%20Felsenland"
+  },
+  {
+    "wo": "gebiet dahner-felsenland link",
+    "url": "https://www.pfalzkletterer.de/",
+    "status": 0,
+    "endUrl": "https://www.pfalzkletterer.de/"
+  },
+  {
+    "wo": "gebiet donon-schirmeck link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Donon",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Donon"
+  },
+  {
+    "wo": "gebiet donon-schirmeck link",
+    "url": "https://www.rando-bruche.fr/",
+    "status": 200,
+    "endUrl": "https://www.rando-bruche.fr/"
+  },
+  {
+    "wo": "gebiet feldberg link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Feldberg",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Feldberg"
+  },
+  {
+    "wo": "gebiet gantrisch-stockhorn link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet gantrisch-stockhorn link",
+    "url": "https://www.gantrisch.ch/",
+    "status": 200,
+    "endUrl": "https://www.gantrisch.ch/"
+  },
+  {
+    "wo": "gebiet goeschenen-goescheneralp link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet grand-ventron link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Grand%20Ventron",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Grand%20Ventron"
+  },
+  {
+    "wo": "gebiet grimsel-haslital link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet grimsel-haslital link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/windegghuette-sac-2147000295/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/windegghuette-sac-2147000295/"
+  },
+  {
+    "wo": "gebiet grindelwald link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet grindelwald link",
+    "url": "https://naturfreunde.ch/haeuser/grindelwald/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/grindelwald/"
+  },
+  {
+    "wo": "gebiet hegau-hohentwiel link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Hegau",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Hegau"
+  },
+  {
+    "wo": "gebiet hintersteiner-tal link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Bad%20Hindelang",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Bad%20Hindelang"
+  },
+  {
+    "wo": "gebiet hintersteiner-tal link",
+    "url": "https://www.badhindelang.de",
+    "status": 200,
+    "endUrl": "https://www.badhindelang.de/"
+  },
+  {
+    "wo": "gebiet hinterzarten-breitnau link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Hinterzarten",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Hinterzarten"
+  },
+  {
+    "wo": "gebiet hoch-ybrig link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet hoch-ybrig link",
+    "url": "https://druesberghuette.ch/",
+    "status": 200,
+    "endUrl": "https://druesberghuette.ch/"
+  },
+  {
+    "wo": "gebiet jaun-charmey link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet jaun-charmey link",
+    "url": "https://www.cas-gruyere.ch/",
+    "status": 200,
+    "endUrl": "https://www.cas-gruyere.ch/fr/accueil/"
+  },
+  {
+    "wo": "gebiet kaiserstuhl link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Kaiserstuhl",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Kaiserstuhl"
+  },
+  {
+    "wo": "gebiet kandel-waldkirch link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Kandel",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Kandel"
+  },
+  {
+    "wo": "gebiet kandersteg link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet kiental-griesalp link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet kinzigtal link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Kinzigtal",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Kinzigtal"
+  },
+  {
+    "wo": "gebiet kleinwalsertal link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Kleinwalsertal",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Kleinwalsertal"
+  },
+  {
+    "wo": "gebiet klosters-praettigau link",
+    "url": "https://www.sac-praettigau.ch",
+    "status": 200,
+    "endUrl": "https://www.sac-praettigau.ch/"
+  },
+  {
+    "wo": "gebiet lauterbrunnental link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet lechquellengebirge link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Lechquellengebirge",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Lechquellengebirge"
+  },
+  {
+    "wo": "gebiet lechquellengebirge link",
+    "url": "https://www.freiburger-huette.at/anreise",
+    "status": 200,
+    "endUrl": "https://www.freiburger-huette.at/anreise"
+  },
+  {
+    "wo": "gebiet lenk link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet linthal link",
+    "url": "https://www.sac-toedi.ch",
+    "status": 200,
+    "endUrl": "https://www.sac-toedi.ch/"
+  },
+  {
+    "wo": "gebiet loetschental link",
+    "url": "https://www.loetschental.ch",
+    "status": 200,
+    "endUrl": "https://www.loetschental.ch/de"
+  },
+  {
+    "wo": "gebiet meiringen-rosenlaui link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet moleson-gruyeres link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet moleson-gruyeres link",
+    "url": "https://www.moleson.ch/",
+    "status": 200,
+    "endUrl": "https://www.moleson.ch/"
+  },
+  {
+    "wo": "gebiet montafon-raetikon link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Montafon",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Montafon"
+  },
+  {
+    "wo": "gebiet montafon-raetikon link",
+    "url": "https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg",
+    "status": 200,
+    "endUrl": "https://www.vmobil.at/de/ueber-vmobil/wir-sind-vmobil-mobilitaetspartner/energieinstitut-vorarlberg/oeffentliche-anreise-zu-den-huetten-des-alpenverein-vorarlberg"
+  },
+  {
+    "wo": "gebiet montoz link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet munstertal link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Hohneck",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Hohneck"
+  },
+  {
+    "wo": "gebiet murgtal link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Murgtal",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Murgtal"
+  },
+  {
+    "wo": "gebiet nagelfluhkette link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Nagelfluhkette",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Nagelfluhkette"
+  },
+  {
+    "wo": "gebiet napf-emmental link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet napf-emmental link",
+    "url": "https://naturfreunde.ch/haeuser/aemmital/",
+    "status": 200,
+    "endUrl": "https://naturfreunde.ch/haeuser/aemmital/"
+  },
+  {
+    "wo": "gebiet nordrach link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Nordrach",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Nordrach"
+  },
+  {
+    "wo": "gebiet oberstdorf link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Oberstdorf",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Oberstdorf"
+  },
+  {
+    "wo": "gebiet oberstdorf link",
+    "url": "https://www.oberstdorf.de",
+    "status": 200,
+    "endUrl": "https://www.oberstdorf.de/"
+  },
+  {
+    "wo": "gebiet pilatus link",
+    "url": "https://www.pilatus.ch",
+    "status": 200,
+    "endUrl": "https://pilatus.ch/"
+  },
+  {
+    "wo": "gebiet renchtal-kniebis link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Kniebis",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Kniebis"
+  },
+  {
+    "wo": "gebiet reusstal-maderanertal link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet riemenstalden link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet rigi link",
+    "url": "https://www.rigi.ch",
+    "status": 200,
+    "endUrl": "https://www.rigi.ch/"
+  },
+  {
+    "wo": "gebiet saverne-haut-barr link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Saverne",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Saverne"
+  },
+  {
+    "wo": "gebiet saverne-haut-barr link",
+    "url": "https://www.club-vosgien.eu/",
+    "status": 200,
+    "endUrl": "https://www.club-vosgien.eu/"
+  },
+  {
+    "wo": "gebiet schauinsland link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Schauinsland",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Schauinsland"
+  },
+  {
+    "wo": "gebiet schluchsee-haeusern link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Schluchsee",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Schluchsee"
+  },
+  {
+    "wo": "gebiet schwarzsee-kaiseregg link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet schwarzsee-kaiseregg link",
+    "url": "https://www.schwarzsee.ch/",
+    "status": 403,
+    "endUrl": "https://fribourg.ch/de/schwarzsee/"
+  },
+  {
+    "wo": "gebiet silvretta link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Silvretta",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Silvretta"
+  },
+  {
+    "wo": "gebiet silvretta link",
+    "url": "https://www.silvretta-bielerhoehe.at/de",
+    "status": 200,
+    "endUrl": "https://www.silvretta-bielerhoehe.at/de"
+  },
+  {
+    "wo": "gebiet stoos-fronalpstock link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet stoos-fronalpstock link",
+    "url": "https://www.stoos.ch/",
+    "status": 200,
+    "endUrl": "https://www.stoos.ch/de/"
+  },
+  {
+    "wo": "gebiet todtnau-belchen link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Belchen",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Belchen"
+  },
+  {
+    "wo": "gebiet triberg-brend link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Triberg",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Triberg"
+  },
+  {
+    "wo": "gebiet walensee-churfirsten-flumserberg link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet walensee-churfirsten-flumserberg link",
+    "url": "https://www.spitzmeilenhuette.ch/",
+    "status": 200,
+    "endUrl": "https://www.spitzmeilenhuette.ch/"
+  },
+  {
+    "wo": "gebiet wasserfallen-baselbiet link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet wasserfallen-baselbiet link",
+    "url": "https://www.wasserfallenbahn.ch/",
+    "status": 200,
+    "endUrl": "https://www.region-wasserfallen.ch/"
+  },
+  {
+    "wo": "gebiet weissenstein link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  },
+  {
+    "wo": "gebiet wiesental-hohe-moehr link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Hohe%20Möhr",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Hohe%20Möhr"
+  },
+  {
+    "wo": "gebiet wutachschlucht link",
+    "url": "https://www.alpenvereinaktiv.com/de/touren/#area=Wutachschlucht",
+    "status": 200,
+    "endUrl": "https://www.alpenvereinaktiv.com/de/touren/#area=Wutachschlucht"
+  },
+  {
+    "wo": "gebiet zermatt-mattertal link",
+    "url": "https://www.section-monte-rosa.ch/de/",
+    "status": 0,
+    "endUrl": "https://www.section-monte-rosa.ch/de/"
+  },
+  {
+    "wo": "gebiet zuercher-oberland-bachtel link",
+    "url": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/",
+    "status": 200,
+    "endUrl": "https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/"
+  }
+]
