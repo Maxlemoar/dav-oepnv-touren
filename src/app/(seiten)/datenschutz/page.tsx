@@ -71,8 +71,8 @@ export default function DatenschutzSeite() {
 
       <Abschnitt titel="Karte von OpenFreeMap">
         <p>
-          Die Karte auf der Startseite (auf großen Bildschirmen immer, auf dem Handy in der Kartenansicht) lädt dein
-          Browser direkt von <span className="whitespace-nowrap">tiles.openfreemap.org</span>, einem freien
+          Die Karte auf der Startseite und auf allen Gebietsseiten (auf großen Bildschirmen immer; auf dem Handy auf der
+          Startseite in der Kartenansicht, auf Gebietsseiten im Kartenstreifen über dem Inhalt) lädt dein Browser direkt von <span className="whitespace-nowrap">tiles.openfreemap.org</span>, einem freien
           Kartendienst (<a href="https://openfreemap.org" className={LINK}>openfreemap.org</a>) mit Daten von
           OpenStreetMap: Kartenkacheln, Kartenstil und Kartenschriften. Dabei erhält der Betreiber deine IP-Adresse
           und Angaben zu deinem Browser, weil er die Kacheln sonst nicht an dich ausliefern kann. Welche

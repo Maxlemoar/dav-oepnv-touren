@@ -1,6 +1,6 @@
 # Ohne Auto in die Berge, ab Offenburg
 
-Hütten und Tourengebiete, die von Offenburg aus mit Bahn und Bus erreichbar sind, mit Live-Verbindung fürs gewählte Datum.
+Ausgangsorte für Touren ab Offenburg mit Bahn und Bus, passend zum gewählten Zeitfenster, mit Live-Verbindung fürs gewählte Datum.
 Ein Projekt des Arbeitskreises Klimaschutz der DAV Sektion Offenburg.
 
 ## Entwickeln
@@ -111,7 +111,8 @@ sammlungEmbed: { id: "202105012", slug: "nur-mit-oeffis" }
   mit 24-h-Cache; fällt die API aus, zeigen sie typische Zeiten bzw. den Richtwert.
 - Karte: MapLibre mit OpenFreeMap-Kacheln.
 
-Details: `docs/superpowers/specs/2026-09-06-oepnv-tourenplaner-design.md`, Design: `docs/design-system.md`.
+Details: `docs/superpowers/specs/2026-09-06-oepnv-tourenplaner-design.md` (Grundlage) und
+`docs/superpowers/specs/2026-11-19-zeitfenster-karte-design.md` (Zeitfenster, Karte und Ortsseite), Design: `docs/design-system.md`.
 
 ## Umgebungsvariablen (optional)
 

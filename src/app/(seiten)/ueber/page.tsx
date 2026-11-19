@@ -11,8 +11,8 @@ export default function UeberSeite() {
       <h1 className="text-3xl font-semibold tracking-tight">Über diese Seite</h1>
       <p>
         Der Arbeitskreis Klimaschutz der DAV Sektion Offenburg möchte, dass mehr Bergtouren ohne Auto beginnen.
-        Diese Seite zeigt Hütten und Tourengebiete, die von Offenburg aus mit Bahn und Bus gut erreichbar sind,
-        mit echter Verbindung für dein Datum.
+        Diese Seite zeigt Ausgangsorte für Touren ab Offenburg mit Bahn und Bus: Du wählst dein Zeitfenster, die Karte zeigt,
+        wohin du hin und zurück kommst, und die Seite eines Orts die echten Verbindungen für dein Datum.
       </p>
       <h2 className="text-xl font-semibold">So rechnen wir</h2>
       <ul className="list-disc space-y-1 pl-5">

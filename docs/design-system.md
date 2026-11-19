@@ -133,5 +133,6 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
 ## Verhalten
 
 - Zustand (Zeitfenster, Ansicht) lebt in der URL. Zurück-Taste und Teilen funktionieren.
-- Live-Daten laden nach dem Rendern. Die Seite ist ohne JavaScript lesbar, nur ohne Uhrzeiten.
+- Live-Daten laden nach dem Rendern. Ohne JavaScript bleiben Orts-, Hütten- und Textseiten lesbar (ohne Uhrzeiten);
+  Startseite, Karte und Zeitfenster brauchen JavaScript.
 - Fokus sichtbar (2 px tanne-Ring). Kontraste mindestens 4.5:1 für Text.

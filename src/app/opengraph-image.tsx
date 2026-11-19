@@ -23,7 +23,7 @@ export default function Bild() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <div style={{ fontSize: 92, fontWeight: 700, color: TINTE, letterSpacing: -2, lineHeight: 1.05 }}>In die Berge, ohne Auto.</div>
-          <div style={{ fontSize: 40, color: TINTE_2, lineHeight: 1.3 }}>Hütten und Touren ab Offenburg mit Bahn und Bus</div>
+          <div style={{ fontSize: 40, color: TINTE_2, lineHeight: 1.3 }}>Ausgangsorte für Touren ab Offenburg mit Bahn und Bus</div>
         </div>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', gap: 10 }}>
