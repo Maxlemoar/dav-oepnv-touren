@@ -17,17 +17,24 @@ const PLATZHALTER = (
   </div>
 )
 
+type Props = {
+  /** Saison des Gebiets; außerhalb der Saison erscheint ein Warnhinweis. */
+  saison?: Saison
+  /** Hüttenseite 1: Rückfahrt frühestens am Folgetag, auch in der Wahl. Ortsseite 0 (Standard). */
+  mindestNaechte?: 0 | 1
+}
+
 /**
- * Pill der Ortsseite: nennt das Zeitfenster aus der URL ("Sa 21.11., 6:00–21:00") und öffnet das Sheet "Wann?" mit
- * `ZeitfensterWahl`. Die Wahl schreibt die URL; Fahrtenwahl, Karte und Links ziehen nach. Außerhalb der Saison des
- * Gebiets steht ein Warnhinweis darunter.
+ * Pill der Orts- und Hüttenseite: nennt das Zeitfenster aus der URL ("Sa 21.11., 6:00–21:00") und öffnet das Sheet
+ * "Wann?" mit `ZeitfensterWahl`. Die Wahl schreibt die URL; Fahrten, Verbindungszeilen, Karte und Links ziehen nach.
+ * Außerhalb der Saison des Gebiets steht ein Warnhinweis darunter.
  */
-export function ZeitfensterPill(props: { saison?: Saison }) {
+export function ZeitfensterPill(props: Props) {
   return <Suspense fallback={PLATZHALTER}><PillInnen {...props} /></Suspense>
 }
 
-function PillInnen({ saison }: { saison?: Saison }) {
-  const z = zeitfensterAusUrl(useSearchParams(), { mindestNaechte: 0 })
+function PillInnen({ saison, mindestNaechte = 0 }: Props) {
+  const z = zeitfensterAusUrl(useSearchParams(), { mindestNaechte })
   const [offen, setOffen] = useState(false)
   const text = zeitfensterKurz(z)
   const ausserSaison = saison !== undefined && !gebietPasstZurJahreszeit({ saison }, z.datum)
@@ -46,7 +53,7 @@ function PillInnen({ saison }: { saison?: Saison }) {
       )}
       {offen && (
         <Sheet offen titel="Wann?" onClose={() => setOffen(false)}>
-          <ZeitfensterWahl mindestNaechte={0} />
+          <ZeitfensterWahl mindestNaechte={mindestNaechte} />
         </Sheet>
       )}
     </div>

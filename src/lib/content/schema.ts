@@ -30,18 +30,10 @@ export const StartortSchema = z.object({
 })
 
 const MonatTag = z.string().regex(/^(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/, 'Format MM-TT')
-const Uhrzeit = z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/, 'Format HH:MM')
 const Datum = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Format JJJJ-MM-TT')
 
 /** Wiederkehrender Zeitraum im Jahr, z. B. { von: "06-15", bis: "10-15" }; darf über den Jahreswechsel gehen. */
 export const ZeitraumImJahrSchema = z.object({ von: MonatTag, bis: MonatTag })
-
-/**
- * Typisches Tagesfenster an einer Haltestelle, vorab berechnet (npm run richtwerte):
- * früheste Ankunft bei Abfahrt ab 5 Uhr und letzte Abfahrt mit Ankunft am Startort bis 23 Uhr.
- * Daraus entsteht das Tagesziel-Urteil der Startseite ohne Live-Abfragen.
- */
-export const TagesfensterSchema = z.object({ ankunft: Uhrzeit.optional(), letzteRueckfahrt: Uhrzeit.optional() })
 
 export const RichtwertSchema = z.object({
   fahrzeitMin: z.number().int().positive(),
@@ -51,11 +43,6 @@ export const RichtwertSchema = z.object({
   strassenKm: z.number().positive().optional(),
   bahnKm: z.number().positive().optional(),
   berechnetAm: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  tagesfenster: z.object({
-    sa: TagesfensterSchema.optional(),
-    so: TagesfensterSchema.optional(),
-    werktag: TagesfensterSchema.optional(),
-  }).optional(),
 })
 
 export const HaltestelleSchema = z.object({
@@ -179,7 +166,6 @@ export type Takt = z.infer<typeof TaktSchema>
 export type BetreiberTyp = z.infer<typeof BetreiberTypSchema>
 export type BahnOrt = z.infer<typeof BahnOrtSchema>
 export type ZeitraumImJahr = z.infer<typeof ZeitraumImJahrSchema>
-export type Tagesfenster = z.infer<typeof TagesfensterSchema>
 export type Startort = z.infer<typeof StartortSchema>
 export type Richtwert = z.infer<typeof RichtwertSchema>
 export type Haltestelle = z.infer<typeof HaltestelleSchema>

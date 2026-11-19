@@ -15,7 +15,8 @@ import { WetterZeile } from '@/components/WetterZeile'
 import { VerbindungZeile } from '@/components/VerbindungZeile'
 import { huettenMerkmale } from '@/components/HuetteKarte'
 import { BedientHinweis, HuettenZustandBanner } from '@/components/HuettenZustand'
-import { ZeitraumLink, ZeitraumPill } from '@/components/Zeitraum'
+import { ZeitraumLink } from '@/components/Zeitraum'
+import { ZeitfensterPill } from '@/components/ort/ZeitfensterPill'
 import type { Metadata } from 'next'
 import { huetteBeschreibungFuer, huetteJsonLd, jsonLdText, seitenMetadaten } from '@/lib/metadaten'
 
@@ -60,7 +61,7 @@ export default async function HuetteSeite({ params }: { params: Promise<{ id: st
           {huette.buchungUrl && <a href={huette.buchungUrl} target="_blank" rel="noreferrer" className="knopf">Buchen</a>}
           {huette.webUrl && <a href={huette.webUrl} target="_blank" rel="noreferrer" className="knopf-sekundaer">Hüttenseite</a>}
         </div>
-        <div className="mt-4"><ZeitraumPill mindestNaechte={1} /></div>
+        <div className="mt-4"><ZeitfensterPill mindestNaechte={1} /></div>
         <WetterZeile ort={{ huette: huette.id }} mindestNaechte={1} className="mt-3" />
         <LawinenHinweis dienste={dienste} mindestNaechte={1} className="mt-3" />
       </header>

@@ -9,6 +9,9 @@ export type Bewertung =
   | { passt: true; hin: Fahrt; rueck: Fahrt; vorOrtMin: number; naechte: number }
   | { passt: false; grund: string; naechte: number }
 
+/** Grund, wenn die Haltestelle am Hin- oder Rückdatum nicht bedient wird (Saisonbetrieb); passt dann nie. */
+export const NICHT_BEDIENT = 'fährt am Datum nicht'
+
 const min = (hhmm: string): number => alsMin(hhmm) ?? Number.NaN
 /** Fahrten über Mitternacht (an < ab) oder mit unlesbarer Zeit zählen nie. */
 const gueltig = (f: Fahrt): boolean => min(f.an) >= min(f.ab)
@@ -34,7 +37,7 @@ export function bewerte(
   z: Zeitfenster,
 ): Bewertung {
   const n = naechte(z)
-  if (!bedientAm(ort, z.datum) || !bedientAm(ort, z.rueck)) return nein('fährt am Datum nicht', n)
+  if (!bedientAm(ort, z.datum) || !bedientAm(ort, z.rueck)) return nein(NICHT_BEDIENT, n)
   if (!hinPlan || !rueckPlan) return nein('keine Fahrplandaten', n)
   const hins = hinPlan.hin.filter((h) => gueltig(h) && min(h.ab) >= z.abMin)
   if (hins.length === 0) return nein(`keine Hinfahrt ab ${alsUhrzeit(z.abMin)}`, n)

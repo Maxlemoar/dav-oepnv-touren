@@ -1,9 +1,9 @@
-import { Scalar, YAMLMap, type Document } from 'yaml'
-import type { Gebiet, Haltestelle, Land, Richtwert, Startort, Tagesfenster, Takt, TicketTabelle } from './content/schema'
-import { lokaleMinuten, lokalesDatum, lokaleUhrzeit, tageAddieren } from './datum'
+import type { Document } from 'yaml'
+import type { Gebiet, Haltestelle, Land, Richtwert, Startort, Takt, TicketTabelle } from './content/schema'
+import { lokaleMinuten, tageAddieren } from './datum'
 import { tagesklasse, type Tagesklasse } from './saison'
 import type { Itinerary } from './verbindung/transitous'
-import { waehleHinfahrt, waehleRueckfahrt, kurzfassung, HINFAHRT_FENSTER } from './verbindung/auswerten'
+import { waehleHinfahrt, kurzfassung } from './verbindung/auswerten'
 import { ticketFuer } from './verbindung/regeln'
 
 const TAKT_FENSTER = { von: 6 * 60, bis: 12 * 60 } as const
@@ -40,27 +40,11 @@ export function haversineKm(lat1: number, lon1: number, lat2: number, lon2: numb
   return 2 * r * Math.asin(Math.sqrt(a))
 }
 
-/**
- * Typisches Tagesfenster aus Hin- und Rückfahrt-Abfragen eines Tages: früheste Ankunft der Hinfahrt, die auch
- * die Seite zwischen 5 und 8 Uhr wählen würde (gibt es da keine, die früheste mit Abfahrt ab 5 Uhr), und die
- * Abfahrt der letzten Rückfahrt mit Ankunft am Startort bis 23 Uhr. Felder ohne Verbindung fehlen.
- */
-export function tagesfensterAus(hin: Itinerary[], rueck: Itinerary[], datum: string, land: Land): Tagesfenster {
-  const ab5 = hin.filter((i) => lokalesDatum(i.startTime) === datum && lokaleMinuten(i.startTime) >= HINFAHRT_FENSTER.fruehVon)
-  const { hinfahrt } = waehleHinfahrt(ab5, { nahverkehrBevorzugen: land === 'DE' })
-  const ersteAnkunft = hinfahrt ?? [...ab5].sort((a, b) => Date.parse(a.endTime) - Date.parse(b.endTime))[0]
-  const letzte = waehleRueckfahrt(rueck, datum)
-  return {
-    ...(ersteAnkunft && { ankunft: lokaleUhrzeit(ersteAnkunft.endTime) }),
-    ...(letzte && { letzteRueckfahrt: lokaleUhrzeit(letzte.startTime) }),
-  }
-}
-
 const WOCHENTAG: Record<Tagesklasse, number> = { werktag: 5, sa: 6, so: 0 }
 export const TAGESKLASSEN: Tagesklasse[] = ['werktag', 'sa', 'so']
 
 /**
- * Referenztage für die Tagesfenster: nächster Freitag (Werktag), Samstag und Sonntag nach heute, die keine
+ * Referenztage für den Musterfahrplan: nächster Freitag (Werktag), Samstag und Sonntag nach heute, die keine
  * Feiertage sind und nicht nach liveBis liegen. Überschreibungen müssen zur Tagesklasse passen.
  */
 export function referenzTage(heute: string, liveBis: string, ueber: Partial<Record<Tagesklasse, string>> = {}): Record<Tagesklasse, string> {
@@ -80,8 +64,8 @@ export function referenzTage(heute: string, liveBis: string, ueber: Partial<Reco
   return tage
 }
 
-/** Haltestellen, die erster Zugang eines Gebiets sind (je einmal), mit den sichtbaren Startorten. */
-export function tagesfensterZiele(gebiete: Gebiet[], haltestellen: Haltestelle[], startorte: Startort[]): { haltestelle: Haltestelle; startort: Startort }[] {
+/** Hauptzugänge: Haltestellen, die erster Zugang eines Gebiets sind (je einmal), mit den sichtbaren Startorten. */
+export function hauptzugaenge(gebiete: Gebiet[], haltestellen: Haltestelle[], startorte: Startort[]): { haltestelle: Haltestelle; startort: Startort }[] {
   const ids = [...new Set(gebiete.map((g) => g.haltestellen[0]))]
   const sichtbar = startorte.filter((s) => s.sichtbar)
   return ids.flatMap((id) => {
@@ -90,18 +74,7 @@ export function tagesfensterZiele(gebiete: Gebiet[], haltestellen: Haltestelle[]
   })
 }
 
-/** Richtwert-Felder einzeln setzen, damit Tagesfenster und Reihenfolge in der Datei erhalten bleiben. */
-export function richtwertSchreiben(dok: Document, startortId: string, werte: Omit<Richtwert, 'tagesfenster'>): void {
+/** Richtwert-Felder einzeln setzen, damit Reihenfolge und Formatierung in der Datei erhalten bleiben. */
+export function richtwertSchreiben(dok: Document, startortId: string, werte: Richtwert): void {
   for (const [k, v] of Object.entries(werte)) if (v !== undefined) dok.setIn(['richtwerte', startortId, k], v)
-}
-
-/** Tagesfenster einer Tagesklasse ersetzen; Uhrzeiten in Anführungszeichen, damit sie Zeichenketten bleiben. */
-export function tagesfensterSchreiben(dok: Document, startortId: string, klasse: Tagesklasse, fenster: Tagesfenster): void {
-  const knoten = new YAMLMap<string, Scalar>()
-  for (const [k, v] of Object.entries(fenster)) {
-    const s = new Scalar(v)
-    s.type = Scalar.QUOTE_DOUBLE
-    knoten.set(k, s)
-  }
-  dok.setIn(['richtwerte', startortId, 'tagesfenster', klasse], knoten)
 }

@@ -34,11 +34,19 @@ export const MUSTERFAHRPLAN_DATEI = path.join(process.cwd(), 'content', 'musterf
 
 /** Fehlt die Datei, ist das kein Fehler (noch nicht berechnet): `undefined`. */
 export function ladeMusterfahrplan(datei: string = MUSTERFAHRPLAN_DATEI): Musterfahrplan | undefined {
-  if (!fs.existsSync(datei)) return undefined
+  // Standardpfad statisch, damit der Build nur content/ einpackt; andere Pfade (Tests) vom Tracing ausnehmen.
+  const standard = datei === MUSTERFAHRPLAN_DATEI
+  const vorhanden = standard
+    ? fs.existsSync(path.join(process.cwd(), 'content', 'musterfahrplan.json'))
+    : fs.existsSync(/*turbopackIgnore: true*/ datei)
+  if (!vorhanden) return undefined
   const name = path.basename(datei)
   let roh: unknown
   try {
-    roh = JSON.parse(fs.readFileSync(datei, 'utf8'))
+    const text = standard
+      ? fs.readFileSync(path.join(process.cwd(), 'content', 'musterfahrplan.json'), 'utf8')
+      : fs.readFileSync(/*turbopackIgnore: true*/ datei, 'utf8')
+    roh = JSON.parse(text)
   } catch (e) {
     throw new Error(`Ungültiges JSON in ${name}: ${(e as Error).message}`)
   }

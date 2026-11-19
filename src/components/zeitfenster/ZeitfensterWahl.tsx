@@ -3,9 +3,8 @@ import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { drossel } from '@/lib/drossel'
 import { datumKurz, lokalesDatum, minutenAlsDauer, tageAddieren } from '@/lib/datum'
-import { rueckAnheben } from '@/lib/zeitraum'
 import {
-  schnellwahl, VOR_ORT_MAX_MIN, ZEITBAND, zeitfensterAusUrl, zeitfensterSchreiben, type Zeitfenster,
+  rueckAnheben, schnellwahl, VOR_ORT_MAX_MIN, ZEITBAND, zeitfensterAusUrl, zeitfensterSchreiben, type Zeitfenster,
 } from '@/lib/zeitfenster'
 import { Zeitband } from './Zeitband'
 

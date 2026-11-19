@@ -4,12 +4,11 @@ import { useSearchParams } from 'next/navigation'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
 import type { BahnOrt, Land } from '@/lib/content/schema'
 import { datumKurz, lokaleUhrzeit, minutenAlsDauer, tageDifferenz, wochentagKurz } from '@/lib/datum'
-import { zeitraumAusUrl } from '@/lib/verbindung/url'
-import { naechteText } from '@/lib/zeitraum'
+import { zeitfensterAusUrl, zeitfensterSchreiben } from '@/lib/zeitfenster'
 import { fahrplanLink, rueckfahrtLink } from '@/lib/links'
 import { spaetestensLos, spaetestensZurueck } from '@/lib/rueckfahrt'
 import type { GruppenHinweis } from '@/lib/teilen'
-import { TageszielBadge, TicketBadge } from './Badges'
+import { PassungBadge, TicketBadge } from './Badges'
 import { EinladenKnopf } from './EinladenKnopf'
 import { VerbindungDetail } from './VerbindungDetail'
 
@@ -32,11 +31,19 @@ type Props = {
   gruppe?: GruppenHinweis
 }
 
+/**
+ * Live-Verbindung zum Zeitfenster aus der URL (los ab, zurück bis, mindestens vor Ort) mit der Passung dazu: "passt, 7:37 h
+ * vor Ort", bei mehreren Tagen "passt · 1 Nacht", sonst der Grund. Hüttenseiten und weitere Haltestellen der Ortsseite.
+ */
 export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbahn, huetteName, gruppe }: Props) {
   const sp = useSearchParams()
-  const { datum, rueck, fenster } = zeitraumAusUrl(sp, mindestNaechte)
+  const z = zeitfensterAusUrl(sp, { mindestNaechte })
+  const { datum } = z
   // Antwort wird mit ihrer Anfrage gespeichert; passt sie nicht mehr, zeigt die Zeile das Skeleton.
-  const anfrage = new URLSearchParams({ von: von.id, nach: nach.id, datum, rueck, fenster: String(fenster) }).toString()
+  const q = zeitfensterSchreiben(new URLSearchParams({ von: von.id, nach: nach.id }), z)
+  q.set('rueck', z.rueck)
+  if (mindestNaechte > 0) q.set('mindestnaechte', String(mindestNaechte))
+  const anfrage = q.toString()
   const [geladen, setGeladen] = useState<{ anfrage: string; antwort: VerbindungAntwort } | null>(null)
   const [offen, setOffen] = useState(false)
   const antwort = geladen?.anfrage === anfrage ? geladen.antwort : null
@@ -91,7 +98,7 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbah
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <span className="zahl text-lg">ca. {minutenAlsDauer(r.fahrzeitMin)}</span>
         <span className="text-tinte-2">· {r.umstiege} {r.umstiege === 1 ? 'Umstieg' : 'Umstiege'} · {taktText(r.takt)} ab {von.name}</span>
-        {mindestNaechte === 0 && <TageszielBadge tagesziel={antwort.tagesziel} grund={antwort.tageszielGrund} />}
+        <PassungBadge passung={antwort.passung} />
       </div>
     )
     if (art === 'datum_vergangen') {
@@ -138,15 +145,13 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbah
       <div className="flex flex-wrap items-center gap-2 text-sm text-tinte-2">
         <span>{minutenAlsDauer(h.dauerMin)}, {h.umstiege === 0 ? 'direkt' : `${h.umstiege} ${h.umstiege === 1 ? 'Umstieg' : 'Umstiege'}`}</span>
         {ankunftHuette && <span>· an der Hütte gegen <span className="zahl">{lokaleUhrzeit(ankunftHuette)}</span></span>}
-        {mindestNaechte >= 1 && antwort.naechte >= 1 && <span>· {naechteText(antwort.naechte)}</span>}
-        <TageszielBadge tagesziel={antwort.tagesziel} grund={antwort.tageszielGrund} />
+        <PassungBadge passung={antwort.passung} />
         <TicketBadge ticket={antwort.ticket.ticket} />
       </div>
       {antwort.rueckfahrt && (
         <div className="text-sm text-tinte-2">
           Rückfahrt {datumKurz(antwort.rueckfahrtDatum)}: <span className="zahl">{lokaleUhrzeit(antwort.rueckfahrt.ab)}</span> ab {nach.name},{' '}
           <span className="zahl">{lokaleUhrzeit(antwort.rueckfahrt.an)}</span> in {von.name}
-          {antwort.tourenfensterMin !== undefined && <> · <span className="zahl">{minutenAlsDauer(antwort.tourenfensterMin)}</span> am Berg</>}
         </div>
       )}
       {antwort.rueckfahrt && (

@@ -38,9 +38,9 @@ export async function GET(req: Request) {
     }
   }
 
-  // Der Musterfahrplan gilt nur für seinen Startort.
+  // Der Musterfahrplan gilt nur für seinen Startort und ist nach Haltestellen-id (nicht Transitous-Kennung) geschlüsselt.
   const muster = ladeMusterfahrplan()
-  const plaene = muster?.startortId === startort.id ? muster.orte[haltestelle.haltestelleId]?.plaene : undefined
+  const plaene = muster?.startortId === startort.id ? muster.orte[haltestelle.id]?.plaene : undefined
   const antwort = await fahrtenErmitteln({
     startort, haltestelle, z, tickets: i.tickets,
     muster: { hin: plaene?.[tagesklasse(datum)]?.hin, rueck: plaene?.[tagesklasse(rueck)]?.rueck },

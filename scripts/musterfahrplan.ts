@@ -27,7 +27,7 @@ import { ladeInhalt } from '../src/lib/content/laden'
 import { lokalesDatum } from '../src/lib/datum'
 import { planenGeduldig } from '../src/lib/verbindung/transitous-geduldig'
 import { ladeFahrplan } from '../src/lib/verbindung/fahrplan'
-import { referenzTage, tagesfensterZiele, TAGESKLASSEN } from '../src/lib/richtwerte'
+import { referenzTage, hauptzugaenge, TAGESKLASSEN } from '../src/lib/richtwerte'
 import { ladeMusterfahrplan, MUSTERFAHRPLAN_DATEI } from '../src/lib/musterfahrplan/laden'
 import { tagesplanBerechnen, abdeckungsWarnungen, bereinigeOrt, fehlschlagZusammenfassung, type Fehlschlag, type Planen } from '../src/lib/musterfahrplan/berechnen'
 import { streckeAus } from '../src/lib/musterfahrplan/erzeugen'
@@ -72,7 +72,7 @@ async function main() {
   const heute = lokalesDatum(new Date())
   const tage = referenzTage(heute, liveBis, { sa: arg('--sa'), so: arg('--so'), werktag: arg('--werktag') })
 
-  const alleZiele = tagesfensterZiele(inhalt.gebiete, inhalt.haltestellen, inhalt.startorte)
+  const alleZiele = hauptzugaenge(inhalt.gebiete, inhalt.haltestellen, inhalt.startorte)
   const startort = alleZiele[0]?.startort
   if (!startort) throw new Error('Kein sichtbarer Startort')
   const ziele = alleZiele.map((z) => z.haltestelle).filter((h) => !nur || h.id === nur)

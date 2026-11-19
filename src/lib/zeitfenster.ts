@@ -1,5 +1,4 @@
 import { datumKurz, lokalesDatum, naechsterSamstag, tageAddieren, tageDifferenz } from '@/lib/datum'
-import { rueckAnheben } from '@/lib/zeitraum'
 
 /** Reine, browsersichere Helfer (kein zod): das Zeitfenster einer Tour in der Seiten-URL. */
 export type Zeitfenster = { datum: string; rueck: string; abMin: number; bisMin: number; vorOrtMin: number }
@@ -41,6 +40,12 @@ export function alsUhrzeit(min: number): string {
 export function schnellwahl(heute: string): { label: string; datum: string }[] {
   const samstag = naechsterSamstag(new Date(`${heute}T12:00:00Z`))
   return [samstag, tageAddieren(samstag, 1)].map((datum) => ({ label: datumKurz(datum), datum }))
+}
+
+/** Rückfahrt frühestens `mindestNaechte` Tage nach der Hinfahrt; fehlt sie oder liegt sie davor, wird sie angehoben. */
+export function rueckAnheben(datum: string, rueck: string | undefined, mindestNaechte = 0): string {
+  const fruehestens = tageAddieren(datum, mindestNaechte)
+  return rueck && rueck > fruehestens ? rueck : fruehestens
 }
 
 export function naechte(z: Pick<Zeitfenster, 'datum' | 'rueck'>): number {

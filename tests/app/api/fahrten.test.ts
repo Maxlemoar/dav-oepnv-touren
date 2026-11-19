@@ -20,6 +20,12 @@ describe('GET /api/fahrten', () => {
     expect(z).toMatchObject({ abMin: 360, bisMin: 1260 })
     expect(r.headers.get('Cache-Control')).toBe('public, s-maxage=86400, stale-while-revalidate=3600')
   })
+  it('sucht den Musterfahrplan unter der Haltestellen-id (nicht der Transitous-Kennung)', async () => {
+    await GET(new Request('http://x/api/fahrten?von=offenburg&nach=kandersteg'))
+    const muster = vi.mocked(fahrtenErmitteln).mock.calls[0][0].muster
+    expect(muster?.hin?.length).toBeGreaterThan(0)
+    expect(muster?.rueck?.length).toBeGreaterThan(0)
+  })
   it('nimmt bei ungültigem ab die Vorgabe statt 400', async () => {
     const r = await GET(new Request('http://x/api/fahrten?von=offenburg&nach=kandersteg&ab=xx'))
     expect(r.status).toBe(200)

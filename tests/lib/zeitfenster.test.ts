@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
-  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit, schnellwahl,
+  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit, schnellwahl, rueckAnheben,
   STANDARD_ZEITFENSTER, ZEITBAND, VOR_ORT_MAX_MIN, ZEITFENSTER_PARAMETER,
 } from '@/lib/zeitfenster'
 
@@ -190,5 +190,20 @@ describe('schnellwahl', () => {
       { label: 'Sa 21.11.', datum: '2026-11-21' },
       { label: 'So 22.11.', datum: '2026-11-22' },
     ])
+  })
+})
+
+describe('rueckAnheben', () => {
+  it('behält eine spätere Rückfahrt', () => {
+    expect(rueckAnheben('2026-09-12', '2026-09-13')).toBe('2026-09-13')
+  })
+  it('hebt eine fehlende oder frühere Rückfahrt auf das Hin-Datum', () => {
+    expect(rueckAnheben('2026-09-12', undefined)).toBe('2026-09-12')
+    expect(rueckAnheben('2026-09-12', '2026-09-11')).toBe('2026-09-12')
+  })
+  it('hält bei Hütten mindestens eine Nacht ein', () => {
+    expect(rueckAnheben('2026-09-12', '2026-09-12', 1)).toBe('2026-09-13')
+    expect(rueckAnheben('2026-09-12', undefined, 1)).toBe('2026-09-13')
+    expect(rueckAnheben('2026-09-12', '2026-09-15', 1)).toBe('2026-09-15')
   })
 })

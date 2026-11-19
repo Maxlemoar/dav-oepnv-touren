@@ -1,5 +1,4 @@
 import { inhalt } from '@/lib/content/laden'
-import { EIGENE_SEKTION } from '@/lib/content/labels'
 import { datumTTMMJJJJ, juengsterRichtwert } from '@/lib/metadaten'
 
 export const metadata = { title: 'Über' }
@@ -17,21 +16,23 @@ export default function UeberSeite() {
       </p>
       <h2 className="text-xl font-semibold">So rechnen wir</h2>
       <ul className="list-disc space-y-1 pl-5">
-        <li>Hinfahrt: früheste Ankunft bei Abfahrt zwischen 5 und 8 Uhr. Rückfahrt: letzte Verbindung mit Ankunft vor 23 Uhr. Bei Hütten liegt die Rückfahrt frühestens am Folgetag; ein längerer Zeitraum lässt sich oben wählen.</li>
-        <li>Tagesziel: Ankunft bis 10 Uhr, Rückfahrt ab 16:30, dazwischen mindestens 6 Stunden (einstellbar).</li>
+        <li>Zeitfenster: Du wählst den Tag, wann du frühestens losfährst und spätestens zurück bist und bei Tagestouren, wie lange du mindestens vor Ort sein willst.
+          Ein Ort passt, wenn Hin- und Rückfahrt hineinfallen und genug Zeit bleibt. Bei Hütten liegt die Rückfahrt frühestens am Folgetag.</li>
+        <li>Die Karte rechnet mit dem typischen Fahrplan eines Werktags, Samstags oder Sonntags; die genaue Verbindung am Datum zeigt die Ortsseite live.</li>
         <li>CO₂: {i.emissionen.pkwGrammProFahrzeugKm} g/km pro Pkw bei {i.emissionen.personenProPkw} Personen gegen {i.emissionen.bahnGrammProPersonenKm} g pro Personenkilometer Bahn.
           Quelle: <a href={i.emissionen.quelleUrl} className="underline">{i.emissionen.quelle}</a>, Stand {i.emissionen.stand}.</li>
       </ul>
       <h2 id="begriffe" className="text-xl font-semibold">Begriffe</h2>
       <dl className="space-y-3">
         <div>
-          <dt className="font-medium">Tagesziel</dt>
-          <dd className="text-tinte-2">Hin und zurück am selben Tag mit genug Zeit am Berg: Ankunft bis 10 Uhr, letzte Rückfahrt ab 16:30.
-            Sonst steht „Besser mit Übernachtung“ da, mit dem Grund daneben, etwa „Ankunft erst 10:40“.</dd>
+          <dt className="font-medium">Zeitfenster</dt>
+          <dd className="text-tinte-2">„Los ab“, „zurück bis“ und „mindestens vor Ort“, einstellbar unter „Wann?“; ohne Wahl 6:00 bis 21:00 und 4 Stunden.
+            Passt eine Verbindung, steht etwa „passt, 7:37 h vor Ort“ da, sonst der Grund, etwa „keine Rückfahrt bis 21:00“.</dd>
         </div>
         <div>
-          <dt className="font-medium">Mindestens am Berg</dt>
-          <dd className="text-tinte-2">Zeit zwischen Ankunft und letzter Rückfahrt, die ein Tagesziel mindestens bieten muss. Standard 6 Stunden, einstellbar unter „Wann?“.</dd>
+          <dt className="font-medium">Typischer Fahrplan</dt>
+          <dd className="text-tinte-2">Hin- und Rückfahrten an einem gewöhnlichen Werktag, Samstag und Sonntag, vorab berechnet. Damit beurteilt die Karte
+            alle Orte auf einmal. Feiertage, Baustellen und Ausfälle kennt er nicht; die Ortsseite fragt deshalb die Verbindung am Datum live ab.</dd>
         </div>
         <div>
           <dt className="font-medium">Richtwert („ca. 4:10 h“)</dt>
@@ -39,17 +40,14 @@ export default function UeberSeite() {
             Er dient zum Vergleichen und Sortieren. Die echte Verbindung für dein Datum steht auf der Seite des Ziels und kann abweichen.</dd>
         </div>
         <div>
-          <dt className="font-medium">Reisezeitfarben</dt>
-          <dd className="text-tinte-2">Grün bis Orange auf Karte und Badges: bis 2 Stunden, bis 3 Stunden, bis 4 Stunden, über 4 Stunden Fahrzeit (Richtwert).</dd>
-        </div>
-        <div>
-          <dt className="font-medium">{`Haus der Sektion ${EIGENE_SEKTION}`}</dt>
-          <dd className="text-tinte-2">Im Gebiet steht eine Hütte der DAV-Sektion {EIGENE_SEKTION}. Auf der Karte trägt der Punkt einen dunklen Ring.</dd>
+          <dt className="font-medium">Farben der Karte</dt>
+          <dd className="text-tinte-2">Grün bis Orange: bei Tagestouren nach Zeit vor Ort (8 Stunden und mehr bis unter 4 Stunden), bei mehreren Tagen nach Fahrzeit.
+            Grau sind Orte, die nicht ins Zeitfenster passen.</dd>
         </div>
         <div>
           <dt className="font-medium">Saison</dt>
           <dd className="text-tinte-2">Sommerziele liegen etwa von Mitte Mai bis Oktober, manche Busse fahren nur in der Saison.
-            Der Schalter „Nur was am Datum geht“ blendet Ziele aus, die am gewählten Datum nicht passen; ausgeschaltet tragen sie einen Hinweis wie „Saisonziel“ oder „am Datum kein Bus“.</dd>
+            Fährt der Bus am gewählten Datum nicht, passt der Ort nicht, und es steht „fährt am Datum nicht“ da.</dd>
         </div>
         <div>
           <dt className="font-medium">vermutlich</dt>
