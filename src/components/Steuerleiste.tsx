@@ -30,16 +30,23 @@ export function Steuerleiste({ zeitraum, anzahlFilter, ansicht, onZeitraum, onFi
           <FilterSymbol />Filter
           {anzahlFilter > 0 && <span className="pill-zaehler" aria-label={`${anzahlFilter} aktiv`}>{anzahlFilter}</span>}
         </button>
-        <div role="group" aria-label="Ansicht" className="ml-auto flex h-10 shrink-0 overflow-hidden rounded-full border border-linie bg-karte lg:hidden">
-          {ANSICHTEN.map((a) => {
-            const aktiv = ansicht === a.wert
-            return (
-              <button key={a.wert} type="button" onClick={() => onAnsicht(a.wert)} aria-pressed={aktiv}
-                className={`h-full px-3.5 text-sm font-medium ${aktiv ? 'bg-tanne text-white' : 'text-tinte-2'}`}>{a.label}</button>
-            )
-          })}
-        </div>
+        <AnsichtSegment ansicht={ansicht} onAnsicht={onAnsicht} className="ml-auto lg:hidden" />
       </div>
+    </div>
+  )
+}
+
+/** Segment Liste | Karte; ohne `onAnsicht` (Server-HTML vor der Hydration) ohne Wirkung. */
+export function AnsichtSegment({ ansicht, onAnsicht, className = '' }: { ansicht: Ansicht; onAnsicht?: (a: Ansicht) => void; className?: string }) {
+  return (
+    <div role="group" aria-label="Ansicht" className={`flex h-10 shrink-0 overflow-hidden rounded-full border border-linie bg-karte ${className}`}>
+      {ANSICHTEN.map((a) => {
+        const aktiv = ansicht === a.wert
+        return (
+          <button key={a.wert} type="button" onClick={onAnsicht && (() => onAnsicht(a.wert))} aria-pressed={aktiv}
+            className={`h-full px-3.5 text-sm font-medium ${aktiv ? 'bg-tanne text-white' : 'text-tinte-2'}`}>{a.label}</button>
+        )
+      })}
     </div>
   )
 }

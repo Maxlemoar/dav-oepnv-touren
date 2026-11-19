@@ -1,6 +1,6 @@
 // Bewusst ohne zod: läuft im Browser. Beurteilt, ob ein Ausgangsort ins Zeitfenster passt.
 import { minutenAlsDauer } from '@/lib/datum'
-import { bedientAm } from '@/lib/saison'
+import { bedientAm, tagesklasse, type Tagesklasse } from '@/lib/saison'
 import type { Stufe } from '@/lib/stufe'
 import type { Ausgangsort, Fahrt, Tagesplan } from '@/lib/musterfahrplan/typen'
 import { alsMin, alsUhrzeit, naechte, type Zeitfenster } from '@/lib/zeitfenster'
@@ -64,6 +64,22 @@ export function bewerte(
   }
   if (!best) return nein(`Ankunft erst ${alsUhrzeit(Math.min(...hins.map((h) => min(h.an))))}`, n)
   return passungPaar(best.hin, best.rueck, z)
+}
+
+/**
+ * Bewertet alle Ausgangsorte (Schlüssel: Gebiets-id). Hinfahrten aus dem Plan der Tagesklasse von `datum`,
+ * Rückfahrten aus dem der Tagesklasse von `rueck`; die Pläne sind nach Haltestellen-id abgelegt.
+ */
+export function bewerteAlle(
+  orte: Ausgangsort[],
+  plaene: Partial<Record<Tagesklasse, Record<string, Tagesplan>>>,
+  z: Zeitfenster,
+): Record<string, Bewertung> {
+  const hinPlaene = plaene[tagesklasse(z.datum)]
+  const rueckPlaene = plaene[tagesklasse(z.rueck)]
+  const ergebnis: Record<string, Bewertung> = {}
+  for (const ort of orte) ergebnis[ort.id] = bewerte(ort, hinPlaene?.[ort.haltestelleId], rueckPlaene?.[ort.haltestelleId], z)
+  return ergebnis
 }
 
 /** Passende zuerst: Tagestour nach Zeit vor Ort (mehr zuerst), mehrere Tage und nicht Passende nach Fahrzeit. */

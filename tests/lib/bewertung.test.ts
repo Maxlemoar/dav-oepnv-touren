@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { bewerte, passungPaar, sortiere, vorOrtStufe, type Bewertung } from '@/lib/bewertung'
+import { bewerte, bewerteAlle, passungPaar, sortiere, vorOrtStufe, type Bewertung } from '@/lib/bewertung'
 import type { Fahrt, Tagesplan, Ausgangsort } from '@/lib/musterfahrplan/typen'
 import type { Zeitfenster } from '@/lib/zeitfenster'
 
@@ -119,5 +119,41 @@ describe('sortiere', () => {
       { ort: ort('d', 50), bewertung: nein },
     ]
     expect(sortiere(e, true).map((x) => x.ort.id)).toEqual(['c', 'b', 'a', 'd'])
+  })
+})
+
+describe('bewerteAlle', () => {
+  const ausgangsort = (id: string, haltestelleId: string): Ausgangsort => ({
+    id, haltestelleId, name: id, gebiet: id, region: 'R', land: 'CH', lat: 46, lon: 7,
+  })
+  const orte = [ausgangsort('kandersteg', 'h-kandersteg'), ausgangsort('ohne', 'h-ohne')]
+
+  it('Schlüssel ist die Gebiets-id, Pläne über die Haltestelle; ohne Plan "keine Fahrplandaten"', () => {
+    // 2026-10-10 ist ein Samstag
+    const b = bewerteAlle(orte, { sa: { 'h-kandersteg': plan } }, z())
+    expect(Object.keys(b).sort()).toEqual(['kandersteg', 'ohne'])
+    expect(b.kandersteg).toMatchObject({ passt: true, vorOrtMin: 457 })
+    expect(b.ohne).toEqual({ passt: false, grund: 'keine Fahrplandaten', naechte: 0 })
+  })
+  it('Grund aus bewerte', () => {
+    const b = bewerteAlle(orte, { sa: { 'h-kandersteg': plan } }, z({ abMin: 900 }))
+    expect(b.kandersteg).toMatchObject({ passt: false, grund: 'keine Hinfahrt ab 15:00' })
+  })
+  it('falsche Tagesklasse zählt nicht', () => {
+    expect(bewerteAlle(orte, { werktag: { 'h-kandersteg': plan } }, z()).kandersteg).toMatchObject({ grund: 'keine Fahrplandaten' })
+  })
+  it('mehrere Tage: Hin aus der Klasse von datum, Rück aus der Klasse von rueck', () => {
+    // Sa 10.10. bis Mo 12.10.: Hinfahrten nur im Samstagsplan, Rückfahrten nur im Werktagsplan
+    const plaene = {
+      sa: { 'h-kandersteg': { hin: [f('06:12', '09:41')], rueck: [] } },
+      werktag: { 'h-kandersteg': { hin: [], rueck: [f('17:18', '20:46')] } },
+    }
+    const b = bewerteAlle(orte, plaene, z({ rueck: '2026-10-12' }))
+    expect(b.kandersteg).toMatchObject({ passt: true, naechte: 2 })
+    // vertauscht passt nichts
+    const vertauscht = { sa: plaene.werktag, werktag: plaene.sa }
+    expect(bewerteAlle(orte, vertauscht, z({ rueck: '2026-10-12' })).kandersteg).toMatchObject({ passt: false })
+    // Rückreise fehlt in der Werktagsklasse
+    expect(bewerteAlle(orte, { sa: plaene.sa }, z({ rueck: '2026-10-12' })).kandersteg).toMatchObject({ grund: 'keine Fahrplandaten' })
   })
 })

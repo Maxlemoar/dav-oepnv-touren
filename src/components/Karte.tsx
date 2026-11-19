@@ -7,6 +7,9 @@ import { EIGENE_SEKTION } from '@/lib/content/labels'
 import { STUFE_FARBE } from '@/lib/stufe'
 import { popupHtml, type KarteGeoJson } from '@/lib/karte'
 import { mitZeitraum } from '@/lib/zeitraum'
+import { KartePlatzhalter } from './KartePlatzhalter'
+
+export { KartePlatzhalter }
 
 const STIL = 'https://tiles.openfreemap.org/styles/liberty'
 // Worker als eigene Datei (siehe scripts/maplibre-worker.ts): Turbopack löst die interne Worker-URL sonst falsch auf.
@@ -158,15 +161,6 @@ export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0, query
       <p id={hinweisId} className="sr-only">Alle Ziele auch in der Liste. Die Kartenpunkte sind nicht per Tastatur erreichbar.</p>
       {!bereit && <KartePlatzhalter />}
       <Legende abstandUnten={randUnten} />
-    </div>
-  )
-}
-
-/** Platzhalter, bis Kacheln und Punkte geladen sind; auch für das Laden des Karten-Codes. */
-export function KartePlatzhalter() {
-  return (
-    <div className="absolute inset-0 grid place-items-center bg-nebel" aria-hidden>
-      <p className="animate-pulse px-6 text-center text-sm text-tinte-2">Karte wird geladen …<br />Die Liste zeigt dieselben Ziele.</p>
     </div>
   )
 }
