@@ -2,6 +2,24 @@
 
 Stand 12.11.2026. Grundlage: maschinelle Prüfung aller Inhalte (`npm run audit`), vier Regionalprüfungen mit Quellen, ein Produkt-Review mit frischem Blick und eine Recherche zu Vergleichsangeboten und Fördermöglichkeiten. Alle Einzelbefunde liegen im selben Ordner, die Recherche unter `docs/research/naechstes-level.md`.
 
+## Umsetzung (Stand 19.11.2026)
+
+Freigabe am 19.11.: alle belegten Korrekturen einspielen, alle Empfehlungen umsetzen. Zweig `qualitaet-2026-11`, Plan unter `docs/superpowers/plans/2026-11-19-qualitaet.md`.
+
+| Befund | Stand |
+|---|---|
+| Startseite fällt kein Tagesziel-Urteil (168 Live-Anfragen) | erledigt: Tagesfenster je Haltestelle für Sa, So und Werktag vorberechnet, Fehlschläge nur 5 Minuten gespeichert |
+| Keine Jahreszeit | erledigt: bediente Zeiträume für 19 Haltestellen, Hüttenstatus und Bewirtschaftung, Saison-Hinweise in Liste, Karte und Detailseiten, Schalter „Nur was am Datum geht“ |
+| Hütteneinträge | 134 belegte Korrekturen automatisch, 4 von Hand (`eingespielt.md`); 3 geschlossene Hütten markiert, Rämsenberg an der richtigen Stelle; 72 unbelegte Vorschläge in `docs/pruefliste-arbeitskreis.md` |
+| Falsche Touren, toter Link | 5 Touren entfernt (u. a. Hanselsteig, Silvretta A7) |
+| Fahrplanwechsel 13.12. | Kennungen mit Koordinaten-Ausweg; nach dem Wechsel `liveBis` anheben und `npm run richtwerte` neu laufen lassen |
+| Impressum, Datenschutz | Seiten gebaut, Angaben zum Verantwortlichen fehlen noch (`content/rechtliches.yaml`) |
+| Europass in den Vogesen | korrigiert: gilt nur in der Ortenau und um Straßburg |
+| Buchungslinks | 116 Hütten mit direktem Link |
+| Neue Funktionen | Sektionstouren aus DAV360, Rückfahrt-Rechner, Mitfahrende einladen, Wetter, Lawinenlage, Kostenvergleich nach Fahrtkostenregel der Sektion |
+| Anfragen an Transitous, DAV, Nachbarsektionen, Klimafonds | Entwürfe in `docs/entwuerfe/`, Versand durch den Arbeitskreis |
+| Bahn-Kennungen für 10 neue Haltestellen | offen, bahn.de lehnt Abfragen gerade ab (403); später `npm run bahn-ids` |
+
 ## Kurzfazit
 
 Die Idee trägt, und der Kern funktioniert: Wer auf ein Gebiet tippt, bekommt eine echte Verbindung für sein Datum, eine Rückfahrt und einen Buchungslink, der direkt die richtige Suche öffnet. So etwas gibt es für Baden sonst nirgends, auch Zuugle und der DAV-Werkzeugkasten decken die Region nicht ab.

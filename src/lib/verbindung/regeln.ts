@@ -32,6 +32,14 @@ const uhrzeit = (hhmm: string) => hhmm.replace(/^0(?=\d:)/, '')
  * Tagesziel-Urteil aus einem Tagesfenster (früheste Ankunft, letzte Rückfahrt, beide lokal "HH:MM").
  * Ohne Fenster kein Urteil; fehlt Ankunft oder Rückfahrt im Fenster, gibt es an dem Tag keine Verbindung.
  */
+/**
+ * Tagesfenster werden an einem Referenztag berechnet. Ein leeres Fenster einer Saisonhaltestelle stammt aus der
+ * Nebensaison und sagt über die Hauptsaison nichts; dann lieber kein Urteil als ein falsches.
+ */
+export function gueltigesFenster(h: { bedient?: unknown[] }, f: Tagesfenster | undefined): Tagesfenster | undefined {
+  return h.bedient && f && !f.ankunft ? undefined : f
+}
+
 export function tageszielAusFenster(
   fenster: Tagesfenster | undefined,
   mindestFensterMin: number = TAGESZIEL.mindestFensterMin,

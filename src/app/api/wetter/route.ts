@@ -17,6 +17,7 @@ export async function GET(req: Request) {
   const datum = sp.get('datum') ?? ''
   const rueck = sp.get('rueck') || datum
   if (!ISO_DATUM.test(datum) || !ISO_DATUM.test(rueck)) return NextResponse.json({ fehler: 'datum fehlt oder ist ungültig' }, { status: 400 })
+  if (rueck < datum) return NextResponse.json({ fehler: 'rueck darf nicht vor datum liegen' }, { status: 400 })
 
   const i = inhalt()
   const huetteId = sp.get('huette')

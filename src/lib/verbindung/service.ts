@@ -1,9 +1,9 @@
 import type { Startort, Haltestelle, TicketTabelle, Richtwert } from '@/lib/content/schema'
-import { lokalesDatum, lokaleUhrzeit, tageDifferenz, zuUtcIso } from '@/lib/datum'
+import { lokaleMinuten, lokalesDatum, lokaleUhrzeit, tageDifferenz, zuUtcIso } from '@/lib/datum'
 import { bedientAm, tagesklasse } from '@/lib/saison'
 import { planen as planenStandard, dienstNichtErreichbar, type Itinerary, type PlanParameter } from './transitous'
 import { waehleHinfahrt, waehleRueckfahrt, kurzfassung, hatFernverkehr, HINFAHRT_FENSTER, RUECKFAHRT_ANKUNFT_BIS, type VerbindungKurz } from './auswerten'
-import { tageszielAusFenster, ticketFuer, tourenfensterMin, type TageszielUrteil, type TicketHinweis } from './regeln'
+import { gueltigesFenster, tageszielAusFenster, ticketFuer, tourenfensterMin, type TageszielUrteil, type TicketHinweis } from './regeln'
 import { ladeFahrplan, nachLiveBis, type Fahrplan } from './fahrplan'
 
 /**
@@ -77,7 +77,7 @@ function ohneLive(
   const ticket = richtwert
     ? { ticket: richtwert.ticket, hinweis: ticketFuer(land, richtwert.ticket === 'keins' && land === 'DE', a.tickets).hinweis }
     : ticketFuer(land, false, a.tickets)
-  const urteil = naechte > 0 ? {} : zusatz.urteil ?? tageszielAusFenster(richtwert?.tagesfenster?.[tagesklasse(a.datum)], a.mindestFensterMin)
+  const urteil = naechte > 0 ? {} : zusatz.urteil ?? tageszielAusFenster(gueltigesFenster(a.haltestelle, richtwert?.tagesfenster?.[tagesklasse(a.datum)]), a.mindestFensterMin)
   return {
     quelle: 'richtwert', datum: a.datum, rueckfahrtDatum: a.rueckfahrtDatum, naechte, ticket,
     ...(richtwert && { richtwert }),
@@ -122,7 +122,12 @@ export async function verbindungErmitteln(
   const land = a.haltestelle.land
   const richtwert = a.haltestelle.richtwerte[a.startort.id]
   // In Deutschland zählt das Deutschlandticket: Nahverkehr vorziehen, wenn er nicht viel später ankommt.
-  const { hinfahrt, hinfahrtSpaeter } = waehleHinfahrt(hinErgebnis.status === 'fulfilled' ? hinErgebnis.value : [], { nahverkehrBevorzugen: land === 'DE' })
+  const alleHin = hinErgebnis.status === 'fulfilled' ? hinErgebnis.value : []
+  let { hinfahrt, hinfahrtSpaeter } = waehleHinfahrt(alleHin, { nahverkehrBevorzugen: land === 'DE' })
+  // Fährt zwischen 5 und 8 Uhr nichts, gilt die nächste Abfahrt bis 9 Uhr, sonst die früheste Ankunft bei Abfahrt
+  // bis 14 Uhr. Für Hüttentouren reicht das, für Tagestouren erklärt das Urteil dann die späte Ankunft.
+  if (!hinfahrt && hinfahrtSpaeter) { hinfahrt = hinfahrtSpaeter; hinfahrtSpaeter = undefined }
+  hinfahrt ??= spaetereHinfahrt(alleHin)
   const rueckfahrt = rueckErgebnis.status === 'fulfilled' ? waehleRueckfahrt(rueckErgebnis.value, rueckfahrtDatum) : undefined
   const keineVerbindung = hinErgebnis.status === 'fulfilled' && !hinfahrt
   const fehlerArt: FehlerArt | undefined = hinDienstFehler ? 'dienst_nicht_erreichbar' : keineVerbindung ? 'keine_verbindung' : undefined
@@ -148,4 +153,11 @@ export async function verbindungErmitteln(
     Object.assign(antwort, urteilFelder({ tagesziel: false, grund: bedient ? 'Keine Hinfahrt zwischen 5 und 9 Uhr' : SAISON_HINWEIS }))
   }
   return antwort
+}
+
+/** Früheste Ankunft unter den Verbindungen mit Abfahrt zwischen 5 und 14 Uhr (Ortszeit). */
+function spaetereHinfahrt(its: Itinerary[]): Itinerary | undefined {
+  return its
+    .filter((i) => { const m = lokaleMinuten(i.startTime); return m >= 5 * 60 && m < 14 * 60 })
+    .sort((x, y) => Date.parse(x.endTime) - Date.parse(y.endTime))[0]
 }
