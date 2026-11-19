@@ -5,4 +5,4 @@ lat: 47.80833
 lon: 7.67088
 land: DE
 region: Südschwarzwald
-richtwerte: { kehl: { fahrzeitMin: 179, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 116, bahnKm: 108 }, lahr: { fahrzeitMin: 94, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 76 }, offenburg: { fahrzeitMin: 105, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 101, bahnKm: 96 } }
+richtwerte: { kehl: { fahrzeitMin: 179, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 116, bahnKm: 108 }, lahr: { fahrzeitMin: 94, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 76 }, offenburg: { fahrzeitMin: 105, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 101, bahnKm: 96, tagesfenster: { werktag: { ankunft: "07:31", letzteRueckfahrt: "20:27" }, sa: { ankunft: "07:31", letzteRueckfahrt: "20:27" }, so: { ankunft: "07:31", letzteRueckfahrt: "20:27" } } } }

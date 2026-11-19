@@ -30,6 +30,16 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 222
     bahnKm: 216
+    tagesfenster:
+      werktag:
+        ankunft: "09:43"
+        letzteRueckfahrt: "18:18"
+      sa:
+        ankunft: "10:43"
+        letzteRueckfahrt: "18:18"
+      so:
+        ankunft: "10:43"
+        letzteRueckfahrt: "17:48"
 bahn:
   extId: "8506289"
   name: Wasserauen

@@ -5,7 +5,7 @@ lat: 48.47999
 lon: 7.21634
 land: FR
 region: Nordvogesen
-richtwerte: { kehl: { fahrzeitMin: 78, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 52, bahnKm: 56 }, lahr: { fahrzeitMin: 109, umstiege: 2, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 79, bahnKm: 60 }, offenburg: { fahrzeitMin: 74, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 62, bahnKm: 67 } }
+richtwerte: { kehl: { fahrzeitMin: 78, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 52, bahnKm: 56 }, lahr: { fahrzeitMin: 109, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 79, bahnKm: 60 }, offenburg: { fahrzeitMin: 74, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 62, bahnKm: 67, tagesfenster: { werktag: { ankunft: "07:44", letzteRueckfahrt: "20:58" }, sa: { ankunft: "07:49", letzteRueckfahrt: "20:14" }, so: { ankunft: "08:15", letzteRueckfahrt: "20:23" } } } }
 bahn:
   extId: "8700419"
   name: Schirmeck-la-Broque

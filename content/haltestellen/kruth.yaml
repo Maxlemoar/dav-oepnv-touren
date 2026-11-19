@@ -5,7 +5,7 @@ lat: 47.92396
 lon: 6.96909
 land: FR
 region: Vogesen
-richtwerte: { kehl: { fahrzeitMin: 210, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 163, bahnKm: 119 }, lahr: { fahrzeitMin: 206, umstiege: 4, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 135, bahnKm: 99 }, offenburg: { fahrzeitMin: 215, umstiege: 3, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 149, bahnKm: 119 } }
+richtwerte: { kehl: { fahrzeitMin: 210, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 163, bahnKm: 119 }, lahr: { fahrzeitMin: 206, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 135, bahnKm: 99 }, offenburg: { fahrzeitMin: 215, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 149, bahnKm: 119, tagesfenster: { werktag: { ankunft: "08:54", letzteRueckfahrt: "18:36" }, sa: { ankunft: "08:50", letzteRueckfahrt: "19:25" }, so: { ankunft: "09:11", letzteRueckfahrt: "19:16" } } } }
 bahn:
   extId: "8701342"
   name: Kruth(Cernay)

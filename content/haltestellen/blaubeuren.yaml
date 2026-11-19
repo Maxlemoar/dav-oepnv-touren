@@ -5,7 +5,7 @@ lat: 48.40382
 lon: 9.79198
 land: DE
 region: Schwäbische Alb
-richtwerte: { kehl: { fahrzeitMin: 247, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 218, bahnKm: 184 }, lahr: { fahrzeitMin: 259, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 234, bahnKm: 181 }, offenburg: { fahrzeitMin: 244, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 217, bahnKm: 170 } }
+richtwerte: { kehl: { fahrzeitMin: 247, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 218, bahnKm: 184 }, lahr: { fahrzeitMin: 259, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 234, bahnKm: 181 }, offenburg: { fahrzeitMin: 244, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 217, bahnKm: 170, tagesfenster: { werktag: { ankunft: "09:26", letzteRueckfahrt: "19:27" }, sa: { ankunft: "09:26", letzteRueckfahrt: "18:29" }, so: { ankunft: "09:26", letzteRueckfahrt: "19:27" } } } }
 bahn:
   extId: "800189"
   name: Bahnhof, Blaubeuren

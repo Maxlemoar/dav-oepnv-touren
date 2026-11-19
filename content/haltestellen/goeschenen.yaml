@@ -5,7 +5,7 @@ lat: 46.66580
 lon: 8.58871
 land: CH
 region: Uri (Zentralschweiz)
-richtwerte: { kehl: { fahrzeitMin: 337, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 298, bahnKm: 276 }, lahr: { fahrzeitMin: 287, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 270, bahnKm: 243 }, offenburg: { fahrzeitMin: 260, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 284, bahnKm: 259 } }
+richtwerte: { kehl: { fahrzeitMin: 337, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 298, bahnKm: 276 }, lahr: { fahrzeitMin: 287, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 270, bahnKm: 243 }, offenburg: { fahrzeitMin: 260, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 284, bahnKm: 259, tagesfenster: { werktag: { ankunft: "10:50", letzteRueckfahrt: "18:09" }, sa: { ankunft: "10:50", letzteRueckfahrt: "18:09" }, so: { ankunft: "10:50", letzteRueckfahrt: "18:09" } } } }
 bahn:
   extId: "8505119"
   name: Göschenen

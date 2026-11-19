@@ -5,7 +5,7 @@ lat: 47.88333
 lon: 8.34207
 land: DE
 region: Hochschwarzwald
-richtwerte: { kehl: { fahrzeitMin: 159, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 126, bahnKm: 108 }, lahr: { fahrzeitMin: 159, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 99, bahnKm: 79 }, offenburg: { fahrzeitMin: 136, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 112, bahnKm: 90 } }
+richtwerte: { kehl: { fahrzeitMin: 159, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 126, bahnKm: 108 }, lahr: { fahrzeitMin: 159, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 99, bahnKm: 79 }, offenburg: { fahrzeitMin: 136, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 112, bahnKm: 90, tagesfenster: { werktag: { ankunft: "07:43", letzteRueckfahrt: "20:44" }, sa: { ankunft: "08:12", letzteRueckfahrt: "20:44" }, so: { ankunft: "08:12", letzteRueckfahrt: "20:13" } } } }
 bahn:
   extId: "8003724"
   name: Löffingen

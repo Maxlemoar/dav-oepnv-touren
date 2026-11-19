@@ -5,7 +5,7 @@ lat: 47.41103
 lon: 10.27809
 land: DE
 region: Allgäu
-richtwerte: { kehl: { fahrzeitMin: 348, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 363, bahnKm: 281 }, lahr: { fahrzeitMin: 321, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 380, bahnKm: 262 }, offenburg: { fahrzeitMin: 299, umstiege: 1, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 363, bahnKm: 263 } }
+richtwerte: { kehl: { fahrzeitMin: 348, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 363, bahnKm: 281 }, lahr: { fahrzeitMin: 321, umstiege: 2, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 380, bahnKm: 262 }, offenburg: { fahrzeitMin: 299, umstiege: 1, takt: zweistuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 363, bahnKm: 263, tagesfenster: { werktag: { ankunft: "11:19", letzteRueckfahrt: "17:38" }, sa: { ankunft: "12:19", letzteRueckfahrt: "16:10" }, so: { ankunft: "12:19", letzteRueckfahrt: "17:38" } } } }
 bahn:
   extId: "8004585"
   name: Oberstdorf

@@ -5,7 +5,7 @@ lat: 47.41723
 lon: 9.73784
 land: AT
 region: Vorarlberg
-richtwerte: { kehl: { fahrzeitMin: 312, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 253, bahnKm: 241 }, lahr: { fahrzeitMin: 287, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 250, bahnKm: 219 }, offenburg: { fahrzeitMin: 264, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 233, bahnKm: 222 } }
+richtwerte: { kehl: { fahrzeitMin: 312, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 253, bahnKm: 241 }, lahr: { fahrzeitMin: 287, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 250, bahnKm: 219 }, offenburg: { fahrzeitMin: 264, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 233, bahnKm: 222, tagesfenster: { werktag: { ankunft: "09:50", letzteRueckfahrt: "18:39" }, sa: { ankunft: "10:19", letzteRueckfahrt: "18:39" }, so: { ankunft: "10:19", letzteRueckfahrt: "17:52" } } } }
 bahn:
   extId: "8100122"
   name: Dornbirn

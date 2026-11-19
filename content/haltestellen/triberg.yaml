@@ -5,7 +5,7 @@ lat: 48.14
 lon: 8.23681
 land: DE
 region: Mittlerer Schwarzwald
-richtwerte: { kehl: { fahrzeitMin: 67, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 75, bahnKm: 73 }, lahr: { fahrzeitMin: 66, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 52, bahnKm: 46 }, offenburg: { fahrzeitMin: 43, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 55, bahnKm: 54 } }
+richtwerte: { kehl: { fahrzeitMin: 67, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 75, bahnKm: 73 }, lahr: { fahrzeitMin: 66, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 52, bahnKm: 46 }, offenburg: { fahrzeitMin: 43, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 55, bahnKm: 54, tagesfenster: { werktag: { ankunft: "06:08", letzteRueckfahrt: "22:15" }, sa: { ankunft: "06:39", letzteRueckfahrt: "22:15" }, so: { ankunft: "06:39", letzteRueckfahrt: "21:15" } } } }
 bahn:
   extId: "8005902"
   name: Triberg

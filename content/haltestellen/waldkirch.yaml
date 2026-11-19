@@ -5,7 +5,7 @@ lat: 48.09568
 lon: 7.95721
 land: DE
 region: Mittlerer Schwarzwald
-richtwerte: { kehl: { fahrzeitMin: 101, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 84, bahnKm: 68 }, lahr: { fahrzeitMin: 49, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 56, bahnKm: 36 }, offenburg: { fahrzeitMin: 60, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 70, bahnKm: 53 } }
+richtwerte: { kehl: { fahrzeitMin: 101, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 84, bahnKm: 68 }, lahr: { fahrzeitMin: 49, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 56, bahnKm: 36 }, offenburg: { fahrzeitMin: 60, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 70, bahnKm: 53, tagesfenster: { werktag: { ankunft: "06:25", letzteRueckfahrt: "21:41" }, sa: { ankunft: "06:53", letzteRueckfahrt: "21:41" }, so: { ankunft: "06:54", letzteRueckfahrt: "21:33" } } } }
 bahn:
   extId: "8006159"
   name: Waldkirch

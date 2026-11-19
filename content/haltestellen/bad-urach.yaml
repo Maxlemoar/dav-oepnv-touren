@@ -5,7 +5,7 @@ lat: 48.49124
 lon: 9.39648
 land: DE
 region: Schwäbische Alb
-richtwerte: { kehl: { fahrzeitMin: 231, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 181, bahnKm: 147 }, lahr: { fahrzeitMin: 243, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 198, bahnKm: 145 }, offenburg: { fahrzeitMin: 228, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 181, bahnKm: 134 } }
+richtwerte: { kehl: { fahrzeitMin: 231, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 181, bahnKm: 147 }, lahr: { fahrzeitMin: 243, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 198, bahnKm: 145 }, offenburg: { fahrzeitMin: 228, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 181, bahnKm: 134, tagesfenster: { werktag: { ankunft: "09:06", letzteRueckfahrt: "19:51" }, sa: { ankunft: "09:36", letzteRueckfahrt: "18:21" }, so: { ankunft: "09:36", letzteRueckfahrt: "19:21" } } } }
 bahn:
   extId: "8006029"
   name: Bad Urach

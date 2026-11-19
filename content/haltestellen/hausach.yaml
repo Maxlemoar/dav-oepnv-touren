@@ -5,7 +5,7 @@ lat: 48.28493
 lon: 8.18167
 land: DE
 region: Mittlerer Schwarzwald
-richtwerte: { kehl: { fahrzeitMin: 46, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 57, bahnKm: 53 }, lahr: { fahrzeitMin: 40, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 34, bahnKm: 33 }, offenburg: { fahrzeitMin: 27, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 37, bahnKm: 34 } }
+richtwerte: { kehl: { fahrzeitMin: 46, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 57, bahnKm: 53 }, lahr: { fahrzeitMin: 40, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 34, bahnKm: 33 }, offenburg: { fahrzeitMin: 27, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 37, bahnKm: 34, tagesfenster: { werktag: { ankunft: "05:46", letzteRueckfahrt: "22:37" }, sa: { ankunft: "06:13", letzteRueckfahrt: "22:37" }, so: { ankunft: "06:13", letzteRueckfahrt: "21:49" } } } }
 bahn:
   extId: "8000333"
   name: Hausach

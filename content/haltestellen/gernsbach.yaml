@@ -5,7 +5,7 @@ lat: 48.76831
 lon: 8.33671
 land: DE
 region: Nordschwarzwald
-richtwerte: { kehl: { fahrzeitMin: 133, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 71, bahnKm: 55 }, lahr: { fahrzeitMin: 85, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 75 }, offenburg: { fahrzeitMin: 70, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 71, bahnKm: 54 } }
+richtwerte: { kehl: { fahrzeitMin: 133, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 71, bahnKm: 55 }, lahr: { fahrzeitMin: 85, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 75 }, offenburg: { fahrzeitMin: 70, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 71, bahnKm: 54, tagesfenster: { werktag: { ankunft: "06:55", letzteRueckfahrt: "21:02" }, sa: { ankunft: "06:58", letzteRueckfahrt: "21:00" }, so: { ankunft: "06:58", letzteRueckfahrt: "21:02" } } } }
 bahn:
   extId: "724288"
   name: Bahnhof, Gernsbach

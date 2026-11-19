@@ -5,7 +5,7 @@ lat: 47.8288
 lon: 7.94193
 land: DE
 region: Südschwarzwald
-richtwerte: { kehl: { fahrzeitMin: 193, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 111, bahnKm: 105 }, lahr: { fahrzeitMin: 127, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 83, bahnKm: 72 }, offenburg: { fahrzeitMin: 129, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 97, bahnKm: 90 } }
+richtwerte: { kehl: { fahrzeitMin: 193, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 111, bahnKm: 105 }, lahr: { fahrzeitMin: 127, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 83, bahnKm: 72 }, offenburg: { fahrzeitMin: 129, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 97, bahnKm: 90, tagesfenster: { werktag: { ankunft: "08:51", letzteRueckfahrt: "19:29" }, sa: { ankunft: "08:51", letzteRueckfahrt: "18:53" }, so: { ankunft: "08:51", letzteRueckfahrt: "18:53" } } } }
 bahn:
   extId: "502147"
   name: Busbahnhof, Todtnau

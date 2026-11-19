@@ -30,6 +30,16 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 277
     bahnKm: 277
+    tagesfenster:
+      werktag:
+        ankunft: "09:40"
+        letzteRueckfahrt: "18:14"
+      sa:
+        ankunft: "09:40"
+        letzteRueckfahrt: "18:14"
+      so:
+        ankunft: "09:40"
+        letzteRueckfahrt: "18:14"
 bahn:
   extId: "8507475"
   name: Kandersteg

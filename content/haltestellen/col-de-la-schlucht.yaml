@@ -5,6 +5,6 @@ lat: 48.06388
 lon: 7.02239
 land: FR
 region: Vogesen
-richtwerte: { kehl: { fahrzeitMin: 219, umstiege: 4, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 113, bahnKm: 102 }, lahr: { fahrzeitMin: 231, umstiege: 4, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 106, bahnKm: 85 }, offenburg: { fahrzeitMin: 199, umstiege: 3, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 115, bahnKm: 103 } }
+richtwerte: { kehl: { fahrzeitMin: 219, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 113, bahnKm: 102 }, lahr: { fahrzeitMin: 231, umstiege: 4, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 106, bahnKm: 85 }, offenburg: { fahrzeitMin: 199, umstiege: 3, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 115, bahnKm: 103 } }
 bedient: [{ von: "05-30", bis: "09-27" }]
 bedientHinweis: "Nur im Sommer: Navette des Crêtes, 2026 vom 30.5. bis 27.9."

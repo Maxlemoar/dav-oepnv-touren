@@ -5,7 +5,7 @@ lat: 48.74448
 lon: 7.36205
 land: FR
 region: Nordvogesen
-richtwerte: { kehl: { fahrzeitMin: 129, umstiege: 2, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 55, bahnKm: 47 }, lahr: { fahrzeitMin: 104, umstiege: 2, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 96, bahnKm: 71 }, offenburg: { fahrzeitMin: 69, umstiege: 1, takt: stuendlich, ticket: europass, berechnetAm: 2026-09-07, strassenKm: 73, bahnKm: 65 } }
+richtwerte: { kehl: { fahrzeitMin: 129, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 55, bahnKm: 47 }, lahr: { fahrzeitMin: 104, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 96, bahnKm: 71 }, offenburg: { fahrzeitMin: 69, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 73, bahnKm: 65, tagesfenster: { werktag: { ankunft: "07:11", letzteRueckfahrt: "20:55" }, sa: { ankunft: "07:40", letzteRueckfahrt: "21:14" }, so: { ankunft: "08:47", letzteRueckfahrt: "21:04" } } } }
 bahn:
   extId: "8700266"
   name: Saverne

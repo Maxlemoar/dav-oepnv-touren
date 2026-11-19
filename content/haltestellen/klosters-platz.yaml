@@ -5,7 +5,7 @@ lat: 46.86956
 lon: 9.88085
 land: CH
 region: Prättigau (Graubünden)
-richtwerte: { kehl: { fahrzeitMin: 345, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 358, bahnKm: 306 }, lahr: { fahrzeitMin: 295, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 330, bahnKm: 280 }, offenburg: { fahrzeitMin: 268, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 343, bahnKm: 287 } }
+richtwerte: { kehl: { fahrzeitMin: 345, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 358, bahnKm: 306 }, lahr: { fahrzeitMin: 295, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 330, bahnKm: 280 }, offenburg: { fahrzeitMin: 268, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 343, bahnKm: 287, tagesfenster: { werktag: { ankunft: "10:28", letzteRueckfahrt: "18:00" }, sa: { ankunft: "10:28", letzteRueckfahrt: "18:00" }, so: { ankunft: "10:28", letzteRueckfahrt: "18:00" } } } }
 bahn:
   extId: "8509068"
   name: Klosters Platz

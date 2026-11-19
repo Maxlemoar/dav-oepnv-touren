@@ -5,7 +5,7 @@ lat: 48.0405
 lon: 7.64949
 land: DE
 region: Kaiserstuhl
-richtwerte: { kehl: { fahrzeitMin: 173, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 79, bahnKm: 76 }, lahr: { fahrzeitMin: 54, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 51, bahnKm: 45 }, offenburg: { fahrzeitMin: 64, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 65, bahnKm: 67 } }
+richtwerte: { kehl: { fahrzeitMin: 173, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 79, bahnKm: 76 }, lahr: { fahrzeitMin: 54, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 51, bahnKm: 45 }, offenburg: { fahrzeitMin: 64, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 65, bahnKm: 67, tagesfenster: { werktag: { ankunft: "06:31", letzteRueckfahrt: "21:22" }, sa: { ankunft: "07:22", letzteRueckfahrt: "21:22" }, so: { ankunft: "07:22", letzteRueckfahrt: "21:37" } } } }
 bahn:
   extId: "8003052"
   name: Ihringen

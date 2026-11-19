@@ -30,6 +30,16 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 54
     bahnKm: 37
+    tagesfenster:
+      werktag:
+        ankunft: "08:13"
+        letzteRueckfahrt: "18:44"
+      sa:
+        ankunft: "08:13"
+        letzteRueckfahrt: "18:44"
+      so:
+        ankunft: "09:13"
+        letzteRueckfahrt: "18:44"
 bahn:
   extId: "720870"
   name: Sand Kapelle, Bühl
