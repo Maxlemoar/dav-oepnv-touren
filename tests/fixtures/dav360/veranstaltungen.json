@@ -1,0 +1,330 @@
+[
+ {
+  "id": 60352,
+  "detailRoute": "/events/tour/MTB-Werkstatt-Abend/60352",
+  "title": "MTB Werkstatt Abend",
+  "subtitle": "",
+  "description": "<p>Theorie &amp; Praxis<br />\nIn unserem MTB-Schrauberkurs lernst&nbsp;Du dein Bike selbständig fit zu halten.<br />\nThema: Von Schlauch zu Tubeless +&nbsp;Bremsbeläge wechseln, Bremssattel einstellen</p>\n",
+  "bookingCode": "R10-24",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 423,
+   "name": "Mountainbike"
+  },
+  "leaders": [
+   {
+    "firstName": "Rick",
+    "lastName": "Eichholzer"
+   },
+   {
+    "firstName": "Alexander",
+    "lastName": "Müller-Mathis"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2023-09-18 00:00:00",
+    "dateTimeEnd": ""
+   }
+  ],
+  "registerEnd": "2024-09-04 00:00:00",
+  "meetingPoint": null,
+  "arrivalHints": null,
+  "isPublicTransportAvailable": null
+ },
+ {
+  "id": 62366,
+  "detailRoute": "/events/tour/Haslacher-Panoramaweg-Sud-Rundwanderung/62366",
+  "title": "Haslacher Panoramaweg Süd Rundwanderung",
+  "subtitle": "",
+  "description": "",
+  "bookingCode": "M2-24",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 2284,
+   "name": "Wandern"
+  },
+  "leaders": [
+   {
+    "firstName": "Hubert",
+    "lastName": "Fritsch"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2024-01-14 00:00:00",
+    "dateTimeEnd": "2024-01-14 00:00:00"
+   }
+  ],
+  "registerEnd": "2024-01-13 00:00:00",
+  "meetingPoint": "<p>10:45 Uhr Nordrach Hansjakobhalle und 11:00 Uhr Zell Sonnenparkplatz</p>\n",
+  "arrivalHints": null,
+  "isPublicTransportAvailable": null
+ },
+ {
+  "id": 60454,
+  "detailRoute": "/events/tour/Oberkircher-Brennersteig/60454",
+  "title": "Oberkircher Brennersteig",
+  "subtitle": "Hesselbacher Tal bei Oberkirch",
+  "description": "",
+  "bookingCode": "M21-24",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 2284,
+   "name": "Wandern"
+  },
+  "leaders": [
+   {
+    "firstName": "Stephanie",
+    "lastName": "Boschert"
+   },
+   {
+    "firstName": "Sylvia",
+    "lastName": "Welle"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2024-06-23 00:00:00",
+    "dateTimeEnd": ""
+   }
+  ],
+  "registerEnd": "2024-06-21 00:00:00",
+  "meetingPoint": null,
+  "arrivalHints": "<p>Anfahrt mit öffentlichen Verkehrsmitteln</p>\n",
+  "isPublicTransportAvailable": null
+ },
+ {
+  "id": 101579,
+  "detailRoute": "/events/tour/Oberkircher-Brennersteig/101579",
+  "title": "Oberkircher Brennersteig",
+  "subtitle": "Rundwanderung Hesselbacher Tal, Geigerskopfturm",
+  "description": "",
+  "bookingCode": "M16-25",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 2284,
+   "name": "Wandern"
+  },
+  "leaders": [
+   {
+    "firstName": "Stephanie",
+    "lastName": "Boschert"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2025-06-29 00:00:00",
+    "dateTimeEnd": ""
+   }
+  ],
+  "registerEnd": "2025-06-21 00:00:00",
+  "meetingPoint": "<p>9.00 Uhr Hansjakob-Halle Nordrach </p>",
+  "arrivalHints": null,
+  "isPublicTransportAvailable": null
+ },
+ {
+  "id": 134930,
+  "detailRoute": "/events/tour/Skitouren-am-Sustenpass/134930",
+  "title": "Skitouren am Sustenpass",
+  "subtitle": "",
+  "description": "<p>z.B. Sustenhorn (3502 m), Giglistock (2898 m), Mittlerer Tierberg (3309 m). </p>\n<p>Die Touren suchen wir vor Ort je nach Verhältnissenb aus.</p>\n<p>Übernbachtung in Hütte.</p>",
+  "bookingCode": "S7-26",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 426,
+   "name": "Skitour"
+  },
+  "leaders": [
+   {
+    "firstName": "Gernot",
+    "lastName": "Ding"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2026-04-17 00:00:00",
+    "dateTimeEnd": "2026-04-19 00:00:00"
+   }
+  ],
+  "registerEnd": "2026-03-22 00:00:00",
+  "meetingPoint": null,
+  "arrivalHints": "<p>Anfahrt im Kleinbus (Mietfahrzeug)</p>",
+  "isPublicTransportAvailable": null
+ },
+ {
+  "id": 136775,
+  "detailRoute": "/events/tour/Durch-das-Gasteretal-zur-neuen-Mutthornhutte-2800-m/136775",
+  "title": "Durch das Gasteretal zur neuen Mutthornhütte (2800 m)",
+  "subtitle": "",
+  "description": "<p>Übernachtungn in Hütte</p>",
+  "bookingCode": "H19-26",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 420,
+   "name": "Hochtour"
+  },
+  "leaders": [
+   {
+    "firstName": "Andreas ",
+    "lastName": "Schmid"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2026-08-31 00:00:00",
+    "dateTimeEnd": "2026-09-03 00:00:00"
+   }
+  ],
+  "registerEnd": "2026-07-01 00:00:00",
+  "meetingPoint": null,
+  "arrivalHints": "<p>Anfahrt mit ÖPNV</p>",
+  "isPublicTransportAvailable": null
+ },
+ {
+  "id": 136827,
+  "detailRoute": "/events/tour/Granitklettereien-rund-um-die-Gelmerhutte/136827",
+  "title": "Granitklettereien rund um die Gelmerhütte",
+  "subtitle": "",
+  "description": "<p>Übernachtung in Hütte</p>",
+  "bookingCode": "K09-26",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 421,
+   "name": "Klettern"
+  },
+  "leaders": [
+   {
+    "firstName": "Malte",
+    "lastName": "Bokelmann"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2026-09-04 00:00:00",
+    "dateTimeEnd": "2026-09-06 00:00:00"
+   }
+  ],
+  "registerEnd": "2026-07-15 00:00:00",
+  "meetingPoint": null,
+  "arrivalHints": "<p>Anfahrt mit ÖPNV</p>",
+  "isPublicTransportAvailable": null
+ },
+ {
+  "id": 134935,
+  "detailRoute": "/events/tour/Gemeinsamer-Start-in-die-Skitourensaison/134935",
+  "title": "Gemeinsamer Start in die Skitourensaison",
+  "subtitle": "",
+  "description": "<p>In verschiedenen Gruppen (Anfänger bis Könner) unternehmen wir Touren.</p>\n<p>Schwierigkeiten und Länge der Touren varieren je nach Gruppe.</p>\n<p>Ort wird noch bekannt gegeben.</p>\n<p>Übernachtung im Gasthaus.</p>\n<p> </p>",
+  "bookingCode": "S10-26",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 426,
+   "name": "Skitour"
+  },
+  "leaders": [
+   {
+    "firstName": "Gernot",
+    "lastName": "Ding"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2027-01-22 00:00:00",
+    "dateTimeEnd": "2027-01-24 00:00:00"
+   }
+  ],
+  "registerEnd": "2027-01-12 00:00:00",
+  "meetingPoint": "<p>Freitag 14 Uhr in der Kletterhalle</p>",
+  "arrivalHints": "<p>Anfahrt: Mit Kleinbussen ab Kletterhalle</p>",
+  "isPublicTransportAvailable": null
+ },
+ {
+  "id": 134932,
+  "detailRoute": "/events/tour/Adventsskitour-zum-Saisonstart/134932",
+  "title": "Adventsskitour zum Saisonstart",
+  "subtitle": "",
+  "description": "<p>Übernachtung im Gasthaus</p>",
+  "bookingCode": "S8-26",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 426,
+   "name": "Skitour"
+  },
+  "leaders": [
+   {
+    "firstName": "Matthias",
+    "lastName": "Friedrich"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2026-12-19 00:00:00",
+    "dateTimeEnd": "2026-12-20 00:00:00"
+   }
+  ],
+  "registerEnd": "2026-11-05 00:00:00",
+  "meetingPoint": null,
+  "arrivalHints": null,
+  "isPublicTransportAvailable": null
+ },
+ {
+  "id": 134937,
+  "detailRoute": "/events/tour/Lammerhutte-und-umliegende-Gipfel/134937",
+  "title": "Lämmerhütte und umliegende Gipfel",
+  "subtitle": "",
+  "description": "<p>Übernachtung in Hütte</p>",
+  "bookingCode": "S11-26",
+  "classification": {
+   "id": 397,
+   "name": "Führungstour"
+  },
+  "category": {
+   "id": 426,
+   "name": "Skitour"
+  },
+  "leaders": [
+   {
+    "firstName": "Monja",
+    "lastName": "Birk"
+   }
+  ],
+  "dates": [
+   {
+    "dateTimeStart": "2027-01-30 00:00:00",
+    "dateTimeEnd": "2027-01-31 00:00:00"
+   }
+  ],
+  "registerEnd": "2027-01-10 00:00:00",
+  "meetingPoint": null,
+  "arrivalHints": null,
+  "isPublicTransportAvailable": null
+ }
+]
