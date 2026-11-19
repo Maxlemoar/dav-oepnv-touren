@@ -5,7 +5,7 @@ lat: 46.95504
 lon: 8.27785
 land: CH
 region: Zentralschweiz
-richtwerte: { kehl: { fahrzeitMin: 225, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 245, bahnKm: 230 }, lahr: { fahrzeitMin: 205, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 218, bahnKm: 197 }, offenburg: { fahrzeitMin: 178, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 231, bahnKm: 214, tagesfenster: { werktag: { ankunft: "08:58", letzteRueckfahrt: "19:29" }, sa: { ankunft: "09:28", letzteRueckfahrt: "19:29" }, so: { ankunft: "09:28", letzteRueckfahrt: "19:29" } } } }
+richtwerte: { kehl: { fahrzeitMin: 225, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 245, bahnKm: 230 }, lahr: { fahrzeitMin: 205, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 218, bahnKm: 197 }, offenburg: { fahrzeitMin: 178, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 231, bahnKm: 214 } }
 bahn:
   extId: "8508317"
   name: Alpnachstad

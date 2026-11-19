@@ -30,16 +30,6 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 104
     bahnKm: 103
-    tagesfenster:
-      werktag:
-        ankunft: "08:25"
-        letzteRueckfahrt: "19:00"
-      sa:
-        ankunft: "08:08"
-        letzteRueckfahrt: "20:20"
-      so:
-        ankunft: "08:31"
-        letzteRueckfahrt: "20:19"
 bahn:
   extId: "8700541"
   name: Metzeral

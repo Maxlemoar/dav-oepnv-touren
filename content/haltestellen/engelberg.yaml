@@ -30,16 +30,6 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 252
     bahnKm: 234
-    tagesfenster:
-      werktag:
-        ankunft: "09:53"
-        letzteRueckfahrt: "19:02"
-      sa:
-        ankunft: "09:53"
-        letzteRueckfahrt: "19:02"
-      so:
-        ankunft: "09:53"
-        letzteRueckfahrt: "19:02"
 bahn:
   extId: "8508399"
   name: Engelberg(CH)

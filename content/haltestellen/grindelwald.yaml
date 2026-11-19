@@ -5,7 +5,7 @@ lat: 46.62436
 lon: 8.03331
 land: CH
 region: Berner Oberland
-richtwerte: { kehl: { fahrzeitMin: 297, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 302, bahnKm: 272 }, lahr: { fahrzeitMin: 277, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 274, bahnKm: 239 }, offenburg: { fahrzeitMin: 250, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 288, bahnKm: 258, tagesfenster: { werktag: { ankunft: "10:10", letzteRueckfahrt: "18:17" }, sa: { ankunft: "10:10", letzteRueckfahrt: "18:17" }, so: { ankunft: "10:10", letzteRueckfahrt: "18:17" } } } }
+richtwerte: { kehl: { fahrzeitMin: 297, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 302, bahnKm: 272 }, lahr: { fahrzeitMin: 277, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 274, bahnKm: 239 }, offenburg: { fahrzeitMin: 250, umstiege: 1, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 288, bahnKm: 258 } }
 bahn:
   extId: "8507380"
   name: Grindelwald

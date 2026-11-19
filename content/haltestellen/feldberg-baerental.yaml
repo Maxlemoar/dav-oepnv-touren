@@ -30,16 +30,6 @@ richtwerte:
     berechnetAm: 2026-09-07
     strassenKm: 105
     bahnKm: 85
-    tagesfenster:
-      werktag:
-        ankunft: "07:37"
-        letzteRueckfahrt: "20:19"
-      sa:
-        ankunft: "07:37"
-        letzteRueckfahrt: "20:19"
-      so:
-        ankunft: "07:37"
-        letzteRueckfahrt: "20:19"
 bahn:
   extId: "8001971"
   name: Feldberg-Bärental

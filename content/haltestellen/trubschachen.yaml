@@ -5,7 +5,7 @@ lat: 46.9217
 lon: 7.84615
 land: CH
 region: Emmental (Bern)
-richtwerte: { kehl: { fahrzeitMin: 270, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 245, bahnKm: 230 }, lahr: { fahrzeitMin: 246, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 217, bahnKm: 197 }, offenburg: { fahrzeitMin: 219, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 231, bahnKm: 216, tagesfenster: { werktag: { ankunft: "09:12", letzteRueckfahrt: "18:47" }, sa: { ankunft: "09:12", letzteRueckfahrt: "18:47" }, so: { ankunft: "09:12", letzteRueckfahrt: "18:47" } } } }
+richtwerte: { kehl: { fahrzeitMin: 270, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 245, bahnKm: 230 }, lahr: { fahrzeitMin: 246, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 217, bahnKm: 197 }, offenburg: { fahrzeitMin: 219, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 231, bahnKm: 216 } }
 bahn:
   extId: "8508208"
   name: Trubschachen

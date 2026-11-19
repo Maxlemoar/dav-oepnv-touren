@@ -5,7 +5,7 @@ lat: 47.27269
 lon: 8.914
 land: CH
 region: Zürcher Oberland
-richtwerte: { kehl: { fahrzeitMin: 267, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 258, bahnKm: 209 }, lahr: { fahrzeitMin: 226, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 230, bahnKm: 179 }, offenburg: { fahrzeitMin: 199, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 244, bahnKm: 190, tagesfenster: { werktag: { ankunft: "09:19", letzteRueckfahrt: "19:08" }, sa: { ankunft: "09:19", letzteRueckfahrt: "19:08" }, so: { ankunft: "09:19", letzteRueckfahrt: "19:18" } } } }
+richtwerte: { kehl: { fahrzeitMin: 267, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 258, bahnKm: 209 }, lahr: { fahrzeitMin: 226, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 230, bahnKm: 179 }, offenburg: { fahrzeitMin: 199, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 244, bahnKm: 190 } }
 bahn:
   extId: "8503138"
   name: Wald ZH(CH)

@@ -5,7 +5,7 @@ lat: 46.94655
 lon: 8.68628
 land: CH
 region: Zentralschweiz
-richtwerte: { kehl: { fahrzeitMin: 422, umstiege: 3, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 284, bahnKm: 241 }, lahr: { fahrzeitMin: 388, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 256, bahnKm: 209 }, offenburg: { fahrzeitMin: 361, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 270, bahnKm: 224, tagesfenster: { werktag: { ankunft: "12:23", letzteRueckfahrt: "17:15" }, sa: { ankunft: "12:31", letzteRueckfahrt: "16:44" }, so: { ankunft: "12:31", letzteRueckfahrt: "16:44" } } } }
+richtwerte: { kehl: { fahrzeitMin: 422, umstiege: 3, takt: zweistuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 284, bahnKm: 241 }, lahr: { fahrzeitMin: 388, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 256, bahnKm: 209 }, offenburg: { fahrzeitMin: 361, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 270, bahnKm: 224 } }
 bahn:
   extId: "8573139"
   name: Riemenstalden, Chäppeliberg

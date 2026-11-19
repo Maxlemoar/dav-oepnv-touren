@@ -5,7 +5,7 @@ lat: 47.93622
 lon: 7.86501
 land: DE
 region: Südschwarzwald
-richtwerte: { kehl: { fahrzeitMin: 130, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 89 }, lahr: { fahrzeitMin: 99, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 60, bahnKm: 56 }, offenburg: { fahrzeitMin: 101, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 73, bahnKm: 75, tagesfenster: { werktag: { ankunft: "06:43", letzteRueckfahrt: "21:06" }, sa: { ankunft: "07:23", letzteRueckfahrt: "21:06" }, so: { ankunft: "07:53", letzteRueckfahrt: "21:36" } } } }
+richtwerte: { kehl: { fahrzeitMin: 130, umstiege: 3, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 88, bahnKm: 89 }, lahr: { fahrzeitMin: 99, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 60, bahnKm: 56 }, offenburg: { fahrzeitMin: 101, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 73, bahnKm: 75 } }
 bahn:
   extId: "808034"
   name: Schauinslandbahn Talstation, Horben

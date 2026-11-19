@@ -5,7 +5,7 @@ lat: 47.21984
 lon: 7.20164
 land: CH
 region: Berner Jura
-richtwerte: { kehl: { fahrzeitMin: 231, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 208, bahnKm: 197 }, lahr: { fahrzeitMin: 234, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 180, bahnKm: 167 }, offenburg: { fahrzeitMin: 207, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 194, bahnKm: 188, tagesfenster: { werktag: { ankunft: "09:04", letzteRueckfahrt: "18:56" }, sa: { ankunft: "09:04", letzteRueckfahrt: "18:56" }, so: { ankunft: "09:04", letzteRueckfahrt: "18:56" } } } }
+richtwerte: { kehl: { fahrzeitMin: 231, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 208, bahnKm: 197 }, lahr: { fahrzeitMin: 234, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 180, bahnKm: 167 }, offenburg: { fahrzeitMin: 207, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 194, bahnKm: 188 } }
 bahn:
   extId: "8500100"
   name: Tavannes

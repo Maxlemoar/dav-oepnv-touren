@@ -5,7 +5,7 @@ lat: 47.75888
 lon: 8.84127
 land: DE
 region: Hegau
-richtwerte: { kehl: { fahrzeitMin: 137, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 157, bahnKm: 149 }, lahr: { fahrzeitMin: 137, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 154, bahnKm: 124 }, offenburg: { fahrzeitMin: 114, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 137, bahnKm: 130, tagesfenster: { werktag: { ankunft: "07:23", letzteRueckfahrt: "21:05" }, sa: { ankunft: "07:50", letzteRueckfahrt: "21:05" }, so: { ankunft: "07:50", letzteRueckfahrt: "20:05" } } } }
+richtwerte: { kehl: { fahrzeitMin: 137, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 157, bahnKm: 149 }, lahr: { fahrzeitMin: 137, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 154, bahnKm: 124 }, offenburg: { fahrzeitMin: 114, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 137, bahnKm: 130 } }
 bahn:
   extId: "8000073"
   name: Singen(Hohentwiel)
