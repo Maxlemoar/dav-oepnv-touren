@@ -16,7 +16,11 @@ let zwischenspeicher: Fahrplan | undefined
 
 export function ladeFahrplan(datei: string = STANDARD_DATEI): Fahrplan {
   if (datei === STANDARD_DATEI && zwischenspeicher) return zwischenspeicher
-  const r = FahrplanSchema.safeParse(parse(fs.readFileSync(datei, 'utf8')))
+  // Standardpfad statisch, damit der Build nur content/ einpackt; andere Pfade (Tests) vom Tracing ausnehmen.
+  const text = datei === STANDARD_DATEI
+    ? fs.readFileSync(path.join(process.cwd(), 'content', 'fahrplan.yaml'), 'utf8')
+    : fs.readFileSync(/*turbopackIgnore: true*/ datei, 'utf8')
+  const r = FahrplanSchema.safeParse(parse(text))
   if (!r.success) {
     const gruende = r.error.issues.map((i) => `${i.path.join('.') || '(root)'}: ${i.message}`).join('; ')
     throw new Error(`Ungültiger Inhalt in fahrplan.yaml: ${gruende}`)

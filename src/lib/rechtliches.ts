@@ -51,7 +51,11 @@ export function pruefeRechtliches(roh: unknown): Rechtliches {
 }
 
 export function ladeRechtliches(datei: string = STANDARD_DATEI): Rechtliches {
-  return pruefeRechtliches(parse(fs.readFileSync(datei, 'utf8')))
+  // Standardpfad statisch, damit der Build nur content/ einpackt; andere Pfade (Tests) vom Tracing ausnehmen.
+  const text = datei === STANDARD_DATEI
+    ? fs.readFileSync(path.join(process.cwd(), 'content', 'rechtliches.yaml'), 'utf8')
+    : fs.readFileSync(/*turbopackIgnore: true*/ datei, 'utf8')
+  return pruefeRechtliches(parse(text))
 }
 
 let zwischenspeicher: Rechtliches | undefined
