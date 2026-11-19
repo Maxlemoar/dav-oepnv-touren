@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
           <p className="mt-1">
             {rechtliches().projekt}
-            {' · '}Fahrplandaten: <a href="https://transitous.org" className="underline hover:text-tinte">Transitous</a>
+            {' · '}Fahrplandaten: <a href="https://transitous.org/sources/" className="underline hover:text-tinte">Transitous</a>
             {stand && <>{' · '}Richtwerte vom {datumTTMMJJJJ(stand)}</>}
           </p>
         </footer>

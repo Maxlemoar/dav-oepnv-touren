@@ -21,7 +21,7 @@ export default function UeberSeite() {
       </ul>
       <h2 className="text-xl font-semibold">Datenquellen</h2>
       <ul className="list-disc space-y-1 pl-5">
-        <li>Fahrplan: <a href="https://transitous.org" className="underline">Transitous</a> (offene Routing-API auf Basis von DELFI, opentransportdata.swiss, SNCF, ÖBB).</li>
+        <li>Fahrplan: <a href="https://transitous.org" className="underline">Transitous</a> (offene Routing-API auf Basis von DELFI, opentransportdata.swiss, SNCF, ÖBB; <a href="https://transitous.org/sources/" className="underline">Datenquellen</a>).</li>
         <li>Hütten: Wikipedia-Liste der SAC-Hütten, Wikidata, Hüttenseiten der Sektionen. Zustiegszeiten teils geschätzt und so gekennzeichnet.</li>
         <li>Karte: <a href="https://openfreemap.org" className="underline">OpenFreeMap</a>, Daten © OpenStreetMap-Mitwirkende.</li>
       </ul>
