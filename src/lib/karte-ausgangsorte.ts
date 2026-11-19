@@ -18,7 +18,8 @@ export type PunktEigenschaften = {
   /** Hin, zurück und Zeit vor Ort (bzw. Nächte) oder der Grund, warum der Ort nicht passt. */
   zeile: string
 }
-export type LinienEigenschaften = { id: string; stufe: Stufe; rang: number }
+/** `stufe: null`: Strecke des gewählten Orts, der nicht passt oder ohne Datum (grau). */
+export type LinienEigenschaften = { id: string; stufe: Stufe | null; rang: number }
 export type KarteDaten = {
   punkte: FeatureCollection<Point, PunktEigenschaften>
   linien: FeatureCollection<MultiLineString, LinienEigenschaften>
@@ -39,26 +40,43 @@ function fahrzeit(ort: Ausgangsort, hin: Fahrt): number {
   return ab === undefined || an === undefined ? Number.POSITIVE_INFINITY : an - ab
 }
 
+/** Hover-Zeile des gewählten Orts, solange kein Datum gewählt ist. */
+export const OHNE_DATUM = 'kein Datum gewählt'
+
 /**
  * Punkte je bewertetem Ausgangsort und die Strecken der passenden. Tagestour: Farbe nach Zeit vor Ort (`vorOrtStufe`),
  * mehrere Tage: nach Fahrzeit (`reisezeitStufe`). Ohne Bewertungen (kein Datum gewählt) bleibt die Karte leer.
  * `strecken` ist nach Haltestellen-id geschlüsselt, `bewertungen` nach Gebiets-id.
+ *
+ * `auswahl` (Gebiets-id der Ortsseite): Punkt und Strecke dieses Orts stehen immer da, auch ohne Datum oder wenn er nicht
+ * passt (dann grau, `stufe: null`), damit die Ortsseite nicht auf leeres Gelände zeigt.
  */
 export function karteDaten(
   orte: Ausgangsort[],
   strecken: Record<string, Linie[]>,
   bewertungen: Record<string, Bewertung> | null,
   mehrtaegig: boolean,
+  auswahl?: string,
 ): KarteDaten {
   const punkte: Feature<Point, PunktEigenschaften>[] = []
   const linien: Feature<MultiLineString, LinienEigenschaften>[] = []
-  if (bewertungen) {
+  const grau = (ort: Ausgangsort, zeile: string) => {
+    punkte.push({ type: 'Feature', geometry: { type: 'Point', coordinates: [ort.lon, ort.lat] }, properties: { id: ort.id, name: ort.name, passt: false, stufe: null, rang: -1, zeile } })
+    const s = strecken[ort.haltestelleId]
+    if (ort.id === auswahl && s && s.length > 0) {
+      linien.push({ type: 'Feature', geometry: { type: 'MultiLineString', coordinates: s }, properties: { id: ort.id, stufe: null, rang: -1 } })
+    }
+  }
+  if (!bewertungen) {
+    const gewaehlt = auswahl === undefined ? undefined : orte.find((o) => o.id === auswahl)
+    if (gewaehlt) grau(gewaehlt, OHNE_DATUM)
+  } else {
     for (const ort of orte) {
       const b = bewertungen[ort.id]
       if (!b) continue
       const geometry: Point = { type: 'Point', coordinates: [ort.lon, ort.lat] }
       if (!b.passt) {
-        punkte.push({ type: 'Feature', geometry, properties: { id: ort.id, name: ort.name, passt: false, stufe: null, rang: -1, zeile: b.grund } })
+        grau(ort, b.grund)
         continue
       }
       const stufe = mehrtaegig ? reisezeitStufe(fahrzeit(ort, b.hin)) : vorOrtStufe(b.vorOrtMin)

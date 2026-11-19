@@ -76,3 +76,35 @@ describe('escapeHtml', () => {
     expect(escapeHtml(`<a href="x">'&'</a>`)).toBe('&lt;a href=&quot;x&quot;&gt;&#39;&amp;&#39;&lt;/a&gt;')
   })
 })
+
+describe('karteDaten mit gewähltem Ort (Ortsseite)', () => {
+  it('ohne Datum: Punkt und Strecke des gewählten Orts, neutral grau, sonst nichts', () => {
+    const d = karteDaten(orte, strecken, null, false, 'kandersteg')
+    expect(d.punkte.features).toHaveLength(1)
+    expect(d.punkte.features[0].geometry).toEqual({ type: 'Point', coordinates: [7.7, 46.5] })
+    expect(d.punkte.features[0].properties).toMatchObject({ id: 'kandersteg', passt: false, stufe: null, rang: -1 })
+    expect(d.linien.features).toHaveLength(1)
+    expect(d.linien.features[0].properties).toEqual({ id: 'kandersteg', stufe: null, rang: -1 })
+  })
+
+  it('passt nicht (geöffnet aus "passen nicht"): auch die Strecke, grau', () => {
+    const d = karteDaten(orte, strecken, { kandersteg: passtNicht, 'bad-urach': passtNicht }, false, 'kandersteg')
+    expect(d.punkte.features).toHaveLength(2)
+    expect(d.linien.features).toHaveLength(1)
+    expect(d.linien.features[0].properties).toEqual({ id: 'kandersteg', stufe: null, rang: -1 })
+    expect(d.punkte.features.find((p) => p.properties.id === 'kandersteg')?.properties.zeile).toBe('keine Rückfahrt bis 21:00')
+  })
+
+  it('passend: unverändert farbig, Strecke nur einmal', () => {
+    const d = karteDaten(orte, strecken, { kandersteg: passt }, false, 'kandersteg')
+    expect(d.linien.features).toHaveLength(1)
+    expect(d.linien.features[0].properties).toEqual({ id: 'kandersteg', stufe: 3, rang: 457 })
+  })
+
+  it('ohne Strecke nur der Punkt; unbekannte Auswahl ändert nichts', () => {
+    const d = karteDaten(orte, {}, null, false, 'kandersteg')
+    expect(d.punkte.features).toHaveLength(1)
+    expect(d.linien.features).toHaveLength(0)
+    expect(karteDaten(orte, strecken, null, false, 'gibt-es-nicht').punkte.features).toHaveLength(0)
+  })
+})

@@ -91,13 +91,14 @@ function KartenspalteAusUrl({ gebietId }: { gebietId?: string }) {
   const z = zeitfensterAusUrl(sp)
   const { orte, strecken, bewertungen } = useBewertungen(z)
   const mehrtaegig = naechte(z) > 0
-  const daten = useMemo(() => karteDaten(orte, strecken, bewertungen, mehrtaegig), [orte, strecken, bewertungen, mehrtaegig])
+  const daten = useMemo(() => karteDaten(orte, strecken, bewertungen, mehrtaegig, gebietId), [orte, strecken, bewertungen, mehrtaegig, gebietId])
   const ort = gebietId ? orte.find((o) => o.id === gebietId) : undefined
   const auswahlLage = useMemo<[number, number] | undefined>(() => (ort ? [ort.lon, ort.lat] : undefined), [ort])
   const gemerkt = useSyncExternalStore(abonniereGemerkt, leseGemerkt, () => null)
   const ausUrl = sp.get(ANSICHT_SCHLUESSEL)
-  // Ortsseite: das Feld ist der Normalfall, die große Karte nur auf ausdrücklichen Wunsch. Startseite: wie bisher.
-  const ansicht: Ansicht = gebietId ? (ausUrl === 'karte' ? 'karte' : 'liste') : ansichtAus(ausUrl, gemerkt)
+  // Ortsseite: das Feld ist der Normalfall, die große Karte nur auf ausdrücklichen Wunsch. Startseite: ohne Datum das
+  // Zeitfenster (Liste), sonst URL, gemerkte Wahl, Standard.
+  const ansicht: Ansicht = gebietId ? (ausUrl === 'karte' ? 'karte' : 'liste') : ansichtAus(ausUrl, gemerkt, { datumGewaehlt: z.gewaehlt })
 
   function waehle(a: Ansicht) {
     if (gebietId) {

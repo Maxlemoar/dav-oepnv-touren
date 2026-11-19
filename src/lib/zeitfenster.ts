@@ -48,6 +48,20 @@ export function rueckAnheben(datum: string, rueck: string | undefined, mindestNa
   return rueck && rueck > fruehestens ? rueck : fruehestens
 }
 
+/**
+ * Wert eines Datumsfelds, wenn er übernommen werden darf: ein echtes Kalenderdatum ab `fruehestens`, sonst undefined.
+ * Zwischenstände beim Tippen (Chrome meldet etwa 0002-12-05) und Vergangenes fallen heraus.
+ */
+export function datumAusEingabe(wert: string, fruehestens: string): string | undefined {
+  return istDatum(wert) && wert >= fruehestens ? wert : undefined
+}
+
+/** Rückdatum beim Umschalten Tagestour | Mehrere Tage; undefined, wenn die gewählte Art schon gilt (rueck bleibt). */
+export function rueckFuerArt(z: Pick<Zeitfenster, 'datum' | 'rueck'>, mehr: boolean): string | undefined {
+  if ((z.rueck !== z.datum) === mehr) return undefined
+  return mehr ? tageAddieren(z.datum, 1) : z.datum
+}
+
 export function naechte(z: Pick<Zeitfenster, 'datum' | 'rueck'>): number {
   return tageDifferenz(z.datum, z.rueck)
 }

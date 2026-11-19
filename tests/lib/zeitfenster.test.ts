@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
-  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit, schnellwahl, rueckAnheben,
+  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit, schnellwahl, rueckAnheben, datumAusEingabe, rueckFuerArt,
   STANDARD_ZEITFENSTER, ZEITBAND, VOR_ORT_MAX_MIN, ZEITFENSTER_PARAMETER,
 } from '@/lib/zeitfenster'
 
@@ -205,5 +205,33 @@ describe('rueckAnheben', () => {
     expect(rueckAnheben('2026-09-12', '2026-09-12', 1)).toBe('2026-09-13')
     expect(rueckAnheben('2026-09-12', undefined, 1)).toBe('2026-09-13')
     expect(rueckAnheben('2026-09-12', '2026-09-15', 1)).toBe('2026-09-15')
+  })
+})
+
+describe('datumAusEingabe', () => {
+  it('übernimmt nur gültige Daten ab dem frühesten Tag', () => {
+    expect(datumAusEingabe('2026-12-05', HEUTE)).toBe('2026-12-05')
+    expect(datumAusEingabe(HEUTE, HEUTE)).toBe(HEUTE)
+  })
+  it('verwirft Zwischenstände beim Tippen, Vergangenes und Unsinn', () => {
+    // Chrome meldet beim Tippen der Jahreszahl 0002-12-05, 0020-12-05, 0202-12-05 …
+    expect(datumAusEingabe('0002-12-05', HEUTE)).toBeUndefined()
+    expect(datumAusEingabe('0202-12-05', HEUTE)).toBeUndefined()
+    expect(datumAusEingabe('', HEUTE)).toBeUndefined()
+    expect(datumAusEingabe('2026-11-18', HEUTE)).toBeUndefined()
+    expect(datumAusEingabe('2026-02-30', '2026-01-01')).toBeUndefined()
+  })
+})
+
+describe('rueckFuerArt', () => {
+  const tag = { datum: '2026-11-21', rueck: '2026-11-21' }
+  const mehr = { datum: '2026-11-21', rueck: '2026-11-24' }
+  it('wechselt die Art: Mehrere Tage ab dem Folgetag, Tagestour am selben Tag', () => {
+    expect(rueckFuerArt(tag, true)).toBe('2026-11-22')
+    expect(rueckFuerArt(mehr, false)).toBe('2026-11-21')
+  })
+  it('lässt die Rückfahrt stehen, wenn die Art schon gilt', () => {
+    expect(rueckFuerArt(mehr, true)).toBeUndefined()
+    expect(rueckFuerArt(tag, false)).toBeUndefined()
   })
 })

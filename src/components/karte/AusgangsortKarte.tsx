@@ -5,7 +5,7 @@ import {
   type ExpressionSpecification, type GeoJSONSource, type MapGeoJSONFeature,
 } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import { hoverHtml, type KarteDaten, type PunktEigenschaften } from '@/lib/karte-ausgangsorte'
+import { hoverHtml, OHNE_DATUM, type KarteDaten, type PunktEigenschaften } from '@/lib/karte-ausgangsorte'
 import { STUFE_FARBE, type Stufe } from '@/lib/stufe'
 import { KartePlatzhalter } from '@/components/KartePlatzhalter'
 
@@ -18,6 +18,12 @@ const GRAU = '#7a8078'
 const KLEIN_PX = 240
 
 const STUFENFARBE: ExpressionSpecification = ['match', ['get', 'stufe'], 2, STUFE_FARBE[2], 3, STUFE_FARBE[3], 4, STUFE_FARBE[4], 5, STUFE_FARBE[5], GRAU]
+
+/** Passende Punkte groß, übrige klein; der gewählte Ort immer groß, auch grau. */
+function punktRadius(auswahl?: string): ExpressionSpecification {
+  const gross: ExpressionSpecification = auswahl ? ['any', ['get', 'passt'], ['==', ['get', 'id'], auswahl]] : ['get', 'passt']
+  return ['interpolate', ['linear'], ['zoom'], 5, ['case', gross, 6, 3.5], 10, ['case', gross, 10, 6]]
+}
 
 type Props = {
   daten: KarteDaten
@@ -63,6 +69,10 @@ export function AusgangsortKarte({ daten, mehrtaegig, auswahl, auswahlLage, onWa
     const popup = new Popup({ closeButton: false, closeOnClick: false, offset: 12, maxWidth: '280px', className: touch ? '' : 'pointer-events-none' })
     let popupId: string | null = null
     let geladen = false
+    // Das Popup-Element bleibt beim Wechsel zu einem anderen Punkt bestehen (nach remove() baut MapLibre ein neues): je
+    // Element genau ein Hörer, der die aktuelle Popup-id liest. Sonst häufen sich Hörer, ein Antippen öffnet den Ort
+    // mehrmals und schreibt zusätzliche Verlaufseinträge.
+    const mitHoerer = new WeakSet<HTMLElement>()
 
     function zeige(f: MapGeoJSONFeature) {
       if (f.geometry.type !== 'Point') return
@@ -72,7 +82,11 @@ export function AusgangsortKarte({ daten, mehrtaegig, auswahl, auswahlLage, onWa
         .setHTML(hoverHtml(p) + (touch ? '<div class="mt-1 text-xs font-medium text-tanne">Antippen öffnet den Ort</div>' : ''))
         .addTo(m)
       popupId = id
-      if (touch) popup.getElement().addEventListener('click', () => waehle(id))
+      const el = popup.getElement()
+      if (touch && el && !mitHoerer.has(el)) {
+        mitHoerer.add(el)
+        el.addEventListener('click', () => { if (popupId) waehle(popupId) })
+      }
     }
     function schliesse() {
       popup.remove()
@@ -101,7 +115,7 @@ export function AusgangsortKarte({ daten, mehrtaegig, auswahl, auswahlLage, onWa
         id: 'punkte', type: 'circle', source: 'punkte',
         layout: { 'circle-sort-key': ['get', 'rang'] },
         paint: {
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, ['case', ['get', 'passt'], 6, 3.5], 10, ['case', ['get', 'passt'], 10, 6]],
+          'circle-radius': punktRadius(auswahlRef.current.auswahl),
           'circle-color': ['case', ['get', 'passt'], STUFENFARBE, GRAU],
           'circle-stroke-color': '#fff', 'circle-stroke-width': ['case', ['get', 'passt'], 2, 1],
         },
@@ -194,6 +208,7 @@ export function AusgangsortKarte({ daten, mehrtaegig, auswahl, auswahlLage, onWa
     const reihenfolge: ExpressionSpecification = auswahl ? ['case', ist, 1e6, ['get', 'rang']] : ['get', 'rang']
     m.setLayoutProperty('punkte', 'circle-sort-key', reihenfolge)
     m.setLayoutProperty('punkte-treffer', 'circle-sort-key', reihenfolge)
+    m.setPaintProperty('punkte', 'circle-radius', punktRadius(auswahl))
     m.setPaintProperty('punkte', 'circle-opacity', zurueck(1))
     m.setPaintProperty('punkte', 'circle-stroke-opacity', zurueck(1))
     m.setPaintProperty('punkte-label', 'text-opacity', zurueck(1))
@@ -213,7 +228,7 @@ export function AusgangsortKarte({ daten, mehrtaegig, auswahl, auswahlLage, onWa
       <div ref={container} className="h-full w-full" />
       <p id={hinweisId} className="sr-only">Alle Ausgangsorte auch in der Liste. Die Kartenpunkte sind nicht per Tastatur erreichbar.</p>
       {!bereit && <KartePlatzhalter />}
-      {!klein && daten.punkte.features.length > 0 && <Legende mehrtaegig={mehrtaegig} />}
+      {!klein && daten.punkte.features.some((f) => f.properties.zeile !== OHNE_DATUM) && <Legende mehrtaegig={mehrtaegig} />}
     </div>
   )
 }

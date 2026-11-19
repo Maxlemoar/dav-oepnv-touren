@@ -1,10 +1,11 @@
 'use client'
-import { Suspense, useEffect, useState } from 'react'
+import { Suspense, useEffect, useState, type InputHTMLAttributes } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { drossel } from '@/lib/drossel'
 import { datumKurz, lokalesDatum, minutenAlsDauer, tageAddieren } from '@/lib/datum'
 import {
-  rueckAnheben, schnellwahl, VOR_ORT_MAX_MIN, ZEITBAND, zeitfensterAusUrl, zeitfensterSchreiben, type Zeitfenster,
+  datumAusEingabe, rueckAnheben, rueckFuerArt, schnellwahl, VOR_ORT_MAX_MIN, ZEITBAND, zeitfensterAusUrl, zeitfensterSchreiben,
+  type Zeitfenster,
 } from '@/lib/zeitfenster'
 import { Zeitband } from './Zeitband'
 
@@ -90,9 +91,11 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
     setzeDatum({ ...z, datum, rueck })
   }
 
+  /** Umschalten der Art; ein Klick auf die schon gewählte Art lässt die Rückfahrt stehen. */
   function waehleArt(mehr: boolean) {
     if (!z.gewaehlt) { setMehrVorgemerkt(mehr); return }
-    setzeDatum({ ...z, rueck: mehr ? tageAddieren(z.datum, 1) : z.datum })
+    const rueck = rueckFuerArt(z, mehr)
+    if (rueck !== undefined) setzeDatum({ ...z, rueck })
   }
 
   function band(neu: { abMin: number; bisMin: number }) {
@@ -123,8 +126,8 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
                 className={`chip min-h-11 ${aktiv ? 'chip-aktiv' : ''}`}>{s.label}</button>
             )
           })}
-          <input type="date" aria-label={mehrtaegig ? 'Hinfahrt am' : 'Datum'} min={heute} value={z.gewaehlt ? z.datum : ''}
-            className={FELD} onChange={(e) => { if (e.target.value >= heute) waehleDatum(e.target.value) }} />
+          <DatumFeld aria-label={mehrtaegig ? 'Hinfahrt am' : 'Datum'} fruehestens={heute} wert={z.gewaehlt ? z.datum : ''}
+            className={FELD} onWahl={waehleDatum} />
         </div>
       </div>
 
@@ -143,9 +146,8 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
       {mehrtaegig && (
         <label className="block">
           <span className="text-sm font-medium">Rückfahrt am</span>
-          <input type="date" min={tageAddieren(z.datum, mindestRueck)} value={z.gewaehlt ? z.rueck : ''} disabled={!z.gewaehlt}
-            className={`${FELD} mt-2 block`}
-            onChange={(e) => { if (e.target.value) setzeDatum({ ...z, rueck: rueckAnheben(z.datum, e.target.value, mindestRueck) }) }} />
+          <DatumFeld fruehestens={tageAddieren(z.datum, mindestRueck)} wert={z.gewaehlt ? z.rueck : ''} disabled={!z.gewaehlt}
+            className={`${FELD} mt-2 block`} onWahl={(rueck) => setzeDatum({ ...z, rueck })} />
           {!z.gewaehlt && <span className="mt-1 block text-xs text-tinte-3">Zuerst das Datum der Hinfahrt wählen.</span>}
         </label>
       )}
@@ -170,5 +172,33 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
         </label>
       )}
     </section>
+  )
+}
+
+type DatumFeldProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'value' | 'min' | 'onChange' | 'onBlur'> & {
+  /** Übernommener Wert aus der URL ('' ohne gewähltes Datum). */
+  wert: string
+  fruehestens: string
+  onWahl: (datum: string) => void
+}
+
+/**
+ * Datumsfeld mit eigenem Entwurf: Beim Tippen meldet Chrome Zwischenstände (0002-12-05); sie bleiben im Feld stehen und
+ * gehen nicht in die URL. Übernommen wird nur ein gültiges Datum ab `fruehestens`, beim Ändern; beim Verlassen springt ein
+ * unvollständiger oder zu früher Entwurf auf den übernommenen Wert zurück. Hat die URL den Entwurf eingeholt, gilt wieder
+ * die URL (angepasster Zustand während des Renderns).
+ */
+function DatumFeld({ wert, fruehestens, onWahl, ...rest }: DatumFeldProps) {
+  const [entwurf, setEntwurf] = useState<string | null>(null)
+  if (entwurf !== null && entwurf === wert) setEntwurf(null)
+  return (
+    <input {...rest} type="date" min={fruehestens} value={entwurf ?? wert}
+      onChange={(e) => {
+        const v = e.target.value
+        setEntwurf(v)
+        const d = datumAusEingabe(v, fruehestens)
+        if (d !== undefined && d !== wert) onWahl(d)
+      }}
+      onBlur={(e) => { if (datumAusEingabe(e.target.value, fruehestens) === undefined) setEntwurf(null) }} />
   )
 }
