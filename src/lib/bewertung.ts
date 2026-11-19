@@ -30,6 +30,16 @@ export function passungPaar(hin: Fahrt | undefined, rueck: Fahrt | undefined, z:
   return { passt: true, hin, rueck, vorOrtMin, naechte: n }
 }
 
+/**
+ * Wendet "mindestens vor Ort" auf eine Bewertung an, die ohne Mindestzeit entstand (`/api/verbindung` mit `vorort=0`):
+ * gleiches Ergebnis wie `passungPaar` mit der Mindestzeit, ohne neue Anfrage beim Ziehen am Schieber. Mehrere Tage und
+ * Gründe bleiben unverändert.
+ */
+export function mitMindestVorOrt(b: Bewertung, vorOrtMin: number): Bewertung {
+  if (!b.passt || b.naechte > 0 || b.vorOrtMin >= vorOrtMin) return b
+  return nein(`nur ${minutenAlsDauer(b.vorOrtMin)} vor Ort`, b.naechte)
+}
+
 export function bewerte(
   ort: Pick<Ausgangsort, 'bedient'>,
   hinPlan: Tagesplan | undefined,
@@ -39,6 +49,9 @@ export function bewerte(
   const n = naechte(z)
   if (!bedientAm(ort, z.datum) || !bedientAm(ort, z.rueck)) return nein(NICHT_BEDIENT, n)
   if (!hinPlan || !rueckPlan) return nein('keine Fahrplandaten', n)
+  // Ein leerer Plan einer Saisonhaltestelle stammt vermutlich aus der Nebensaison und sagt über die Saison nichts
+  // (wie passungAusMuster in service.ts); sonst stünde "keine Hinfahrt ab 6:00" an Tagen, an denen der Bus fährt.
+  if (ort.bedient && (hinPlan.hin.length === 0 || rueckPlan.rueck.length === 0)) return nein('keine Fahrplandaten', n)
   const hins = hinPlan.hin.filter((h) => gueltig(h) && min(h.ab) >= z.abMin)
   if (hins.length === 0) return nein(`keine Hinfahrt ab ${alsUhrzeit(z.abMin)}`, n)
   const ruecks = rueckPlan.rueck.filter((r) => gueltig(r) && min(r.an) <= z.bisMin)

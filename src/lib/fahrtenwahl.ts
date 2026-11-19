@@ -15,6 +15,18 @@ export function fahrtenAnfrage(von: string, nach: string, z: Zeitfenster): strin
   return q.toString()
 }
 
+/**
+ * Query für /api/verbindung (Hüttenseiten, weitere Haltestellen): Orte, Datum, rueck, abweichende Zeiten und `vorort=0`.
+ * Die Mindestzeit vor Ort ändert nur das Urteil; das rechnet der Browser (`mitMindestVorOrt`), damit der Schieber
+ * "Mindestens vor Ort" keine neue Live-Anfrage auslöst.
+ */
+export function verbindungAnfrage(von: string, nach: string, z: Zeitfenster, mindestNaechte: 0 | 1): string {
+  const q = zeitfensterSchreiben(new URLSearchParams({ von, nach }), { ...z, vorOrtMin: 0 })
+  q.set('rueck', z.rueck)
+  if (mindestNaechte > 0) q.set('mindestnaechte', String(mindestNaechte))
+  return q.toString()
+}
+
 /** Eine Fahrt ist durch Abfahrt und Ankunft bestimmt (so entdoppelt auch die API). */
 export function fahrtSchluessel(f: Pick<FahrtLive, 'ab' | 'an'>): string {
   return `${f.ab}|${f.an}`
@@ -62,6 +74,12 @@ export function vorOrtText(hin: FahrtLive | undefined, rueck: FahrtLive | undefi
   const vorOrt = minutenZwischen(hin.an, rueck.ab)
   if (vorOrt < 0) return 'Rückfahrt vor der Ankunft'
   return `${minutenAlsDauer(vorOrt)} vor Ort (${alsUhrzeit(lokaleMinuten(hin.an))} bis ${alsUhrzeit(lokaleMinuten(rueck.ab))})`
+}
+
+/** Knopf zum Aufklappen der Abschnitte einer Fahrt: "Umstiege", bei Direktfahrten "Details", offen "Weniger". */
+export function umstiegKnopfText(umstiege: number, offen: boolean): string {
+  if (offen) return 'Weniger'
+  return umstiege === 0 ? 'Details' : 'Umstiege'
 }
 
 /** "Sa 21.11., 6:00–21:00" bzw. "Sa 21.11. – So 22.11., 6:00–21:00". */

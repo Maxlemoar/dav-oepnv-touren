@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { bewerte, bewerteAlle, passungPaar, sortiere, vorOrtStufe, type Bewertung } from '@/lib/bewertung'
+import { bewerte, bewerteAlle, mitMindestVorOrt, passungPaar, sortiere, vorOrtStufe, type Bewertung } from '@/lib/bewertung'
 import type { Fahrt, Tagesplan, Ausgangsort } from '@/lib/musterfahrplan/typen'
 import type { Zeitfenster } from '@/lib/zeitfenster'
 
@@ -37,6 +37,17 @@ describe('bewerte', () => {
     const b = bewerte(o, plan, plan, z({ datum: '2026-10-10', rueck: '2026-10-17' }))
     expect(b).toMatchObject({ passt: false, grund: 'fährt am Datum nicht' })
     expect(bewerte(o, plan, plan, z({ datum: '2026-10-20', rueck: '2026-10-20' }))).toMatchObject({ grund: 'fährt am Datum nicht' })
+  })
+  it('Saisonhaltestelle mit leerem Plan (Nebensaison berechnet): keine Fahrplandaten statt "keine Hinfahrt"', () => {
+    const o = { bedient: [{ von: '06-15', bis: '10-15' }] }
+    const leer: Tagesplan = { hin: [], rueck: [] }
+    const nurHin: Tagesplan = { hin: plan.hin, rueck: [] }
+    expect(bewerte(o, leer, plan, z())).toMatchObject({ passt: false, grund: 'keine Fahrplandaten' })
+    expect(bewerte(o, plan, nurHin, z())).toMatchObject({ passt: false, grund: 'keine Fahrplandaten' })
+    // Ohne Saisonbetrieb sagt ein leerer Plan etwas aus: es fährt nichts.
+    expect(bewerte({}, leer, plan, z())).toMatchObject({ passt: false, grund: 'keine Hinfahrt ab 6:00' })
+    // Außerhalb der Saison bleibt es beim Saisongrund.
+    expect(bewerte(o, leer, leer, z({ datum: '2026-11-21', rueck: '2026-11-21' }))).toMatchObject({ grund: 'fährt am Datum nicht' })
   })
   it('keine Hinfahrt nach abMin', () => {
     expect(bewerte({}, plan, plan, z({ abMin: 480 }))).toMatchObject({ passt: false, grund: 'keine Hinfahrt ab 8:00' })
@@ -155,5 +166,20 @@ describe('bewerteAlle', () => {
     expect(bewerteAlle(orte, vertauscht, z({ rueck: '2026-10-12' })).kandersteg).toMatchObject({ passt: false })
     // Rückreise fehlt in der Werktagsklasse
     expect(bewerteAlle(orte, { sa: plaene.sa }, z({ rueck: '2026-10-12' })).kandersteg).toMatchObject({ grund: 'keine Fahrplandaten' })
+  })
+})
+
+describe('mitMindestVorOrt', () => {
+  it('wendet die Mindestzeit im Browser an, wie bewerte mit derselben Mindestzeit', () => {
+    const ohne = bewerte({}, plan, plan, z({ vorOrtMin: 0 }))
+    expect(mitMindestVorOrt(ohne, 480)).toEqual(bewerte({}, plan, plan, z({ vorOrtMin: 480 })))
+    expect(mitMindestVorOrt(ohne, 240)).toEqual(bewerte({}, plan, plan, z({ vorOrtMin: 240 })))
+    expect(mitMindestVorOrt(ohne, 0)).toBe(ohne)
+  })
+  it('lässt Gründe und mehrere Tage unverändert', () => {
+    const nein: Bewertung = { passt: false, grund: 'keine Rückfahrt bis 21:00', naechte: 0 }
+    expect(mitMindestVorOrt(nein, 600)).toBe(nein)
+    const mehr = bewerte({}, plan, plan, z({ rueck: '2026-10-11', vorOrtMin: 0 }))
+    expect(mitMindestVorOrt(mehr, 600)).toBe(mehr)
   })
 })

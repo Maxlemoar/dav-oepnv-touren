@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { lokaleUhrzeit, minutenAlsDauer } from '@/lib/datum'
+import { umstiegKnopfText } from '@/lib/fahrtenwahl'
 import type { FahrtLive } from '@/lib/verbindung/fahrten'
 import { VerbindungDetail } from '../VerbindungDetail'
 
@@ -44,9 +45,9 @@ export function FahrtZeile({ f, gewaehlt, onWahl, link }: Props) {
         </button>
         {hatAbschnitte ? (
           <button type="button" aria-expanded={offen} onClick={() => setOffen((o) => !o)}
-            aria-label={`${offen ? 'Weniger' : 'Umstiege'} zur Fahrt ${lokaleUhrzeit(f.ab)} bis ${lokaleUhrzeit(f.an)}`}
+            aria-label={`${umstiegKnopfText(f.umstiege, offen)} zur Fahrt ${lokaleUhrzeit(f.ab)} bis ${lokaleUhrzeit(f.an)}`}
             className="min-h-11 shrink-0 px-1 text-sm text-tanne underline">
-            {offen ? 'Weniger' : 'Umstiege'}
+            {umstiegKnopfText(f.umstiege, offen)}
           </button>
         ) : (
           <a href={link.href} target="_blank" rel="noreferrer" className="inline-flex min-h-11 shrink-0 items-center px-1 text-sm text-tanne underline">

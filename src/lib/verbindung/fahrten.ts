@@ -116,11 +116,19 @@ function typisch(a: FahrtenAnfrage, zusatz: { fehlerArt?: FehlerArt; hinweis?: s
   }
 }
 
-/** Kürzeste Live-Hinfahrt minus kürzeste typische Hinfahrt ab abMin; nur ab 30 Minuten. */
+/**
+ * Kürzeste passende Live-Hinfahrt minus kürzeste typische Hinfahrt, die im selben Bereich abfährt (ab abMin bis zur
+ * letzten passenden Live-Abfahrt); nur ab 30 Minuten. Ein schneller Zug am Nachmittag sagt nichts über die gezeigten
+ * Morgenfahrten und darf keinen Hinweis "länger als üblich" auslösen.
+ */
 function abweichung(live: FahrtLive[], muster: Fahrt[] | undefined, abMin: number): number | undefined {
   const passend = live.filter((f) => f.lage === 'passend')
-  const typische = (muster ?? []).filter((f) => (alsMin(f.ab) ?? -1) >= abMin).map((f) => (alsMin(f.an) ?? 0) - (alsMin(f.ab) ?? 0))
-  if (!passend.length || !typische.length) return undefined
+  if (!passend.length) return undefined
+  const bisMin = Math.max(...passend.map((f) => lokaleMinuten(f.ab)))
+  const typische = (muster ?? [])
+    .filter((f) => { const ab = alsMin(f.ab) ?? -1; return ab >= abMin && ab <= bisMin })
+    .map((f) => (alsMin(f.an) ?? 0) - (alsMin(f.ab) ?? 0))
+  if (!typische.length) return undefined
   const diff = Math.min(...passend.map((f) => f.dauerMin)) - Math.min(...typische)
   return diff >= ABWEICHUNG_SCHWELLE_MIN ? diff : undefined
 }

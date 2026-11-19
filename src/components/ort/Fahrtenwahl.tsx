@@ -1,5 +1,5 @@
 'use client'
-import { Suspense, useEffect, useState, type ReactNode } from 'react'
+import { Suspense, useState, type ReactNode } from 'react'
 import { useSearchParams } from 'next/navigation'
 import type { BahnOrt, Land } from '@/lib/content/schema'
 import { datumKurz, lokalesDatum, lokaleUhrzeit } from '@/lib/datum'
@@ -9,6 +9,7 @@ import type { GruppenHinweis } from '@/lib/teilen'
 import type { FahrtenAntwort, FahrtLive } from '@/lib/verbindung/fahrten'
 import { naechte, zeitfensterAusUrl } from '@/lib/zeitfenster'
 import { EinladenKnopf } from '../EinladenKnopf'
+import { useRuhigerAbruf } from '../useRuhigerAbruf'
 import { FahrtZeile } from './FahrtZeile'
 
 type Props = {
@@ -36,18 +37,18 @@ const neuerStand = (anfrage: string, antwort: FahrtenAntwort | null): Stand =>
   ({ anfrage, antwort, mehr: { hin: [], rueck: [] }, wahl: {}, laedt: {}, meldung: {} })
 
 /**
- * Antworten je Anfrage für die Sitzung im Browser: ein erneutes Einhängen (StrictMode im Entwicklungsmodus, Zurück zur
- * Seite, Datum hin und zurück) löst keine zweite Anfrage an den Fahrplandienst aus. Gemerkt werden nur vollständige Live-Antworten.
+ * Antworten je Anfrage für die Sitzung im Browser: ein erneutes Einhängen (Zurück zur Seite, Datum hin und zurück) löst
+ * keine zweite Anfrage an den Fahrplandienst aus. Gemerkt werden nur vollständige Live-Antworten.
  */
 const geladeneFahrten = new Map<string, Promise<FahrtenAntwort>>()
 const MAX_GEMERKT = 30
 
-function ladeFahrten(anfrage: string): Promise<FahrtenAntwort> {
+function ladeFahrten(anfrage: string, signal: AbortSignal): Promise<FahrtenAntwort> {
   const da = geladeneFahrten.get(anfrage)
   if (da) return da
-  const p = fetch(`/api/fahrten?${anfrage}`)
+  const p = fetch(`/api/fahrten?${anfrage}`, { signal })
     .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() as Promise<FahrtenAntwort> })
-  // Fehlschläge und Ersatzantworten (typisch, Hinweis, fehlerArt) nicht merken: der nächste Aufruf versucht es live.
+  // Fehlschläge, Abbrüche und Ersatzantworten (typisch, Hinweis, fehlerArt) nicht merken: der nächste Aufruf versucht es live.
   p.then((a) => { if (!merkenswert(a)) geladeneFahrten.delete(anfrage) }, () => geladeneFahrten.delete(anfrage))
   geladeneFahrten.set(anfrage, p)
   if (geladeneFahrten.size > MAX_GEMERKT) geladeneFahrten.delete(geladeneFahrten.keys().next().value!)
@@ -66,7 +67,8 @@ const SKELETON = (
 /**
  * Hin- und Rückfahrten am gewählten Datum für den Hauptzugang (`/api/fahrten`, höchstens zwei Transitous-Anfragen je
  * Zeitfenster). Vorausgewählt ist das Paar mit der größten Zeit vor Ort; Antippen wählt eine andere Fahrt.
- * "Weitere Abfahrten" lädt je Richtung mit einer Anfrage nach. Ändert sich das Zeitfenster in der URL, wird neu geladen.
+ * "Weitere Abfahrten" lädt je Richtung mit einer Anfrage nach. Ändert sich das Zeitfenster in der URL, wird neu geladen,
+ * aber erst, wenn es etwa 800 ms steht (Ziehen am Schieber im Sheet "Wann?"); ein überholter Abruf wird abgebrochen.
  */
 export function Fahrtenwahl(props: Props) {
   return (
@@ -82,13 +84,7 @@ function FahrtenwahlInnen({ von, nach, gruppe }: Props) {
   const [stand, setStand] = useState<Stand | null>(null)
   const aktuell = stand?.anfrage === anfrage ? stand : null
 
-  useEffect(() => {
-    let aktiv = true
-    ladeFahrten(anfrage)
-      .then((a) => { if (aktiv) setStand(neuerStand(anfrage, a)) })
-      .catch(() => { if (aktiv) setStand(neuerStand(anfrage, null)) })
-    return () => { aktiv = false }
-  }, [anfrage])
+  useRuhigerAbruf(anfrage, ladeFahrten, (k, e) => setStand(neuerStand(k, e.ok ? e.wert : null)))
 
   /** Ändert den Stand nur, solange er noch zur Anfrage gehört, aus der die Änderung stammt. */
   const aendere = (fn: (s: Stand) => Stand) => setStand((s) => (s && s.anfrage === anfrage ? fn(s) : s))

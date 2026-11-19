@@ -92,6 +92,35 @@ describe('fahrtenErmitteln', () => {
     expect(b.abweichungMin).toBeUndefined()
   })
 
+  it('vergleicht nur mit typischen Hinfahrten im selben Abfahrtsbereich (los ab bis letzte passende Abfahrt)', async () => {
+    // Live: passend 06:12, 07:12, 08:12 (lokal), je 4:30 h. Typisch: 06:12 auch 4:30 h, aber nachmittags ein schneller Zug.
+    const live: Itinerary[] = ['04:12', '05:12', '06:12'].map((ab) => {
+      const start = `2026-09-12T${ab}:00Z`
+      return { ...itn(ab, ab), startTime: start, endTime: new Date(Date.parse(start) + 270 * 60_000).toISOString() }
+    })
+    const muster = {
+      hin: [
+        { ab: '06:12', an: '10:42', umstiege: 1, via: [], fern: false }, // 4:30 h
+        { ab: '14:00', an: '17:00', umstiege: 0, via: [], fern: true }, // 3:00 h, nach der letzten passenden Abfahrt
+        { ab: '05:00', an: '07:30', umstiege: 0, via: [], fern: true }, // 2:30 h, vor "los ab"
+      ],
+      rueck: [],
+    }
+    const a = await fahrtenErmitteln({ startort, haltestelle, z, tickets, muster, ...zeit }, { planen: planenMit(live, []) })
+    expect(a.abweichungMin).toBeUndefined()
+    // Liegt die schnelle typische Fahrt im Bereich, zählt sie: 4:30 h gegen 3:00 h.
+    const imBereich = { ...muster, hin: [...muster.hin, { ab: '08:00', an: '11:00', umstiege: 0, via: [], fern: true }] }
+    const b = await fahrtenErmitteln({ startort, haltestelle, z, tickets, muster: imBereich, ...zeit }, { planen: planenMit(live, []) })
+    expect(b.abweichungMin).toBe(90)
+  })
+
+  it('ohne typische Hinfahrt im Bereich kein Hinweis', async () => {
+    const live: Itinerary[] = [{ ...itn('04:12', '04:12'), endTime: '2026-09-12T09:12:00Z' }] // lokal 06:12, 5 h
+    const muster = { hin: [{ ab: '12:00', an: '14:00', umstiege: 0, via: [], fern: false }], rueck: [] }
+    const a = await fahrtenErmitteln({ startort, haltestelle, z, tickets, muster, ...zeit }, { planen: planenMit(live, []) })
+    expect(a.abweichungMin).toBeUndefined()
+  })
+
   it('füllt bei einer fehlgeschlagenen Richtung aus dem Musterfahrplan', async () => {
     const muster = { hin: [], rueck: [{ ab: '17:00', an: '20:30', umstiege: 1, via: [], fern: false }] }
     const planen = vi.fn(async (p: { ankunftBis?: boolean }) => { if (p.ankunftBis) throw new TransitousFehler('503', 503); return hinAntwort })

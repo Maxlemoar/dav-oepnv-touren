@@ -32,14 +32,39 @@ export const MusterfahrplanSchema = z.object({
 
 export const MUSTERFAHRPLAN_DATEI = path.join(process.cwd(), 'content', 'musterfahrplan.json')
 
-/** Fehlt die Datei, ist das kein Fehler (noch nicht berechnet): `undefined`. */
+/**
+ * Gelesener Standardpfad je Prozess: die Routen /api/fahrten und /api/verbindung brauchen ihn bei jeder Anfrage, Lesen
+ * und Prüfen (zod) kosten mehr als ein stat. Neu gelesen wird nur, wenn sich die Datei ändert (Zeitstempel, Größe),
+ * etwa nach einem Lauf von `npm run musterfahrplan` neben dem Entwicklungsserver.
+ */
+let gemerkt: { stempel: string; wert: Musterfahrplan } | undefined
+
+/** Für Tests: den Speicher des Standardpfads leeren. */
+export function musterfahrplanCacheLeeren() {
+  gemerkt = undefined
+}
+
+/** Fehlt die Datei, ist das kein Fehler (noch nicht berechnet): `undefined`. Ein ausdrücklicher Pfad umgeht den Speicher. */
 export function ladeMusterfahrplan(datei: string = MUSTERFAHRPLAN_DATEI): Musterfahrplan | undefined {
-  // Standardpfad statisch, damit der Build nur content/ einpackt; andere Pfade (Tests) vom Tracing ausnehmen.
-  const standard = datei === MUSTERFAHRPLAN_DATEI
-  const vorhanden = standard
-    ? fs.existsSync(path.join(process.cwd(), 'content', 'musterfahrplan.json'))
-    : fs.existsSync(/*turbopackIgnore: true*/ datei)
-  if (!vorhanden) return undefined
+  if (datei !== MUSTERFAHRPLAN_DATEI) return lade(datei, false)
+  // Standardpfad statisch, damit der Build nur content/ einpackt.
+  let stat: fs.Stats
+  try {
+    stat = fs.statSync(path.join(process.cwd(), 'content', 'musterfahrplan.json'))
+  } catch {
+    gemerkt = undefined
+    return undefined
+  }
+  const stempel = `${stat.mtimeMs}:${stat.size}`
+  if (gemerkt?.stempel === stempel) return gemerkt.wert
+  const wert = lade(datei, true)
+  gemerkt = wert && { stempel, wert }
+  return wert
+}
+
+function lade(datei: string, standard: boolean): Musterfahrplan | undefined {
+  // Andere Pfade (Tests) vom Tracing ausnehmen.
+  if (!standard && !fs.existsSync(/*turbopackIgnore: true*/ datei)) return undefined
   const name = path.basename(datei)
   let roh: unknown
   try {

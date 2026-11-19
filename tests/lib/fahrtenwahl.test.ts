@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { abweichungText, fahrtenAnfrage, fahrtenStatus, fahrtSchluessel, merkenswert, neueFahrten, vorauswahl, vorOrtText, zeitfensterKurz } from '@/lib/fahrtenwahl'
+import { abweichungText, fahrtenAnfrage, fahrtenStatus, fahrtSchluessel, merkenswert, neueFahrten, umstiegKnopfText, verbindungAnfrage, vorauswahl, vorOrtText, zeitfensterKurz } from '@/lib/fahrtenwahl'
 import { zuUtcIso } from '@/lib/datum'
 import type { FahrtenAntwort, FahrtLive, Lage } from '@/lib/verbindung/fahrten'
 import type { Zeitfenster } from '@/lib/zeitfenster'
@@ -144,5 +144,31 @@ describe('merkenswert', () => {
     expect(merkenswert({ ...antwort, quelle: 'typisch' })).toBe(false)
     expect(merkenswert({ ...antwort, fehlerArt: 'keine_verbindung' })).toBe(false)
     expect(merkenswert({ ...antwort, hinweis: 'Hinfahrt nach typischem Fahrplan' })).toBe(false)
+  })
+})
+
+describe('verbindungAnfrage', () => {
+  const zf = (o: Partial<Zeitfenster> = {}): Zeitfenster => ({ datum: DATUM, rueck: DATUM, abMin: 360, bisMin: 1260, vorOrtMin: 240, ...o })
+  it('hängt nicht von "mindestens vor Ort" ab: der Schieber löst keine neue Live-Anfrage aus', () => {
+    const a = verbindungAnfrage('offenburg', 'kandersteg', zf({ vorOrtMin: 240 }), 0)
+    expect(verbindungAnfrage('offenburg', 'kandersteg', zf({ vorOrtMin: 480 }), 0)).toBe(a)
+    expect(verbindungAnfrage('offenburg', 'kandersteg', zf({ vorOrtMin: 0 }), 0)).toBe(a)
+    // vorort=0: der Server beurteilt ohne Mindestzeit, der Browser wendet sie an (mitMindestVorOrt).
+    expect(new URLSearchParams(a).get('vorort')).toBe('0')
+  })
+  it('trägt Orte, Datum, rueck und abweichende Zeiten, bei Hütten mindestnaechte', () => {
+    const q = new URLSearchParams(verbindungAnfrage('offenburg', 'h', zf({ rueck: '2026-11-22', abMin: 420 }), 1))
+    expect(Object.fromEntries(q)).toEqual({ von: 'offenburg', nach: 'h', datum: DATUM, rueck: '2026-11-22', ab: '07:00', vorort: '0', mindestnaechte: '1' })
+    expect(new URLSearchParams(verbindungAnfrage('offenburg', 'h', zf(), 0)).get('rueck')).toBe(DATUM)
+  })
+})
+
+describe('umstiegKnopfText', () => {
+  it('nennt bei Direktfahrten Details statt Umstiege', () => {
+    expect(umstiegKnopfText(0, false)).toBe('Details')
+    expect(umstiegKnopfText(1, false)).toBe('Umstiege')
+    expect(umstiegKnopfText(2, false)).toBe('Umstiege')
+    expect(umstiegKnopfText(0, true)).toBe('Weniger')
+    expect(umstiegKnopfText(2, true)).toBe('Weniger')
   })
 })

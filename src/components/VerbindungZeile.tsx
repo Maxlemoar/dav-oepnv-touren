@@ -1,16 +1,19 @@
 'use client'
-import { useEffect, useState, type ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { useSearchParams } from 'next/navigation'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
 import type { BahnOrt, Land } from '@/lib/content/schema'
 import { datumKurz, lokaleUhrzeit, minutenAlsDauer, tageDifferenz, wochentagKurz } from '@/lib/datum'
-import { zeitfensterAusUrl, zeitfensterSchreiben } from '@/lib/zeitfenster'
+import { mitMindestVorOrt } from '@/lib/bewertung'
+import { verbindungAnfrage } from '@/lib/fahrtenwahl'
+import { zeitfensterAusUrl } from '@/lib/zeitfenster'
 import { fahrplanLink, rueckfahrtLink } from '@/lib/links'
 import { spaetestensLos, spaetestensZurueck } from '@/lib/rueckfahrt'
 import type { GruppenHinweis } from '@/lib/teilen'
 import { PassungBadge, TicketBadge } from './Badges'
 import { EinladenKnopf } from './EinladenKnopf'
 import { VerbindungDetail } from './VerbindungDetail'
+import { useRuhigerAbruf } from './useRuhigerAbruf'
 
 // Allgemeiner Saisontext aus service.ts (SAISON_HINWEIS); hier kopiert, weil service.ts nicht in den Browser darf.
 // Er wiederholt nur die Überschrift und wird deshalb nicht noch einmal angezeigt.
@@ -31,43 +34,40 @@ type Props = {
   gruppe?: GruppenHinweis
 }
 
+function ladeVerbindung(anfrage: string, signal: AbortSignal): Promise<VerbindungAntwort> {
+  return fetch(`/api/verbindung?${anfrage}`, { signal })
+    .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() as Promise<VerbindungAntwort> })
+}
+
+/** Ersatz, wenn der Abruf scheitert; Datum und Rückdatum stehen in der Anfrage. */
+function nichtErreichbar(anfrage: string): VerbindungAntwort {
+  const q = new URLSearchParams(anfrage)
+  const datum = q.get('datum')!
+  const rueck = q.get('rueck')!
+  return {
+    quelle: 'richtwert', datum, rueckfahrtDatum: rueck, naechte: tageDifferenz(datum, rueck),
+    ticket: { ticket: 'keins', hinweis: '' }, fehlerArt: 'dienst_nicht_erreichbar',
+  }
+}
+
 /**
  * Live-Verbindung zum Zeitfenster aus der URL (los ab, zurück bis, mindestens vor Ort) mit der Passung dazu: "passt, 7:37 h
  * vor Ort", bei mehreren Tagen "passt · 1 Nacht", sonst der Grund. Hüttenseiten und weitere Haltestellen der Ortsseite.
+ * Geladen wird erst, wenn das Zeitfenster etwa 800 ms steht; "mindestens vor Ort" fragt nicht neu an, sondern ändert nur
+ * das Urteil im Browser.
  */
 export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbahn, huetteName, gruppe }: Props) {
   const sp = useSearchParams()
   const z = zeitfensterAusUrl(sp, { mindestNaechte })
   const { datum } = z
   // Antwort wird mit ihrer Anfrage gespeichert; passt sie nicht mehr, zeigt die Zeile das Skeleton.
-  const q = zeitfensterSchreiben(new URLSearchParams({ von: von.id, nach: nach.id }), z)
-  q.set('rueck', z.rueck)
-  if (mindestNaechte > 0) q.set('mindestnaechte', String(mindestNaechte))
-  const anfrage = q.toString()
+  const anfrage = verbindungAnfrage(von.id, nach.id, z, mindestNaechte)
   const [geladen, setGeladen] = useState<{ anfrage: string; antwort: VerbindungAntwort } | null>(null)
   const [offen, setOffen] = useState(false)
-  const antwort = geladen?.anfrage === anfrage ? geladen.antwort : null
-
-  useEffect(() => {
-    let aktiv = true
-    // Der Zeitraum steckt in der Anfrage; für den Fallback dort wieder herauslesen.
-    const q = new URLSearchParams(anfrage)
-    const datumAnfrage = q.get('datum')!
-    const rueckAnfrage = q.get('rueck')!
-    fetch(`/api/verbindung?${anfrage}`)
-      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() })
-      .then((a: VerbindungAntwort) => { if (aktiv) setGeladen({ anfrage, antwort: a }) })
-      .catch(() => {
-        if (!aktiv) return
-        const antwort: VerbindungAntwort = {
-          quelle: 'richtwert', datum: datumAnfrage, rueckfahrtDatum: rueckAnfrage,
-          naechte: tageDifferenz(datumAnfrage, rueckAnfrage), ticket: { ticket: 'keins', hinweis: '' },
-          fehlerArt: 'dienst_nicht_erreichbar',
-        }
-        setGeladen({ anfrage, antwort })
-      })
-    return () => { aktiv = false }
-  }, [anfrage])
+  useRuhigerAbruf(anfrage, ladeVerbindung, (k, e) => setGeladen({ anfrage: k, antwort: e.ok ? e.wert : nichtErreichbar(k) }))
+  const roh = geladen?.anfrage === anfrage ? geladen.antwort : null
+  // Die API urteilt ohne Mindestzeit (vorort=0); die Mindestzeit aus der URL gilt hier.
+  const antwort = roh?.passung ? { ...roh, passung: mitMindestVorOrt(roh.passung, z.vorOrtMin) } : roh
 
   const portal = nach.land === 'CH' ? 'SBB' : 'bahn.de'
   // Links tragen Datum und lokale Abfahrtszeit der gezeigten Verbindung; ohne Live-Daten die Standardzeiten.
