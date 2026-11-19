@@ -1,0 +1,387 @@
+# Prüfliste für den Arbeitskreis Klimaschutz
+
+Stand 19.11.2026. Beim Qualitätscheck im November sind 72 Korrekturvorschläge für „Ohne Auto in die Berge“ entstanden, für die es keine eindeutige Quelle gibt, meist geschätzte Gehzeiten und Höhenmeter oder Saisonangaben; sie sind noch nicht eingespielt. Bitte kreuzt an, was ihr aus eigener Erfahrung oder nach einem Blick in die Quelle bestätigen könnt, und notiert bei allem anderen kurz, was stattdessen stimmt. Die ausgefüllte Liste oder einzelne Rückmeldungen gehen an Maximilian, per Mail oder als Kommentar im GitHub-Repository.
+
+Angekreuzt heißt: Vorschlag übernehmen. Nicht angekreuzt und ohne Notiz heißt: bleibt, wie es ist.
+
+## Schwarzwald, Schwäbische Alb, Pfalz, Vogesen und Jura (26)
+
+- [ ] **Cabane Perrenoud** (Hütte), Zustieg ab Noiraigue: Gehzeit
+  - Aktuell: 2:30 h
+  - Vorschlag: 2:45 h
+  - Begründung: Schätzung: Noiraigue 730 m → 1419 m, ca. 7 km (DEM/OSM), keine offizielle Angabe gefunden
+- [ ] **Chalet-Refuge Schnepfenried** (Hütte), Zustieg ab Metzeral: Höhenmeter
+  - Aktuell: 770 m
+  - Vorschlag: 590 m
+  - Begründung: EU-DEM 25 m: Metzeral 479 m, Haus ca. 1050–1070 m
+- [ ] **Hohwaldhütte** (Hütte), Zustieg ab Barr: Höhenmeter
+  - Aktuell: 100 m
+  - Vorschlag: 250 m
+  - Begründung: EU-DEM 25 m: Le Hohwald ca. 640 m, Hütte 892 m
+- [ ] **Hohwaldhütte** (Hütte), Zustieg ab Barr: Hinweis
+  - Aktuell: Bus Fluo 67 Barr–Le Hohwald, wenige Kurse, am Wochenende kaum. Ab Le Hohwald 30 Minuten zur Chaume des Veaux, zu Fuß ab Barr etwa 4 Stunden. Selbstversorgerhütte, 48 Plätze.
+  - Vorschlag: „Im Winter Navette des Neiges (Linie 542) Barr–Le Hohwald–Champ du Feu, nur Mi/Sa/So; sonst kein Linienbus belegt. Ab Le Hohwald knapp 1 Stunde, zu Fuß ab Barr etwa 4 Stunden. Selbstversorgerhütte, 48 Plätze.“
+  - Begründung: Hütte, Sektion Bergfreunde Saar, 900 m und 48 Plätze stimmen, aber die Koordinate liegt 440 m neben dem Gebäude. Ein ganzjähriger Bus nach Le Hohwald ist nicht belegt, nur die Navette des Neiges 542 im Winter. Von Le Hohwald (ca. 640 m) sind es eher 250 als …
+  - Quelle: <https://barr.fr/wp-content/uploads/2024/11/2024-25-flyer-navettes-des-neiges-champ-du-feu.pdf>
+- [ ] **Jurahaus (Cabane du Jura)** (Hütte), Zustieg ab St-Imier: Gehzeit
+  - Aktuell: 3:00 h
+  - Vorschlag: 4:00 h
+  - Begründung: Schätzung: St-Imier 793 m → Chasseral 1607 m → Jurahaus 1325 m
+- [ ] **La Chaume des Veaux** (Hütte), Zustieg ab Barr: Höhenmeter
+  - Aktuell: 180 m
+  - Vorschlag: 320 m
+  - Begründung: EU-DEM 25 m: Le Hohwald ca. 640 m, Haus ca. 960 m
+- [ ] **La Chaume des Veaux** (Hütte), Zustieg ab Barr: Hinweis
+  - Aktuell: Bus Fluo 67 Barr–Le Hohwald, wenige Kurse. Ab Le Hohwald 40 Minuten, zu Fuß ab Barr etwa 4 Stunden. 80 Betten, Selbstversorgung mit Hüttendienst.
+  - Vorschlag: „Im Winter Navette des Neiges (Linie 542) Barr–Le Hohwald–Champ du Feu, nur Mi/Sa/So; sonst kein Linienbus belegt. Ab Le Hohwald gut 1 Stunde, zu Fuß ab Barr etwa 4 Stunden. 80 Betten, Selbstversorgung mit Hüttendienst.“
+  - Begründung: Das Haus gibt es (Section Strasbourg-Neudorf, 980 m, 80 Betten), die Koordinate liegt aber 310 m daneben. Für den Bus gilt dasselbe wie bei der Hohwaldhütte. Von Le Hohwald sind es ca. 320 Hm.
+  - Quelle: <https://barr.fr/wp-content/uploads/2024/11/2024-25-flyer-navettes-des-neiges-champ-du-feu.pdf>
+- [ ] **Les Jonquilles** (Hütte), Zustieg ab Metzeral: Gehzeit
+  - Aktuell: 1:00 h
+  - Vorschlag: 1:30 h
+  - Begründung: Schätzung: Metzeral 479 m → Haus 882 m (DEM), ca. 2,5 km Luftlinie
+- [ ] **Les Jonquilles** (Hütte), Zustieg ab Metzeral: Höhenmeter
+  - Aktuell: 300 m
+  - Vorschlag: 410 m
+  - Begründung: EU-DEM 25 m
+- [ ] **Naturfreundehaus Gersbacher Hörnle** (Hütte), Zustieg ab Zell im Wiesental Bahnhof: Gehzeit
+  - Aktuell: 2:30 h
+  - Vorschlag: 3:15 h
+  - Begründung: Schätzung: Zell 430 m → Hohe Möhr 984 m → Gersbach, ca. 10 km
+- [ ] **Naturfreundehaus Großer Wald (Michelbach)** (Hütte), Zustieg ab Gaggenau Bahnhof: Höhenmeter
+  - Aktuell: 150 m
+  - Vorschlag: 90 m
+  - Begründung: EU-DEM 25 m: Gaggenau Bf 142 m, Haus 233 m
+- [ ] **Naturfreundehaus Kornebene** (Hütte), Zustieg ab Nordrach Adler: Höhenmeter
+  - Aktuell: 190 m
+  - Vorschlag: 245 m
+  - Begründung: EU-DEM 25 m: Nordrach Adler 398 m, Haus 642 m
+- [ ] **Naturfreundehaus Kornebene** (Hütte), Zustieg ab Nordrach Adler: Hinweis
+  - Aktuell: Bus 7131 ab Biberach (Baden) Bahnhof. Bewirtschaftet, 15 Betten, Gaststätte.
+  - Vorschlag: „Bus 7131 ab Zell am Harmersbach Bahnhof. Das Haus nennt selbst Gengenbach (9 km) als nächste Haltestelle, der Weg ab Nordrach ist nicht offiziell beschrieben. Geöffnet Fr ab 18 Uhr, Sa/So, an Feiertagen und in den BW-Schulferien, 15 Betten.“
+  - Begründung: Laut Haus ist die nächste Haltestelle Gengenbach (9 km), einen Weg ab Nordrach nennt es nicht. Nordrach Adler (398 m) → Haus (640 m) sind ca. 245 Hm. Bus 7131 fährt laut Transitous ab Zell a. H. Geöffnet nur Fr–So, an Feiertagen und in den BW-Ferien, 15 …
+  - Quelle: <https://www.kornebene.de/haus-kornebene/>, Transitous-Abfrage 2026-11-21 (api.transitous.org)
+- [ ] **Schwenninger Hütte** (Hütte), Zustieg ab Triberg Bahnhof: Gehzeit
+  - Aktuell: 1:00 h
+  - Vorschlag: 1:40 h
+  - Begründung: Selbstversorgerhütte der Sektion Baar auf ca. 800 m. Bahnhof Triberg liegt aber 6 km entfernt, 60 min sind zu kurz. 20 Plätze (Bergwelten) bzw. 16 Betten (Gruppenhaus).
+  - Quelle: <https://www.gruppenhaus.de/schwenninger-huette-des-dav-sektion-baar-triberg-hs3475.html> (Bahnhof Triberg 6 km)
+- [ ] **Todtnauer Hütte** (Hütte), Zustieg ab Todtnau Busbahnhof: Gehzeit
+  - Aktuell: 0:45 h
+  - Vorschlag: 1:00 h
+  - Begründung: Schätzung: Haltestelle Fahl, Todtnauerhütte 1007 m → 1321 m, ca. 1 km
+- [ ] **Todtnauer Hütte** (Hütte), Zustieg ab Todtnau Busbahnhof: Höhenmeter
+  - Aktuell: 380 m
+  - Vorschlag: 320 m
+  - Begründung: EU-DEM 25 m an Haltestelle de-DELFI_de:08336:3659:0:1
+- [ ] **Refuge du Grand Ventron** (Hütte), Zustieg ab Kruth: Gehzeit
+  - Aktuell: 2:30 h
+  - Vorschlag: 3:00 h
+  - Begründung: Schätzung: Kruth 479 m → 1150 m, über 6 km
+- [ ] **Battert und Merkur (Baden-Baden)** (Gebiet), Gebietstext
+  - Aktuell: „mit Bus 205/244“
+  - Vorschlag: „mit Bus 244 oder X44“
+  - Begründung: Transitous-Abfrage 2026-11-21 (api.transitous.org)
+- [ ] **Kinzigtal (Hausach, Hornberg)** (Gebiet), Gebietstext
+  - Aktuell: „In Hausach führt ein Klettersteig über den Hausacher Felsen. “
+  - Vorschlag: „“
+  - Begründung: kein Beleg für einen Klettersteig in Hausach gefunden
+- [ ] **Kinzigtal (Hausach, Hornberg)** (Gebiet), Sportarten
+  - Aktuell: wandern, klettersteig
+  - Vorschlag: wandern
+  - Begründung: kein Beleg für einen Klettersteig in Hausach gefunden
+- [ ] **Nordrach und Moosgebirge** (Gebiet), Gebietstext
+  - Aktuell: „Bus 7131 ab Biberach (Baden) bis Nordrach“
+  - Vorschlag: „Bus 7131 ab Zell am Harmersbach bis Nordrach“
+  - Begründung: Transitous-Abfrage 2026-11-21 (api.transitous.org)
+- [ ] **Dahner Felsenland (Pfälzerwald)** (Gebiet), Gebietstext
+  - Aktuell: „sonn- und feiertags von Mai bis Oktober fährt die Wieslauterbahn direkt“
+  - Vorschlag: „in der Saison fährt an Wochenenden die Wieslauterbahn (2026 erst ab 27.6., nur bis Dahn Süd, seit September pausiert)“
+  - Begründung: „Sonn- und feiertags von Mai bis Oktober fährt die Wieslauterbahn direkt“ stimmt 2026 nicht: Start erst am 27.6., nur bis Dahn Süd, seit September pausiert. Die Busse 250 und 2553 sind belegt.
+  - Quelle: <https://www.wochenblatt-reporter.de/dahner-felsenland/c-lokales/die-eisenbahn-kehrt-ins-dahner-felsenland-zurueck_a796863>
+- [ ] **Champ du Feu und Le Hohwald** (Gebiet), Gebietstext
+  - Aktuell: „der Bus nach Le Hohwald fährt selten, am Wochenende kaum.“
+  - Vorschlag: „im Winter fährt die Navette des Neiges (Linie 542) Barr–Le Hohwald–Champ du Feu mittwochs und am Wochenende, sonst kaum Busse.“
+  - Begründung: Ein ganzjähriger Bus Barr–Le Hohwald ist nicht belegt. Im Winter fährt die Navette des Neiges 542 Barr–Le Hohwald–Champ du Feu (2025/26: 6.12. bis 8.3., Mi/Sa/So), also gerade am Wochenende.
+  - Quelle: <https://barr.fr/wp-content/uploads/2024/11/2024-25-flyer-navettes-des-neiges-champ-du-feu.pdf>
+- [ ] **Albtrauf bei Bad Urach und Reutlingen** (Gebiet), Gebietstext
+  - Aktuell: „für Achalm und Roßberg“
+  - Vorschlag: „für die Achalm“
+  - Begründung: Lage: Roßberg liegt rund 10 km südwestlich
+- [ ] **Hohwaldhütte** (Hütte), Zustieg ab Barr: Gehzeit
+  - Aktuell: 0:30 h
+  - Vorschlag: 1:00 h
+  - Begründung: Schätzung: Le Hohwald ca. 640 m → 892 m (EU-DEM 25 m)
+- [ ] **La Chaume des Veaux** (Hütte), Zustieg ab Barr: Gehzeit
+  - Aktuell: 0:40 h
+  - Vorschlag: 1:10 h
+  - Begründung: Schätzung: Le Hohwald ca. 640 m → ca. 960 m (EU-DEM 25 m)
+
+## Berner Oberland, Freiburger Voralpen, Emmental und Wallis (17)
+
+- [ ] **Konkordiahütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: SAC Grindelwald, 2850 m, offen; ab Fiescheralp über den Aletschgletscher 5–6 h, 1050 Hm, Gletscherausrüstung nötig; bewartet 14.03.–30.05. und 13.06.–19.09.2026.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000142/>
+- [ ] **Britanniahütte** (Hütte), Zustieg ab Saas-Fee, Busterminal: Gehzeit
+  - Aktuell: 1:00 h
+  - Vorschlag: 1:15 h
+  - Begründung: CAS Genevoise, 3030 m; ab Felskinn 1–1:30 h, 150 Hm (Daten 50 Hm); bewartet März–Mai und Juli–Sep.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000046/>
+- [ ] **Rothornhütte** (Hütte), Webseite
+  - Aktuell: https://www.sac-oberaargau.ch/huetten/rothornhuette
+  - Vorschlag: http://www.rothornhuette-sac.ch
+  - Begründung: Neubau 2024 auf 3180 m bestätigt, SAC Oberaargau; ab Zermatt über Trift T3+, 4–5 h, 1620 Hm.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000222/>
+- [ ] **Blüemlisalphütte** (Hütte), Webseite
+  - Aktuell: https://www.bluemlisalphuette.ch
+  - Vorschlag: https://www.bluemlisalphuette.com
+  - Begründung: Koordinate 1,1 km südlich der Hütte (OSM 46.5102/7.7716); Zustiege (4 h, 1270 bzw. 1450 Hm) stimmen.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000036/>
+- [ ] **Cabane des Marindes** (Hütte), Werte geschätzt
+  - Aktuell: true
+  - Vorschlag: false
+  - Begründung: CAS Gruyère, 1868 m, 37 Plätze, bewartet 18.05.–05.10.; Zustieg laut Sektion „Pra Jean (bus TPF) 3h30“, Haltestelle „Im Fang, Praz-Jean“ an Linie 260.
+  - Quelle: <https://www.cas-gruyere.ch/fr/cabanes/cabane-des-marindes/>
+- [ ] **Wildhornhütte** (Hütte), Zustieg ab Lenk, Iffigenalp: Gehzeit
+  - Aktuell: 3:45 h
+  - Vorschlag: 3:00 h
+  - Begründung: CAS Moléson, 2303 m; SAC: Lenk–Iffigenalp–Hütte 5 h, 1200 Hm (passt zu z1), ab Iffigenalp nur als Winterroute (2:30–5 h, 720 Hm). 225 min für den Sommer wirken zu lang.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000293/>
+- [ ] **Wildstrubelhütte** (Hütte), Zustieg ab Lenk, Iffigenalp: Höhenmeter
+  - Aktuell: 1170 m
+  - Vorschlag: 1280 m
+  - Begründung: SAC Wildhorn, 2788 m (Daten 2793, im Rahmen); SAC: ab Lenk über Iffigenalp 6 h, 1800 Hm, abzüglich Lenk–Iffigenalp etwa 4–4:30 h, 1280 Hm.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000294/>
+- [ ] **Lämmerenhütte** (Hütte), Zustieg ab Kandersteg: Gehzeit
+  - Aktuell: 3:30 h
+  - Vorschlag: 4:00 h
+  - Begründung: SAC Angenstein, 2507 m; ab Gemmipass 1:30 h, 250 Hm stimmt. Für Kandersteg via Sunnbüel nennt SAC nur 6:30 h zu Fuß bzw. 5:30 h im Winter, die 210 min sind so nicht belegt.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000145/>
+- [ ] **Schönbielhütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: CAS Monte Rosa, 2694 m; ab Zermatt T2, 4:30 h, aber 1160 Hm; bewartet März–Mai und Juli–Sep.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000241/>
+- [ ] **Täschhütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: SAC Uto, 2701 m, kein Neubau; ab Täsch rund 4 h, 1260 Hm, ab Täschalp 1:30 h. Einen Linienbus zur Täschalp findet Transitous nicht, belegt ist nur das Taxi.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000265/>
+- [ ] **Tierberglihütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: SAC Baselland, 2795 m; ab Hotel Steingletscher T4, 3 h, 940 Hm; bewartet März–Okt.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000269/>
+- [ ] **Gaulihütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: SAC Bern, 2205 m; SAC nennt 4:30 h, 1440 Hm „aus dem Urbachtal“; den Abschnitt Innertkirchen–Urbachtal zu Fuß (+1 h) belegt keine Quelle. Auch im Frühjahr bewartet.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000111/>
+- [ ] **Oberaletschhütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: CAS Chasseral, 2640 m; ab Belalp T3, 4:30 h, aber 970 Hm (Daten 600); auch im Frühjahr bewartet.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000193/>
+- [ ] **Wildhornhütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: CAS Moléson, 2303 m; SAC: Lenk–Iffigenalp–Hütte 5 h, 1200 Hm (passt zu z1), ab Iffigenalp nur als Winterroute (2:30–5 h, 720 Hm). 225 min für den Sommer wirken zu lang.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000293/>
+- [ ] **Wildstrubelhütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: SAC Wildhorn, 2788 m (Daten 2793, im Rahmen); SAC: ab Lenk über Iffigenalp 6 h, 1800 Hm, abzüglich Lenk–Iffigenalp etwa 4–4:30 h, 1280 Hm.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000294/>
+- [ ] **Bächlitalhütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: SAC Am Albis, 2328 m; ab Räterichsboden T2, 2:15 h, 620 Hm (Daten 135 min/590 Hm); auch im Frühjahr bewartet.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000021/>
+- [ ] **Kandersteg** (Gebiet), Saison
+  - Aktuell: Sommer (inzwischen geändert: ganzjährig)
+  - Vorschlag: ganzjährig
+  - Begründung: „Drei SAC-Hütten, alle direkt ab Bahnhof“: im Datensatz sind es fünf, Balmhorn braucht den Bus und Lämmeren die Sunnbüelbahn. `saison: sommer`, obwohl eine Schneeschuhtour und die Lämmerenhütte im Winter dabei sind.
+  - Quelle: <https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000145/>
+
+## Zentralschweiz, Ostschweiz und Tessin (14)
+
+- [ ] **Muttseehütte** (Hütte), Zustieg ab Linthal: Höhenmeter
+  - Aktuell: 1850 m
+  - Vorschlag: 880 m
+  - Begründung: Zeit und Höhenmeter passen nicht zusammen (1850 Hm in 3:30 h). Laut Hütte: Linthal SBB → Tierfed 1:30 h zu Fuss oder Taxi, Seilbahn Tierfed–Kalktrittli (Touristen etwa Mitte Juni bis Mitte Oktober), ab Bergstation 2:30 h. Ohne Seilbahn 6–7 h (T3/T4). …
+  - Quelle: <https://www.muttseehuette.ch/lagezustieg/>
+- [ ] **Ringelspitzhütte** (Hütte), Zustieg ab Flims Dorf, Post: Gehzeit
+  - Aktuell: 3:30 h
+  - Vorschlag: 4:15 h
+  - Begründung: Laut SAC ab Bargis 2:15 h, 850 Hm, **T4**, nicht T2/450 Hm. Damit ist auch der Fussweg ab Flims Dorf zu kurz angesetzt. Bus Bargis nur Ende Mai bis Mitte Oktober (stimmt).
+  - Quelle: <https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs>
+- [ ] **Ringelspitzhütte** (Hütte), Zustieg ab Flims Dorf, Post: Höhenmeter
+  - Aktuell: 920 m
+  - Vorschlag: 1320 m
+  - Begründung: Laut SAC ab Bargis 2:15 h, 850 Hm, **T4**, nicht T2/450 Hm. Damit ist auch der Fussweg ab Flims Dorf zu kurz angesetzt. Bus Bargis nur Ende Mai bis Mitte Oktober (stimmt).
+  - Quelle: <https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs>
+- [ ] **Rugghubelhütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: Die Koordinaten liegen 1,4 km westlich der Hütte. Zustieg ab Ristis 2–2,5 h/690 m stimmt. Es gibt einen offiziellen Winterzugang und Teilbewartung im Winter.
+  - Quelle: <https://www.rugghubel.ch/zugang>
+- [ ] **Kröntenhütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: Der SAC gibt ab Bodenberg 2:30–3:30 h an, ab Erstfeld etwa 2 h und 500 Hm mehr. 210 min ab Bahnhof sind zu knapp. Alpentaxi bis Bodenberg möglich; teils bewartet von Februar bis Mai.
+  - Quelle: <https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs>
+- [ ] **Hundsteinhütte** (Hütte), Webseite
+  - Aktuell: https://www.sac-saentis.ch
+  - Vorschlag: https://www.hundstein.ch
+  - Begründung: Ab Brülisau gibt der SAC 2:45/740 m an. Offizielle Hüttenseite ist hundstein.ch.
+  - Quelle: <https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs>
+- [ ] **Albert-Heim-Hütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: Ab Tiefenbach stimmt der Zustieg (1:30/430 m). Ab Realp gibt der SAC 3:30 h an, nicht 3:00. Laut Wikipedia/SAC ist die Hütte von März bis April und Juli bis September bewartet, also Skitourenhütte.
+  - Quelle: <https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs>
+- [ ] **Capanna Corno Gries** (Hütte), Sektion
+  - Aktuell: Rossberg
+  - Vorschlag: Bellinzona e Valli
+  - Begründung: Zustieg Alp Corno/Cruina 1:00/330 m T3 stimmt. Die Hütte ist auch im März und April bewartet (Winterraum ab Oktober). Wem sie gehört, ist unklar: Wikipedia nennt Rossberg, OSM und Bergwelten nennen CAS Bellinzona e Valli.
+  - Quelle: <https://www.bergwelten.com/h/capanna-corno-gries>
+- [ ] **Treschhütte** (Hütte), Saison
+  - Aktuell: ganzjährig
+  - Vorschlag: Sommer
+  - Begründung: Ab Gurtnellen gibt der SAC 2:30/770 m an (stimmt). Bewartet aber nur Mai bis Oktober, also nicht ganzjährig.
+  - Quelle: <https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs>
+- [ ] **Etzlihütte** (Hütte), Saison
+  - Aktuell: Sommer
+  - Vorschlag: ganzjährig
+  - Begründung: Lage (160 m Abweichung) und Zustieg ab Bristen 4:00 h stimmen. Die Hütte ist auch im März und teils von Januar bis April bewartet, also Skitourenhütte.
+  - Quelle: <https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs>
+- [ ] **Planurahütte** (Hütte), Zustieg ab Urnerboden, Dorf: Höhenmeter
+  - Aktuell: 920 m
+  - Vorschlag: 1100 m
+  - Begründung: Laut SAC ab Klausenpass 4:15 h/1100 m (WS); die 5:00 h/1350 m ab Fisetengrat sind eine Skiroute. Die eingetragenen 920 Hm ab Fisetengrat sind nicht belegt.
+  - Quelle: <https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs>
+- [ ] **Brügg (Bürglen UR), Seilbahn Biel-Kinzig** (Haltestelle), Name
+  - Aktuell: Brügg (Bürglen UR), Seilbahn Biel-Kinzig
+  - Vorschlag: Bürglen UR, Brügg (Seilbahn Biel-Kinzig)
+  - Begründung: Bus 413 Flüelen–Altdorf–Bürglen fährt ganzjährig, 250 min. Ab Fahrplan 2027 heisst die Haltestelle „Bürglen UR, Brügg“ (gleiche ID).
+  - Quelle: <https://api.transitous.org> (Haltestellenname im Fahrplan ab 13.12.2026)
+- [ ] **Riemenstalden, Chäppeliberg** (Haltestelle), Fahrzeit ab Offenburg
+  - Aktuell: 6:01 h
+  - Vorschlag: neu berechnen (Transitous 295–301 min)
+  - Begründung: Bus 541 ab Brunnen/Sisikon fährt ganzjährig, aber selten: im November früheste Ankunft 11:31. Die Richtwerte (361 min) passen nicht zu Transitous (295–301 min).
+  - Quelle: <https://api.transitous.org> (Abfrage 21.11.2026)
+- [ ] **Göschenen** (Haltestelle), Haltestellen-Kennung
+  - Aktuell: eu-european-sleeper_8505119 (inzwischen geändert: ch-opentransportdataswiss27_Parentch:1:sloid:5119)
+  - Vorschlag: ID aus ch-opentransportdataswiss26 (sloid Göschenen) per Geocode ermitteln
+  - Begründung: Die Verbindung stimmt (260 min). Die `haltestelleId` stammt aber aus dem European-Sleeper-Feed (`eu-european-sleeper_8505119`), nicht aus dem Schweizer Feed; sie könnte wegfallen.
+  - Quelle: <https://api.transitous.org/api/v1/geocode?text=G%C3%B6schenen&type=STOP>
+
+## Vorarlberg, Arlberg und Allgäu (15)
+
+- [ ] **Fiderepasshütte** (Hütte), Zustieg ab Mittelberg: Gehzeit
+  - Aktuell: 2:30 h
+  - Vorschlag: 3:00 h
+  - Begründung: Wikipedia nennt ab Mittelberg 3 h (849 Hm stimmt), ab Kanzelwandbahn 2,5 h.
+  - Quelle: <https://de.wikipedia.org/wiki/Fiderepassh%C3%BCtte>
+- [ ] **Saarbrücker Hütte** (Hütte), Zustieg ab Bielerhöhe Silvrettasee: Gehzeit
+  - Aktuell: 1:30 h
+  - Vorschlag: 2:30 h
+  - Begründung: Ab Bielerhöhe 2,5–3 h über Madlenerhaus und Tschifernella. Das Kromertal beginnt am Vermuntsee, nicht an der Bielerhöhe. Ab 2027 gibt es einen neuen Pächter. Den Sektionsnamen "Alpenverein und Skiclub Saarbrücken" konnte ich nicht prüfen.
+  - Quelle: <https://www.ich-geh-wandern.de/runde-von-der-bielerhoehe-zur-saarbruecker-huette-silvretta>
+- [ ] **Saarbrücker Hütte** (Hütte), Zustieg ab Bielerhöhe Silvrettasee: Höhenmeter
+  - Aktuell: 500 m
+  - Vorschlag: 550 m
+  - Begründung: Ab Bielerhöhe 2,5–3 h über Madlenerhaus und Tschifernella. Das Kromertal beginnt am Vermuntsee, nicht an der Bielerhöhe. Ab 2027 gibt es einen neuen Pächter. Den Sektionsnamen "Alpenverein und Skiclub Saarbrücken" konnte ich nicht prüfen.
+  - Quelle: <https://www.montafon.at/en/saarbrueckner-huette-2-538-m_vc17577>
+- [ ] **Lindauer Hütte** (Hütte), Zustieg ab Schruns Bahnhof: Gehzeit
+  - Aktuell: 2:00 h
+  - Vorschlag: 2:15 h
+  - Begründung: Die Hütte hat Winterbetrieb (25.12.2026–27.03.2027) und einen beheizten Winterraum. Ab Latschau 2–2,5 h.
+  - Quelle: <https://de.wikipedia.org/wiki/Lindauer_H%C3%BCtte>
+- [ ] **Tilisunahütte** (Hütte), Zustieg ab Schruns Bahnhof: Gehzeit
+  - Aktuell: 3:00 h
+  - Vorschlag: 4:00 h
+  - Begründung: Wikipedia nennt ab Latschau 4 h, ab Tschagguns 4,5 h. Laut vmobil fahren Linie 601 bis Latschau Kraftwerk oder Linie 670 bis Gargellen Wolfa.
+  - Quelle: <https://de.wikipedia.org/wiki/Tilisunah%C3%BCtte>
+- [ ] **Mindelheimer Hütte** (Hütte), Zustieg ab Mittelberg: Höhenmeter
+  - Aktuell: 800 m
+  - Vorschlag: 890 m
+  - Begründung: Zustieg ab Mittelberg durchs Wildental über die Kemptner Scharte (2103 m), 3 h. Einen Weg ab Baad durchs Bärgunttal gibt es nicht, das Bärgunttal führt zum Widderstein. Der Winterraum ist abgebaut, es gibt nur einen offenen Notraum.
+  - Quelle: <https://de.wikipedia.org/wiki/Mindelheimer_H%C3%BCtte>
+- [ ] **Mannheimer Hütte** (Hütte), Zustieg ab Brand Lünerseebahn: Gehzeit
+  - Aktuell: 3:00 h
+  - Vorschlag: 4:30 h
+  - Begründung: Wikipedia nennt vom Lünersee etwa 4 h, die Gebietstour "Zustieg Mannheimer Hütte vom Lünersee" 285 min und 959 Hm. Der Leibersteig ist der Weg ab Oberzalimhütte (Brand/Palüdbahn), nicht ab Lünersee. Der Winterraum liegt in der Zollwachhütte.
+  - Quelle: <https://www.alpenvereinaktiv.com/de/tour/zustieg-mannheimer-huette-vom-luenersee/42082590/>
+- [ ] **Mannheimer Hütte** (Hütte), Zustieg ab Brand Lünerseebahn: Höhenmeter
+  - Aktuell: 750 m
+  - Vorschlag: 960 m
+  - Begründung: Wikipedia nennt vom Lünersee etwa 4 h, die Gebietstour "Zustieg Mannheimer Hütte vom Lünersee" 285 min und 959 Hm. Der Leibersteig ist der Weg ab Oberzalimhütte (Brand/Palüdbahn), nicht ab Lünersee. Der Winterraum liegt in der Zollwachhütte.
+  - Quelle: <https://www.alpenvereinaktiv.com/de/tour/zustieg-mannheimer-huette-vom-luenersee/42082590/>
+- [ ] **Lustenauer Hütte** (Hütte), Zustieg ab Dornbirn Bahnhof: Gehzeit
+  - Aktuell: 1:30 h
+  - Vorschlag: 1:00 h
+  - Begründung: Busanreise laut vmobil mit Linie 870 bis Schwarzenberg Bödele (in Transitous bestätigt, halbstündlich), dann rund 1 h und rund 100 Hm. Die Hütte liegt am Bödele (Bregenzerwaldgebirge), nicht auf der Nagelfluhkette. Hüttenseite ist lustenauerhuette.at, dort …
+  - Quelle: <https://www.bergwelten.com/huetten/lustenauer-huette>
+- [ ] **Lustenauer Hütte** (Hütte), Zustieg ab Dornbirn Bahnhof: Höhenmeter
+  - Aktuell: 200 m
+  - Vorschlag: 110 m
+  - Begründung: Busanreise laut vmobil mit Linie 870 bis Schwarzenberg Bödele (in Transitous bestätigt, halbstündlich), dann rund 1 h und rund 100 Hm. Die Hütte liegt am Bödele (Bregenzerwaldgebirge), nicht auf der Nagelfluhkette. Hüttenseite ist lustenauerhuette.at, dort …
+  - Quelle: <https://www.bergwelten.com/huetten/lustenauer-huette>
+- [ ] **Kemptner Hütte** (Hütte), Zustieg ab Spielmannsau: Hinweis
+  - Aktuell: „Bergsteigerbus ab Bahnhof Oberstdorf nach Spielmannsau (morgens, Stand 2024 8:45 Uhr), …“
+  - Vorschlag: „Bergsteigerbus Linie 8 ab Bahnhof Oberstdorf nach Spielmannsau (Mai bis November, etwa stündlich, Deutschlandticket gilt nicht), …“
+  - Begründung: Laut Hüttenseite 3 h ab Spielmannsau, das stimmt. Der Hinweis nennt aber eine Busabfahrt mit Stand 2024. Laut DAV-Übersicht fährt Linie 8 von Mai bis November stündlich, Deutschlandticket gilt nicht.
+  - Quelle: <https://www.alpenverein-muenchen-oberland.de/uploads/images/EMTP7tSuR1aZmGDlDBWpyw/netz-allgaeu-2026-09-20.pdf>
+- [ ] **Konstanzer Hütte** (Hütte), Webseite
+  - Aktuell: https://www.dav-konstanz.de
+  - Vorschlag: https://www.konstanzerhuette.com/
+  - Begründung: Vom Salzhüttle (Wanderbushaltestelle) ca. 1,5 h, ab St. Anton ca. 3 h. Saison 19.06.–26.09.2026. "Gratis" und "Linie 6" konnte ich nicht belegen.
+  - Quelle: <https://www.openstreetmap.org> (tourism=alpine_hut Konstanzer Hütte, website)
+- [ ] **Waltenbergerhaus** (Hütte), Werte geschätzt
+  - Aktuell: true
+  - Vorschlag: false
+  - Begründung: Ab Birgsau über Einödsbach ca. 3,5 h, rund 1130 Hm. Geöffnet von Pfingsten bis Anfang Oktober, Winterraum mit 14 Lagern.
+  - Quelle: <https://de.wikipedia.org/wiki/Waltenbergerhaus>
+- [ ] **Nagelfluhkette (Oberstaufen, Immenstadt)** (Gebiet), Gebietstext
+  - Aktuell: „… in viereinhalb Stunden, …“
+  - Vorschlag: „… in knapp fünf Stunden, …“
+  - Begründung: Transitous-Abfrage 21.11.2026 Offenburg→Oberstaufen (4:48–5:18 h); content/haltestellen/oberstaufen.yaml (346 min)
+- [ ] **Arlberg und Verwall** (Gebiet), Gebietstext
+  - Aktuell: „Im Sommer Gratis-Wanderbus ins Verwalltal“
+  - Vorschlag: „Im Sommer Wanderbus ins Verwalltal“
+  - Begründung: Railjet ab Zürich sowie Konstanzer, Darmstädter und Ulmer Hütte stimmen. "Gratis-Wanderbus ins Verwalltal" ist unbelegt: Die Tourismusseite erwähnt nur einen Bus zum Verwallsee bzw. Salzhüttle.
+  - Quelle: <https://www.stantonamarlberg.com/de/sommer/bergregion/huettenverzeichnis/-addresses/konstanzer-huette>
+## Bereits geändert
+
+Diese Korrekturen waren belegt und sind schon eingespielt (vollständige Liste in `docs/audit/2026-11/eingespielt.md`). Wer hier etwas anders weiß, bitte ebenfalls melden.
+
+**Geschlossene Hütten**
+- **Anenhütte** (Lötschental): seit dem Bergsturz von Blatten geschlossen, Wiedereröffnung frühestens 2028. Die Seite zeigt sie als geschlossen, die Tour Fafleralp–Anenhütte trägt einen Hinweis.
+- **Cavardirashütte** (Disentis): Abriss und Neubau, 2027 und 2028 geschlossen, im Winter 2026/27 nur Schutzraum. Hinweis an beiden Cavardiras-Touren, der Gebietstext wirbt nicht mehr mit dem Skitourenzustieg.
+- **Schwarzwasserhütte** (Kleinwalsertal): wegen Umbau geschlossen, Wiedereröffnung voraussichtlich 2027, kein Winterraum.
+
+**Gesperrte Wege und Bahnen**
+- Fründenhütte: Normalweg am Oeschinensee gesperrt, Ersatz über die Untere Fründschnuer (T4, 3:30–4 h).
+- Windegghütte: Die Triftbahn fuhr 2026 nicht.
+- Silvretta: Hochalpenstraße ab Montafon bis voraussichtlich 2030 gesperrt; Bielerhöhe nur im Sommer mit Vermuntbahn und Tunnelbus. Hinweise bei Wiesbadener und Saarbrücker Hütte und an den Silvretta-Touren.
+- Muttsee- und Fridolinshütte: Es gibt keinen Bus nach Tierfehd, Zustiege und Gehzeiten entsprechend angepasst.
+
+**Unsere Sektionshäuser**
+- **Rämsenberg**: stand auf der Karte 3 km zu weit südlich. Jetzt richtig, 150 m neben der Bergstation Biel, 5 Minuten zu Fuß. Hinweis zur Seilbahn Biel-Kinzig: zwei Sektionen mit Umstieg in Riedlig, alle 20 Minuten, Mittagspause 12–13 Uhr, außerhalb der Fahrzeiten selbst bedienbar. Dazu: nur für Mitglieder, Selbstversorger, 33 Plätze (laut Sektionsseite vermieten wir derzeit an Mitglieder und Gruppen).
+- **Sandkästle**: nur für Mitglieder, Selbstversorger, 17 Plätze, Bettzeug mitbringen.
+
+**Entfernte Touren**
+- „Klettersteigrunde Hanselsteig, Felsenpfad und Leiterlsteig“ (lag in Niederösterreich, nicht im Dahner Felsenland)
+- „Schwarzsee-Runde“ (Schwarzsee bei Kitzbühel, nicht im Kanton Freiburg)
+- „A7: Silvretta-Bielerhöhe über die Saarbrücker Hütte zum Vermuntsee“ (Seite gelöscht)
+- Zwei Touren ab Bellelay im Gebiet Montoz („Wertvolle Baukunst …“, „Zum lebendigen Hochmoor …“), ohne Bezug zu Tavannes
+
+**Weiteres**
+- Neue Hütte: Mutthornhütte (SAC Weissenstein, Neubau 2025) im Gebiet Kandersteg.
+- Haltestellen: „Dahn, Stadtmitte“ statt Dahn Süd (dort fährt außerhalb der Wieslauterbahn nichts), „Badenweiler, Oberweiler“ statt Badenweiler Schule (am Wochenende keine Busse), neue Haltestelle „Im Fang, Praz-Jean“ für die Cabane des Marindes.
+- 19 Haltestellen werden nur im Sommer bedient, etwa Griesalp, Grimsel Hospiz, Spielmannsau, Lünerseebahn, Zugertal, Col de la Schlucht und Bielerhöhe. Die Seite kennt diese Zeiträume jetzt; wo nur „Sommer“ belegt war, sind die Daten ungefähr und als solche gekennzeichnet.
+- Für 31 Hütten sind Bewirtschaftungszeiten oder Winterräume eingetragen, elf Gebiete mit Winterzielen gelten jetzt als ganzjährig.
+- 20 Gebietstexte korrigiert, unter anderem Kandersteg (fünf statt drei SAC-Hütten), Oberstdorf, Blaubeuren und Walensee.
