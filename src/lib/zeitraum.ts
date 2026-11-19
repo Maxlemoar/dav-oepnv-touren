@@ -27,11 +27,15 @@ export function naechteText(n: number): string {
 /** Suchparameter, die den Zeitraum tragen und deshalb in internen Links mitwandern. */
 export const ZEITRAUM_PARAMETER = ['datum', 'rueck', 'fenster'] as const
 
-/** "?datum=…&rueck=…&fenster=…" mit den gesetzten Zeitraum-Parametern, sonst "". */
-export function zeitraumQuery(sp: URLSearchParams): string {
+/**
+ * "?datum=…&rueck=…&fenster=…" mit den gesetzten Zeitraum-Parametern, sonst "".
+ * Mit `datumStandard` (dem auf der Seite verwendeten Hin-Datum) wird datum ausdrücklich ergänzt, wenn nur rueck
+ * gesetzt ist; sonst bekäme die Zielseite ein anderes Hin-Datum, sobald sich der kommende Samstag verschiebt.
+ */
+export function zeitraumQuery(sp: URLSearchParams, datumStandard?: string): string {
   const neu = new URLSearchParams()
   for (const k of ZEITRAUM_PARAMETER) {
-    const v = sp.get(k)
+    const v = sp.get(k) || (k === 'datum' && sp.get('rueck') ? datumStandard : undefined)
     if (v) neu.set(k, v)
   }
   const q = neu.toString()

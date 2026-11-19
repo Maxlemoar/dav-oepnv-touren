@@ -22,7 +22,10 @@ export function useZeitraum(mindestNaechte: number) {
 
 type LinkProps = { href: string; className?: string; children: ReactNode }
 
-/** Interner Link, der den Zeitraum der aktuellen Seite mitnimmt. Ohne JavaScript bzw. bis zur Hydration ohne Zeitraum. */
+/**
+ * Interner Link, der den Zeitraum der aktuellen Seite mitnimmt. Ohne JavaScript bzw. bis zur Hydration ohne Zeitraum.
+ * Nur gesetzte Parameter wandern mit; ist rueck ohne datum gesetzt, wird datum ergänzt.
+ */
 export function ZeitraumLink(props: LinkProps) {
   return (
     <Suspense fallback={<Link href={props.href} className={props.className}>{props.children}</Link>}>
@@ -33,7 +36,8 @@ export function ZeitraumLink(props: LinkProps) {
 
 function ZeitraumLinkInnen({ href, className, children }: LinkProps) {
   const sp = useSearchParams()
-  return <Link href={mitZeitraum(href, zeitraumQuery(sp))} className={className}>{children}</Link>
+  // Steht nur rueck in der URL, geht das hier verwendete Hin-Datum ausdrücklich mit (Hin- und Rückdatum bleiben zusammen).
+  return <Link href={mitZeitraum(href, zeitraumQuery(sp, zeitraumAusUrl(sp, 0).datum))} className={className}>{children}</Link>
 }
 
 type PillProps = {

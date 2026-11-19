@@ -51,6 +51,15 @@ describe('zeitraumQuery', () => {
   it('lässt leere Werte weg', () => {
     expect(zeitraumQuery(new URLSearchParams('datum=&rueck=2026-11-29'))).toBe('?rueck=2026-11-29')
   })
+  it('gibt das verwendete Hin-Datum ausdrücklich mit, wenn nur rueck gesetzt ist', () => {
+    expect(zeitraumQuery(new URLSearchParams('rueck=2026-11-29'), '2026-11-28')).toBe('?datum=2026-11-28&rueck=2026-11-29')
+    expect(zeitraumQuery(new URLSearchParams('datum=&rueck=2026-11-29&fenster=240'), '2026-11-28'))
+      .toBe('?datum=2026-11-28&rueck=2026-11-29&fenster=240')
+  })
+  it('lässt ein gesetztes Datum stehen und ergänzt ohne rueck nichts', () => {
+    expect(zeitraumQuery(new URLSearchParams('datum=2026-12-05&rueck=2026-12-06'), '2026-11-28')).toBe('?datum=2026-12-05&rueck=2026-12-06')
+    expect(zeitraumQuery(new URLSearchParams('fenster=240'), '2026-11-28')).toBe('?fenster=240')
+  })
 })
 
 describe('mitZeitraum', () => {
