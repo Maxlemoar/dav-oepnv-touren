@@ -10,6 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "richtwerte": "tsx scripts/richtwerte.ts",
+    "musterfahrplan": "tsx scripts/musterfahrplan.ts",
     "karte": "tsx scripts/karte.ts",
     "rauchtest": "tsx scripts/rauchtest.ts",
     "pruefliste": "tsx scripts/pruefliste.ts",
