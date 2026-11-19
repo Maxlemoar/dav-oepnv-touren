@@ -31,6 +31,9 @@ npm run richtwerte                 # Fahrzeit, Umstiege, Takt, Ticket, Distanzen
 npm run richtwerte -- --nur kandersteg
 npm run richtwerte -- --fehlend          # nur neue Haltestellen
 npm run richtwerte -- --datum 2026-09-19
+npm run richtwerte -- --nur-tagesfenster # früheste Ankunft und letzte Rückfahrt (Tagesziel-Urteil der Startseite)
+                                   # an Fr, Sa, So bis liveBis aus content/fahrplan.yaml; Hauptzugänge × sichtbare Startorte,
+                                   # etwa 500 Anfragen, zwei parallel. Tage vorgeben: --werktag/--sa/--so JJJJ-MM-TT
 npm run karte                      # public/karte.json neu erzeugen
 npm run bahn-ids                   # bahn.de-Bahnhofsdaten (Feld `bahn`) für Startorte und Haltestellen ohne dieses Feld
 npm run bahn-ids -- --alle         # … für alle neu; --nur <id> für einen Eintrag. Ohne `bahn` fällt der Buchungslink auf eine Namenssuche zurück
