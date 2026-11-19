@@ -116,11 +116,6 @@ function typisch(a: FahrtenAnfrage, zusatz: { fehlerArt?: FehlerArt; hinweis?: s
   }
 }
 
-function liveBisHinweis(liveBis: string): string {
-  const [, m, t] = liveBis.split('-')
-  return `Typische Zeiten, nach dem Fahrplan bis ${Number(t)}.${Number(m)}.; Verbindung am Datum auf der Ortsseite prüfen`
-}
-
 /** Kürzeste Live-Hinfahrt minus kürzeste typische Hinfahrt ab abMin; nur ab 30 Minuten. */
 function abweichung(live: FahrtLive[], muster: Fahrt[] | undefined, abMin: number): number | undefined {
   const passend = live.filter((f) => f.lage === 'passend')
@@ -143,7 +138,7 @@ export async function fahrtenErmitteln(
     if (!bedientAm(a.haltestelle, z.datum)) {
       return { ...typisch(a, { fehlerArt: 'keine_verbindung', hinweis: a.haltestelle.bedientHinweis ?? SAISON_HINWEIS }), hin: [], rueckfahrten: [] }
     }
-    return typisch(a, { fehlerArt: 'fahrplan_noch_nicht_verfuegbar', hinweis: liveBisHinweis(fahrplan.liveBis) })
+    return typisch(a, { fehlerArt: 'fahrplan_noch_nicht_verfuegbar', hinweis: fahrplan.hinweis })
   }
 
   const start = { lat: a.startort.lat, lon: a.startort.lon }

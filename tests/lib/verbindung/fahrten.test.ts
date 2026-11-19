@@ -68,10 +68,10 @@ describe('fahrtenErmitteln', () => {
       hin: [{ ab: '06:12', an: '09:41', umstiege: 1, via: ['Basel'], fern: false }],
       rueck: [{ ab: '17:00', an: '20:30', umstiege: 1, via: [], fern: false }],
     }
-    const a = await fahrtenErmitteln({ startort, haltestelle, z: { ...z, datum: '2027-01-09', rueck: '2027-01-09' }, tickets, muster, heute: '2026-09-06', fahrplan: { liveBis: '2026-12-12', hinweis: 'x' } }, { planen })
+    const a = await fahrtenErmitteln({ startort, haltestelle, z: { ...z, datum: '2027-01-09', rueck: '2027-01-09' }, tickets, muster, heute: '2026-09-06', fahrplan: { liveBis: '2026-12-12', hinweis: 'Fahrplan ab 13.12. fehlt noch.' } }, { planen })
     expect(planen).not.toHaveBeenCalled()
     expect(a.quelle).toBe('typisch')
-    expect(a.hinweis).toContain('Verbindung am Datum auf der Ortsseite prüfen')
+    expect(a.hinweis).toBe('Fahrplan ab 13.12. fehlt noch.')
     expect(a.hin).toHaveLength(1)
     expect(a.hin[0]).toMatchObject({ ab: '2027-01-09T05:12:00Z', an: '2027-01-09T08:41:00Z', dauerMin: 209, abschnitte: [], via: ['Basel'], lage: 'passend' })
     expect(a.rueckfahrten[0].lage).toBe('passend')

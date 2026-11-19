@@ -49,4 +49,10 @@ describe('GET /api/fahrten', () => {
     const r = await GET(new Request('http://x/api/fahrten?von=offenburg&nach=kandersteg&weiter=hin'))
     expect(r.status).toBe(400)
   })
+  it('antwortet bei fehlgeschlagenem Nachladen mit 502 und kurzem Cache', async () => {
+    vi.mocked(weitereFahrten).mockRejectedValue(new Error('Transitous HTTP 503'))
+    const r = await GET(new Request('http://x/api/fahrten?von=offenburg&nach=kandersteg&weiter=hin&zeit=2026-09-12T05:12:00Z'))
+    expect(r.status).toBe(502)
+    expect(r.headers.get('Cache-Control')).toBe('public, s-maxage=300')
+  })
 })

@@ -34,7 +34,7 @@ export async function GET(req: Request) {
       const fahrten = await weitereFahrten({ startort, haltestelle, richtung: p.wert.weiter, zeitIso: p.wert.zeit, z })
       return NextResponse.json({ fahrten }, { headers: { 'Cache-Control': CACHE_LIVE } })
     } catch (e) {
-      return NextResponse.json({ fehler: (e as Error).message }, { status: 502, headers: { 'Cache-Control': 'no-store' } })
+      return NextResponse.json({ fehler: (e as Error).message }, { status: 502, headers: { 'Cache-Control': CACHE_KURZ } })
     }
   }
 
