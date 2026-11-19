@@ -1,14 +1,19 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { parseVerbindungParameter } from '@/lib/verbindung/parameter'
 import { GET } from '@/app/api/verbindung/route'
 import { verbindungErmitteln, type VerbindungAntwort } from '@/lib/verbindung/service'
 
-vi.mock('@/lib/verbindung/service', () => ({
-  verbindungErmitteln: vi.fn(async (): Promise<VerbindungAntwort> => ({
-    quelle: 'richtwert', datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', naechte: 0,
-    ticket: { ticket: 'halbtax', hinweis: 'CH' }, fehler: 'Test',
-  })),
-}))
+const richtwertAntwort: VerbindungAntwort = {
+  quelle: 'richtwert', datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', naechte: 0,
+  ticket: { ticket: 'halbtax', hinweis: 'CH' }, fehler: 'Test',
+}
+const liveAntwort: VerbindungAntwort = {
+  quelle: 'live', datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', naechte: 0, ticket: { ticket: 'halbtax', hinweis: 'CH' },
+}
+
+vi.mock('@/lib/verbindung/service', () => ({ verbindungErmitteln: vi.fn() }))
+
+beforeEach(() => { vi.mocked(verbindungErmitteln).mockReset(); vi.mocked(verbindungErmitteln).mockResolvedValue(richtwertAntwort) })
 
 describe('parseVerbindungParameter', () => {
   it('liest gültige Parameter mit Standardwerten', () => {
@@ -55,13 +60,11 @@ describe('GET /api/verbindung', () => {
     expect((await r.json()).fehler).toMatch(/rueck/)
   })
   it('reicht rueck als rueckfahrtDatum an den Dienst durch', async () => {
-    vi.mocked(verbindungErmitteln).mockClear()
     const r = await GET(new Request('http://x/api/verbindung?von=offenburg&nach=kandersteg&datum=2026-09-11&rueck=2026-09-13'))
     expect(r.status).toBe(200)
     expect(vi.mocked(verbindungErmitteln).mock.calls[0][0]).toMatchObject({ datum: '2026-09-11', rueckfahrtDatum: '2026-09-13' })
   })
   it('setzt rueckfahrtDatum ohne rueck auf das Datum', async () => {
-    vi.mocked(verbindungErmitteln).mockClear()
     await GET(new Request('http://x/api/verbindung?von=offenburg&nach=kandersteg&datum=2026-09-12'))
     expect(vi.mocked(verbindungErmitteln).mock.calls[0][0]).toMatchObject({ datum: '2026-09-12', rueckfahrtDatum: '2026-09-12' })
   })
@@ -69,10 +72,31 @@ describe('GET /api/verbindung', () => {
     const r = await GET(new Request('http://x/api/verbindung?von=offenburg&nach=nirgendwo&datum=2026-09-12'))
     expect(r.status).toBe(404)
   })
-  it('setzt CDN-Cache-Header bei Erfolg', async () => {
+  it('speichert Live-Antworten einen Tag', async () => {
+    vi.mocked(verbindungErmitteln).mockResolvedValue(liveAntwort)
     const r = await GET(new Request('http://x/api/verbindung?von=offenburg&nach=kandersteg&datum=2026-09-12'))
     expect(r.status).toBe(200)
     expect(r.headers.get('Cache-Control')).toBe('public, s-maxage=86400, stale-while-revalidate=3600')
-    expect((await r.json()).quelle).toBe('richtwert')
+    expect((await r.json()).quelle).toBe('live')
+  })
+  it('speichert Richtwert-Antworten nur fünf Minuten', async () => {
+    vi.mocked(verbindungErmitteln).mockResolvedValue({ ...richtwertAntwort, fehler: undefined, fehlerArt: 'fahrplan_noch_nicht_verfuegbar' })
+    const r = await GET(new Request('http://x/api/verbindung?von=offenburg&nach=kandersteg&datum=2026-09-12'))
+    expect(r.headers.get('Cache-Control')).toBe('public, s-maxage=300')
+  })
+  it('speichert Live-Antworten mit Fehler nur fünf Minuten', async () => {
+    vi.mocked(verbindungErmitteln).mockResolvedValue({ ...liveAntwort, fehler: 'Transitous HTTP 503' })
+    const r = await GET(new Request('http://x/api/verbindung?von=offenburg&nach=kandersteg&datum=2026-09-12'))
+    expect(r.headers.get('Cache-Control')).toBe('public, s-maxage=300')
+  })
+  it('gibt heute (Europe/Berlin) und die Fahrplangrenze an den Dienst', async () => {
+    vi.useFakeTimers({ toFake: ['Date'] })
+    vi.setSystemTime(new Date('2026-11-19T23:30:00Z')) // in Berlin schon der 20.
+    try {
+      await GET(new Request('http://x/api/verbindung?von=offenburg&nach=kandersteg&datum=2026-11-21'))
+    } finally { vi.useRealTimers() }
+    const anfrage = vi.mocked(verbindungErmitteln).mock.calls[0][0]
+    expect(anfrage.heute).toBe('2026-11-20')
+    expect(anfrage.fahrplan?.liveBis).toMatch(/^\d{4}-\d{2}-\d{2}$/)
   })
 })
