@@ -10,7 +10,7 @@ export type Bewertungen = {
   orte: Ausgangsort[]
   strecken: Record<string, Linie[]>
   liveBis?: string
-  /** Schlüssel: Gebiets-id. `null` ohne gewähltes Datum, beim Laden und nach einem Ladefehler. */
+  /** Schlüssel: Gebiets-id. `null` ohne gewähltes Datum, beim Laden und wenn die Ausgangsorte nicht laden. */
   bewertungen: Record<string, Bewertung> | null
   laedt: boolean
 }
@@ -33,7 +33,7 @@ function lade(pfad: string): Promise<unknown> {
   return p
 }
 
-function ohne(f: Record<string, true>, pfad: string): Record<string, true> {
+function ohne<T>(f: Record<string, T>, pfad: string): Record<string, T> {
   if (!(pfad in f)) return f
   const neu = { ...f }
   delete neu[pfad]
@@ -45,14 +45,17 @@ const KEINE_STRECKEN: Record<string, Linie[]> = {}
 
 /**
  * Lädt Ausgangsorte und die nötigen Tagespläne (Klasse von `datum` und `rueck`) und bewertet alle Orte im Browser.
- * Tagespläne werden erst mit gewähltem Datum geladen. Wirft nie: bei einem Ladefehler bleiben Orte und Bewertungen leer.
+ * Tagespläne werden erst mit gewähltem Datum geladen. Wirft nie: scheitern die Ausgangsorte, bleiben Orte und Bewertungen
+ * leer; scheitert nur ein Tagesplan, bleiben die Orte und jeder bekommt "keine Fahrplandaten".
  */
 export function useBewertungen(z: Zeitfenster & { gewaehlt: boolean }): Bewertungen {
   const { datum, rueck, abMin, bisMin, vorOrtMin, gewaehlt } = z
   const klassen = useMemo(() => [...new Set([tagesklasse(datum), tagesklasse(rueck)])], [datum, rueck])
   const pfade = useMemo(() => [AUSGANGSORTE, ...(gewaehlt ? klassen.map(tagesplanPfad) : [])], [gewaehlt, klassen])
   const [geladen, setGeladen] = useState<Record<string, unknown>>({})
-  const [fehler, setFehler] = useState<Record<string, true>>({})
+  // Fehlschlag je Pfad, vermerkt mit dem Versuch (`pfade`), in dem er auftrat. Ein neuer Versuch (andere `pfade`, `lade`
+  // fragt die gescheiterte Datei neu an) zählt alte Fehlschläge nicht mehr: der Pfad lädt wieder, statt gescheitert zu sein.
+  const [fehler, setFehler] = useState<Record<string, readonly string[]>>({})
 
   useEffect(() => {
     let aktiv = true
@@ -63,20 +66,22 @@ export function useBewertungen(z: Zeitfenster & { gewaehlt: boolean }): Bewertun
           setGeladen((g) => (pfad in g ? g : { ...g, [pfad]: d }))
           setFehler((f) => ohne(f, pfad)) // ein erneuter Versuch nach einem Fehler war erfolgreich
         },
-        () => { if (aktiv) setFehler((f) => (pfad in f ? f : { ...f, [pfad]: true })) },
+        () => { if (aktiv) setFehler((f) => (f[pfad] === pfade ? f : { ...f, [pfad]: pfade })) },
       )
     }
     return () => { aktiv = false }
   }, [pfade])
 
-  const hatFehler = pfade.some((p) => fehler[p])
-  const fertig = !hatFehler && pfade.every((p) => p in geladen)
-  const datei = hatFehler ? undefined : (geladen[AUSGANGSORTE] as AusgangsortDatei | undefined)
+  const gescheitert = (p: string) => fehler[p] === pfade
+  // Fertig, wenn jede Datei geladen oder in diesem Versuch gescheitert ist.
+  const fertig = pfade.every((p) => p in geladen || gescheitert(p))
+  const datei = gescheitert(AUSGANGSORTE) ? undefined : (geladen[AUSGANGSORTE] as AusgangsortDatei | undefined)
 
   const bewertungen = useMemo(() => {
     if (!gewaehlt || !fertig || !datei) return null
     const plaene: Partial<Record<Tagesklasse, Record<string, Tagesplan>>> = {}
-    for (const k of klassen) plaene[k] = geladen[tagesplanPfad(k)] as Record<string, Tagesplan>
+    // Ein gescheiterter Tagesplan fehlt hier; bewerteAlle meldet dann "keine Fahrplandaten".
+    for (const k of klassen) plaene[k] = geladen[tagesplanPfad(k)] as Record<string, Tagesplan> | undefined
     return bewerteAlle(datei.orte, plaene, { datum, rueck, abMin, bisMin, vorOrtMin })
   }, [gewaehlt, fertig, datei, klassen, geladen, datum, rueck, abMin, bisMin, vorOrtMin])
 
@@ -85,6 +90,6 @@ export function useBewertungen(z: Zeitfenster & { gewaehlt: boolean }): Bewertun
     strecken: datei?.strecken ?? KEINE_STRECKEN,
     liveBis: datei?.liveBis,
     bewertungen,
-    laedt: !hatFehler && !fertig,
+    laedt: !fertig,
   }
 }

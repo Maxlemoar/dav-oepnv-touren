@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
-  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit,
+  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit, schnellwahl,
   STANDARD_ZEITFENSTER, ZEITBAND, VOR_ORT_MAX_MIN, ZEITFENSTER_PARAMETER,
 } from '@/lib/zeitfenster'
 
@@ -175,5 +175,20 @@ describe('Kalenderprüfung und gewaehlt', () => {
     const sp = new URLSearchParams('datum=2026-11-28&rueck=2026-11-29&x=1')
     const aus = zeitfensterSchreiben(sp, { datum: '2026-11-21', rueck: '2026-11-22', abMin: 420, bisMin: 1260, vorOrtMin: 240 }, { ohneDatum: true })
     expect(aus.toString()).toBe('x=1&ab=07%3A00')
+  })
+})
+
+describe('schnellwahl', () => {
+  it('kommender Samstag und Sonntag mit kurzem Label', () => {
+    expect(schnellwahl('2026-11-19')).toEqual([
+      { label: 'Sa 21.11.', datum: '2026-11-21' },
+      { label: 'So 22.11.', datum: '2026-11-22' },
+    ])
+  })
+  it('beginnt an einem Samstag mit heute', () => {
+    expect(schnellwahl('2026-11-21')).toEqual([
+      { label: 'Sa 21.11.', datum: '2026-11-21' },
+      { label: 'So 22.11.', datum: '2026-11-22' },
+    ])
   })
 })

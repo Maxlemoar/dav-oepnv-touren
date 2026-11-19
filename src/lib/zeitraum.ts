@@ -1,4 +1,5 @@
 import { tageAddieren } from '@/lib/datum'
+import { ZEITFENSTER_PARAMETER } from '@/lib/zeitfenster'
 
 export type ZeitraumVorschlag = { label: string; datum: string; rueck: string }
 
@@ -24,17 +25,15 @@ export function naechteText(n: number): string {
   return `${n} ${n === 1 ? 'Nacht' : 'Nächte'}`
 }
 
-/** Suchparameter, die den Zeitraum tragen und deshalb in internen Links mitwandern. */
-export const ZEITRAUM_PARAMETER = ['datum', 'rueck', 'fenster'] as const
-
 /**
- * "?datum=…&rueck=…&fenster=…" mit den gesetzten Zeitraum-Parametern, sonst "".
+ * "?datum=…&rueck=…&ab=…&bis=…&vorort=…" mit den gesetzten Zeitfenster-Parametern (`ZEITFENSTER_PARAMETER`), sonst "".
+ * Das alte `fenster` wandert nicht mehr mit.
  * Mit `datumStandard` (dem auf der Seite verwendeten Hin-Datum) wird datum ausdrücklich ergänzt, wenn nur rueck
  * gesetzt ist; sonst bekäme die Zielseite ein anderes Hin-Datum, sobald sich der kommende Samstag verschiebt.
  */
 export function zeitraumQuery(sp: URLSearchParams, datumStandard?: string): string {
   const neu = new URLSearchParams()
-  for (const k of ZEITRAUM_PARAMETER) {
+  for (const k of ZEITFENSTER_PARAMETER) {
     const v = sp.get(k) || (k === 'datum' && sp.get('rueck') ? datumStandard : undefined)
     if (v) neu.set(k, v)
   }

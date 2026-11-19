@@ -1,4 +1,4 @@
-import { lokalesDatum, naechsterSamstag, tageDifferenz } from '@/lib/datum'
+import { datumKurz, lokalesDatum, naechsterSamstag, tageAddieren, tageDifferenz } from '@/lib/datum'
 import { rueckAnheben } from '@/lib/zeitraum'
 
 /** Reine, browsersichere Helfer (kein zod): das Zeitfenster einer Tour in der Seiten-URL. */
@@ -35,6 +35,12 @@ export function alsMin(hhmm: string): number | undefined {
 /** 390 → "6:30", 1440 → "24:00". */
 export function alsUhrzeit(min: number): string {
   return `${Math.floor(min / 60)}:${String(min % 60).padStart(2, '0')}`
+}
+
+/** Schnellwahl der Startseite: kommender Samstag (an einem Samstag heute) und der Sonntag danach, Label "Sa 21.11.". */
+export function schnellwahl(heute: string): { label: string; datum: string }[] {
+  const samstag = naechsterSamstag(new Date(`${heute}T12:00:00Z`))
+  return [samstag, tageAddieren(samstag, 1)].map((datum) => ({ label: datumKurz(datum), datum }))
 }
 
 export function naechte(z: Pick<Zeitfenster, 'datum' | 'rueck'>): number {
