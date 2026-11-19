@@ -12,8 +12,9 @@ regeln:
     gruppenHinweis: Ab 10 Personen gibt es bei der SBB ein Gruppenbillett mit 30 % Rabatt, auch auf den Halbtax-Preis. Anmeldung mindestens 2 Arbeitstage vorher.
     gruppenQuelle: https://www.sbb.ch/de/angebote/gruppenbillette-schweiz
   - land: FR
-    ticket: europass
-    hinweis: Europass 24 h ab Kehl gilt für Bahn und Bus im Elsass. Bis Kehl Deutschlandticket.
+    ticket: keins
+    # Europass gilt nur im Tarifverbund Ortenau und in der Eurométropole Strasbourg (ortenaulinie.de, bahnhofoffenburg.de/regionaltarife, Stand 19.11.2026)
+    hinweis: Bis Kehl gilt das Deutschlandticket, bis Straßburg auch der Europass 24 h. Ab Straßburg braucht es eine TER-Fahrkarte von TER Grand Est, der Europass gilt nicht in den Vogesen.
     # TER Grand Est, Pass Groupe Week-End (Seite sperrt automatische Abrufe; Angaben per Websuche 19.11.2026)
     gruppenHinweis: Ab Strasbourg gilt für 2 bis 5 Personen der Pass Groupe Week-End von TER Grand Est, samstags, sonntags und an Feiertagen einen Tag lang.
     gruppenQuelle: https://www.ter.sncf.com/grand-est/tarifs-cartes/tarifs-regionaux/pass-groupe-week-end
