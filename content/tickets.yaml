@@ -2,13 +2,25 @@ regeln:
   - land: DE
     ticket: deutschlandticket
     hinweis: Deutschlandticket gilt in allen Nahverkehrszügen und Bussen dieser Verbindung.
+    # bahn.de, Gruppenpreis Deutschlandtarif, geprüft 19.11.2026
+    gruppenHinweis: Wer kein Deutschlandticket hat, fährt ab 6 Personen mit dem Gruppenpreis der DB 50 % günstiger im Nahverkehr.
+    gruppenQuelle: https://www.bahn.de/angebot/gruppen/gruppenpreis-deutschlandtarif
   - land: CH
     ticket: halbtax
     hinweis: Bis Basel Bad Bf gilt das Deutschlandticket, ab dort SBB-Tarif. Halbtax lohnt sich ab der zweiten Fahrt, Schnupper-Halbtax für einen Monat.
+    # sbb.ch, Gruppenbillette Schweiz, geprüft 19.11.2026
+    gruppenHinweis: Ab 10 Personen gibt es bei der SBB ein Gruppenbillett mit 30 % Rabatt, auch auf den Halbtax-Preis. Anmeldung mindestens 2 Arbeitstage vorher.
+    gruppenQuelle: https://www.sbb.ch/de/angebote/gruppenbillette-schweiz
   - land: FR
     ticket: europass
     hinweis: Europass 24 h ab Kehl gilt für Bahn und Bus im Elsass. Bis Kehl Deutschlandticket.
+    # TER Grand Est, Pass Groupe Week-End (Seite sperrt automatische Abrufe; Angaben per Websuche 19.11.2026)
+    gruppenHinweis: Ab Strasbourg gilt für 2 bis 5 Personen der Pass Groupe Week-End von TER Grand Est, samstags, sonntags und an Feiertagen einen Tag lang.
+    gruppenQuelle: https://www.ter.sncf.com/grand-est/tarifs-cartes/tarifs-regionaux/pass-groupe-week-end
   - land: AT
     ticket: keins
     hinweis: Sparpreis Europa der DB oder Sparschiene der ÖBB, früh buchen.
+    # bahn.de, Sparpreis Europa Gruppe Österreich, geprüft 19.11.2026
+    gruppenHinweis: Ab 6 Personen bietet die DB den Sparpreis Europa Gruppe Österreich an, mit Zugbindung im Fernverkehr.
+    gruppenQuelle: https://www.bahn.de/angebot/gruppen/sparpreis-europa-gruppe-oesterreich
 fernverkehrHinweis: Diese Verbindung nutzt Fernverkehr (ICE/EC). Dort gilt das Deutschlandticket nicht, Alternative über den Nahverkehr dauert länger.

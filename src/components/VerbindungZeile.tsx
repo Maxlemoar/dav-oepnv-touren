@@ -7,7 +7,10 @@ import { datumKurz, lokaleUhrzeit, minutenAlsDauer, tageDifferenz, wochentagKurz
 import { zeitraumAusUrl } from '@/lib/verbindung/url'
 import { naechteText } from '@/lib/zeitraum'
 import { fahrplanLink, rueckfahrtLink } from '@/lib/links'
+import { spaetestensLos, spaetestensZurueck } from '@/lib/rueckfahrt'
+import type { GruppenHinweis } from '@/lib/teilen'
 import { TageszielBadge, TicketBadge } from './Badges'
+import { EinladenKnopf } from './EinladenKnopf'
 import { VerbindungDetail } from './VerbindungDetail'
 
 // Allgemeiner Saisontext aus service.ts (SAISON_HINWEIS); hier kopiert, weil service.ts nicht in den Browser darf.
@@ -19,11 +22,17 @@ type Props = {
   nach: { id: string; name: string; land: Land; bahn?: BahnOrt }
   /** Hütte 1 (Rückfahrt frühestens am Folgetag), Gebiet 0. */
   mindestNaechte: 0 | 1
-  /** Gehzeit bis zur Hütte, für "an der Hütte gegen …" */
+  /** Gehzeit bis zur Hütte, für "an der Hütte gegen …" und den Rückfahrt-Rechner */
   zustiegMin?: number
+  /** Zustieg mit Bergbahn: Hinweis auf deren letzte Talfahrt. */
+  bergbahn?: boolean
+  /** Name der Hütte für den Einladungstext. */
+  huetteName?: string
+  /** Gruppenhinweis des Ziellands (content/tickets.yaml). */
+  gruppe?: GruppenHinweis
 }
 
-export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin }: Props) {
+export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbahn, huetteName, gruppe }: Props) {
   const sp = useSearchParams()
   const { datum, rueck, fenster } = zeitraumAusUrl(sp, mindestNaechte)
   // Antwort wird mit ihrer Anfrage gespeichert; passt sie nicht mehr, zeigt die Zeile das Skeleton.
@@ -139,9 +148,21 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin }: Props
           {antwort.tourenfensterMin !== undefined && <> · <span className="zahl">{minutenAlsDauer(antwort.tourenfensterMin)}</span> am Berg</>}
         </div>
       )}
-      <button type="button" onClick={() => setOffen((o) => !o)} className="min-h-11 text-sm text-tanne underline" aria-expanded={offen}>
-        {offen ? 'Details ausblenden' : 'Umstiege und Ticket'}
-      </button>
+      {antwort.rueckfahrt && (
+        <RueckfahrtRechner rueckAb={antwort.rueckfahrt.ab} haltestelle={nach.name}
+          zustieg={mindestNaechte >= 1 && zustiegMin !== undefined ? { gehzeitMin: zustiegMin, bergbahn } : undefined} />
+      )}
+      <div className="flex flex-wrap items-center gap-x-4">
+        <button type="button" onClick={() => setOffen((o) => !o)} className="min-h-11 text-sm text-tanne underline" aria-expanded={offen}>
+          {offen ? 'Details ausblenden' : 'Umstiege und Ticket'}
+        </button>
+        <EinladenKnopf einladung={{
+          startort: von.name, ziel: nach.name, ...(huetteName && { huette: huetteName }),
+          datum, ab: h.ab, an: h.an, rueckDatum: antwort.rueckfahrtDatum,
+          ...(antwort.rueckfahrt && { rueckAb: antwort.rueckfahrt.ab }),
+          ...(gruppe && { gruppenHinweis: gruppe.hinweis }),
+        }} />
+      </div>
       {offen && (
         <div className="space-y-3 rounded-[var(--radius-knopf)] bg-papier p-3">
           <VerbindungDetail titel="Hinfahrt" v={h} link={{ href: hinfahrtUrl, text: `Hinfahrt bei ${portal}` }} />
@@ -150,6 +171,12 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin }: Props
           )}
           {antwort.rueckfahrt && <VerbindungDetail titel="Rückfahrt" v={antwort.rueckfahrt} link={{ href: rueckfahrtUrl, text: `Rückfahrt bei ${portal}` }} />}
           <p className="text-sm text-tinte-2">{antwort.ticket.hinweis}</p>
+          {gruppe && (
+            <p className="text-sm text-tinte-2">
+              <span className="font-medium text-tinte">Zu mehreren:</span> {gruppe.hinweis}
+              {gruppe.quelle && <> <a href={gruppe.quelle} target="_blank" rel="noreferrer" className="underline">Mehr dazu</a></>}
+            </p>
+          )}
           <div className="flex flex-col gap-2 sm:flex-row">
             <a href={hinfahrtUrl} target="_blank" rel="noreferrer" className="knopf-sekundaer w-full sm:w-auto">Hinfahrt bei {portal}</a>
             <a href={rueckfahrtUrl} target="_blank" rel="noreferrer" className="knopf-sekundaer w-full sm:w-auto">Rückfahrt bei {portal}</a>
@@ -157,6 +184,29 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin }: Props
         </div>
       )}
     </div>
+  )
+}
+
+/**
+ * Rückfahrt-Rechner aus der Live-Rückfahrt: auf Gebietsseiten "spätestens zurück an der Haltestelle", auf
+ * Hüttenseiten zusätzlich der späteste Abmarsch an der Hütte (Abstieg 70 % des Aufstiegs plus Puffer).
+ */
+function RueckfahrtRechner({ rueckAb, haltestelle, zustieg }: { rueckAb: string; haltestelle: string; zustieg?: { gehzeitMin: number; bergbahn?: boolean } }) {
+  if (!zustieg) {
+    return (
+      <p className="text-sm text-tinte">
+        <span aria-hidden>⏱</span> Spätestens um <span className="zahl">{spaetestensZurueck(rueckAb)}</span> zurück an der Haltestelle {haltestelle}, das ist die letzte Rückfahrt.
+      </p>
+    )
+  }
+  const s = spaetestensLos(rueckAb, zustieg)
+  return (
+    <p className="text-sm text-tinte">
+      <span aria-hidden>⏱</span> Spätestens um <span className="zahl">{s.haltestelleUm}</span> an der Haltestelle sein → an der Hütte
+      spätestens ca. <span className="zahl">{s.losUm}</span> losgehen
+      <span className="text-tinte-2"> ({s.abstiegMin > 0 && <>Abstieg ca. {minutenAlsDauer(s.abstiegMin)} + </>}{s.pufferMin} min Puffer)</span>.
+      {s.bergbahnPruefen && <> Letzte Talfahrt der Bahn prüfen, sie kann früher sein.</>}
+    </p>
   )
 }
 

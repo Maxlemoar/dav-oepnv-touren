@@ -3,9 +3,14 @@ import { Fragment, Suspense } from 'react'
 import { inhalt, findeGebiet, findeHaltestelle, huettenImGebiet, sichtbareStartorte } from '@/lib/content/laden'
 import { SAISON_LABEL, SPORTART_LABEL } from '@/lib/content/labels'
 import { co2ErsparnisKg } from '@/lib/co2'
+import { lawinendienste, lawinenRelevant } from '@/lib/lawinen'
+import { gruppenHinweisFuer } from '@/lib/teilen'
 import { Co2Zeile } from '@/components/Co2Zeile'
 import { FehlerMelden } from '@/components/FehlerMelden'
 import { HuetteKarte } from '@/components/HuetteKarte'
+import { KostenZeile } from '@/components/KostenZeile'
+import { LawinenHinweis } from '@/components/LawinenHinweis'
+import { WetterZeile } from '@/components/WetterZeile'
 import { BedientHinweis } from '@/components/HuettenZustand'
 import { ZeitraumLink, ZeitraumPill } from '@/components/Zeitraum'
 import { TourEmbed } from '@/components/TourEmbed'
@@ -34,6 +39,8 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
   if (!gebiet) notFound()
   const startort = sichtbareStartorte(i)[0]
   const huetten = huettenImGebiet(i, gebiet.id)
+  const haltestellen = gebiet.haltestellen.map((hid) => findeHaltestelle(i, hid)!)
+  const dienste = lawinenRelevant({ sportarten: gebiet.sportarten }) ? lawinendienste(haltestellen) : []
 
   return (
     <article className="mx-auto max-w-2xl space-y-6">
@@ -47,23 +54,26 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
           <span className="badge bg-nebel">{SAISON_LABEL[gebiet.saison]}</span>
         </div>
         <div className="mt-4"><ZeitraumPill mindestNaechte={0} saison={gebiet.saison} /></div>
+        <WetterZeile ort={{ gebiet: gebiet.id }} mindestNaechte={0} className="mt-3" />
+        <LawinenHinweis dienste={dienste} mindestNaechte={0} className="mt-3" />
       </header>
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Anreise ab {startort.name}</h2>
-        {gebiet.haltestellen.map((hid) => {
-          const h = findeHaltestelle(i, hid)!
+        {haltestellen.map((h) => {
           const r = h.richtwerte[startort.id]
           return (
-            <div key={hid} className="karte-card space-y-3">
+            <div key={h.id} className="karte-card space-y-3">
               <div>
                 <div className="font-medium">Bis {h.name}</div>
                 <BedientHinweis haltestelle={h} />
               </div>
               <Suspense fallback={<div className="skeleton h-6 w-3/4" />}>
-                <VerbindungZeile von={{ id: startort.id, name: startort.name, bahn: startort.bahn }} nach={{ id: h.id, name: h.name, land: h.land, bahn: h.bahn }} mindestNaechte={0} />
+                <VerbindungZeile von={{ id: startort.id, name: startort.name, bahn: startort.bahn }} nach={{ id: h.id, name: h.name, land: h.land, bahn: h.bahn }} mindestNaechte={0}
+                  gruppe={gruppenHinweisFuer(i.tickets, h.land)} />
               </Suspense>
               {r && <Co2Zeile kg={co2ErsparnisKg({ strassenKm: r.strassenKm, bahnKm: r.bahnKm }, i.emissionen)} />}
+              {r && <KostenZeile strassenKm={r.strassenKm} ticket={r.ticket} />}
             </div>
           )
         })}

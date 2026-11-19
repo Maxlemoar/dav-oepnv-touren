@@ -90,6 +90,25 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
   wie die Startseite (`ZeitraumPill`), die das Sheet "Wann?" öffnet. Auf Hüttenseiten nur Zeiträume mit Übernachtung und
   kein Tourenfenster. Alle internen Links auf Gebiete und Hütten tragen `datum`, `rueck`, `fenster` weiter (`ZeitraumLink`,
   `zeitraumQuery`). Bis zur Hydration steht "Kommender Samstag" statt eines Datums.
+  Ist nur `rueck` gesetzt, nehmen die Links das verwendete Hin-Datum ausdrücklich mit, damit Hin- und Rückdatum zusammenbleiben.
+- **Wetterzeile** (`WetterZeile`): unter der Zeitraum-Pill je Hin- und ggf. Rückdatum eine Zeile 14 px tinte-2,
+  "🌨️ Sa 28.11. Schneeschauer · −12 bis 1 °C · 6,6 mm · Wind bis 5 km/h", darunter "Vorhersage für 1915 m von Open-Meteo"
+  (tinte-3, Pflicht-Nennung). Nur bis 14 Tage voraus (`wetterDaten`), sonst und bei Fehlern nichts; beim Laden Skeleton.
+- **Lawinenhinweis** (`LawinenHinweis`): ruhiger nebel-Kasten (Radius knopf, 14 px) "Lawinenlage vor der Tour prüfen:"
+  mit Link auf den zuständigen Dienst (SLF, Vorarlberg, Lawinen.report Tirol, Bayern). Nur für Winterziele
+  (Skitour/Schneeschuh im Gebiet oder Hütte über 1500 m) und Daten vom 1.12. bis 30.4.; Schwarzwald und Vogesen ohne.
+  Bewusst kein Warnhinweis in signal, weil er keine Tour verhindert.
+- **Rückfahrt-Rechner**: nur mit Live-Rückfahrt, eine Zeile 14 px tinte unter der Rückfahrt mit ⏱. Gebiet:
+  "Spätestens um 18:14 zurück an der Haltestelle …". Hütte: "Spätestens um 18:00 an der Haltestelle sein → an der Hütte
+  spätestens ca. 16:00 losgehen (Abstieg ca. 1:45 h + 15 min Puffer)"; Abstieg 70 % der Aufstiegs-Gehzeit, Puffer
+  mindestens 15 min, auf 5 min abgerundet (`spaetestensLos`). Bei Bergbahn: "Letzte Talfahrt der Bahn prüfen".
+- **Mitfahrende einladen**: Textknopf neben "Umstiege und Ticket" (44 px). Teilt über die Web Share API, sonst in die
+  Zwischenablage mit Rückmeldung "Einladung kopiert"; geht beides nicht, steht der Text zum Markieren da. Text aus
+  `einladungsText` mit Link auf die Seite samt Datum und dem Gruppenhinweis des Landes.
+- **Gruppenhinweis**: im aufgeklappten Verbindungsdetail unter dem Ticket-Hinweis "Zu mehreren: …" mit Link "Mehr dazu"
+  (`gruppenHinweis`/`gruppenQuelle` in `content/tickets.yaml`).
+- **Kostenzeile** (`KostenZeile`): unter der CO2-Zeile, 14 px tinte-2, "🚗 Mit dem Auto nach der Fahrtkostenregel der Sektion
+  (0,30 € pro Person und km): ca. 185 € hin und zurück." plus kurzer Ticket-Hinweis ohne Preise (`bahnTicketKurz`).
 - **Kartenlegende**: unten links in der Karte, über dem Ergebnisstreifen (Abstand = Streifenhöhe + 8 px), karte-Weiß 90 %,
   11 px. Vier Punkte in den Stufenfarben "bis 2 h / 3 h / 4 h / über 4 h", darunter ein Punkt mit dunklem Ring
   "Haus der Sektion Offenburg". Nicht klickbar.

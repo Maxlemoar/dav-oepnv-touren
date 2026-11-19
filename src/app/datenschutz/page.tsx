@@ -95,9 +95,10 @@ export default function DatenschutzSeite() {
 
       <Abschnitt titel="Wetterdaten über Open-Meteo">
         <p>
-          Demnächst zeigen wir Wetterdaten von <a href="https://open-meteo.com" className={LINK}>Open-Meteo</a> an.
-          Auch diese ruft unser Server ab, nur mit den Koordinaten des Ziels und dem Datum. Angaben über dich werden
-          dabei nicht übermittelt.
+          Für Daten bis 14 Tage voraus zeigen wir auf Gebiets- und Hüttenseiten die Vorhersage von{' '}
+          <a href="https://open-meteo.com" className={LINK}>Open-Meteo</a> an. Sie ruft unser Server ab, nur mit
+          Koordinaten und Höhe des Ziels und dem Datum. Deine IP-Adresse und andere Angaben über dich werden dabei
+          nicht übermittelt.
         </p>
       </Abschnitt>
 

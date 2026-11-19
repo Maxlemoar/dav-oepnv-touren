@@ -4,9 +4,14 @@ import { inhalt, findeHuette, findeGebiet, findeHaltestelle, sichtbareStartorte 
 import { SAISON_LABEL } from '@/lib/content/labels'
 import { co2ErsparnisKg } from '@/lib/co2'
 import { minutenAlsDauer } from '@/lib/datum'
+import { lawinendienste, lawinenRelevant } from '@/lib/lawinen'
+import { gruppenHinweisFuer } from '@/lib/teilen'
 import { BetreiberBadge } from '@/components/Badges'
 import { Co2Zeile } from '@/components/Co2Zeile'
 import { FehlerMelden } from '@/components/FehlerMelden'
+import { KostenZeile } from '@/components/KostenZeile'
+import { LawinenHinweis } from '@/components/LawinenHinweis'
+import { WetterZeile } from '@/components/WetterZeile'
 import { VerbindungZeile } from '@/components/VerbindungZeile'
 import { huettenMerkmale } from '@/components/HuetteKarte'
 import { BedientHinweis, HuettenZustandBanner } from '@/components/HuettenZustand'
@@ -34,6 +39,9 @@ export default async function HuetteSeite({ params }: { params: Promise<{ id: st
   if (!huette) notFound()
   const gebiet = findeGebiet(i, huette.gebietId)!
   const startort = sichtbareStartorte(i)[0]
+  const dienste = lawinenRelevant({ sportarten: gebiet.sportarten, hoehe: huette.hoehe })
+    ? lawinendienste(huette.zustiege.map((z) => findeHaltestelle(i, z.haltestelleId)!))
+    : []
 
   return (
     <article className="mx-auto max-w-2xl space-y-6">
@@ -53,6 +61,8 @@ export default async function HuetteSeite({ params }: { params: Promise<{ id: st
           {huette.webUrl && <a href={huette.webUrl} target="_blank" rel="noreferrer" className="knopf-sekundaer">Hüttenseite</a>}
         </div>
         <div className="mt-4"><ZeitraumPill mindestNaechte={1} /></div>
+        <WetterZeile ort={{ huette: huette.id }} mindestNaechte={1} className="mt-3" />
+        <LawinenHinweis dienste={dienste} mindestNaechte={1} className="mt-3" />
       </header>
 
       <section className="space-y-3">
@@ -71,9 +81,11 @@ export default async function HuetteSeite({ params }: { params: Promise<{ id: st
                 </p>
               </div>
               <Suspense fallback={<div className="skeleton h-6 w-3/4" />}>
-                <VerbindungZeile von={{ id: startort.id, name: startort.name, bahn: startort.bahn }} nach={{ id: h.id, name: h.name, land: h.land, bahn: h.bahn }} mindestNaechte={1} zustiegMin={z.gehzeitMin} />
+                <VerbindungZeile von={{ id: startort.id, name: startort.name, bahn: startort.bahn }} nach={{ id: h.id, name: h.name, land: h.land, bahn: h.bahn }} mindestNaechte={1} zustiegMin={z.gehzeitMin}
+                  bergbahn={z.bergbahn} huetteName={huette.name} gruppe={gruppenHinweisFuer(i.tickets, h.land)} />
               </Suspense>
               {r && <Co2Zeile kg={co2ErsparnisKg({ strassenKm: r.strassenKm, bahnKm: r.bahnKm }, i.emissionen)} />}
+              {r && <KostenZeile strassenKm={r.strassenKm} ticket={r.ticket} />}
             </div>
           )
         })}

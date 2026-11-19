@@ -153,6 +153,9 @@ export const TicketRegelSchema = z.object({
   land: LandSchema,
   ticket: TicketSchema,
   hinweis: z.string().min(1),
+  /** Kurzer, belegter Hinweis für Gruppen (Verbindungsdetail und Einladungstext), mit Quelle. */
+  gruppenHinweis: z.string().min(1).optional(),
+  gruppenQuelle: z.string().url().optional(),
 })
 export const TicketTabelleSchema = z.object({
   regeln: z.array(TicketRegelSchema).min(1),
