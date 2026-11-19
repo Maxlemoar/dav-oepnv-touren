@@ -46,14 +46,19 @@ const ENTITAETEN: Record<string, string> = {
   eacute: 'é', egrave: 'è', agrave: 'à', ndash: '–', mdash: '—', bdquo: '„', ldquo: '“', rdquo: '”', hellip: '…',
 }
 
+/** Zeichen zu einem numerischen HTML-Verweis; ungültige Codepunkte bleiben stehen statt zu werfen. */
+function zeichen(code: number): string | undefined {
+  return Number.isInteger(code) && code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : undefined
+}
+
 /** HTML aus DAV360 als einzeiliger Klartext: Tags raus, Entitäten aufgelöst, Leerraum zusammengefasst. */
 export function htmlZuText(html: unknown): string {
   if (typeof html !== 'string') return ''
   return html
     .replace(/<(br|\/p|\/li|\/div|\/h\d)\b[^>]*>/gi, ' ')
     .replace(/<[^>]*>/g, '')
-    .replace(/&#(\d+);/g, (_, n: string) => String.fromCodePoint(Number(n)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, n: string) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&#(\d+);/g, (m, n: string) => zeichen(Number(n)) ?? m)
+    .replace(/&#x([0-9a-f]+);/gi, (m, n: string) => zeichen(parseInt(n, 16)) ?? m)
     .replace(/&([a-z]+);/gi, (m, name: string) => ENTITAETEN[name] ?? m)
     .replace(/\s+/g, ' ')
     .trim()

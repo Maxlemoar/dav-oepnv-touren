@@ -1,7 +1,7 @@
 import type { Gebiet, Haltestelle, Startort } from '@/lib/content/schema'
 import { tageDifferenz } from '@/lib/datum'
 import { bedientAm, tagesklasse } from '@/lib/saison'
-import { tageszielAusFenster } from './regeln'
+import { gueltigesFenster, tageszielAusFenster } from './regeln'
 import { SAISON_HINWEIS } from './service'
 
 /** Urteil der Startseite je Gebiet; `tagesziel` fehlt, wenn es kein Urteil gibt (mehrtägig, kein Tagesfenster). */
@@ -28,7 +28,7 @@ export function uebersichtBerechnen(
       continue
     }
     if (naechte > 0) { ergebnis[g.id] = basis; continue }
-    const u = tageszielAusFenster(h.richtwerte[startort.id]?.tagesfenster?.[klasse], z.fenster)
+    const u = tageszielAusFenster(gueltigesFenster(h, h.richtwerte[startort.id]?.tagesfenster?.[klasse]), z.fenster)
     ergebnis[g.id] = { ...u, ...basis }
   }
   return ergebnis

@@ -9,9 +9,9 @@ export function KostenZeile({ strassenKm, ticket }: { strassenKm?: number; ticke
   if (euro === undefined) return null
   return (
     <p className="text-sm text-tinte-2">
-      🚗 Mit dem Auto nach der{' '}
+      🚗 Als Mitfahrer im Auto nach der{' '}
       <a href={FAHRTKOSTEN_REGEL.quelle} target="_blank" rel="noreferrer" className="underline">Fahrtkostenregel der Sektion</a>{' '}
-      ({SATZ} € pro Person und km): ca. <span className="zahl">{euro} €</span> hin und zurück.
+      ({SATZ} € pro Person und km): ca. <span className="zahl">{euro} €</span> hin und zurück, zuzüglich Maut und Parken.
       {ticket && <> {bahnTicketKurz(ticket)}</>}
     </p>
   )

@@ -16,6 +16,11 @@ export const metadata: Metadata = {
 
 export default async function SektionstourenSeite() {
   const { touren, fehler } = await ladeSektionstouren()
+  // Beim Neuaufbau im Hintergrund lieber werfen: Next.js zeigt dann weiter die letzte gute Fassung.
+  // Nur im Build gibt es keine, dort steht der Hinweis auf der Seite.
+  if (fehler && process.env.NEXT_PHASE !== 'phase-production-build') {
+    throw new Error('Tourenprogramm der Sektion (DAV360) nicht erreichbar')
+  }
   const i = inhalt()
   const start = sichtbareStartorte(i)[0]
   const index = baueZuordnungsIndex(i)

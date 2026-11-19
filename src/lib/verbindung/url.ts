@@ -3,6 +3,7 @@ import { lokalesDatum, naechsterSamstag } from '@/lib/datum'
 import { rueckAnheben } from '@/lib/zeitraum'
 
 const ISO_DATUM = /^\d{4}-\d{2}-\d{2}$/
+const STANDARD_FENSTER = 360
 
 /**
  * Zeitraum und Tourenfenster aus der Seiten-URL. Ohne gültiges oder mit vergangenem datum gilt der kommende
@@ -15,8 +16,15 @@ export function zeitraumAusUrl(sp: URLSearchParams, mindestNaechte: number, heut
   return {
     datum,
     rueck: rueckAnheben(datum, rueckRoh && ISO_DATUM.test(rueckRoh) ? rueckRoh : undefined, mindestNaechte),
-    fenster: Number(sp.get('fenster') ?? 360),
+    fenster: fensterAusUrl(sp.get('fenster')),
   }
+}
+
+/** Tourenfenster in Minuten, auf 1 bis 12 Stunden begrenzt; Unlesbares wird zum Standard von 6 Stunden. */
+export function fensterAusUrl(roh: string | null): number {
+  const n = Number(roh ?? STANDARD_FENSTER)
+  if (!Number.isFinite(n)) return STANDARD_FENSTER
+  return Math.min(720, Math.max(60, Math.round(n)))
 }
 
 /** Zeitraum ohne Mindestnächte, für die Startseite. */

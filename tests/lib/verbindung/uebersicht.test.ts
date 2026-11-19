@@ -57,3 +57,18 @@ describe('uebersichtBerechnen', () => {
     expect(uebersichtBerechnen(inhalt, startort, { datum: '2026-11-21', rueck: '2026-11-21', fenster: 360 }).d).toBeUndefined()
   })
 })
+
+describe('uebersichtBerechnen: Saisonhaltestelle mit leerem Winterfenster', () => {
+  it('gibt im Sommer kein Urteil, im Winter "kein Tagesziel"', () => {
+    const h = {
+      id: 'griesalp', name: 'Griesalp', haltestelleId: 'x', lat: 46, lon: 7, land: 'CH' as const, region: 'BO',
+      bedient: [{ von: '06-01', bis: '10-20' }],
+      richtwerte: { offenburg: { fahrzeitMin: 280, umstiege: 3, takt: 'stuendlich' as const, ticket: 'halbtax' as const, berechnetAm: '2026-09-07', tagesfenster: { sa: {}, so: {}, werktag: {} } } },
+    }
+    const g = { id: 'kiental', name: 'Kiental', beschreibung: 'x', haltestellen: ['griesalp'], sportarten: ['wandern' as const], saison: 'sommer' as const, touren: [], links: [], lat: 46, lon: 7 }
+    const sommer = uebersichtBerechnen({ gebiete: [g], haltestellen: [h] }, { id: 'offenburg' }, { datum: '2027-07-03', rueck: '2027-07-03', fenster: 360 })
+    expect(sommer.kiental.tagesziel).toBeUndefined()
+    const winter = uebersichtBerechnen({ gebiete: [g], haltestellen: [h] }, { id: 'offenburg' }, { datum: '2026-11-28', rueck: '2026-11-28', fenster: 360 })
+    expect(winter.kiental.tagesziel).toBe(false)
+  })
+})

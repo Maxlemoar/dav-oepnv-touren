@@ -246,3 +246,39 @@ describe('verbindungErmitteln: Fehlerarten', () => {
     expect(a.fehler).toMatch(/404/)
   })
 })
+
+describe('spätere Hinfahrten statt "keine Verbindung"', () => {
+  const nur = (abUtc: string, anUtc: string): Itinerary[] => [{ startTime: abUtc, endTime: anUtc, duration: 1, transfers: 1, legs: [] }]
+  it('nimmt eine Abfahrt zwischen 8 und 9 Uhr als Hinfahrt', async () => {
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : nur('2026-09-12T06:10:00Z', '2026-09-12T10:20:00Z')))
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets, ...zeit }, { planen })
+    expect(a.hinfahrt?.ab).toBe('2026-09-12T06:10:00Z') // 08:10 lokal
+    expect(a.fehlerArt).toBeUndefined()
+    expect(a.tageszielGrund).toBe('Ankunft erst 12:20')
+  })
+  it('nimmt bei Hüttentouren auch eine Abfahrt am Vormittag', async () => {
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck.map((r) => ({ ...r, startTime: r.startTime.replace('12T', '13T'), endTime: r.endTime.replace('12T', '13T') })) : nur('2026-09-12T09:30:00Z', '2026-09-12T13:40:00Z')))
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrtDatum: '2026-09-13', mindestFensterMin: 360, tickets, ...zeit }, { planen })
+    expect(a.hinfahrt?.ab).toBe('2026-09-12T09:30:00Z') // 11:30 lokal
+    expect(a.fehlerArt).toBeUndefined()
+  })
+  it('meldet keine Verbindung erst, wenn vor 14 Uhr gar nichts fährt', async () => {
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : nur('2026-09-12T13:30:00Z', '2026-09-12T17:40:00Z')))
+    const a = await verbindungErmitteln({ startort, haltestelle, datum: '2026-09-12', rueckfahrtDatum: '2026-09-12', mindestFensterMin: 360, tickets, ...zeit }, { planen })
+    expect(a.hinfahrt).toBeUndefined()
+    expect(a.fehlerArt).toBe('keine_verbindung')
+  })
+})
+
+describe('Tagesfenster außerhalb der Saison', () => {
+  const saisonal: Haltestelle = {
+    ...haltestelle, bedient: [{ von: '06-01', bis: '10-20' }],
+    richtwerte: { offenburg: { ...haltestelle.richtwerte.offenburg, tagesfenster: { sa: {}, so: {}, werktag: {} } } },
+  }
+  it('gibt im Sommer kein Urteil aus einem im Winter berechneten leeren Fenster', async () => {
+    const planen = vi.fn(async () => { throw new TransitousFehler('nicht erreichbar', 503) })
+    const a = await verbindungErmitteln({ startort, haltestelle: saisonal, datum: '2027-07-03', rueckfahrtDatum: '2027-07-03', mindestFensterMin: 360, tickets, heute: '2027-07-01', fahrplan: { liveBis: '2026-12-12', hinweis: 'x' } }, { planen })
+    expect(a.fehlerArt).toBe('fahrplan_noch_nicht_verfuegbar')
+    expect(a.tagesziel).toBeUndefined()
+  })
+})

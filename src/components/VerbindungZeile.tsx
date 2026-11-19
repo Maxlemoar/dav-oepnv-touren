@@ -48,7 +48,7 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbah
     const datumAnfrage = q.get('datum')!
     const rueckAnfrage = q.get('rueck')!
     fetch(`/api/verbindung?${anfrage}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() })
       .then((a: VerbindungAntwort) => { if (aktiv) setGeladen({ anfrage, antwort: a }) })
       .catch(() => {
         if (!aktiv) return
@@ -101,8 +101,9 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbah
       return (
         <div className="space-y-1">
           <p className="warnhinweis">
-            Am gewählten Datum keine Verbindung gefunden, vermutlich Saisonbetrieb.
-            {antwort.hinweis && antwort.hinweis !== ALLGEMEINER_SAISON_HINWEIS && <> {antwort.hinweis}</>}
+            {antwort.hinweis
+              ? <>Am gewählten Datum keine Verbindung gefunden, vermutlich Saisonbetrieb.{antwort.hinweis !== ALLGEMEINER_SAISON_HINWEIS && <> {antwort.hinweis}</>}</>
+              : 'Am gewählten Datum keine passende Verbindung gefunden.'}
           </p>
           <div className="text-sm text-tinte-3">Selbst prüfen: {links}</div>
         </div>
