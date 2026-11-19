@@ -111,7 +111,7 @@ async function main() {
         console.log(`  ${ziel.id} ${klasse}: ${plan.hin.length} hin, ${plan.rueck.length} rück${w.length ? `  ACHTUNG ${w.join(', ')}` : ''}`)
         if (w.length) warnungen.push(`${ziel.id} ${klasse}: ${w.join(', ')}`)
       } catch (e) {
-        fehlschlaege.push({ ortId: ziel.id, klasse, anfragen: fuerKlasse, meldung: (e as Error).message })
+        fehlschlaege.push({ ortId: ziel.id, klasse, referenzTag: tage[klasse], anfragen: fuerKlasse, meldung: (e as Error).message })
         console.warn(`  ${ziel.id} ${klasse}: FEHLER ${(e as Error).message}`)
       }
     }

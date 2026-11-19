@@ -84,13 +84,22 @@ describe('fehlschlagZusammenfassung', () => {
   })
   it('listet je Fehlschlag den Befehl zum Nachholen und die verbrauchten Anfragen', () => {
     const z = fehlschlagZusammenfassung([
-      { ortId: 'oberstdorf', klasse: 'sa', anfragen: 3, meldung: 'Transitous HTTP 500' },
-      { ortId: 'kandersteg', klasse: 'so', anfragen: 1, meldung: 'Timeout' },
+      { ortId: 'oberstdorf', klasse: 'sa', referenzTag: '2026-11-21', anfragen: 3, meldung: 'Transitous HTTP 500' },
+      { ortId: 'kandersteg', klasse: 'so', referenzTag: '2026-11-22', anfragen: 1, meldung: 'Timeout' },
+      { ortId: 'bern', klasse: 'werktag', referenzTag: '2026-11-20', anfragen: 2, meldung: 'Timeout' },
     ])
-    expect(z[0]).toContain('2 Fehlschläge')
-    expect(z[0]).toContain('4 Anfragen')
-    expect(z[1]).toContain('npm run musterfahrplan -- --nur oberstdorf --klasse sa')
+    expect(z[0]).toContain('3 Fehlschläge')
+    expect(z[0]).toContain('6 Anfragen')
     expect(z[1]).toContain('3 Anfragen')
-    expect(z[2]).toContain('--nur kandersteg --klasse so')
+  })
+  it('hält im Befehl den Referenztag der Klasse fest, damit ein späteres Nachholen nicht neu datiert', () => {
+    const z = fehlschlagZusammenfassung([
+      { ortId: 'oberstdorf', klasse: 'sa', referenzTag: '2026-11-21', anfragen: 3, meldung: 'Transitous HTTP 500' },
+      { ortId: 'kandersteg', klasse: 'so', referenzTag: '2026-11-22', anfragen: 1, meldung: 'Timeout' },
+      { ortId: 'bern', klasse: 'werktag', referenzTag: '2026-11-20', anfragen: 2, meldung: 'Timeout' },
+    ])
+    expect(z[1]).toContain('npm run musterfahrplan -- --nur oberstdorf --klasse sa --sa 2026-11-21 ')
+    expect(z[2]).toContain('--nur kandersteg --klasse so --so 2026-11-22 ')
+    expect(z[3]).toContain('--nur bern --klasse werktag --werktag 2026-11-20 ')
   })
 })

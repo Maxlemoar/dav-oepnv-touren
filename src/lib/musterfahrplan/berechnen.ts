@@ -2,6 +2,7 @@
 import { lokaleMinuten, lokalesDatum, zuUtcIso } from '@/lib/datum'
 import type { Itinerary, PlanParameter } from '@/lib/verbindung/transitous'
 import { hinfahrtenAus, rueckfahrtenAus } from './erzeugen'
+import type { Tagesklasse } from '@/lib/saison'
 import type { Fahrt, MusterOrt, Tagesplan } from './typen'
 
 export type Planen = (p: PlanParameter) => Promise<Itinerary[]>
@@ -75,16 +76,26 @@ export function bereinigeOrt(ort: MusterOrt): MusterOrt {
   return { ...ort, plaene }
 }
 
-export type Fehlschlag = { ortId: string; klasse: string; anfragen: number; meldung: string }
+export type Fehlschlag = {
+  ortId: string
+  klasse: Tagesklasse
+  /** Referenztag der Klasse in diesem Lauf; der Befehl zum Nachholen hält ihn fest (`--sa 2026-11-21`). */
+  referenzTag: string
+  anfragen: number
+  meldung: string
+}
 
-/** Zusammenfassung der Fehlschläge mit je einem Befehl zum Nachholen; leer, wenn nichts fehlschlug. */
+/**
+ * Zusammenfassung der Fehlschläge mit je einem Befehl zum Nachholen; leer, wenn nichts fehlschlug. Der Befehl nennt den
+ * Referenztag, sonst rechnete ein Nachholen an einem späteren Tag die Klasse auf ein anderes Datum als die übrigen Orte.
+ */
 export function fehlschlagZusammenfassung(fehlschlaege: Fehlschlag[]): string[] {
   if (fehlschlaege.length === 0) return []
   const verbraucht = fehlschlaege.reduce((n, f) => n + f.anfragen, 0)
   return [
     `${fehlschlaege.length} Fehlschläge (${verbraucht} Anfragen verbraucht, alter Stand bleibt erhalten); zum Nachholen:`,
     ...fehlschlaege.map(
-      (f) => `  npm run musterfahrplan -- --nur ${f.ortId} --klasse ${f.klasse}   (${f.anfragen} Anfragen verbraucht: ${f.meldung})`,
+      (f) => `  npm run musterfahrplan -- --nur ${f.ortId} --klasse ${f.klasse} --${f.klasse} ${f.referenzTag}   (${f.anfragen} Anfragen verbraucht: ${f.meldung})`,
     ),
   ]
 }
