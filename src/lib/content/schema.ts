@@ -28,6 +28,20 @@ export const StartortSchema = z.object({
   bahn: BahnOrtSchema.optional(),
 })
 
+const MonatTag = z.string().regex(/^(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/, 'Format MM-TT')
+const Uhrzeit = z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/, 'Format HH:MM')
+const Datum = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Format JJJJ-MM-TT')
+
+/** Wiederkehrender Zeitraum im Jahr, z. B. { von: "06-15", bis: "10-15" }; darf über den Jahreswechsel gehen. */
+export const ZeitraumImJahrSchema = z.object({ von: MonatTag, bis: MonatTag })
+
+/**
+ * Typisches Tagesfenster an einer Haltestelle, vorab berechnet (npm run richtwerte):
+ * früheste Ankunft bei Abfahrt ab 5 Uhr und letzte Abfahrt mit Ankunft am Startort bis 23 Uhr.
+ * Daraus entsteht das Tagesziel-Urteil der Startseite ohne Live-Abfragen.
+ */
+export const TagesfensterSchema = z.object({ ankunft: Uhrzeit.optional(), letzteRueckfahrt: Uhrzeit.optional() })
+
 export const RichtwertSchema = z.object({
   fahrzeitMin: z.number().int().positive(),
   umstiege: z.number().int().min(0),
@@ -36,6 +50,11 @@ export const RichtwertSchema = z.object({
   strassenKm: z.number().positive().optional(),
   bahnKm: z.number().positive().optional(),
   berechnetAm: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  tagesfenster: z.object({
+    sa: TagesfensterSchema.optional(),
+    so: TagesfensterSchema.optional(),
+    werktag: TagesfensterSchema.optional(),
+  }).optional(),
 })
 
 export const HaltestelleSchema = z.object({
@@ -47,6 +66,9 @@ export const HaltestelleSchema = z.object({
   region: z.string().min(1),
   richtwerte: z.record(z.string(), RichtwertSchema).default({}),
   bahn: BahnOrtSchema.optional(),
+  /** Nur in diesen Zeiträumen bedient (Saisonbus, Sommerbahn). Fehlt das Feld, gilt ganzjährig. */
+  bedient: z.array(ZeitraumImJahrSchema).min(1).optional(),
+  bedientHinweis: z.string().min(1).optional(),
 })
 
 /** Einbettbare Tour: Alpenvereinaktiv nur mit Pro+-Konto (siehe README), komoot nur eigene Touren. */
@@ -67,6 +89,10 @@ export const TourSchema = z.object({
   /** Freitext wie "T3", "WS", "mittel" – die Skalen der Anbieter unterscheiden sich. */
   schwierigkeit: z.string().min(1).optional(),
   oeffiTauglich: z.boolean().default(true),
+  /** Wie man vom Bahnhof zum Start kommt, wenn es nicht direkt an einer Haltestelle des Gebiets beginnt. */
+  startHinweis: z.string().min(1).optional(),
+  /** Aktuelle Einschränkung, z. B. gesperrter Weg oder geschlossene Hütte. */
+  hinweis: z.string().min(1).optional(),
   embed: TourEmbedSchema.optional(),
 })
 
@@ -110,6 +136,16 @@ export const HuetteSchema = z.object({
   zustiege: z.array(ZustiegSchema).min(1),
   quelle: z.string().url(),
   geschaetzt: z.boolean().default(false),
+  /** Geschlossen oder im Umbau überstimmt alle Bewirtschaftungszeiten bis statusBis. */
+  status: z.enum(['offen', 'geschlossen', 'umbau']).default('offen'),
+  statusHinweis: z.string().min(1).optional(),
+  statusBis: Datum.optional(),
+  /** Bewirtschaftungszeiten; fehlt das Feld, wird aus `saison` geschätzt. */
+  bewirtschaftet: z.array(ZeitraumImJahrSchema).min(1).optional(),
+  winterraum: z.boolean().optional(),
+  nurMitglieder: z.boolean().optional(),
+  selbstversorger: z.boolean().optional(),
+  plaetze: z.number().int().positive().optional(),
 })
 
 export const TicketRegelSchema = z.object({
@@ -138,6 +174,8 @@ export type Ticket = z.infer<typeof TicketSchema>
 export type Takt = z.infer<typeof TaktSchema>
 export type BetreiberTyp = z.infer<typeof BetreiberTypSchema>
 export type BahnOrt = z.infer<typeof BahnOrtSchema>
+export type ZeitraumImJahr = z.infer<typeof ZeitraumImJahrSchema>
+export type Tagesfenster = z.infer<typeof TagesfensterSchema>
 export type Startort = z.infer<typeof StartortSchema>
 export type Richtwert = z.infer<typeof RichtwertSchema>
 export type Haltestelle = z.infer<typeof HaltestelleSchema>
