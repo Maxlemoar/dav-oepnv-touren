@@ -13,6 +13,11 @@
  * je 20 Verbindungen). Voller Lauf: etwa 84 Orte × 3 Klassen × (3 bis 4) Anfragen, also weit über dem
  * Tagesbudget: nach Klassen auf getrennte Tage verteilen (--klasse sa --klasse so an einem Tag,
  * --klasse werktag am nächsten). Teilläufe mit --nur und --klasse sind vorzuziehen.
+ * Die bereits gespeicherten Orte der Stichprobe haben teils noch kurze Hinfahrt-Listen (vor den Folgeanfragen
+ * berechnet); sie werden erst beim vollen Lauf erneuert.
+ *
+ *   npm run musterfahrplan -- --nur-bereinigen           ohne Anfragen: gespeicherte Fahrten mit Ankunft vor Abfahrt entfernen
+ *
  * Am Ende werden Orte gemeldet, deren Abdeckung dünn aussieht (letzte Hinfahrt vor 20:00 oder früheste
  * Rückfahrt nach 14:00).
  */
@@ -24,7 +29,7 @@ import { planenGeduldig } from '../src/lib/verbindung/transitous-geduldig'
 import { ladeFahrplan } from '../src/lib/verbindung/fahrplan'
 import { referenzTage, tagesfensterZiele, TAGESKLASSEN } from '../src/lib/richtwerte'
 import { ladeMusterfahrplan, MUSTERFAHRPLAN_DATEI } from '../src/lib/musterfahrplan/laden'
-import { tagesplanBerechnen, abdeckungsWarnungen, type Planen } from '../src/lib/musterfahrplan/berechnen'
+import { tagesplanBerechnen, abdeckungsWarnungen, bereinigeOrt, fehlschlagZusammenfassung, type Fehlschlag, type Planen } from '../src/lib/musterfahrplan/berechnen'
 import { streckeAus } from '../src/lib/musterfahrplan/erzeugen'
 import type { Musterfahrplan, MusterOrt } from '../src/lib/musterfahrplan/typen'
 import type { Tagesklasse } from '../src/lib/saison'
@@ -34,6 +39,7 @@ const arg = (k: string) => { const i = args.indexOf(k); return i >= 0 ? args[i +
 const alle = (k: string) => args.flatMap((a, i) => (a === k ? [args[i + 1]] : []))
 const nur = arg('--nur')
 const klassenArg = alle('--klasse')
+const nurBereinigen = args.includes('--nur-bereinigen')
 const PARALLEL = 2
 /** Reihenfolge, in der die Strecke aus der ersten berechneten Klasse genommen wird. */
 const STRECKE_REIHENFOLGE: Tagesklasse[] = ['sa', 'so', 'werktag']
@@ -45,7 +51,19 @@ async function inParallel<T>(liste: T[], breite: number, fn: (x: T) => Promise<v
   }))
 }
 
+function speichernBereinigt(m: Musterfahrplan) {
+  const orte = Object.fromEntries(Object.entries(m.orte).sort(([a], [b]) => a.localeCompare(b)).map(([id, o]) => [id, bereinigeOrt(o)]))
+  fs.writeFileSync(MUSTERFAHRPLAN_DATEI, JSON.stringify({ ...m, orte }, null, 2) + '\n')
+}
+
 async function main() {
+  if (nurBereinigen) {
+    const m = ladeMusterfahrplan()
+    if (!m) throw new Error('content/musterfahrplan.json fehlt')
+    speichernBereinigt(m)
+    console.log(`Bereinigt: ${Object.keys(m.orte).length} Orte, keine Anfragen`)
+    return
+  }
   for (const k of klassenArg) if (!(TAGESKLASSEN as string[]).includes(k)) throw new Error(`--klasse ${k}: erlaubt sind werktag, sa, so`)
   const klassen = TAGESKLASSEN.filter((k) => klassenArg.length === 0 || klassenArg.includes(k))
   const wurzel = path.join(process.cwd(), 'content')
@@ -72,21 +90,19 @@ async function main() {
   for (const k of klassen) ergebnis.referenzTage[k] = tage[k]
 
   const planen: Planen = (p) => planenGeduldig(p)
-  const speichern = () => {
-    const orte = Object.fromEntries(Object.entries(ergebnis.orte).sort(([a], [b]) => a.localeCompare(b)))
-    fs.writeFileSync(MUSTERFAHRPLAN_DATEI, JSON.stringify({ ...ergebnis, orte }, null, 2) + '\n')
-  }
+  const speichern = () => speichernBereinigt(ergebnis)
 
   console.log(`Musterfahrplan ab ${startort.id}: ${klassen.map((k) => `${k} ${tage[k]}`).join(', ')}; ${ziele.length} Orte, ${ziele.length * klassen.length * 3} bis ${ziele.length * klassen.length * 4} Anfragen`)
   let anfragen = 0
-  let fehler = 0
+  const fehlschlaege: Fehlschlag[] = []
   const warnungen: string[] = []
-  const zaehlendes: Planen = (p) => { anfragen++; return planen(p) }
 
   await inParallel(ziele, PARALLEL, async (ziel) => {
     const ort: MusterOrt = { plaene: { ...ergebnis.orte[ziel.id]?.plaene }, ...(ergebnis.orte[ziel.id]?.strecke ? { strecke: ergebnis.orte[ziel.id].strecke } : {}) }
     const hinAntworten: Partial<Record<Tagesklasse, Awaited<ReturnType<typeof tagesplanBerechnen>>['hinItineraries']>> = {}
     for (const klasse of klassen) {
+      let fuerKlasse = 0
+      const zaehlendes: Planen = (p) => { anfragen++; fuerKlasse++; return planen(p) }
       try {
         const { plan, hinItineraries } = await tagesplanBerechnen(zaehlendes, startort, ziel, tage[klasse])
         ort.plaene[klasse] = plan
@@ -95,7 +111,7 @@ async function main() {
         console.log(`  ${ziel.id} ${klasse}: ${plan.hin.length} hin, ${plan.rueck.length} rück${w.length ? `  ACHTUNG ${w.join(', ')}` : ''}`)
         if (w.length) warnungen.push(`${ziel.id} ${klasse}: ${w.join(', ')}`)
       } catch (e) {
-        fehler++
+        fehlschlaege.push({ ortId: ziel.id, klasse, anfragen: fuerKlasse, meldung: (e as Error).message })
         console.warn(`  ${ziel.id} ${klasse}: FEHLER ${(e as Error).message}`)
       }
     }
@@ -108,7 +124,8 @@ async function main() {
     if (Object.keys(ort.plaene).length) { ergebnis.orte[ziel.id] = ort; speichern() }
   })
 
-  console.log(`${anfragen} Anfragen, ${ziele.length} Orte, ${fehler} Fehler`)
+  console.log(`${anfragen} Anfragen, ${ziele.length} Orte, ${fehlschlaege.length} Fehler`)
+  for (const z of fehlschlagZusammenfassung(fehlschlaege)) console.log(z)
   if (warnungen.length) console.log(`Abdeckung prüfen (${warnungen.length}):\n  ${warnungen.join('\n  ')}`)
   else console.log('Abdeckung: keine Auffälligkeiten')
 }

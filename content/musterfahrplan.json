@@ -470,15 +470,6 @@
             },
             {
               "ab": "07:22",
-              "an": "07:18",
-              "umstiege": 1,
-              "via": [
-                "Ulm Hauptbahnhof"
-              ],
-              "fern": true
-            },
-            {
-              "ab": "07:22",
               "an": "10:36",
               "umstiege": 2,
               "via": [
@@ -864,27 +855,6 @@
                 "Mannheim, Hauptbahnhof"
               ],
               "fern": true
-            },
-            {
-              "ab": "23:21",
-              "an": "09:56",
-              "umstiege": 2,
-              "via": [
-                "Tübingen Hauptbahnhof",
-                "Karlsruhe central train station"
-              ],
-              "fern": false
-            },
-            {
-              "ab": "23:44",
-              "an": "09:59",
-              "umstiege": 3,
-              "via": [
-                "Laichingen ZOB",
-                "Blaubeuren Bahnhof",
-                "Immendingen Bahnhof"
-              ],
-              "fern": false
             }
           ]
         },
@@ -6751,17 +6721,6 @@
             },
             {
               "ab": "17:58",
-              "an": "00:45",
-              "umstiege": 3,
-              "via": [
-                "Mannheim, Hauptbahnhof",
-                "Augsburg Hbf",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": true
-            },
-            {
-              "ab": "17:58",
               "an": "22:43",
               "umstiege": 4,
               "via": [
@@ -6771,54 +6730,6 @@
                 "Kempten, Hauptbahnhof"
               ],
               "fern": true
-            },
-            {
-              "ab": "18:58",
-              "an": "00:45",
-              "umstiege": 4,
-              "via": [
-                "Singen (Htw) Bahnhof",
-                "Friedrichsh. Stadtbahnhof",
-                "Lindau, Reutin Bahnhof",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": false
-            },
-            {
-              "ab": "19:27",
-              "an": "06:59",
-              "umstiege": 4,
-              "via": [
-                "Mannheim, Hauptbahnhof",
-                "Pasing",
-                "Kempten, Hauptbahnhof",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": true
-            },
-            {
-              "ab": "19:58",
-              "an": "06:59",
-              "umstiege": 5,
-              "via": [
-                "Karlsruhe Hauptbahnhof",
-                "Hauptbahnhof",
-                "Pasing",
-                "Kempten, Hauptbahnhof",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": true
-            },
-            {
-              "ab": "22:38",
-              "an": "07:59",
-              "umstiege": 3,
-              "via": [
-                "Karlsruhe Hauptbahnhof",
-                "Munich central bus station",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": false
             }
           ],
           "rueck": [
@@ -7154,17 +7065,6 @@
                 "Ulm Hauptbahnhof"
               ],
               "fern": true
-            },
-            {
-              "ab": "17:58",
-              "an": "07:59",
-              "umstiege": 3,
-              "via": [
-                "Mannheim, Hauptbahnhof",
-                "Augsburg Hbf",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": true
             }
           ],
           "rueck": [
@@ -7363,31 +7263,6 @@
                 "Mannheim, Hauptbahnhof"
               ],
               "fern": true
-            },
-            {
-              "ab": "23:22",
-              "an": "09:56",
-              "umstiege": 5,
-              "via": [
-                "Immenstadt, Bahnhof",
-                "Kempten, Hauptbahnhof",
-                "Ulm Hauptbahnhof",
-                "Mannheim, Hauptbahnhof",
-                "Baden-Baden"
-              ],
-              "fern": true
-            },
-            {
-              "ab": "23:22",
-              "an": "09:59",
-              "umstiege": 4,
-              "via": [
-                "Immenstadt, Bahnhof",
-                "Lindau Inselbahnhof",
-                "Friedrichsh. Stadtbahnhof",
-                "Singen (Htw) Bahnhof"
-              ],
-              "fern": false
             }
           ]
         },
@@ -7533,32 +7408,11 @@
               "fern": true
             },
             {
-              "ab": "16:30",
-              "an": "07:23",
-              "umstiege": 2,
-              "via": [
-                "Zürich HB",
-                "Memmingen, Bahnhof ZOB"
-              ],
-              "fern": true
-            },
-            {
               "ab": "17:27",
               "an": "22:43",
               "umstiege": 3,
               "via": [
                 "Karlsruhe Hauptbahnhof",
-                "Augsburg Hbf",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": true
-            },
-            {
-              "ab": "17:58",
-              "an": "00:45",
-              "umstiege": 3,
-              "via": [
-                "Mannheim, Hauptbahnhof",
                 "Augsburg Hbf",
                 "Immenstadt, Bahnhof"
               ],
@@ -7584,43 +7438,6 @@
               "via": [
                 "Karlsruhe Hauptbahnhof",
                 "Ulm Hbf",
-                "Kempten, Hauptbahnhof",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": true
-            },
-            {
-              "ab": "19:27",
-              "an": "00:45",
-              "umstiege": 4,
-              "via": [
-                "Mannheim, Hauptbahnhof",
-                "Ulm Hauptbahnhof",
-                "Kempten, Hauptbahnhof",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": true
-            },
-            {
-              "ab": "19:58",
-              "an": "00:45",
-              "umstiege": 5,
-              "via": [
-                "Karlsruhe Hauptbahnhof",
-                "Hauptbahnhof",
-                "Ulm Hauptbahnhof",
-                "Kempten, Hauptbahnhof",
-                "Immenstadt, Bahnhof"
-              ],
-              "fern": true
-            },
-            {
-              "ab": "19:58",
-              "an": "05:58",
-              "umstiege": 4,
-              "via": [
-                "Mannheim, Hauptbahnhof",
-                "Ulm Hauptbahnhof",
                 "Kempten, Hauptbahnhof",
                 "Immenstadt, Bahnhof"
               ],

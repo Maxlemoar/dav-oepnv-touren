@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { abdeckungsWarnungen, tagesplanBerechnen, type Planen } from '@/lib/musterfahrplan/berechnen'
+import { abdeckungsWarnungen, bereinigeOrt, fehlschlagZusammenfassung, tagesplanBerechnen, type Planen } from '@/lib/musterfahrplan/berechnen'
 import type { Itinerary } from '@/lib/verbindung/transitous'
 
 const TAG = '2026-11-20'
@@ -59,5 +59,38 @@ describe('abdeckungsWarnungen', () => {
   it('warnt bei letzter Hinfahrt vor 20:00 und früher Rückfahrt nach 14:00', () => {
     expect(abdeckungsWarnungen({ hin: [f('19:59')], rueck: [f('14:01')] })).toHaveLength(2)
     expect(abdeckungsWarnungen({ hin: [f('20:00')], rueck: [f('14:00')] })).toEqual([])
+  })
+})
+
+describe('bereinigeOrt', () => {
+  const f = (ab: string, an: string) => ({ ab, an, umstiege: 1, via: [], fern: false })
+  it('entfernt Fahrten mit Ankunft vor Abfahrt, behält Strecke und andere Fahrten, ändert die Eingabe nicht', () => {
+    const ort = {
+      plaene: { sa: { hin: [f('17:58', '00:45'), f('07:22', '07:18'), f('08:00', '08:00'), f('09:00', '12:00')], rueck: [f('23:22', '09:56'), f('15:00', '19:00')] } },
+      strecke: [[[8, 48] as [number, number], [9, 49] as [number, number]]],
+    }
+    const r = bereinigeOrt(ort)
+    expect(r.plaene.sa!.hin.map((x) => x.ab)).toEqual(['08:00', '09:00'])
+    expect(r.plaene.sa!.rueck.map((x) => x.ab)).toEqual(['15:00'])
+    expect(r.strecke).toEqual(ort.strecke)
+    expect(r.plaene.so).toBeUndefined()
+    expect(ort.plaene.sa.hin).toHaveLength(4)
+  })
+})
+
+describe('fehlschlagZusammenfassung', () => {
+  it('ist leer ohne Fehlschläge', () => {
+    expect(fehlschlagZusammenfassung([])).toEqual([])
+  })
+  it('listet je Fehlschlag den Befehl zum Nachholen und die verbrauchten Anfragen', () => {
+    const z = fehlschlagZusammenfassung([
+      { ortId: 'oberstdorf', klasse: 'sa', anfragen: 3, meldung: 'Transitous HTTP 500' },
+      { ortId: 'kandersteg', klasse: 'so', anfragen: 1, meldung: 'Timeout' },
+    ])
+    expect(z[0]).toContain('2 Fehlschläge')
+    expect(z[0]).toContain('4 Anfragen')
+    expect(z[1]).toContain('npm run musterfahrplan -- --nur oberstdorf --klasse sa')
+    expect(z[1]).toContain('3 Anfragen')
+    expect(z[2]).toContain('--nur kandersteg --klasse so')
   })
 })

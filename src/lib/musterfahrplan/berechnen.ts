@@ -2,7 +2,7 @@
 import { lokaleMinuten, lokalesDatum, zuUtcIso } from '@/lib/datum'
 import type { Itinerary, PlanParameter } from '@/lib/verbindung/transitous'
 import { hinfahrtenAus, rueckfahrtenAus } from './erzeugen'
-import type { Tagesplan } from './typen'
+import type { Fahrt, MusterOrt, Tagesplan } from './typen'
 
 export type Planen = (p: PlanParameter) => Promise<Itinerary[]>
 type Ort = { haltestelleId: string; lat: number; lon: number }
@@ -60,4 +60,31 @@ export function abdeckungsWarnungen(plan: Tagesplan): string[] {
   if (!ersteRueck) w.push('keine Rückfahrt')
   else if (ersteRueck.ab > '14:00') w.push(`früheste Rückfahrt ${ersteRueck.ab}`)
   return w
+}
+
+/**
+ * Regeln aus der Erzeugung auf gespeicherte Fahrten anwenden: nur HH:MM liegt vor, also fällt jede Fahrt
+ * mit Ankunft vor Abfahrt (über Mitternacht, fehlerhaft) heraus. Verändert die Eingabe nicht.
+ */
+export function bereinigeOrt(ort: MusterOrt): MusterOrt {
+  const ok = (f: Fahrt) => f.an >= f.ab
+  const plaene: MusterOrt['plaene'] = {}
+  for (const [klasse, plan] of Object.entries(ort.plaene) as [keyof MusterOrt['plaene'], Tagesplan][]) {
+    plaene[klasse] = { hin: plan.hin.filter(ok), rueck: plan.rueck.filter(ok) }
+  }
+  return { ...ort, plaene }
+}
+
+export type Fehlschlag = { ortId: string; klasse: string; anfragen: number; meldung: string }
+
+/** Zusammenfassung der Fehlschläge mit je einem Befehl zum Nachholen; leer, wenn nichts fehlschlug. */
+export function fehlschlagZusammenfassung(fehlschlaege: Fehlschlag[]): string[] {
+  if (fehlschlaege.length === 0) return []
+  const verbraucht = fehlschlaege.reduce((n, f) => n + f.anfragen, 0)
+  return [
+    `${fehlschlaege.length} Fehlschläge (${verbraucht} Anfragen verbraucht, alter Stand bleibt erhalten); zum Nachholen:`,
+    ...fehlschlaege.map(
+      (f) => `  npm run musterfahrplan -- --nur ${f.ortId} --klasse ${f.klasse}   (${f.anfragen} Anfragen verbraucht: ${f.meldung})`,
+    ),
+  ]
 }
