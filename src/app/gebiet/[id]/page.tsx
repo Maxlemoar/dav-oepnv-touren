@@ -10,14 +10,19 @@ import { HuetteKarte } from '@/components/HuetteKarte'
 import { TourEmbed } from '@/components/TourEmbed'
 import { TourKarte } from '@/components/TourKarte'
 import { VerbindungZeile } from '@/components/VerbindungZeile'
+import type { Metadata } from 'next'
+import { gebietBeschreibungFuer, gebietJsonLd, jsonLdText, seitenMetadaten } from '@/lib/metadaten'
 
 export function generateStaticParams() {
   return inhalt().gebiete.map((g) => ({ id: g.id }))
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
-  return { title: findeGebiet(inhalt(), id)?.name ?? 'Gebiet' }
+  const i = inhalt()
+  const gebiet = findeGebiet(i, id)
+  if (!gebiet) return { title: 'Gebiet' }
+  return seitenMetadaten({ titel: gebiet.name, beschreibung: gebietBeschreibungFuer(i, gebiet), pfad: `/gebiet/${gebiet.id}` })
 }
 
 
@@ -31,6 +36,7 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
 
   return (
     <article className="mx-auto max-w-2xl space-y-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdText(gebietJsonLd(gebiet, gebietBeschreibungFuer(i, gebiet))) }} />
       <header>
         <Link href="/" className="text-sm text-tanne">← Alle Ziele</Link>
         <h1 className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">{gebiet.name}</h1>

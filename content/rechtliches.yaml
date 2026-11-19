@@ -1,0 +1,30 @@
+# Angaben für Impressum (§ 5 DDG) und Datenschutzerklärung (Art. 13 DSGVO).
+#
+# Wer die Seite verantwortet, wird gerade mit der DAV Sektion Offenburg abgestimmt.
+# Solange `verantwortlich` leer ist, zeigen /impressum und /datenschutz einen ehrlichen Hinweis
+# statt der Angaben. Bitte nichts eintragen, was nicht abgestimmt ist.
+#
+# Sobald es feststeht, `verantwortlich` so ausfüllen (alle Werte als Text):
+#
+# verantwortlich:
+#   art: verein                  # "verein" oder "person"
+#   name: …                      # voller Name der Person bzw. des Vereins (mit "e. V.")
+#   anschrift:                   # ladungsfähige Anschrift, eine Zeile je Eintrag, kein Postfach
+#     - Straße Hausnummer
+#     - PLZ Ort
+#   email: …                     # Pflicht: schnelle elektronische Kontaktaufnahme
+#   telefon: …                   # optional, empfohlen
+#   vertretungsberechtigt:       # nur bei Verein, Pflicht: vertretungsberechtigte Vorstandsmitglieder
+#     - Vorname Nachname (Funktion)
+#   registergericht: …           # nur bei eingetragenem Verein, z. B. "Amtsgericht Freiburg"
+#   registernummer: …            # nur bei eingetragenem Verein, z. B. "VR …"
+#   inhaltlichVerantwortlich:    # optional, § 18 Abs. 2 MStV: Name und Anschrift einer Person
+#     name: …
+#     anschrift: [ …, … ]
+#   datenschutzbeauftragter: …   # optional: Name und/oder E-Mail, falls die Sektion einen benannt hat
+verantwortlich:
+
+projekt: Ein Projekt des Arbeitskreises Klimaschutz der DAV Sektion Offenburg
+
+# Allgemeine Kontaktadresse des Projekts (z. B. des Arbeitskreises). Leer lassen, solange keine abgestimmt ist.
+kontaktEmail:

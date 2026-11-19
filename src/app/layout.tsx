@@ -2,17 +2,28 @@ import type { Metadata, Viewport } from 'next'
 import { Geist } from 'next/font/google'
 import Link from 'next/link'
 import { FehlerMeldenFooter } from '@/components/FehlerMeldenFooter'
+import { inhalt } from '@/lib/content/laden'
+import { BASIS_URL, SEITENBESCHREIBUNG, SEITENNAME, datumTTMMJJJJ, juengsterRichtwert } from '@/lib/metadaten'
+import { rechtliches } from '@/lib/rechtliches'
 import './globals.css'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 
 export const metadata: Metadata = {
-  title: { default: 'Ohne Auto in die Berge', template: '%s · Ohne Auto in die Berge' },
-  description: 'Hütten und Tourengebiete, die von Offenburg aus mit Bahn und Bus erreichbar sind. Mit Live-Verbindung für dein Datum.',
+  metadataBase: new URL(BASIS_URL),
+  title: { default: SEITENNAME, template: `%s · ${SEITENNAME}` },
+  description: SEITENBESCHREIBUNG,
+  // "./" ergibt den Pfad der jeweiligen Seite ohne Suchparameter; Seiten mit eigenem Canonical überschreiben das.
+  alternates: { canonical: './' },
+  openGraph: { type: 'website', locale: 'de_DE', siteName: SEITENNAME, title: SEITENNAME, description: SEITENBESCHREIBUNG },
+  twitter: { card: 'summary_large_image' },
 }
 export const viewport: Viewport = { themeColor: '#f7f6f2' }
 
+const FUSSLINK = 'inline-flex min-h-11 items-center underline hover:text-tinte'
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const stand = juengsterRichtwert(inhalt().haltestellen)
   return (
     <html lang="de" className={geist.variable}>
       <body className="min-h-dvh font-sans">
@@ -25,8 +36,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
         <main className="mx-auto max-w-5xl px-4 pb-10 pt-4 sm:px-6">{children}</main>
-        <footer className="border-t border-linie px-4 py-8 text-center text-sm text-tinte-3">
-          Arbeitskreis Klimaschutz · DAV Sektion Offenburg · <Link href="/ueber" className="underline">Datenquellen</Link> · <FehlerMeldenFooter />
+        <footer className="border-t border-linie px-4 py-6 text-center text-sm text-tinte-3 sm:px-6">
+          <nav aria-label="Rechtliches und Kontakt" className="flex flex-wrap items-center justify-center gap-x-5">
+            <Link href="/impressum" className={FUSSLINK}>Impressum</Link>
+            <Link href="/datenschutz" className={FUSSLINK}>Datenschutz</Link>
+            <Link href="/ueber" className={FUSSLINK}>Über</Link>
+            <span className="inline-flex min-h-11 items-center"><FehlerMeldenFooter /></span>
+          </nav>
+          <p className="mt-1">
+            {rechtliches().projekt}
+            {' · '}Fahrplandaten: <a href="https://transitous.org" className="underline hover:text-tinte">Transitous</a>
+            {stand && <>{' · '}Richtwerte vom {datumTTMMJJJJ(stand)}</>}
+          </p>
         </footer>
       </body>
     </html>

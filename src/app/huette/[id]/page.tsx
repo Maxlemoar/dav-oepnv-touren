@@ -9,15 +9,19 @@ import { BetreiberBadge } from '@/components/Badges'
 import { Co2Zeile } from '@/components/Co2Zeile'
 import { FehlerMelden } from '@/components/FehlerMelden'
 import { VerbindungZeile } from '@/components/VerbindungZeile'
+import type { Metadata } from 'next'
+import { huetteBeschreibungFuer, huetteJsonLd, jsonLdText, seitenMetadaten } from '@/lib/metadaten'
 
 export function generateStaticParams() {
   return inhalt().huetten.map((h) => ({ id: h.id }))
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
-  const h = findeHuette(inhalt(), id)
-  return { title: h?.name ?? 'Hütte' }
+  const i = inhalt()
+  const h = findeHuette(i, id)
+  if (!h) return { title: 'Hütte' }
+  return seitenMetadaten({ titel: h.name, beschreibung: huetteBeschreibungFuer(i, h), pfad: `/huette/${h.id}` })
 }
 
 
@@ -31,6 +35,7 @@ export default async function HuetteSeite({ params }: { params: Promise<{ id: st
 
   return (
     <article className="mx-auto max-w-2xl space-y-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdText(huetteJsonLd(huette, huetteBeschreibungFuer(i, huette))) }} />
       <header>
         <Link href={`/gebiet/${gebiet.id}`} className="text-sm text-tanne">← {gebiet.name}</Link>
         <h1 className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">{huette.name}</h1>
