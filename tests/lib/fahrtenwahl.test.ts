@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { abweichungText, fahrtenAnfrage, fahrtSchluessel, neueFahrten, vorauswahl, vorOrtText, zeitfensterKurz } from '@/lib/fahrtenwahl'
+import { abweichungText, fahrtenAnfrage, fahrtenStatus, fahrtSchluessel, merkenswert, neueFahrten, vorauswahl, vorOrtText, zeitfensterKurz } from '@/lib/fahrtenwahl'
 import { zuUtcIso } from '@/lib/datum'
 import type { FahrtenAntwort, FahrtLive, Lage } from '@/lib/verbindung/fahrten'
 import type { Zeitfenster } from '@/lib/zeitfenster'
@@ -102,5 +102,47 @@ describe('neueFahrten', () => {
     const bekannt = [fahrt('06:12', '09:41'), fahrt('07:12', '10:41')]
     const geladen = [fahrt('07:12', '10:41'), fahrt('08:12', '11:41'), fahrt('08:12', '11:41'), fahrt('09:12', '12:41')]
     expect(neueFahrten(bekannt, geladen).map((f) => f.ab)).toEqual([geladen[1].ab, geladen[3].ab])
+  })
+})
+
+describe('fahrtenStatus', () => {
+  const leer = { ...antwort, hin: [], rueckfahrten: [] }
+
+  it('nennt "keine Verbindung" bei fehlerArt keine_verbindung, mit dem Hinweis der API', () => {
+    expect(fahrtenStatus({ ...leer, fehlerArt: 'keine_verbindung' }))
+      .toEqual({ art: 'keine_verbindung', text: 'Am gewählten Datum keine passende Verbindung gefunden.' })
+    expect(fahrtenStatus({ ...leer, quelle: 'typisch', fehlerArt: 'keine_verbindung', hinweis: 'Bus nur im Sommer' }))
+      .toEqual({ art: 'keine_verbindung', text: 'Bus nur im Sommer' })
+  })
+
+  it('nennt "keine Verbindung", wenn live ohne Fehler nichts kommt', () => {
+    expect(fahrtenStatus(leer)).toEqual({ art: 'keine_verbindung', text: 'Am gewählten Datum keine passende Verbindung gefunden.' })
+  })
+
+  it('meldet einen Ausfall statt "keine Verbindung", wenn der Live-Fahrplan fehlt', () => {
+    expect(fahrtenStatus({ ...leer, quelle: 'typisch', fehlerArt: 'dienst_nicht_erreichbar' }))
+      .toEqual({ art: 'typisch', text: 'Live-Fahrplan gerade nicht erreichbar.', leer: true })
+    expect(fahrtenStatus({ ...leer, quelle: 'typisch' }))
+      .toEqual({ art: 'typisch', text: 'Live-Fahrplan gerade nicht erreichbar.', leer: true })
+  })
+
+  it('zeigt nach liveBis den Hinweis der API', () => {
+    expect(fahrtenStatus({ ...antwort, quelle: 'typisch', fehlerArt: 'fahrplan_noch_nicht_verfuegbar', hinweis: 'Ab 13.12. noch offen.' }))
+      .toEqual({ art: 'typisch', text: 'Ab 13.12. noch offen.', leer: false })
+  })
+
+  it('reicht bei Live-Fahrten einen Teilhinweis durch', () => {
+    expect(fahrtenStatus(antwort)).toEqual({ art: 'live' })
+    expect(fahrtenStatus({ ...antwort, hinweis: 'Rückfahrt nach typischem Fahrplan' }))
+      .toEqual({ art: 'live', hinweis: 'Rückfahrt nach typischem Fahrplan' })
+  })
+})
+
+describe('merkenswert', () => {
+  it('merkt nur vollständige Live-Antworten', () => {
+    expect(merkenswert(antwort)).toBe(true)
+    expect(merkenswert({ ...antwort, quelle: 'typisch' })).toBe(false)
+    expect(merkenswert({ ...antwort, fehlerArt: 'keine_verbindung' })).toBe(false)
+    expect(merkenswert({ ...antwort, hinweis: 'Hinfahrt nach typischem Fahrplan' })).toBe(false)
   })
 })

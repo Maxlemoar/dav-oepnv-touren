@@ -3,7 +3,7 @@ import { Suspense, useEffect, useState, type ReactNode } from 'react'
 import { useSearchParams } from 'next/navigation'
 import type { BahnOrt, Land } from '@/lib/content/schema'
 import { datumKurz, lokalesDatum, lokaleUhrzeit } from '@/lib/datum'
-import { abweichungText, fahrtenAnfrage, fahrtSchluessel, neueFahrten, vorauswahl, vorOrtText } from '@/lib/fahrtenwahl'
+import { abweichungText, fahrtenAnfrage, fahrtenStatus, fahrtSchluessel, merkenswert, neueFahrten, vorauswahl, vorOrtText } from '@/lib/fahrtenwahl'
 import { fahrplanLink, rueckfahrtLink } from '@/lib/links'
 import type { GruppenHinweis } from '@/lib/teilen'
 import type { FahrtenAntwort, FahrtLive } from '@/lib/verbindung/fahrten'
@@ -37,7 +37,7 @@ const neuerStand = (anfrage: string, antwort: FahrtenAntwort | null): Stand =>
 
 /**
  * Antworten je Anfrage für die Sitzung im Browser: ein erneutes Einhängen (StrictMode im Entwicklungsmodus, Zurück zur
- * Seite, Datum hin und zurück) löst keine zweite Anfrage an den Fahrplandienst aus. Fehlschläge werden nicht gemerkt.
+ * Seite, Datum hin und zurück) löst keine zweite Anfrage an den Fahrplandienst aus. Gemerkt werden nur vollständige Live-Antworten.
  */
 const geladeneFahrten = new Map<string, Promise<FahrtenAntwort>>()
 const MAX_GEMERKT = 30
@@ -47,7 +47,8 @@ function ladeFahrten(anfrage: string): Promise<FahrtenAntwort> {
   if (da) return da
   const p = fetch(`/api/fahrten?${anfrage}`)
     .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() as Promise<FahrtenAntwort> })
-  p.catch(() => geladeneFahrten.delete(anfrage))
+  // Fehlschläge und Ersatzantworten (typisch, Hinweis, fehlerArt) nicht merken: der nächste Aufruf versucht es live.
+  p.then((a) => { if (!merkenswert(a)) geladeneFahrten.delete(anfrage) }, () => geladeneFahrten.delete(anfrage))
   geladeneFahrten.set(anfrage, p)
   if (geladeneFahrten.size > MAX_GEMERKT) geladeneFahrten.delete(geladeneFahrten.keys().next().value!)
   return p
@@ -126,7 +127,8 @@ function FahrtenwahlInnen({ von, nach, gruppe }: Props) {
   const fahrtZu = (r: Richtung) => listen[r].find((f) => fahrtSchluessel(f) === gewaehlt(r))
   const hin = fahrtZu('hin')
   const rueck = fahrtZu('rueck')
-  const keineVerbindung = a.fehlerArt === 'keine_verbindung' || (a.hin.length === 0 && a.rueckfahrten.length === 0)
+  const status = fahrtenStatus(a)
+  const ohneFahrten = status.art === 'keine_verbindung' || (status.art === 'typisch' && status.leer)
 
   async function weitere(r: Richtung) {
     const letzte = listen[r].at(-1)
@@ -159,19 +161,19 @@ function FahrtenwahlInnen({ von, nach, gruppe }: Props) {
 
   return (
     <div className="space-y-5">
-      {keineVerbindung ? (
+      {status.art === 'keine_verbindung' ? (
         <div className="space-y-1">
-          <p className="warnhinweis">{a.hinweis ?? 'Am gewählten Datum keine passende Verbindung gefunden.'}</p>
+          <p className="warnhinweis">{status.text}</p>
           <p className="text-sm text-tinte-3">Selbst prüfen: {portalLinks}</p>
         </div>
-      ) : a.quelle === 'typisch' ? (
-        <TypischHinweis antwort={a} links={portalLinks} />
-      ) : a.hinweis ? (
-        <p className="text-sm text-tinte-3">{a.hinweis}</p>
+      ) : status.art === 'typisch' ? (
+        <TypischHinweis text={status.text} leer={status.leer} links={portalLinks} />
+      ) : status.hinweis ? (
+        <p className="text-sm text-tinte-3">{status.hinweis}</p>
       ) : null}
       {a.abweichungMin !== undefined && <p className="warnhinweis">{abweichungText(a.datum, a.abweichungMin)}</p>}
 
-      {!keineVerbindung && (
+      {!ohneFahrten && (
         <>
           {abschnitt('hin', `Hinfahrt ${datumKurz(a.datum)} ab ${von.name}`)}
           {abschnitt('rueck', `Rückfahrt ${datumKurz(a.rueck)} nach ${von.name}`)}
@@ -200,11 +202,11 @@ function FahrtenwahlInnen({ von, nach, gruppe }: Props) {
   )
 }
 
-function TypischHinweis({ antwort, links }: { antwort: FahrtenAntwort; links: ReactNode }) {
-  const grund = antwort.hinweis ?? (antwort.fehlerArt === 'dienst_nicht_erreichbar' ? 'Live-Fahrplan gerade nicht erreichbar.' : undefined)
+function TypischHinweis({ text, leer, links }: { text: string; leer: boolean; links: ReactNode }) {
   return (
     <div className="space-y-1 rounded-[var(--radius-knopf)] bg-nebel px-3 py-2 text-sm text-tinte">
-      <p><span className="font-semibold">Typischer Fahrplan</span>{grund && <>: {grund}</>}</p>
+      <p><span className="font-semibold">Typischer Fahrplan</span>: {text}</p>
+      {leer && <p>Keine typischen Fahrten hinterlegt.</p>}
       <p className="text-tinte-2">Genaue Verbindung prüfen: {links}</p>
     </div>
   )

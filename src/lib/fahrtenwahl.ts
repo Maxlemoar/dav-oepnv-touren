@@ -85,3 +85,34 @@ export function neueFahrten(bekannt: FahrtLive[], geladen: FahrtLive[]): FahrtLi
     return true
   })
 }
+
+const KEINE_VERBINDUNG = 'Am gewählten Datum keine passende Verbindung gefunden.'
+const AUSFALL = 'Live-Fahrplan gerade nicht erreichbar.'
+
+export type FahrtenStatus =
+  /** Es fährt nachweislich nichts (Live-Ergebnis leer oder Saisonbetrieb). */
+  | { art: 'keine_verbindung'; text: string }
+  /** Kein Live-Fahrplan (Ausfall, nach liveBis): typische Fahrten, `leer` wenn keine hinterlegt sind. */
+  | { art: 'typisch'; text: string; leer: boolean }
+  | { art: 'live'; hinweis?: string }
+
+/**
+ * Was die Fahrtenwahl über die Antwort sagt. "Keine Verbindung" nur, wenn die API das meldet oder live ohne Fehler nichts
+ * kam; fehlt der Live-Fahrplan, steht der wahre Grund da (Ausfall bzw. Hinweis der API), auch wenn keine typischen
+ * Fahrten hinterlegt sind.
+ */
+export function fahrtenStatus(a: FahrtenAntwort): FahrtenStatus {
+  const leer = a.hin.length === 0 && a.rueckfahrten.length === 0
+  if (a.fehlerArt === 'keine_verbindung') return { art: 'keine_verbindung', text: a.hinweis ?? KEINE_VERBINDUNG }
+  if (a.quelle === 'typisch') {
+    // Nach liveBis bzw. bei vergangenem Datum liefert die API den Hinweis; bei Ausfall (mit oder ohne fehlerArt) fehlt er.
+    return { art: 'typisch', text: a.hinweis ?? AUSFALL, leer }
+  }
+  if (!a.fehlerArt && leer) return { art: 'keine_verbindung', text: a.hinweis ?? KEINE_VERBINDUNG }
+  return { art: 'live', ...(a.hinweis && { hinweis: a.hinweis }) }
+}
+
+/** Für die Sitzung merken nur vollständige Live-Antworten; alles andere cacht auch der Server nur kurz. */
+export function merkenswert(a: FahrtenAntwort): boolean {
+  return a.quelle === 'live' && !a.fehlerArt && !a.hinweis
+}
