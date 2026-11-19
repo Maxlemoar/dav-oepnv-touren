@@ -1,6 +1,7 @@
 import type { Inhalt } from './content/laden'
 import { EIGENE_SEKTION, istSektionshaus, SPORTART_LABEL, type Sportart } from './content/labels'
 import { minutenAlsDauer } from './datum'
+import { escapeHtml } from './karte-ausgangsorte'
 import { reisezeitStufe, type Stufe } from './stufe'
 
 export type KarteFeature = {
@@ -54,8 +55,4 @@ export function popupHtml(pfad: string, p: Record<string, string | number | bool
   }
   return `<a href="${escapeHtml(pfad)}" class="font-semibold text-tanne underline">${escapeHtml(String(p.name))}</a>`
     + zeilen.map((z) => `<div class="text-xs text-tinte-2">${escapeHtml(z)}</div>`).join('')
-}
-
-export function escapeHtml(s: string): string {
-  return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] ?? c)
 }
