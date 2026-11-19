@@ -2,14 +2,14 @@ id: les-jonquilles
 name: Les Jonquilles
 betreiber: { typ: naturfreunde, sektion: Amis de la Nature Metzeral }
 hoehe: 900
-lat: 48.005
-lon: 7.060
+lat: 48.0314
+lon: 7.0572
 gebietId: munstertal
 saison: ganzjaehrig
-webUrl: https://amis-nature.org/article236.html
 zustiege:
   - haltestelleId: metzeral
     gehzeitMin: 60
     hoehenmeter: 300
-quelle: https://amis-nature.org/article236.html
+    hinweis: Route du Gaschney oberhalb Muhlbach-sur-Munster, 31 Betten. Ähnlich weit ab Bahnhof Muhlbach-sur-Munster.
+quelle: https://ww14bew.naturfreunde.de/sites/default/files/attachments/nfh-vogesen-flyer.pdf
 geschaetzt: true

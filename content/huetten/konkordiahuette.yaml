@@ -9,9 +9,9 @@ saison: sommer
 webUrl: https://www.konkordiahuette.ch
 zustiege:
   - haltestelleId: fiesch
-    gehzeitMin: 300
-    hoehenmeter: 700
+    gehzeitMin: 330
+    hoehenmeter: 1050
     bergbahn: true
     hinweis: Bahn Fiesch–Fiescheralp, über Märjelensee auf den Aletschgletscher; Gletscherausrüstung und -erfahrung nötig, rund 5 h ab Fiescheralp.
 quelle: https://www.konkordiahuette.ch
-geschaetzt: true
+geschaetzt: false

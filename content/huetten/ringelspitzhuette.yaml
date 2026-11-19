@@ -10,8 +10,8 @@ webUrl: https://www.ringelspitzhuette.ch
 zustiege:
   - haltestelleId: fidaz-bargis
     gehzeitMin: 135
-    hoehenmeter: 450
-    hinweis: "Bus Flims–Fidaz–Bargis nur im Sommer; ab Bargis 2:15 h (T2)."
+    hoehenmeter: 850
+    hinweis: "Bus Flims–Fidaz–Bargis nur im Sommer (Ende Mai bis Mitte Oktober); ab Bargis 2:15 h (T4)."
   - haltestelleId: flims-dorf-post
     gehzeitMin: 210
     hoehenmeter: 920

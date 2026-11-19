@@ -10,7 +10,7 @@ webUrl: https://www.engelhornhuette.ch
 zustiege:
   - haltestelleId: rosenlaui
     gehzeitMin: 105
-    hoehenmeter: 540
+    hoehenmeter: 570
     hinweis: "Klettergebiet Engelhörner; Zeit nach Tourenportal 1:30 bis 2 h."
 quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/engelhornhuette-aacb-2147000088/
-geschaetzt: true
+geschaetzt: false

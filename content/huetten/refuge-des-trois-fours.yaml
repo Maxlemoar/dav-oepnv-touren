@@ -11,7 +11,7 @@ zustiege:
   - haltestelleId: col-de-la-schlucht
     gehzeitMin: 30
     hoehenmeter: 60
-    hinweis: Bus zum Col de la Schlucht nur saisonal (Navette des Crêtes ab Munster bzw. Colmar), dann 2 km auf der Route des Crêtes Richtung Hohneck.
+    hinweis: "Bus zum Col de la Schlucht nur im Sommer (Navette des Crêtes, 2026: 30.5.–27.9.), dann 2 km auf der Route des Crêtes Richtung Hohneck. Ganzjährig bewartet, 40 Plätze."
   - haltestelleId: metzeral
     gehzeitMin: 180
     hoehenmeter: 720

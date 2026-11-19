@@ -2,16 +2,16 @@ id: raemsenberg
 name: Gruppenhaus Rämsenberg
 betreiber: { typ: dav, sektion: Offenburg }
 hoehe: 1634
-lat: 46.868
-lon: 8.712
+lat: 46.8954
+lon: 8.7108
 gebietId: schaechental
 saison: ganzjaehrig
 webUrl: https://www.dav-offenburg.de/Sektion/H%C3%BCtten/R%C3%A4msenberg
 zustiege:
   - haltestelleId: bruegg-buerglen
-    gehzeitMin: 30
-    hoehenmeter: 100
+    gehzeitMin: 5
+    hoehenmeter: 0
     bergbahn: true
-    hinweis: Luftseilbahn Biel-Kinzig bis Bergstation Biel, dann Fußweg.
+    hinweis: Bus ab Altdorf (Linie Flüelen–Altdorf–Bürglen) bis Brügg, Luftseilbahn Biel-Kinzig in zwei Sektionen mit Umstieg in Riedlig, ganzjährig im 20-Minuten-Takt (Mittagspause 12–13 Uhr, letzte Bergfahrt Sa/So 18:40, Mo–Fr 19:00; im April Revision mit Lücken werktags). Ausserhalb der Fahrzeiten Automatikbetrieb (TWINT, Kreditkarte, Jetons). Ab Bergstation Biel 2 Gehminuten.
 quelle: https://www.dav-offenburg.de/Sektion/H%C3%BCtten/R%C3%A4msenberg
-geschaetzt: true
+geschaetzt: false

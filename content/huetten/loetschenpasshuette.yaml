@@ -10,8 +10,8 @@ webUrl: https://www.loetschenpass.ch
 zustiege:
   - haltestelleId: wiler-loetschen
     gehzeitMin: 150
-    hoehenmeter: 720
+    hoehenmeter: 790
     bergbahn: true
     hinweis: "Luftseilbahn Wiler–Lauchernalp, ab Bergstation 2:30 h (T3); ab Ferden über Kummenalp 3:45 h."
 quelle: https://www.loetschenpass.ch
-geschaetzt: true
+geschaetzt: false

@@ -10,7 +10,7 @@ webUrl: https://www.cas-geneve.ch
 zustiege:
   - haltestelleId: saas-fee
     gehzeitMin: 60
-    hoehenmeter: 50
+    hoehenmeter: 150
     bergbahn: true
     hinweis: Alpin Express und Felskinn-Bahn ab Saas-Fee, ab Felskinn rund 1 h über das Egginerjoch (Gletscherpfad).
 quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/?type=hut

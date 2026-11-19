@@ -2,8 +2,8 @@ id: doldenhornhuette
 name: Doldenhornhütte
 betreiber: { typ: sac, sektion: Emmental }
 hoehe: 1915
-lat: 46.4735
-lon: 7.6895
+lat: 46.4869
+lon: 7.6974
 gebietId: kandersteg
 saison: sommer
 webUrl: https://www.doldenhornhuette.ch

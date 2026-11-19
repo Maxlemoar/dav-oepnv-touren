@@ -9,8 +9,9 @@ saison: sommer
 webUrl: https://www.muttseehuette.ch
 zustiege:
   - haltestelleId: linthal
-    gehzeitMin: 210
+    gehzeitMin: 240
     hoehenmeter: 1850
-    hinweis: "Ab Tierfehd 2:30 h (T3); Bus Linthal–Tierfehd saisonal, spart rund 1 h Talweg."
+    hinweis: "Linthal–Tierfed 1:30 h zu Fuss oder Alpentaxi (Reservation Pflicht), Luftseilbahn Tierfed–Kalktrittli (Touristenbetrieb etwa Mitte Juni bis Mitte Oktober), ab Bergstation 2:30 h (T3, durch den Stollen T2). Ohne Seilbahn 6–7 h."
+    bergbahn: true
 quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs
 geschaetzt: true

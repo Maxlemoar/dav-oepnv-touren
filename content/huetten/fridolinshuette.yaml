@@ -9,8 +9,8 @@ saison: sommer
 webUrl: https://www.fridolinshuette.ch
 zustiege:
   - haltestelleId: linthal
-    gehzeitMin: 300
+    gehzeitMin: 330
     hoehenmeter: 1460
-    hinweis: "Ab Tierfehd 4:00 h (T2); Bus Linthal–Tierfehd saisonal, spart rund 1 h Talweg."
+    hinweis: "Linthal–Tierfehd 1:30 h zu Fuss oder Alpentaxi (Reservation Pflicht), ab Tierfehd 4:00 h (T2)."
 quelle: https://de.wikipedia.org/wiki/Liste_der_H%C3%BCtten_des_Schweizer_Alpen-Clubs
 geschaetzt: true

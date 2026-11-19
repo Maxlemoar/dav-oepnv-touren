@@ -9,8 +9,8 @@ saison: ganzjaehrig
 webUrl: https://www.sac-biel.ch/huetten/jurahaus.php
 zustiege:
   - haltestelleId: les-pres-d-orvin
-    gehzeitMin: 60
-    hoehenmeter: 250
+    gehzeitMin: 45
+    hoehenmeter: 315
     hinweis: Bus ab Biel bis Les Prés-d'Orvin, dann T1 zum Haus. Bewartet an Wochenenden, 35 Schlafplätze.
   - haltestelleId: st-imier
     gehzeitMin: 180

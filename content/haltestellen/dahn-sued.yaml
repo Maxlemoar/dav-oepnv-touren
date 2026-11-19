@@ -1,8 +1,8 @@
 id: dahn-sued
-name: Dahn Süd
-haltestelleId: "de-amarillo-bw_de:07340:3747"
-lat: 49.14845
-lon: 7.77732
+name: Dahn, Stadtmitte
+haltestelleId: "de-DELFI_de:07340:3743:0:RiN"
+lat: 49.1501
+lon: 7.77936
 land: DE
 region: Pfälzerwald
 richtwerte: { kehl: { fahrzeitMin: 250, umstiege: 4, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 87, bahnKm: 80 }, lahr: { fahrzeitMin: 235, umstiege: 4, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 132, bahnKm: 112 }, offenburg: { fahrzeitMin: 208, umstiege: 4, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 115, bahnKm: 95 } }
