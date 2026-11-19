@@ -11,3 +11,5 @@ bahn:
   name: Räterichsboden
   x: 8326294
   y: 46591387
+bedient: [{ von: "06-15", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Postauto 161 Meiringen–Grimsel. Zeiten ungefähr, Fahrplan prüfen."

@@ -11,3 +11,5 @@ bahn:
   name: Mettmen
   x: 9095915
   y: 46958678
+bedient: [{ von: "06-01", bis: "10-20" }]
+bedientHinweis: "Nur im Sommer: Seilbahn Kies–Mettmen. Zeiten ungefähr, Fahrplan prüfen."

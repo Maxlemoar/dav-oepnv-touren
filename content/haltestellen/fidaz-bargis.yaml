@@ -11,3 +11,5 @@ bahn:
   name: Fidaz, Bargis
   x: 9326668
   y: 46854052
+bedient: [{ von: "05-25", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Ortsbus Flims–Bargis von Ende Mai bis Mitte Oktober, Gästekarte gilt nicht. Zeiten ungefähr, Fahrplan prüfen."

@@ -8,7 +8,7 @@ sportarten:
   - klettern
   - klettersteig
   - schneeschuh
-saison: sommer
+saison: ganzjaehrig
 touren:
   # Demo, bis Pro+ geklärt: einzige Tour mit `embed`, damit der Platzhalter-Mechanismus sichtbar ist.
   - titel: "Kandersteg-Ryharts-Allmenalp"

@@ -6,3 +6,5 @@ lon: 9.99904
 land: AT
 region: Vorarlberg
 richtwerte: { kehl: { fahrzeitMin: 492, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 346, bahnKm: 283 }, lahr: { fahrzeitMin: 417, umstiege: 8, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 342, bahnKm: 259 }, offenburg: { fahrzeitMin: 394, umstiege: 7, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 326, bahnKm: 264 } }
+bedient: [{ von: "06-15", bis: "10-05" }]
+bedientHinweis: "Nur im Sommer: Wanderbus ab Lech von Mitte Juni bis Anfang Oktober, kein Winterdienst auf der Straße. Zeiten ungefähr, Fahrplan prüfen."

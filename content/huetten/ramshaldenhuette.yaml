@@ -14,3 +14,5 @@ zustiege:
     hinweis: Bus ab Hinterzarten Richtung St. Märgen bis Breitnau, Ramshalde, die Hütte liegt direkt oberhalb. Zu Fuß ab Bahnhof etwa 1:15 h und 150 Höhenmeter. Selbstversorgerhütte, 51 Betten.
 quelle: https://www.dav-freiburg.de/de/huette/ramshalde.php
 geschaetzt: true
+bewirtschaftet: [{ von: "01-01", bis: "12-31" }]
+selbstversorger: true

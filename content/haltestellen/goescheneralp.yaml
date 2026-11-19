@@ -11,3 +11,5 @@ bahn:
   name: Göscheneralp, Dammagletscher
   x: 8499184
   y: 46649026
+bedient: [{ von: "06-15", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Postauto 411 Göschenen–Göscheneralp. Zeiten ungefähr, Fahrplan prüfen."

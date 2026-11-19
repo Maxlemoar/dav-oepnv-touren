@@ -13,3 +13,5 @@ zustiege:
     hoehenmeter: 780
     hinweis: RVA-Bus Linie 49 ab Sonthofen/Bad Hindelang bis Hinterstein Grüner Hut, dort privater Wanderbus Linie 50 zum Giebelhaus, dann durchs Bärgündletal zur Hütte unter dem Hochvogel.
 quelle: https://www.prinz-luitpoldhaus.de/cms
+bewirtschaftet: [{ von: "06-04", bis: "10-04" }]
+winterraum: true

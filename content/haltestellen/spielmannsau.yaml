@@ -11,3 +11,5 @@ bahn:
   name: Spielmannsau, Oberstdorf
   x: 10304928
   y: 47347218
+bedient: [{ von: "05-01", bis: "10-31" }]
+bedientHinweis: Bergsteigerbus Linie 8 ab Oberstdorf laut DAV-Übersicht Mai bis November, am 21.11.2026 ohne Fahrt; Deutschlandticket gilt nicht. Zeiten ungefähr, Fahrplan prüfen.

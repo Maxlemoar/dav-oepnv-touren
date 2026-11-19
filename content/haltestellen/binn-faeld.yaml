@@ -11,3 +11,5 @@ bahn:
   name: Binn, Fäld
   x: 8212033
   y: 46368760
+bedient: [{ von: "06-15", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Bus 653 Binn–Fäld. Zeiten ungefähr, Fahrplan prüfen."

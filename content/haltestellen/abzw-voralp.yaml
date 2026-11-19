@@ -11,3 +11,5 @@ bahn:
   name: Göschenen, Abzw. Voralp
   x: 8531572
   y: 46661512
+bedient: [{ von: "06-15", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Postauto 411 Göschenen–Göscheneralp. Zeiten ungefähr, Fahrplan prüfen."

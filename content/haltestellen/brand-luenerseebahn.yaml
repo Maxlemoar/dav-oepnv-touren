@@ -6,3 +6,5 @@ lon: 9.75499
 land: AT
 region: Vorarlberg
 richtwerte: { kehl: { fahrzeitMin: 432, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 309, bahnKm: 278 }, lahr: { fahrzeitMin: 412, umstiege: 6, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 305, bahnKm: 252 }, offenburg: { fahrzeitMin: 389, umstiege: 5, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 289, bahnKm: 259 } }
+bedient: [{ von: "05-23", bis: "10-26" }]
+bedientHinweis: "Nur im Sommer: Bus 580 bis zur Lünerseebahn, die 2026 vom 23.5. bis 26.10. fuhr."

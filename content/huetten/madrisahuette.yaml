@@ -13,3 +13,5 @@ zustiege:
     hoehenmeter: 240
     hinweis: Landbus 670 ab Bahnhof Schruns nach Gargellen (halbstündlich), dann Fahrweg ins Valzifenztal. Selbstversorgerhütte, Schlüssel über die Sektion Karlsruhe.
 quelle: https://www.alpenverein-karlsruhe.de/huetten/madrisahuette/standort
+bewirtschaftet: [{ von: "01-01", bis: "12-31" }]
+selbstversorger: true

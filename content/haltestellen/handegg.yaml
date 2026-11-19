@@ -11,3 +11,5 @@ bahn:
   name: Handegg, Gelmerbahn
   x: 8308163
   y: 46611227
+bedient: [{ von: "06-15", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Postauto 161 Meiringen–Grimsel. Zeiten ungefähr, Fahrplan prüfen."

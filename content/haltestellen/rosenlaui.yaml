@@ -11,3 +11,5 @@ bahn:
   name: Rosenlaui, Hotel
   x: 8153702
   y: 46680264
+bedient: [{ von: "05-14", bis: "10-18" }]
+bedientHinweis: "Nur im Sommer: Postauto 164 Meiringen–Rosenlaui, 2026 vom 14.5. bis 18.10."

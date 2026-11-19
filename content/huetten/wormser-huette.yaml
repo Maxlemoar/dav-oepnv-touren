@@ -14,3 +14,4 @@ zustiege:
     bergbahn: true
     hinweis: Hochjochbahn ab Schruns bis Bergstation Kapell (1873 m), dann Höhenweg zur Hütte. Zu Fuß ab Schruns 5 bis 6 h.
 quelle: https://www.dav-worms.de/index.php/die-wormser-huette
+bewirtschaftet: [{ von: "12-24", bis: "04-10" }, { von: "06-15", bis: "10-15" }]

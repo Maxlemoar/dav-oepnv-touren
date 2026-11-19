@@ -11,3 +11,5 @@ bahn:
   name: Bielerhöhe Silvrettasee, Gaschurn (A)
   x: 10092612
   y: 46917273
+bedient: [{ von: "06-20", bis: "10-04" }]
+bedientHinweis: "Nur im Sommer: Vermuntbahn und Tunnelbus ab Partenen (2026: 20.6.–4.10., letzte Talfahrt 17 Uhr) oder Sommerbus über Galtür. Die Hochalpenstraße ist ab Montafon bis voraussichtlich 2030 gesperrt."

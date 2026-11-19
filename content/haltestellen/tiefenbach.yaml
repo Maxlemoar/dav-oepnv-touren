@@ -11,3 +11,5 @@ bahn:
   name: Tiefenbach (Furka)
   x: 8461591
   y: 46592709
+bedient: [{ von: "06-20", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Postauto 681 über die Furka. Zeiten ungefähr, Fahrplan prüfen."

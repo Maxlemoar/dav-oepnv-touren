@@ -11,3 +11,5 @@ bahn:
   name: Cruina
   x: 8423639
   y: 46475570
+bedient: [{ von: "06-20", bis: "09-30" }]
+bedientHinweis: "Nur im Sommer: Postauto 111 über den Nufenenpass. Zeiten ungefähr, Fahrplan prüfen."

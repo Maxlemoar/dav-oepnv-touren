@@ -11,3 +11,5 @@ bahn:
   name: Lenk, Iffigenalp
   x: 7441567
   y: 46400169
+bedient: [{ von: "06-01", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Bus 282 Lenk–Iffigenalp. Zeiten ungefähr, Fahrplan prüfen."

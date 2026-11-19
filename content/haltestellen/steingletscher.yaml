@@ -11,3 +11,5 @@ bahn:
   name: Steingletscher, Susten
   x: 8427495
   y: 46731143
+bedient: [{ von: "06-20", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Postauto 162 über den Susten. Zeiten ungefähr, Fahrplan prüfen."

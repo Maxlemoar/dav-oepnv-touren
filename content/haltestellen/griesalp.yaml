@@ -11,3 +11,5 @@ bahn:
   name: Griesalp, Kurhaus
   x: 7761673
   y: 46547475
+bedient: [{ von: "06-01", bis: "10-15" }]
+bedientHinweis: "Nur im Sommer: Postauto 220 ab Reichenbach. Zeiten ungefähr, Fahrplan prüfen."
