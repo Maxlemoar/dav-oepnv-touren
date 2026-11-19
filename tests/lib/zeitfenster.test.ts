@@ -149,3 +149,31 @@ describe('ab nach dem vorgegebenen bis', () => {
     expect(lese('ab=23:30').bisMin).toBe(1440)
   })
 })
+
+describe('Kalenderprüfung und gewaehlt', () => {
+  it('Kalenderungültiges datum wirft nicht und gilt als fehlend', () => {
+    let z!: ReturnType<typeof lese>
+    expect(() => { z = lese('datum=2026-13-45') }).not.toThrow()
+    expect(z.datum).toBe('2026-11-21')
+    expect(z.gewaehlt).toBe(false)
+    expect(lese('datum=2026-02-30').gewaehlt).toBe(false)
+  })
+  it('Kalenderungültiges rueck fällt auf datum zurück', () => {
+    const z = lese('datum=2026-12-01&rueck=2026-99-99')
+    expect(z.rueck).toBe('2026-12-01')
+    expect(naechte(z)).toBe(0)
+  })
+  it('gewaehlt nur mit gültigem, nicht vergangenem datum', () => {
+    const a = lese('ab=07:00')
+    expect(a.abMin).toBe(420)
+    expect(a.gewaehlt).toBe(false)
+    expect(lese('datum=2026-01-01&rueck=2026-11-22').gewaehlt).toBe(false)
+    expect(lese('rueck=2026-11-22').gewaehlt).toBe(false)
+    expect(lese('datum=2026-11-19').gewaehlt).toBe(true)
+  })
+  it('zeitfensterSchreiben ohneDatum lässt datum und rueck weg', () => {
+    const sp = new URLSearchParams('datum=2026-11-28&rueck=2026-11-29&x=1')
+    const aus = zeitfensterSchreiben(sp, { datum: '2026-11-21', rueck: '2026-11-22', abMin: 420, bisMin: 1260, vorOrtMin: 240 }, { ohneDatum: true })
+    expect(aus.toString()).toBe('x=1&ab=07%3A00')
+  })
+})

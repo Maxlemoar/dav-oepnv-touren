@@ -12,6 +12,13 @@ export const VOR_ORT_MAX_MIN = 600
 export const ZEITFENSTER_PARAMETER = ['datum', 'rueck', 'ab', 'bis', 'vorort'] as const
 
 const ISO_DATUM = /^\d{4}-\d{2}-\d{2}$/
+
+/** Echtes Kalenderdatum JJJJ-MM-TT (Rundreise über Date fängt 2026-13-45 und 2026-02-30 ab). */
+function istDatum(x: string | null): x is string {
+  if (!x || !ISO_DATUM.test(x)) return false
+  const d = new Date(`${x}T00:00:00Z`)
+  return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === x
+}
 const UHRZEIT = /^(\d{1,2}):(\d{2})$/
 
 /** "06:30" → 390, "24:00" → 1440, sonst undefined. */
@@ -57,7 +64,7 @@ function vorOrtParam(sp: URLSearchParams): number | undefined {
 /**
  * Zeitfenster aus der Seiten-URL. Ohne gültiges oder mit vergangenem datum gilt der kommende Samstag, ohne rueck
  * das Hin-Datum (rueck liegt nie vor datum + mindestNaechte). Ungültige Zeiten fallen auf die Vorgaben zurück;
- * am selben Tag liegt bis mindestens eine Stufe nach ab (bei gewähltem ab wird angehoben, sonst gilt die Vorgabe). `gewaehlt`: die URL trägt mindestens eine gültige Angabe.
+ * am selben Tag liegt bis mindestens eine Stufe nach ab (bei gewähltem ab wird angehoben, sonst gilt die Vorgabe). `gewaehlt`: die URL trägt ein gültiges, nicht vergangenes datum.
  */
 export function zeitfensterAusUrl(
   sp: URLSearchParams,
@@ -65,10 +72,10 @@ export function zeitfensterAusUrl(
 ): Zeitfenster & { gewaehlt: boolean } {
   const heute = opts.heute ?? lokalesDatum(new Date())
   const roh = sp.get('datum')
-  const datumGueltig = !!roh && ISO_DATUM.test(roh) && roh >= heute
+  const datumGueltig = istDatum(roh) && roh >= heute
   const datum = datumGueltig ? roh : naechsterSamstag(new Date(`${heute}T12:00:00Z`))
   const rueckRoh = sp.get('rueck')
-  const rueckGueltig = !!rueckRoh && ISO_DATUM.test(rueckRoh)
+  const rueckGueltig = istDatum(rueckRoh)
   const rueck = rueckAnheben(datum, rueckGueltig ? rueckRoh : undefined, opts.mindestNaechte ?? 0)
 
   const ab = uhrzeitParam(sp, 'ab')
@@ -89,17 +96,23 @@ export function zeitfensterAusUrl(
     abMin,
     bisMin,
     vorOrtMin: vorOrt ?? STANDARD_ZEITFENSTER.vorOrtMin,
-    gewaehlt: datumGueltig || (rueckGueltig && rueck === rueckRoh) || ab !== undefined || bis !== undefined || vorOrt !== undefined,
+    gewaehlt: datumGueltig,
   }
 }
 
-/** Schreibt das Zeitfenster in eine Kopie von `sp`: Vorgaben entfallen, rueck nur wenn ≠ datum, fenster wird gelöscht. */
-export function zeitfensterSchreiben(sp: URLSearchParams, z: Zeitfenster): URLSearchParams {
+/** Schreibt das Zeitfenster in eine Kopie von `sp`: Vorgaben entfallen, rueck nur wenn ≠ datum, fenster wird gelöscht; `ohneDatum` lässt datum und rueck weg. */
+export function zeitfensterSchreiben(
+  sp: URLSearchParams,
+  z: Zeitfenster,
+  opts: { ohneDatum?: boolean } = {},
+): URLSearchParams {
   const neu = new URLSearchParams(sp)
   for (const k of ZEITFENSTER_PARAMETER) neu.delete(k)
   neu.delete('fenster')
-  neu.set('datum', z.datum)
-  if (z.rueck !== z.datum) neu.set('rueck', z.rueck)
+  if (!opts.ohneDatum) {
+    neu.set('datum', z.datum)
+    if (z.rueck !== z.datum) neu.set('rueck', z.rueck)
+  }
   if (z.abMin !== STANDARD_ZEITFENSTER.abMin) neu.set('ab', `${String(Math.floor(z.abMin / 60)).padStart(2, '0')}:${String(z.abMin % 60).padStart(2, '0')}`)
   if (z.bisMin !== STANDARD_ZEITFENSTER.bisMin) neu.set('bis', `${String(Math.floor(z.bisMin / 60)).padStart(2, '0')}:${String(z.bisMin % 60).padStart(2, '0')}`)
   if (z.vorOrtMin !== STANDARD_ZEITFENSTER.vorOrtMin) neu.set('vorort', String(z.vorOrtMin))
