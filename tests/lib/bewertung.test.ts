@@ -70,6 +70,19 @@ describe('bewerte', () => {
   })
 })
 
+describe('Fahrten über Mitternacht', () => {
+  it('Rückfahrt 23:40 → 00:15 zählt nicht', () => {
+    const p: Tagesplan = { hin: [f('06:12', '09:41')], rueck: [f('23:40', '00:15')] }
+    expect(bewerte({}, p, p, z({ bisMin: 1440 }))).toMatchObject({ passt: false, grund: 'keine Rückfahrt bis 24:00' })
+  })
+  it('Hinfahrt 23:00 → 01:10 wird ignoriert', () => {
+    const p: Tagesplan = { hin: [f('23:00', '01:10')], rueck: [f('23:50', '23:58')] }
+    expect(bewerte({}, p, p, z({ bisMin: 1440 }))).toMatchObject({ passt: false, grund: 'keine Hinfahrt ab 6:00' })
+    const q: Tagesplan = { hin: [f('23:00', '01:10'), f('06:12', '09:41')], rueck: [f('17:18', '20:46')] }
+    expect(bewerte({}, q, q, z())).toMatchObject({ passt: true })
+  })
+})
+
 describe('passungPaar', () => {
   it('fehlende Fahrt', () => {
     expect(passungPaar(undefined, f('17:00', '20:00'), z())).toMatchObject({ passt: false, grund: 'keine Hinfahrt ab 6:00' })

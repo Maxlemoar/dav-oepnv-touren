@@ -10,13 +10,15 @@ export type Bewertung =
   | { passt: false; grund: string; naechte: number }
 
 const min = (hhmm: string): number => alsMin(hhmm) ?? Number.NaN
+/** Fahrten über Mitternacht (an < ab) oder mit unlesbarer Zeit zählen nie. */
+const gueltig = (f: Fahrt): boolean => min(f.an) >= min(f.ab)
 const nein = (grund: string, n: number): Bewertung => ({ passt: false, grund, naechte: n })
 
 /** Bewertet ein festes Paar Hin-/Rückfahrt gegen das Zeitfenster. */
 export function passungPaar(hin: Fahrt | undefined, rueck: Fahrt | undefined, z: Zeitfenster): Bewertung {
   const n = naechte(z)
-  if (!hin || min(hin.ab) < z.abMin) return nein(`keine Hinfahrt ab ${alsUhrzeit(z.abMin)}`, n)
-  if (!rueck || min(rueck.an) > z.bisMin) return nein(`keine Rückfahrt bis ${alsUhrzeit(z.bisMin)}`, n)
+  if (!hin || !gueltig(hin) || min(hin.ab) < z.abMin) return nein(`keine Hinfahrt ab ${alsUhrzeit(z.abMin)}`, n)
+  if (!rueck || !gueltig(rueck) || min(rueck.an) > z.bisMin) return nein(`keine Rückfahrt bis ${alsUhrzeit(z.bisMin)}`, n)
   const vorOrtMin = n * 1440 + min(rueck.ab) - min(hin.an)
   if (n === 0) {
     if (min(rueck.ab) < min(hin.an)) return nein(`Ankunft erst ${alsUhrzeit(min(hin.an))}`, n)
@@ -34,9 +36,9 @@ export function bewerte(
   const n = naechte(z)
   if (!bedientAm(ort, z.datum) || !bedientAm(ort, z.rueck)) return nein('fährt am Datum nicht', n)
   if (!hinPlan || !rueckPlan) return nein('keine Fahrplandaten', n)
-  const hins = hinPlan.hin.filter((h) => min(h.ab) >= z.abMin)
+  const hins = hinPlan.hin.filter((h) => gueltig(h) && min(h.ab) >= z.abMin)
   if (hins.length === 0) return nein(`keine Hinfahrt ab ${alsUhrzeit(z.abMin)}`, n)
-  const ruecks = rueckPlan.rueck.filter((r) => min(r.an) <= z.bisMin)
+  const ruecks = rueckPlan.rueck.filter((r) => gueltig(r) && min(r.an) <= z.bisMin)
   if (ruecks.length === 0) return nein(`keine Rückfahrt bis ${alsUhrzeit(z.bisMin)}`, n)
 
   if (n > 0) {
