@@ -6,6 +6,7 @@ lat: 46.8594
 lon: 8.93583
 gebietId: linthal
 saison: ganzjaehrig
+buchungUrl: https://www.claridenhuette.ch/reservation/
 webUrl: https://www.claridenhuette.ch
 zustiege:
   - haltestelleId: urnerboden-dorf

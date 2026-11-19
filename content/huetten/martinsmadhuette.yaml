@@ -6,6 +6,7 @@ lat: 46.89256
 lon: 9.18826
 gebietId: elm-sernftal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/615/wizard
 webUrl: https://www.martinsmadhuette.ch
 zustiege:
   - haltestelleId: elm-dorf

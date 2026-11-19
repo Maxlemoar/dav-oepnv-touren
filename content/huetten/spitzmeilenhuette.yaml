@@ -6,6 +6,7 @@ lat: 47.03424
 lon: 9.25058
 gebietId: walensee-churfirsten-flumserberg
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/682/wizard
 webUrl: https://www.spitzmeilenhuette.ch/
 zustiege:
   - haltestelleId: flumserberg-tannenboden

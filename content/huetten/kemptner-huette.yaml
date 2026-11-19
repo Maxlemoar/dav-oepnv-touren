@@ -6,6 +6,7 @@ lat: 47.3133
 lon: 10.3278
 gebietId: oberstdorf
 saison: sommer
+buchungUrl: https://www.huetten-holiday.com/huts/kemptner-huette
 webUrl: https://www.kemptner-huette.de
 zustiege:
   - haltestelleId: spielmannsau

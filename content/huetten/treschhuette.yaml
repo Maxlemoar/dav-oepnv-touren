@@ -6,6 +6,7 @@ lat: 46.7186
 lon: 8.6494
 gebietId: reusstal-maderanertal
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/688/wizard
 zustiege:
   - haltestelleId: gurtnellen-wiler
     gehzeitMin: 150

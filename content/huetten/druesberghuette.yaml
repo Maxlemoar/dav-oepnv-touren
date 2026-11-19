@@ -6,6 +6,7 @@ lat: 47.0206
 lon: 8.8261
 gebietId: hoch-ybrig
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/741/wizard
 webUrl: https://druesberghuette.ch/
 zustiege:
   - haltestelleId: hoch-ybrig-weglosen

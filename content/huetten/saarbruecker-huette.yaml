@@ -6,6 +6,7 @@ lat: 46.8983
 lon: 10.0369
 gebietId: silvretta
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/309/wizard
 webUrl: https://saarbrueckerhuette.at/
 zustiege:
   - haltestelleId: bielerhoehe

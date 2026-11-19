@@ -6,6 +6,7 @@ lat: 47.4135
 lon: 10.3471
 gebietId: oberstdorf
 saison: ganzjaehrig
+buchungUrl: https://www.huetten-holiday.com/huts/edmund-probst-haus
 webUrl: https://www.edmund-probst-haus.de
 zustiege:
   - haltestelleId: oberstdorf

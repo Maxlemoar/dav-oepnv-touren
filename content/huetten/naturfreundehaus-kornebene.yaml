@@ -6,6 +6,7 @@ lat: 48.43018
 lon: 8.09318
 gebietId: nordrach
 saison: ganzjaehrig
+buchungUrl: https://www.kornebene.de/haus-kornebene/
 webUrl: https://www.kornebene.de/
 zustiege:
   - haltestelleId: nordrach-adler

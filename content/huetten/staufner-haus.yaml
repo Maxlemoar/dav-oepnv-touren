@@ -6,6 +6,7 @@ lat: 47.49165
 lon: 10.0692
 gebietId: nagelfluhkette
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/85/wizard
 webUrl: https://www.staufner-haus.de/
 zustiege:
   - haltestelleId: hochgratbahn

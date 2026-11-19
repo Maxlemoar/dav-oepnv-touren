@@ -6,6 +6,7 @@ lat: 47.0344
 lon: 9.8356
 gebietId: montafon-raetikon
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/297/wizard
 webUrl: https://lindauerhuette.com/
 zustiege:
   - haltestelleId: schruns

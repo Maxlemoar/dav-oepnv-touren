@@ -6,6 +6,7 @@ lat: 47.0789
 lon: 9.7837
 gebietId: montafon-raetikon
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/89/wizard
 webUrl: https://hueterhuette.at/
 zustiege:
   - haltestelleId: vandans

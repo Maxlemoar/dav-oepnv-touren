@@ -6,6 +6,7 @@ lat: 47.86720
 lon: 7.99990
 gebietId: todtnau-belchen
 saison: ganzjaehrig
+buchungUrl: https://app.mews.com/distributor/9f9b50d5-978d-4dba-9173-b24100c9b89e
 zustiege:
   - haltestelleId: todtnau-busbahnhof
     gehzeitMin: 45

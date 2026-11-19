@@ -6,6 +6,7 @@ lat: 46.6449
 lon: 8.4578
 gebietId: goeschenen-goescheneralp
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/228/wizard
 webUrl: https://www.dammahuette.ch
 zustiege:
   - haltestelleId: goescheneralp

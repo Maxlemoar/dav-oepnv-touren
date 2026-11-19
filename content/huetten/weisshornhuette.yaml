@@ -6,6 +6,7 @@ lat: 46.0858
 lon: 7.74361
 gebietId: zermatt-mattertal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/672/wizard
 webUrl: https://www.sac-basel.ch/deutsch/huetten/weisshornhuette/
 zustiege:
   - haltestelleId: randa

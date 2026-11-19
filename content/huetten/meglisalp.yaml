@@ -6,6 +6,7 @@ lat: 47.25588
 lon: 9.38554
 gebietId: alpstein
 saison: sommer
+buchungUrl: https://meglisalp.ch/anfrage-und-reservation/
 webUrl: https://www.meglisalp.ch
 zustiege:
   - haltestelleId: wasserauen

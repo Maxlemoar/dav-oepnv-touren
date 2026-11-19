@@ -6,6 +6,7 @@ lat: 46.82
 lon: 8.88056
 gebietId: linthal
 saison: sommer
+buchungUrl: https://planurahuette.ch/kurzinfo/belegungsplan
 webUrl: https://www.planurahuette.ch
 zustiege:
   - haltestelleId: urnerboden-dorf

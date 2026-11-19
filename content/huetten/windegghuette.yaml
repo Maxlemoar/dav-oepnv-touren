@@ -6,6 +6,7 @@ lat: 46.6950
 lon: 8.3480
 gebietId: grimsel-haslital
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/214/wizard
 webUrl: https://www.windegghuette.ch
 zustiege:
   - haltestelleId: nessental-triftbahn

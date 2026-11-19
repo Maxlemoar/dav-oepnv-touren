@@ -6,6 +6,7 @@ lat: 47.0531
 lon: 10.2464
 gebietId: arlberg-verwall
 saison: sommer
+buchungUrl: https://www.alpenverein-darmstadt.de/huetten/darmstaedterhuette/uebernachten-und-reservieren
 webUrl: https://www.alpenverein-darmstadt.de/huetten/darmstaedterhuette
 zustiege:
   - haltestelleId: st-anton-am-arlberg

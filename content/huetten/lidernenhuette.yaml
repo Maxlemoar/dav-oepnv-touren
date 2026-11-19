@@ -6,6 +6,7 @@ lat: 46.9352
 lon: 8.6927
 gebietId: riemenstalden
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/5/wizard
 webUrl: https://www.lidernen.ch
 zustiege:
   - haltestelleId: chaeppeliberg

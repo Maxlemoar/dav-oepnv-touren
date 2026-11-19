@@ -6,6 +6,7 @@ lat: 46.50046
 lon: 8.05325
 gebietId: aletsch-goms
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/12/wizard
 webUrl: https://www.konkordiahuette.ch
 zustiege:
   - haltestelleId: fiesch

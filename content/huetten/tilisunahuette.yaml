@@ -6,6 +6,7 @@ lat: 47.0244
 lon: 9.8725
 gebietId: montafon-raetikon
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/91/wizard
 webUrl: https://tilisuna-huette.at/
 zustiege:
   - haltestelleId: schruns

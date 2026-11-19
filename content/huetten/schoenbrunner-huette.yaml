@@ -6,6 +6,7 @@ lat: 48.65139
 lon: 8.18778
 gebietId: schwarzwaldhochstrasse
 saison: ganzjaehrig
+buchungUrl: https://www.schoenbrunner-huette.de/index.php?id=279
 webUrl: https://www.schoenbrunner-huette.de/
 zustiege:
   - haltestelleId: sand-kapelle

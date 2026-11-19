@@ -6,6 +6,7 @@ lat: 48.66650
 lon: 8.25761
 gebietId: schwarzwaldhochstrasse
 saison: ganzjaehrig
+buchungUrl: https://www.naturfreunde-karlsruhe.de/unsere-haeuser/badener-hoehe/buchungsformular-nfh-badener-hoehe.html
 webUrl: https://www.naturfreunde-karlsruhe.de/unsere-haeuser/badener-hoehe
 zustiege:
   - haltestelleId: sand-kapelle

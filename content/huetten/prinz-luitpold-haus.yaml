@@ -6,6 +6,7 @@ lat: 47.3922
 lon: 10.4197
 gebietId: hintersteiner-tal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/270/wizard
 webUrl: https://www.prinz-luitpoldhaus.de/cms
 zustiege:
   - haltestelleId: hinterstein-gruener-hut

@@ -6,6 +6,7 @@ lat: 46.669
 lon: 7.2865
 gebietId: schwarzsee-kaiseregg
 saison: ganzjaehrig
+buchungUrl: https://aurore.nfh.ch/de/reservation/
 webUrl: https://aurore.nfh.ch/
 zustiege:
   - haltestelleId: schwarzsee-gypsera

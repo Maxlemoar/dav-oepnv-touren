@@ -6,6 +6,7 @@ lat: 46.5261
 lon: 7.9447
 gebietId: lauterbrunnental
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/498/wizard
 zustiege:
   - haltestelleId: stechelberg
     gehzeitMin: 300

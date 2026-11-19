@@ -6,6 +6,7 @@ lat: 47.007
 lon: 9.82734
 gebietId: klosters-praettigau
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/46/wizard
 webUrl: https://www.carschina.ch
 zustiege:
   - haltestelleId: st-antoenien-rueti

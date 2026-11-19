@@ -6,6 +6,7 @@ lat: 47.2977
 lon: 10.2822
 gebietId: oberstdorf
 saison: sommer
+buchungUrl: https://www.huetten-holiday.com/huts/waltenbergerhaus
 webUrl: https://waltenbergerhaus.de/
 zustiege:
   - haltestelleId: birgsau

@@ -6,6 +6,7 @@ lat: 47.88173
 lon: 8.01621
 gebietId: feldberg
 saison: ganzjaehrig
+buchungUrl: https://www.naturfreundehaus-feldberg.de/kontakt/
 webUrl: https://www.naturfreundehaus-feldberg.de/
 zustiege:
   - haltestelleId: feldberg-baerental

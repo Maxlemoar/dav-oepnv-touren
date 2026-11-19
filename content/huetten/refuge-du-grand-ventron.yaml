@@ -6,6 +6,7 @@ lat: 47.96030
 lon: 6.92170
 gebietId: grand-ventron
 saison: ganzjaehrig
+buchungUrl: https://refugegrandventron.ffcam.fr/reservation.html
 webUrl: https://refugegrandventron.ffcam.fr/
 zustiege:
   - haltestelleId: kruth

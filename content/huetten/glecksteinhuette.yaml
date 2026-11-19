@@ -6,6 +6,7 @@ lat: 46.6251
 lon: 8.0966
 gebietId: grindelwald
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/2/wizard
 webUrl: https://www.gleckstein.ch
 zustiege:
   - haltestelleId: grindelwald

@@ -6,6 +6,7 @@ lat: 46.5102
 lon: 7.7716
 gebietId: kandersteg
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/1/wizard
 webUrl: https://www.bluemlisalphuette.ch
 zustiege:
   - haltestelleId: kandersteg

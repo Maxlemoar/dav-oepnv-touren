@@ -6,6 +6,7 @@ lat: 46.47181
 lon: 8.52649
 gebietId: airolo-bedretto
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/20/wizard
 zustiege:
   - haltestelleId: ossasco
     gehzeitMin: 225

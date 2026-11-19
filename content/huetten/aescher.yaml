@@ -6,6 +6,7 @@ lat: 47.28339
 lon: 9.41436
 gebietId: alpstein
 saison: sommer
+buchungUrl: https://aescher.ch/anfragen/
 webUrl: https://www.aescher.ch
 zustiege:
   - haltestelleId: wasserauen

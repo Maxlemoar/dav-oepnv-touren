@@ -6,6 +6,7 @@ lat: 46.7837
 lon: 8.6015
 gebietId: reusstal-maderanertal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/717/wizard
 webUrl: https://www.leutschachhuette.ch
 zustiege:
   - haltestelleId: intschi

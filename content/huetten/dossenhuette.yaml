@@ -6,6 +6,7 @@ lat: 46.6551
 lon: 8.1695
 gebietId: meiringen-rosenlaui
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/31/wizard
 webUrl: https://www.dossenhuette.ch
 zustiege:
   - haltestelleId: rosenlaui

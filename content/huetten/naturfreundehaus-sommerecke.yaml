@@ -6,6 +6,7 @@ lat: 48.25537
 lon: 8.26703
 gebietId: kinzigtal
 saison: ganzjaehrig
+buchungUrl: https://taenzerdorf.org/de/sommerecke/vermietung-sommerecke
 webUrl: https://taenzerdorf.org/de/sommerecke/vermietung-sommerecke
 zustiege:
   - haltestelleId: hornberg

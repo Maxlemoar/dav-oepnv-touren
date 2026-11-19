@@ -6,6 +6,7 @@ lat: 45.95792
 lon: 7.81239
 gebietId: zermatt-mattertal
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/6/wizard
 webUrl: https://www.section-monte-rosa.ch/de/
 zustiege:
   - haltestelleId: zermatt

@@ -6,6 +6,7 @@ lat: 48.10876
 lon: 8.26108
 gebietId: triberg-brend
 saison: ganzjaehrig
+buchungUrl: https://www.dav-baar.de/schwenninger-huette/
 zustiege:
   - haltestelleId: triberg
     gehzeitMin: 60

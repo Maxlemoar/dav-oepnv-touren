@@ -6,6 +6,7 @@ lat: 47.0656
 lon: 9.6933
 gebietId: brandnertal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/654/wizard
 webUrl: https://www.mannheimerhuette.co.at/mannheimerhuette/
 zustiege:
   - haltestelleId: brand-luenerseebahn

@@ -6,6 +6,7 @@ lat: 46.6090
 lon: 8.4636
 gebietId: andermatt-furka
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/710/wizard
 webUrl: https://www.albertheimhuette.ch
 zustiege:
   - haltestelleId: tiefenbach

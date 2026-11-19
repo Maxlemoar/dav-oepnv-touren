@@ -6,6 +6,7 @@ lat: 46.7998
 lon: 8.5098
 gebietId: engelberg
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/244/wizard
 webUrl: https://www.spannorthuette.ch
 zustiege:
   - haltestelleId: engelberg

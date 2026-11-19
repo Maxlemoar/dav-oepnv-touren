@@ -6,6 +6,7 @@ lat: 46.4746
 lon: 7.5997
 gebietId: adelboden
 saison: sommer
+buchungUrl: https://www.sac-wildstrubel.ch/de/Lohnerhutte
 zustiege:
   - haltestelleId: adelboden
     gehzeitMin: 210

@@ -6,6 +6,7 @@ lat: 46.06011
 lon: 7.93504
 gebietId: saastal
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/9/wizard
 webUrl: https://www.cas-geneve.ch
 zustiege:
   - haltestelleId: saas-fee

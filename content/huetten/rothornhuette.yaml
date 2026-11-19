@@ -6,6 +6,7 @@ lat: 46.04867
 lon: 7.69735
 gebietId: zermatt-mattertal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/334/wizard
 webUrl: https://www.sac-oberaargau.ch/huetten/rothornhuette
 zustiege:
   - haltestelleId: zermatt

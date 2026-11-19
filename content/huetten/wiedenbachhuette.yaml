@@ -6,6 +6,7 @@ lat: 48.67005
 lon: 8.20048
 gebietId: buehlertal
 saison: ganzjaehrig
+buchungUrl: https://www.alpenverein-heidelberg.de/huetten/Wiedenbachh%C3%BCtte
 zustiege:
   - haltestelleId: buehlertal-gertelbachstrasse
     gehzeitMin: 5

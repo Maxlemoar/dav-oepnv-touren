@@ -6,6 +6,7 @@ lat: 46.8462
 lon: 8.4627
 gebietId: engelberg
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/41/wizard
 webUrl: https://www.rugghubel.ch
 zustiege:
   - haltestelleId: engelberg

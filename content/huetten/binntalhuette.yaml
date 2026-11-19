@@ -6,6 +6,7 @@ lat: 46.37463
 lon: 8.29188
 gebietId: aletsch-goms
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/264/wizard
 zustiege:
   - haltestelleId: binn-faeld
     gehzeitMin: 180

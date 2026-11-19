@@ -6,6 +6,7 @@ lat: 46.6281
 lon: 8.0333
 gebietId: grindelwald
 saison: ganzjaehrig
+buchungUrl: "https://hotelreservation.expert/#/f48d84c4ad"
 webUrl: https://naturfreunde.ch/haeuser/grindelwald/
 zustiege:
   - haltestelleId: grindelwald

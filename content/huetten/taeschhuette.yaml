@@ -6,6 +6,7 @@ lat: 46.05159
 lon: 7.82994
 gebietId: zermatt-mattertal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/51/wizard
 webUrl: https://www.taeschhuette.ch
 zustiege:
   - haltestelleId: taesch

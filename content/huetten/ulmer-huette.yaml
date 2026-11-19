@@ -6,6 +6,7 @@ lat: 47.1469
 lon: 10.2092
 gebietId: arlberg-verwall
 saison: ganzjaehrig
+buchungUrl: https://www.ulmerhuette.at/anfrage
 webUrl: https://www.ulmerhuette.at
 zustiege:
   - haltestelleId: st-anton-am-arlberg

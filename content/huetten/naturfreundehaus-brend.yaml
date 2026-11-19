@@ -6,6 +6,7 @@ lat: 48.08127
 lon: 8.15963
 gebietId: triberg-brend
 saison: ganzjaehrig
+buchungUrl: https://naturfreundehaus-brend.de/index.php/zimmer/
 webUrl: https://naturfreundehaus-brend.de/
 zustiege:
   - haltestelleId: triberg

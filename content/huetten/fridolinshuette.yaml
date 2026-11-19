@@ -6,6 +6,7 @@ lat: 46.8214
 lon: 8.95
 gebietId: linthal
 saison: sommer
+buchungUrl: https://fridolinshuette.ch/belegung-21
 webUrl: https://www.fridolinshuette.ch
 zustiege:
   - haltestelleId: linthal

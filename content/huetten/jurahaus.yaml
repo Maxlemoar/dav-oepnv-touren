@@ -6,6 +6,7 @@ lat: 47.16072
 lon: 7.15784
 gebietId: chasseral
 saison: ganzjaehrig
+buchungUrl: https://www.jurahaus-sac.ch/kontakt
 webUrl: https://www.sac-biel.ch/huetten/jurahaus.php
 zustiege:
   - haltestelleId: les-pres-d-orvin

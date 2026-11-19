@@ -6,6 +6,7 @@ lat: 46.3830
 lon: 7.4677
 gebietId: lenk
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/65/wizard
 webUrl: https://www.wildstrubelhuette.ch
 zustiege:
   - haltestelleId: iffigenalp

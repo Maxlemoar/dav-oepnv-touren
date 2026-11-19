@@ -6,6 +6,7 @@ lat: 46.8575
 lon: 9.01917
 gebietId: linthal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/229/wizard
 webUrl: https://www.muttseehuette.ch
 zustiege:
   - haltestelleId: linthal

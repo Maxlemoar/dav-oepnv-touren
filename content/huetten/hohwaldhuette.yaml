@@ -6,6 +6,7 @@ lat: 48.38826
 lon: 7.28265
 gebietId: champ-du-feu
 saison: ganzjaehrig
+buchungUrl: https://www.bergfreunde-saar.de/hohwaldhuette/Buchung%20und%20Preise
 webUrl: https://www.bergfreunde-saar.de/hohwaldhuette
 zustiege:
   - haltestelleId: barr

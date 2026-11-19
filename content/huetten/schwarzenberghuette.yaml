@@ -6,6 +6,7 @@ lat: 47.4292
 lon: 10.4067
 gebietId: hintersteiner-tal
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/562/wizard
 webUrl: https://www.dav-illertissen.de/Schwarzenberghutte/SBHInfo.htm
 zustiege:
   - haltestelleId: hinterstein-gruener-hut

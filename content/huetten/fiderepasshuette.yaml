@@ -6,6 +6,7 @@ lat: 47.3156
 lon: 10.2125
 gebietId: kleinwalsertal
 saison: sommer
+buchungUrl: https://www.huetten-holiday.com/huts/fiderepass-huette
 webUrl: https://www.fiderepasshuette.de/de/
 zustiege:
   - haltestelleId: mittelberg

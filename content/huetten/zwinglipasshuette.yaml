@@ -6,6 +6,7 @@ lat: 47.23319
 lon: 9.37616
 gebietId: toggenburg
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/30/wizard
 webUrl: https://sac-toggenburg.ch
 zustiege:
   - haltestelleId: wildhaus-dorf

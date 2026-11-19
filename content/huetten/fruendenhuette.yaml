@@ -6,6 +6,7 @@ lat: 46.484
 lon: 7.740
 gebietId: kandersteg
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/19/wizard
 webUrl: https://www.fruendenhuette.ch
 zustiege:
   - haltestelleId: kandersteg

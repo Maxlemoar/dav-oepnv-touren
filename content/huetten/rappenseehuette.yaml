@@ -6,6 +6,7 @@ lat: 47.2889
 lon: 10.2549
 gebietId: oberstdorf
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/707/wizard
 webUrl: https://www.dav-kempten.de/huetten/rappenseehuette
 zustiege:
   - haltestelleId: birgsau

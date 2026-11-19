@@ -6,6 +6,7 @@ lat: 46.00194
 lon: 7.62917
 gebietId: zermatt-mattertal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/308/wizard
 zustiege:
   - haltestelleId: zermatt
     gehzeitMin: 270

@@ -6,6 +6,7 @@ lat: 48.05329
 lon: 7.02575
 gebietId: munstertal
 saison: ganzjaehrig
+buchungUrl: https://chaletrefuge3fours.ffcam.fr/reservation.html
 webUrl: https://chaletrefuge3fours.ffcam.fr/
 zustiege:
   - haltestelleId: col-de-la-schlucht

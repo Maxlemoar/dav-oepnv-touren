@@ -6,6 +6,7 @@ lat: 46.41631
 lon: 7.71689
 gebietId: loetschental
 saison: ganzjaehrig
+buchungUrl: https://www.loetschenpass.ch/die-huette/buchung/
 webUrl: https://www.loetschenpass.ch
 zustiege:
   - haltestelleId: wiler-loetschen

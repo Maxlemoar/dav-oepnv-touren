@@ -6,6 +6,7 @@ lat: 47.0694
 lon: 10.1889
 gebietId: arlberg-verwall
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/502/wizard
 webUrl: https://www.dav-konstanz.de
 zustiege:
   - haltestelleId: st-anton-am-arlberg

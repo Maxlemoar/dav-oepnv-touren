@@ -6,6 +6,7 @@ lat: 47.1683
 lon: 10.0922
 gebietId: lechquellengebirge
 saison: sommer
+buchungUrl: https://www.ravensburgerhuette.at/uebernachtung/buchen-und-reservierung/
 webUrl: https://www.ravensburgerhuette.at
 zustiege:
   - haltestelleId: lech-ruefiplatz

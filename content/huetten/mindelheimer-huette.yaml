@@ -6,6 +6,7 @@ lat: 47.2919
 lon: 10.195
 gebietId: kleinwalsertal
 saison: sommer
+buchungUrl: https://www.mindelheimer-huette.de/formular
 webUrl: https://www.mindelheimer-huette.de
 zustiege:
   - haltestelleId: mittelberg

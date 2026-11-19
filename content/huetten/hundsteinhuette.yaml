@@ -6,6 +6,7 @@ lat: 47.2548
 lon: 9.42233
 gebietId: alpstein
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/32/wizard
 webUrl: https://www.sac-saentis.ch
 zustiege:
   - haltestelleId: bruelisau

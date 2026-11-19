@@ -6,6 +6,7 @@ lat: 47.0639
 lon: 9.9747
 gebietId: montafon-raetikon
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/667/wizard
 webUrl: https://www.dav-worms.de/index.php/die-wormser-huette
 zustiege:
   - haltestelleId: schruns

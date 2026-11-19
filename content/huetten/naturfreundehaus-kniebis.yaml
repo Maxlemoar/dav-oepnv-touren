@@ -6,6 +6,7 @@ lat: 48.46784
 lon: 8.29919
 gebietId: renchtal-kniebis
 saison: ganzjaehrig
+buchungUrl: https://www.naturfreundehaus-kniebis.de/kontakt
 webUrl: https://www.naturfreundehaus-kniebis.de/
 zustiege:
   - haltestelleId: freudenstadt-hbf

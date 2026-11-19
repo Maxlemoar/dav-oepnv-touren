@@ -6,6 +6,7 @@ lat: 46.5870
 lon: 8.2826
 gebietId: grimsel-haslital
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/23/wizard
 zustiege:
   - haltestelleId: raeterichsboden
     gehzeitMin: 135

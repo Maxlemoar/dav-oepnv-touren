@@ -6,6 +6,7 @@ lat: 47.1628
 lon: 9.9903
 gebietId: lechquellengebirge
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/97/wizard
 webUrl: https://www.freiburger-huette.at
 zustiege:
   - haltestelleId: zugertal-formarinsee

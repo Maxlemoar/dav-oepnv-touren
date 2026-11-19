@@ -6,6 +6,7 @@ lat: 47.0597
 lon: 9.7545
 gebietId: brandnertal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/393/wizard
 zustiege:
   - haltestelleId: brand-luenerseebahn
     gehzeitMin: 5

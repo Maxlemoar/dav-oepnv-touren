@@ -6,6 +6,7 @@ lat: 46.5450
 lon: 8.4842
 gebietId: andermatt-furka
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/404/wizard
 webUrl: https://www.rotondohuette.ch
 zustiege:
   - haltestelleId: realp

@@ -6,6 +6,7 @@ lat: 47.0525
 lon: 9.7269
 gebietId: brandnertal
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/92/wizard
 webUrl: https://www.totalp.at
 zustiege:
   - haltestelleId: brand-luenerseebahn

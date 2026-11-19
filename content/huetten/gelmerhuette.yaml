@@ -6,6 +6,7 @@ lat: 46.6313
 lon: 8.3428
 gebietId: grimsel-haslital
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/66/wizard
 webUrl: https://www.gelmerhuette.ch
 zustiege:
   - haltestelleId: handegg

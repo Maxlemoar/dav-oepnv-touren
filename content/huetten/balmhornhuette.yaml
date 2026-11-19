@@ -6,6 +6,7 @@ lat: 46.4514
 lon: 7.6894
 gebietId: kandersteg
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/579/wizard
 webUrl: https://www.balmhornhuette.ch
 zustiege:
   - haltestelleId: kandersteg

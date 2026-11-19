@@ -6,6 +6,7 @@ lat: 46.4869
 lon: 7.6974
 gebietId: kandersteg
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/11/wizard
 webUrl: https://www.doldenhornhuette.ch
 zustiege:
   - haltestelleId: kandersteg

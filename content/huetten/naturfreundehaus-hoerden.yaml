@@ -6,6 +6,7 @@ lat: 48.78407
 lon: 8.35525
 gebietId: murgtal
 saison: ganzjaehrig
+buchungUrl: https://www.naturfreunde-hoerden.de/haus-buchung/
 webUrl: https://www.naturfreunde-hoerden.de/
 zustiege:
   - haltestelleId: hoerden

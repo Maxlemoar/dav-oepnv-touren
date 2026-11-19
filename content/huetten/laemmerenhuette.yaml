@@ -6,6 +6,7 @@ lat: 46.4003
 lon: 7.5746
 gebietId: kandersteg
 saison: ganzjaehrig
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/453/wizard
 zustiege:
   - haltestelleId: kandersteg
     gehzeitMin: 210

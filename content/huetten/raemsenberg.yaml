@@ -6,6 +6,7 @@ lat: 46.8954
 lon: 8.7108
 gebietId: schaechental
 saison: ganzjaehrig
+buchungUrl: https://www.dav-offenburg.de/anfragen/kontakt/Reservierungsanfrage/126974/document-35029+object-126974
 webUrl: https://www.dav-offenburg.de/Sektion/H%C3%BCtten/R%C3%A4msenberg
 zustiege:
   - haltestelleId: bruegg-buerglen

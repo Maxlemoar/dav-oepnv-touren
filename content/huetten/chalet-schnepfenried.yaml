@@ -6,6 +6,7 @@ lat: 47.98707
 lon: 7.04585
 gebietId: munstertal
 saison: ganzjaehrig
+buchungUrl: https://amisdelanaturecolmar.fr/contact/
 zustiege:
   - haltestelleId: metzeral
     gehzeitMin: 120

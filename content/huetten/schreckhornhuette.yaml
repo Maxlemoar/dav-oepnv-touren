@@ -6,6 +6,7 @@ lat: 46.5819
 lon: 8.0987
 gebietId: grindelwald
 saison: sommer
+buchungUrl: https://www.hut-reservation.org/reservation/book-hut/204/wizard
 webUrl: https://www.schreckhornhuette.ch
 zustiege:
   - haltestelleId: grindelwald
