@@ -36,6 +36,7 @@ touren:
     hoehenmeter: 1500
     laengeKm: 16.7
     schwierigkeit: "schwer"
+    hinweis: "Endet am Vermuntstausee: Im Winter fährt dort kein Bus, die Silvretta-Hochalpenstraße ist gesperrt."
 links:
   - { titel: SAC Prättigau, url: "https://www.sac-praettigau.ch" }
 lat: 46.87

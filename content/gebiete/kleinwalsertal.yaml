@@ -1,6 +1,6 @@
 id: kleinwalsertal
 name: Kleinwalsertal
-beschreibung: Österreichisches Hochtal, nur über Oberstdorf erreichbar; der Walserbus fährt ab Bahnhof Oberstdorf nach Riezlern, Mittelberg und Baad. Rundtouren über Fiderepass- und Mindelheimer Hütte, Schwarzwasserhütte am Hohen Ifen als Winterziel (wegen Umbau voraussichtlich bis 2027 geschlossen).
+beschreibung: Österreichisches Hochtal, nur über Oberstdorf erreichbar; der Walserbus fährt ab Bahnhof Oberstdorf nach Riezlern, Mittelberg und Baad. Rundtouren über Fiderepass- und Mindelheimer Hütte; die Schwarzwasserhütte am Hohen Ifen, sonst ein Winterziel, ist wegen Umbau voraussichtlich bis 2027 geschlossen.
 haltestellen: [riezlern-post, mittelberg, oberstdorf]
 sportarten: [wandern, klettersteig, skitour, schneeschuh]
 saison: ganzjaehrig
@@ -29,6 +29,7 @@ touren:
     hoehenmeter: 171
     laengeKm: 5.7
     schwierigkeit: "mittel"
+    hinweis: Die Schwarzwasserhütte ist wegen Umbau geschlossen, Wiedereröffnung voraussichtlich 2027, kein Winterraum.
   - titel: "Vom Kleinwalsertal auf den Hohen Ifen"
     url: "https://www.alpenvereinaktiv.com/de/tour/vom-kleinwalsertal-auf-den-hohen-ifen/1374459/"
     anbieter: alpenvereinaktiv

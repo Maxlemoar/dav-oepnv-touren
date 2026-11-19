@@ -1,7 +1,6 @@
 id: goeschenen
 name: Göschenen
-# Transitous führt den Bahnhof Göschenen unter der European-Sleeper-ID (zusammengeführter Parent), erreichbar geprüft.
-haltestelleId: eu-european-sleeper_8505119
+haltestelleId: ch-opentransportdataswiss27_Parentch:1:sloid:5119
 lat: 46.66580
 lon: 8.58871
 land: CH

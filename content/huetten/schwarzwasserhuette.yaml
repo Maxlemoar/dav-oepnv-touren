@@ -13,3 +13,7 @@ zustiege:
     hoehenmeter: 380
     hinweis: Walserbus Linie 1 ab Oberstdorf bis Riezlern Post, Linie 5 weiter zur Ifen-Talstation (Auenhütte, 1238 m), dann Fahrweg durchs Schwarzwassertal. Hütte wegen Umbau geschlossen (seit 12.10.2025), Wiedereröffnung voraussichtlich 2027, kein Winterraum.
 quelle: https://www.alpenverein-schwaben.de/schwarzwasserhuette
+status: umbau
+statusHinweis: Wegen Umbau seit 12.10.2025 geschlossen, Wiedereröffnung voraussichtlich 2027, kein Winterraum.
+statusBis: 2027-06-01
+winterraum: false

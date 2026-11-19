@@ -13,6 +13,7 @@ touren:
     hoehenmeter: 1024
     laengeKm: 6.3
     schwierigkeit: "T4"
+    hinweis: "Die Cavardirashütte wird abgerissen und neu gebaut: 2027 und 2028 geschlossen, im Winter 2026/27 nur Schutzraum."
   - titel: "Rundwanderung Lag Serein bei Caischavedra"
     url: "https://www.alpenvereinaktiv.com/de/tour/rundwanderung-lag-serein-bei-caischavedra/9881853/"
     anbieter: alpenvereinaktiv
@@ -37,5 +38,6 @@ touren:
     hoehenmeter: 39
     laengeKm: 16.4
     schwierigkeit: "T3"
+    hinweis: "Die Cavardirashütte wird abgerissen und neu gebaut: 2027 und 2028 geschlossen, im Winter 2026/27 nur Schutzraum."
 lat: 46.70
 lon: 8.85

@@ -1,0 +1,18 @@
+id: mutthornhuette
+name: Mutthornhütte
+betreiber: { typ: sac, sektion: Weissenstein }
+hoehe: 2788
+lat: 46.48709
+lon: 7.8167
+gebietId: lauterbrunnental
+saison: sommer
+webUrl: https://www.mutthornhuette.ch
+zustiege:
+  - haltestelleId: stechelberg
+    gehzeitMin: 450
+    hoehenmeter: 1900
+    hinweis: "Bus ab Lauterbrunnen bis Stechelberg, Normalroute über Obersteinberg und den Tschingelfirn (L, Gletscher), 7–8 h. Laut SAC wird davon wegen Felssturzgefahr an der Chanzel derzeit abgeraten (Stand Mai 2026). Alle Zustiege führen über Gletscher; Alternative ab Selden im Gasterntal 4:30–5:30 h."
+quelle: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/2147000187
+geschaetzt: false
+bewirtschaftet: [{ von: "06-13", bis: "09-27" }]
+winterraum: false

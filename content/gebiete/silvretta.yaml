@@ -13,6 +13,7 @@ touren:
     hoehenmeter: 1423
     laengeKm: 22.2
     schwierigkeit: "WS"
+    hinweis: "Die Silvretta-Hochalpenstraße ist ab Montafon bis voraussichtlich 2030 gesperrt: Auf die Bielerhöhe kommt man nur im Sommer mit Vermuntbahn und Tunnelbus ab Partenen (2026: 20.6.–4.10.) oder mit dem Sommerbus über Galtür."
   - titel: "Silvretta: Bielerhoehe - Bieltal - Radsattel - Wiesbadener Huette - Bielerhoehe"
     url: "https://www.alpenvereinaktiv.com/de/tour/silvretta-bielerhoehe-bieltal-radsattel-wiesbadener-huette-/345851252/"
     anbieter: alpenvereinaktiv
@@ -21,6 +22,7 @@ touren:
     hoehenmeter: 705
     laengeKm: 15.1
     schwierigkeit: "T3"
+    hinweis: "Die Silvretta-Hochalpenstraße ist ab Montafon bis voraussichtlich 2030 gesperrt: Auf die Bielerhöhe kommt man nur im Sommer mit Vermuntbahn und Tunnelbus ab Partenen (2026: 20.6.–4.10.) oder mit dem Sommerbus über Galtür."
   - titel: "Piz Buin, 3312m - Skihochtour auf den höchsten Vorarlberger Silvretta-Gipfel"
     url: "https://www.alpenvereinaktiv.com/de/tour/piz-buin-3312m-skihochtour-auf-den-hoechsten-vorarlberger-silvretta/13160122/"
     anbieter: alpenvereinaktiv
@@ -29,14 +31,7 @@ touren:
     hoehenmeter: 1405
     laengeKm: 21.4
     schwierigkeit: "mittel"
-  - titel: "A7: Silvretta-Bielerhöhe über die Saarbrücker Hütte zum Vermuntsee"
-    url: "https://www.alpenvereinaktiv.com/de/tour/a7-silvretta-bielerhoehe-ueber-die-saarbruecker-huette-zum-vermuntsee/7424980/"
-    anbieter: alpenvereinaktiv
-    sportart: wandern
-    dauerMin: 249
-    hoehenmeter: 607
-    laengeKm: 10.9
-    schwierigkeit: "mittel"
+    hinweis: "Im Winter und Frühjahr fährt kein Bus auf die Bielerhöhe: Vermuntbahn und Tunnelbus nur im Sommer, Hochalpenstraße ab Montafon bis voraussichtlich 2030 gesperrt. Anreise mit Ski über Galtür/Wirl."
 links:
   - { titel: Alpenvereinaktiv Silvretta, url: "https://www.alpenvereinaktiv.com/de/touren/#area=Silvretta" }
   - { titel: Silvretta-Bielerhöhe, url: "https://www.silvretta-bielerhoehe.at/de" }
