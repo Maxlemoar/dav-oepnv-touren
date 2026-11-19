@@ -85,6 +85,20 @@ describe('verbindungErmitteln', () => {
     expect(a.passung).toEqual({ passt: false, grund: 'keine Hinfahrt ab 7:00', naechte: 0 })
   })
 
+  it('nimmt nie eine Hinfahrt vom Folgetag, die MOTIS bei wenigen Fahrten mitliefert', async () => {
+    // Sonntag: erste Fahrt erst 15:00; Transitous liefert dazu Montag 07:12, das sähe aus wie "So 07:12".
+    const sonntag: Itinerary[] = [
+      { startTime: '2026-09-13T13:00:00Z', endTime: '2026-09-13T17:00:00Z', duration: 1, transfers: 1, legs: [] },
+      { startTime: '2026-09-14T05:12:00Z', endTime: '2026-09-14T09:10:00Z', duration: 1, transfers: 1, legs: [] },
+    ]
+    const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? amTag(rueck, '2026-09-13') : sonntag))
+    const a = await verbindungErmitteln(anfrage('2026-09-13', '2026-09-13', { zeiten: { bisMin: 1380 } }), { planen })
+    expect(a.hinfahrt).toBeUndefined()
+    expect(a.hinfahrtSpaeter).toBeUndefined()
+    expect(a.fehlerArt).toBe('keine_verbindung')
+    expect(a.passung).toEqual({ passt: false, grund: 'keine Hinfahrt ab 6:00', naechte: 0 })
+  })
+
   it('fragt die Rückfahrt mit Ankunft bis "zurück bis" ab und wählt nur Ankünfte bis dahin', async () => {
     const planen = vi.fn(async (p: { ankunftBis?: boolean }) => (p.ankunftBis ? rueck : hin))
     const a = await verbindungErmitteln(anfrage('2026-09-12', '2026-09-12', { zeiten: { bisMin: 1380 } }), { planen })

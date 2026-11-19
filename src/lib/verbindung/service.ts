@@ -156,11 +156,11 @@ export async function verbindungErmitteln(
   const richtwert = a.haltestelle.richtwerte[a.startort.id]
   // In Deutschland zählt das Deutschlandticket: Nahverkehr vorziehen, wenn er nicht viel später ankommt.
   const alleHin = hinErgebnis.status === 'fulfilled' ? hinErgebnis.value : []
-  let { hinfahrt, hinfahrtSpaeter } = waehleHinfahrt(alleHin, { nahverkehrBevorzugen: land === 'DE', abMin: z.abMin })
+  let { hinfahrt, hinfahrtSpaeter } = waehleHinfahrt(alleHin, { nahverkehrBevorzugen: land === 'DE', abMin: z.abMin, datum })
   // Fährt in den ersten drei Stunden ab "los ab" nichts, gilt die nächste Abfahrt in der vierten Stunde, sonst die
   // früheste Ankunft bei Abfahrt bis 14 Uhr. Für Hüttentouren reicht das, bei Tagestouren erklärt die Passung den Rest.
   if (!hinfahrt && hinfahrtSpaeter) { hinfahrt = hinfahrtSpaeter; hinfahrtSpaeter = undefined }
-  hinfahrt ??= spaetereHinfahrt(alleHin, z.abMin)
+  hinfahrt ??= spaetereHinfahrt(alleHin, datum, z.abMin)
   const rueckfahrt = rueckErgebnis.status === 'fulfilled' ? waehleRueckfahrt(rueckErgebnis.value, rueck, z.bisMin) : undefined
   const keineVerbindung = hinErgebnis.status === 'fulfilled' && !hinfahrt
   const fehlerArt: FehlerArt | undefined = hinDienstFehler ? 'dienst_nicht_erreichbar' : keineVerbindung ? 'keine_verbindung' : undefined
@@ -186,9 +186,9 @@ export async function verbindungErmitteln(
   }
 }
 
-/** Früheste Ankunft unter den Verbindungen mit Abfahrt zwischen "los ab" und 14 Uhr (Ortszeit). */
-function spaetereHinfahrt(its: Itinerary[], abMin: number): Itinerary | undefined {
+/** Früheste Ankunft unter den Verbindungen mit Abfahrt am Datum zwischen "los ab" und 14 Uhr (Ortszeit). */
+function spaetereHinfahrt(its: Itinerary[], datum: string, abMin: number): Itinerary | undefined {
   return its
-    .filter((i) => { const m = lokaleMinuten(i.startTime); return m >= abMin && m < SPAETESTE_HINFAHRT_MIN })
+    .filter((i) => { const m = lokaleMinuten(i.startTime); return lokalesDatum(i.startTime) === datum && m >= abMin && m < SPAETESTE_HINFAHRT_MIN })
     .sort((x, y) => Date.parse(x.endTime) - Date.parse(y.endTime))[0]
 }

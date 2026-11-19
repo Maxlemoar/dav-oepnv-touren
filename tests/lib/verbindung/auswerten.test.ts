@@ -51,6 +51,11 @@ describe('waehleHinfahrt', () => {
     const w = waehleHinfahrt(its, { abMin: 420, nahverkehrBevorzugen: true })
     for (const i of [w.hinfahrt, w.hinfahrtSpaeter]) if (i) expect(Date.parse(i.startTime)).toBeGreaterThanOrEqual(Date.parse('2026-09-12T05:00:00Z'))
   })
+  it('mit datum nur Abfahrten an diesem lokalen Tag, nie die gleiche Uhrzeit am Folgetag', () => {
+    const folgetag = its.map((i) => ({ ...i, startTime: i.startTime.replace('2026-09-12', '2026-09-13'), endTime: i.endTime.replace('2026-09-12', '2026-09-13') }))
+    expect(waehleHinfahrt(folgetag, { abMin: 360, datum: '2026-09-12' })).toEqual({ hinfahrt: undefined, hinfahrtSpaeter: undefined })
+    expect(waehleHinfahrt([...folgetag, ...its], { abMin: 360, datum: '2026-09-12' }).hinfahrt?.startTime).toBe('2026-09-12T04:30:00Z')
+  })
   it('ohne abMin wie mit abMin 300', () => {
     expect(waehleHinfahrt(its, { abMin: 300 })).toEqual(waehleHinfahrt(its))
     expect(waehleHinfahrt(its, { abMin: 300, nahverkehrBevorzugen: true })).toEqual(waehleHinfahrt(its, { nahverkehrBevorzugen: true }))

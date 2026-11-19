@@ -50,14 +50,19 @@ function besteVerbindung(kandidaten: Itinerary[], opts: HinfahrtOptionen): Itine
 
 /**
  * Hinfahrt: beste Verbindung mit Abfahrt in [abMin, abMin + 3 h), spätere Alternative in [abMin + 3 h, abMin + 4 h)
- * (Ortszeit). Ohne `abMin` gilt 5:00, also 5 bis 8 und 8 bis 9 Uhr.
+ * (Ortszeit). Ohne `abMin` gilt 5:00, also 5 bis 8 und 8 bis 9 Uhr. Mit `datum` zählen nur Abfahrten an diesem lokalen
+ * Tag: Transitous sucht bei wenigen Fahrten bis in den Folgetag, und dessen 07:12 sähe sonst aus wie eine am Datum.
  */
-export function waehleHinfahrt(its: Itinerary[], opts: HinfahrtOptionen & { abMin?: number } = {}): { hinfahrt?: Itinerary; hinfahrtSpaeter?: Itinerary } {
+export function waehleHinfahrt(
+  its: Itinerary[],
+  opts: HinfahrtOptionen & { abMin?: number; datum?: string } = {},
+): { hinfahrt?: Itinerary; hinfahrtSpaeter?: Itinerary } {
   const fruehVon = opts.abMin ?? HINFAHRT_FENSTER.fruehVon
   const fruehBis = fruehVon + HIN_DAUER_MIN
   const spaetBis = fruehVon + HIN_SPAET_DAUER_MIN
-  const frueh = its.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehVon && m < fruehBis })
-  const spaet = its.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehBis && m < spaetBis })
+  const amTag = opts.datum === undefined ? its : its.filter((i) => lokalesDatum(i.startTime) === opts.datum)
+  const frueh = amTag.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehVon && m < fruehBis })
+  const spaet = amTag.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehBis && m < spaetBis })
   return { hinfahrt: besteVerbindung(frueh, opts), hinfahrtSpaeter: besteVerbindung(spaet, opts) }
 }
 
