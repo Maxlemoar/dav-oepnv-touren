@@ -24,8 +24,17 @@ const UebersichtSchema = z.object({
   fenster: Fenster,
 }).refine(rueckNichtVorDatum, RUECK_FEHLER).transform(rueckErgaenzen)
 
+/** Datum und Zeiten liest zeitfensterAusUrl; hier nur Orte und das Nachladen. */
+const FahrtenSchema = z.object({
+  von: Id,
+  nach: Id,
+  weiter: z.enum(['hin', 'rueck']).optional(),
+  zeit: z.iso.datetime({ offset: true }).optional(),
+}).refine((v) => v.weiter === undefined || v.zeit !== undefined, { path: ['zeit'], message: 'fehlt bei weiter' })
+
 export type VerbindungParameter = z.infer<typeof VerbindungSchema>
 export type UebersichtParameter = z.infer<typeof UebersichtSchema>
+export type FahrtenParameter = z.infer<typeof FahrtenSchema>
 
 type Ergebnis<T> = { ok: true; wert: T } | { ok: false; fehler: string }
 
@@ -46,6 +55,10 @@ export function parseVerbindungParameter(q: URLSearchParams): Ergebnis<Verbindun
 
 export function parseUebersichtParameter(q: URLSearchParams): Ergebnis<UebersichtParameter> {
   return parseParameter(q, UebersichtSchema, ['von', 'datum', 'rueck', 'fenster'])
+}
+
+export function parseFahrtenParameter(q: URLSearchParams): Ergebnis<FahrtenParameter> {
+  return parseParameter(q, FahrtenSchema, ['von', 'nach', 'weiter', 'zeit'])
 }
 
 // Für bestehende Importe; im Browser direkt aus ./url importieren, sonst landet zod im Bundle.
