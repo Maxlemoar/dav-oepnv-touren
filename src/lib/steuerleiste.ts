@@ -22,7 +22,7 @@ export const FENSTER_WERTE = [180, 240, 300, 360, 480]
 
 /**
  * Zähler auf der Filter-Pill: jede gewählte Sportart, eine abweichende Art, eine abweichende
- * Fahrzeitgrenze und ein abweichendes Tourenfenster zählen je eins. Die Suche zählt nicht,
+ * Fahrzeitgrenze, ein abweichendes Tourenfenster und der ausgeschaltete Saison-Schalter zählen je eins. Die Suche zählt nicht,
  * sie steht sichtbar im Feld.
  */
 export function anzahlAktiverFilter(filter: FilterZustand, fenster: number): number {
@@ -30,6 +30,19 @@ export function anzahlAktiverFilter(filter: FilterZustand, fenster: number): num
     + (filter.art !== STANDARD_FILTER.art ? 1 : 0)
     + (filter.maxStd !== STANDARD_FILTER.maxStd ? 1 : 0)
     + (fenster !== STANDARD_FENSTER ? 1 : 0)
+    + (filter.nurPassend !== STANDARD_FILTER.nurPassend ? 1 : 0)
+}
+
+/**
+ * Zeitraum in die Suchparameter schreiben; andere Parameter bleiben. Standardwerte fallen weg:
+ * datum am kommenden Samstag, rueck am Hin-Datum, Tourenfenster 6 h.
+ */
+export function schreibeZeitraum(sp: URLSearchParams, z: { datum: string; rueck: string; fenster: number }, samstag: string): URLSearchParams {
+  const neu = new URLSearchParams(sp)
+  if (z.datum === samstag) neu.delete('datum'); else neu.set('datum', z.datum)
+  if (z.rueck === z.datum) neu.delete('rueck'); else neu.set('rueck', z.rueck)
+  if (z.fenster === STANDARD_FENSTER) neu.delete('fenster'); else neu.set('fenster', String(z.fenster))
+  return neu
 }
 
 /** Beschriftung der Zeitraum-Pill: "Sa 12.9." oder "Sa 12.9. – So 13.9.". */

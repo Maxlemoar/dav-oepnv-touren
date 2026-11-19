@@ -23,3 +23,21 @@ export function rueckAnheben(datum: string, rueck: string | undefined, mindestNa
 export function naechteText(n: number): string {
   return `${n} ${n === 1 ? 'Nacht' : 'Nächte'}`
 }
+
+/** Suchparameter, die den Zeitraum tragen und deshalb in internen Links mitwandern. */
+export const ZEITRAUM_PARAMETER = ['datum', 'rueck', 'fenster'] as const
+
+/** "?datum=…&rueck=…&fenster=…" mit den gesetzten Zeitraum-Parametern, sonst "". */
+export function zeitraumQuery(sp: URLSearchParams): string {
+  const neu = new URLSearchParams()
+  for (const k of ZEITRAUM_PARAMETER) {
+    const v = sp.get(k)
+    if (v) neu.set(k, v)
+  }
+  const q = neu.toString()
+  return q ? `?${q}` : ''
+}
+
+export function mitZeitraum(pfad: string, query: string): string {
+  return `${pfad}${query}`
+}

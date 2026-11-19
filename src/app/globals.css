@@ -50,4 +50,6 @@
   .knopf-sekundaer { @apply inline-flex min-h-11 items-center justify-center rounded-[var(--radius-knopf)] border border-linie bg-karte px-4 font-medium text-tinte hover:border-tanne; }
   .zahl { @apply font-semibold tabular-nums; }
   .skeleton { @apply animate-pulse rounded bg-nebel; }
+  /* Warnhinweis: geschlossene Hütte, gesperrter Weg, kein Bus am Datum. Text tinte auf signal-tint (Kontrast > 12:1). */
+  .warnhinweis { @apply rounded-[var(--radius-knopf)] border border-signal/30 bg-signal-tint px-3 py-2 text-sm text-tinte; }
 }

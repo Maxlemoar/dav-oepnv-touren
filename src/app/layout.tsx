@@ -31,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
             <Link href="/" className="font-semibold tracking-tight no-underline">Ohne Auto in die Berge</Link>
             <nav className="flex items-center gap-4 text-sm">
+              <Link href="/sektionstouren" className="text-tinte-2 hover:text-tinte">Sektionstouren</Link>
               <Link href="/ueber" className="text-tinte-2 hover:text-tinte">Über</Link>
             </nav>
           </div>

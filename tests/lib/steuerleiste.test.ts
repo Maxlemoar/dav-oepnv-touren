@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { ansichtAus, anzahlAktiverFilter, zeitraumKurz, zeitraumText, STANDARD_ANSICHT, STANDARD_FENSTER } from '@/lib/steuerleiste'
+import { ansichtAus, anzahlAktiverFilter, schreibeZeitraum, zeitraumKurz, zeitraumText, STANDARD_ANSICHT, STANDARD_FENSTER } from '@/lib/steuerleiste'
 import { STANDARD_FILTER } from '@/lib/filter'
 
 describe('anzahlAktiverFilter', () => {
@@ -11,7 +11,8 @@ describe('anzahlAktiverFilter', () => {
     expect(anzahlAktiverFilter({ ...STANDARD_FILTER, art: 'tag' }, STANDARD_FENSTER)).toBe(1)
     expect(anzahlAktiverFilter({ ...STANDARD_FILTER, maxStd: 3 }, STANDARD_FENSTER)).toBe(1)
     expect(anzahlAktiverFilter(STANDARD_FILTER, 240)).toBe(1)
-    expect(anzahlAktiverFilter({ sport: ['wandern'], art: 'nacht', maxStd: 99, suche: '' }, 480)).toBe(4)
+    expect(anzahlAktiverFilter({ sport: ['wandern'], art: 'nacht', maxStd: 99, suche: '', nurPassend: true }, 480)).toBe(4)
+    expect(anzahlAktiverFilter({ ...STANDARD_FILTER, nurPassend: false }, STANDARD_FENSTER)).toBe(1)
   })
   it('zählt die Suche nicht mit', () => {
     expect(anzahlAktiverFilter({ ...STANDARD_FILTER, suche: 'Schwarzwald' }, STANDARD_FENSTER)).toBe(0)
@@ -56,5 +57,17 @@ describe('ansichtAus', () => {
   it('ignoriert unbekannte Werte', () => {
     expect(ansichtAus('galerie', 'unsinn')).toBe('karte')
     expect(ansichtAus('galerie', 'liste')).toBe('liste')
+  })
+})
+
+describe('schreibeZeitraum', () => {
+  const samstag = '2026-11-21'
+  it('lässt Standardwerte weg und behält andere Parameter', () => {
+    const sp = schreibeZeitraum(new URLSearchParams('q=feld&datum=2026-11-28'), { datum: samstag, rueck: samstag, fenster: 360 }, samstag)
+    expect(sp.toString()).toBe('q=feld')
+  })
+  it('schreibt abweichendes Datum, Rückfahrt und Fenster', () => {
+    const sp = schreibeZeitraum(new URLSearchParams(''), { datum: '2026-11-28', rueck: '2026-11-29', fenster: 240 }, samstag)
+    expect(sp.toString()).toBe('datum=2026-11-28&rueck=2026-11-29&fenster=240')
   })
 })

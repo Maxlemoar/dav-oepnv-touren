@@ -1,4 +1,5 @@
-import { SPORTART_LABEL, type Tour } from './content/schema'
+import { SPORTART_LABEL } from './content/labels'
+import type { Tour } from './content/schema'
 import { minutenAlsDauer } from './datum'
 
 /** Meta-Zeile der Tour-Card: nur belegte Werte, in fester Reihenfolge (Sportart, Dauer, Höhenmeter, Länge, Schwierigkeit). */

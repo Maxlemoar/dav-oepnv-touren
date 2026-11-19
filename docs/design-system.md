@@ -63,12 +63,40 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
 - **Badge**: 24 px hoch, Radius 999. Varianten: stufe (Reisezeit), tagesziel (signal), ticket (nebel), betreiber (Symbol + Text).
 - **Verbindungszeile**: eine Zeile fett mit Zahlen, darunter Meta. Aufklappbar zu Abschnitten.
 - **Steuerleiste**: eine Zeile, sticky unter dem Header (`sticky top-14`), bg-papier/95 mit backdrop-blur und Trennlinie unten, 56 px + 1 px hoch, horizontal scrollbar. Links die Pills Zeitraum und Filter, rechts das Segment Liste | Karte (nur unter lg). Muss direktes Kind des Ergebnis-Containers sein, sonst trägt sticky nicht.
-- **Pill**: 40 px hoch, Radius 999, Rahmen linie auf Karte-Weiß, Symbol + Text, `aria-haspopup="dialog"`. Zeitraum-Pill zeigt "Sa 12.9." oder "Sa 12.9. – So 13.9." (`zeitraumText`), Filter-Pill trägt einen tanne-Zähler (`anzahlAktiverFilter`: Sportarten + Art + Fahrzeit ≠ 5 h + Fenster ≠ 6 h) als kleines Badge.
+- **Pill**: 40 px hoch, Radius 999, Rahmen linie auf Karte-Weiß, Symbol + Text, `aria-haspopup="dialog"`. Zeitraum-Pill zeigt "Sa 12.9." oder "Sa 12.9. – So 13.9." (`zeitraumText`) und heißt für Screenreader "Zeitraum ändern: Sa 12.9.", Filter-Pill trägt einen tanne-Zähler (`anzahlAktiverFilter`: Sportarten + Art + Fahrzeit ≠ 5 h + Fenster ≠ 6 h) als kleines Badge.
 - **Sheet**: natives `<dialog>` mit `showModal()`. Auf dem Handy von unten (rounded-t-2xl, max-h 85dvh, Griff-Linie), ab sm zentriert (max-w-md, rounded-2xl). Backdrop tinte/50, Klick darauf und Esc schließen, Body-Scroll gesperrt, Fokus auf dem ersten Bedienelement. Kopf mit Titel, Body scrollbar, unten "Fertig" (knopf, volle Breite) und optional ein sekundärer Knopf. Auswahl wirkt sofort im Hintergrund, "Fertig" schließt nur.
 - **Sheet "Wann?"**: 2×2-Raster großer Chips Sa / So / Wochenende / Fr–So (44 px, Datum klein als zweite Zeile), darunter aufklappbar "Anderes Datum" mit den Feldern Hin und Zurück ("Zurück" liegt nie vor "Hin"), darunter "Mindestens am Berg" als Chip-Reihe 3 / 4 / 5 / 6 / 8 h, nur bei gleichem Tag aktiv, sonst ausgegraut mit Hinweis.
-- **Sheet "Was?"**: Art-Segment (Alle / Tagestour / Mit Hütte), Sportart-Chips, Fahrzeit-Chips, unten "Zurücksetzen" (sekundär) neben "Fertig".
-- **Badge "Haus der Sektion"**: tanne-tint mit tanne-Text auf Gebieten, in denen ein Haus der eigenen Sektion steht;
-  auf der Karte ein dunkler Ring um den Punkt, im Popup als Zeile. Keine Dauerleiste über den Ergebnissen.
+- **Sheet "Was?"**: Schalter "Nur was am Datum geht" mit Erklärzeile und ggf. "x Ziele wegen Saison ausgeblendet · Einblenden",
+  Art-Segment (Alle / Tagestour / Mit Hütte), Sportart-Chips, Fahrzeit-Chips, unten "Zurücksetzen" (sekundär) neben "Fertig".
+- **Unter der Liste**: Erklärzeile über der Liste "ca. = typische Fahrzeit ab Offenburg an einem Samstag, Stand …".
+  Am Ende Textknöpfe "n weitere Ziele über 5 h anzeigen" (setzt die Fahrzeit auf "alle") und ggf. der Saison-Knopf.
+  Ohne Treffer bietet die Liste passende Hütten als Links an.
+- **Badge "Haus der Sektion Offenburg"**: tanne-tint mit tanne-Text auf Gebieten, in denen ein Haus der eigenen Sektion steht
+  (Sektionsname immer ausgeschrieben, `EIGENE_SEKTION`); auf der Karte ein dunkler Ring um den Punkt, im Popup als Zeile.
+  Keine Dauerleiste über den Ergebnissen.
+- **Saison-Badge** (`SaisonBadge`): signal-tint mit signal-Text und feinem signal-Rahmen, Texte "Saisonziel" (Gebiet außerhalb
+  seiner Saison) oder "am Datum kein Bus" (Hauptzugang laut `bedient` nicht bedient). Erscheint auf Gebietskarte und
+  Ergebnisstreifen nur, wenn der Schalter "Nur was am Datum geht" aus ist; sonst sind diese Ziele ausgeblendet und unter der
+  Liste steht "x Ziele wegen Saison ausgeblendet, einblenden".
+- **Zustands-Badge** (`ZustandBadge`): Zustand einer Hütte am Anreisetag, "Sa 14.11.: offen" (tanne-tint), "nur Winterraum"
+  (nebel), "geschlossen" (signal-tint, signal-Text). Ist der Zustand nur aus der Saison geschätzt, steht "vermutlich" davor.
+  Auf der Hüttenseite wird "geschlossen" zum Warnhinweis mit `statusHinweis`, der Winterraum zu einem ruhigen nebel-Kasten.
+- **Warnhinweis** (`.warnhinweis`): Kasten mit Radius knopf, signal-tint-Fläche, feiner signal-Rahmen, Text tinte 14 px.
+  Für Dinge, die eine Tour verhindern: geschlossene Hütte, gesperrter Weg (`tour.hinweis`), kein Bus am Datum,
+  Datum in der Vergangenheit, "keine Verbindung gefunden, vermutlich Saisonbetrieb". Sparsam, höchstens einer je Karte.
+- **Tagesziel-Badge mit Grund**: "Besser mit Übernachtung" (nebel) mit der Begründung klein in tinte-3 daneben,
+  z. B. "· Ankunft erst 10:40" (`tageszielGrund` bzw. `grund` der Übersicht).
+- **Zeitraum auf Detailseiten**: Gebiets- und Hüttenseite haben unter dem Kopf "Verbindung für" plus dieselbe Zeitraum-Pill
+  wie die Startseite (`ZeitraumPill`), die das Sheet "Wann?" öffnet. Auf Hüttenseiten nur Zeiträume mit Übernachtung und
+  kein Tourenfenster. Alle internen Links auf Gebiete und Hütten tragen `datum`, `rueck`, `fenster` weiter (`ZeitraumLink`,
+  `zeitraumQuery`). Bis zur Hydration steht "Kommender Samstag" statt eines Datums.
+- **Kartenlegende**: unten links in der Karte, über dem Ergebnisstreifen (Abstand = Streifenhöhe + 8 px), karte-Weiß 90 %,
+  11 px. Vier Punkte in den Stufenfarben "bis 2 h / 3 h / 4 h / über 4 h", darunter ein Punkt mit dunklem Ring
+  "Haus der Sektion Offenburg". Nicht klickbar.
+- **Karten-Platzhalter**: nebel-Fläche mit "Karte wird geladen … Die Liste zeigt dieselben Ziele.", bis Kacheln und Punkte
+  da sind. Die Kartenregion nennt Screenreadern "Alle Ziele auch in der Liste".
+- **Schalter** (`role="switch"`): 44 px hohe Zeile, Beschriftung links, 40 × 24 px Schiene rechts (an: tanne, aus: linie).
+  Bisher nur "Nur was am Datum geht" im Sheet "Was?", Standard an.
 - **Skeleton**: nebel-Fläche mit `animate-pulse`, gleiche Höhe wie die spätere Zeile.
 - **Tour-Card**: Card ohne Ganzflächen-Link; der Titel ist der Link zum Portal (neuer Tab). Darunter eine Meta-Zeile mit
   Punkt-Trennern in fester Reihenfolge (Sportart · Dauer h:mm · Höhenmeter · Länge · Schwierigkeit), nur belegte Werte.
@@ -87,8 +115,8 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
   Das Segment in der Steuerleiste schaltet auf die Liste um; die Wahl steht in der URL und wird im
   Browser gemerkt. Server und erste Darstellung liefern die Liste, damit die Ziele auch ohne
   JavaScript und für Suchmaschinen im HTML stehen.
-- **Kartenansicht füllt den Bildschirm:** eine Spalte über die volle Höhe unter dem Header, Titelzeile
-  ausgeblendet, kein Scrollen nötig.
+- **Kartenansicht füllt den Bildschirm:** eine Spalte über die volle Höhe unter dem Header, Titel ausgeblendet,
+  kein Scrollen nötig. Über dem Suchfeld bleibt das Nutzenversprechen als eine Zeile (14 px, tinte-2, abgeschnitten).
 - **Ergebnisstreifen** über dem unteren Kartenrand: waagerecht wischbare Karten mit Einrasten, je Karte
   Name, Reisezeit, Region und Zahl der Hütten und Touren. Die Karte fliegt zum eingerasteten Ziel.
   Unterer Rand lässt die Kartenlizenz frei. Ab lg entfällt der Streifen, dort steht die Liste daneben.

@@ -2,7 +2,8 @@
 import { useEffect, useId, useRef, useState, type FocusEvent, type KeyboardEvent } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { passtZurSuche } from '@/lib/filter'
+import { sucheTreffer } from '@/lib/filter'
+import { mitZeitraum } from '@/lib/zeitraum'
 
 export type SuchEintrag = {
   id: string
@@ -16,7 +17,15 @@ export type SuchEintrag = {
 
 const VERZOEGERUNG_MS = 250
 
-export function Suche({ eintraege, wert, onChange }: { eintraege: SuchEintrag[]; wert: string; onChange: (v: string) => void }) {
+type Props = {
+  eintraege: SuchEintrag[]
+  wert: string
+  onChange: (v: string) => void
+  /** Zeitraum der Startseite als "?datum=…", wandert in die Links mit. */
+  query?: string
+}
+
+export function Suche({ eintraege, wert, onChange, query = '' }: Props) {
   const router = useRouter()
   const listeId = useId()
   const [text, setText] = useState(wert)
@@ -54,7 +63,7 @@ export function Suche({ eintraege, wert, onChange }: { eintraege: SuchEintrag[];
   }
 
   const q = text.trim()
-  const treffer = q ? eintraege.filter((e) => passtZurSuche(`${e.name} ${e.suchtext ?? ''}`, q)).slice(0, 8) : []
+  const treffer = sucheTreffer(eintraege, q, 8)
   const listeSichtbar = offen && treffer.length > 0
   const optionId = (n: number) => `${listeId}-${n}`
 
@@ -71,7 +80,7 @@ export function Suche({ eintraege, wert, onChange }: { eintraege: SuchEintrag[];
       if (t) {
         e.preventDefault()
         setOffen(false)
-        router.push(`/${t.typ}/${t.id}`)
+        router.push(mitZeitraum(`/${t.typ}/${t.id}`, query))
       } else {
         sende(text)
       }
@@ -97,7 +106,7 @@ export function Suche({ eintraege, wert, onChange }: { eintraege: SuchEintrag[];
           className="absolute z-[15] mt-1 w-full overflow-hidden rounded-[var(--radius-karte)] border border-linie bg-karte shadow-md">
           {treffer.map((t, n) => (
             <li key={`${t.typ}-${t.id}`} role="none">
-              <Link href={`/${t.typ}/${t.id}`} id={optionId(n)} role="option" aria-selected={n === aktiv}
+              <Link href={mitZeitraum(`/${t.typ}/${t.id}`, query)} id={optionId(n)} role="option" aria-selected={n === aktiv}
                 onMouseEnter={() => setAktiv(n)}
                 className={`flex min-h-11 items-center justify-between px-4 no-underline hover:bg-papier ${n === aktiv ? 'bg-papier' : ''}`}>
                 <span>{t.name}</span><span className="text-sm text-tinte-3">{t.meta}</span>

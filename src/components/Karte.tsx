@@ -1,10 +1,12 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { LngLatBounds, Map as MlMap, NavigationControl, Popup, setWorkerUrl, type MapLayerMouseEvent } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
+import { EIGENE_SEKTION } from '@/lib/content/labels'
 import { STUFE_FARBE } from '@/lib/stufe'
 import { popupHtml, type KarteGeoJson } from '@/lib/karte'
+import { mitZeitraum } from '@/lib/zeitraum'
 
 const STIL = 'https://tiles.openfreemap.org/styles/liberty'
 // Worker als eigene Datei (siehe scripts/maplibre-worker.ts): Turbopack löst die interne Worker-URL sonst falsch auf.
@@ -19,10 +21,12 @@ type Props = {
   fokusGebiet?: string
   /** Vom Ergebnisstreifen verdeckte Höhe in Pixeln; Punkte bleiben darüber. */
   randUnten?: number
+  /** Zeitraum der Startseite als "?datum=…", wandert in die Popup-Links mit. */
+  query?: string
 }
 
 /** MapLibre-Karte mit Gebieten (Farbe nach Reisezeitstufe) und Hütten ab Zoom 9; Daten aus /karte.json. */
-export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0 }: Props) {
+export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0, query = '' }: Props) {
   const container = useRef<HTMLDivElement>(null)
   const karte = useRef<MlMap | null>(null)
   const daten = useRef<KarteGeoJson | null>(null)
@@ -30,7 +34,9 @@ export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0 }: Pro
   // Der Klick-Handler wird einmal registriert; Übersicht und Router deshalb über Refs lesen, nicht aus der Closure.
   const uebersichtRef = useRef(uebersicht)
   const routerRef = useRef(router)
-  useEffect(() => { uebersichtRef.current = uebersicht; routerRef.current = router }, [uebersicht, router])
+  const queryRef = useRef(query)
+  useEffect(() => { uebersichtRef.current = uebersicht; routerRef.current = router; queryRef.current = query }, [uebersicht, router, query])
+  const hinweisId = useId()
   // Wird nach dem Laden der Ebenen gesetzt, damit der Filter-Effekt mit den aktuellen Props läuft.
   const [bereit, setBereit] = useState(false)
 
@@ -97,7 +103,7 @@ export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0 }: Pro
           const f = e.features?.[0]
           if (!f || f.geometry.type !== 'Point') return
           const p = f.properties as Record<string, string | number | boolean | null>
-          const pfad = p.typ === 'gebiet' ? `/gebiet/${p.id}` : `/huette/${p.id}`
+          const pfad = mitZeitraum(p.typ === 'gebiet' ? `/gebiet/${p.id}` : `/huette/${p.id}`, queryRef.current)
           const popup = new Popup({ offset: 12, closeButton: false })
             .setLngLat(f.geometry.coordinates as [number, number])
             .setHTML(popupHtml(pfad, p, uebersichtRef.current[String(p.id)]))
@@ -146,7 +152,49 @@ export function Karte({ gebietIds, uebersicht, fokusGebiet, randUnten = 0 }: Pro
     m.flyTo({ center: f.geometry.coordinates, zoom: Math.max(m.getZoom(), 8.5), offset: [0, -randUnten / 2], duration: 500 })
   }, [bereit, fokusGebiet, randUnten])
 
-  return <div ref={container} className="h-full w-full" role="region" aria-label="Karte der Ziele" />
+  return (
+    <div className="relative h-full w-full" role="region" aria-label="Karte der Ziele" aria-describedby={hinweisId}>
+      <div ref={container} className="h-full w-full" />
+      <p id={hinweisId} className="sr-only">Alle Ziele auch in der Liste. Die Kartenpunkte sind nicht per Tastatur erreichbar.</p>
+      {!bereit && <KartePlatzhalter />}
+      <Legende abstandUnten={randUnten} />
+    </div>
+  )
+}
+
+/** Platzhalter, bis Kacheln und Punkte geladen sind; auch für das Laden des Karten-Codes. */
+export function KartePlatzhalter() {
+  return (
+    <div className="absolute inset-0 grid place-items-center bg-nebel" aria-hidden>
+      <p className="animate-pulse px-6 text-center text-sm text-tinte-2">Karte wird geladen …<br />Die Liste zeigt dieselben Ziele.</p>
+    </div>
+  )
+}
+
+const LEGENDE: { farbe: string; text: string }[] = [
+  { farbe: STUFE_FARBE[2], text: 'bis 2 h' }, { farbe: STUFE_FARBE[3], text: '3 h' },
+  { farbe: STUFE_FARBE[4], text: '4 h' }, { farbe: STUFE_FARBE[5], text: 'über 4 h' },
+]
+
+/** Legende unten links: Reisezeitfarben und der dunkle Ring für Häuser der Sektion. Liegt über dem Ergebnisstreifen. */
+function Legende({ abstandUnten }: { abstandUnten: number }) {
+  return (
+    <div className="pointer-events-none absolute left-2 max-w-[calc(100%-4rem)] rounded-[var(--radius-knopf)] bg-karte/90 px-2 py-1.5 text-[11px] leading-tight text-tinte-2 shadow-[var(--shadow-karte)]"
+      style={{ bottom: abstandUnten + 8 }}>
+      <p className="sr-only">Legende</p>
+      <ul className="flex flex-wrap items-center gap-x-2 gap-y-1">
+        <li className="sr-only">Reisezeit ab Offenburg:</li>
+        {LEGENDE.map((l) => (
+          <li key={l.text} className="inline-flex items-center gap-1">
+            <span className="inline-block size-2.5 rounded-full border border-white" style={{ background: l.farbe }} aria-hidden />{l.text}
+          </li>
+        ))}
+      </ul>
+      <p className="mt-1 inline-flex items-center gap-1">
+        <span className="inline-block size-3 rounded-full border-[3px] border-tinte bg-stufe-3" aria-hidden />{`Haus der Sektion ${EIGENE_SEKTION}`}
+      </p>
+    </div>
+  )
 }
 
 function wendeFilterAn(m: MlMap, gebietIds: string[]) {

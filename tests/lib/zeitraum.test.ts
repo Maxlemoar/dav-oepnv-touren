@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { zeitraumVorschlaege, rueckAnheben, naechteText } from '@/lib/zeitraum'
+import { zeitraumVorschlaege, rueckAnheben, naechteText, zeitraumQuery, mitZeitraum } from '@/lib/zeitraum'
 
 describe('zeitraumVorschlaege', () => {
   it('liefert Sa, So, Wochenende und Fr–So rund um den Samstag', () => {
@@ -36,5 +36,26 @@ describe('naechteText', () => {
   it('Singular und Plural', () => {
     expect(naechteText(1)).toBe('1 Nacht')
     expect(naechteText(2)).toBe('2 Nächte')
+  })
+})
+
+describe('zeitraumQuery', () => {
+  it('nimmt nur datum, rueck und fenster mit', () => {
+    expect(zeitraumQuery(new URLSearchParams('q=feld&datum=2026-11-28&rueck=2026-11-29&fenster=240&ansicht=karte')))
+      .toBe('?datum=2026-11-28&rueck=2026-11-29&fenster=240')
+  })
+  it('ist leer ohne Zeitraum', () => {
+    expect(zeitraumQuery(new URLSearchParams('q=feld'))).toBe('')
+    expect(zeitraumQuery(new URLSearchParams(''))).toBe('')
+  })
+  it('lässt leere Werte weg', () => {
+    expect(zeitraumQuery(new URLSearchParams('datum=&rueck=2026-11-29'))).toBe('?rueck=2026-11-29')
+  })
+})
+
+describe('mitZeitraum', () => {
+  it('hängt den Zeitraum an den Pfad', () => {
+    expect(mitZeitraum('/gebiet/kandersteg', '?datum=2026-11-28')).toBe('/gebiet/kandersteg?datum=2026-11-28')
+    expect(mitZeitraum('/huette/x', '')).toBe('/huette/x')
   })
 })

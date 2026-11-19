@@ -1,21 +1,29 @@
 'use client'
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from 'react'
 import dynamic from 'next/dynamic'
-import { filtereGebiete, leseFilter, schreibeFilter, STANDARD_FILTER, type FilterZustand, type GebietEintrag } from '@/lib/filter'
+import { ausgeblendet, filtereGebiete, leseFilter, saisonProblem, schreibeFilter, STANDARD_FILTER, sucheTreffer, type FilterZustand, type GebietEintrag } from '@/lib/filter'
 import { naechsterSamstag, tageDifferenz } from '@/lib/datum'
-import { ansichtAus, anzahlAktiverFilter, STANDARD_ANSICHT, STANDARD_FENSTER, zeitraumText, type Ansicht } from '@/lib/steuerleiste'
-import type { VerbindungAntwort } from '@/lib/verbindung/service'
-import { verbindungParameter } from '@/lib/verbindung/parameter'
+import { ansichtAus, anzahlAktiverFilter, schreibeZeitraum, STANDARD_ANSICHT, STANDARD_FENSTER, zeitraumText, type Ansicht } from '@/lib/steuerleiste'
+import type { UebersichtEintrag } from '@/lib/verbindung/uebersicht'
+import { mitZeitraum, zeitraumQuery } from '@/lib/zeitraum'
+import { verbindungParameter } from '@/lib/verbindung/url'
 import { DatumWahl } from './DatumWahl'
 import { Filter } from './Filter'
 import { Sheet } from './Sheet'
 import { Steuerleiste } from './Steuerleiste'
 import { Ergebnisstreifen, STREIFEN_PX } from './Ergebnisstreifen'
+import Link from 'next/link'
 import { Suche, type SuchEintrag } from './Suche'
 import { GebietKarte } from './GebietKarte'
 
-const KARTE_SKELETON = <div className="skeleton h-full w-full" />
-const Karte = dynamic(() => import('./Karte').then((m) => m.Karte), { ssr: false, loading: () => KARTE_SKELETON })
+const KARTE_PLATZHALTER = (
+  <div className="relative h-full w-full">
+    <div className="absolute inset-0 grid place-items-center bg-nebel" aria-hidden>
+      <p className="animate-pulse px-6 text-center text-sm text-tinte-2">Karte wird geladen …<br />Die Liste zeigt dieselben Ziele.</p>
+    </div>
+  </div>
+)
+const Karte = dynamic(() => import('./Karte').then((m) => m.Karte), { ssr: false, loading: () => KARTE_PLATZHALTER })
 
 /** Höhe des sticky Headers (h-14) in Pixeln; die Steuerleiste klebt direkt darunter. */
 const HEADER_PX = 56
@@ -27,6 +35,8 @@ type Props = {
   suchEintraege: SuchEintrag[]
   /** Serverseitig gerenderte Überschrift; in der Kartenansicht auf dem Handy ausgeblendet. */
   titel: ReactNode
+  /** Stand der Richtwerte ("07.09.2026") für die Erklärung von "ca.". */
+  richtwertStand?: string
 }
 
 type Auswahl = { filter: FilterZustand; datum: string; rueck: string; fenster: number }
@@ -70,7 +80,7 @@ function abonniereBreit(cb: () => void) {
   return () => mq.removeEventListener('change', cb)
 }
 
-export function Startseite({ startort, gebiete, suchEintraege, titel }: Props) {
+export function Startseite({ startort, gebiete, suchEintraege, titel, richtwertStand }: Props) {
   const suche = useSyncExternalStore(abonniereUrl, leseUrl, leseUrlServer)
   const { filter, datum, rueck, fenster } = useMemo<Auswahl>(() => {
     if (!suche) {
@@ -101,29 +111,27 @@ export function Startseite({ startort, gebiete, suchEintraege, titel }: Props) {
 
   // Übersicht wird mit ihrer Anfrage gespeichert; passt sie nicht mehr, gilt sie als ladend.
   const anfrage = `von=${startort.id}&datum=${datum}${tagestourMoeglich ? '' : `&rueck=${rueck}`}&fenster=${fenster}`
-  const [geladen, setGeladen] = useState<{ anfrage: string; uebersicht: Record<string, boolean | undefined> } | null>(null)
+  const [geladen, setGeladen] = useState<{ anfrage: string; eintraege: Record<string, UebersichtEintrag> } | null>(null)
   const laedt = geladen?.anfrage !== anfrage
-  const uebersicht = useMemo(() => (laedt ? {} : geladen!.uebersicht), [laedt, geladen])
+  const eintraege = useMemo(() => (laedt ? {} : geladen!.eintraege), [laedt, geladen])
+  // Für Filter und Karte reicht das Urteil je Gebiet; die Begründung zeigt nur die Liste.
+  const uebersicht = useMemo(() => {
+    const u: Record<string, boolean | undefined> = {}
+    for (const [id, e] of Object.entries(eintraege)) u[id] = e.tagesziel
+    return u
+  }, [eintraege])
 
   useEffect(() => {
     let aktiv = true
     fetch(`/api/uebersicht?${anfrage}`)
-      .then((r) => r.json())
-      .then((d: Record<string, VerbindungAntwort>) => {
-        const u: Record<string, boolean | undefined> = {}
-        for (const [id, a] of Object.entries(d)) u[id] = a.tagesziel
-        return u
-      })
-      .catch(() => ({}) as Record<string, boolean | undefined>)
-      .then((u) => { if (aktiv) setGeladen({ anfrage, uebersicht: u }) })
+      .then((r) => (r.ok ? r.json() : {}))
+      .catch(() => ({}))
+      .then((d: Record<string, UebersichtEintrag>) => { if (aktiv) setGeladen({ anfrage, eintraege: d }) })
     return () => { aktiv = false }
   }, [anfrage])
 
   function aendere(neu: Auswahl) {
-    const sp = schreibeFilter(new URLSearchParams(window.location.search), neu.filter)
-    if (neu.datum === naechsterSamstag()) sp.delete('datum'); else sp.set('datum', neu.datum)
-    if (neu.rueck === neu.datum) sp.delete('rueck'); else sp.set('rueck', neu.rueck)
-    if (neu.fenster === STANDARD_FENSTER) sp.delete('fenster'); else sp.set('fenster', String(neu.fenster))
+    const sp = schreibeZeitraum(schreibeFilter(new URLSearchParams(window.location.search), neu.filter), neu, naechsterSamstag())
     schreibeUrl(sp)
   }
   const onFilter = (f: FilterZustand) => aendere({ filter: f, datum, rueck, fenster })
@@ -141,7 +149,13 @@ export function Startseite({ startort, gebiete, suchEintraege, titel }: Props) {
     if (el) window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().bottom + window.scrollY - HEADER_PX) })
   }
 
-  const sichtbar = filtereGebiete(gebiete, filterWirksam, uebersicht)
+  // Datumsabhängiges (Saison, Pill-Text) erst nach dem Mounten: das Server-HTML entsteht beim Build und darf kein
+  // konkretes Datum enthalten, sonst weicht es bei der Hydration ab (React-Fehler #418).
+  const saisonDatum = montiert ? datum : undefined
+  const query = zeitraumQuery(new URLSearchParams(suche))
+  const sichtbar = filtereGebiete(gebiete, filterWirksam, uebersicht, saisonDatum)
+  const fehlend = ausgeblendet(gebiete, filterWirksam, uebersicht, saisonDatum)
+  const huettenTreffer = sichtbar.length === 0 ? sucheTreffer(suchEintraege.filter((e) => e.typ === 'huette'), filter.suche, 5) : []
   // Kennung der Trefferliste: setzt den Fokus des Streifens zurück, sobald sich die Treffer ändern.
   const sichtbareIds = sichtbar.map((g) => g.id)
   const idsSchluessel = sichtbareIds.join(',')
@@ -156,26 +170,71 @@ export function Startseite({ startort, gebiete, suchEintraege, titel }: Props) {
     // Ergebnisstreifen ohne Scrollen sichtbar ist. Ab lg stehen Liste und Karte wie bisher nebeneinander.
     <div className={karteOffen ? 'flex h-[calc(100dvh-7rem)] flex-col lg:block lg:h-auto' : undefined}>
       <div className={karteOffen ? 'hidden lg:block' : undefined}>{titel}</div>
-      <Suche eintraege={suchEintraege} wert={filter.suche} onChange={(suche) => onFilter({ ...filter, suche })} />
+      {/* Kartenansicht auf dem Handy: das Nutzenversprechen bleibt als eine kompakte Zeile stehen. */}
+      {karteOffen && <p className="mb-2 truncate text-sm text-tinte-2 lg:hidden">Hütten und Touren ab {startort.name} mit Bahn und Bus.</p>}
+      <Suche eintraege={suchEintraege} wert={filter.suche} onChange={(suche) => onFilter({ ...filter, suche })} query={query} />
 
       <div ref={anker} className="h-2" aria-hidden />
       {/* Direktes Kind dieses Containers, damit sticky bis zum Ende der Ergebnisse trägt. */}
-      <Steuerleiste zeitraum={zeitraumText(datum, rueck)} anzahlFilter={anzahlFilter} ansicht={ansicht}
+      <Steuerleiste zeitraum={montiert ? zeitraumText(datum, rueck) : 'Kommender Samstag'} anzahlFilter={anzahlFilter} ansicht={ansicht}
         onZeitraum={() => setSheet('wann')} onFilter={() => setSheet('was')} onAnsicht={zeigeAnsicht} />
 
       <div className={`lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-6 ${karteOffen ? 'min-h-0 flex-1 lg:flex-none' : ''}`}>
         <section className={`space-y-3 pt-3 ${karteOffen ? 'hidden lg:block' : ''}`}>
-          <h2 className="text-sm text-tinte-3">{`${sichtbar.length} ${sichtbar.length === 1 ? 'Ziel' : 'Ziele'}, nach Fahrzeit sortiert`}</h2>
-          {sichtbar.map((g) => <GebietKarte key={g.id} g={g} tagesziel={uebersicht[g.id]} laedt={laedt} naechte={naechte} />)}
-          {sichtbar.length === 0 && <p className="text-tinte-2">Nichts gefunden. Filter lockern oder Fahrzeit erhöhen.</p>}
+          <div>
+            <h2 className="text-sm text-tinte-3">{`${sichtbar.length} ${sichtbar.length === 1 ? 'Ziel' : 'Ziele'}, nach Fahrzeit sortiert`}</h2>
+            <p className="text-xs text-tinte-3">
+              ca. = typische Fahrzeit ab {startort.name} an einem Samstag{richtwertStand ? `, Stand ${richtwertStand}` : ''}.
+              Die echte Verbindung für dein Datum steht auf der Seite des Ziels.
+            </p>
+          </div>
+          {sichtbar.map((g) => (
+            <GebietKarte key={g.id} g={g} tagesziel={uebersicht[g.id]} grund={eintraege[g.id]?.grund} laedt={laedt} naechte={naechte}
+              query={query} saison={saisonDatum ? saisonProblem(g, saisonDatum) : undefined} />
+          ))}
+          {sichtbar.length === 0 && (
+            <div className="space-y-2 text-tinte-2">
+              <p>Kein Gebiet passt zu Suche und Filter.</p>
+              {huettenTreffer.length > 0 && (
+                <>
+                  <p className="text-sm">Passende Hütten:</p>
+                  <ul className="space-y-1">
+                    {huettenTreffer.map((h) => (
+                      <li key={h.id}>
+                        <Link href={mitZeitraum(`/huette/${h.id}`, query)} className="inline-flex min-h-11 items-center gap-2 text-tanne underline">
+                          {h.name}<span className="text-sm text-tinte-3 no-underline">{h.meta}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          )}
+          {(fehlend.fahrzeit > 0 || (filterWirksam.nurPassend && fehlend.saison > 0)) && (
+            <div className="flex flex-col items-start gap-1 border-t border-linie pt-2">
+              {fehlend.fahrzeit > 0 && (
+                <button type="button" className="min-h-11 text-sm text-tanne underline" onClick={() => onFilter({ ...filter, maxStd: 99 })}>
+                  {`${fehlend.fahrzeit} ${fehlend.fahrzeit === 1 ? 'weiteres Ziel' : 'weitere Ziele'} über ${filter.maxStd} h anzeigen`}
+                </button>
+              )}
+              {filterWirksam.nurPassend && fehlend.saison > 0 && (
+                <button type="button" className="min-h-11 text-sm text-tanne underline" onClick={() => onFilter({ ...filter, nurPassend: false })}>
+                  {`${fehlend.saison} ${fehlend.saison === 1 ? 'Ziel' : 'Ziele'} wegen Saison ausgeblendet, einblenden`}
+                </button>
+              )}
+            </div>
+          )}
         </section>
         {/* Handy: füllt den Bereich unter Header (3.5rem) und Steuerleiste (3.5rem + 1px). Ab lg: sticky rechte Spalte. */}
         <section className={`${karteOffen ? 'block h-full' : 'hidden'} relative -mx-4 overflow-hidden border-b border-linie sm:-mx-6 lg:sticky lg:top-[calc(8rem+1px)] lg:mx-0 lg:mt-3 lg:block lg:h-[calc(100dvh-9rem-1px)] lg:rounded-[var(--radius-karte)] lg:border`}>
-          {karteMontieren ? <Karte gebietIds={sichtbareIds} uebersicht={uebersicht} fokusGebiet={fokus} randUnten={randUnten} /> : KARTE_SKELETON}
-          {karteMontieren && <Ergebnisstreifen gebiete={sichtbar} onFokus={(id) => setFokusZustand({ schluessel: idsSchluessel, id })} />}
+          {karteMontieren ? <Karte gebietIds={sichtbareIds} uebersicht={uebersicht} fokusGebiet={fokus} randUnten={randUnten} query={query} /> : KARTE_PLATZHALTER}
+          {karteMontieren && <Ergebnisstreifen gebiete={sichtbar} query={query} datum={saisonDatum} onFokus={(id) => setFokusZustand({ schluessel: idsSchluessel, id })} />}
         </section>
       </div>
 
+      {/* Sheets erst nach dem Mounten: ihr Inhalt nennt konkrete Daten (siehe saisonDatum). */}
+      {montiert && <>
       <Sheet offen={sheet === 'wann'} titel="Wann?" onClose={() => setSheet(null)}>
         <DatumWahl datum={datum} rueck={rueck} fenster={fenster}
           onZeitraum={(d, r) => aendere({ filter, datum: d, rueck: r, fenster })}
@@ -183,8 +242,9 @@ export function Startseite({ startort, gebiete, suchEintraege, titel }: Props) {
       </Sheet>
       <Sheet offen={sheet === 'was'} titel="Was?" onClose={() => setSheet(null)}
         aktionen={<button type="button" className="knopf-sekundaer" onClick={() => onFilter({ ...STANDARD_FILTER, suche: filter.suche })}>Zurücksetzen</button>}>
-        <Filter wert={filter} tagestourMoeglich={tagestourMoeglich} onChange={onFilter} />
+        <Filter wert={filter} tagestourMoeglich={tagestourMoeglich} onChange={onFilter} ausgeblendetSaison={fehlend.saison} />
       </Sheet>
+      </>}
     </div>
   )
 }

@@ -1,6 +1,8 @@
-import { BETREIBER_LABEL, TICKET_LABEL, type BetreiberTyp, type Ticket } from '@/lib/content/schema'
+import { BETREIBER_LABEL, EIGENE_SEKTION, TICKET_LABEL, type BetreiberTyp, type Ticket } from '@/lib/content/labels'
 import { minutenAlsDauer } from '@/lib/datum'
 import { reisezeitStufe } from '@/lib/stufe'
+import type { SaisonProblem } from '@/lib/filter'
+import type { HuettenZustand } from '@/lib/saison'
 
 export { reisezeitStufe }
 
@@ -18,16 +20,39 @@ export function ReisezeitBadge({ fahrzeitMin, ca }: { fahrzeitMin: number; ca?: 
   )
 }
 
-export function TageszielBadge({ tagesziel }: { tagesziel: boolean | undefined }) {
+/** Tagesziel-Urteil; bei "Besser mit Übernachtung" steht die Begründung klein daneben ("Ankunft erst 10:40"). */
+export function TageszielBadge({ tagesziel, grund }: { tagesziel: boolean | undefined; grund?: string }) {
   if (tagesziel === undefined) return null
-  return tagesziel
-    ? <span className="badge bg-signal text-white">Tagesziel</span>
-    : <span className="badge bg-nebel text-tinte-2">Besser mit Übernachtung</span>
+  if (tagesziel) return <span className="badge bg-signal text-white">Tagesziel</span>
+  return (
+    <span className="inline-flex flex-wrap items-center gap-x-1.5">
+      <span className="badge bg-nebel text-tinte-2">Besser mit Übernachtung</span>
+      {grund && <span className="text-xs text-tinte-3">· {grund}</span>}
+    </span>
+  )
+}
+
+const SAISON_PROBLEM_TEXT: Record<SaisonProblem, string> = { saisonziel: 'Saisonziel', kein_bus: 'am Datum kein Bus' }
+
+/** Hinweis auf Gebieten, die am gewählten Datum schlecht passen (nur sichtbar, wenn der Saison-Schalter aus ist). */
+export function SaisonBadge({ problem }: { problem: SaisonProblem }) {
+  return <span className="badge border border-signal/40 bg-signal-tint text-signal">{SAISON_PROBLEM_TEXT[problem]}</span>
+}
+
+const ZUSTAND_TEXT: Record<HuettenZustand['zustand'], string> = { offen: 'offen', winterraum: 'nur Winterraum', geschlossen: 'geschlossen' }
+const ZUSTAND_KLASSE: Record<HuettenZustand['zustand'], string> = {
+  offen: 'bg-tanne-tint text-tanne', winterraum: 'bg-nebel text-tinte', geschlossen: 'bg-signal-tint text-signal',
+}
+
+/** Zustand einer Hütte am Datum; "vermutlich", wenn er nur aus der Saison geschätzt ist. */
+export function ZustandBadge({ zustand, datumText }: { zustand: HuettenZustand; datumText?: string }) {
+  const text = `${zustand.sicher ? '' : 'vermutlich '}${ZUSTAND_TEXT[zustand.zustand]}`
+  return <span className={`badge ${ZUSTAND_KLASSE[zustand.zustand]}`}>{datumText ? `${datumText}: ${text}` : text}</span>
 }
 
 /** Markiert Gebiete mit einem Haus der eigenen Sektion. */
 export function SektionshausBadge() {
-  return <span className="badge bg-tanne-tint text-tanne">Haus der Sektion</span>
+  return <span className="badge bg-tanne-tint text-tanne">{`Haus der Sektion ${EIGENE_SEKTION}`}</span>
 }
 
 export function TicketBadge({ ticket }: { ticket: Ticket }) {

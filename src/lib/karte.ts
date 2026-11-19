@@ -1,5 +1,5 @@
 import type { Inhalt } from './content/laden'
-import { istSektionshaus, SPORTART_LABEL, type Sportart } from './content/schema'
+import { EIGENE_SEKTION, istSektionshaus, SPORTART_LABEL, type Sportart } from './content/labels'
 import { minutenAlsDauer } from './datum'
 import { reisezeitStufe, type Stufe } from './stufe'
 
@@ -46,13 +46,13 @@ export function popupHtml(pfad: string, p: Record<string, string | number | bool
     if (p.fahrzeitMin) zeilen.push(`ca. ${minutenAlsDauer(Number(p.fahrzeitMin))}`)
     const sportarten = String(p.sportarten ?? '').split(',').filter((s): s is Sportart => s in SPORTART_LABEL).map((s) => SPORTART_LABEL[s])
     if (sportarten.length) zeilen.push(sportarten.join(', '))
-    if (p.sektionshaus === true) zeilen.push('Haus der Sektion')
+    if (p.sektionshaus === true) zeilen.push(`Haus der Sektion ${EIGENE_SEKTION}`)
     if (tagesziel === true) zeilen.push('Tagesziel')
     if (tagesziel === false) zeilen.push('Besser mit Übernachtung')
   } else {
     zeilen.push(`${p.hoehe} m`)
   }
-  return `<a href="${pfad}" class="font-semibold text-tanne underline">${escapeHtml(String(p.name))}</a>`
+  return `<a href="${escapeHtml(pfad)}" class="font-semibold text-tanne underline">${escapeHtml(String(p.name))}</a>`
     + zeilen.map((z) => `<div class="text-xs text-tinte-2">${escapeHtml(z)}</div>`).join('')
 }
 

@@ -1,12 +1,13 @@
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import { Fragment, Suspense } from 'react'
 import { inhalt, findeGebiet, findeHaltestelle, huettenImGebiet, sichtbareStartorte } from '@/lib/content/laden'
-import { SAISON_LABEL, SPORTART_LABEL } from '@/lib/content/schema'
+import { SAISON_LABEL, SPORTART_LABEL } from '@/lib/content/labels'
 import { co2ErsparnisKg } from '@/lib/co2'
 import { Co2Zeile } from '@/components/Co2Zeile'
 import { FehlerMelden } from '@/components/FehlerMelden'
 import { HuetteKarte } from '@/components/HuetteKarte'
+import { BedientHinweis } from '@/components/HuettenZustand'
+import { ZeitraumLink, ZeitraumPill } from '@/components/Zeitraum'
 import { TourEmbed } from '@/components/TourEmbed'
 import { TourKarte } from '@/components/TourKarte'
 import { VerbindungZeile } from '@/components/VerbindungZeile'
@@ -38,13 +39,14 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
     <article className="mx-auto max-w-2xl space-y-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdText(gebietJsonLd(gebiet, gebietBeschreibungFuer(i, gebiet))) }} />
       <header>
-        <Link href="/" className="text-sm text-tanne">← Alle Ziele</Link>
+        <ZeitraumLink href="/" className="text-sm text-tanne">← Alle Ziele</ZeitraumLink>
         <h1 className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">{gebiet.name}</h1>
         <p className="mt-2 text-tinte-2">{gebiet.beschreibung}</p>
         <div className="mt-2 flex flex-wrap gap-2 text-sm text-tinte-2">
           {gebiet.sportarten.map((s) => <span key={s} className="badge bg-nebel">{SPORTART_LABEL[s]}</span>)}
           <span className="badge bg-nebel">{SAISON_LABEL[gebiet.saison]}</span>
         </div>
+        <div className="mt-4"><ZeitraumPill mindestNaechte={0} saison={gebiet.saison} /></div>
       </header>
 
       <section className="space-y-3">
@@ -54,7 +56,10 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
           const r = h.richtwerte[startort.id]
           return (
             <div key={hid} className="karte-card space-y-3">
-              <div className="font-medium">Bis {h.name}</div>
+              <div>
+                <div className="font-medium">Bis {h.name}</div>
+                <BedientHinweis haltestelle={h} />
+              </div>
               <Suspense fallback={<div className="skeleton h-6 w-3/4" />}>
                 <VerbindungZeile von={{ id: startort.id, name: startort.name, bahn: startort.bahn }} nach={{ id: h.id, name: h.name, land: h.land, bahn: h.bahn }} mindestNaechte={0} />
               </Suspense>

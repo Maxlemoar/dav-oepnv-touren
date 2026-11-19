@@ -1,5 +1,5 @@
 'use client'
-import { lokalesDatum, naechsterSamstag } from '@/lib/datum'
+import { lokalesDatum, naechsterSamstag, tageAddieren, tageDifferenz } from '@/lib/datum'
 import { FENSTER_WERTE, zeitraumKurz } from '@/lib/steuerleiste'
 import { rueckAnheben, zeitraumVorschlaege } from '@/lib/zeitraum'
 
@@ -9,14 +9,16 @@ type Props = {
   fenster: number
   onZeitraum: (datum: string, rueck: string) => void
   onFenster: (fenster: number) => void
+  /** Hüttenseite 1: nur Zeiträume mit Übernachtung, kein Tourenfenster. Standard 0. */
+  mindestNaechte?: number
 }
 
 const FELD = 'min-h-11 w-full rounded-[var(--radius-knopf)] border border-linie bg-karte px-3 text-base text-tinte'
 
 /** Inhalt des Sheets "Wann?": Wochenend-Chips, aufklappbar ein freies Datum, darunter das Tourenfenster. */
-export function DatumWahl({ datum, rueck, fenster, onZeitraum, onFenster }: Props) {
+export function DatumWahl({ datum, rueck, fenster, onZeitraum, onFenster, mindestNaechte = 0 }: Props) {
   const heute = lokalesDatum(new Date())
-  const vorschlaege = zeitraumVorschlaege(naechsterSamstag())
+  const vorschlaege = zeitraumVorschlaege(naechsterSamstag()).filter((v) => tageDifferenz(v.datum, v.rueck) >= mindestNaechte)
   const gleicherTag = datum === rueck
   const passtVorschlag = vorschlaege.some((v) => v.datum === datum && v.rueck === rueck)
 
@@ -45,17 +47,17 @@ export function DatumWahl({ datum, rueck, fenster, onZeitraum, onFenster }: Prop
             Hin
             <input type="date" value={datum} min={heute} className={FELD}
               // "Zurück" zieht mit, wenn die Hinfahrt dahinter rutscht.
-              onChange={(e) => { if (e.target.value) onZeitraum(e.target.value, rueckAnheben(e.target.value, rueck)) }} />
+              onChange={(e) => { if (e.target.value) onZeitraum(e.target.value, rueckAnheben(e.target.value, rueck, mindestNaechte)) }} />
           </label>
           <label className="flex flex-col gap-1 text-xs text-tinte-3">
             Zurück
-            <input type="date" value={rueck} min={datum} className={FELD}
-              onChange={(e) => { if (e.target.value) onZeitraum(datum, rueckAnheben(datum, e.target.value)) }} />
+            <input type="date" value={rueck} min={tageAddieren(datum, mindestNaechte)} className={FELD}
+              onChange={(e) => { if (e.target.value) onZeitraum(datum, rueckAnheben(datum, e.target.value, mindestNaechte)) }} />
           </label>
         </div>
       </details>
 
-      <div>
+      {mindestNaechte === 0 && <div>
         <p className="text-sm font-medium">Mindestens am Berg</p>
         <div role="group" aria-label="Mindestens am Berg" className="mt-2 flex flex-wrap gap-2">
           {FENSTER_WERTE.map((m) => {
@@ -69,7 +71,7 @@ export function DatumWahl({ datum, rueck, fenster, onZeitraum, onFenster }: Prop
         <p className="mt-2 text-xs text-tinte-3">
           {gleicherTag ? 'Zeit zwischen Ankunft und letzter Rückfahrt.' : 'Nur bei Hin- und Rückfahrt am selben Tag.'}
         </p>
-      </div>
+      </div>}
     </div>
   )
 }

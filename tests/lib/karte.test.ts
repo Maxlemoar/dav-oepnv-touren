@@ -64,7 +64,14 @@ describe('Häuser der eigenen Sektion', () => {
     expect(mit.properties).toMatchObject({ sektionshaus: true })
   })
   it('nennt das Haus der Sektion im Popup', () => {
-    expect(popupHtml('/gebiet/x', { typ: 'gebiet', name: 'X', sektionshaus: true }, undefined)).toContain('Haus der Sektion')
+    expect(popupHtml('/gebiet/x', { typ: 'gebiet', name: 'X', sektionshaus: true }, undefined)).toContain('Haus der Sektion Offenburg')
     expect(popupHtml('/gebiet/x', { typ: 'gebiet', name: 'X', sektionshaus: false }, undefined)).not.toContain('Haus der Sektion')
+  })
+})
+
+describe('popupHtml mit Zeitraum', () => {
+  it('übernimmt den Zeitraum im Link und escaped das &', () => {
+    const html = popupHtml('/gebiet/x?datum=2026-11-28&rueck=2026-11-29', { typ: 'gebiet', name: 'X' }, undefined)
+    expect(html).toContain('href="/gebiet/x?datum=2026-11-28&amp;rueck=2026-11-29"')
   })
 })

@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { BETREIBER_TYPEN, SAISONS, SPORTARTEN, TICKETS, TOUR_ANBIETER } from './labels'
 
 const Id = z.string().regex(/^[a-z0-9-]+$/, 'id: nur a-z, 0-9 und Bindestrich')
 const Koordinate = { lat: z.number().min(-90).max(90), lon: z.number().min(-180).max(180) }
@@ -11,13 +12,13 @@ export const BahnOrtSchema = z.object({
   y: z.number().int(),
 })
 
-export const SportartSchema = z.enum(['wandern', 'hochtour', 'skitour', 'klettern', 'klettersteig', 'schneeschuh'])
-export const SaisonSchema = z.enum(['sommer', 'winter', 'ganzjaehrig'])
+export const SportartSchema = z.enum(SPORTARTEN)
+export const SaisonSchema = z.enum(SAISONS)
 export const LandSchema = z.enum(['DE', 'FR', 'CH', 'AT'])
-export const TicketSchema = z.enum(['deutschlandticket', 'halbtax', 'europass', 'keins'])
+export const TicketSchema = z.enum(TICKETS)
 export const TaktSchema = z.enum(['stuendlich', 'zweistuendlich', 'unregelmaessig'])
-export const BetreiberTypSchema = z.enum(['dav', 'sac', 'oeav', 'caf', 'naturfreunde', 'privat'])
-export const TourAnbieterSchema = z.enum(['alpenvereinaktiv', 'sac', 'komoot', 'sonstig'])
+export const BetreiberTypSchema = z.enum(BETREIBER_TYPEN)
+export const TourAnbieterSchema = z.enum(TOUR_ANBIETER)
 
 export const StartortSchema = z.object({
   id: Id,
@@ -189,26 +190,8 @@ export type Huette = z.infer<typeof HuetteSchema>
 export type TicketTabelle = z.infer<typeof TicketTabelleSchema>
 export type Emissionen = z.infer<typeof EmissionenSchema>
 
-/** Sektion, deren Häuser auf der Seite hervorgehoben werden. */
-export const EIGENE_SEKTION = 'Offenburg'
-
-export function istSektionshaus(h: Huette): boolean {
-  return h.betreiber.typ === 'dav' && h.betreiber.sektion === EIGENE_SEKTION
-}
-
-export const SPORTART_LABEL: Record<Sportart, string> = {
-  wandern: 'Wandern', hochtour: 'Hochtour', skitour: 'Skitour',
-  klettern: 'Klettern', klettersteig: 'Klettersteig', schneeschuh: 'Schneeschuh',
-}
-export const SAISON_LABEL: Record<Saison, string> = {
-  sommer: 'Sommer', winter: 'Winter', ganzjaehrig: 'ganzjährig',
-}
-export const BETREIBER_LABEL: Record<BetreiberTyp, string> = {
-  dav: 'DAV', sac: 'SAC', oeav: 'ÖAV', caf: 'CAF', naturfreunde: 'Naturfreunde', privat: 'privat',
-}
-export const TOUR_ANBIETER_LABEL: Record<TourAnbieter, string> = {
-  alpenvereinaktiv: 'Alpenvereinaktiv', sac: 'SAC-Tourenportal', komoot: 'komoot', sonstig: 'Tourenportal',
-}
-export const TICKET_LABEL: Record<Ticket, string> = {
-  deutschlandticket: 'Deutschlandticket', halbtax: 'Halbtax', europass: 'Europass', keins: 'Einzelticket',
-}
+// Konstanten und Beschriftungen liegen zod-frei in labels.ts (auch für den Browser) und werden hier weitergereicht.
+export {
+  EIGENE_SEKTION, istSektionshaus, SPORTARTEN, SAISONS, TICKETS, BETREIBER_TYPEN, TOUR_ANBIETER,
+  SPORTART_LABEL, SAISON_LABEL, BETREIBER_LABEL, TOUR_ANBIETER_LABEL, TICKET_LABEL,
+} from './labels'

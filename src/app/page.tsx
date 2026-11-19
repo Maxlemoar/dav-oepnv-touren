@@ -1,6 +1,7 @@
 import { inhalt, findeHaltestelle, sichtbareStartorte, huettenImGebiet } from '@/lib/content/laden'
-import { istSektionshaus } from '@/lib/content/schema'
+import { istSektionshaus } from '@/lib/content/labels'
 import type { GebietEintrag } from '@/lib/filter'
+import { datumTTMMJJJJ, juengsterRichtwert } from '@/lib/metadaten'
 import { Startseite } from '@/components/Startseite'
 import type { SuchEintrag } from '@/components/Suche'
 
@@ -18,6 +19,8 @@ export default function Start() {
         fahrzeitMin: r?.fahrzeitMin, umstiege: r?.umstiege, takt: r?.takt, ticket: r?.ticket,
         anzahlHuetten: huetten.length, anzahlTouren: g.touren.length, sektionshaus: huetten.some(istSektionshaus),
         lat: g.lat, lon: g.lon, hauptHaltestelleId: h.id,
+        huettenNamen: huetten.map((x) => x.name), tourenTitel: g.touren.map((t) => t.titel),
+        ...(h.bedient && { bedient: h.bedient }),
       }
     })
     .sort((a, b) => (a.fahrzeitMin ?? 9999) - (b.fahrzeitMin ?? 9999))
@@ -33,8 +36,11 @@ export default function Start() {
     }),
   ]
 
+  const stand = juengsterRichtwert(i.haltestellen)
+
   return (
     <Startseite
+      richtwertStand={stand && datumTTMMJJJJ(stand)}
       startort={{ id: startort.id, name: startort.name }}
       titel={
         <section key="titel" className="mb-3">

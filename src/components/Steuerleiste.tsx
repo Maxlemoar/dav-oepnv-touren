@@ -23,7 +23,7 @@ export function Steuerleiste({ zeitraum, anzahlFilter, ansicht, onZeitraum, onFi
   return (
     <div className="sticky top-14 z-10 -mx-4 border-b border-linie bg-papier/95 px-4 backdrop-blur sm:-mx-6 sm:px-6">
       <div className="flex items-center gap-2 overflow-x-auto py-2 [scrollbar-width:none]">
-        <button type="button" className="pill" aria-haspopup="dialog" onClick={onZeitraum}>
+        <button type="button" className="pill" aria-haspopup="dialog" aria-label={`Zeitraum ändern: ${zeitraum}`} onClick={onZeitraum}>
           <KalenderSymbol />{zeitraum}
         </button>
         <button type="button" className="pill" aria-haspopup="dialog" onClick={onFilter}>
@@ -44,7 +44,7 @@ export function Steuerleiste({ zeitraum, anzahlFilter, ansicht, onZeitraum, onFi
   )
 }
 
-function KalenderSymbol() {
+export function KalenderSymbol() {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
       <rect x="2" y="3" width="12" height="11" rx="2" /><path d="M2 6.5h12M5 1.5v3M11 1.5v3" />

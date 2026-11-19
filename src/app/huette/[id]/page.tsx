@@ -1,14 +1,16 @@
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import { Suspense } from 'react'
 import { inhalt, findeHuette, findeGebiet, findeHaltestelle, sichtbareStartorte } from '@/lib/content/laden'
-import { SAISON_LABEL } from '@/lib/content/schema'
+import { SAISON_LABEL } from '@/lib/content/labels'
 import { co2ErsparnisKg } from '@/lib/co2'
 import { minutenAlsDauer } from '@/lib/datum'
 import { BetreiberBadge } from '@/components/Badges'
 import { Co2Zeile } from '@/components/Co2Zeile'
 import { FehlerMelden } from '@/components/FehlerMelden'
 import { VerbindungZeile } from '@/components/VerbindungZeile'
+import { huettenMerkmale } from '@/components/HuetteKarte'
+import { BedientHinweis, HuettenZustandBanner } from '@/components/HuettenZustand'
+import { ZeitraumLink, ZeitraumPill } from '@/components/Zeitraum'
 import type { Metadata } from 'next'
 import { huetteBeschreibungFuer, huetteJsonLd, jsonLdText, seitenMetadaten } from '@/lib/metadaten'
 
@@ -37,17 +39,20 @@ export default async function HuetteSeite({ params }: { params: Promise<{ id: st
     <article className="mx-auto max-w-2xl space-y-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdText(huetteJsonLd(huette, huetteBeschreibungFuer(i, huette))) }} />
       <header>
-        <Link href={`/gebiet/${gebiet.id}`} className="text-sm text-tanne">← {gebiet.name}</Link>
+        <ZeitraumLink href={`/gebiet/${gebiet.id}`} className="text-sm text-tanne">← {gebiet.name}</ZeitraumLink>
         <h1 className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">{huette.name}</h1>
         <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-tinte-2">
           <BetreiberBadge typ={huette.betreiber.typ} sektion={huette.betreiber.sektion} />
           <span className="zahl">{huette.hoehe} m</span>
           <span>{SAISON_LABEL[huette.saison]}</span>
+          {huettenMerkmale(huette).map((m) => <span key={m} className="badge bg-nebel text-tinte-2">{m}</span>)}
         </div>
+        <div className="mt-3"><HuettenZustandBanner huette={huette} /></div>
         <div className="mt-3 flex flex-wrap gap-2">
           {huette.buchungUrl && <a href={huette.buchungUrl} target="_blank" rel="noreferrer" className="knopf">Buchen</a>}
           {huette.webUrl && <a href={huette.webUrl} target="_blank" rel="noreferrer" className="knopf-sekundaer">Hüttenseite</a>}
         </div>
+        <div className="mt-4"><ZeitraumPill mindestNaechte={1} /></div>
       </header>
 
       <section className="space-y-3">
@@ -59,6 +64,7 @@ export default async function HuetteSeite({ params }: { params: Promise<{ id: st
             <div key={n} className="karte-card space-y-3">
               <div>
                 <div className="font-medium">Bis {h.name}</div>
+                <BedientHinweis haltestelle={h} />
                 <p className="text-sm text-tinte-2">
                   Zustieg {minutenAlsDauer(z.gehzeitMin)}{z.bergbahn ? ' mit Bergbahn' : ''}{z.hoehenmeter ? `, ${z.hoehenmeter} hm` : ''}
                   {z.hinweis ? ` · ${z.hinweis}` : ''}
