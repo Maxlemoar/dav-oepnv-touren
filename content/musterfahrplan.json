@@ -1888,6 +1888,106 @@
                 "Titisee Bahnhof"
               ],
               "fern": false
+            },
+            {
+              "ab": "15:06",
+              "an": "17:15",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": false
+            },
+            {
+              "ab": "16:00",
+              "an": "17:37",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": true
+            },
+            {
+              "ab": "16:30",
+              "an": "18:15",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": true
+            },
+            {
+              "ab": "16:35",
+              "an": "18:37",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": false
+            },
+            {
+              "ab": "18:00",
+              "an": "19:37",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": true
+            },
+            {
+              "ab": "18:30",
+              "an": "20:15",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": true
+            },
+            {
+              "ab": "19:02",
+              "an": "20:37",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": true
+            },
+            {
+              "ab": "19:58",
+              "an": "21:41",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": true
+            },
+            {
+              "ab": "20:46",
+              "an": "22:41",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": false
+            },
+            {
+              "ab": "22:00",
+              "an": "23:41",
+              "umstiege": 2,
+              "via": [
+                "Freiburg Hauptbahnhof",
+                "Titisee Bahnhof"
+              ],
+              "fern": true
             }
           ],
           "rueck": [
@@ -2893,23 +2993,23 @@
       "strecke": [
         [
           [
-            7.94657,
-            48.47642
+            7.94613,
+            48.47649
           ],
           [
-            7.94799,
-            48.46467
+            7.94795,
+            48.4647
           ],
           [
-            7.9205,
-            48.45836
+            7.92062,
+            48.45846
           ],
           [
-            7.91154,
-            48.45242
+            7.91075,
+            48.45146
           ],
           [
-            7.77012,
+            7.77004,
             48.24155
           ],
           [
@@ -2941,26 +3041,26 @@
             48.01832
           ],
           [
-            7.84144,
-            47.99788
+            7.84104,
+            47.99694
           ]
         ],
         [
           [
-            7.84095,
-            47.99803
+            7.84104,
+            47.99801
           ],
           [
-            7.83049,
-            47.9858
+            7.83044,
+            47.98582
           ],
           [
-            7.83182,
-            47.98098
+            7.83178,
+            47.98096
           ],
           [
-            7.84369,
-            47.97805
+            7.84343,
+            47.97798
           ],
           [
             7.87291,
@@ -2979,32 +3079,50 @@
             47.9678
           ],
           [
-            7.99057,
-            47.96143
+            7.99042,
+            47.96161
           ],
           [
-            7.99495,
-            47.9485
+            7.99391,
+            47.94973
           ],
           [
-            8.02979,
-            47.9342
+            7.99883,
+            47.94588
           ],
           [
-            8.03361,
-            47.92519
+            8.03039,
+            47.93379
+          ],
+          [
+            8.03332,
+            47.92529
           ],
           [
             8.05643,
             47.92263
           ],
           [
-            8.12102,
-            47.90175
+            8.12082,
+            47.90178
           ],
           [
-            8.16612,
-            47.90496
+            8.15589,
+            47.90345
+          ]
+        ],
+        [
+          [
+            8.15625,
+            47.90343
+          ],
+          [
+            8.16272,
+            47.90645
+          ],
+          [
+            8.16626,
+            47.90443
           ],
           [
             8.14464,

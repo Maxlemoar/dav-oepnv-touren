@@ -37,12 +37,19 @@ function eindeutigSortiert(its: Itinerary[]): Fahrt[] {
   return [...proZeit.values()].sort((a, b) => a.ab.localeCompare(b.ab) || a.an.localeCompare(b.an))
 }
 
+/** Ankunft vor Abfahrt (lokale Uhrzeit) heißt: über Mitternacht oder fehlerhaft, zählt nie. */
+const ueberMitternacht = (i: Itinerary) => lokaleMinuten(i.endTime) < lokaleMinuten(i.startTime)
+
+/** Hinfahrten, die am Datum abfahren und am selben Tag ankommen (an >= ab). */
 export function hinfahrtenAus(its: Itinerary[], datum: string): Fahrt[] {
-  return eindeutigSortiert(its.filter((i) => lokalesDatum(i.startTime) === datum))
+  return eindeutigSortiert(its.filter((i) => lokalesDatum(i.startTime) === datum && !ueberMitternacht(i)))
 }
 
+/** Rückfahrten, die am Datum abfahren und am Datum ankommen (nichts vom Vortag, nichts über Mitternacht). */
 export function rueckfahrtenAus(its: Itinerary[], datum: string): Fahrt[] {
-  return eindeutigSortiert(its.filter((i) => lokalesDatum(i.endTime) === datum))
+  return eindeutigSortiert(
+    its.filter((i) => lokalesDatum(i.startTime) === datum && lokalesDatum(i.endTime) === datum && !ueberMitternacht(i)),
+  )
 }
 
 /** Google Encoded Polyline → [lon, lat]. */

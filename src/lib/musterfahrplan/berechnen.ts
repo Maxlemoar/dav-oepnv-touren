@@ -1,5 +1,5 @@
 // Nur für Skripte: die Anfragefunktion wird übergeben (Tests, planenGeduldig).
-import { zuUtcIso } from '@/lib/datum'
+import { lokaleMinuten, lokalesDatum, zuUtcIso } from '@/lib/datum'
 import type { Itinerary, PlanParameter } from '@/lib/verbindung/transitous'
 import { hinfahrtenAus, rueckfahrtenAus } from './erzeugen'
 import type { Tagesplan } from './typen'
@@ -11,6 +11,17 @@ type Ort = { haltestelleId: string; lat: number; lon: number }
 export const HIN_AB_MIN = 4 * 60
 export const RUECK_AN_MIN = 24 * 60
 export const ANZAHL = 20
+/** Hinfahrten sollen bis mindestens 20:00 reichen; höchstens zwei Folgeanfragen. */
+export const HIN_ABEND_MIN = 20 * 60
+export const MAX_FOLGEANFRAGEN = 2
+
+/** Späteste Abfahrt (ms) einer Verbindung am Datum, die auch am selben Tag ankommt. */
+function letzteAbfahrtMs(its: Itinerary[], tag: string): number | undefined {
+  const zeiten = hinfahrtenOhneAuswahl(its, tag)
+  return zeiten.length ? Math.max(...zeiten) : undefined
+}
+const hinfahrtenOhneAuswahl = (its: Itinerary[], tag: string) =>
+  its.filter((i) => lokalesDatum(i.startTime) === tag).map((i) => Date.parse(i.startTime))
 
 const koord = (o: Ort) => ({ lat: o.lat, lon: o.lon })
 
@@ -18,10 +29,20 @@ const koord = (o: Ort) => ({ lat: o.lat, lon: o.lon })
 export async function tagesplanBerechnen(
   planen: Planen, startort: Ort, ziel: Ort, tag: string,
 ): Promise<{ plan: Tagesplan; hinItineraries: Itinerary[] }> {
-  const hinItineraries = await planen({
+  const hinAnfrage = (zeit: string) => planen({
     von: startort.haltestelleId, nach: ziel.haltestelleId, vonKoord: koord(startort), nachKoord: koord(ziel),
-    zeit: zuUtcIso(tag, HIN_AB_MIN), ankunftBis: false, anzahl: ANZAHL,
+    zeit, ankunftBis: false, anzahl: ANZAHL,
   })
+  const hinItineraries = await hinAnfrage(zuUtcIso(tag, HIN_AB_MIN))
+  // Folgeanfragen ab der letzten gefundenen Abfahrt, bis die Hinfahrten in den Abend reichen.
+  for (let n = 0; n < MAX_FOLGEANFRAGEN; n++) {
+    const letzte = letzteAbfahrtMs(hinItineraries, tag)
+    if (letzte === undefined || lokaleMinuten(new Date(letzte).toISOString()) >= HIN_ABEND_MIN) break
+    const mehr = await hinAnfrage(new Date(letzte + 60_000).toISOString().replace(/\.\d{3}Z$/, 'Z'))
+    const neu = mehr.filter((i) => Date.parse(i.startTime) > letzte)
+    if (neu.length === 0) break
+    hinItineraries.push(...neu)
+  }
   const rueck = await planen({
     von: ziel.haltestelleId, nach: startort.haltestelleId, vonKoord: koord(ziel), nachKoord: koord(startort),
     zeit: zuUtcIso(tag, RUECK_AN_MIN), ankunftBis: true, anzahl: ANZAHL,
@@ -29,13 +50,13 @@ export async function tagesplanBerechnen(
   return { plan: { hin: hinfahrtenAus(hinItineraries, tag), rueck: rueckfahrtenAus(rueck, tag) }, hinItineraries }
 }
 
-/** Abdeckung prüfen: letzte Hinfahrt vor 14:00 oder früheste Rückfahrt nach 14:00 deutet auf zu kurze Antwortlisten. */
+/** Abdeckung prüfen: letzte Hinfahrt vor 20:00 oder früheste Rückfahrt nach 14:00 deutet auf zu kurze Antwortlisten. */
 export function abdeckungsWarnungen(plan: Tagesplan): string[] {
   const w: string[] = []
   const letzteHin = plan.hin[plan.hin.length - 1]
   const ersteRueck = plan.rueck[0]
   if (!letzteHin) w.push('keine Hinfahrt')
-  else if (letzteHin.ab < '14:00') w.push(`letzte Hinfahrt ${letzteHin.ab}`)
+  else if (letzteHin.ab < '20:00') w.push(`letzte Hinfahrt ${letzteHin.ab}`)
   if (!ersteRueck) w.push('keine Rückfahrt')
   else if (ersteRueck.ab > '14:00') w.push(`früheste Rückfahrt ${ersteRueck.ab}`)
   return w

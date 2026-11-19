@@ -64,6 +64,20 @@ describe('hinfahrtenAus / rueckfahrtenAus', () => {
     expect(r[0].umstiege).toBe(1)
   })
 
+  it('verwirft Fahrten, die vor ihrer Abfahrt ankommen (über Mitternacht, fehlerhaft)', () => {
+    const ueber = it_('2026-11-28T16:58:00Z', '2026-11-28T23:45:00Z', 1) // 17:58 -> 00:45 lokal
+    const kaputt = it_('2026-11-28T06:22:00Z', '2026-11-28T06:18:00Z', 0) // 07:22 -> 07:18 lokal
+    const gut = it_('2026-11-28T10:00:00Z', '2026-11-28T12:00:00Z', 0)
+    expect(hinfahrtenAus([ueber, kaputt, gut], '2026-11-28').map((f) => f.ab)).toEqual(['11:00'])
+    expect(rueckfahrtenAus([ueber, kaputt, gut], '2026-11-28').map((f) => f.ab)).toEqual(['11:00'])
+  })
+
+  it('verwirft Rückfahrten, die nicht am Referenztag abfahren', () => {
+    const vortag = it_('2026-11-27T22:22:00Z', '2026-11-28T08:56:00Z', 1) // 23:22 am 27.11. -> 09:56 am 28.11.
+    const gut = it_('2026-11-28T10:00:00Z', '2026-11-28T12:00:00Z', 0)
+    expect(rueckfahrtenAus([vortag, gut], '2026-11-28').map((f) => f.ab)).toEqual(['11:00'])
+  })
+
   it('filtert nach Abfahrtsdatum und sortiert nach Abfahrt', () => {
     const x = it_('2026-11-28T07:00:00Z', '2026-11-28T10:00:00Z', 0)
     const y = it_('2026-11-28T05:00:00Z', '2026-11-28T09:00:00Z', 0)

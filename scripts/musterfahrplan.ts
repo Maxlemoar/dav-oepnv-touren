@@ -8,10 +8,12 @@
  *   npm run musterfahrplan -- --klasse sa --klasse so    nur diese Klassen (werktag|sa|so)
  *   npm run musterfahrplan -- --sa 2026-12-05 --so 2026-12-06 --werktag 2026-12-04   Referenztage vorgeben
  *
- * Anfragebudget (Transitous, projektweit etwa 720 /plan-Anfragen je Tag): je Ort und Klasse 2 Anfragen
- * (Hin ab 04:00, Rück bis 24:00, je 20 Verbindungen). Voller Lauf: 84 Orte × 3 Klassen × 2 = 504 Anfragen.
- * Vor jedem Lauf das Tagesbudget prüfen; Teilläufe mit --nur und --klasse sind vorzuziehen.
- * Am Ende werden Orte gemeldet, deren Abdeckung dünn aussieht (letzte Hinfahrt vor 14:00 oder früheste
+ * Anfragebudget (Transitous, projektweit etwa 720 /plan-Anfragen je Tag): je Ort und Klasse 3 bis 4 Anfragen
+ * (Hin ab 04:00 und bis zu 2 Folgeanfragen, solange die letzte Abfahrt vor 20:00 liegt; Rück bis 24:00;
+ * je 20 Verbindungen). Voller Lauf: etwa 84 Orte × 3 Klassen × (3 bis 4) Anfragen, also weit über dem
+ * Tagesbudget: nach Klassen auf getrennte Tage verteilen (--klasse sa --klasse so an einem Tag,
+ * --klasse werktag am nächsten). Teilläufe mit --nur und --klasse sind vorzuziehen.
+ * Am Ende werden Orte gemeldet, deren Abdeckung dünn aussieht (letzte Hinfahrt vor 20:00 oder früheste
  * Rückfahrt nach 14:00).
  */
 import fs from 'node:fs'
@@ -75,7 +77,7 @@ async function main() {
     fs.writeFileSync(MUSTERFAHRPLAN_DATEI, JSON.stringify({ ...ergebnis, orte }, null, 2) + '\n')
   }
 
-  console.log(`Musterfahrplan ab ${startort.id}: ${klassen.map((k) => `${k} ${tage[k]}`).join(', ')}; ${ziele.length} Orte, ${ziele.length * klassen.length * 2} Anfragen`)
+  console.log(`Musterfahrplan ab ${startort.id}: ${klassen.map((k) => `${k} ${tage[k]}`).join(', ')}; ${ziele.length} Orte, ${ziele.length * klassen.length * 3} bis ${ziele.length * klassen.length * 4} Anfragen`)
   let anfragen = 0
   let fehler = 0
   const warnungen: string[] = []
