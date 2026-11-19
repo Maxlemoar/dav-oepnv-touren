@@ -1,6 +1,7 @@
 'use client'
-import { Suspense, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { drossel } from '@/lib/drossel'
 import { datumKurz, lokalesDatum, minutenAlsDauer, tageAddieren } from '@/lib/datum'
 import { rueckAnheben } from '@/lib/zeitraum'
 import {
@@ -15,12 +16,28 @@ type Props = {
 
 const FELD = 'min-h-11 rounded-[var(--radius-knopf)] border border-linie bg-karte px-3 text-base text-tinte disabled:opacity-50'
 
-/** Schreibt das Zeitfenster per replaceState in die URL; Next gleicht useSearchParams ab. `mitDatum: false` lässt datum und rueck weg. */
+type Uhrzeiten = Pick<Zeitfenster, 'abMin' | 'bisMin' | 'vorOrtMin'>
+
+/**
+ * Abstand der URL-Schreibvorgänge beim Ziehen. Browser drosseln bzw. verweigern zu viele replaceState-Aufrufe (Safari ab
+ * etwa 100 je 10 s); Next ruft zu jedem eigenen Aufruf noch einmal replaceState auf. 250 ms ergeben höchstens etwa 80 je 10 s.
+ */
+const SCHREIB_ABSTAND_MS = 250
+
+/**
+ * Schreibt das Zeitfenster per replaceState in die URL; Next gleicht useSearchParams ab. `mitDatum: false` lässt datum
+ * und rueck weg. Wirft nie: verweigert der Browser den Aufruf (Safari, Firefox: SecurityError bei zu vielen), bleibt die
+ * URL beim letzten Stand und der nächste Aufruf versucht es wieder.
+ */
 function schreibe(z: Zeitfenster, mitDatum: boolean) {
   const neu = zeitfensterSchreiben(new URLSearchParams(window.location.search), z, { ohneDatum: !mitDatum })
   const q = neu.toString()
-  window.history.replaceState(null, '', q ? `?${q}` : window.location.pathname)
+  try {
+    window.history.replaceState(null, '', q ? `?${q}` : window.location.pathname)
+  } catch { /* gedrosselt; der nächste Schreibvorgang holt es nach */ }
 }
+
+const gleich = (a: Uhrzeiten, b: Uhrzeiten) => a.abMin === b.abMin && a.bisMin === b.bisMin && a.vorOrtMin === b.vorOrtMin
 
 function vorOrtText(min: number): string {
   if (min === 0) return 'egal'
@@ -41,21 +58,42 @@ export function ZeitfensterWahl(props: Props) {
 }
 
 function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
-  const z = zeitfensterAusUrl(useSearchParams(), { mindestNaechte })
+  const ausUrl = zeitfensterAusUrl(useSearchParams(), { mindestNaechte })
+  // Beim Ziehen folgen die Schieber diesen Werten sofort; die URL (und damit die Liste) zieht gedrosselt nach.
+  // Hat die URL den Entwurf eingeholt, gilt wieder die URL (angepasster Zustand während des Renderns, kein Effekt).
+  const [entwurf, setEntwurf] = useState<Uhrzeiten | null>(null)
+  if (entwurf && gleich(entwurf, ausUrl)) setEntwurf(null)
+  const z = entwurf ? { ...ausUrl, ...entwurf } : ausUrl
+  const [schreiber] = useState(() => drossel(schreibe, SCHREIB_ABSTAND_MS))
+  // Ein offener Schreibvorgang darf nach dem Verlassen der Seite nicht mehr in eine fremde URL schreiben.
+  useEffect(() => () => schreiber.abbrechen(), [schreiber])
   // Ohne gewähltes Datum steht keine Rückfahrt in der URL; "Mehrere Tage" wird bis zur Datumswahl hier vorgemerkt.
   const [mehrVorgemerkt, setMehrVorgemerkt] = useState(false)
   const heute = lokalesDatum(new Date())
   const mehrtaegig = mindestNaechte > 0 || (z.gewaehlt ? z.rueck !== z.datum : mehrVorgemerkt)
   const mindestRueck = Math.max(1, mindestNaechte)
 
+  /** Datumswahl schreibt sofort, mit den aktuellen Schieberwerten; ein offener Schieber-Schreibvorgang (evtl. ohne Datum) entfällt. */
+  function setzeDatum(neu: Zeitfenster) {
+    schreiber.abbrechen()
+    schreibe(neu, true)
+  }
+
+  /** Schieber: sofort sichtbar, URL gedrosselt; ohne gewähltes Datum nur die Uhrzeiten (R6). */
+  function schiebe(neu: Uhrzeiten) {
+    setEntwurf(neu)
+    schreiber.rufe({ ...z, ...neu }, z.gewaehlt)
+  }
+  const loslassen = () => schreiber.sofort()
+
   function waehleDatum(datum: string) {
     const rueck = mehrtaegig ? rueckAnheben(datum, z.gewaehlt ? z.rueck : undefined, mindestRueck) : datum
-    schreibe({ ...z, datum, rueck }, true)
+    setzeDatum({ ...z, datum, rueck })
   }
 
   function waehleArt(mehr: boolean) {
     if (!z.gewaehlt) { setMehrVorgemerkt(mehr); return }
-    schreibe({ ...z, rueck: mehr ? tageAddieren(z.datum, 1) : z.datum }, true)
+    setzeDatum({ ...z, rueck: mehr ? tageAddieren(z.datum, 1) : z.datum })
   }
 
   function band(neu: { abMin: number; bisMin: number }) {
@@ -71,7 +109,7 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
         abMin = Math.min(abMin, bisMin - s)
       }
     }
-    schreibe({ ...z, abMin, bisMin }, z.gewaehlt)
+    schiebe({ abMin, bisMin, vorOrtMin: z.vorOrtMin })
   }
 
   return (
@@ -108,13 +146,13 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
           <span className="text-sm font-medium">Rückfahrt am</span>
           <input type="date" min={tageAddieren(z.datum, mindestRueck)} value={z.gewaehlt ? z.rueck : ''} disabled={!z.gewaehlt}
             className={`${FELD} mt-2 block`}
-            onChange={(e) => { if (e.target.value) schreibe({ ...z, rueck: rueckAnheben(z.datum, e.target.value, mindestRueck) }, true) }} />
+            onChange={(e) => { if (e.target.value) setzeDatum({ ...z, rueck: rueckAnheben(z.datum, e.target.value, mindestRueck) }) }} />
           {!z.gewaehlt && <span className="mt-1 block text-xs text-tinte-3">Zuerst das Datum der Hinfahrt wählen.</span>}
         </label>
       )}
 
       <div>
-        <Zeitband abMin={z.abMin} bisMin={z.bisMin} onChange={band} />
+        <Zeitband abMin={z.abMin} bisMin={z.bisMin} onChange={band} onLoslassen={loslassen} />
         {mehrtaegig && z.gewaehlt && (
           <p className="mt-1 text-xs text-tinte-3">
             Los ab gilt für {datumKurz(z.datum)}, zurück bis für {datumKurz(z.rueck)}.
@@ -127,7 +165,8 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
           <span className="text-sm text-tinte-2">Mindestens vor Ort <span className="zahl text-tinte">{vorOrtText(z.vorOrtMin)}</span></span>
           <input type="range" min={0} max={VOR_ORT_MAX_MIN} step={ZEITBAND.schrittMin} value={z.vorOrtMin}
             aria-label="mindestens vor Ort" aria-valuetext={vorOrtText(z.vorOrtMin)}
-            onChange={(e) => schreibe({ ...z, vorOrtMin: Number(e.target.value) }, z.gewaehlt)}
+            onChange={(e) => schiebe({ abMin: z.abMin, bisMin: z.bisMin, vorOrtMin: Number(e.target.value) })}
+            onPointerUp={loslassen} onKeyUp={loslassen} onBlur={loslassen}
             className="block h-11 w-full cursor-pointer accent-tanne" />
         </label>
       )}
