@@ -241,3 +241,43 @@ Ohne belastbare Quelle; diese Vorschläge stehen in `docs/pruefliste-arbeitskrei
 | g4#36 | gebiete/arlberg-verwall.yaml | beschreibung | Im Sommer Gratis-Wanderbus ins Verwalltal | Im Sommer Wanderbus ins Verwalltal | nicht belegt (`sicher: false`), geht an den Arbeitskreis |
 
 <!-- von Hand -->
+
+## Von Hand erledigt
+
+Am 19.11.2026 nach dem Skriptlauf von Hand eingetragen (Commits „Korrekturen von Hand …“ und „Saisonbetrieb …“).
+
+### Strukturelle Vorschläge aus den Korrekturlisten
+
+| Nr. | Was | Ergebnis |
+|---|---|---|
+| g1#62 | Montoz: zwei Touren ab Bellelay | entfernt („Wertvolle Baukunst …“, „Zum lebendigen Hochmoor …“) |
+| g2#1 | Anenhütte ausblenden oder kennzeichnen | `status: geschlossen`, `statusBis: 2028-06-01`, Hinweis an der Tour Fafleralp–Anenhütte |
+| g2#35 | neue Haltestelle Im Fang, Praz-Jean | angelegt (`ch-opentransportdataswiss27_Parentch:1:sloid:77758`, Koordinaten aus dem Transitous-Geocode), im Gebiet jaun-charmey, `richtwerte: {}` |
+| g3#42 | Richtwerte Hoch-Ybrig Weglosen neu berechnen | offen: nach dem Fahrplanwechsel mit `npm run richtwerte` |
+
+### Nachbesserungen an automatisch gesetzten Werten
+
+- **Zermatt**: Der Ersatz des Textstücks hat einen Halbsatz doppelt stehen lassen; von Hand bereinigt.
+- **Kleinwalsertal**: Satz zur Schwarzwasserhütte umformuliert, damit sie nicht mehr als Winterziel beworben wird. Ein erneuter Skriptlauf meldet g4#33 deshalb als Konflikt.
+- **Dahn Süd / Badenweiler Schule**: Kennung, Name und Koordinaten kamen per Skript (g1#42–49); danach umbenannt in `dahn-stadtmitte` und `badenweiler-oberweiler`, Verweise in den Gebieten mitgezogen, das alte `bahn`-Feld entfernt. Ein erneuter Skriptlauf findet die alten Dateien nicht mehr.
+
+### Vorschläge mit `sicher: false`, die laut Auftrag trotzdem umgesetzt sind
+
+- g3#53 **Göschenen**: Kennung aus dem European-Sleeper-Feed ersetzt durch `ch-opentransportdataswiss27_Parentch:1:sloid:5119` (in Transitous geprüft, Abfahrten am 21.11.2026).
+- g2#77 **Kandersteg** `saison: ganzjaehrig` nach der Regel unten.
+
+### Weitere Änderungen laut Auftrag
+
+- **Touren entfernt**: „Klettersteigrunde Hanselsteig, Felsenpfad und Leiterlsteig“ (Niederösterreich), „Schwarzsee-Runde“ (Kitzbühel), „A7: Silvretta-Bielerhöhe über die Saarbrücker Hütte zum Vermuntsee“ (HTTP 410). Eine Ersatztour bei Alpenvereinaktiv ab Dahn oder ab Schwarzsee-Gypsera war nicht schnell zu finden; Schwarzsee hat vorerst keine Tour.
+- **Hüttenstatus**: Cavardirashütte `umbau` bis 2029-07-01 (2027 und 2028 zu, Winter 2026/27 nur Schutzraum), Schwarzwasserhütte `umbau` bis 2027-06-01, kein Winterraum. Hinweise an den Cavardiras-Touren und an „Schwarzwasserhütte – Zustieg von Mittelberg“.
+- **Hinweise an Touren**: Silvretta (Hochalpenstraße bis voraussichtlich 2030 gesperrt, Bielerhöhe nur im Sommer, Piz-Buin-Skitour nur über Galtür), Silvretta-Skidurchquerung Etappe 4 (Vermuntstausee im Winter ohne Bus), Leglerhütte ab Mettmen (Seilbahn nur im Sommer). Fründen- und Windegghütte haben keine eigenen Touren, der Hinweis steht am Zustieg.
+- **Rämsenberg**: `nurMitglieder`, `selbstversorger`, `plaetze: 33` laut Sektionsseite (dort: „aktuell nur an Mitglieder & Gruppen vermietet“). **Sandkästle**: `nurMitglieder`, `selbstversorger`, `plaetze: 17`.
+- **Mutthornhütte** neu: Lage und Höhe aus OSM (way 1518447449, 2788 m), Betreiber und Zustiege aus dem SAC-Tourenportal, Bewartung 13.6.–27.9. laut Hütte. Gebiet Kandersteg (wie in der DAV360-Zuordnung), Zustieg ab Selden im Gasterntal (Weg Kandersteg–Selden nicht beziffert, daher `geschaetzt: true`) und ab Stechelberg (derzeit wegen Felssturz nicht empfohlen).
+- **Saisonbetrieb (`bedient`)** an 19 Haltestellen: die 17 mit `winter_unerreichbar` sowie Col de la Schlucht und Bielerhöhe. Belegte Zeiträume: Rosenlaui 14.5.–18.10., Lünerseebahn 23.5.–26.10., Col de la Schlucht 30.5.–27.9., Bielerhöhe 20.6.–4.10. (jeweils 2026). Die übrigen sind typische Zeiträume der Linie mit dem Zusatz „Zeiten ungefähr, Fahrplan prüfen“. Dürrboden und Gersbach Post haben nur einen `bedientHinweis`.
+- **Bewirtschaftung**: Zeiten oder Winterraum für 31 Hütten aus den Prüfberichten (nur wo konkrete Zeiten genannt sind), dazu `selbstversorger` für die genannten Selbstversorgerhäuser.
+- **Saison der Gebiete**: aletsch-goms, alpstein, elm-sernftal, flims, hintersteiner-tal, kandersteg, linthal, montafon-raetikon, oberstdorf, reusstal-maderanertal und toggenburg auf `ganzjaehrig` (Wintertouren, Hauptzugang ganzjährig bedient). Brandnertal, Göschenen-Göscheneralp und Silvretta bleiben `sommer`, weil die Winterziele dort nur über Saisonzugänge (Lünerseebahn, Göscheneralp-Bus, Bielerhöhe) erreichbar sind.
+
+### Offen
+
+- `bahn`-Feld (bahn.de-Buchungslink) für `dahn-stadtmitte`, `badenweiler-oberweiler` und `im-fang-praz-jean`: `npm run bahn-ids` lief am 19.11. gegen einen Fehler der bahn.de-Orte-API.
+- Richtwerte für `im-fang-praz-jean` und nach dem Fahrplanwechsel für alle Haltestellen neu berechnen.

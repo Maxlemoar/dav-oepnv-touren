@@ -73,7 +73,8 @@ function textErsetzen(aktuell: string, alt: string, neu: string): { wert: string
 function schonGesetzt(aktuell: unknown, neu: unknown): boolean {
   if (neu === null) return aktuell === undefined || aktuell === null
   if (typeof neu === 'string' && typeof aktuell === 'string') {
-    if (!neu.includes(ELLIPSE)) return norm(aktuell) === norm(neu)
+    // Ganzer Text oder ersetztes Teilstück (dann ist `alt` nicht mehr enthalten).
+    if (!neu.includes(ELLIPSE)) return norm(aktuell) === norm(neu) || (norm(aktuell).includes(norm(neu)) && norm(neu).length > 0)
     return stuecke(neu).every((s) => norm(aktuell).includes(s))
   }
   return aktuell === neu
