@@ -1,6 +1,4 @@
 import { z } from 'zod'
-import { naechsterSamstag } from '@/lib/datum'
-import { rueckAnheben } from '@/lib/zeitraum'
 
 const Id = z.string().regex(/^[a-z0-9-]+$/)
 const Datum = z.iso.date()
@@ -50,23 +48,5 @@ export function parseUebersichtParameter(q: URLSearchParams): Ergebnis<Uebersich
   return parseParameter(q, UebersichtSchema, ['von', 'datum', 'rueck', 'fenster'])
 }
 
-const ISO_DATUM = /^\d{4}-\d{2}-\d{2}$/
-
-/**
- * Zeitraum und Tourenfenster aus der Seiten-URL. Ohne datum gilt der kommende Samstag, ohne rueck das
- * Hin-Datum; rueck liegt nie vor datum + mindestNaechte (Hüttenseiten 1, Gebiete 0).
- */
-export function zeitraumAusUrl(sp: URLSearchParams, mindestNaechte: number) {
-  const datum = sp.get('datum') ?? naechsterSamstag()
-  const rueckRoh = sp.get('rueck')
-  return {
-    datum,
-    rueck: rueckAnheben(datum, rueckRoh && ISO_DATUM.test(rueckRoh) ? rueckRoh : undefined, mindestNaechte),
-    fenster: Number(sp.get('fenster') ?? 360),
-  }
-}
-
-/** Zeitraum ohne Mindestnächte, für die Startseite. */
-export function verbindungParameter(sp: URLSearchParams) {
-  return zeitraumAusUrl(sp, 0)
-}
+// Für bestehende Importe; im Browser direkt aus ./url importieren, sonst landet zod im Bundle.
+export { zeitraumAusUrl, verbindungParameter } from './url'

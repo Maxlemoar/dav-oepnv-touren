@@ -1,0 +1,7 @@
+# Bis zu diesem Tag liefert unser Fahrplandienst (Transitous) verlässliche Verbindungen.
+# Für spätere Daten zeigt die Seite Richtwerte statt Live-Verbindungen. Nach dem Eintreffen
+# des neuen Fahrplans liveBis anheben (siehe README, Abschnitt Richtwerte).
+liveBis: "2026-12-12"
+hinweis: >-
+  Den Fahrplan ab dem 13.12. hat unser Fahrplandienst noch nicht vollständig.
+  Die Richtwerte zeigen typische Fahrzeiten; die genaue Verbindung findest du bei bahn.de oder SBB.
