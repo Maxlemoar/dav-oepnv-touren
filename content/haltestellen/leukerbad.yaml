@@ -5,7 +5,7 @@ lat: 46.37979
 lon: 7.62641
 land: CH
 region: Leukerbad / Gemmi (Wallis)
-richtwerte: { kehl: { fahrzeitMin: 359, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 423, bahnKm: 306 }, lahr: { fahrzeitMin: 309, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 395, bahnKm: 273 }, offenburg: { fahrzeitMin: 282, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 409, bahnKm: 293, tagesfenster: { werktag: { ankunft: "11:12", letzteRueckfahrt: "17:43" }, sa: { ankunft: "11:12", letzteRueckfahrt: "17:43" }, so: { ankunft: "11:12", letzteRueckfahrt: "17:43" } } } }
+richtwerte: { kehl: { fahrzeitMin: 359, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 423, bahnKm: 306 }, lahr: { fahrzeitMin: 309, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 395, bahnKm: 273 }, offenburg: { fahrzeitMin: 282, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 409, bahnKm: 293 } }
 bahn:
   extId: "8594500"
   name: Leukerbad, Bahnhof

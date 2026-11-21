@@ -5,7 +5,7 @@ lat: 46.6591
 lon: 7.55524
 land: CH
 region: Berner Oberland
-richtwerte: { kehl: { fahrzeitMin: 255, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 274, bahnKm: 268 }, lahr: { fahrzeitMin: 230, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 247, bahnKm: 235 }, offenburg: { fahrzeitMin: 203, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 260, bahnKm: 255, tagesfenster: { werktag: { ankunft: "09:28", letzteRueckfahrt: "18:30" }, sa: { ankunft: "09:28", letzteRueckfahrt: "18:30" }, so: { ankunft: "09:28", letzteRueckfahrt: "18:30" } } } }
+richtwerte: { kehl: { fahrzeitMin: 255, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 274, bahnKm: 268 }, lahr: { fahrzeitMin: 230, umstiege: 3, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 247, bahnKm: 235 }, offenburg: { fahrzeitMin: 203, umstiege: 2, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 260, bahnKm: 255 } }
 bahn:
   extId: "8507296"
   name: Erlenbach im Simmental

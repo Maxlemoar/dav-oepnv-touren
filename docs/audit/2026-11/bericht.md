@@ -19,6 +19,7 @@ Freigabe am 19.11.: alle belegten Korrekturen einspielen, alle Empfehlungen umse
 | Neue Funktionen | Sektionstouren aus DAV360, Rückfahrt-Rechner, Mitfahrende einladen, Wetter, Lawinenlage, Kostenvergleich nach Fahrtkostenregel der Sektion |
 | Anfragen an Transitous, DAV, Nachbarsektionen, Klimafonds | Entwürfe in `docs/entwuerfe/`, Versand durch den Arbeitskreis |
 | Bahn-Kennungen für 10 neue Haltestellen | offen, bahn.de lehnt Abfragen gerade ab (403); später `npm run bahn-ids` |
+| Tagesfenster und Tagesziel-Urteil | am 20.11.2026 ersetzt (Branch zeitfenster-karte): Startseite fragt nach dem eigenen Zeitfenster und rechnet mit dem Musterfahrplan (`content/musterfahrplan.json`) |
 
 ## Kurzfazit
 

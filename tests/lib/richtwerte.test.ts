@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import fixture from '../fixtures/itineraries-kandersteg.json'
 import { parseDocument } from 'yaml'
-import { taktAus, richtwertAus, haversineKm, tagesfensterAus, referenzTage, tagesfensterZiele, richtwertSchreiben, tagesfensterSchreiben } from '@/lib/richtwerte'
+import { taktAus, richtwertAus, haversineKm, referenzTage, hauptzugaenge, richtwertSchreiben } from '@/lib/richtwerte'
 import type { Gebiet, Haltestelle, Startort } from '@/lib/content/schema'
 import type { Itinerary } from '@/lib/verbindung/transitous'
 import { hatFernverkehr } from '@/lib/verbindung/auswerten'
@@ -51,30 +51,6 @@ describe('haversineKm', () => {
   })
 })
 
-const rueck: Itinerary[] = [
-  { startTime: '2026-09-12T14:14:00Z', endTime: '2026-09-12T17:56:00Z', duration: 1, transfers: 2, legs: [] },
-  { startTime: '2026-09-12T16:14:00Z', endTime: '2026-09-12T20:38:00Z', duration: 1, transfers: 2, legs: [] },
-  // kommt erst nach 23 Uhr an
-  { startTime: '2026-09-12T18:14:00Z', endTime: '2026-09-12T21:30:00Z', duration: 1, transfers: 2, legs: [] },
-]
-
-describe('tagesfensterAus', () => {
-  it('früheste Ankunft der gewählten Hinfahrt zwischen 5 und 8 Uhr, letzte Rückfahrt mit Ankunft bis 23 Uhr', () => {
-    expect(tagesfensterAus(its, rueck, '2026-09-12', 'CH')).toEqual({ ankunft: '10:40', letzteRueckfahrt: '18:14' })
-  })
-  it('in Deutschland wie die Seite mit Vorrang für den Nahverkehr', () => {
-    expect(tagesfensterAus(its, rueck, '2026-09-12', 'DE').ankunft).toBe('10:55')
-  })
-  it('ohne Abfahrt zwischen 5 und 8 Uhr die früheste Ankunft überhaupt, aber nicht vor 5 Uhr abgefahren', () => {
-    const spaet = its.filter((i) => i.startTime === '2026-09-12T07:30:00Z' || i.startTime === '2026-09-12T02:40:00Z')
-    expect(tagesfensterAus(spaet, rueck, '2026-09-12', 'CH').ankunft).toBe('13:40')
-  })
-  it('lässt Felder ohne Verbindung weg', () => {
-    expect(tagesfensterAus([], [], '2026-09-12', 'CH')).toEqual({})
-    expect(tagesfensterAus(its, [], '2026-09-12', 'CH')).toEqual({ ankunft: '10:40' })
-  })
-})
-
 describe('referenzTage', () => {
   it('nächster Freitag, Samstag, Sonntag nach heute', () => {
     expect(referenzTage('2026-11-19', '2026-12-12')).toEqual({ werktag: '2026-11-20', sa: '2026-11-21', so: '2026-11-22' })
@@ -97,12 +73,12 @@ describe('referenzTage', () => {
   })
 })
 
-describe('tagesfensterZiele', () => {
+describe('hauptzugaenge', () => {
   const st = (id: string, sichtbar: boolean): Startort => ({ id, name: id, haltestelleId: id, lat: 48, lon: 7, sichtbar })
   const h = (id: string): Haltestelle => ({ id, name: id, haltestelleId: id, lat: 46, lon: 8, land: 'CH', region: 'R', richtwerte: {} })
   const g = (id: string, hs: string[]): Gebiet => ({ id, name: id, beschreibung: 'b', haltestellen: hs, sportarten: ['wandern'], saison: 'sommer', touren: [], links: [], lat: 46, lon: 8 })
   it('nur erste Zugänge der Gebiete, je einmal, mal sichtbare Startorte', () => {
-    const ziele = tagesfensterZiele([g('a', ['x', 'y']), g('b', ['x']), g('c', ['z'])], [h('x'), h('y'), h('z')], [st('offenburg', true), st('kehl', false)])
+    const ziele = hauptzugaenge([g('a', ['x', 'y']), g('b', ['x']), g('c', ['z'])], [h('x'), h('y'), h('z')], [st('offenburg', true), st('kehl', false)])
     expect(ziele.map((z) => `${z.startort.id}>${z.haltestelle.id}`)).toEqual(['offenburg>x', 'offenburg>z'])
   })
 })
@@ -118,30 +94,15 @@ richtwerte:
     ticket: halbtax
     berechnetAm: 2026-09-07
     strassenKm: 200
-    tagesfenster:
-      sa:
-        ankunft: "09:00"
-        letzteRueckfahrt: "18:00"
 bahn:
   extId: "1"
 `
-  it('tagesfensterSchreiben ändert nur die Tagesklasse', () => {
-    const dok = parseDocument(yaml)
-    tagesfensterSchreiben(dok, 'offenburg', 'so', { ankunft: '09:30', letzteRueckfahrt: '17:12' })
-    tagesfensterSchreiben(dok, 'offenburg', 'sa', { ankunft: '08:50' })
-    const text = dok.toString({ lineWidth: 0 })
-    expect(text).toContain('# Kommentar bleibt')
-    const d = dok.toJS() as { richtwerte: { offenburg: Record<string, unknown> } }
-    expect(d.richtwerte.offenburg).toMatchObject({ fahrzeitMin: 100, strassenKm: 200, tagesfenster: { sa: { ankunft: '08:50' }, so: { ankunft: '09:30', letzteRueckfahrt: '17:12' } } })
-    expect((d.richtwerte.offenburg.tagesfenster as { sa: object }).sa).toEqual({ ankunft: '08:50' })
-    // Uhrzeiten bleiben Zeichenketten, auch nach erneutem Lesen
-    expect((parseDocument(text).toJS() as typeof d).richtwerte.offenburg.tagesfenster).toMatchObject({ so: { letzteRueckfahrt: '17:12' } })
-  })
-  it('richtwertSchreiben ersetzt Felder einzeln und behält das Tagesfenster', () => {
+  it('richtwertSchreiben ersetzt Felder einzeln und behält die übrigen', () => {
     const dok = parseDocument(yaml)
     richtwertSchreiben(dok, 'offenburg', { fahrzeitMin: 95, umstiege: 2, takt: 'zweistuendlich', ticket: 'halbtax', berechnetAm: '2026-11-20', bahnKm: 250 })
     const d = dok.toJS() as { richtwerte: { offenburg: Record<string, unknown> } }
-    expect(d.richtwerte.offenburg).toMatchObject({ fahrzeitMin: 95, umstiege: 2, bahnKm: 250, strassenKm: 200, tagesfenster: { sa: { ankunft: '09:00' } } })
+    expect(d.richtwerte.offenburg).toMatchObject({ fahrzeitMin: 95, umstiege: 2, bahnKm: 250, strassenKm: 200 })
+    expect(dok.toString({ lineWidth: 0 })).toContain('# Kommentar bleibt')
   })
   it('richtwertSchreiben legt einen neuen Startort an', () => {
     const dok = parseDocument(yaml)

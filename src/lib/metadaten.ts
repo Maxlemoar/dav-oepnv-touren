@@ -6,7 +6,7 @@ import { minutenAlsDauer } from './datum'
 export const STANDARD_BASIS_URL = 'https://dav-oepnv-touren.vercel.app'
 export const SEITENNAME = 'Ohne Auto in die Berge'
 export const SEITENBESCHREIBUNG =
-  'Hütten und Tourengebiete, die von Offenburg aus mit Bahn und Bus erreichbar sind. Mit Live-Verbindung für dein Datum.'
+  'Ausgangsorte für Touren ab Offenburg mit Bahn und Bus, passend zu deinem Zeitfenster. Mit Live-Verbindung für dein Datum.'
 
 /** Basis-URL ohne abschließenden Schrägstrich; leere oder ungültige Werte fallen auf den Standard zurück. */
 export function basisUrl(wert: string | undefined): string {
@@ -31,7 +31,7 @@ export const OG_BILD = {
   url: '/opengraph-image',
   width: 1200,
   height: 630,
-  alt: 'In die Berge, ohne Auto. Hütten und Touren ab Offenburg mit Bahn und Bus',
+  alt: 'In die Berge, ohne Auto. Ausgangsorte für Touren ab Offenburg mit Bahn und Bus',
 } as const
 
 const ABKUERZUNGEN = new Set(['ca', 'bzw', 'z', 'b', 'u', 'a', 'v', 'st', 'nr', 'inkl', 'evtl', 'ggf', 'std', 'min', 'max', 'mind', 'bspw', 'usw', 'etc', 'hl', 'dt', 'ev'])

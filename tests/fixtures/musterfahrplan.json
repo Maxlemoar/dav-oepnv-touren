@@ -1,0 +1,17 @@
+{
+  "startortId": "offenburg",
+  "berechnetAm": "2026-11-19",
+  "liveBis": "2026-12-12",
+  "referenzTage": { "werktag": "2026-11-20", "sa": "2026-11-21", "so": "2026-11-22" },
+  "orte": {
+    "kandersteg": {
+      "plaene": {
+        "sa": {
+          "hin": [{ "ab": "06:12", "an": "09:41", "umstiege": 3, "via": ["Basel SBB", "Bern"], "fern": true }],
+          "rueck": [{ "ab": "16:20", "an": "20:02", "umstiege": 3, "via": ["Bern"], "fern": true }]
+        }
+      },
+      "strecke": [[[7.95, 48.47], [7.59, 47.55]]]
+    }
+  }
+}

@@ -5,7 +5,7 @@ lat: 48.40348
 lon: 7.45671
 land: FR
 region: Nordvogesen
-richtwerte: { kehl: { fahrzeitMin: 71, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 40, bahnKm: 40 }, lahr: { fahrzeitMin: 131, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 67, bahnKm: 36 }, offenburg: { fahrzeitMin: 96, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 50, bahnKm: 46, tagesfenster: { so: { ankunft: "07:42", letzteRueckfahrt: "20:46" }, werktag: { ankunft: "07:49", letzteRueckfahrt: "20:38" }, sa: { ankunft: "07:11", letzteRueckfahrt: "20:16" } } } }
+richtwerte: { kehl: { fahrzeitMin: 71, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 40, bahnKm: 40 }, lahr: { fahrzeitMin: 131, umstiege: 2, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 67, bahnKm: 36 }, offenburg: { fahrzeitMin: 96, umstiege: 1, takt: stuendlich, ticket: keins, berechnetAm: 2026-09-07, strassenKm: 50, bahnKm: 46 } }
 bahn:
   extId: "8700290"
   name: Barr

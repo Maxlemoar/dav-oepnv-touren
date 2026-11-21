@@ -5,7 +5,7 @@ lat: 48.79033
 lon: 8.19083
 land: DE
 region: Nordschwarzwald
-richtwerte: { kehl: { fahrzeitMin: 51, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 49, bahnKm: 46 }, lahr: { fahrzeitMin: 42, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 66, bahnKm: 71 }, offenburg: { fahrzeitMin: 27, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 49, bahnKm: 49, tagesfenster: { werktag: { ankunft: "06:15", letzteRueckfahrt: "22:19" }, sa: { ankunft: "06:15", letzteRueckfahrt: "21:29" }, so: { ankunft: "06:15", letzteRueckfahrt: "22:19" } } } }
+richtwerte: { kehl: { fahrzeitMin: 51, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 49, bahnKm: 46 }, lahr: { fahrzeitMin: 42, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 66, bahnKm: 71 }, offenburg: { fahrzeitMin: 27, umstiege: 0, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 49, bahnKm: 49 } }
 bahn:
   extId: "8000774"
   name: Baden Baden Bahnhof

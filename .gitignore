@@ -39,7 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-public/karte.json
+public/ausgangsorte.json
+public/tagesplaene/
 
 # von next dev erzeugt
 /AGENTS.md

@@ -1,9 +1,11 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import type { Land } from '@/lib/content/schema'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
 import { anreisetext, ticketKurz } from '@/lib/dav360'
 import { lokaleUhrzeit, minutenAlsDauer, wochentagKurz, lokalesDatum } from '@/lib/datum'
+import { machbar, sektionstourAnfrage } from '@/lib/sektionstour-verbindung'
 import { useSektionstourMeldung } from './SektionstourZaehler'
 
 type Props = {
@@ -22,23 +24,20 @@ function umstiege(n: number) {
   return n === 0 ? 'direkt' : `${n} ${n === 1 ? 'Umstieg' : 'Umstiege'}`
 }
 
-/**
- * Machbar heißt: live Hin- und Rückfahrt gefunden, oder der Fahrplan für das Datum ist noch nicht
- * veröffentlicht und der Richtwert zeigt eine typische Verbindung.
- */
-function machbar(a: VerbindungAntwort | undefined): boolean {
-  if (!a) return false
-  if (a.quelle === 'live') return Boolean(a.hinfahrt && a.rueckfahrt)
-  return a.fehlerArt === 'fahrplan_noch_nicht_verfuegbar' && Boolean(a.richtwert)
-}
-
 const tagUndZeit = (iso: string) => `${wochentagKurz(lokalesDatum(iso))} ${lokaleUhrzeit(iso)}`
 
-export function SektionstourVerbindung({ tourId, start, ziel, gebietId, datum, rueck, richtwert }: Props) {
+const LAEDT = <div className="skeleton h-6 w-3/4" aria-busy />
+
+/** Verbindung zu einer Sektionstour; liest ab/bis aus der Seiten-URL (sonst 5:00 bis 23:00), daher in einer Suspense-Grenze. */
+export function SektionstourVerbindung(props: Props) {
+  return <Suspense fallback={LAEDT}><SektionstourVerbindungInnen {...props} /></Suspense>
+}
+
+function SektionstourVerbindungInnen({ tourId, start, ziel, gebietId, datum, rueck, richtwert }: Props) {
   const melde = useSektionstourMeldung()
   const [zustand, setZustand] = useState<Zustand>({ status: 'laedt' })
   const [kopiert, setKopiert] = useState<'nein' | 'ja' | 'fehler'>('nein')
-  const anfrage = new URLSearchParams({ von: start.id, nach: ziel.id, datum, rueck }).toString()
+  const anfrage = sektionstourAnfrage(start.id, ziel.id, datum, rueck, useSearchParams())
 
   useEffect(() => {
     let aktiv = true
@@ -57,9 +56,7 @@ export function SektionstourVerbindung({ tourId, start, ziel, gebietId, datum, r
     return () => { aktiv = false }
   }, [anfrage, melde, tourId])
 
-  if (zustand.status === 'laedt') {
-    return <div className="skeleton h-6 w-3/4" aria-busy />
-  }
+  if (zustand.status === 'laedt') return LAEDT
 
   const a = zustand.antwort
   const live = a?.quelle === 'live' ? a : undefined
@@ -68,6 +65,8 @@ export function SektionstourVerbindung({ tourId, start, ziel, gebietId, datum, r
   const rw = a?.richtwert ?? richtwert
   const richtwertKurz = rw && { fahrzeitMin: rw.fahrzeitMin, umstiege: rw.umstiege }
   const hinweis = a?.hinweis ?? (a?.quelle === 'live' ? 'keine Verbindung im Zeitfenster gefunden' : 'Live-Fahrplan für das Datum nicht erreichbar')
+  // Grund, wenn die Verbindung nicht passt (etwa "fährt am Datum nicht"); bei gefundener Hinfahrt unter der Zeile.
+  const grund = a?.passung && !a.passung.passt ? a.passung.grund : undefined
 
   function text() {
     const basis = typeof window === 'undefined' ? '' : window.location.origin
@@ -101,13 +100,14 @@ export function SektionstourVerbindung({ tourId, start, ziel, gebietId, datum, r
             <> · zurück <span className="zahl text-base text-tinte">{tagUndZeit(zurueck.ab)}–{lokaleUhrzeit(zurueck.an)}</span></>
           )}
           {!zurueck && <> · <span className="text-tinte-3">keine Rückfahrt gefunden</span></>}
+          {grund && <span className="block text-xs text-tinte-3">{grund}</span>}
         </p>
       ) : (
         <p className="text-sm text-tinte-2">
           {richtwertKurz
             ? <><span className="zahl text-base text-tinte">ca. {minutenAlsDauer(richtwertKurz.fahrzeitMin)}</span> bis {ziel.name}, {umstiege(richtwertKurz.umstiege)}</>
             : <>Bis {ziel.name}</>}
-          <span className="block text-xs text-tinte-3">{hinweis}</span>
+          <span className="block text-xs text-tinte-3">{grund ?? hinweis}</span>
         </p>
       )}
       <button type="button" onClick={kopieren} className="knopf-sekundaer w-full text-sm sm:w-auto">

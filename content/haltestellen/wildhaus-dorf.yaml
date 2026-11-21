@@ -5,7 +5,7 @@ lat: 47.20324
 lon: 9.35135
 land: CH
 region: Toggenburg (Ostschweiz)
-richtwerte: { kehl: { fahrzeitMin: 340, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 317, bahnKm: 239 }, lahr: { fahrzeitMin: 320, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 289, bahnKm: 212 }, offenburg: { fahrzeitMin: 297, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 256, bahnKm: 220, tagesfenster: { werktag: { ankunft: "10:23", letzteRueckfahrt: "18:06" }, sa: { ankunft: "10:28", letzteRueckfahrt: "18:06" }, so: { ankunft: "10:28", letzteRueckfahrt: "18:06" } } } }
+richtwerte: { kehl: { fahrzeitMin: 340, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 317, bahnKm: 239 }, lahr: { fahrzeitMin: 320, umstiege: 5, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 289, bahnKm: 212 }, offenburg: { fahrzeitMin: 297, umstiege: 4, takt: stuendlich, ticket: halbtax, berechnetAm: 2026-09-07, strassenKm: 256, bahnKm: 220 } }
 bahn:
   extId: "8506780"
   name: Wildhaus, Dorf

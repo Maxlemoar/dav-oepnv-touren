@@ -6,6 +6,7 @@ export type Leg = {
   endTime: string
   routeShortName?: string
   agencyName?: string
+  legGeometry?: { points: string; precision: number }
 }
 
 export type Itinerary = {

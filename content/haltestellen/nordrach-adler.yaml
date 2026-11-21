@@ -5,7 +5,7 @@ lat: 48.42313
 lon: 8.11584
 land: DE
 region: Mittlerer Schwarzwald
-richtwerte: { kehl: { fahrzeitMin: 143, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 54, bahnKm: 36 }, lahr: { fahrzeitMin: 116, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 31, bahnKm: 28 }, offenburg: { fahrzeitMin: 104, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 34, bahnKm: 17, tagesfenster: { werktag: { ankunft: "07:10", letzteRueckfahrt: "17:42" }, sa: { ankunft: "08:56", letzteRueckfahrt: "17:37" }, so: { ankunft: "08:35", letzteRueckfahrt: "17:37" } } } }
+richtwerte: { kehl: { fahrzeitMin: 143, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 54, bahnKm: 36 }, lahr: { fahrzeitMin: 116, umstiege: 2, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 31, bahnKm: 28 }, offenburg: { fahrzeitMin: 104, umstiege: 1, takt: stuendlich, ticket: deutschlandticket, berechnetAm: 2026-09-07, strassenKm: 34, bahnKm: 17 } }
 bahn:
   extId: "882478"
   name: Adler, Nordrach

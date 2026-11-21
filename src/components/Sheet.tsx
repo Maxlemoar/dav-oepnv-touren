@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useId, useRef, type MouseEvent, type ReactNode } from 'react'
+import { useEffect, useId, useRef, type MouseEvent, type ReactNode, type SyntheticEvent } from 'react'
 
 type Props = {
   offen: boolean
@@ -37,8 +37,14 @@ export function Sheet({ offen, titel, onClose, children, aktionen }: Props) {
     if (e.target === e.currentTarget) onClose()
   }
 
+  // Das close-Ereignis kommt als eigene Aufgabe. Im Entwicklungsmodus (StrictMode) schließt die Effekt-Bereinigung den
+  // Dialog und öffnet ihn sofort wieder; das verspätete Ereignis trifft dann einen offenen Dialog und wird ignoriert.
+  function geschlossen(e: SyntheticEvent<HTMLDialogElement>) {
+    if (!e.currentTarget.open) onClose()
+  }
+
   return (
-    <dialog ref={ref} onClick={klick} onClose={onClose} aria-labelledby={titelId}
+    <dialog ref={ref} onClick={klick} onClose={geschlossen} aria-labelledby={titelId}
       className="fixed inset-x-0 top-auto bottom-0 m-0 max-h-[85dvh] w-full max-w-none flex-col overflow-hidden rounded-t-2xl bg-papier p-0 text-tinte shadow-xl backdrop:bg-tinte/50 open:flex sm:inset-0 sm:m-auto sm:max-w-md sm:rounded-2xl">
       <div className="flex max-h-[85dvh] flex-col">
         <div className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-linie sm:hidden" aria-hidden />

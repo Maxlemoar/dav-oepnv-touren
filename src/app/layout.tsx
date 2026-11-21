@@ -36,7 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </nav>
           </div>
         </header>
-        <main className="mx-auto max-w-5xl px-4 pb-10 pt-4 sm:px-6">{children}</main>
+        {/* Breite und Abstände legen die Gruppen fest: (seiten) wie bisher, (karte) Feld plus Karte. */}
+        <main>{children}</main>
         <footer className="border-t border-linie px-4 py-6 text-center text-sm text-tinte-3 sm:px-6">
           <nav aria-label="Rechtliches und Kontakt" className="flex flex-wrap items-center justify-center gap-x-5">
             <Link href="/impressum" className={FUSSLINK}>Impressum</Link>

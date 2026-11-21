@@ -39,6 +39,27 @@ describe('waehleHinfahrt', () => {
     const spaetNah: Itinerary = { ...its[5], startTime: '2026-09-12T06:12:00Z', endTime: '2026-09-12T10:00:00Z', legs: [] }
     expect(waehleHinfahrt([...its, spaetNah], { nahverkehrBevorzugen: true }).hinfahrtSpaeter).toBe(spaetNah)
   })
+  it('mit abMin: Hinfahrt ab abMin bis drei Stunden danach, spätere Alternative in der vierten Stunde', () => {
+    const w = waehleHinfahrt(its, { abMin: 420 })
+    expect(w.hinfahrt?.startTime).toBe('2026-09-12T05:12:00Z') // 07:12 lokal, an 11:10
+    expect(w.hinfahrtSpaeter).toBeUndefined() // nichts zwischen 10:00 und 11:00
+    const spaeter = waehleHinfahrt(its, { abMin: 360 })
+    expect(spaeter.hinfahrt?.startTime).toBe('2026-09-12T04:30:00Z') // 06:30 lokal
+    expect(spaeter.hinfahrtSpaeter?.startTime).toBe('2026-09-12T07:30:00Z') // 09:30 lokal
+  })
+  it('mit abMin nie eine Abfahrt davor', () => {
+    const w = waehleHinfahrt(its, { abMin: 420, nahverkehrBevorzugen: true })
+    for (const i of [w.hinfahrt, w.hinfahrtSpaeter]) if (i) expect(Date.parse(i.startTime)).toBeGreaterThanOrEqual(Date.parse('2026-09-12T05:00:00Z'))
+  })
+  it('mit datum nur Abfahrten an diesem lokalen Tag, nie die gleiche Uhrzeit am Folgetag', () => {
+    const folgetag = its.map((i) => ({ ...i, startTime: i.startTime.replace('2026-09-12', '2026-09-13'), endTime: i.endTime.replace('2026-09-12', '2026-09-13') }))
+    expect(waehleHinfahrt(folgetag, { abMin: 360, datum: '2026-09-12' })).toEqual({ hinfahrt: undefined, hinfahrtSpaeter: undefined })
+    expect(waehleHinfahrt([...folgetag, ...its], { abMin: 360, datum: '2026-09-12' }).hinfahrt?.startTime).toBe('2026-09-12T04:30:00Z')
+  })
+  it('ohne abMin wie mit abMin 300', () => {
+    expect(waehleHinfahrt(its, { abMin: 300 })).toEqual(waehleHinfahrt(its))
+    expect(waehleHinfahrt(its, { abMin: 300, nahverkehrBevorzugen: true })).toEqual(waehleHinfahrt(its, { nahverkehrBevorzugen: true }))
+  })
 })
 
 describe('waehleRueckfahrt', () => {
@@ -52,6 +73,10 @@ describe('waehleRueckfahrt', () => {
   })
   it('undefined ohne passende', () => {
     expect(waehleRueckfahrt([rueck[2]], '2026-09-13')).toBeUndefined()
+  })
+  it('mit bisMin nur Ankünfte bis dahin', () => {
+    expect(waehleRueckfahrt(rueck, '2026-09-13', 21 * 60)?.startTime).toBe('2026-09-13T14:14:00Z') // an 19:56 lokal
+    expect(waehleRueckfahrt(rueck, '2026-09-13', 19 * 60)).toBeUndefined()
   })
 })
 

@@ -1,8 +1,12 @@
 import { lokaleMinuten, lokaleUhrzeit, lokalesDatum } from '@/lib/datum'
 import type { Itinerary, Leg } from './transitous'
 
+/** Vorgaben ohne Zeitfenster (Richtwerte, Audit): Hinfahrt ab 5:00, frühe bis 8:00, spätere bis 9:00. */
 export const HINFAHRT_FENSTER = { fruehVon: 5 * 60, fruehBis: 8 * 60, spaetBis: 9 * 60 } as const
 export const RUECKFAHRT_ANKUNFT_BIS = 23 * 60
+/** Hinfahrt: Abfahrt in den ersten drei Stunden ab "los ab", spätere Alternative in der vierten. */
+const HIN_DAUER_MIN = HINFAHRT_FENSTER.fruehBis - HINFAHRT_FENSTER.fruehVon
+const HIN_SPAET_DAUER_MIN = HINFAHRT_FENSTER.spaetBis - HINFAHRT_FENSTER.fruehVon
 
 const FERNVERKEHR = new Set(['HIGHSPEED_RAIL', 'LONG_DISTANCE'])
 const MIN_FUSSWEG_SEKUNDEN = 300
@@ -44,16 +48,27 @@ function besteVerbindung(kandidaten: Itinerary[], opts: HinfahrtOptionen): Itine
   return abstandMin <= (opts.toleranzMin ?? NAHVERKEHR_TOLERANZ_MIN) ? nahverkehr : schnellste
 }
 
-export function waehleHinfahrt(its: Itinerary[], opts: HinfahrtOptionen = {}): { hinfahrt?: Itinerary; hinfahrtSpaeter?: Itinerary } {
-  const { fruehVon, fruehBis, spaetBis } = HINFAHRT_FENSTER
-  const frueh = its.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehVon && m < fruehBis })
-  const spaet = its.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehBis && m < spaetBis })
+/**
+ * Hinfahrt: beste Verbindung mit Abfahrt in [abMin, abMin + 3 h), spätere Alternative in [abMin + 3 h, abMin + 4 h)
+ * (Ortszeit). Ohne `abMin` gilt 5:00, also 5 bis 8 und 8 bis 9 Uhr. Mit `datum` zählen nur Abfahrten an diesem lokalen
+ * Tag: Transitous sucht bei wenigen Fahrten bis in den Folgetag, und dessen 07:12 sähe sonst aus wie eine am Datum.
+ */
+export function waehleHinfahrt(
+  its: Itinerary[],
+  opts: HinfahrtOptionen & { abMin?: number; datum?: string } = {},
+): { hinfahrt?: Itinerary; hinfahrtSpaeter?: Itinerary } {
+  const fruehVon = opts.abMin ?? HINFAHRT_FENSTER.fruehVon
+  const fruehBis = fruehVon + HIN_DAUER_MIN
+  const spaetBis = fruehVon + HIN_SPAET_DAUER_MIN
+  const amTag = opts.datum === undefined ? its : its.filter((i) => lokalesDatum(i.startTime) === opts.datum)
+  const frueh = amTag.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehVon && m < fruehBis })
+  const spaet = amTag.filter((i) => { const m = lokaleMinuten(i.startTime); return m >= fruehBis && m < spaetBis })
   return { hinfahrt: besteVerbindung(frueh, opts), hinfahrtSpaeter: besteVerbindung(spaet, opts) }
 }
 
-/** Späteste Abfahrt, deren Ankunft am gegebenen lokalen Tag vor 23:00 liegt. */
-export function waehleRueckfahrt(its: Itinerary[], datum: string): Itinerary | undefined {
-  const passend = its.filter((i) => lokalesDatum(i.endTime) === datum && lokaleMinuten(i.endTime) <= RUECKFAHRT_ANKUNFT_BIS)
+/** Späteste Abfahrt, deren Ankunft am gegebenen lokalen Tag bis `bisMin` (Standard 23:00) liegt. */
+export function waehleRueckfahrt(its: Itinerary[], datum: string, bisMin: number = RUECKFAHRT_ANKUNFT_BIS): Itinerary | undefined {
+  const passend = its.filter((i) => lokalesDatum(i.endTime) === datum && lokaleMinuten(i.endTime) <= bisMin)
   return [...passend].sort((a, b) =>
     Date.parse(b.startTime) - Date.parse(a.startTime) || a.transfers - b.transfers,
   )[0]

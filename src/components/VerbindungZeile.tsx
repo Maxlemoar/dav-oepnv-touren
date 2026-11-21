@@ -1,17 +1,19 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { useSearchParams } from 'next/navigation'
 import type { VerbindungAntwort } from '@/lib/verbindung/service'
 import type { BahnOrt, Land } from '@/lib/content/schema'
 import { datumKurz, lokaleUhrzeit, minutenAlsDauer, tageDifferenz, wochentagKurz } from '@/lib/datum'
-import { zeitraumAusUrl } from '@/lib/verbindung/url'
-import { naechteText } from '@/lib/zeitraum'
+import { mitMindestVorOrt } from '@/lib/bewertung'
+import { verbindungAnfrage } from '@/lib/fahrtenwahl'
+import { zeitfensterAusUrl } from '@/lib/zeitfenster'
 import { fahrplanLink, rueckfahrtLink } from '@/lib/links'
 import { spaetestensLos, spaetestensZurueck } from '@/lib/rueckfahrt'
 import type { GruppenHinweis } from '@/lib/teilen'
-import { TageszielBadge, TicketBadge } from './Badges'
+import { PassungBadge, TicketBadge } from './Badges'
 import { EinladenKnopf } from './EinladenKnopf'
 import { VerbindungDetail } from './VerbindungDetail'
+import { useRuhigerAbruf } from './useRuhigerAbruf'
 
 // Allgemeiner Saisontext aus service.ts (SAISON_HINWEIS); hier kopiert, weil service.ts nicht in den Browser darf.
 // Er wiederholt nur die Überschrift und wird deshalb nicht noch einmal angezeigt.
@@ -32,35 +34,40 @@ type Props = {
   gruppe?: GruppenHinweis
 }
 
+function ladeVerbindung(anfrage: string, signal: AbortSignal): Promise<VerbindungAntwort> {
+  return fetch(`/api/verbindung?${anfrage}`, { signal })
+    .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() as Promise<VerbindungAntwort> })
+}
+
+/** Ersatz, wenn der Abruf scheitert; Datum und Rückdatum stehen in der Anfrage. */
+function nichtErreichbar(anfrage: string): VerbindungAntwort {
+  const q = new URLSearchParams(anfrage)
+  const datum = q.get('datum')!
+  const rueck = q.get('rueck')!
+  return {
+    quelle: 'richtwert', datum, rueckfahrtDatum: rueck, naechte: tageDifferenz(datum, rueck),
+    ticket: { ticket: 'keins', hinweis: '' }, fehlerArt: 'dienst_nicht_erreichbar',
+  }
+}
+
+/**
+ * Live-Verbindung zum Zeitfenster aus der URL (los ab, zurück bis, mindestens vor Ort) mit der Passung dazu: "passt, 7:37 h
+ * vor Ort", bei mehreren Tagen "passt · 1 Nacht", sonst der Grund. Hüttenseiten und weitere Haltestellen der Ortsseite.
+ * Geladen wird erst, wenn das Zeitfenster etwa 800 ms steht; "mindestens vor Ort" fragt nicht neu an, sondern ändert nur
+ * das Urteil im Browser.
+ */
 export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbahn, huetteName, gruppe }: Props) {
   const sp = useSearchParams()
-  const { datum, rueck, fenster } = zeitraumAusUrl(sp, mindestNaechte)
+  const z = zeitfensterAusUrl(sp, { mindestNaechte })
+  const { datum } = z
   // Antwort wird mit ihrer Anfrage gespeichert; passt sie nicht mehr, zeigt die Zeile das Skeleton.
-  const anfrage = new URLSearchParams({ von: von.id, nach: nach.id, datum, rueck, fenster: String(fenster) }).toString()
+  const anfrage = verbindungAnfrage(von.id, nach.id, z, mindestNaechte)
   const [geladen, setGeladen] = useState<{ anfrage: string; antwort: VerbindungAntwort } | null>(null)
   const [offen, setOffen] = useState(false)
-  const antwort = geladen?.anfrage === anfrage ? geladen.antwort : null
-
-  useEffect(() => {
-    let aktiv = true
-    // Der Zeitraum steckt in der Anfrage; für den Fallback dort wieder herauslesen.
-    const q = new URLSearchParams(anfrage)
-    const datumAnfrage = q.get('datum')!
-    const rueckAnfrage = q.get('rueck')!
-    fetch(`/api/verbindung?${anfrage}`)
-      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() })
-      .then((a: VerbindungAntwort) => { if (aktiv) setGeladen({ anfrage, antwort: a }) })
-      .catch(() => {
-        if (!aktiv) return
-        const antwort: VerbindungAntwort = {
-          quelle: 'richtwert', datum: datumAnfrage, rueckfahrtDatum: rueckAnfrage,
-          naechte: tageDifferenz(datumAnfrage, rueckAnfrage), ticket: { ticket: 'keins', hinweis: '' },
-          fehlerArt: 'dienst_nicht_erreichbar',
-        }
-        setGeladen({ anfrage, antwort })
-      })
-    return () => { aktiv = false }
-  }, [anfrage])
+  useRuhigerAbruf(anfrage, ladeVerbindung, (k, e) => setGeladen({ anfrage: k, antwort: e.ok ? e.wert : nichtErreichbar(k) }))
+  const roh = geladen?.anfrage === anfrage ? geladen.antwort : null
+  // Die API urteilt ohne Mindestzeit (vorort=0); die Mindestzeit aus der URL gilt hier.
+  const antwort = roh?.passung ? { ...roh, passung: mitMindestVorOrt(roh.passung, z.vorOrtMin) } : roh
 
   const portal = nach.land === 'CH' ? 'SBB' : 'bahn.de'
   // Links tragen Datum und lokale Abfahrtszeit der gezeigten Verbindung; ohne Live-Daten die Standardzeiten.
@@ -77,8 +84,6 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbah
   }
 
   if (antwort.quelle === 'richtwert' || !antwort.hinfahrt) {
-    const r = antwort.richtwert
-    const art = antwort.fehlerArt ?? 'dienst_nicht_erreichbar'
     const links = (
       <>
         <a href={hinLink()} target="_blank" rel="noreferrer" className="underline">Hinfahrt bei {portal}</a>
@@ -86,40 +91,7 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbah
         <a href={rueckLink(antwort.rueckfahrtDatum)} target="_blank" rel="noreferrer" className="underline">Rückfahrt bei {portal}</a>
       </>
     )
-    // Typische Verbindung als Richtwert, ausdrücklich mit "ca." und ohne Uhrzeiten.
-    const richtwertZeile = r && (
-      <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-        <span className="zahl text-lg">ca. {minutenAlsDauer(r.fahrzeitMin)}</span>
-        <span className="text-tinte-2">· {r.umstiege} {r.umstiege === 1 ? 'Umstieg' : 'Umstiege'} · {taktText(r.takt)} ab {von.name}</span>
-        {mindestNaechte === 0 && <TageszielBadge tagesziel={antwort.tagesziel} grund={antwort.tageszielGrund} />}
-      </div>
-    )
-    if (art === 'datum_vergangen') {
-      return <p className="warnhinweis">Das Datum liegt in der Vergangenheit. Bitte oben einen anderen Tag wählen.</p>
-    }
-    if (art === 'keine_verbindung') {
-      return (
-        <div className="space-y-1">
-          <p className="warnhinweis">
-            {antwort.hinweis
-              ? <>Am gewählten Datum keine Verbindung gefunden, vermutlich Saisonbetrieb.{antwort.hinweis !== ALLGEMEINER_SAISON_HINWEIS && <> {antwort.hinweis}</>}</>
-              : 'Am gewählten Datum keine passende Verbindung gefunden.'}
-          </p>
-          <div className="text-sm text-tinte-3">Selbst prüfen: {links}</div>
-        </div>
-      )
-    }
-    return (
-      <div className="space-y-1">
-        {richtwertZeile ?? <span className="text-tinte-2">Keine typische Verbindung bekannt.</span>}
-        <div className="text-sm text-tinte-3">
-          {art === 'fahrplan_noch_nicht_verfuegbar'
-            ? <>{antwort.hinweis ?? 'Der Fahrplan für dieses Datum ist noch nicht veröffentlicht.'} Typische Fahrzeit an einem Samstag. </>
-            : 'Live-Fahrplan gerade nicht erreichbar, typische Fahrzeit an einem Samstag. '}
-          {links}
-        </div>
-      </div>
-    )
+    return <VerbindungOhneLive antwort={antwort} vonName={von.name} links={links} />
   }
 
   const h = antwort.hinfahrt
@@ -138,15 +110,13 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbah
       <div className="flex flex-wrap items-center gap-2 text-sm text-tinte-2">
         <span>{minutenAlsDauer(h.dauerMin)}, {h.umstiege === 0 ? 'direkt' : `${h.umstiege} ${h.umstiege === 1 ? 'Umstieg' : 'Umstiege'}`}</span>
         {ankunftHuette && <span>· an der Hütte gegen <span className="zahl">{lokaleUhrzeit(ankunftHuette)}</span></span>}
-        {mindestNaechte >= 1 && antwort.naechte >= 1 && <span>· {naechteText(antwort.naechte)}</span>}
-        <TageszielBadge tagesziel={antwort.tagesziel} grund={antwort.tageszielGrund} />
+        <PassungBadge passung={antwort.passung} />
         <TicketBadge ticket={antwort.ticket.ticket} />
       </div>
       {antwort.rueckfahrt && (
         <div className="text-sm text-tinte-2">
           Rückfahrt {datumKurz(antwort.rueckfahrtDatum)}: <span className="zahl">{lokaleUhrzeit(antwort.rueckfahrt.ab)}</span> ab {nach.name},{' '}
           <span className="zahl">{lokaleUhrzeit(antwort.rueckfahrt.an)}</span> in {von.name}
-          {antwort.tourenfensterMin !== undefined && <> · <span className="zahl">{minutenAlsDauer(antwort.tourenfensterMin)}</span> am Berg</>}
         </div>
       )}
       {antwort.rueckfahrt && (
@@ -184,6 +154,55 @@ export function VerbindungZeile({ von, nach, mindestNaechte, zustiegMin, bergbah
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+/**
+ * Zeile ohne Live-Verbindung: Richtwert ("ca. 4:10 h"), Hinweis zur Fehlerart und Links zum Selbstprüfen. Die Passung
+ * (bzw. ihr Grund, etwa "fährt am Datum nicht") steht in jedem Zweig, in dem es sie gibt, außer bei vergangenem Datum.
+ */
+export function VerbindungOhneLive({ antwort, vonName, links }: { antwort: VerbindungAntwort; vonName: string; links: ReactNode }) {
+  const r = antwort.richtwert
+  const art = antwort.fehlerArt ?? 'dienst_nicht_erreichbar'
+  if (art === 'datum_vergangen') {
+    return <p className="warnhinweis">Das Datum liegt in der Vergangenheit. Bitte oben einen anderen Tag wählen.</p>
+  }
+  const passung = antwort.passung && <PassungBadge passung={antwort.passung} />
+  if (art === 'keine_verbindung') {
+    return (
+      <div className="space-y-1">
+        <p className="warnhinweis">
+          {antwort.hinweis
+            ? <>Am gewählten Datum keine Verbindung gefunden, vermutlich Saisonbetrieb.{antwort.hinweis !== ALLGEMEINER_SAISON_HINWEIS && <> {antwort.hinweis}</>}</>
+            : 'Am gewählten Datum keine passende Verbindung gefunden.'}
+        </p>
+        {passung && <div>{passung}</div>}
+        <div className="text-sm text-tinte-3">Selbst prüfen: {links}</div>
+      </div>
+    )
+  }
+  return (
+    <div className="space-y-1">
+      {r ? (
+        // Typische Verbindung als Richtwert, ausdrücklich mit "ca." und ohne Uhrzeiten.
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span className="zahl text-lg">ca. {minutenAlsDauer(r.fahrzeitMin)}</span>
+          <span className="text-tinte-2">· {r.umstiege} {r.umstiege === 1 ? 'Umstieg' : 'Umstiege'} · {taktText(r.takt)} ab {vonName}</span>
+          {passung}
+        </div>
+      ) : (
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span className="text-tinte-2">Keine typische Verbindung bekannt.</span>
+          {passung}
+        </div>
+      )}
+      <div className="text-sm text-tinte-3">
+        {art === 'fahrplan_noch_nicht_verfuegbar'
+          ? <>{antwort.hinweis ?? 'Der Fahrplan für dieses Datum ist noch nicht veröffentlicht.'} Typische Fahrzeit an einem Samstag. </>
+          : 'Live-Fahrplan gerade nicht erreichbar, typische Fahrzeit an einem Samstag. '}
+        {links}
+      </div>
     </div>
   )
 }
