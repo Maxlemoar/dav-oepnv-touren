@@ -36,10 +36,42 @@ export function alsUhrzeit(min: number): string {
   return `${Math.floor(min / 60)}:${String(min % 60).padStart(2, '0')}`
 }
 
-/** Schnellwahl der Startseite: kommender Samstag (an einem Samstag heute) und der Sonntag danach, Label "Sa 21.11.". */
-export function schnellwahl(heute: string): { label: string; datum: string }[] {
+/**
+ * Schnellwahl: kommender Samstag (an einem Samstag heute) und der Sonntag danach als Tagestouren, dazu „Wochenende“
+ * (Samstag hin, Sonntag zurück). Einträge mit weniger Nächten als `mindestNaechte` fallen weg (Hüttenseite).
+ */
+export function schnellwahl(heute: string, mindestNaechte = 0): { label: string; datum: string; rueck: string }[] {
   const samstag = naechsterSamstag(new Date(`${heute}T12:00:00Z`))
-  return [samstag, tageAddieren(samstag, 1)].map((datum) => ({ label: datumKurz(datum), datum }))
+  const sonntag = tageAddieren(samstag, 1)
+  return [
+    { label: datumKurz(samstag), datum: samstag, rueck: samstag },
+    { label: datumKurz(sonntag), datum: sonntag, rueck: sonntag },
+    { label: 'Wochenende', datum: samstag, rueck: sonntag },
+  ].filter((s) => tageDifferenz(s.datum, s.rueck) >= mindestNaechte)
+}
+
+/** Rückdatum, wenn das Hindatum wechselt: Die Zahl der Nächte bleibt (Tagestour bleibt Tagestour), mindestens `mindestNaechte`. */
+export function rueckNachHinwechsel(alt: Pick<Zeitfenster, 'datum' | 'rueck'>, neuesDatum: string, mindestNaechte = 0): string {
+  return tageAddieren(neuesDatum, Math.max(naechte(alt), mindestNaechte))
+}
+
+/**
+ * Am selben Tag liegt „zurück bis“ mindestens eine Stufe nach „los ab“: Die geänderte Uhrzeit gilt, die andere weicht
+ * aus (Grenzen 4:00 bis 24:00). Bei mehreren Tagen gehören die Zeiten zu verschiedenen Tagen; nichts weicht aus.
+ */
+export function zeitenAusweichen(
+  alt: { abMin: number; bisMin: number },
+  neu: { abMin: number; bisMin: number },
+  gleicherTag: boolean,
+): { abMin: number; bisMin: number } {
+  if (!gleicherTag) return neu
+  const s = ZEITBAND.schrittMin
+  if (neu.abMin !== alt.abMin) {
+    const abMin = Math.min(neu.abMin, ZEITBAND.bisMin - s)
+    return { abMin, bisMin: Math.max(neu.bisMin, abMin + s) }
+  }
+  const bisMin = Math.max(neu.bisMin, ZEITBAND.vonMin + s)
+  return { abMin: Math.min(neu.abMin, bisMin - s), bisMin }
 }
 
 /** Rückfahrt frühestens `mindestNaechte` Tage nach der Hinfahrt; fehlt sie oder liegt sie davor, wird sie angehoben. */
@@ -54,12 +86,6 @@ export function rueckAnheben(datum: string, rueck: string | undefined, mindestNa
  */
 export function datumAusEingabe(wert: string, fruehestens: string): string | undefined {
   return istDatum(wert) && wert >= fruehestens ? wert : undefined
-}
-
-/** Rückdatum beim Umschalten Tagestour | Mehrere Tage; undefined, wenn die gewählte Art schon gilt (rueck bleibt). */
-export function rueckFuerArt(z: Pick<Zeitfenster, 'datum' | 'rueck'>, mehr: boolean): string | undefined {
-  if ((z.rueck !== z.datum) === mehr) return undefined
-  return mehr ? tageAddieren(z.datum, 1) : z.datum
 }
 
 export function naechte(z: Pick<Zeitfenster, 'datum' | 'rueck'>): number {

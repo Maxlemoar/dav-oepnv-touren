@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
-  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit, schnellwahl, rueckAnheben, datumAusEingabe, rueckFuerArt,
+  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit, schnellwahl, rueckAnheben, datumAusEingabe, rueckNachHinwechsel, zeitenAusweichen,
   STANDARD_ZEITFENSTER, ZEITBAND, VOR_ORT_MAX_MIN, ZEITFENSTER_PARAMETER,
 } from '@/lib/zeitfenster'
 
@@ -179,17 +179,46 @@ describe('Kalenderprüfung und gewaehlt', () => {
 })
 
 describe('schnellwahl', () => {
-  it('kommender Samstag und Sonntag mit kurzem Label', () => {
+  it('Samstag, Sonntag und Wochenende', () => {
     expect(schnellwahl('2026-11-19')).toEqual([
-      { label: 'Sa 21.11.', datum: '2026-11-21' },
-      { label: 'So 22.11.', datum: '2026-11-22' },
+      { label: 'Sa 21.11.', datum: '2026-11-21', rueck: '2026-11-21' },
+      { label: 'So 22.11.', datum: '2026-11-22', rueck: '2026-11-22' },
+      { label: 'Wochenende', datum: '2026-11-21', rueck: '2026-11-22' },
     ])
   })
   it('beginnt an einem Samstag mit heute', () => {
-    expect(schnellwahl('2026-11-21')).toEqual([
-      { label: 'Sa 21.11.', datum: '2026-11-21' },
-      { label: 'So 22.11.', datum: '2026-11-22' },
-    ])
+    expect(schnellwahl('2026-11-21')[0]).toEqual({ label: 'Sa 21.11.', datum: '2026-11-21', rueck: '2026-11-21' })
+  })
+  it('Hütten: nur Einträge mit Übernachtung', () => {
+    expect(schnellwahl('2026-11-19', 1)).toEqual([{ label: 'Wochenende', datum: '2026-11-21', rueck: '2026-11-22' }])
+  })
+})
+
+describe('rueckNachHinwechsel', () => {
+  it('Tagestour bleibt Tagestour', () => {
+    expect(rueckNachHinwechsel({ datum: '2026-11-28', rueck: '2026-11-28' }, '2026-12-05')).toBe('2026-12-05')
+  })
+  it('behält die Nächte', () => {
+    expect(rueckNachHinwechsel({ datum: '2026-11-28', rueck: '2026-11-30' }, '2026-11-27')).toBe('2026-11-29')
+  })
+  it('hält bei Hütten mindestens eine Nacht', () => {
+    expect(rueckNachHinwechsel({ datum: '2026-11-28', rueck: '2026-11-28' }, '2026-12-05', 1)).toBe('2026-12-06')
+  })
+})
+
+describe('zeitenAusweichen', () => {
+  const alt = { abMin: 360, bisMin: 1260 }
+  it('ab hinter bis schiebt bis eine Stufe nach', () => {
+    expect(zeitenAusweichen(alt, { abMin: 1320, bisMin: 1260 }, true)).toEqual({ abMin: 1320, bisMin: 1350 })
+  })
+  it('bis vor ab schiebt ab eine Stufe vor', () => {
+    expect(zeitenAusweichen(alt, { abMin: 360, bisMin: 300 }, true)).toEqual({ abMin: 270, bisMin: 300 })
+  })
+  it('ab ganz am Ende bleibt eine Stufe vor 24:00', () => {
+    expect(zeitenAusweichen(alt, { abMin: 1440, bisMin: 1260 }, true)).toEqual({ abMin: 1410, bisMin: 1440 })
+  })
+  it('mehrere Tage: nichts weicht aus', () => {
+    expect(zeitenAusweichen(alt, { abMin: 1320, bisMin: 600 }, false)).toEqual({ abMin: 1320, bisMin: 600 })
   })
 })
 
@@ -220,18 +249,5 @@ describe('datumAusEingabe', () => {
     expect(datumAusEingabe('', HEUTE)).toBeUndefined()
     expect(datumAusEingabe('2026-11-18', HEUTE)).toBeUndefined()
     expect(datumAusEingabe('2026-02-30', '2026-01-01')).toBeUndefined()
-  })
-})
-
-describe('rueckFuerArt', () => {
-  const tag = { datum: '2026-11-21', rueck: '2026-11-21' }
-  const mehr = { datum: '2026-11-21', rueck: '2026-11-24' }
-  it('wechselt die Art: Mehrere Tage ab dem Folgetag, Tagestour am selben Tag', () => {
-    expect(rueckFuerArt(tag, true)).toBe('2026-11-22')
-    expect(rueckFuerArt(mehr, false)).toBe('2026-11-21')
-  })
-  it('lässt die Rückfahrt stehen, wenn die Art schon gilt', () => {
-    expect(rueckFuerArt(mehr, true)).toBeUndefined()
-    expect(rueckFuerArt(tag, false)).toBeUndefined()
   })
 })
