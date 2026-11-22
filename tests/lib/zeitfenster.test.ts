@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
-  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit, schnellwahl, rueckAnheben, datumAusEingabe, rueckNachHinwechsel, zeitenAusweichen,
+  zeitfensterAusUrl, zeitfensterSchreiben, naechte, alsMin, alsUhrzeit, schnellwahl, rueckAnheben, datumAusEingabe, rueckNachHinwechsel, zeitenAusweichen, zeitenFuerTagestour,
   STANDARD_ZEITFENSTER, ZEITBAND, VOR_ORT_MAX_MIN, ZEITFENSTER_PARAMETER,
 } from '@/lib/zeitfenster'
 
@@ -249,5 +249,30 @@ describe('datumAusEingabe', () => {
     expect(datumAusEingabe('', HEUTE)).toBeUndefined()
     expect(datumAusEingabe('2026-11-18', HEUTE)).toBeUndefined()
     expect(datumAusEingabe('2026-02-30', '2026-01-01')).toBeUndefined()
+  })
+})
+
+describe('abgelaufenes oder fehlendes datum', () => {
+  it('verwirft ein mitgegebenes rueck: es gilt ein Tag am Vorgabe-Samstag', () => {
+    const z = zeitfensterAusUrl(new URLSearchParams('datum=2026-11-10&rueck=2026-11-29'), { heute: '2026-11-23' })
+    expect(z).toMatchObject({ datum: '2026-11-28', rueck: '2026-11-28', gewaehlt: false })
+  })
+  it('Hütten: dann genau eine Nacht', () => {
+    const z = zeitfensterAusUrl(new URLSearchParams('rueck=2026-12-01'), { heute: '2026-11-23', mindestNaechte: 1 })
+    expect(z).toMatchObject({ datum: '2026-11-28', rueck: '2026-11-29' })
+  })
+})
+
+describe('zeitenFuerTagestour', () => {
+  const tag = { datum: '2026-11-28', rueck: '2026-11-28', vorOrtMin: 240 }
+  it('bis vor ab am selben Tag: bis fällt auf die Vorgabe 21:00 zurück', () => {
+    expect(zeitenFuerTagestour({ ...tag, abMin: 600, bisMin: 480 })).toMatchObject({ abMin: 600, bisMin: 1260 })
+  })
+  it('ab nach 21:00: bis eine Stufe nach ab', () => {
+    expect(zeitenFuerTagestour({ ...tag, abMin: 1320, bisMin: 480 })).toMatchObject({ abMin: 1320, bisMin: 1350 })
+  })
+  it('passende Zeiten und mehrere Tage bleiben unverändert', () => {
+    expect(zeitenFuerTagestour({ ...tag, abMin: 600, bisMin: 1200 })).toMatchObject({ abMin: 600, bisMin: 1200 })
+    expect(zeitenFuerTagestour({ ...tag, rueck: '2026-11-29', abMin: 600, bisMin: 480 })).toMatchObject({ bisMin: 480 })
   })
 })

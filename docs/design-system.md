@@ -65,11 +65,13 @@ Schatten nur eine Stufe: `0 1px 2px rgb(0 0 0 / 0.06)`.
   der Orts- und Hüttenseite zeigt "Sa 21.11., 6:00–21:00" (`zeitfensterKurz`), heißt für Screenreader "Zeitfenster ändern: …"
   und öffnet das Sheet "Wann?". Bis zur Hydration steht "Kommender Samstag".
 - **Sheet**: natives `<dialog>` mit `showModal()`. Auf dem Handy von unten (rounded-t-2xl, max-h 85dvh, Griff-Linie), ab sm zentriert (max-w-md, rounded-2xl). Backdrop tinte/50, Klick darauf und Esc schließen, Body-Scroll gesperrt, Fokus auf dem ersten Bedienelement. Kopf mit Titel, Body scrollbar, unten "Fertig" (knopf, volle Breite) und optional ein sekundärer Knopf. Auswahl wirkt sofort im Hintergrund, "Fertig" schließt nur.
-- **Zeitfenster** (`ZeitfensterWahl`, auf der Startseite offen, sonst im Sheet "Wann?"): Datum als Chips "Sa 21.11." / "So 22.11."
-  plus Datumsfeld, Segment Tagestour | Mehrere Tage (bei Mehrere Tage ein Feld "Rückfahrt am"), das Zeitband "los ab" /
-  "zurück bis" (4:00 bis 24:00 in 30-min-Stufen) und bei Tagestour "Mindestens vor Ort" (0 bis 10 h). Alles steht in der URL
-  (`datum`, `rueck`, `ab`, `bis`, `vorort`; Vorgaben fallen weg). Schieber schreiben gedrosselt, Datumswahl sofort. Hüttenseiten
-  (`mindestNaechte` 1): ohne Segment, Rückfahrt frühestens am Folgetag.
+- **Zeitfenster** (`ZeitfensterWahl`, auf der Startseite offen, sonst im Sheet "Wann?"): je eine Zeile
+  "Hinfahrt" (Datumsfeld, "ab" Uhrzeit) und "Rückfahrt" (Datumsfeld, "bis" Uhrzeit; Uhrzeiten als Auswahl 4:00 bis 24:00 in
+  30-min-Stufen), darunter Chips "Sa 21.11." / "So 22.11." / "Wochenende" und bei gleichem Hin- und Rücktag "Mindestens vor
+  Ort" (0 bis 10 h). Kein Umschalter: Ob es eine Tagestour ist, ergibt sich aus den Daten; das Rückdatum folgt dem Hindatum
+  mit gleicher Zahl an Nächten. Alles steht in der URL
+  (`datum`, `rueck`, `ab`, `bis`, `vorort`; Vorgaben fallen weg). Schieber schreiben gedrosselt, Datum und Uhrzeiten sofort.
+  Hüttenseiten (`mindestNaechte` 1): Rückfahrt frühestens am Folgetag, Schnellwahl nur "Wochenende".
 - **Liste der Ausgangsorte** (`AusgangsortListe`): Überschrift "n Ausgangsorte passen", eine Zeile zur Quelle (typischer
   Fahrplan bzw. Stand nach `liveBis`), dann je passendem Ort eine Card: Name, rechts tanne "7:37 h vor Ort" (mehrere Tage
   "1 Nacht"), Gebiet · Region, "hin 6:12 → 9:41 · zurück 16:20 → 20:02" und Ticket-Badge. Die übrigen eingeklappt unter

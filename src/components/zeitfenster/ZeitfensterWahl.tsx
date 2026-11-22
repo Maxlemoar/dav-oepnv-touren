@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { drossel } from '@/lib/drossel'
 import { lokalesDatum, minutenAlsDauer, tageAddieren } from '@/lib/datum'
 import {
-  alsUhrzeit, datumAusEingabe, rueckNachHinwechsel, schnellwahl, VOR_ORT_MAX_MIN, ZEITBAND, zeitenAusweichen,
+  alsUhrzeit, datumAusEingabe, rueckNachHinwechsel, schnellwahl, VOR_ORT_MAX_MIN, ZEITBAND, zeitenAusweichen, zeitenFuerTagestour,
   zeitfensterAusUrl, zeitfensterSchreiben, type Zeitfenster,
 } from '@/lib/zeitfenster'
 
@@ -81,7 +81,7 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
   function setze(neu: Zeitfenster, mitDatum: boolean) {
     schreiber.abbrechen()
     setEntwurf(null)
-    schreibe(neu, mitDatum)
+    schreibe(zeitenFuerTagestour(neu), mitDatum)
   }
 
   function waehleHin(datum: string) {
@@ -116,7 +116,11 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
           <UhrzeitWahl beschriftung="bis" aria-label="zurück in Offenburg bis" wert={z.bisMin}
             onWahl={(bisMin) => waehleZeit({ abMin: z.abMin, bisMin })} />
         </Zeile>
-        {!z.gewaehlt && <p className="text-xs text-tinte-3">Zuerst das Datum der Hinfahrt wählen, die Rückfahrt folgt am selben Tag.</p>}
+        {!z.gewaehlt && (
+          <p className="text-xs text-tinte-3">
+            Zuerst das Datum der Hinfahrt wählen, die Rückfahrt folgt {mindestNaechte > 0 ? 'am Tag danach' : 'am selben Tag'}.
+          </p>
+        )}
         <div className="flex flex-wrap gap-2">
           {schnellwahl(heute, mindestNaechte).map((s) => {
             const aktiv = z.gewaehlt && z.datum === s.datum && z.rueck === s.rueck

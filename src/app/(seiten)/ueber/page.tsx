@@ -26,7 +26,7 @@ export default function UeberSeite() {
       <dl className="space-y-3">
         <div>
           <dt className="font-medium">Zeitfenster</dt>
-          <dd className="text-tinte-2">„Los ab“, „zurück bis“ und „mindestens vor Ort“, einstellbar unter „Wann?“; ohne Wahl 6:00 bis 21:00 und 4 Stunden.
+          <dd className="text-tinte-2">Hinfahrt ab, Rückfahrt bis und „mindestens vor Ort“, einstellbar unter „Wann?“; ohne Wahl 6:00 bis 21:00 und 4 Stunden.
             Passt eine Verbindung, steht etwa „passt, 7:37 h vor Ort“ da, sonst der Grund, etwa „keine Rückfahrt bis 21:00“.</dd>
         </div>
         <div>

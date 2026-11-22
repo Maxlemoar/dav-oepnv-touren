@@ -88,6 +88,16 @@ export function datumAusEingabe(wert: string, fruehestens: string): string | und
   return istDatum(wert) && wert >= fruehestens ? wert : undefined
 }
 
+/**
+ * Wird aus mehreren Tagen eine Tagestour (Chip, Rückdatum), passt ein „zurück bis“ vor „los ab“ nicht mehr: Es fällt auf
+ * die Vorgabe zurück, mindestens eine Stufe nach „los ab“. Sonst bleibt alles, wie es ist.
+ */
+export function zeitenFuerTagestour<Z extends Zeitfenster>(z: Z): Z {
+  const s = ZEITBAND.schrittMin
+  if (z.rueck !== z.datum || z.bisMin >= z.abMin + s) return z
+  return { ...z, bisMin: Math.min(ZEITBAND.bisMin, Math.max(STANDARD_ZEITFENSTER.bisMin, z.abMin + s)) }
+}
+
 export function naechte(z: Pick<Zeitfenster, 'datum' | 'rueck'>): number {
   return tageDifferenz(z.datum, z.rueck)
 }
@@ -127,7 +137,9 @@ export function zeitfensterAusUrl(
   const datum = datumGueltig ? roh : naechsterSamstag(new Date(`${heute}T12:00:00Z`))
   const rueckRoh = sp.get('rueck')
   const rueckGueltig = istDatum(rueckRoh)
-  const rueck = rueckAnheben(datum, rueckGueltig ? rueckRoh : undefined, opts.mindestNaechte ?? 0)
+  // Ein rueck gehört zu seinem datum: Fehlt das datum oder ist es abgelaufen, gilt es nicht mehr (sonst blieben Nächte
+  // eines alten Links unsichtbar hinter leeren Datumsfeldern stehen).
+  const rueck = rueckAnheben(datum, datumGueltig && rueckGueltig ? rueckRoh : undefined, opts.mindestNaechte ?? 0)
 
   const ab = uhrzeitParam(sp, 'ab')
   let bis = uhrzeitParam(sp, 'bis')

@@ -115,7 +115,7 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
     <article className="mx-auto max-w-2xl space-y-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdText(gebietJsonLd(gebiet, gebietBeschreibungFuer(i, gebiet))) }} />
       {/* Bleibt beim Scrollen oben stehen: ab lg im Scrollbereich der Seitenleiste, darunter unter der Kopfzeile. */}
-      <div className="sticky z-10 -mx-4 -mt-4 bg-papier px-4 py-2 max-lg:top-14 lg:top-0 sm:-mx-6 sm:px-6">
+      <div className="sticky z-10 -mx-4 -mt-4 mb-2 bg-papier px-4 py-2 max-lg:top-14 lg:top-0 sm:-mx-6 sm:px-6">
         <ZeitraumLink href="/" className="pill min-h-11 no-underline">← Zurück</ZeitraumLink>
       </div>
       <header>
