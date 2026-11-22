@@ -1,16 +1,15 @@
 'use client'
-import { Suspense, useEffect, useState, type InputHTMLAttributes } from 'react'
+import { Suspense, useEffect, useState, type InputHTMLAttributes, type ReactNode } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { drossel } from '@/lib/drossel'
-import { datumKurz, lokalesDatum, minutenAlsDauer, tageAddieren } from '@/lib/datum'
+import { lokalesDatum, minutenAlsDauer, tageAddieren } from '@/lib/datum'
 import {
-  datumAusEingabe, rueckAnheben, rueckFuerArt, schnellwahl, VOR_ORT_MAX_MIN, ZEITBAND, zeitfensterAusUrl, zeitfensterSchreiben,
-  type Zeitfenster,
+  alsUhrzeit, datumAusEingabe, rueckNachHinwechsel, schnellwahl, VOR_ORT_MAX_MIN, ZEITBAND, zeitenAusweichen,
+  zeitfensterAusUrl, zeitfensterSchreiben, type Zeitfenster,
 } from '@/lib/zeitfenster'
-import { Zeitband } from './Zeitband'
 
 type Props = {
-  /** 1: nur Zeiträume mit Übernachtung (Hüttenseite), ohne Umschalter und ohne "Mindestens vor Ort". Standard 0. */
+  /** 1: nur Zeiträume mit Übernachtung (Hüttenseite): Rückfahrt frühestens am Folgetag, ohne "Mindestens vor Ort". Standard 0. */
   mindestNaechte?: 0 | 1
 }
 
@@ -18,9 +17,16 @@ const FELD = 'min-h-11 rounded-[var(--radius-knopf)] border border-linie bg-kart
 
 type Uhrzeiten = Pick<Zeitfenster, 'abMin' | 'bisMin' | 'vorOrtMin'>
 
+/** Alle wählbaren Uhrzeiten: 4:00 bis 24:00 in 30-Minuten-Stufen. */
+const UHRZEITEN = Array.from(
+  { length: (ZEITBAND.bisMin - ZEITBAND.vonMin) / ZEITBAND.schrittMin + 1 },
+  (_, i) => ZEITBAND.vonMin + i * ZEITBAND.schrittMin,
+)
+
 /**
- * Abstand der URL-Schreibvorgänge beim Ziehen. Browser drosseln bzw. verweigern zu viele replaceState-Aufrufe (Safari ab
- * etwa 100 je 10 s); Next ruft zu jedem eigenen Aufruf noch einmal replaceState auf. 250 ms ergeben höchstens etwa 80 je 10 s.
+ * Abstand der URL-Schreibvorgänge beim Ziehen des Schiebers. Browser drosseln bzw. verweigern zu viele replaceState-Aufrufe
+ * (Safari ab etwa 100 je 10 s); Next ruft zu jedem eigenen Aufruf noch einmal replaceState auf. 250 ms ergeben höchstens
+ * etwa 80 je 10 s.
  */
 const SCHREIB_ABSTAND_MS = 250
 
@@ -45,9 +51,10 @@ function vorOrtText(min: number): string {
 }
 
 /**
- * Wann geht es los, wann zurück: Datum (kommendes Wochenende oder Datumsfeld), Tagestour | Mehrere Tage, los ab und
- * zurück bis, bei Tagestour mindestens vor Ort. Alles steht in der URL. Ohne gewähltes Datum schreiben die Schieber nur die
- * Uhrzeiten (ein Schieber wählt nie ein Datum); erst Chip oder Datumsfeld setzen datum.
+ * Wann geht es los, wann zurück, wie im DB Navigator: je eine Zeile für Hinfahrt (Datum, ab) und Rückfahrt (Datum, bis),
+ * darunter Schnellwahl (Samstag, Sonntag, Wochenende) und bei einer Tagestour "mindestens vor Ort". Ob es eine Tagestour
+ * ist, ergibt sich aus den Daten; einen Schalter gibt es nicht. Alles steht in der URL. Ohne gewähltes Datum schreiben
+ * Uhrzeiten und Schieber nur die Uhrzeiten (eine Uhrzeit wählt nie ein Datum); erst Chip oder Hindatum setzen datum.
  */
 export function ZeitfensterWahl(props: Props) {
   return (
@@ -59,7 +66,7 @@ export function ZeitfensterWahl(props: Props) {
 
 function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
   const ausUrl = zeitfensterAusUrl(useSearchParams(), { mindestNaechte })
-  // Beim Ziehen folgen die Schieber diesen Werten sofort; die URL (und damit die Liste) zieht gedrosselt nach.
+  // Beim Ziehen folgt der Schieber diesen Werten sofort; die URL (und damit die Liste) zieht gedrosselt nach.
   // Hat die URL den Entwurf eingeholt, gilt wieder die URL (angepasster Zustand während des Renderns, kein Effekt).
   const [entwurf, setEntwurf] = useState<Uhrzeiten | null>(null)
   if (entwurf && gleich(entwurf, ausUrl)) setEntwurf(null)
@@ -67,111 +74,94 @@ function ZeitfensterWahlInnen({ mindestNaechte = 0 }: Props) {
   const [schreiber] = useState(() => drossel(schreibe, SCHREIB_ABSTAND_MS))
   // Ein offener Schreibvorgang darf nach dem Verlassen der Seite nicht mehr in eine fremde URL schreiben.
   useEffect(() => () => schreiber.abbrechen(), [schreiber])
-  // Ohne gewähltes Datum steht keine Rückfahrt in der URL; "Mehrere Tage" wird bis zur Datumswahl hier vorgemerkt.
-  const [mehrVorgemerkt, setMehrVorgemerkt] = useState(false)
   const heute = lokalesDatum(new Date())
-  const mehrtaegig = mindestNaechte > 0 || (z.gewaehlt ? z.rueck !== z.datum : mehrVorgemerkt)
-  const mindestRueck = Math.max(1, mindestNaechte)
+  const gleicherTag = z.rueck === z.datum
 
-  /** Datumswahl schreibt sofort, mit den aktuellen Schieberwerten; ein offener Schieber-Schreibvorgang (evtl. ohne Datum) entfällt. */
-  function setzeDatum(neu: Zeitfenster) {
+  /** Sofort schreiben (Datum, Chip, Uhrzeit-Auswahl); ein offener Schieber-Schreibvorgang entfällt. Ohne Datum nur die Uhrzeiten (R6). */
+  function setze(neu: Zeitfenster, mitDatum: boolean) {
     schreiber.abbrechen()
-    schreibe(neu, true)
+    setEntwurf(null)
+    schreibe(neu, mitDatum)
   }
 
-  /** Schieber: sofort sichtbar, URL gedrosselt; ohne gewähltes Datum nur die Uhrzeiten (R6). */
-  function schiebe(neu: Uhrzeiten) {
+  function waehleHin(datum: string) {
+    setze({ ...z, datum, rueck: rueckNachHinwechsel(z, datum, mindestNaechte) }, true)
+  }
+
+  function waehleZeit(neu: { abMin: number; bisMin: number }) {
+    setze({ ...z, ...zeitenAusweichen(z, neu, gleicherTag) }, z.gewaehlt)
+  }
+
+  /** Schieber "vor Ort": sofort sichtbar, URL gedrosselt. */
+  function schiebeVorOrt(vorOrtMin: number) {
+    const neu = { abMin: z.abMin, bisMin: z.bisMin, vorOrtMin }
     setEntwurf(neu)
     schreiber.rufe({ ...z, ...neu }, z.gewaehlt)
   }
   const loslassen = () => schreiber.sofort()
 
-  function waehleDatum(datum: string) {
-    const rueck = mehrtaegig ? rueckAnheben(datum, z.gewaehlt ? z.rueck : undefined, mindestRueck) : datum
-    setzeDatum({ ...z, datum, rueck })
-  }
-
-  /** Umschalten der Art; ein Klick auf die schon gewählte Art lässt die Rückfahrt stehen. */
-  function waehleArt(mehr: boolean) {
-    if (!z.gewaehlt) { setMehrVorgemerkt(mehr); return }
-    const rueck = rueckFuerArt(z, mehr)
-    if (rueck !== undefined) setzeDatum({ ...z, rueck })
-  }
-
-  function band(neu: { abMin: number; bisMin: number }) {
-    let { abMin, bisMin } = neu
-    // Am selben Tag liegt "zurück bis" mindestens eine Stufe nach "los ab"; der andere Wert weicht aus.
-    if (z.rueck === z.datum) {
-      const s = ZEITBAND.schrittMin
-      if (abMin !== z.abMin) {
-        abMin = Math.min(abMin, ZEITBAND.bisMin - s)
-        bisMin = Math.max(bisMin, abMin + s)
-      } else {
-        bisMin = Math.max(bisMin, ZEITBAND.vonMin + s)
-        abMin = Math.min(abMin, bisMin - s)
-      }
-    }
-    schiebe({ abMin, bisMin, vorOrtMin: z.vorOrtMin })
-  }
-
   return (
     <section aria-label="Zeitfenster" className="space-y-4">
-      <div>
-        <p className="text-sm font-medium">{mehrtaegig ? 'Hinfahrt am' : 'Datum'}</p>
-        <div className="mt-2 flex flex-wrap items-center gap-2">
-          {schnellwahl(heute).map((s) => {
-            const aktiv = z.gewaehlt && z.datum === s.datum
+      <div className="space-y-3">
+        <Zeile titel="Hinfahrt">
+          <DatumFeld aria-label="Datum der Hinfahrt" fruehestens={heute} wert={z.gewaehlt ? z.datum : ''}
+            className={`${FELD} min-w-0 flex-1`} onWahl={waehleHin} />
+          <UhrzeitWahl beschriftung="ab" aria-label="Hinfahrt ab Offenburg" wert={z.abMin}
+            onWahl={(abMin) => waehleZeit({ abMin, bisMin: z.bisMin })} />
+        </Zeile>
+        <Zeile titel="Rückfahrt">
+          <DatumFeld aria-label="Datum der Rückfahrt" fruehestens={tageAddieren(z.datum, mindestNaechte)}
+            wert={z.gewaehlt ? z.rueck : ''} disabled={!z.gewaehlt} className={`${FELD} min-w-0 flex-1`}
+            onWahl={(rueck) => setze({ ...z, rueck }, true)} />
+          <UhrzeitWahl beschriftung="bis" aria-label="zurück in Offenburg bis" wert={z.bisMin}
+            onWahl={(bisMin) => waehleZeit({ abMin: z.abMin, bisMin })} />
+        </Zeile>
+        {!z.gewaehlt && <p className="text-xs text-tinte-3">Zuerst das Datum der Hinfahrt wählen, die Rückfahrt folgt am selben Tag.</p>}
+        <div className="flex flex-wrap gap-2">
+          {schnellwahl(heute, mindestNaechte).map((s) => {
+            const aktiv = z.gewaehlt && z.datum === s.datum && z.rueck === s.rueck
             return (
-              <button key={s.datum} type="button" aria-pressed={aktiv} onClick={() => waehleDatum(s.datum)}
+              <button key={s.label} type="button" aria-pressed={aktiv}
+                onClick={() => setze({ ...z, datum: s.datum, rueck: s.rueck }, true)}
                 className={`chip min-h-11 ${aktiv ? 'chip-aktiv' : ''}`}>{s.label}</button>
             )
           })}
-          <DatumFeld aria-label={mehrtaegig ? 'Hinfahrt am' : 'Datum'} fruehestens={heute} wert={z.gewaehlt ? z.datum : ''}
-            className={FELD} onWahl={waehleDatum} />
         </div>
       </div>
 
-      {mindestNaechte === 0 && (
-        <div role="group" aria-label="Art" className="flex h-11 w-full overflow-hidden rounded-full border border-linie bg-karte sm:w-auto sm:max-w-sm">
-          {[{ mehr: false, label: 'Tagestour' }, { mehr: true, label: 'Mehrere Tage' }].map((a) => {
-            const aktiv = mehrtaegig === a.mehr
-            return (
-              <button key={a.label} type="button" aria-pressed={aktiv} onClick={() => waehleArt(a.mehr)}
-                className={`h-full flex-1 px-3.5 text-sm font-medium ${aktiv ? 'bg-tanne text-white' : 'text-tinte-2'}`}>{a.label}</button>
-            )
-          })}
-        </div>
-      )}
-
-      {mehrtaegig && (
-        <label className="block">
-          <span className="text-sm font-medium">Rückfahrt am</span>
-          <DatumFeld fruehestens={tageAddieren(z.datum, mindestRueck)} wert={z.gewaehlt ? z.rueck : ''} disabled={!z.gewaehlt}
-            className={`${FELD} mt-2 block`} onWahl={(rueck) => setzeDatum({ ...z, rueck })} />
-          {!z.gewaehlt && <span className="mt-1 block text-xs text-tinte-3">Zuerst das Datum der Hinfahrt wählen.</span>}
-        </label>
-      )}
-
-      <div>
-        <Zeitband abMin={z.abMin} bisMin={z.bisMin} onChange={band} onLoslassen={loslassen} />
-        {mehrtaegig && z.gewaehlt && (
-          <p className="mt-1 text-xs text-tinte-3">
-            Los ab gilt für {datumKurz(z.datum)}, zurück bis für {datumKurz(z.rueck)}.
-          </p>
-        )}
-      </div>
-
-      {!mehrtaegig && (
+      {mindestNaechte === 0 && gleicherTag && (
         <label className="block">
           <span className="text-sm text-tinte-2">Mindestens vor Ort <span className="zahl text-tinte">{vorOrtText(z.vorOrtMin)}</span></span>
           <input type="range" min={0} max={VOR_ORT_MAX_MIN} step={ZEITBAND.schrittMin} value={z.vorOrtMin}
             aria-label="mindestens vor Ort" aria-valuetext={vorOrtText(z.vorOrtMin)}
-            onChange={(e) => schiebe({ abMin: z.abMin, bisMin: z.bisMin, vorOrtMin: Number(e.target.value) })}
+            onChange={(e) => schiebeVorOrt(Number(e.target.value))}
             onPointerUp={loslassen} onKeyUp={loslassen} onBlur={loslassen}
             className="block h-11 w-full cursor-pointer accent-tanne" />
         </label>
       )}
     </section>
+  )
+}
+
+/** Eine Zeile "Hinfahrt" oder "Rückfahrt": Titel, darunter Datum und Uhrzeit nebeneinander. */
+function Zeile({ titel, children }: { titel: string; children: ReactNode }) {
+  return (
+    <fieldset>
+      <legend className="text-sm font-medium">{titel}</legend>
+      <div className="mt-1.5 flex items-center gap-2">{children}</div>
+    </fieldset>
+  )
+}
+
+/** Uhrzeit in 30-Minuten-Stufen (select statt input type=time: Safari ignoriert step). */
+function UhrzeitWahl({ beschriftung, wert, onWahl, ...rest }: { beschriftung: string; wert: number; onWahl: (min: number) => void; 'aria-label': string }) {
+  return (
+    <label className="flex shrink-0 items-center gap-2">
+      <span className="text-sm text-tinte-2">{beschriftung}</span>
+      <select {...rest} value={wert} onChange={(e) => onWahl(Number(e.target.value))} className={`${FELD} zahl pr-8`}>
+        {UHRZEITEN.map((m) => <option key={m} value={m}>{alsUhrzeit(m)}</option>)}
+      </select>
+    </label>
   )
 }
 
