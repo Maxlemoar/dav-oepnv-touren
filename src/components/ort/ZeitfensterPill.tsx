@@ -59,12 +59,3 @@ function PillInnen({ saison, mindestNaechte = 0 }: Props) {
     </div>
   )
 }
-
-/** " (Sa 21.11., 6:00–21:00)" für den Rückweg zur Karte; bis zur Hydration leer. */
-export function ZeitfensterInKlammern() {
-  return <Suspense fallback={null}><KlammernInnen /></Suspense>
-}
-
-function KlammernInnen() {
-  return <> ({zeitfensterKurz(zeitfensterAusUrl(useSearchParams(), { mindestNaechte: 0 }))})</>
-}

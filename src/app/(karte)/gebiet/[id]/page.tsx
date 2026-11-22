@@ -20,7 +20,7 @@ import { VerbindungZeile } from '@/components/VerbindungZeile'
 import { AufklappHaltestelle } from '@/components/ort/AufklappHaltestelle'
 import { ErreichbarReihenfolge } from '@/components/ort/ErreichbarReihenfolge'
 import { Fahrtenwahl } from '@/components/ort/Fahrtenwahl'
-import { ZeitfensterInKlammern, ZeitfensterPill } from '@/components/ort/ZeitfensterPill'
+import { ZeitfensterPill } from '@/components/ort/ZeitfensterPill'
 import type { Metadata } from 'next'
 import { gebietBeschreibungFuer, gebietJsonLd, jsonLdText, seitenMetadaten } from '@/lib/metadaten'
 
@@ -114,10 +114,11 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
   return (
     <article className="mx-auto max-w-2xl space-y-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdText(gebietJsonLd(gebiet, gebietBeschreibungFuer(i, gebiet))) }} />
+      {/* Bleibt beim Scrollen oben stehen: ab lg im Scrollbereich der Seitenleiste, darunter unter der Kopfzeile. */}
+      <div className="sticky z-10 -mx-4 -mt-4 bg-papier px-4 py-2 max-lg:top-14 lg:top-0 sm:-mx-6 sm:px-6">
+        <ZeitraumLink href="/" className="pill min-h-11 no-underline">← Zurück</ZeitraumLink>
+      </div>
       <header>
-        <ZeitraumLink href="/" className="inline-flex min-h-11 items-center text-sm text-tanne">
-          ← Zurück zur Karte<ZeitfensterInKlammern />
-        </ZeitraumLink>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{haupt.name}</h1>
         <p className="mt-1 text-tinte-2">
           Gebiet {gebiet.name} · {haupt.region} · {LAND_LABEL[haupt.land]}{rHaupt && <> · {ticketText(rHaupt.ticket)}</>}

@@ -28,11 +28,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="de" className={geist.variable}>
       <body className="min-h-dvh font-sans">
         <header className="sticky top-0 z-20 border-b border-linie bg-papier/95 backdrop-blur">
-          <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
+          <div className="flex h-14 items-center justify-between px-4 sm:px-6">
             <Link href="/" className="font-semibold tracking-tight no-underline">Ohne Auto in die Berge</Link>
-            <nav className="flex items-center gap-4 text-sm">
-              <Link href="/sektionstouren" className="text-tinte-2 hover:text-tinte">Sektionstouren</Link>
-              <Link href="/ueber" className="text-tinte-2 hover:text-tinte">Über</Link>
+            <nav className="flex items-center gap-6 text-sm">
+              <Link href="/sektionstouren" className="inline-flex min-h-11 items-center text-tinte-2 hover:text-tinte">Sektionstouren</Link>
+              <Link href="/ueber" className="inline-flex min-h-11 items-center text-tinte-2 hover:text-tinte">Über</Link>
             </nav>
           </div>
         </header>
