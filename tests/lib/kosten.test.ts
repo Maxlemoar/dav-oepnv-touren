@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { autoKostenEuro, bahnTicketKurz, FAHRTKOSTEN_REGEL } from '@/lib/kosten'
+import { autoKostenEuro, bahnTicketKurz, fakten, FAHRTKOSTEN_REGEL } from '@/lib/kosten'
 
 describe('autoKostenEuro', () => {
   it('rechnet die Fahrtkostenregel der Sektion für Hin- und Rückfahrt und rundet auf 5 €', () => {
@@ -27,5 +27,15 @@ describe('bahnTicketKurz', () => {
     expect(bahnTicketKurz('europass')).toContain('Europass')
     expect(bahnTicketKurz('keins')).toContain('Sparpreis')
     for (const t of ['deutschlandticket', 'halbtax', 'europass', 'keins'] as const) expect(bahnTicketKurz(t)).not.toMatch(/\d+ ?€/)
+  })
+})
+
+describe('fakten', () => {
+  it('Ticket, CO₂-Ersparnis und Mitfahrkosten in einer Zeile', () => {
+    expect(fakten({ ticket: 'deutschlandticket', co2Kg: 5, autoEuro: 25 })).toEqual(['Deutschlandticket', 'spart ca. 5 kg CO₂', 'Auto ca. 25 €'])
+  })
+  it('lässt fehlende Werte weg', () => {
+    expect(fakten({ ticket: 'keins' })).toEqual(['Einzelticket'])
+    expect(fakten({ ticket: 'halbtax', autoEuro: 60 })).toEqual(['Halbtax', 'Auto ca. 60 €'])
   })
 })

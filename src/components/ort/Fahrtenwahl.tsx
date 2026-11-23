@@ -1,9 +1,10 @@
 'use client'
-import { Suspense, useState, type ReactNode } from 'react'
+import { Fragment, Suspense, useState, type ReactNode } from 'react'
 import { useSearchParams } from 'next/navigation'
 import type { BahnOrt, Land } from '@/lib/content/schema'
 import { datumKurz, lokalesDatum, lokaleUhrzeit } from '@/lib/datum'
 import { abweichungText, fahrtenAnfrage, fahrtenStatus, fahrtSchluessel, merkenswert, neueFahrten, vorauswahl, vorOrtText } from '@/lib/fahrtenwahl'
+import { fakten } from '@/lib/kosten'
 import { fahrplanLink, rueckfahrtLink } from '@/lib/links'
 import type { GruppenHinweis } from '@/lib/teilen'
 import type { FahrtenAntwort, FahrtLive } from '@/lib/verbindung/fahrten'
@@ -17,6 +18,8 @@ type Props = {
   nach: { id: string; name: string; land: Land; bahn?: BahnOrt }
   /** Gruppenhinweis des Ziellands (content/tickets.yaml). */
   gruppe?: GruppenHinweis
+  /** Kennzahlen aus dem Richtwert für die Faktenzeile und die ausführlichen Sätze dazu (CO₂- und Kostenzeile). */
+  vergleich?: { co2Kg?: number; autoEuro?: number; details?: ReactNode }
 }
 
 type Richtung = 'hin' | 'rueck'
@@ -78,7 +81,7 @@ export function Fahrtenwahl(props: Props) {
   )
 }
 
-function FahrtenwahlInnen({ von, nach, gruppe }: Props) {
+function FahrtenwahlInnen({ von, nach, gruppe, vergleich }: Props) {
   const z = zeitfensterAusUrl(useSearchParams(), { mindestNaechte: 0 })
   const anfrage = fahrtenAnfrage(von.id, nach.id, z)
   const [stand, setStand] = useState<Stand | null>(null)
@@ -185,15 +188,29 @@ function FahrtenwahlInnen({ von, nach, gruppe }: Props) {
         </>
       )}
 
-      <div className="space-y-1">
-        <p className="text-sm text-tinte-2">{a.ticket.hinweis}</p>
-        {gruppe && (
-          <p className="text-sm text-tinte-2">
-            <span className="font-medium text-tinte">Zu mehreren:</span> {gruppe.hinweis}
-            {gruppe.quelle && <> <a href={gruppe.quelle} target="_blank" rel="noreferrer" className="underline">Mehr dazu</a></>}
-          </p>
-        )}
-      </div>
+      {/* Ticket, CO₂ und Kosten auf einen Blick; die ganzen Sätze mit Gruppenpreis und Fahrtkostenregel zum Aufklappen. */}
+      <details className="group border-t border-linie pt-1">
+        <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 text-sm text-tinte-2 [&::-webkit-details-marker]:hidden">
+          <span className="min-w-0">
+            {fakten({ ticket: a.ticket.ticket, co2Kg: vergleich?.co2Kg, autoEuro: vergleich?.autoEuro }).map((f, k) => (
+              <Fragment key={f}>{k > 0 && ' · '}<span className="whitespace-nowrap">{f}</span></Fragment>
+            ))}
+          </span>
+          <span className="shrink-0 font-medium text-tanne">
+            Details <span aria-hidden className="inline-block transition-transform group-open:rotate-180">▾</span>
+          </span>
+        </summary>
+        <div className="space-y-1 pb-1">
+          <p className="text-sm text-tinte-2">{a.ticket.hinweis}</p>
+          {gruppe && (
+            <p className="text-sm text-tinte-2">
+              <span className="font-medium text-tinte">Zu mehreren:</span> {gruppe.hinweis}
+              {gruppe.quelle && <> <a href={gruppe.quelle} target="_blank" rel="noreferrer" className="underline">Mehr dazu</a></>}
+            </p>
+          )}
+          {vergleich?.details}
+        </div>
+      </details>
     </div>
   )
 }

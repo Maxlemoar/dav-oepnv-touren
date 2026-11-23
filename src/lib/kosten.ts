@@ -1,4 +1,4 @@
-import type { Ticket } from '@/lib/content/labels'
+import { TICKET_LABEL, type Ticket } from '@/lib/content/labels'
 
 /**
  * Fahrtkostenregel der Sektion für Fahrgemeinschaften: "Kostenbeteiligung von 0,30 € pro Person und km"
@@ -23,4 +23,13 @@ export function bahnTicketKurz(ticket: Ticket): string {
     case 'europass': return 'Mit der Bahn bis Kehl mit Deutschlandticket, ab dort Europass oder TER-Ticket.'
     case 'keins': return 'Mit der Bahn: Einzelticket, Sparpreis früh buchen.'
   }
+}
+
+/** Kurzfassung unter den gewählten Fahrten: Ticket, CO₂-Ersparnis und Mitfahrkosten; fehlende Werte fallen weg. */
+export function fakten(f: { ticket: Ticket; co2Kg?: number; autoEuro?: number }): string[] {
+  return [
+    TICKET_LABEL[f.ticket],
+    ...(f.co2Kg !== undefined ? [`spart ca. ${f.co2Kg} kg CO₂`] : []),
+    ...(f.autoEuro !== undefined ? [`Auto ca. ${f.autoEuro} €`] : []),
+  ]
 }

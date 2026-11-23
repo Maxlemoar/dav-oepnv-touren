@@ -4,6 +4,7 @@ import { inhalt, findeGebiet, findeHaltestelle, huettenImGebiet, sichtbareStarto
 import { LAND_LABEL, SAISON_LABEL, SPORTART_LABEL, TICKET_LABEL, type Ticket } from '@/lib/content/labels'
 import type { Haltestelle } from '@/lib/content/schema'
 import { co2ErsparnisKg } from '@/lib/co2'
+import { autoKostenEuro } from '@/lib/kosten'
 import { lawinendienste, lawinenRelevant } from '@/lib/lawinen'
 import { gruppenHinweisFuer } from '@/lib/teilen'
 import { Co2Zeile } from '@/components/Co2Zeile'
@@ -129,8 +130,12 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
 
       <div className="space-y-3">
         <Fahrtenwahl von={von} nach={{ id: haupt.id, name: haupt.name, land: haupt.land, bahn: haupt.bahn }}
-          gruppe={gruppenHinweisFuer(i.tickets, haupt.land)} />
-        {vergleich(haupt)}
+          gruppe={gruppenHinweisFuer(i.tickets, haupt.land)}
+          vergleich={rHaupt && {
+            co2Kg: co2ErsparnisKg({ strassenKm: rHaupt.strassenKm, bahnKm: rHaupt.bahnKm }, i.emissionen),
+            autoEuro: autoKostenEuro(rHaupt.strassenKm),
+            details: vergleich(haupt),
+          }} />
       </div>
 
       {weitere.length > 0 && (
