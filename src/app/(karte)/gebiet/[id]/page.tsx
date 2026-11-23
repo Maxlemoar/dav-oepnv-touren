@@ -75,7 +75,7 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
       <h3 className="text-lg font-semibold">Touren</h3>
       {gebiet.sammlungEmbed && <TourEmbed sammlung={gebiet.sammlungEmbed} titel={`Tourensammlung ${gebiet.name}`} />}
       {gebiet.touren.length > 0 && (
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
           {gebiet.touren.map((t) => (
             <Fragment key={t.url}>
               <TourKarte tour={t} />
@@ -105,7 +105,7 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
   const huettenAbschnitt = huetten.length > 0 && (
     <section className="space-y-3">
       <h3 className="text-lg font-semibold">Hütten</h3>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
         {huetten.map((h) => <HuetteKarte key={h.id} huette={h} haltestellen={i.haltestellen} />)}
       </div>
     </section>
@@ -114,8 +114,8 @@ export default async function GebietSeite({ params }: { params: Promise<{ id: st
   return (
     <article className="mx-auto max-w-2xl space-y-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdText(gebietJsonLd(gebiet, gebietBeschreibungFuer(i, gebiet))) }} />
-      {/* Bleibt beim Scrollen oben stehen: ab lg im Scrollbereich der Seitenleiste, darunter unter der Kopfzeile. */}
-      <div className="sticky z-10 -mx-4 -mt-4 mb-2 bg-papier px-4 py-2 max-lg:top-14 lg:top-0 sm:-mx-6 sm:px-6">
+      {/* Bleibt beim Scrollen oben stehen: ab lg am oberen Rand der Seitenleiste (-top-4 gleicht deren pt-4 aus, sonst bleibt ein Spalt), darunter unter der Kopfzeile. */}
+      <div className="sticky z-10 -mx-4 -mt-4 mb-2 bg-papier px-4 py-2 max-lg:top-14 lg:-top-4 sm:-mx-6 sm:px-6">
         <ZeitraumLink href="/" className="pill min-h-11 no-underline">← Zurück</ZeitraumLink>
       </div>
       <header>

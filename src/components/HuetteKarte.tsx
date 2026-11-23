@@ -21,7 +21,7 @@ export function HuetteKarte({ huette, haltestellen }: { huette: Huette; halteste
     <ZeitraumLink href={`/huette/${huette.id}`} className="karte-card no-underline hover:shadow-md">
       <div className="flex items-start justify-between gap-2">
         <h3 className="text-lg font-semibold">{huette.name}</h3>
-        <span className="zahl text-sm text-tinte-2">{huette.hoehe} m</span>
+        <span className="zahl shrink-0 whitespace-nowrap pt-1 text-sm text-tinte-2">{huette.hoehe} m</span>
       </div>
       <div className="mt-1 flex flex-wrap items-center gap-2">
         <BetreiberBadge typ={huette.betreiber.typ} sektion={huette.betreiber.sektion} />
